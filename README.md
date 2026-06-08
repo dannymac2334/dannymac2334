@@ -2,7 +2,7 @@
 - 👀 I’m interested in ... design, art, music
 - 🌱 I’m currently learning ...UX and UI design 
 - 💞️ I’m looking to collaborate on ...UX design 
-- 📫 How to reach me ...danny.mccarthy@kalidos.ai
+- 📫 How to reach me ...dannnymcccarthydesign@gmail.com
 - 😄 Pronouns: ...he/him
 - ⚡ Fun fact: ...I make music under dannny maccc
 
