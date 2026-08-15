@@ -243,8 +243,14 @@ def build_section(section, counter_start):
         )
 
     i = counter_start
-    for group in section["groups"]:
-        bits.append('<div class="group">')
+    last = len(section["groups"]) - 1
+    for gi, group in enumerate(section["groups"]):
+        # Only the closing group is kept whole. That is where a split strands a
+        # lone card on an otherwise empty page, because nothing follows it.
+        # Doing this to every group instead pushes mid-section groups onto fresh
+        # pages and punches far more holes than it fixes.
+        tight = " group-tight" if gi == last and len(group["tips"]) <= 6 else ""
+        bits.append(f'<div class="group{tight}">')
         bits.append('<div class="group-head reveal">')
         bits.append(f'<h3 class="sub">{esc(group["heading"])}</h3>')
         if group.get("path"):
@@ -880,7 +886,10 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   .reveal {{ opacity: 1 !important; transform: none !important; }}
   .rail, .totop {{ display: none !important; }}
   .shell {{ display: block; }}
-  body {{ font-size: 10pt; }}
+  /* The page ground must be paper, not the screen's black. Otherwise the space
+     left when a section ends mid-page renders as a solid black block rather
+     than as the chapter simply being over. Poster pages re-blacken below. */
+  body {{ font-size: 10pt; background: var(--paper); color: var(--ink); }}
 
   .page {{
     break-after: page;
@@ -893,6 +902,8 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   /* Poster pages keep the black ground and bleed to trim. */
   .hero, .toc, .outro {{
     page: bleed;
+    background: var(--black);
+    color: var(--white);
     min-height: 297mm;
     padding: 20mm 16mm;
     display: flex;
@@ -915,10 +926,11 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   .doc {{ padding: 12mm 0; }}
   .sec-body {{ padding: 10mm 0 12mm; max-width: none; }}
   .doc-head {{ padding-bottom: 6mm; border-color: var(--line-light); }}
-  .rules li, .legend-row, .cmd-table tr, .group-head, .toc-list li:first-child .toc-row {{
+  /* Hairlines on paper only — the contents page stays black and keeps its own. */
+  .doc .rules li, .doc .legend-row, .doc .cmd-table tr, .sec-body .group-head {{
     border-color: var(--line-light);
   }}
-  .doc .callout, .sec-body .notice, .doc .eyebrow, .sec-body .group-path {{ border-color: var(--line-light); }}
+  .doc .callout, .sec-body .notice, .sec-body .group-path {{ border-color: var(--line-light); }}
 
   /* Section banner stays black — it is the divider that paces the book. */
   .sec-head {{
@@ -943,8 +955,16 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
     border: 1px solid rgba(0,0,0,.32);
   }}
 
+  /* Tighter vertical rhythm on paper. The screen spacing is generous because
+     it scrolls; on a fixed page it wastes rows and strands single cards after
+     a break. */
+  .group {{ margin-top: 5mm; }}
+  .group-head {{ padding-bottom: 9px; }}
+  .sec-body .lead {{ font-size: 11pt; }}
+  .notice {{ margin-top: 7mm; padding: 5mm; }}
+
   /* Cards go flat on paper — the glass rim is a screen effect. */
-  .tips {{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }}
+  .tips {{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 6mm; }}
   .tip {{
     background: none;
     box-shadow: none;
@@ -956,10 +976,11 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   }}
   .tip::before {{ content: none; }}
   .tip > .tip-head, .tip > .tip-title, .tip > .tip-body, .tip > .tip-keys {{ background: none; }}
-  .tip > .tip-head {{ padding: 12px 14px 0; }}
-  .tip > .tip-title {{ padding: 7px 14px 0; }}
-  .tip > .tip-body {{ padding: 6px 14px 0; }}
-  .tip > .tip-keys {{ padding: 10px 14px 12px; }}
+  .tip > .tip-head {{ padding: 10px 12px 0; }}
+  .tip > .tip-title {{ padding: 6px 12px 0; }}
+  .tip > .tip-body {{ padding: 5px 12px 0; }}
+  .tip > .tip-keys {{ padding: 8px 12px 10px; }}
+  .tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 12px; }}
   /* The inverted card keeps the dark-surface token so its copy stays legible. */
   .tip-gold {{
     --body-dim: #d5d4cf;
@@ -979,6 +1000,10 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
 
   .group-head, .doc-head {{ break-after: avoid; page-break-after: avoid; }}
   .callout, .notice, .legend-row, .cmd-block {{ break-inside: avoid; page-break-inside: avoid; }}
+  /* Keep short groups on one page rather than splitting off a lone card. */
+  .group-tight {{ break-inside: avoid; page-break-inside: avoid; }}
+  /* A closing callout should never be the only thing on a page. */
+  .callout {{ break-before: avoid; page-break-before: avoid; }}
 }}
 """
 

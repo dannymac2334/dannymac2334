@@ -8,7 +8,7 @@ structured content files so the text and the design can be changed independently
 | File | What it is |
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
-| `dist/logic-pro-crash-course.pdf` | **The deliverable.** A4, 93 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
+| `dist/logic-pro-crash-course.pdf` | **The deliverable.** A4, 82 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -94,8 +94,15 @@ Two behaviours are ported directly from the site: the `.reveal` fade-up
 Unlike the site, `.reveal` here only hides content once the script confirms it is running
 (`html.js`), so a file opened from disk with JS blocked still renders in full.
 
+**Pagination.** `body` takes the paper background in print, not the screen's black —
+otherwise the space left when a section ends mid-page renders as a solid black block
+instead of the chapter simply being over. Only the *closing* group of a section gets
+`break-inside: avoid`: that is where a split strands a lone card on an empty page.
+Applying it to every group instead pushes mid-section groups onto fresh pages and punches
+far more holes than it fixes (measured: 23 mid-chapter gaps versus 3).
+
 **Screen is dark, print inverts.** Poster pages stay black and bleed to trim; body pages
-flip to paper so a 93-page book is actually printable. The inversion flips the `--body-dim`
+flip to paper so the book is actually printable. The inversion flips the `--body-dim`
 token on the paper surfaces rather than re-listing selectors, so nothing gets missed.
 
 ## Section 19
