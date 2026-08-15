@@ -11,7 +11,7 @@
           "t": "Run two buffer sizes, not one",
           "d": "Set I/O Buffer to 64 or 128 while tracking so you can play in time, then switch to 512 or 1024 when you mix so plugins stop crackling. Nothing else in Logic changes your day this much.",
           "k": "⌘,",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Turn on Low Latency Mode and give it a key command",
@@ -51,7 +51,7 @@
         {
           "t": "Set MIDI recording to “Create Take Folder”",
           "d": "Under Recording > MIDI, choosing take folders for cycle recording means every pass is preserved and swappable instead of merged into mush.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Enable “Auto demix by channel if multitrack recording”",
@@ -101,7 +101,7 @@
         {
           "t": "Turn on “Show Advanced Tools” first, always",
           "d": "Under Settings > Advanced, tick Show Advanced Tools and then tick every sub‑option. Without this, huge parts of Logic — including surround, MIDI environment and advanced editing — are simply hidden from you.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Set region names to display at a size you can read",
@@ -136,7 +136,7 @@
         {
           "t": "Set “Limit Dragging to One Direction” to Vertically in the Tracks area",
           "d": "This stops you from nudging a perfectly placed region off the grid while trying to move it to another track. It is the single most common accidental edit in Logic.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Turn off “Catch playhead” while editing",
@@ -167,7 +167,7 @@
         {
           "t": "Turn on Smart Tempo “Keep Project Tempo” by default",
           "d": "Under Project Settings > Smart Tempo, set the project mode to Keep. Adaptive mode is powerful but it will rewrite your tempo map from a single dragged‑in loop if you are not paying attention.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Set the default region quantise to Off",
@@ -189,7 +189,7 @@
         {
           "t": "Save a Session Start template and set it as the default",
           "d": "Build one project with your usual tracks, buses, reverb and marker colours, then File > Save as Template. Set it to open on launch and you never build a session from zero again.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Set a default channel strip for new audio tracks",

@@ -9,7 +9,7 @@
         {
           "t": "Swipe across the take you want with the pointer",
           "d": "Inside a take folder, simply drag across the part of a take you want to hear. Logic builds the comp automatically and crossfades the joins for you.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Use ⌃ plus a number key to switch takes instantly",
@@ -53,7 +53,7 @@
         {
           "t": "Use “Remove Silence from Audio Region” for noisy tracks",
           "d": "In the Audio menu, this strips everything below a threshold you set and leaves separate regions. Great for cleaning up a live drum kit or a spoken word track.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Add a tiny fade to the start of every region as policy",
@@ -68,7 +68,7 @@
           "t": "Flex Time is one keystroke away",
           "d": "Press ⌘F to show Flex, choose an algorithm in the track header, and drag transient markers to fix timing without cutting anything.",
           "k": "⌘F",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Pick the right Flex algorithm or it will sound wrong",

@@ -9,7 +9,7 @@
         {
           "t": "Select all notes of the same pitch in one click",
           "d": "Click a key on the keyboard graphic at the left of the Piano Roll and every note at that pitch in the region is selected. Perfect for grabbing all the hi‑hats at once.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Select similar notes with Edit > Select > Same Note Pitch",
@@ -40,7 +40,7 @@
         {
           "t": "Change note length numerically in the inspector",
           "d": "The event inspector at the top left shows position, pitch, velocity, length and channel for the selection. Type a value and every selected note updates at once.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Set every selected note to the same length",
@@ -73,7 +73,7 @@
           "t": "Drag velocity directly on the note with ⌃⌥",
           "d": "Hold ⌃⌥ and drag up or down on a note to change its velocity without switching tools. The note colour updates live.",
           "k": "⌃⌥ + drag",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Draw a velocity ramp across a selection",
@@ -100,7 +100,7 @@
         {
           "t": "Quantise from the region inspector, not destructively",
           "d": "The Quantize field in the Region inspector is non‑destructive and can be dialled back or removed at any point. Use it before you ever use the destructive version.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Use Q‑Strength to keep the human feel",

@@ -10,7 +10,7 @@
           "t": "⌘T splits every selected region at the playhead",
           "d": "Select multiple regions across multiple tracks and one keystroke cuts them all at the same point. This is how you chop a whole arrangement in one move.",
           "k": "⌘T",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "⌘J joins regions back into one",
@@ -44,7 +44,7 @@
         {
           "t": "Set Snap to Smart and leave it there",
           "d": "Smart snap adapts to your zoom level, so you get bar accuracy zoomed out and tick accuracy zoomed in, automatically.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Hold ⌃ to temporarily override the grid",

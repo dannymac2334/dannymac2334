@@ -10,7 +10,7 @@
           "t": "Know the difference between Track and Region automation",
           "d": "Press A to show automation, then use the dropdown in the track header to switch between Track (fixed to the timeline) and Region (travels with the region when you move it). Choosing wrong is why your automation ends up in the wrong place.",
           "k": "A",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Use Region automation for anything that belongs to the part",
@@ -33,7 +33,7 @@
         {
           "t": "Use Latch mode for almost everything",
           "d": "Latch writes while you move the control and holds the last value when you let go. Touch snaps back, Write erases as it goes, and Read plays only. Latch is the right default.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Never leave a track in Write mode",
@@ -70,7 +70,7 @@
           "t": "Marquee a range then drag the line to change only that section",
           "d": "The marquee creates boundary points automatically so the change does not bleed into the surrounding bars.",
           "k": "⌘ + drag",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Show every automated parameter at once",

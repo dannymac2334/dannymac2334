@@ -6,21 +6,55 @@
     {
       "heading": "Building the kit",
       "tips": [
-        { "t": "Drag any audio file straight onto a pad", "d": "Drop a sample onto a pad and Drum Machine Designer loads it into a Quick Sampler instance automatically. Building a custom kit takes about a minute.", "b": "GOLDEN NUGGET" },
-        { "t": "Every pad is its own channel strip", "d": "Open the Mixer with X and you will see each pad as a separate channel inside the stack. Compress the snare, saturate the kick, send only the claps to reverb.", "k": "X", "b": "GOLDEN NUGGET" },
-        { "t": "⌥‑drag a pad to copy it, including all its processing", "d": "Perfect for layering — copy the snare, pitch the copy down, and blend.", "k": "⌥ + drag" },
-        { "t": "Use the pad's Sound tab for quick shaping", "d": "Pitch, filter, start point, envelope and gain are all on the pad itself, so you can shape a sample without opening the sampler." },
-        { "t": "Assign pads to choke groups", "d": "Put the open and closed hi‑hat in the same mute group and the closed hat cuts the open one, exactly like a real drum machine." }
+        {
+          "t": "Drag any audio file straight onto a pad",
+          "d": "Drop a sample onto a pad and Drum Machine Designer loads it into a Quick Sampler instance automatically. Building a custom kit takes about a minute.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Every pad is its own channel strip",
+          "d": "Open the Mixer with X and you will see each pad as a separate channel inside the stack. Compress the snare, saturate the kick, send only the claps to reverb.",
+          "k": "X",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "⌥‑drag a pad to copy it, including all its processing",
+          "d": "Perfect for layering — copy the snare, pitch the copy down, and blend.",
+          "k": "⌥ + drag"
+        },
+        {
+          "t": "Use the pad's Sound tab for quick shaping",
+          "d": "Pitch, filter, start point, envelope and gain are all on the pad itself, so you can shape a sample without opening the sampler."
+        },
+        {
+          "t": "Assign pads to choke groups",
+          "d": "Put the open and closed hi‑hat in the same mute group and the closed hat cuts the open one, exactly like a real drum machine."
+        }
       ]
     },
     {
       "heading": "Mixing and performing",
       "tips": [
-        { "t": "Add a bus inside the stack for parallel compression", "d": "Create a send from every pad to one aux, put a heavy compressor on it, and blend it back. The whole kit gets glued without touching the individual hits." },
-        { "t": "Automate individual pads, not the whole kit", "d": "Because each pad is a channel, each pad has its own automation lanes. Filter just the hats in the breakdown." },
-        { "t": "Use the main stack fader for the whole kit", "d": "The Track Stack's top level is a summing bus. Put your kit compressor and limiter there and process everything together." },
-        { "t": "Convert a Drummer track to Drum Machine Designer", "d": "The electronic drummers use Drum Machine Designer natively, which means you can take a generated performance and then rebuild the kit sample by sample." },
-        { "t": "Save your kit as a patch", "d": "With the stack selected, save to the Library. Every pad, every sample and every insert comes back in one click on the next project." }
+        {
+          "t": "Add a bus inside the stack for parallel compression",
+          "d": "Create a send from every pad to one aux, put a heavy compressor on it, and blend it back. The whole kit gets glued without touching the individual hits."
+        },
+        {
+          "t": "Automate individual pads, not the whole kit",
+          "d": "Because each pad is a channel, each pad has its own automation lanes. Filter just the hats in the breakdown."
+        },
+        {
+          "t": "Use the main stack fader for the whole kit",
+          "d": "The Track Stack's top level is a summing bus. Put your kit compressor and limiter there and process everything together."
+        },
+        {
+          "t": "Convert a Drummer track to Drum Machine Designer",
+          "d": "The electronic drummers use Drum Machine Designer natively, which means you can take a generated performance and then rebuild the kit sample by sample."
+        },
+        {
+          "t": "Save your kit as a patch",
+          "d": "With the stack selected, save to the Library. Every pad, every sample and every insert comes back in one click on the next project."
+        }
       ]
     }
   ]

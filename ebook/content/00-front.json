@@ -1,7 +1,7 @@
 {
   "title": "Logic Pro Crash Course",
-  "subtitle": "350+ Golden Nugget Tricks",
-  "tagline": "No long tutorials. No fluff. Just what actually works.",
+  "subtitle": "350+ Tricks That Actually Work",
+  "tagline": "No long tutorials. No fluff.",
   "edition": "Covers Logic Pro 10.7 → 11 → 12",
   "pages": [
     {
@@ -16,8 +16,7 @@
       "list": [
         "Every key command shown is the Logic Pro factory default on a US keyboard. If you have remapped anything, open Key Commands with ⌥K and search the command name — the name is always given.",
         "Where a trick lives in a menu rather than on a key, the full menu path is written out, so it stays correct across versions.",
-        "Tricks marked GOLDEN NUGGET are the ones worth stealing first.",
-        "Tricks marked ADD YOUR NOTES are template slots for you to fill in.",
+        "Tricks marked GAME CHANGER are the ones worth stealing first.",
         "Nothing here requires third-party plugins. It is all stock Logic."
       ],
       "callout": {

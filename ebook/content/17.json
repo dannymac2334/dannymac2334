@@ -6,39 +6,99 @@
     {
       "heading": "Key commands and customisation",
       "tips": [
-        { "t": "Open Key Commands with ⌥K and use the search box", "d": "Every command in Logic is searchable by name. If you can describe what you want to do, you can find and assign a key for it in about ten seconds.", "k": "⌥K", "b": "GOLDEN NUGGET" },
-        { "t": "Export your key commands and back them up", "d": "The Key Commands window has an Options menu with Export. Losing a year of custom shortcuts to a reinstall is entirely avoidable." },
-        { "t": "Assign key commands to your most used plugins", "d": "Key Commands can insert a specific plugin on the selected channel. One key for your favourite EQ changes your mixing speed noticeably." },
-        { "t": "Use Touch Bar or a stream deck for tool switching", "d": "Any command with a key assignment can be triggered by external hardware. Tools, zoom levels and transport are the highest‑value candidates." }
+        {
+          "t": "Open Key Commands with ⌥K and use the search box",
+          "d": "Every command in Logic is searchable by name. If you can describe what you want to do, you can find and assign a key for it in about ten seconds.",
+          "k": "⌥K",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Export your key commands and back them up",
+          "d": "The Key Commands window has an Options menu with Export. Losing a year of custom shortcuts to a reinstall is entirely avoidable."
+        },
+        {
+          "t": "Assign key commands to your most used plugins",
+          "d": "Key Commands can insert a specific plugin on the selected channel. One key for your favourite EQ changes your mixing speed noticeably."
+        },
+        {
+          "t": "Use Touch Bar or a stream deck for tool switching",
+          "d": "Any command with a key assignment can be triggered by external hardware. Tools, zoom levels and transport are the highest‑value candidates."
+        }
       ]
     },
     {
       "heading": "Templates and project management",
       "tips": [
-        { "t": "Build separate templates for writing, mixing and mastering", "d": "A writing template loads instantly with a handful of instruments. A mixing template has your buses and reference chain. They are different jobs and they deserve different starting points.", "b": "GOLDEN NUGGET" },
-        { "t": "Use Project Alternatives instead of Save As", "d": "File > Alternatives keeps every version inside one project file with shared audio, so you are not duplicating 4 GB of recordings to try a different arrangement." },
-        { "t": "Turn on “Copy external audio files to project folder”", "d": "In Project Settings > Assets. It is the difference between a project that opens on another machine and one that does not." },
-        { "t": "Use Project > Consolidate before archiving", "d": "Gathers every asset the project depends on into the project package. Do this before backing up, always." },
-        { "t": "Keep a reference track in every project, muted at the top", "d": "A commercial track at the top of the session, routed to the master, muted. Unmute it whenever you lose perspective — which will be every hour." },
-        { "t": "Name your bounce files with the date", "d": "“Mix_v3.wav” tells you nothing in six weeks. “Song_2026‑04‑18_mix3.wav” tells you everything." }
+        {
+          "t": "Build separate templates for writing, mixing and mastering",
+          "d": "A writing template loads instantly with a handful of instruments. A mixing template has your buses and reference chain. They are different jobs and they deserve different starting points.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Use Project Alternatives instead of Save As",
+          "d": "File > Alternatives keeps every version inside one project file with shared audio, so you are not duplicating 4 GB of recordings to try a different arrangement."
+        },
+        {
+          "t": "Turn on “Copy external audio files to project folder”",
+          "d": "In Project Settings > Assets. It is the difference between a project that opens on another machine and one that does not."
+        },
+        {
+          "t": "Use Project > Consolidate before archiving",
+          "d": "Gathers every asset the project depends on into the project package. Do this before backing up, always."
+        },
+        {
+          "t": "Keep a reference track in every project, muted at the top",
+          "d": "A commercial track at the top of the session, routed to the master, muted. Unmute it whenever you lose perspective — which will be every hour."
+        },
+        {
+          "t": "Name your bounce files with the date",
+          "d": "“Mix_v3.wav” tells you nothing in six weeks. “Song_2026‑04‑18_mix3.wav” tells you everything."
+        }
       ]
     },
     {
       "heading": "Bouncing and export",
       "tips": [
-        { "t": "⌘B bounces the project or the current section", "d": "Set the locators first and Logic bounces exactly that range. Bounce multiple formats in one pass by ticking more than one file type.", "k": "⌘B" },
-        { "t": "Use “Bounce in Place” to commit a track to audio", "d": "⌃B for regions, or the Track menu for a whole track. You choose whether to include the effects, the volume and the pan.", "k": "⌃B", "b": "GOLDEN NUGGET" },
-        { "t": "Export all tracks as audio files for stems", "d": "File > Export > All Tracks as Audio Files gives you one file per track, all starting at bar 1, ready to hand to anyone." },
-        { "t": "Turn off “Normalize” when bouncing stems", "d": "Normalising each stem independently destroys the relative balance you spent all day building. Set it to Off for stems and On only for a final master if you want it." },
-        { "t": "Bounce offline unless you have external hardware", "d": "Offline is faster and bit‑identical. Realtime is only needed when audio has to physically leave and return through outboard gear." },
-        { "t": "Add 2 bars of silence at the end of the bounce range", "d": "Reverb and delay tails get cut off constantly. Extend the right locator past the last note and listen to the tail before you send it." }
+        {
+          "t": "⌘B bounces the project or the current section",
+          "d": "Set the locators first and Logic bounces exactly that range. Bounce multiple formats in one pass by ticking more than one file type.",
+          "k": "⌘B"
+        },
+        {
+          "t": "Use “Bounce in Place” to commit a track to audio",
+          "d": "⌃B for regions, or the Track menu for a whole track. You choose whether to include the effects, the volume and the pan.",
+          "k": "⌃B",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Export all tracks as audio files for stems",
+          "d": "File > Export > All Tracks as Audio Files gives you one file per track, all starting at bar 1, ready to hand to anyone."
+        },
+        {
+          "t": "Turn off “Normalize” when bouncing stems",
+          "d": "Normalising each stem independently destroys the relative balance you spent all day building. Set it to Off for stems and On only for a final master if you want it."
+        },
+        {
+          "t": "Bounce offline unless you have external hardware",
+          "d": "Offline is faster and bit‑identical. Realtime is only needed when audio has to physically leave and return through outboard gear."
+        },
+        {
+          "t": "Add 2 bars of silence at the end of the bounce range",
+          "d": "Reverb and delay tails get cut off constantly. Extend the right locator past the last note and listen to the tail before you send it."
+        }
       ]
     },
     {
       "heading": "Habits worth building",
       "tips": [
-        { "t": "Colour and name everything before you leave the session", "d": "Five minutes at the end of a session saves twenty at the start of the next one." },
-        { "t": "Save a version before every major change", "d": "New Alternative, then experiment freely. Fear of breaking something is the biggest brake on creative decisions." }
+        {
+          "t": "Colour and name everything before you leave the session",
+          "d": "Five minutes at the end of a session saves twenty at the start of the next one."
+        },
+        {
+          "t": "Save a version before every major change",
+          "d": "New Alternative, then experiment freely. Fear of breaking something is the biggest brake on creative decisions."
+        }
       ]
     }
   ]

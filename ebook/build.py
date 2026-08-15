@@ -43,6 +43,10 @@ TOKENS = {
 
 WEIGHTS = ["400", "500", "600", "700"]
 
+# The badge that marks a standout trick. Any other badge string renders in the
+# quieter outlined style, so adding a second badge type needs no code change.
+HIGHLIGHT_BADGE = "GAME CHANGER"
+
 
 def esc(text):
     return html.escape(str(text), quote=False)
@@ -94,16 +98,16 @@ def keycap(keys):
 def tip_html(tip, index):
     badge = tip.get("b", "")
     classes = ["tip", "reveal"]
-    if badge == "GOLDEN NUGGET":
+    if badge == HIGHLIGHT_BADGE:
         classes.append("tip-gold")
-    elif badge == "ADD YOUR NOTES":
+    elif badge:
         classes.append("tip-todo")
 
     bits = [f'<article class="{" ".join(classes)}">']
     bits.append('<div class="tip-head">')
     bits.append(f'<span class="tip-num">{index:03d}</span>')
     if badge:
-        cls = "badge badge-gold" if badge == "GOLDEN NUGGET" else "badge badge-todo"
+        cls = "badge badge-gold" if badge == HIGHLIGHT_BADGE else "badge badge-todo"
         bits.append(f'<span class="{cls}">{esc(badge)}</span>')
     bits.append("</div>")
     bits.append(f'<h4 class="tip-title">{esc(tip["t"])}</h4>')

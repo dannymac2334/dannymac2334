@@ -9,7 +9,7 @@
         {
           "t": "Set the Follow parameter to your bass or guitar track",
           "d": "In the Drummer Editor, the Follow menu makes the kick pattern lock to the rhythm of another track. Your drums and bass become one part instead of two.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Use the X/Y pad, then fine‑tune with the individual sliders",
@@ -35,7 +35,7 @@
         {
           "t": "Convert a Drummer region to MIDI and edit it by hand",
           "d": "Right‑click the region and choose Convert > Convert to MIDI Region. You get the full performance in the Piano Roll to nudge, delete and re‑velocity as you like.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Keep a Drummer region and a MIDI copy on two tracks",

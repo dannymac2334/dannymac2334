@@ -10,7 +10,7 @@
           "t": "⌘‑drag anywhere to marquee select",
           "d": "Marquee is Logic's default secondary tool, so you never need to switch tools to use it. Drag a box across any range on any number of tracks.",
           "k": "⌘ + drag",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Press Space and Logic plays only the marquee selection",
@@ -25,7 +25,7 @@
         {
           "t": "Click any region after marqueeing to split at the marquee edges",
           "d": "Marquee a range, then single‑click inside it, and Logic splits the regions at both marquee boundaries automatically. This is the fastest split in the program.",
-          "b": "GOLDEN NUGGET"
+          "b": "GAME CHANGER"
         },
         {
           "t": "Set the locators to the marquee instantly",

@@ -1,6 +1,6 @@
 # Logic Pro Crash Course — eBook
 
-A full-colour, clickable eBook of **361 Logic Pro tricks** across **19 sections**, built from
+A clickable eBook of **355 Logic Pro tricks** across **19 sections**, built from
 structured content files so the text and the design can be changed independently.
 
 ## Output
@@ -8,7 +8,7 @@ structured content files so the text and the design can be changed independently
 | File | What it is |
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
-| `dist/logic-pro-crash-course.pdf` | **The deliverable.** A4, 94 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
+| `dist/logic-pro-crash-course.pdf` | **The deliverable.** A4, 93 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -49,7 +49,7 @@ A section looks like this:
       "heading": "The essentials",
       "path": "Logic Pro > Settings > Audio",
       "tips": [
-        { "t": "Title", "d": "Body copy.", "k": "⌘ + drag", "b": "GOLDEN NUGGET" }
+        { "t": "Title", "d": "Body copy.", "k": "⌘ + drag", "b": "GAME CHANGER" }
       ]
     }
   ]
@@ -61,7 +61,7 @@ A section looks like this:
 | `t` | Trick title |
 | `d` | Body copy |
 | `k` | Key command (optional) — renders as a keycap chip |
-| `b` | Badge (optional) — `GOLDEN NUGGET` or `ADD YOUR NOTES` |
+| `b` | Badge (optional) — `GAME CHANGER` renders as the inverted highlight card; any other string renders in the quieter outlined style |
 | `path` | Menu path for the group (optional) — renders as an outlined pill |
 | `notice` | Section-level warning banner (optional) |
 
@@ -95,12 +95,12 @@ Unlike the site, `.reveal` here only hides content once the script confirms it i
 (`html.js`), so a file opened from disk with JS blocked still renders in full.
 
 **Screen is dark, print inverts.** Poster pages stay black and bleed to trim; body pages
-flip to paper so a 94-page book is actually printable. The inversion flips the `--body-dim`
+flip to paper so a 93-page book is actually printable. The inversion flips the `--body-dim`
 token on the paper surfaces rather than re-listing selectors, so nothing gets missed.
 
-## Known gap
+## Section 19
 
-**Section 19 (Logic Pro 12 Update)** ships as an upgrade playbook plus six template cards
-marked `ADD YOUR NOTES`. The playbook content is evergreen and correct; the six feature
-cards are deliberately unfilled because version-specific claims should come from the
-release notes of the exact build you are running. Fill them in and rebuild.
+**Logic Pro 12 Update** is an upgrade playbook only — what to do before, during and after a
+major release. It deliberately carries no feature-by-feature notes, because version-specific
+claims go stale as soon as Apple ships a point update. If you want those, add them as new
+tricks against the release notes for the build you are running.
