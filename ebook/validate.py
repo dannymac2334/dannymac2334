@@ -67,6 +67,7 @@ STANDARD = {
     "Z": "Zoom to fit selection",
     "Esc": "Tool menu",
     "⌫": "Delete selection",
+    "Delete": "Delete selection",
     "⌘": "Secondary tool modifier",
     "⌘Z": "Undo",
     "⇧⌘Z": "Redo",
