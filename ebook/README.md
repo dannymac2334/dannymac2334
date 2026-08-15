@@ -8,7 +8,8 @@ structured content files so the text and the design can be changed independently
 | File | What it is |
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
-| `dist/logic-pro-crash-course.pdf` | **The deliverable.** A4, 82 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
+| `dist/logic-pro-crash-course-page.html` | **Drop-in page for dannnymcccarthy.com.** Links the site's own `css/style.css` and `js/main.js`, carries the site header and footer, and uses the site's `.reveal` classes so the existing observer animates it. Put it at the site root. |
+| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 82 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -23,7 +24,21 @@ python3 build.py                     # writes dist/logic-pro-crash-course.html
   --virtual-time-budget=30000 dist/logic-pro-crash-course.html
 
 python3 finish_pdf.py                # bookmarks + metadata; makes the PDF standalone
+
+python3 build_site_page.py           # writes the drop-in page for the portfolio site
 ```
+
+### Installing the site page
+
+1. Copy `dist/logic-pro-crash-course-page.html` to the **root** of the site repo as
+   `logic-pro-crash-course.html` — next to `work.html`. The relative `css/` and `js/`
+   paths depend on it sitting there.
+2. Copy the PDF to `assets/resources/logic-pro-crash-course.pdf` (the download button
+   points there).
+3. Add a nav or footer link to it if you want it discoverable.
+
+Only components the site lacks — trick cards, the contents list, key tables and the
+sticky section nav — are styled in the page, scoped under `.lp` so nothing leaks.
 
 The HTML in `dist/` is the intermediate the PDF is printed from — the PDF is what ships.
 
