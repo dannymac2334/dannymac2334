@@ -35,7 +35,15 @@ python3 build_site_page.py           # writes the drop-in page for the portfolio
    paths depend on it sitting there.
 2. Copy the PDF to `assets/resources/logic-pro-crash-course.pdf` (the download button
    points there).
-3. Add a nav or footer link to it if you want it discoverable.
+3. Add one line to `sitemap.xml`:
+   `<url><loc>https://www.dannnymcccarthy.com/logic-pro-crash-course</loc></url>`
+   Netlify already serves extensionless URLs, so no `_redirects` entry is needed.
+4. Add a nav or footer link if you want it discoverable.
+
+The page carries `Article` JSON-LD matching the pattern on the rest of the site, and a
+client-side filter: search across all 355 tricks (matching card text, group heading and
+section title), a Game changers toggle, live result count, dimmed nav pills for sections
+with no matches, an empty state, and `/` to focus the search box.
 
 Only components the site lacks — trick cards, the contents list, key tables and the
 sticky section nav — are styled in the page, scoped under `.lp` so nothing leaks.

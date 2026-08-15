@@ -65,6 +65,9 @@ def head():
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
 <script defer src="js/main.js"></script>
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"Article","headline":"Logic Pro Crash Course","description":"{DESC}","inLanguage":"en","image":"https://www.dannnymcccarthy.com/assets/brand/og-cover.jpg","mainEntityOfPage":{{"@type":"WebPage","@id":"{URL}"}},"author":{{"@type":"Person","name":"Daniel McCarthy","alternateName":"Dannny McCcarthy","url":"https://www.dannnymcccarthy.com"}},"publisher":{{"@type":"ProfessionalService","name":"Dannny McCcarthy","url":"https://www.dannnymcccarthy.com"}},"about":{{"@type":"SoftwareApplication","name":"Logic Pro","applicationCategory":"MultimediaApplication","operatingSystem":"macOS"}},"keywords":"Logic Pro, music production, key commands, mixing, MIDI, recording, workflow"}}
+</script>
 <style>{page_css()}</style>
 <noscript><style>
 /* The site hides .reveal elements until main.js observes them. On a page that
@@ -103,8 +106,54 @@ def page_css():
   text-transform:uppercase;opacity:.6}
 .lp .lp-cta{margin-top:38px}
 
+/* filter bar — 355 tricks on one page is a search problem, not a scroll problem */
+.lp-tools{position:sticky;top:56px;z-index:91;padding:12px var(--pad);box-sizing:border-box;
+  background:rgba(0,0,0,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--line-dark)}
+.lp-tools-inner{max-width:1200px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.lp-search{position:relative;flex:1 1 280px;min-width:0}
+.lp-search input{width:100%;background:transparent;border:1px solid #3a3a3a;border-radius:100px;
+  color:#fff;font-family:inherit;font-size:13px;letter-spacing:.02em;padding:11px 74px 11px 18px;
+  outline:none;transition:border-color .25s var(--ease)}
+.lp-search input::placeholder{color:#7d7d7a}
+.lp-search input:focus{border-color:#fff}
+.lp-search kbd{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;
+  font-family:inherit;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:#7d7d7a;border:1px solid #3a3a3a;border-radius:100px;padding:3px 8px}
+.lp-search input:not(:placeholder-shown)+kbd{display:none}
+.lp-toggle{flex:0 0 auto;cursor:pointer;background:transparent;color:#e8e8e6;border:1px solid #3a3a3a;
+  border-radius:100px;font-family:inherit;font-weight:500;font-size:11px;text-transform:uppercase;
+  letter-spacing:.12em;padding:10px 18px;white-space:nowrap;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.lp-toggle:hover{background:#141414;border-color:#5a5a5a;color:#fff}
+.lp-toggle[aria-pressed="true"]{background:#fff;border-color:#fff;color:#000}
+.lp-count-live{flex:0 0 auto;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:#8a8a86;font-variant-numeric:tabular-nums}
+.lp-empty{display:none;text-align:center;padding:clamp(60px,12vh,140px) var(--pad)}
+.lp-empty h3{font-size:clamp(22px,3.4vw,40px);letter-spacing:-.02em;text-transform:uppercase;margin:0}
+.lp-empty p{margin:16px auto 0;max-width:40ch;color:var(--lp-dim);font-size:15px}
+.lp.is-empty .lp-empty{display:block}
+.lp.is-filtering .lp-doc{display:none}
+.lp.is-filtering .lp-nav-inner a.dim{opacity:.3}
+
+/* back to top — the page is long enough to earn one */
+.lp-top{position:fixed;right:22px;bottom:22px;z-index:95;opacity:0;pointer-events:none;
+  transform:translateY(8px);transition:opacity .3s var(--ease),transform .3s var(--ease);
+  background:#fff;color:#000;border:0;border-radius:100px;cursor:pointer;font-family:inherit;
+  font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:13px 20px}
+.lp-top.show{opacity:1;pointer-events:auto;transform:none}
+
+.lp :focus-visible,.lp-tools :focus-visible,.lp-nav :focus-visible{outline:2px solid #fff;outline-offset:3px}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* Once filtering starts, stop hiding things behind the scroll reveal — a match
+   that has never been scrolled past would otherwise come back as an empty slot.
+   The transition is killed too, so results appear instantly instead of fading
+   in over .9s, which would read as lag while typing. */
+.lp.no-anim .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+
 /* sticky section nav — same behaviour language as the site's other jump bars */
-.lp-nav{position:sticky;top:56px;z-index:90;padding:11px var(--pad);box-sizing:border-box;
+.lp-nav{position:sticky;top:110px;z-index:90;padding:11px var(--pad);box-sizing:border-box;
   background:rgba(0,0,0,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
 .lp-nav-inner{--fade:32px;max-width:1200px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;
@@ -351,9 +400,10 @@ NAV_JS = """
   function setActive(el) {
     if (el === current) return;
     current = el;
-    links.forEach(function (a) { a.classList.remove('active'); });
+    links.forEach(function (a) { a.classList.remove('active'); a.removeAttribute('aria-current'); });
     if (!el) return;
     el.classList.add('active');
+    el.setAttribute('aria-current', 'true');
     if (down) return;
     var r = el.getBoundingClientRect(), b = bar.getBoundingClientRect();
     if (r.left < b.left + 8 || r.right > b.right - 8) {
@@ -377,6 +427,101 @@ NAV_JS = """
   }
   window.addEventListener('scroll', spy, { passive: true });
   spy();
+
+  /* ---- filter ------------------------------------------------------
+     355 tricks is a search problem. Match on the card's own text plus its
+     group heading and section title, so "drums" finds the Drummer section
+     even when the word is not in the card itself. */
+  var page = document.querySelector('.lp');
+  var input = document.getElementById('lp-q');
+  var gcBtn = document.getElementById('lp-gc');
+  var countEl = document.getElementById('lp-count');
+  var emptyEl = document.querySelector('.lp-empty');
+  if (!input || !page) return;
+
+  var cards = Array.prototype.slice.call(page.querySelectorAll('.lp-tip'));
+  var total = cards.length;
+  cards.forEach(function (c) {
+    var block = c.closest('.lp-block');
+    var group = c.closest('.lp-group');
+    c._t = [
+      c.textContent,
+      group ? group.querySelector('h3').textContent : '',
+      block ? block.querySelector('h2').textContent : ''
+    ].join(' ').toLowerCase().replace(/\\s+/g, ' ');
+  });
+  var groups = Array.prototype.slice.call(page.querySelectorAll('.lp-group'));
+  var sections = Array.prototype.slice.call(page.querySelectorAll('.lp-block:not(.lp-doc)'));
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var gcOnly = gcBtn.getAttribute('aria-pressed') === 'true';
+    var filtering = !!q || gcOnly;
+    page.classList.toggle('is-filtering', filtering);
+    if (filtering) page.classList.add('no-anim');
+
+    var shown = 0;
+    cards.forEach(function (c) {
+      var ok = (!q || c._t.indexOf(q) !== -1) && (!gcOnly || c.classList.contains('is-key'));
+      c.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    groups.forEach(function (g) {
+      var any = g.querySelector('.lp-tip:not([style*="none"])');
+      g.style.display = any ? '' : 'none';
+    });
+    sections.forEach(function (s) {
+      var any = s.querySelector('.lp-tip:not([style*="none"])');
+      s.style.display = any ? '' : 'none';
+      var link = bar.querySelector('a[href="#' + s.id + '"]');
+      if (link) link.classList.toggle('dim', !any);
+    });
+
+    page.classList.toggle('is-empty', filtering && shown === 0);
+    countEl.textContent = filtering ? shown + ' of ' + total + ' tricks' : total + ' tricks';
+    if (emptyEl) emptyEl.hidden = !(filtering && shown === 0);
+  }
+
+  var t;
+  input.addEventListener('input', function () {
+    clearTimeout(t);
+    t = setTimeout(apply, 90);
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { input.value = ''; apply(); input.blur(); }
+  });
+  gcBtn.addEventListener('click', function () {
+    gcBtn.setAttribute('aria-pressed',
+      gcBtn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    apply();
+  });
+  // "/" focuses search — fitting for a book about key commands
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+    var el = document.activeElement, tag = el && el.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || (el && el.isContentEditable)) return;
+    e.preventDefault();
+    input.focus();
+    input.select();
+  });
+
+  /* ---- back to top ---- */
+  var top = document.querySelector('.lp-top');
+  if (top) {
+    top.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      input.blur();
+    });
+    var tick = false;
+    window.addEventListener('scroll', function () {
+      if (tick) return;
+      tick = true;
+      requestAnimationFrame(function () {
+        tick = false;
+        top.classList.toggle('show', window.scrollY > 1400);
+      });
+    }, { passive: true });
+  }
 })();
 </script>
 """
@@ -385,6 +530,21 @@ NAV_JS = """
 def main():
     front, sections = load()
     total = count_tips(sections)
+
+    tools = [
+        '<div class="lp-tools">',
+        '<div class="lp-tools-inner">',
+        '<div class="lp-search" role="search">',
+        '<label class="visually-hidden" for="lp-q">Search the tricks</label>',
+        '<input id="lp-q" type="search" autocomplete="off" spellcheck="false" '
+        'placeholder="Search 355 tricks — try marquee, flex, bounce">',
+        "<kbd>/</kbd>",
+        "</div>",
+        '<button class="lp-toggle" type="button" id="lp-gc" aria-pressed="false">'
+        "Game changers</button>",
+        f'<p class="lp-count-live" id="lp-count" aria-live="polite">{total} tricks</p>',
+        "</div></div>",
+    ]
 
     nav = ['<nav class="lp-nav" aria-label="Sections"><div class="lp-nav-inner">']
     for p in front["pages"]:
@@ -408,7 +568,11 @@ def main():
             f'<div class="lp-cta reveal d3"><a class="pill" href="{PDF_HREF}" download>'
             'Download the PDF</a></div>',
             "</div>"]
+    body += tools
     body += nav
+    body.append('<div class="lp-empty"><h3>No tricks match that.</h3>'
+                '<p>Try a shorter word, a key command like &#8984;T, or clear the search '
+                'to browse all 19 sections.</p></div>')
     body.append('<div class="lp-body">')
     for p in front["pages"]:
         body.append(front_block(p))
@@ -426,6 +590,7 @@ def main():
                 'Download the PDF</a></div></div>')
     body.append("</section>")
 
+    body.append('<button class="lp-top" type="button">Back to top</button>')
     body.append(FOOTER)
     body.append(NAV_JS)
     body.append("</body>\n</html>\n")
