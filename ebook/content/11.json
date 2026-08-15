@@ -6,7 +6,7 @@
     {
       "heading": "The basics done right",
       "tips": [
-        { "t": "Open the Step Sequencer with B on any region", "d": "Select an empty area on a drum or instrument track and create a pattern region. The grid opens in the editor pane.", "b": "GOLDEN NUGGET" },
+        { "t": "Create a Pattern Region to open the Step Sequencer", "d": "Right‑click an empty area on a drum or instrument track and choose Create Pattern Region. The grid opens in the editor pane below — press E to show and hide it while you work.", "k": "E", "b": "GOLDEN NUGGET" },
         { "t": "Give every row a different step rate", "d": "Click a row's edit button and change its subdivision. Hi‑hats at 1/16 against a kick at 1/8 against a perc at 1/12 creates polyrhythms with no effort at all.", "b": "GOLDEN NUGGET" },
         { "t": "Set different pattern lengths per row", "d": "A 16‑step kick against a 15‑step hi‑hat takes 240 steps to repeat. This is how you get a loop that never sounds looped." },
         { "t": "Use the row's Playback Mode for variation", "d": "Forward, Reverse, Ping‑Pong and Random per row. Set the hats to Random and the pattern changes every bar on its own." },

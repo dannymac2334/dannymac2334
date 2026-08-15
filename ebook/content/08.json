@@ -6,43 +6,115 @@
     {
       "heading": "Comping takes",
       "tips": [
-        { "t": "Swipe across the take you want with the pointer", "d": "Inside a take folder, simply drag across the part of a take you want to hear. Logic builds the comp automatically and crossfades the joins for you.", "b": "GOLDEN NUGGET" },
-        { "t": "Use ⌃ plus a number key to switch takes instantly", "d": "Auditioning take 3 against take 7 becomes two keypresses instead of a menu dive.", "k": "⌃ + 1–9" },
-        { "t": "Save your comp as a new comp before changing it", "d": "The take folder menu has “Duplicate Comp”. Do this before every significant change and you can always go back to the version that was working." },
-        { "t": "Flatten only when you are certain", "d": "Take Folder > Flatten turns the comp into regions. Flatten and Merge creates a single continuous file. Neither is reversible after the project is closed, so keep the folder as long as you can." },
-        { "t": "Zoom in on the joins and check them", "d": "Every comp point is a potential click. Zoom right in on each transition and confirm the crossfade sits in a gap, not on a consonant." },
-        { "t": "Move a comp edit point without redoing the comp", "d": "Drag the vertical divider between two take sections to slide the edit point earlier or later." }
+        {
+          "t": "Swipe across the take you want with the pointer",
+          "d": "Inside a take folder, simply drag across the part of a take you want to hear. Logic builds the comp automatically and crossfades the joins for you.",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Use ⌃ plus a number key to switch takes instantly",
+          "d": "Each take in a take folder can be selected directly from the folder's header menu, and the take‑switching commands live under “Take Folder” in Key Commands. Put the first three on keys and auditioning take 3 against take 7 becomes two keypresses.",
+          "k": "⌥K to assign"
+        },
+        {
+          "t": "Save your comp as a new comp before changing it",
+          "d": "The take folder menu has “Duplicate Comp”. Do this before every significant change and you can always go back to the version that was working."
+        },
+        {
+          "t": "Flatten only when you are certain",
+          "d": "Take Folder > Flatten turns the comp into regions. Flatten and Merge creates a single continuous file. Neither is reversible after the project is closed, so keep the folder as long as you can."
+        },
+        {
+          "t": "Zoom in on the joins and check them",
+          "d": "Every comp point is a potential click. Zoom right in on each transition and confirm the crossfade sits in a gap, not on a consonant."
+        },
+        {
+          "t": "Move a comp edit point without redoing the comp",
+          "d": "Drag the vertical divider between two take sections to slide the edit point earlier or later."
+        }
       ]
     },
     {
       "heading": "Fades and clicks",
       "tips": [
-        { "t": "⌃⌥⌘F applies a crossfade to selected region boundaries", "d": "Or set the Fade tool as your secondary tool and drag across any edge. Fades kill clicks, and every audio edit needs one." },
-        { "t": "Set default fade lengths in the Region inspector", "d": "Type a fade‑in and fade‑out value once, select all your regions, and apply it to everything at once." },
-        { "t": "Change fade curves by ⌃‑dragging on the fade", "d": "An S‑curve on a vocal edit sounds far more natural than a straight line.", "k": "⌃ + drag" },
-        { "t": "Use “Remove Silence from Audio Region” for noisy tracks", "d": "In the Audio menu, this strips everything below a threshold you set and leaves separate regions. Great for cleaning up a live drum kit or a spoken word track.", "b": "GOLDEN NUGGET" },
-        { "t": "Add a tiny fade to the start of every region as policy", "d": "Even 3 ms removes the click from a non‑zero‑crossing start. Do it to everything and you never chase a mystery click again." }
+        {
+          "t": "Crossfade every edit point, without exception",
+          "d": "Set the Fade tool as your secondary tool and drag across any region edge, or select the boundary and use Functions > Fades > Crossfade. Fades kill clicks, and every audio edit needs one."
+        },
+        {
+          "t": "Set default fade lengths in the Region inspector",
+          "d": "Type a fade‑in and fade‑out value once, select all your regions, and apply it to everything at once."
+        },
+        {
+          "t": "Change fade curves by ⌃‑dragging on the fade",
+          "d": "An S‑curve on a vocal edit sounds far more natural than a straight line.",
+          "k": "⌃ + drag"
+        },
+        {
+          "t": "Use “Remove Silence from Audio Region” for noisy tracks",
+          "d": "In the Audio menu, this strips everything below a threshold you set and leaves separate regions. Great for cleaning up a live drum kit or a spoken word track.",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Add a tiny fade to the start of every region as policy",
+          "d": "Even 3 ms removes the click from a non‑zero‑crossing start. Do it to everything and you never chase a mystery click again."
+        }
       ]
     },
     {
       "heading": "Timing and pitch",
       "tips": [
-        { "t": "Flex Time is one keystroke away", "d": "Press ⌘F to show Flex, choose an algorithm in the track header, and drag transient markers to fix timing without cutting anything.", "k": "⌘F", "b": "GOLDEN NUGGET" },
-        { "t": "Pick the right Flex algorithm or it will sound wrong", "d": "Slicing for drums, Rhythmic for guitars and loops, Monophonic for single voices and bass, Polyphonic for chords and full mixes, Speed for tape‑style stretching." },
-        { "t": "Add flex markers either side before you move one", "d": "Placing anchor markers on the neighbouring transients stops your edit from stretching the whole bar." },
-        { "t": "Quantise audio with Flex enabled", "d": "With Flex on, the region's Quantize field in the inspector works on audio exactly like MIDI. Drums snap to the grid without a single cut." },
-        { "t": "Use Flex Pitch to fix a single flat note", "d": "Switch the track's Flex mode to Flex Pitch, then drag the note blob vertically. The gain, vibrato, pitch drift and formant handles are all on the same blob." },
-        { "t": "Reset a bad Flex edit rather than undoing repeatedly", "d": "The Flex track header has a Reset command that clears all flex data for the track and starts you fresh." }
+        {
+          "t": "Flex Time is one keystroke away",
+          "d": "Press ⌘F to show Flex, choose an algorithm in the track header, and drag transient markers to fix timing without cutting anything.",
+          "k": "⌘F",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Pick the right Flex algorithm or it will sound wrong",
+          "d": "Slicing for drums, Rhythmic for guitars and loops, Monophonic for single voices and bass, Polyphonic for chords and full mixes, Speed for tape‑style stretching."
+        },
+        {
+          "t": "Add flex markers either side before you move one",
+          "d": "Placing anchor markers on the neighbouring transients stops your edit from stretching the whole bar."
+        },
+        {
+          "t": "Quantise audio with Flex enabled",
+          "d": "With Flex on, the region's Quantize field in the inspector works on audio exactly like MIDI. Drums snap to the grid without a single cut."
+        },
+        {
+          "t": "Use Flex Pitch to fix a single flat note",
+          "d": "Switch the track's Flex mode to Flex Pitch, then drag the note blob vertically. The gain, vibrato, pitch drift and formant handles are all on the same blob."
+        },
+        {
+          "t": "Reset a bad Flex edit rather than undoing repeatedly",
+          "d": "The Flex track header has a Reset command that clears all flex data for the track and starts you fresh."
+        }
       ]
     },
     {
       "heading": "Destructive and file‑level editing",
       "tips": [
-        { "t": "Use the Audio File Editor for true destructive edits", "d": "Double‑click a region and switch to the File tab. Silence, reverse, normalise and pencil‑edit at the sample level. Changes here affect the file itself." },
-        { "t": "Normalise regions non‑destructively with Gain", "d": "The Region inspector's Gain parameter changes playback level without touching the file. Always try this before normalising." },
-        { "t": "Strip silence at the file level to reclaim disk space", "d": "After comping, Project > Clean Up removes unused portions of audio files. Back up first — this is genuinely destructive." },
-        { "t": "Reverse a region for a riser in two clicks", "d": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version." },
-        { "t": "Convert a region to a new audio file to lock in edits", "d": "Audio > Convert Regions to New Audio Files (⌥⌘F) prints your gain, fades and flex to a fresh file, which keeps big sessions responsive." }
+        {
+          "t": "Use the Audio File Editor for true destructive edits",
+          "d": "Double‑click a region and switch to the File tab. Silence, reverse, normalise and pencil‑edit at the sample level. Changes here affect the file itself."
+        },
+        {
+          "t": "Normalise regions non‑destructively with Gain",
+          "d": "The Region inspector's Gain parameter changes playback level without touching the file. Always try this before normalising."
+        },
+        {
+          "t": "Strip silence at the file level to reclaim disk space",
+          "d": "After comping, Project > Clean Up removes unused portions of audio files. Back up first — this is genuinely destructive."
+        },
+        {
+          "t": "Reverse a region for a riser in two clicks",
+          "d": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version."
+        },
+        {
+          "t": "Convert a region to a new audio file to lock in edits",
+          "d": "Audio File > Convert Regions to New Audio Files prints your gain, fades and flex to a fresh file, which keeps big sessions responsive."
+        }
       ]
     }
   ]

@@ -6,14 +6,45 @@
     {
       "heading": "Getting around",
       "tips": [
-        { "t": "Z is the only zoom command you need", "d": "Select anything and press Z to zoom that selection to fill the window. Press Z again to return to where you were. With nothing selected it fits the whole project.", "k": "Z", "b": "GOLDEN NUGGET" },
-        { "t": "Drag‑zoom to any area with ⌃⌥", "d": "Hold ⌃⌥ and drag a box around any part of the arrangement to zoom straight to it. Hold ⌃⌥ and click empty space to zoom back out.", "k": "⌃⌥ + drag" },
-        { "t": "Navigate by marker with the number keys", "d": "Markers 1 through 9 are jumpable directly. Set your song sections as markers and the whole arrangement is one keypress away." },
-        { "t": "Assign a key to “Play Selection”", "d": "It plays the selected region from its start and stops at its end without touching the locators or the position you were working at. Search the command name in Key Commands and give it a key — it is not on one by default.", "k": "⌥K to assign" },
-        { "t": "Jump to an exact bar with the Go to Position dialog", "d": "Press / and type a bar number. Faster and more accurate than dragging the playhead, especially in a long project.", "k": "/" },
-        { "t": "Scroll horizontally without the scrollbar", "d": "Two‑finger swipe left and right on a trackpad, or hold ⇧ while scrolling with a wheel mouse. Keep your hand off the scrollbar entirely." },
-        { "t": "Use the Cycle area as a bookmark", "d": "Set the locators around the part you are working on with U. Even when you play elsewhere, ⌘U or clicking the cycle bar takes you straight back to it.", "k": "U" },
-        { "t": "Toggle Catch to stop the screen running away", "d": "The Catch button makes the view follow the playhead. Turn it off with ⌃⇧C when you are doing detailed editing and the view will hold still while the song plays.", "k": "⌃⇧C" }
+        {
+          "t": "Z is the only zoom command you need",
+          "d": "Select anything and press Z to zoom that selection to fill the window. Press Z again to return to where you were. With nothing selected it fits the whole project.",
+          "k": "Z",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Drag‑zoom to any area with ⌃⌥",
+          "d": "Hold ⌃⌥ and drag a box around any part of the arrangement to zoom straight to it. Hold ⌃⌥ and click empty space to zoom back out.",
+          "k": "⌃⌥ + drag"
+        },
+        {
+          "t": "Navigate by marker with the number keys",
+          "d": "Markers 1 through 9 are jumpable directly. Set your song sections as markers and the whole arrangement is one keypress away."
+        },
+        {
+          "t": "Assign a key to “Play Selection”",
+          "d": "It plays the selected region from its start and stops at its end without touching the locators or the position you were working at. Search the command name in Key Commands and give it a key — it is not on one by default.",
+          "k": "⌥K to assign"
+        },
+        {
+          "t": "Jump to an exact bar with the Go to Position dialog",
+          "d": "Press / and type a bar number. Faster and more accurate than dragging the playhead, especially in a long project.",
+          "k": "/"
+        },
+        {
+          "t": "Scroll horizontally without the scrollbar",
+          "d": "Two‑finger swipe left and right on a trackpad, or hold ⇧ while scrolling with a wheel mouse. Keep your hand off the scrollbar entirely."
+        },
+        {
+          "t": "Use the Cycle area as a bookmark",
+          "d": "Set the locators around the part you are working on with U. Even when you play elsewhere, clicking the cycle bar in the ruler takes you straight back to it.",
+          "k": "U"
+        },
+        {
+          "t": "Toggle Catch to stop the screen running away",
+          "d": "The Catch button makes the view follow the playhead. Click it off when you are doing detailed editing and the view will hold still while the song plays. Search “Catch Playhead Position” in Key Commands to put it on a key.",
+          "k": "⌥K to assign"
+        }
       ]
     }
   ]

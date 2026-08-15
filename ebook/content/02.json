@@ -6,34 +6,102 @@
     {
       "heading": "Moving time, not regions",
       "tips": [
-        { "t": "Use the Arrangement track to move whole sections", "d": "Open Global Tracks with G, enable the Arrangement track, and drop markers on your Verse, Chorus and Bridge. Now drag the Chorus marker and the entire section — every track, every automation point — moves with it.", "k": "G", "b": "GOLDEN NUGGET" },
-        { "t": "Drag an arrangement marker onto another to swap sections", "d": "Dropping a Chorus marker on top of a Verse marker swaps their positions rather than overwriting. Trying three different song orders takes about fifteen seconds." },
-        { "t": "⌥‑drag an arrangement marker to duplicate a section", "d": "Hold ⌥ and drag any arrangement marker to copy that entire section, contents and all, to a new point in the timeline.", "k": "⌥ + drag" },
-        { "t": "Delete a section and close the gap in one move", "d": "Right‑click an arrangement marker and choose Delete to remove the marker only, or Delete and Move to pull everything after it back and close the hole." },
-        { "t": "Insert silence across the whole project", "d": "Set the locators, then Edit > Cut/Insert Time > Insert Silence at Locators. Every track and every automation point shifts. This is how you add two bars to an intro without wrecking the mix." },
-        { "t": "Snap arrangement markers to your actual section boundaries", "d": "Select a region that spans exactly one section, hit U to set the locators to it, then create the arrangement marker. It lands perfectly instead of approximately.", "k": "U" }
+        {
+          "t": "Use the Arrangement track to move whole sections",
+          "d": "Open Global Tracks with G, enable the Arrangement track, and drop markers on your Verse, Chorus and Bridge. Now drag the Chorus marker and the entire section — every track, every automation point — moves with it.",
+          "k": "G",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Drag an arrangement marker onto another to swap sections",
+          "d": "Dropping a Chorus marker on top of a Verse marker swaps their positions rather than overwriting. Trying three different song orders takes about fifteen seconds."
+        },
+        {
+          "t": "⌥‑drag an arrangement marker to duplicate a section",
+          "d": "Hold ⌥ and drag any arrangement marker to copy that entire section, contents and all, to a new point in the timeline.",
+          "k": "⌥ + drag"
+        },
+        {
+          "t": "Delete a section and close the gap in one move",
+          "d": "Right‑click an arrangement marker and choose Delete to remove the marker only, or Delete and Move to pull everything after it back and close the hole."
+        },
+        {
+          "t": "Insert silence across the whole project",
+          "d": "Set the locators, then Edit > Cut/Insert Time > Insert Silence at Locators. Every track and every automation point shifts. This is how you add two bars to an intro without wrecking the mix."
+        },
+        {
+          "t": "Snap arrangement markers to your actual section boundaries",
+          "d": "Select a region that spans exactly one section, hit U to set the locators to it, then create the arrangement marker. It lands perfectly instead of approximately.",
+          "k": "U"
+        }
       ]
     },
     {
       "heading": "Building and duplicating",
       "tips": [
-        { "t": "Repeat regions numerically instead of dragging", "d": "Select regions and hit ⌘R for a single repeat, or use Edit > Repeat Regions to type an exact number of copies and choose whether they land as copies or aliases.", "k": "⌘R" },
-        { "t": "Loop a region instead of copying it", "d": "Grab the top‑right corner of a region and drag right to loop it. Looped regions update everywhere when you edit the original, and they cost nothing to change.", "k": "L" },
-        { "t": "Convert loops to real regions only at the very end", "d": "Region > Loops > Convert Loops to Real Copies. Stay looped as long as possible so a single edit propagates, then commit when the arrangement is locked." },
-        { "t": "Use aliases for parts that must stay identical", "d": "⌥⇧‑drag a MIDI region to create an alias. Edit the parent and every alias follows. Perfect for doubled parts across a whole song.", "k": "⌥⇧ + drag" },
-        { "t": "Make a folder out of a section", "d": "Select every region in a section and hit ⌘⇧F to pack them into a folder. The arrangement collapses to one block you can move, copy and mute as a unit.", "k": "⌘⇧F" },
-        { "t": "Colour‑code sections, not instruments", "d": "Open the colour palette with ⌥C and give every chorus the same colour across all tracks. You can then read the arrangement at a glance from fully zoomed out.", "k": "⌥C", "b": "GOLDEN NUGGET" }
+        {
+          "t": "Repeat regions numerically instead of dragging",
+          "d": "Select regions and hit ⌘R for a single repeat, or use Edit > Repeat Regions to type an exact number of copies and choose whether they land as copies or aliases.",
+          "k": "⌘R"
+        },
+        {
+          "t": "Loop a region instead of copying it",
+          "d": "Grab the top‑right corner of a region and drag right to loop it. Looped regions update everywhere when you edit the original, and they cost nothing to change.",
+          "k": "L"
+        },
+        {
+          "t": "Convert loops to real regions only at the very end",
+          "d": "Region > Loops > Convert Loops to Real Copies. Stay looped as long as possible so a single edit propagates, then commit when the arrangement is locked."
+        },
+        {
+          "t": "Use aliases for parts that must stay identical",
+          "d": "⌥⇧‑drag a MIDI region to create an alias. Edit the parent and every alias follows. Perfect for doubled parts across a whole song.",
+          "k": "⌥⇧ + drag"
+        },
+        {
+          "t": "Make a folder out of a section",
+          "d": "Select every region in a section and use Functions > Folder > Pack Folder. The arrangement collapses to one block you can move, copy and mute as a unit."
+        },
+        {
+          "t": "Colour‑code sections, not instruments",
+          "d": "Open the colour palette with ⌥C and give every chorus the same colour across all tracks. You can then read the arrangement at a glance from fully zoomed out.",
+          "k": "⌥C",
+          "b": "GOLDEN NUGGET"
+        }
       ]
     },
     {
       "heading": "Judging the arrangement",
       "tips": [
-        { "t": "Zoom all the way out and squint", "d": "Hit Z with nothing selected to fit the whole project on screen. If the energy shape of the song is not visible from the region blocks alone, the arrangement is probably flat.", "k": "Z" },
-        { "t": "Use Track Stacks to collapse instrument families", "d": "Select related tracks and hit ⌘⇧D to create a Summing Stack. Drums become one lane, and the arrangement becomes readable.", "k": "⌘⇧D" },
-        { "t": "Solo an arrangement section with the locators", "d": "Click an arrangement marker to set the locators to that section instantly, then hit C. You are now looping exactly that section with zero dragging.", "k": "C" },
-        { "t": "Mute regions instead of deleting them while experimenting", "d": "Click a region with the Mute tool, or select and press M. Arrangement experiments become reversible without touching undo.", "k": "M" },
-        { "t": "Keep a “graveyard” track at the bottom", "d": "Make one muted, hidden track and drag every rejected idea onto it. Nothing is ever deleted, and the good version of that rejected idea is there when you need it three weeks later.", "b": "GOLDEN NUGGET" },
-        { "t": "Use markers for notes to self, not just sections", "d": "Create a marker with ⌥' and rename it “fix snare here” or “vocal comp needed”. Your to‑do list lives on the timeline instead of on paper.", "k": "⌥'" }
+        {
+          "t": "Zoom all the way out and squint",
+          "d": "Hit Z with nothing selected to fit the whole project on screen. If the energy shape of the song is not visible from the region blocks alone, the arrangement is probably flat.",
+          "k": "Z"
+        },
+        {
+          "t": "Use Track Stacks to collapse instrument families",
+          "d": "Select related tracks and hit ⌘⇧D to create a Summing Stack. Drums become one lane, and the arrangement becomes readable.",
+          "k": "⌘⇧D"
+        },
+        {
+          "t": "Solo an arrangement section with the locators",
+          "d": "Click an arrangement marker to set the locators to that section instantly, then hit C. You are now looping exactly that section with zero dragging.",
+          "k": "C"
+        },
+        {
+          "t": "Mute regions instead of deleting them while experimenting",
+          "d": "Click a region with the Mute tool, or select and press M. Arrangement experiments become reversible without touching undo.",
+          "k": "M"
+        },
+        {
+          "t": "Keep a “graveyard” track at the bottom",
+          "d": "Make one muted, hidden track and drag every rejected idea onto it. Nothing is ever deleted, and the good version of that rejected idea is there when you need it three weeks later.",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Use markers for notes to self, not just sections",
+          "d": "Create a marker from the Global Tracks marker lane, then rename it “fix snare here” or “vocal comp needed”. Your to‑do list lives on the timeline instead of on paper."
+        }
       ]
     }
   ]

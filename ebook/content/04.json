@@ -7,8 +7,8 @@
       "heading": "Capture without a keyboard",
       "tips": [
         { "t": "Musical Typing turns your laptop into a synth", "d": "⌘K opens a playable keyboard mapped to your QWERTY keys. Z and X shift octaves, C and V shift velocity, and the tab key holds sustain. No controller required.", "k": "⌘K", "b": "GOLDEN NUGGET" },
-        { "t": "Capture the last thing you played, even when not recording", "d": "If you played something great while the transport was rolling but not recording, hit ⌃⌘⌥R — Capture Recording — and Logic writes it to a region retroactively. This has saved more ideas than any other command in the program.", "k": "⌃⌘⌥R", "b": "GOLDEN NUGGET" },
-        { "t": "Record MIDI while the transport is stopped", "d": "Logic's MIDI buffer is always listening. Even with the transport parked, Capture Recording will grab what you just played." },
+        { "t": "Capture the last thing you played, even when not recording", "d": "If you played something great while the transport was rolling but not recording, hit ⇧R — Flashback Capture — and Logic writes it to a region retroactively. This has saved more ideas than any other command in the program.", "k": "⇧R", "b": "GOLDEN NUGGET" },
+        { "t": "Record MIDI while the transport is stopped", "d": "Logic's MIDI buffer is always listening. Even with the transport parked, Flashback Capture will grab what you just played — notes and controller moves both.", "k": "⇧R" },
         { "t": "Use the Step Input Keyboard for parts you cannot play", "d": "Open it from the Piano Roll and enter notes one at a time at an exact rhythmic value. Complex parts get entered accurately without a single quantise pass." },
         { "t": "Draw notes with the Pencil tool and ⌘‑click to remove", "d": "In the Piano Roll, the Pencil creates notes at the current division. ⌥‑drag any note you drew to duplicate it at the same pitch." },
         { "t": "Set the input velocity manually for drawn notes", "d": "In the Piano Roll's local inspector, set the velocity that new notes are created at. Draw hi‑hats at 70 and kicks at 120 without editing afterwards." }

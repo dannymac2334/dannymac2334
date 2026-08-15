@@ -73,9 +73,9 @@
     {
       "heading": "Flashback Capture and workflow additions",
       "tips": [
-        { "t": "Flashback Capture retrieves what you just played", "d": "The dedicated button in the control bar grabs the MIDI you performed even though you were not recording. It is Capture Recording made permanent and visible.", "b": "GOLDEN NUGGET" },
-        { "t": "Assign Flashback Capture a key command and never lose an idea", "d": "The whole value of the feature is that it is available without thinking. Put it under a finger.", "k": "⌥K to assign" },
-        { "t": "It works while the transport is stopped", "d": "Noodling with the song not playing is exactly when the good ideas arrive. Flashback Capture catches those too." },
+        { "t": "Flashback Capture retrieves what you just played", "d": "The dedicated button in the control bar — or ⇧R — grabs the MIDI you performed even though you were not recording. A region appears at the playhead containing the performance.", "k": "⇧R", "b": "GOLDEN NUGGET" },
+        { "t": "⇧R is already on the keyboard, so build the reflex", "d": "The whole value of the feature is that it costs nothing to reach for. Hit it the moment you play something you like, before you have decided whether it was any good.", "k": "⇧R" },
+        { "t": "It works while the transport is stopped", "d": "Noodling with the song not playing is exactly when the good ideas arrive. Flashback Capture catches those too, and it captures controller moves as well as notes." },
         { "t": "Use Mastering Assistant as an analysis tool, not a finisher", "d": "Run it, look at what it decided to do to your mix, then go and fix those things in the mix itself. Its EQ curve is a free critique of your master bus." },
         { "t": "Check plugin compatibility after updating", "d": "Major releases drop support for older plugin formats. Open your three most important old projects and check every insert before you rely on the new version." }
       ]

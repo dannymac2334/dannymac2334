@@ -6,36 +6,104 @@
     {
       "heading": "The two systems",
       "tips": [
-        { "t": "Know the difference between Track and Region automation", "d": "Press A to show automation, then use the dropdown in the track header to switch between Track (fixed to the timeline) and Region (travels with the region when you move it). Choosing wrong is why your automation ends up in the wrong place.", "k": "A", "b": "GOLDEN NUGGET" },
-        { "t": "Use Region automation for anything that belongs to the part", "d": "A filter sweep that is part of a synth riff should move with the riff. Region automation does that; track automation does not." },
-        { "t": "Convert between the two without redrawing", "d": "Right‑click in an automation lane and choose Move Visible Automation to Region, or the reverse. Nothing is lost." },
-        { "t": "Press A to toggle automation view", "d": "One key. Learn it and stop hunting for the button.", "k": "A" }
+        {
+          "t": "Know the difference between Track and Region automation",
+          "d": "Press A to show automation, then use the dropdown in the track header to switch between Track (fixed to the timeline) and Region (travels with the region when you move it). Choosing wrong is why your automation ends up in the wrong place.",
+          "k": "A",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Use Region automation for anything that belongs to the part",
+          "d": "A filter sweep that is part of a synth riff should move with the riff. Region automation does that; track automation does not."
+        },
+        {
+          "t": "Convert between the two without redrawing",
+          "d": "Right‑click in an automation lane and choose Move Visible Automation to Region, or the reverse. Nothing is lost."
+        },
+        {
+          "t": "Press A to toggle automation view",
+          "d": "One key. Learn it and stop hunting for the button.",
+          "k": "A"
+        }
       ]
     },
     {
       "heading": "Writing automation",
       "tips": [
-        { "t": "Use Latch mode for almost everything", "d": "Latch writes while you move the control and holds the last value when you let go. Touch snaps back, Write erases as it goes, and Read plays only. Latch is the right default.", "b": "GOLDEN NUGGET" },
-        { "t": "Never leave a track in Write mode", "d": "Write mode erases existing automation as the playhead passes, whether you touch the fader or not. It has destroyed more mixes than any other setting in Logic." },
-        { "t": "Draw automation with the Pencil tool for precision", "d": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes." },
-        { "t": "⌥‑click an automation point to delete it", "d": "Faster than selecting and deleting, and it works on curves too.", "k": "⌥ + click" },
-        { "t": "Curve any line by dragging its middle with ⌃⇧", "d": "Straight automation ramps sound mechanical. Curving them takes one drag and makes the move sound intentional.", "k": "⌃⇧ + drag" },
-        { "t": "Trim automation up or down as a group", "d": "In Trim mode, moving the fader shifts the entire existing automation curve up or down while preserving its shape. This is how you turn a whole automated vocal up by 1 dB." },
-        { "t": "Use Relative mode to layer a second pass", "d": "Relative automation sits on top of your existing pass as an offset, so you can add a ride without destroying the original moves." }
+        {
+          "t": "Use Latch mode for almost everything",
+          "d": "Latch writes while you move the control and holds the last value when you let go. Touch snaps back, Write erases as it goes, and Read plays only. Latch is the right default.",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Never leave a track in Write mode",
+          "d": "Write mode erases existing automation as the playhead passes, whether you touch the fader or not. It has destroyed more mixes than any other setting in Logic."
+        },
+        {
+          "t": "Draw automation with the Pencil tool for precision",
+          "d": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes."
+        },
+        {
+          "t": "⌥‑click an automation point to delete it",
+          "d": "Faster than selecting and deleting, and it works on curves too.",
+          "k": "⌥ + click"
+        },
+        {
+          "t": "Curve any line by dragging its middle with ⌃⇧",
+          "d": "Straight automation ramps sound mechanical. Curving them takes one drag and makes the move sound intentional.",
+          "k": "⌃⇧ + drag"
+        },
+        {
+          "t": "Trim automation up or down as a group",
+          "d": "In Trim mode, moving the fader shifts the entire existing automation curve up or down while preserving its shape. This is how you turn a whole automated vocal up by 1 dB."
+        },
+        {
+          "t": "Use Relative mode to layer a second pass",
+          "d": "Relative automation sits on top of your existing pass as an offset, so you can add a ride without destroying the original moves."
+        }
       ]
     },
     {
       "heading": "Editing and managing automation",
       "tips": [
-        { "t": "Marquee a range then drag the line to change only that section", "d": "The marquee creates boundary points automatically so the change does not bleed into the surrounding bars.", "k": "⌘ + drag", "b": "GOLDEN NUGGET" },
-        { "t": "Show every automated parameter at once", "d": "⌃A opens all automation lanes that contain data on the selected track. Instantly see everything you have written." },
-        { "t": "Copy automation between tracks", "d": "Select the automation with a marquee, copy, select the destination track, and paste. It lands at the same timeline position." },
-        { "t": "Delete all automation on a track in one command", "d": "Mix > Delete Automation > Delete All Automation on Selected Track. Also available for the whole project when you want to start clean." },
-        { "t": "Automation follows regions if you tell it to", "d": "In Settings > General > Editing, turn on “Move track automation with regions”. Now dragging a region takes its automation with it, which is what you almost always want." },
-        { "t": "Thin dense automation after recording a controller pass", "d": "Recording modwheel or a fader creates thousands of points. Select the range and use Mix > Delete Automation > Thin Automation to make it editable again." },
-        { "t": "Snap automation to the grid when it needs to be rhythmic", "d": "Automation obeys the same Snap setting as regions. Set it to 1/16 and your filter stabs land perfectly." },
-        { "t": "Automate plugin bypass for effect changes", "d": "Every plugin's bypass state is automatable. Automating a delay in and out is cleaner than automating its mix knob." },
-        { "t": "Automate send levels rather than plugin mix knobs", "d": "Sends give you a fader you can see on the mixer and a lane you can find later. Buried plugin mix knobs are neither." }
+        {
+          "t": "Marquee a range then drag the line to change only that section",
+          "d": "The marquee creates boundary points automatically so the change does not bleed into the surrounding bars.",
+          "k": "⌘ + drag",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Show every automated parameter at once",
+          "d": "Use Mix > Show Automation, or the disclosure arrow at the bottom of an open automation lane, to reveal every parameter on the track that already contains data. Instantly see everything you have written."
+        },
+        {
+          "t": "Copy automation between tracks",
+          "d": "Select the automation with a marquee, copy, select the destination track, and paste. It lands at the same timeline position."
+        },
+        {
+          "t": "Delete all automation on a track in one command",
+          "d": "Mix > Delete Automation > Delete All Automation on Selected Track. Also available for the whole project when you want to start clean."
+        },
+        {
+          "t": "Automation follows regions if you tell it to",
+          "d": "In Settings > General > Editing, turn on “Move track automation with regions”. Now dragging a region takes its automation with it, which is what you almost always want."
+        },
+        {
+          "t": "Thin dense automation after recording a controller pass",
+          "d": "Recording modwheel or a fader creates thousands of points. Select the range and use Mix > Delete Automation > Thin Automation to make it editable again."
+        },
+        {
+          "t": "Snap automation to the grid when it needs to be rhythmic",
+          "d": "Automation obeys the same Snap setting as regions. Set it to 1/16 and your filter stabs land perfectly."
+        },
+        {
+          "t": "Automate plugin bypass for effect changes",
+          "d": "Every plugin's bypass state is automatable. Automating a delay in and out is cleaner than automating its mix knob."
+        },
+        {
+          "t": "Automate send levels rather than plugin mix knobs",
+          "d": "Sends give you a fader you can see on the mixer and a lane you can find later. Buried plugin mix knobs are neither."
+        }
       ]
     }
   ]

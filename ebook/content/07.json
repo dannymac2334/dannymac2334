@@ -6,32 +6,91 @@
     {
       "heading": "Universal region commands",
       "tips": [
-        { "t": "⌘T splits every selected region at the playhead", "d": "Select multiple regions across multiple tracks and one keystroke cuts them all at the same point. This is how you chop a whole arrangement in one move.", "k": "⌘T", "b": "GOLDEN NUGGET" },
-        { "t": "⌘J joins regions back into one", "d": "Works on audio and MIDI. On audio it creates a new merged file; on MIDI it merges the events into a single region.", "k": "⌘J" },
-        { "t": "⌥‑drag copies, ⌥⇧‑drag makes an alias or clone", "d": "The single most useful modifier in the program, and it behaves consistently everywhere.", "k": "⌥ + drag" },
-        { "t": "⌘R repeats the selection once, instantly", "d": "For a numeric count, use Edit > Repeat Regions and type the number.", "k": "⌘R" },
-        { "t": "Trim to the playhead from either direction", "d": "⌃⌥⌘← and ⌃⌥⌘→ trim the region start or end to the playhead. No mouse precision needed." },
-        { "t": "Use the length fields in the Region inspector", "d": "Position, length and loop status are all typeable. When precision matters, stop dragging and start typing." }
+        {
+          "t": "⌘T splits every selected region at the playhead",
+          "d": "Select multiple regions across multiple tracks and one keystroke cuts them all at the same point. This is how you chop a whole arrangement in one move.",
+          "k": "⌘T",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "⌘J joins regions back into one",
+          "d": "Works on audio and MIDI. On audio it creates a new merged file; on MIDI it merges the events into a single region.",
+          "k": "⌘J"
+        },
+        {
+          "t": "⌥‑drag copies, ⌥⇧‑drag makes an alias or clone",
+          "d": "The single most useful modifier in the program, and it behaves consistently everywhere.",
+          "k": "⌥ + drag"
+        },
+        {
+          "t": "⌘R repeats the selection once, instantly",
+          "d": "For a numeric count, use Edit > Repeat Regions and type the number.",
+          "k": "⌘R"
+        },
+        {
+          "t": "Trim to the playhead from either direction",
+          "d": "Functions > Trim > Region Start to Playhead Position, and the matching End command, trim exactly to the playhead. Both are worth putting on keys in ⌥K — no mouse precision needed.",
+          "k": "⌥K to assign"
+        },
+        {
+          "t": "Use the length fields in the Region inspector",
+          "d": "Position, length and loop status are all typeable. When precision matters, stop dragging and start typing."
+        }
       ]
     },
     {
       "heading": "Snap, grid and precision",
       "tips": [
-        { "t": "Set Snap to Smart and leave it there", "d": "Smart snap adapts to your zoom level, so you get bar accuracy zoomed out and tick accuracy zoomed in, automatically.", "b": "GOLDEN NUGGET" },
-        { "t": "Hold ⌃ to temporarily override the grid", "d": "Any drag becomes free‑positioned while ⌃ is held. Release and snap comes back.", "k": "⌃ + drag" },
-        { "t": "Turn on “Snap Regions to Absolute Value”", "d": "In the Snap menu. Regions snap to the grid itself rather than preserving their offset from it. Turn it on for tidy work, off when you are moving a region that is deliberately off‑grid." },
-        { "t": "Use Nudge for repeatable movement", "d": "Set the nudge value in Edit > Move, then ⌥← and ⌥→ move anything by exactly that value, every time.", "k": "⌥← / ⌥→" }
+        {
+          "t": "Set Snap to Smart and leave it there",
+          "d": "Smart snap adapts to your zoom level, so you get bar accuracy zoomed out and tick accuracy zoomed in, automatically.",
+          "b": "GOLDEN NUGGET"
+        },
+        {
+          "t": "Hold ⌃ to temporarily override the grid",
+          "d": "Any drag becomes free‑positioned while ⌃ is held. Release and snap comes back.",
+          "k": "⌃ + drag"
+        },
+        {
+          "t": "Turn on “Snap Regions to Absolute Value”",
+          "d": "In the Snap menu. Regions snap to the grid itself rather than preserving their offset from it. Turn it on for tidy work, off when you are moving a region that is deliberately off‑grid."
+        },
+        {
+          "t": "Use Nudge for repeatable movement",
+          "d": "Set the nudge value in Edit > Move, then ⌥← and ⌥→ move anything by exactly that value, every time.",
+          "k": "⌥← / ⌥→"
+        }
       ]
     },
     {
       "heading": "Tools and selection",
       "tips": [
-        { "t": "Esc opens the tool menu, Esc twice returns to the pointer", "d": "Fastest tool switching in the program. Numbers 1–9 pick tools directly from the menu.", "k": "Esc" },
-        { "t": "⌘ is your secondary tool", "d": "Hold ⌘ to temporarily switch to your assigned secondary tool. It is Marquee by default, which is exactly right.", "k": "⌘" },
-        { "t": "Assign the Fade tool to ⌘ when doing audio cleanup", "d": "Set the secondary tool via the right‑hand tool menu, then every ⌘‑drag across a region edge creates a fade." },
-        { "t": "Use Select All Following on a Track", "d": "Edit > Select > All Following selects everything after the current selection on that track. Perfect for shifting the second half of a song.", "k": "⇧F" },
-        { "t": "Select equal or similar regions in one command", "d": "Edit > Select > Same Colour, Same Name or Equal Regions finds all matching regions across the project instantly." },
-        { "t": "Lock a region so you cannot move it by accident", "d": "Select the region and use Region > Lock SMPTE Position, or lock the whole track with the padlock in the track header." }
+        {
+          "t": "Esc opens the tool menu, Esc twice returns to the pointer",
+          "d": "Fastest tool switching in the program. Numbers 1–9 pick tools directly from the menu.",
+          "k": "Esc"
+        },
+        {
+          "t": "⌘ is your secondary tool",
+          "d": "Hold ⌘ to temporarily switch to your assigned secondary tool. It is Marquee by default, which is exactly right.",
+          "k": "⌘"
+        },
+        {
+          "t": "Assign the Fade tool to ⌘ when doing audio cleanup",
+          "d": "Set the secondary tool via the right‑hand tool menu, then every ⌘‑drag across a region edge creates a fade."
+        },
+        {
+          "t": "Use Select All Following on a Track",
+          "d": "Edit > Select > All Following selects everything after the current selection on that track. Perfect for shifting the second half of a song."
+        },
+        {
+          "t": "Select equal or similar regions in one command",
+          "d": "Edit > Select > Same Colour, Same Name or Equal Regions finds all matching regions across the project instantly."
+        },
+        {
+          "t": "Lock a region so you cannot move it by accident",
+          "d": "Select the region and use Region > Lock SMPTE Position, or lock the whole track with the padlock in the track header."
+        }
       ]
     }
   ]

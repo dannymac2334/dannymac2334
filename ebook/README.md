@@ -13,6 +13,7 @@ structured content files so the text and the design can be changed independently
 ## Building
 
 ```bash
+python3 validate.py                  # check accuracy and structure first
 python3 build.py                     # writes dist/logic-pro-crash-course.html
 
 # PDF (any Chromium build works; this is the path in the dev container)
@@ -79,6 +80,26 @@ in Python (`starburst()` / `squiggle()`) rather than hand-authored path data.
 
 The design commits to a single visual world, so it does not swap for dark mode — every
 colour, including `body`'s background, is painted explicitly so the page holds on any host.
+
+## Accuracy
+
+`validate.py` runs four checks and exits non-zero on failure, so it drops straight into CI:
+
+1. **Structural** — malformed JSON, missing fields, trick count below the 350 the cover promises.
+2. **Duplication** — the same trick written twice under a different section.
+3. **Contradiction** — one key command claimed for two different actions, which means at
+   least one of them is wrong.
+4. **Provenance** — any key command not present in the verified registry at the top of
+   `validate.py`, so a newly invented shortcut cannot reach the PDF unnoticed.
+
+The registry splits into `CONFIRMED` (checked against Apple's Logic Pro User Guide or two
+or more independent references) and `STANDARD` (long-standing factory defaults). Current
+state: 361 tricks, 58 distinct key commands, 0 failures, 0 warnings.
+
+Where a command could not be confirmed, the book gives the **exact command name and menu
+path** instead of asserting a keystroke — always correct, and still usable, since the reader
+can search that name in Key Commands (⌥K). Prefer that pattern over guessing when you add
+tricks.
 
 ## Known gap
 
