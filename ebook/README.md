@@ -8,7 +8,7 @@ structured content files so the text and the design can be changed independently
 | File | What it is |
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
-| `dist/logic-pro-crash-course.pdf` | The printable edition. A4, 94 pages, full-bleed black poster pages, paper body pages. |
+| `dist/logic-pro-crash-course.pdf` | **The deliverable.** A4, 94 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -20,8 +20,12 @@ python3 build.py                     # writes dist/logic-pro-crash-course.html
 /opt/pw-browsers/chromium-1194/chrome-linux/chrome \
   --headless --no-sandbox --disable-gpu --no-pdf-header-footer \
   --print-to-pdf=dist/logic-pro-crash-course.pdf \
-  --virtual-time-budget=25000 dist/logic-pro-crash-course.html
+  --virtual-time-budget=30000 dist/logic-pro-crash-course.html
+
+python3 finish_pdf.py                # bookmarks + metadata; makes the PDF standalone
 ```
+
+The HTML in `dist/` is the intermediate the PDF is printed from — the PDF is what ships.
 
 `build.py` prints a per-section trick count on every run, so a content change that drops
 the total below 350 is visible immediately.
