@@ -1,0 +1,36 @@
+{
+  "number": 15,
+  "title": "Mixer Tricks",
+  "intro": "The Mixer is where a collection of good parts becomes a record. These are the organisational and workflow tricks — the ones that stop a 60‑track session from becoming unmanageable.",
+  "groups": [
+    {
+      "heading": "Getting around the mixer",
+      "tips": [
+        { "t": "X toggles the Mixer, and it remembers your scroll position", "d": "Flip between arrangement and mixer constantly. It costs nothing.", "k": "X" },
+        { "t": "Use the Single view to see one channel and its full signal path", "d": "The Mixer's view buttons switch between All, Single and Tracks. Single shows the selected channel plus every bus it feeds — the fastest way to debug routing." },
+        { "t": "Filter the mixer by channel type", "d": "The buttons along the top of the Mixer show or hide audio, instrument, aux, bus, VCA and master channels. Hide everything but auxes when you are setting up sends." },
+        { "t": "⌥‑click any control to reset it to default", "d": "Faders to 0, pans to centre, sends to their default. Works on every control in the mixer.", "k": "⌥ + click", "b": "GOLDEN NUGGET" },
+        { "t": "⌥‑click a Solo or Mute to apply it everywhere", "d": "Instantly mute or unmute the entire mixer.", "k": "⌥ + click" }
+      ]
+    },
+    {
+      "heading": "Routing and organisation",
+      "tips": [
+        { "t": "Use VCA faders for level groups without changing routing", "d": "A VCA controls the faders of its member channels without summing them through a bus, so your existing routing and sends are untouched.", "b": "GOLDEN NUGGET" },
+        { "t": "Use Summing Stacks for processing groups", "d": "Select tracks and hit ⌘⇧D. Everything routes to one aux you can compress and EQ as a unit.", "k": "⌘⇧D" },
+        { "t": "Create a send and Logic makes the aux for you", "d": "Click any Send slot and choose an unused bus. The aux channel appears automatically, already receiving." },
+        { "t": "Set sends to pre‑fader for headphone mixes and effects that must stay constant", "d": "Right‑click a send to switch between pre and post fader. Post is right for reverb; pre is right for a cue mix." },
+        { "t": "Copy a whole channel strip with ⌥‑drag", "d": "Drag the channel strip settings area from one channel to another while holding ⌥ to copy every insert, send and setting.", "k": "⌥ + drag" },
+        { "t": "Colour your channels to match your regions", "d": "Mixer channels take the track colour. A consistent colour scheme means you find the vocal bus without reading a single label." }
+      ]
+    },
+    {
+      "heading": "Plugins in the mixer",
+      "tips": [
+        { "t": "⌥‑click an insert slot to see the plugin menu without loading", "d": "And ⇧‑click an insert to bypass it without opening it." },
+        { "t": "V hides every open plugin window at once", "d": "Press it again and they all come back exactly where they were. Essential on a laptop screen.", "k": "V", "b": "GOLDEN NUGGET" },
+        { "t": "Drag plugins between insert slots and between channels", "d": "Reorder your chain by dragging, and hold ⌥ while dragging to another channel to copy rather than move." }
+      ]
+    }
+  ]
+}

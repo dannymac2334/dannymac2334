@@ -1,0 +1,38 @@
+{
+  "number": 14,
+  "title": "Quick Sampler Tricks",
+  "intro": "Quick Sampler turns any sound into a playable instrument in about three seconds. It is the fastest route from “that noise is interesting” to “that noise is now a bassline”.",
+  "groups": [
+    {
+      "heading": "Loading and slicing",
+      "tips": [
+        { "t": "Drag any audio onto an empty track area while holding nothing", "d": "Logic offers to create a Quick Sampler instrument from it. You can drag from the Finder, the browser, or straight from another region in your project.", "b": "GOLDEN NUGGET" },
+        { "t": "Know the four modes and pick deliberately", "d": "Classic for straight playback, One Shot for drums and stabs, Slice to chop a loop across the keyboard, Recorder to sample live input. Choosing the mode is 90% of the work." },
+        { "t": "Use Slice mode with Transient detection on any break", "d": "Load a drum loop, switch to Slice, and every hit is mapped to its own key. Hit “Create MIDI” or drag the MIDI out and you have the original groove, fully rearrangeable.", "b": "GOLDEN NUGGET" },
+        { "t": "Change slice division to Beat or Division instead of Transient", "d": "For loops with soft transients, slicing at a fixed 1/8 or 1/16 gives cleaner results than transient detection." },
+        { "t": "Sample directly from your input with Recorder mode", "d": "Quick Sampler will record from a mic or a bus. Sample your own reverb tail, your own voice, or another track in the project." },
+        { "t": "Drag audio directly from the Tracks area into a loaded Quick Sampler", "d": "Replaces the sample while keeping every setting — your filter, envelope and effects stay exactly as dialled in." }
+      ]
+    },
+    {
+      "heading": "Shaping the sound",
+      "tips": [
+        { "t": "Use Flex/Follow Tempo to lock a loop to the project", "d": "Turn on Flex in Quick Sampler and the sample follows tempo changes without changing pitch." },
+        { "t": "Set the root key correctly or nothing will be in tune", "d": "Quick Sampler guesses the pitch. If your bass is a semitone out across the keyboard, this is why. Set it manually in the Pitch section." },
+        { "t": "Turn on Loop with crossfade for infinite sustain", "d": "Set the loop start and end in the sustain portion of the sample and add a crossfade. A one‑second sample becomes a pad you can hold forever.", "b": "GOLDEN NUGGET" },
+        { "t": "Use the Sample Start modulation for variation", "d": "Modulate sample start with velocity or randomness and each hit sounds slightly different, which stops sampled drums sounding machine‑gunned." },
+        { "t": "Reverse the sample for instant risers", "d": "One button in the waveform display. Reverse a crash, put it before the drop, done." },
+        { "t": "Use the Filter and its envelope, not an insert plugin", "d": "The internal filter is per‑voice, so it responds to every note independently. An insert filter processes the summed output and sounds completely different." }
+      ]
+    },
+    {
+      "heading": "Getting it into the arrangement",
+      "tips": [
+        { "t": "Drag MIDI out of Slice mode into the Tracks area", "d": "The generated MIDI plays the slices in the original order. Now shuffle the notes and the break rearranges itself.", "b": "GOLDEN NUGGET" },
+        { "t": "Convert Quick Sampler to Sampler for full control", "d": "Right‑click the plugin header and choose Convert to Sampler when you need multiple velocity layers, round robins or key zones." },
+        { "t": "Save your instrument as a patch immediately", "d": "Chopped a break you like? Save it to the Library before you close the project, or it exists only in that one session." },
+        { "t": "Use one Quick Sampler per element rather than one big kit", "d": "Separate instances mean separate channel strips, separate processing and separate automation. Disk space is free; flexibility is not." }
+      ]
+    }
+  ]
+}

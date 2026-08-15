@@ -1,0 +1,47 @@
+{
+  "number": 19,
+  "title": "Logic Pro 12 Update",
+  "intro": "A major Logic release is the one moment a working producer can genuinely lose a week. This section is the upgrade playbook — everything to do before, during and after — plus placeholder cards to fill in with the feature‑specific tricks for the exact build you are running.",
+  "notice": {
+    "title": "Editorial note — complete this section against your build",
+    "text": "The upgrade playbook below is evergreen and applies to every major Logic release. The feature‑specific cards at the end of this section are intentionally left as templates: version‑specific claims go stale the moment Apple ships a point update, so fill these in from the release notes for the exact version you are running rather than trusting a printed list. Every card marked ADD YOUR NOTES is a slot for you."
+  },
+  "groups": [
+    {
+      "heading": "Before you update",
+      "tips": [
+        { "t": "Never update in the middle of a paid project", "d": "The one rule that matters. Finish and deliver, then update. A new version halfway through a mix is a self‑inflicted deadline problem.", "b": "GOLDEN NUGGET" },
+        { "t": "Keep the previous version installed alongside the new one", "d": "Before updating, duplicate Logic Pro in your Applications folder and rename the copy with its version number. macOS will run both, and you have an instant fallback." },
+        { "t": "Back up your key commands, templates and channel strip settings", "d": "These live in your user Library, not in the app. Export key commands from the Key Commands window and copy your templates folder somewhere safe." },
+        { "t": "Consolidate and archive your three most important projects", "d": "Project > Consolidate on each, then copy them to a separate drive. If the new version changes something, you have untouched originals." },
+        { "t": "Check your critical third‑party plugins against the new version first", "d": "Plugin developers lag major DAW releases. Check their compatibility pages before you update, not after." },
+        { "t": "Note your current I/O and buffer settings", "d": "Major updates sometimes reset audio device preferences. A screenshot of your Audio settings takes five seconds and saves a confusing afternoon." },
+        { "t": "Update macOS and Logic separately, a week apart", "d": "If something breaks, you want to know which of the two did it." }
+      ]
+    },
+    {
+      "heading": "After you update",
+      "tips": [
+        { "t": "Open an old project and audit every insert", "d": "Look for greyed‑out or missing plugins on every channel. Do this before you assume everything migrated cleanly.", "b": "GOLDEN NUGGET" },
+        { "t": "Rebuild your templates rather than opening old ones", "d": "New versions add track types, settings and defaults that an old template will not have. Rebuilding takes an hour and you get every new default for free." },
+        { "t": "Re‑check Settings > Advanced and turn everything on again", "d": "Advanced Tools sometimes resets. If half the program has disappeared, this is the first place to look." },
+        { "t": "Read the new Key Commands list for additions", "d": "Open ⌥K and sort by command name. New features arrive with new commands, many of them unassigned by default.", "k": "⌥K" },
+        { "t": "Run the Sound Library update fully before working", "d": "Logic Pro > Sound Library > Download All Available Sounds. A half‑downloaded library produces silent tracks that look fine." },
+        { "t": "Test your bounce path end to end before you need it", "d": "Bounce a short section to every format you deliver in. Export bugs are the ones that bite at the worst possible moment." },
+        { "t": "Give yourself a deliberate hour to explore", "d": "Not on a project. Open a scratch session and use every new feature once. An hour of play beats a month of accidental discovery." }
+      ]
+    },
+    {
+      "heading": "Feature notes — fill these in from your release notes",
+      "note": "Each card below is a template. Open the release notes for your exact build, and replace the placeholder text with what you actually find.",
+      "tips": [
+        { "t": "New instruments and Session Players", "d": "ADD YOUR NOTES — list any new Session Player types, sampled instruments or synths, plus the one setting on each that makes it usable immediately.", "b": "ADD YOUR NOTES" },
+        { "t": "New stock plugins", "d": "ADD YOUR NOTES — note each new plugin, which existing plugin it replaces in your chain, and the model or preset you actually reach for.", "b": "ADD YOUR NOTES" },
+        { "t": "Editing and arrangement changes", "d": "ADD YOUR NOTES — record any changed default behaviour in the Tracks area, new snap or tool options, and anything that moved in the menus.", "b": "ADD YOUR NOTES" },
+        { "t": "New AI and assistive features", "d": "ADD YOUR NOTES — for each one, write down what it does well, what it does badly, and the point in your process where it belongs.", "b": "ADD YOUR NOTES" },
+        { "t": "Changed or removed behaviour", "d": "ADD YOUR NOTES — the most valuable page in any update section. Anything that used to work one way and now works another goes here.", "b": "ADD YOUR NOTES" },
+        { "t": "New key commands worth assigning", "d": "ADD YOUR NOTES — go through ⌥K after updating and list every new command you assigned, so you can rebuild it on another machine.", "k": "⌥K", "b": "ADD YOUR NOTES" }
+      ]
+    }
+  ]
+}

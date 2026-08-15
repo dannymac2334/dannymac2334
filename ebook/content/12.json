@@ -1,0 +1,27 @@
+{
+  "number": 12,
+  "title": "Logic Drummer Tricks",
+  "intro": "Drummer is not a loop library. It is a performance engine that responds to what the rest of your arrangement is doing, and once you know where the controls are it will out‑play most programmed parts.",
+  "groups": [
+    {
+      "heading": "Getting a real performance",
+      "tips": [
+        { "t": "Set the Follow parameter to your bass or guitar track", "d": "In the Drummer Editor, the Follow menu makes the kick pattern lock to the rhythm of another track. Your drums and bass become one part instead of two.", "b": "GOLDEN NUGGET" },
+        { "t": "Use the X/Y pad, then fine‑tune with the individual sliders", "d": "The pad sets loud/soft against simple/complex. The sliders to the right control each kit piece independently, which is where the real detail lives." },
+        { "t": "Change the drummer, not just the preset", "d": "Each drummer character has genuinely different playing tendencies. If a preset is close but the feel is wrong, swap the drummer and keep the settings." },
+        { "t": "Turn individual kit pieces on and off per region", "d": "Click a kit piece in the editor to enable or disable it for that region only. Drop the crash out of the verse and back in for the chorus." },
+        { "t": "Set fill amount per region for real dynamics", "d": "Zero fills in the verse, high fills in the last bar before the chorus. Fill amount is a per‑region setting — use it as an arrangement tool." }
+      ]
+    },
+    {
+      "heading": "Taking control",
+      "tips": [
+        { "t": "Convert a Drummer region to MIDI and edit it by hand", "d": "Right‑click and choose Convert to MIDI Region. You get the full performance in the Piano Roll to nudge, delete and re‑velocity as you like.", "k": "⌃⌘M", "b": "GOLDEN NUGGET" },
+        { "t": "Keep a Drummer region and a MIDI copy on two tracks", "d": "Convert a copy to MIDI for hand editing but keep the original Drummer region muted on a second track. You can always regenerate." },
+        { "t": "Use the Details panel for feel, ghost notes and hi‑hat", "d": "Click the triangle in the Drummer Editor to reveal Feel (ahead or behind the beat), Ghost Notes and Hi‑Hat openness. This is where a stiff pattern becomes a groove." },
+        { "t": "Give Drummer a groove template from your own track", "d": "Drag any region to the Groove Track slot and set the Drummer track to follow it, so the drums swing exactly like your guitar does." },
+        { "t": "Swap the kit without losing the performance", "d": "The Drummer track's plugin is Drum Kit Designer. Change the kit, tune individual drums, and adjust room and overhead levels without touching a single note." }
+      ]
+    }
+  ]
+}

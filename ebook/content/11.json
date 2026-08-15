@@ -1,0 +1,38 @@
+{
+  "number": 11,
+  "title": "Step Sequencer Tricks",
+  "intro": "The Step Sequencer is far more than a drum grid. Every row has its own length, its own subdivision and its own set of per‑step parameters, which makes it a generative instrument if you let it be one.",
+  "groups": [
+    {
+      "heading": "The basics done right",
+      "tips": [
+        { "t": "Open the Step Sequencer with B on any region", "d": "Select an empty area on a drum or instrument track and create a pattern region. The grid opens in the editor pane.", "b": "GOLDEN NUGGET" },
+        { "t": "Give every row a different step rate", "d": "Click a row's edit button and change its subdivision. Hi‑hats at 1/16 against a kick at 1/8 against a perc at 1/12 creates polyrhythms with no effort at all.", "b": "GOLDEN NUGGET" },
+        { "t": "Set different pattern lengths per row", "d": "A 16‑step kick against a 15‑step hi‑hat takes 240 steps to repeat. This is how you get a loop that never sounds looped." },
+        { "t": "Use the row's Playback Mode for variation", "d": "Forward, Reverse, Ping‑Pong and Random per row. Set the hats to Random and the pattern changes every bar on its own." },
+        { "t": "Increase pattern length beyond 16 steps", "d": "The Step Sequencer supports up to 64 steps per pattern. Longer patterns mean fewer copies and more room for fills." }
+      ]
+    },
+    {
+      "heading": "Per‑step editing",
+      "tips": [
+        { "t": "Switch the edit mode to change what you are drawing", "d": "The Edit Mode menu switches the grid between Velocity, Gate, Note Repeat, Chance, Tie, Loop Start, Skip and more. The same grid draws a dozen different parameters.", "b": "GOLDEN NUGGET" },
+        { "t": "Use Chance to make a pattern breathe", "d": "Set a ghost snare to 40% chance and it appears roughly twice every five bars. Nothing else creates natural variation this cheaply." },
+        { "t": "Use Note Repeat for rolls without drawing them", "d": "Set a step's repeat value to 4 and it fires four times inside that step. Instant trap hats, no extra steps required." },
+        { "t": "Set Gate to shorten or lengthen individual hits", "d": "Short gates on a bass pattern create staccato stabs; long gates create glides. Per‑step, not per‑pattern." },
+        { "t": "Tie steps together for sustained notes", "d": "Tie mode joins consecutive steps into one long note, which is how you write bass and lead lines rather than just percussion." },
+        { "t": "⌥‑click a step to reset it to default", "d": "Works on every parameter in every edit mode.", "k": "⌥ + click" }
+      ]
+    },
+    {
+      "heading": "Beyond drums",
+      "tips": [
+        { "t": "Use the Step Sequencer on any software instrument", "d": "It is not a drum tool. Put it on a synth, switch the rows to pitches, and you have a hardware‑style note sequencer." },
+        { "t": "Automate plugin parameters per step", "d": "Add a row and assign it to any automatable plugin parameter. Now you can sequence filter cutoff step by step alongside the notes.", "b": "GOLDEN NUGGET" },
+        { "t": "Convert a pattern region to MIDI to edit it in the Piano Roll", "d": "Right‑click the pattern region and choose Convert to MIDI Region when you need finer control than the grid allows." },
+        { "t": "Build a library of pattern regions", "d": "Save patterns to the Library or simply keep a muted track of favourites at the bottom of a template project." },
+        { "t": "Use Skip and Loop Start for live rearranging", "d": "Skip removes a step from the cycle entirely, changing the pattern's effective length. Loop Start moves where the row restarts. Both are performable." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "number": 4,
+  "title": "Composing MIDI Tricks",
+  "intro": "Getting ideas out of your head and into the sequencer before they evaporate. These tricks are about speed of capture first and correctness second — you can always fix it later, but you cannot un‑forget an idea.",
+  "groups": [
+    {
+      "heading": "Capture without a keyboard",
+      "tips": [
+        { "t": "Musical Typing turns your laptop into a synth", "d": "⌘K opens a playable keyboard mapped to your QWERTY keys. Z and X shift octaves, C and V shift velocity, and the tab key holds sustain. No controller required.", "k": "⌘K", "b": "GOLDEN NUGGET" },
+        { "t": "Capture the last thing you played, even when not recording", "d": "If you played something great while the transport was rolling but not recording, hit ⌃⌘⌥R — Capture Recording — and Logic writes it to a region retroactively. This has saved more ideas than any other command in the program.", "k": "⌃⌘⌥R", "b": "GOLDEN NUGGET" },
+        { "t": "Record MIDI while the transport is stopped", "d": "Logic's MIDI buffer is always listening. Even with the transport parked, Capture Recording will grab what you just played." },
+        { "t": "Use the Step Input Keyboard for parts you cannot play", "d": "Open it from the Piano Roll and enter notes one at a time at an exact rhythmic value. Complex parts get entered accurately without a single quantise pass." },
+        { "t": "Draw notes with the Pencil tool and ⌘‑click to remove", "d": "In the Piano Roll, the Pencil creates notes at the current division. ⌥‑drag any note you drew to duplicate it at the same pitch." },
+        { "t": "Set the input velocity manually for drawn notes", "d": "In the Piano Roll's local inspector, set the velocity that new notes are created at. Draw hi‑hats at 70 and kicks at 120 without editing afterwards." }
+      ]
+    },
+    {
+      "heading": "Chords, scales and harmony",
+      "tips": [
+        { "t": "Use the Chord Trigger MIDI plugin to play chords with one finger", "d": "Insert Chord Trigger in the MIDI FX slot, hit Learn, play a chord, then assign it to a single key. Whole progressions become one‑finger performances.", "b": "GOLDEN NUGGET" },
+        { "t": "Force everything into key with the Scale Quantize MIDI plugin", "d": "Insert Scale Quantize, pick your root and scale, and every wrong note you play is bent to the nearest right one in real time. Improvise freely without theory getting in the way." },
+        { "t": "Use Arpeggiator to generate parts, then commit them", "d": "Insert Arpeggiator, dial in a pattern, then drag the region onto a new track while holding the MIDI FX bypass to print the actual notes. You get an editable part instead of a live effect." },
+        { "t": "Transpose without touching the notes", "d": "Select a region and use the Region inspector's Transpose field. It is non‑destructive, so you can audition a key change for the whole song in seconds." },
+        { "t": "Transpose only the notes, permanently", "d": "Select notes in the Piano Roll and use ⇧↑ or ⇧↓ to move them by an octave, or ↑ and ↓ for semitones. This is destructive and intentional.", "k": "⇧↑ / ⇧↓" },
+        { "t": "Use the Modifier MIDI plugin to remap anything to anything", "d": "Turn modwheel into aftertouch, velocity into CV, or pitchbend into expression without leaving Logic." },
+        { "t": "Double a part an octave down without a second track", "d": "Insert the Transposer MIDI plugin on a duplicate of the region's track, or simply select the notes, ⌥‑drag them down an octave and lower their velocity by 20." }
+      ]
+    },
+    {
+      "heading": "Working fast while ideas are hot",
+      "tips": [
+        { "t": "Record into a cycle with take folders", "d": "Set the cycle, arm the track, and let it loop. With MIDI cycle recording set to create take folders, every pass is a separate take you can swap between later.", "k": "C" },
+        { "t": "Merge takes when you are layering, not replacing", "d": "For building up a drum pattern one element per pass, set MIDI cycle recording to Merge instead. Each loop adds to the same region." },
+        { "t": "Use Replace mode to punch over a bad bar", "d": "Enable Replace in the transport and record over a section — the old MIDI in that range is removed rather than layered on top." },
+        { "t": "Name the region before you move on", "d": "Double‑click a region name and type what it is. Twenty untitled regions in a week's time is a genuinely expensive mistake." },
+        { "t": "Use ⌘D to duplicate an instrument track with all its settings", "d": "Instant second layer with the same patch, ready to be detuned, transposed or re‑voiced.", "k": "⌘D" },
+        { "t": "Freeze the instrument as soon as the part is done", "d": "Click the Freeze button in the track header to render the software instrument to audio. Your CPU comes back and the part is locked in." },
+        { "t": "Drag a MIDI region onto an audio track to bounce it instantly", "d": "Logic renders it through the instrument and its plugins. It is the fastest way to commit an idea to audio." },
+        { "t": "Keep one “sketch” instrument track loaded at all times", "d": "A piano patch on a permanently armed track means any idea is three seconds from being captured. The moment capture takes effort, ideas stop arriving." },
+        { "t": "Use Note Repeat for hi‑hats and rolls", "d": "Enable Note Repeat in the Step Sequencer or from the drum pad controls and hold a note to generate a perfectly timed roll at the current division." },
+        { "t": "Humanise deliberately with the Randomise function", "d": "Select notes, then Functions > MIDI Transform > Humanize in the Piano Roll. Set small values for position and velocity — 5 to 10 ticks is plenty." }
+      ]
+    }
+  ]
+}

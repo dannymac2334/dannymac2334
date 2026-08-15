@@ -1,0 +1,48 @@
+{
+  "number": 5,
+  "title": "Piano Roll Tricks",
+  "intro": "The Piano Roll is where MIDI becomes music. Most people use about ten percent of it. Here is the rest.",
+  "groups": [
+    {
+      "heading": "Selecting notes intelligently",
+      "tips": [
+        { "t": "Select all notes of the same pitch in one click", "d": "Click a key on the keyboard graphic at the left of the Piano Roll and every note at that pitch in the region is selected. Perfect for grabbing all the hi‑hats at once.", "b": "GOLDEN NUGGET" },
+        { "t": "Select similar notes with Edit > Select > Same Note Pitch", "d": "Works across the whole region and respects your current selection as the reference." },
+        { "t": "Select all following notes", "d": "⇧F selects every note from the current selection to the end of the region. Ideal for transposing the back half of a part.", "k": "⇧F" },
+        { "t": "Rubber‑band select without hitting notes", "d": "Drag in empty space to lasso notes. Hold ⇧ to add to the existing selection rather than replacing it." },
+        { "t": "Use Select > Inside Locators to grab a bar range", "d": "Set the locators, then select only the notes inside them. Precise, repeatable, no mouse accuracy required." }
+      ]
+    },
+    {
+      "heading": "Editing notes",
+      "tips": [
+        { "t": "Nudge notes by tick with ⌥ and the arrow keys", "d": "Set your nudge value in Edit > Move, then ⌥← and ⌥→ move the selection by exactly that amount. Groove work without the mouse.", "k": "⌥← / ⌥→" },
+        { "t": "Change note length numerically in the inspector", "d": "The event inspector at the top left shows position, pitch, velocity, length and channel for the selection. Type a value and every selected note updates at once.", "b": "GOLDEN NUGGET" },
+        { "t": "Set every selected note to the same length", "d": "Select notes, then Functions > Note Events > Note Force Legato, or simply type a length in the inspector to overwrite them all." },
+        { "t": "Force legato to fix gappy pads", "d": "Functions > Note Events > Note Force Legato extends every note to meet the next. Pads and basslines stop sounding stuttery instantly." },
+        { "t": "Trim overlaps automatically", "d": "Functions > Note Events > Note Overlap Correction cleans up doubled notes that cause phasing and stuck voices on hardware." },
+        { "t": "⌥‑drag a note to duplicate it", "d": "Hold ⌥ while dragging any note or selection to copy rather than move. Hold ⇧ too and it stays on the same pitch.", "k": "⌥ + drag" },
+        { "t": "Use ⌃⌥‑drag for fine positioning", "d": "Bypasses the snap grid so you can place a note anywhere, tick by tick.", "k": "⌃⌥ + drag" }
+      ]
+    },
+    {
+      "heading": "Velocity and expression",
+      "tips": [
+        { "t": "Drag velocity directly on the note with ⌃⌥", "d": "Hold ⌃⌥ and drag up or down on a note to change its velocity without switching tools. The note colour updates live.", "k": "⌃⌥ + drag", "b": "GOLDEN NUGGET" },
+        { "t": "Draw a velocity ramp across a selection", "d": "Select a run of notes, then in the velocity lane hold ⌃⇧ and drag to create a linear ramp from first to last. Instant crescendo." },
+        { "t": "Scale velocities rather than replacing them", "d": "Typing a velocity value flattens everything to the same number. Instead, drag the velocity of one note in a selection and the others move relatively, preserving the performance." },
+        { "t": "Show the automation lane inside the Piano Roll", "d": "Press A with the Piano Roll focused to reveal MIDI CC lanes underneath the notes. Modwheel, expression and sustain edit right next to the notes they affect.", "k": "A" },
+        { "t": "Colour notes by velocity to read dynamics instantly", "d": "In the Piano Roll's View menu, set note colour to Velocity. Flat parts become visibly, obviously flat." }
+      ]
+    },
+    {
+      "heading": "Quantise and timing",
+      "tips": [
+        { "t": "Quantise from the region inspector, not destructively", "d": "The Quantize field in the Region inspector is non‑destructive and can be dialled back or removed at any point. Use it before you ever use the destructive version.", "b": "GOLDEN NUGGET" },
+        { "t": "Use Q‑Strength to keep the human feel", "d": "Under the region's more‑options triangle, Q‑Strength at 60 to 80 percent pulls notes toward the grid without gluing them to it." },
+        { "t": "Quantise only the notes that need it", "d": "Select the offending notes in the Piano Roll and quantise the selection rather than the whole region. The good parts of the take stay untouched." },
+        { "t": "Use Q‑Range to leave close notes alone", "d": "Q‑Range quantises only notes that are further from the grid than a set amount, so a naturally tight performance is left alone while the strays get pulled in." }
+      ]
+    }
+  ]
+}

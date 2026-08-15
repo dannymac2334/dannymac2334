@@ -1,0 +1,145 @@
+{
+  "title": "Logic Pro Crash Course",
+  "subtitle": "350+ Golden Nugget Tricks",
+  "tagline": "No long tutorials. No fluff. Just what actually works.",
+  "edition": "Covers Logic Pro 10.7 → 11 → 12",
+  "pages": [
+    {
+      "id": "about",
+      "label": "About Me",
+      "kicker": "Start here",
+      "title": "About Me",
+      "body": [
+        "I am a working producer, not a tutorial channel. Everything in this book came out of real sessions with real deadlines — the moments where I stopped, thought “there has to be a faster way to do this,” and then went and found it.",
+        "Over the years those discoveries piled up in a scratch file. Some were buried three menus deep. Some were a key command nobody mentions. Some were just a smarter order of operations. None of them were in the manual in a way that was useful mid‑session.",
+        "This book is that scratch file, cleaned up, organised, and made clickable. It is the document I wish somebody had handed me on day one."
+      ],
+      "callout": {
+        "title": "How to use this book",
+        "text": "Do not read it front to back. Jump to the section that matches what you are stuck on right now, steal the trick, and get back to the music. Every section is one click away from every page."
+      }
+    },
+    {
+      "id": "introduction",
+      "label": "Introduction",
+      "kicker": "Read this once",
+      "title": "Introduction",
+      "body": [
+        "Logic Pro is enormous. That is its blessing and its curse. Almost anything you want to do is already in there — the problem is that finding it costs you the exact thing you cannot get back, which is momentum.",
+        "This is a collection of 350+ tricks, split across 19 sections, that removes that cost. Each one is short on purpose. Title, what it does, the key command. Read it in ten seconds, use it forever.",
+        "A few ground rules so nothing here trips you up:"
+      ],
+      "list": [
+        "Every key command shown is the Logic Pro factory default on a US keyboard. If you have remapped anything, open Key Commands with ⌥K and search the command name — the name is always given.",
+        "Where a trick lives in a menu rather than on a key, the full menu path is written out so you can find it without guessing.",
+        "Tricks marked GOLDEN NUGGET are the ones that changed how I work. If you only steal a handful, steal those.",
+        "Tricks marked VERIFY are version‑dependent and worth confirming against the exact build you are running.",
+        "Nothing here requires third‑party plugins. It is all stock Logic."
+      ],
+      "callout": {
+        "title": "The one habit that matters most",
+        "text": "Every time you catch yourself doing something with the mouse for the third time, stop and check whether it has a key command. If it does, learn it. If it does not, make one. That single habit is worth more than any individual trick in this book."
+      }
+    },
+    {
+      "id": "legend",
+      "label": "Key Legend",
+      "kicker": "Reference",
+      "title": "Key Legend",
+      "body": [
+        "Logic’s documentation and this book both use the Mac modifier symbols. If you are coming from another DAW, this is the page to bookmark."
+      ],
+      "keys": [
+        { "sym": "⌘", "name": "Command", "note": "The workhorse. Most destructive or structural commands." },
+        { "sym": "⌥", "name": "Option", "note": "Almost always means “copy”, “all”, or “alternate behaviour”." },
+        { "sym": "⇧", "name": "Shift", "note": "Extends a selection or reverses a command." },
+        { "sym": "⌃", "name": "Control", "note": "Fine adjustments, and secondary click." },
+        { "sym": "↩", "name": "Return", "note": "Sends the playhead to the start of the project." },
+        { "sym": "⌥⌘", "name": "Option + Command", "note": "The “do it everywhere” combination." },
+        { "sym": "⌃⌥", "name": "Control + Option", "note": "Zoom, and fine‑grained drag." },
+        { "sym": "⇥", "name": "Tab", "note": "Moves between fields and cells." },
+        { "sym": "⌫", "name": "Delete", "note": "Removes the selection." },
+        { "sym": "␣", "name": "Space", "note": "Play / Stop. The most used key in the program." }
+      ],
+      "callout": {
+        "title": "Three modifier rules that explain 80% of Logic",
+        "text": "1) Hold ⌥ while dragging anything and you copy it instead of moving it. 2) Hold ⌥ while clicking any control and you reset it to its default. 3) Hold ⌥ while clicking a button in a channel strip and the change applies to every channel at once. Learn these three and you can guess your way through most of the program."
+      }
+    },
+    {
+      "id": "basics",
+      "label": "The Basic Key Commands",
+      "kicker": "Learn these first",
+      "title": "The Basic Key Commands",
+      "body": [
+        "If you learn nothing else, learn this page. These are the commands you will use hundreds of times a day, and they are the foundation every other section builds on."
+      ],
+      "tables": [
+        {
+          "heading": "Transport",
+          "rows": [
+            ["Space", "Play / Stop"],
+            ["↩", "Go to beginning of project"],
+            ["R", "Record"],
+            ["C", "Cycle on / off"],
+            ["K", "Metronome on / off"],
+            ["⌘.", "Stop and discard the recording just made"],
+            ["U", "Set locators by selected regions"],
+            ["/", "Open the Go to Position dialog"]
+          ]
+        },
+        {
+          "heading": "Windows and views",
+          "rows": [
+            ["X", "Show / hide Mixer"],
+            ["P", "Show / hide Piano Roll"],
+            ["E", "Show / hide Editor"],
+            ["N", "Show / hide Score Editor"],
+            ["Y", "Show / hide Library"],
+            ["O", "Show / hide Loop Browser"],
+            ["F", "Show / hide Browsers"],
+            ["B", "Show / hide Smart Controls"],
+            ["I", "Show / hide Inspector"],
+            ["G", "Show / hide Global Tracks"],
+            ["V", "Hide / show all plug‑in windows"]
+          ]
+        },
+        {
+          "heading": "Editing",
+          "rows": [
+            ["⌘Z", "Undo"],
+            ["⇧⌘Z", "Redo"],
+            ["⌘T", "Split regions at playhead"],
+            ["⌘J", "Join selected regions"],
+            ["⌘R", "Repeat regions or events"],
+            ["⌘D", "New track with duplicate settings"],
+            ["⌘A", "Select all"],
+            ["⇧⌘A", "Deselect all"],
+            ["⌥ + drag", "Copy instead of move"],
+            ["⌘ + drag", "Marquee select (default secondary tool)"]
+          ]
+        },
+        {
+          "heading": "Zoom and navigation",
+          "rows": [
+            ["Z", "Zoom to fit selection, press again to return"],
+            ["⌘← / ⌘→", "Zoom out / in horizontally"],
+            ["⌘↑ / ⌘↓", "Zoom out / in vertically"],
+            ["⌃⌥ + drag", "Drag‑zoom to any area"]
+          ]
+        },
+        {
+          "heading": "Files and output",
+          "rows": [
+            ["⌘S", "Save"],
+            ["⇧⌘S", "Save as"],
+            ["⌘B", "Bounce project or section"],
+            ["⌃B", "Bounce regions in place"],
+            ["⌥K", "Open Key Commands"],
+            ["⌘,", "Open Preferences"]
+          ]
+        }
+      ]
+    }
+  ]
+}
