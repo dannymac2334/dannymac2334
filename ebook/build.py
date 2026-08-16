@@ -22,6 +22,7 @@ import re
 ROOT = pathlib.Path(__file__).parent
 CONTENT = ROOT / "content"
 FONTS = ROOT / "fonts"
+FIGURES = ROOT / "figures"
 DIST = ROOT / "dist"
 
 # --------------------------------------------------------------------------
@@ -112,10 +113,38 @@ def tip_html(tip, index):
     bits.append("</div>")
     bits.append(f'<h4 class="tip-title">{esc(tip["t"])}</h4>')
     bits.append(f'<p class="tip-body">{esc(tip["d"])}</p>')
+    if tip.get("img"):
+        bits.append(figure_html(tip["img"], tip.get("caption", "")))
     if tip.get("k"):
         bits.append(f'<div class="tip-keys">{keycap(tip["k"])}</div>')
     bits.append("</article>")
     return "".join(bits)
+
+
+def figure_html(name, caption=""):
+    """Inline a screenshot from figures/ as a data URI.
+
+    The book has to stay self-contained — it is read as a single file with no
+    server behind it — so images are embedded rather than linked, the same way
+    the fonts are. A missing file is a hard error: a book that silently ships a
+    broken image is worse than a build that stops.
+    """
+    path = FIGURES / name
+    if not path.exists():
+        raise SystemExit(
+            f"figure not found: {path}\n"
+            f"Tips reference screenshots by filename; put it in {FIGURES}/ or "
+            f"remove the 'img' field from the trick."
+        )
+    mime = {"png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg",
+            "webp": "image/webp"}.get(path.suffix.lstrip(".").lower())
+    if mime is None:
+        raise SystemExit(f"unsupported image type for {path.name} (use png, jpg or webp)")
+    b64 = base64.b64encode(path.read_bytes()).decode()
+    cap = f'<figcaption>{esc(caption)}</figcaption>' if caption else ""
+    alt = esc(caption or name)
+    return (f'<figure class="tip-fig"><img src="data:{mime};base64,{b64}" alt="{alt}">'
+            f"{cap}</figure>")
 
 
 def build_cover(front, total_tips, section_count):
@@ -793,6 +822,11 @@ h1, h2, h3, h4 {{ margin: 0; font-weight: 700; letter-spacing: -.03em; line-heig
 .tip > .tip-title {{ padding: 12px 22px 0; }}
 .tip > .tip-body {{ padding: 10px 22px 0; flex: 1; }}
 .tip > .tip-keys {{ padding: 16px 22px 20px; border-radius: 0 0 15px 15px; }}
+.tip-fig {{ margin: 0; padding: 0 22px 18px; background: var(--glass); }}
+.tip-fig img {{ display: block; width: 100%; height: auto; border-radius: 8px;
+  border: 1px solid var(--line-dark); }}
+.tip-fig figcaption {{ margin-top: 8px; font-size: 11px; line-height: 1.5;
+  color: var(--body-dim); letter-spacing: .01em; }}
 .tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 22px; border-radius: 0 0 15px 15px; }}
 
 .tip-num {{
@@ -1003,6 +1037,10 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   .tip > .tip-title {{ padding: 6px 12px 0; }}
   .tip > .tip-body {{ padding: 5px 12px 0; }}
   .tip > .tip-keys {{ padding: 8px 12px 10px; }}
+  .tip-fig {{ padding: 0 12px 10px; background: none;
+    break-inside: avoid; page-break-inside: avoid; }}
+  .tip-fig img {{ border-color: var(--line-light); }}
+  .tip-fig figcaption {{ font-size: 8pt; color: var(--body-dim); }}
   .tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 12px; }}
   /* The inverted card keeps the dark-surface token so its copy stays legible. */
   .tip-gold {{

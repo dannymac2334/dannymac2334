@@ -476,6 +476,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -.03em; line-heigh
 .tip > .tip-title { padding: 12px 22px 0; }
 .tip > .tip-body { padding: 10px 22px 0; flex: 1; }
 .tip > .tip-keys { padding: 16px 22px 20px; border-radius: 0 0 15px 15px; }
+.tip-fig { margin: 0; padding: 0 22px 18px; background: var(--glass); }
+.tip-fig img { display: block; width: 100%; height: auto; border-radius: 8px;
+  border: 1px solid var(--line-dark); }
+.tip-fig figcaption { margin-top: 8px; font-size: 11px; line-height: 1.5;
+  color: var(--body-dim); letter-spacing: .01em; }
 .tip:not(:has(.tip-keys)) > .tip-body { padding-bottom: 22px; border-radius: 0 0 15px 15px; }
 
 .tip-num {
@@ -686,6 +691,10 @@ html.js .reveal.d3 { transition-delay: .24s; }
   .tip > .tip-title { padding: 6px 12px 0; }
   .tip > .tip-body { padding: 5px 12px 0; }
   .tip > .tip-keys { padding: 8px 12px 10px; }
+  .tip-fig { padding: 0 12px 10px; background: none;
+    break-inside: avoid; page-break-inside: avoid; }
+  .tip-fig img { border-color: var(--line-light); }
+  .tip-fig figcaption { font-size: 8pt; color: var(--body-dim); }
   .tip:not(:has(.tip-keys)) > .tip-body { padding-bottom: 12px; }
   /* The inverted card keeps the dark-surface token so its copy stays legible. */
   .tip-gold {
