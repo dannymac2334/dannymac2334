@@ -1,0 +1,8 @@
+
+
+# Apple's manuals — reference only, never redistributed.
+# Downloaded into ebook/manuals/ to verify claims against. They are Apple's
+# copyrighted material and must not be committed to this repo or shipped in
+# the book. Screenshots printed in the book should be captured from a real
+# Logic install instead.
+ebook/manuals/
