@@ -80,8 +80,8 @@
           "d": "Set the secondary tool via the right‑hand tool menu, then every ⌘‑drag across a region edge creates a fade."
         },
         {
-          "t": "Use Select All Following on a Track",
-          "d": "Edit > Select > All Following of Same Track (⇧F) selects everything after the current selection on that track. Plain “All Following” grabs every track — a whole-song shift instead.",
+          "t": "Select everything after this point in one keystroke",
+          "d": "⇧F is Select All Following: it grabs every region after the current selection, across all tracks — the fastest way to shift a whole song later. To stay on one track, use Edit > Select > All Following of Same Track; it ships with no default key, so give it one in Key Commands.",
           "k": "⇧F"
         },
         {
