@@ -53,6 +53,10 @@ CONFIRMED = {
     "⌥⇧ + drag": "Create MIDI alias / audio clone",
     "⌃⇧ + drag": "Drag at tick or sample resolution",
     "⌃ + drag": "Move in steps of one division, overriding snap",
+    "⌃B": "Bounce Regions in Place",
+    "⌘K": "Musical Typing",
+    "⌘ + drag": "Marquee select; swap arrangement markers; constrain a drag to one axis",
+    "⌥ + drag": "Copy instead of move; duplicate an arrangement section",
 }
 
 STANDARD = {
@@ -87,14 +91,10 @@ STANDARD = {
     "⌘J": "Join regions",
     "⌘R": "Repeat regions or events",
     "⌘B": "Bounce project or section",
-    "⌃B": "Bounce regions in place",
-    "⌘K": "Musical Typing",
     "⌘,": "Preferences",
     "⌘.": "Stop and discard recording",
     "⌘← / ⌘→": "Zoom horizontally",
     "⌘↑ / ⌘↓": "Zoom vertically",
-    "⌥ + drag": "Copy instead of move",
-    "⌘ + drag": "Marquee select",
     "⌃⌥ + drag": "Drag-zoom",
     "⌥ + click": "Reset control / bypass insert / exclusive solo (context)",
     "⇧ + click": "Extend selection",

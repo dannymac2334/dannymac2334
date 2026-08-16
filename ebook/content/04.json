@@ -14,7 +14,7 @@
         },
         {
           "t": "Capture the last thing you played, even when not recording",
-          "d": "If you played something great while the transport was rolling but not recording, hit ⇧R — Flashback Capture — and Logic writes it to a region retroactively. This has saved more ideas than any other command in the program.",
+          "d": "If you played something great while the transport was rolling but not recording, hit ⇧R and Logic writes it to a region retroactively. MIDI works on any recent version. Audio needs Logic 11.2 or later, and the audio track has to be record-enabled with the transport playing — Logic can only hand back what it was already buffering.",
           "k": "⇧R",
           "b": "GAME CHANGER"
         },

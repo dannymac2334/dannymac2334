@@ -7,7 +7,7 @@ certainly right but that nobody has watched happen on a real machine.
 Open Logic, work down the list, and tick as you go. Anything that fails, say so and
 it gets fixed at the source and the book regenerated.
 
-## Key commands not yet documented (27)
+## Key commands not yet documented (23)
 
 Check each in **Logic Pro > Key Commands (⌥K)** — search the command name; the
 assigned key shows on the right.
@@ -22,19 +22,15 @@ assigned key shows on the right.
 - [ ] `X` — S13 “Every pad is its own channel strip”; S15 “X toggles the Mixer, and it remembers your scroll position”
 - [ ] `Z` — S2 “Zoom all the way out and squint”; S3 “Z is the only zoom command you need”
 - [ ] `⌘` — S7 “⌘ is your secondary tool”
-- [ ] `⌃B` — S8 “Commit edits with Bounce Regions in Place”; S17 “Use “Bounce in Place” to commit a track to audio”
 - [ ] `⌘,` — S1 “Run two buffer sizes, not one”
 - [ ] `⌘.` — S6 “⌘. discards the take you just recorded”
 - [ ] `⌘B` — S17 “⌘B bounces the project or the current section”
 - [ ] `⌘J` — S7 “⌘J joins regions back into one”
-- [ ] `⌘K` — S4 “Musical Typing turns your laptop into a synth”
 - [ ] `⌘R` — S2 “Repeat regions numerically instead of dragging”; S7 “⌘R repeats the selection once, instantly”
 - [ ] `⌘S` — S1 “Set autosave and then still hit ⌘S”
 - [ ] `Esc` — S7 “Esc opens the tool menu, Esc twice returns to the pointer”
 - [ ] `Space` — S9 “Press Space and Logic plays only the marquee selection”
 - [ ] `Delete` — S9 “Hit Delete to cut a hole in every track at once”
-- [ ] `⌘ + drag` — S2 “⌘-drag one arrangement marker onto another to swap sections”; S9 “⌘‑drag anywhere to marquee select”; S10 “Marquee a range then drag the line to change only that section”; S16 “Channel EQ — ⌘‑drag a band for fine Q adjustment”
-- [ ] `⌥ + drag` — S2 “⌥‑drag an arrangement marker to duplicate a section”; S5 “⌥‑drag a note to duplicate it”; S7 “⌥‑drag copies, ⌥⇧‑drag makes an alias or clone”; S9 “⌥‑drag a marquee selection to copy that time range”; S13 “⌥‑drag a pad to copy it, including all its processing”
 - [ ] `⇧ + click` — S9 “Hold ⇧ to extend an existing marquee”
 - [ ] `⌃⌥ + drag` — S3 “Drag‑zoom to any area with ⌃⌥”
 - [ ] `⌥ + click` — S11 “⌥‑click a step to reset it to default”; S15 “⌥‑click any control to reset it to default”; S15 “⌥-click Solo for exclusive solo”; S15 “Bypass with ⌥-click, browse with the slot arrows”

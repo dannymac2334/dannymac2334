@@ -41,8 +41,8 @@
           "d": "Seeing what you are cutting is worth more than any preset. Post‑EQ analysis shows the result rather than the source."
         },
         {
-          "t": "Channel EQ — ⌘‑drag a band for fine Q adjustment",
-          "d": "Also, ⌥‑click any band to reset it and double‑click a gain value to type it exactly.",
+          "t": "Channel EQ — drag the band’s vertical line sideways to set Q",
+          "d": "Dragging the band itself moves frequency and gain together. Drag the vertical line through it horizontally and you change only Q. Hold ⌘ to lock a drag to one axis, ⌥‑click any band to reset it, and double‑click a gain value to type it exactly.",
           "k": "⌘ + drag"
         },
         {

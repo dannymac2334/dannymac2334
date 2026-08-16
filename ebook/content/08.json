@@ -113,7 +113,7 @@
         },
         {
           "t": "Commit edits with Bounce Regions in Place",
-          "d": "Bounce Regions in Place (⌃B) renders your gain, fades and flex into a fresh file. Edit > Convert > Convert Regions to New Audio Files (⌥⌘F) is the lighter tool — it makes a new file but does not print those edits.",
+          "d": "Bounce Regions in Place (⌃B) renders your gain, fades and flex into a fresh file. Convert Regions to New Audio Files (⌥⌘F) is the lighter tool — it makes a new file but does not print those edits.",
           "k": "⌃B"
         }
       ]

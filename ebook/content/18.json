@@ -193,7 +193,7 @@
       "tips": [
         {
           "t": "Flashback Capture retrieves what you just played",
-          "d": "Added in Logic 11.1 — the control bar button, or ⇧R, grabs the MIDI you performed even though you were not recording. From 11.2 it captures audio too, so a great vocal run you never armed is still recoverable.",
+          "d": "MIDI capture has been in Logic for years as “Capture Recording”. Logic 11.2 renamed it Flashback Capture and taught it audio as well, so a great vocal run you never armed is now recoverable too. The control bar button, or ⇧R.",
           "k": "⇧R",
           "b": "GAME CHANGER"
         },
