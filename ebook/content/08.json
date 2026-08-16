@@ -7,26 +7,12 @@
       "heading": "Comping takes",
       "tips": [
         {
-          "t": "Swipe across the take you want with the pointer",
-          "d": "Inside a take folder, simply drag across the part of a take you want to hear. Logic builds the comp automatically and crossfades the joins for you.",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Put take-switching on keys you choose",
-          "d": "The take-selection commands ship unassigned. Search “Take” in Key Commands and put the first few on keys — auditioning take 3 against take 7 becomes two keypresses.",
-          "k": "⌥K to assign"
+          "d": "Take switching is worth a key command of your own. Press ⌥K to open the Key Commands window, type “Take” in the search field, and assign keys to the take-selection commands you use most. Auditioning take 3 against take 7 then becomes two keypresses instead of two trips to the Take Folder menu. (Use the Unused filter in that window to see which of them are still free on your system.)"
         },
         {
           "t": "Save your comp as a new comp before changing it",
           "d": "The take folder menu has “Duplicate Comp”. Do this before every significant change and you can always go back to the version that was working."
-        },
-        {
-          "t": "Flatten only when you are certain",
-          "d": "Take Folder > Flatten turns the comp into regions. Flatten and Merge creates a single continuous file. Neither is reversible after the project is closed, so keep the folder as long as you can."
-        },
-        {
-          "t": "Zoom in on the joins and check them",
-          "d": "Every comp point is a potential click. Zoom right in on each transition and confirm the crossfade sits in a gap, not on a consonant."
         },
         {
           "t": "Move a comp edit point without redoing the comp",
@@ -37,14 +23,6 @@
     {
       "heading": "Fades and clicks",
       "tips": [
-        {
-          "t": "Crossfade every edit point, without exception",
-          "d": "Set the Fade tool as your secondary tool and drag across any region edge, or type values into the Region inspector's Fade fields. Fades kill clicks, and every audio edit needs one."
-        },
-        {
-          "t": "Set default fade lengths in the Region inspector",
-          "d": "Type a fade‑in and fade‑out value once, select all your regions, and apply it to everything at once."
-        },
         {
           "t": "Curve the fade after you draw it",
           "d": "Drag the middle of a drawn fade with the Fade tool to bend it, or edit the Curve value in the Region inspector. An S-curve on a vocal edit sounds far more natural than a straight line."
@@ -64,16 +42,6 @@
     {
       "heading": "Timing and pitch",
       "tips": [
-        {
-          "t": "Flex Time is one keystroke away",
-          "d": "Press ⌘F to show Flex, choose an algorithm in the track header, and drag transient markers to fix timing without cutting anything.",
-          "k": "⌘F",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Pick the right Flex algorithm or it will sound wrong",
-          "d": "Slicing for drums, Rhythmic for guitars and loops, Monophonic for single voices and bass, Polyphonic for chords and full mixes, Speed for tape‑style stretching."
-        },
         {
           "t": "Add flex markers either side before you move one",
           "d": "Placing anchor markers on the neighbouring transients stops your edit from stretching the whole bar."
@@ -105,7 +73,7 @@
         },
         {
           "t": "Strip silence at the file level to reclaim disk space",
-          "d": "After comping, File > Project Management > Clean Up removes audio files the project no longer uses — whole files, not unused portions. Back up first; it is genuinely destructive."
+          "d": "Title: “Reclaim disk space with Project Management > Clean Up”. Body: After comping, File > Project Management > Clean Up deletes media the project no longer needs. Its options are Delete Unused Audio Files (files not used in any project alternative are removed from the Project Audio Browser and deleted from disk), Delete Unreferenced Audio Files and Delete Backups. It removes whole files, not unused portions of files, and it deletes from disk — a dialog lists everything to be deleted, so deselect the Delete checkbox for anything you want to keep, and back up first."
         },
         {
           "t": "Reverse a region for a riser in two clicks",
@@ -113,8 +81,7 @@
         },
         {
           "t": "Commit edits with Bounce Regions in Place",
-          "d": "Bounce Regions in Place (⌃B) renders your gain, fades and flex into a fresh file. Convert Regions to New Audio Files (⌥⌘F) is the lighter tool — it makes a new file but does not print those edits.",
-          "k": "⌃B"
+          "d": "When you are happy with a comp, commit it. Select the regions, then choose File > Bounce > Regions in Place — or Control-click the selection and choose Bounce Regions in Place from the shortcut menu — to render them to a fresh audio file on the track. Check the options in the dialog (name, destination, and whether effect plug-ins are bypassed) before you click OK, and keep the original in case you need to go back."
         }
       ]
     }

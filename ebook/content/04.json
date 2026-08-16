@@ -7,21 +7,10 @@
       "heading": "Capture without a keyboard",
       "tips": [
         {
-          "t": "Musical Typing turns your laptop into a synth",
-          "d": "⌘K opens a playable keyboard mapped to your QWERTY keys. Z and X shift octaves, C and V shift velocity, and the tab key holds sustain. No controller required.",
-          "k": "⌘K",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Capture the last thing you played, even when not recording",
-          "d": "If you played something great while the transport was rolling but not recording, hit ⇧R and Logic writes it to a region retroactively. MIDI works on any recent version. Audio needs Logic 11.2 or later, and the audio track has to be record-enabled with the transport playing — Logic can only hand back what it was already buffering.",
+          "d": "If you played something great while the transport was rolling but not recording, hit ⇧R and Logic writes it to a region retroactively. MIDI works on any recent version, whether the project is playing or stopped. Audio needs Logic 11.2 or later: make sure the audio track is in focus and the transport is playing — Logic captures only while there is an incoming signal, needs at least four seconds of playback, and can save up to one minute of audio.",
           "k": "⇧R",
           "b": "GAME CHANGER"
-        },
-        {
-          "t": "Record MIDI while the transport is stopped",
-          "d": "Logic's MIDI buffer is always listening. Even with the transport parked, Flashback Capture will grab what you just played — notes and controller moves both.",
-          "k": "⇧R"
         },
         {
           "t": "Use the Step Input Keyboard for parts you cannot play",
@@ -29,11 +18,7 @@
         },
         {
           "t": "Draw notes with the Pencil, delete with the Eraser",
-          "d": "The Pencil creates notes at the current division. To remove one, double-click it with the Pointer or switch to the Eraser tool. ⌥-drag any note to duplicate it at the same pitch."
-        },
-        {
-          "t": "New notes inherit the last note you touched",
-          "d": "There is no default-velocity field. A note you draw takes the velocity and length of the last note you selected or edited — so set one hi-hat to 70, then draw the rest and they follow."
+          "d": "The Pencil creates a note whose length, velocity and MIDI channel match the last note you created or edited. To remove a note, select it and press Delete, or click it with the Eraser tool. ⌥-drag a note to copy it to a new position."
         }
       ]
     },
@@ -42,33 +27,24 @@
       "tips": [
         {
           "t": "Use the Chord Trigger MIDI plugin to play chords with one finger",
-          "d": "Insert Chord Trigger in the MIDI FX slot, hit Learn, play a chord, then assign it to a single key. Whole progressions become one‑finger performances.",
+          "d": "Insert Chord Trigger in the MIDI FX slot and click Learn. Click the trigger key you want on the upper keyboard first, then click the notes of the chord on the lower keyboard, then click Learn again to finish. Whole progressions become one-finger performances.",
           "b": "GAME CHANGER"
         },
         {
           "t": "Force everything into key with Transposer's scale quantize",
-          "d": "Insert the Transposer MIDI FX and turn on its scale quantize, then pick your root and scale. Every wrong note you play is bent to the nearest right one in real time."
+          "d": "Insert the Transposer MIDI FX and set its Root and Scale pop-up menus. Transposer transposes incoming MIDI notes in real time and corrects them to the selected scale, so every wrong note you play is pulled to the nearest right one as you play. Pick User and switch notes off on the on-screen keyboard to build your own scale."
         },
         {
           "t": "Use Arpeggiator to generate parts, then commit them",
-          "d": "Insert Arpeggiator and dial in a pattern, then use Bounce in Place — or record its output to another track — to turn the live effect into editable notes."
+          "d": "Insert Arpeggiator and dial in a pattern, then commit it with Bounce in Place: Logic renders the selected region — including every active plug-in and its automation — to a 24-bit audio file at the project sample rate, so the live effect becomes a fixed part you can edit as audio."
         },
         {
           "t": "Transpose without touching the notes",
           "d": "Select a region and use the Region inspector's Transpose field. It is non‑destructive, so you can audition a key change for the whole song in seconds."
         },
         {
-          "t": "Transpose only the notes, permanently",
-          "d": "Select notes in the Piano Roll and transpose with the Transpose key commands: ⌥↑ and ⌥↓ by semitone, ⇧⌥↑ and ⇧⌥↓ by octave. Plain arrow keys move the selection, they do not transpose.",
-          "k": "⌥↑ / ⌥↓"
-        },
-        {
           "t": "Use the Modifier MIDI plugin to remap anything to anything",
-          "d": "Turn modwheel into aftertouch, velocity into CV, or pitchbend into expression without leaving Logic."
-        },
-        {
-          "t": "Double a part an octave down without a second track",
-          "d": "Insert the Transposer MIDI plugin on a duplicate of the region's track, or simply select the notes, ⌥‑drag them down an octave and lower their velocity by 20."
+          "d": "The Modifier MIDI plug-in reassigns or filters a single continuous controller or fader event. Pick the incoming type in Input Event and the outgoing type in Re-Assign To — modwheel into aftertouch, pitchbend into expression — and use the Scale and Add sliders to rescale or offset the values on the way out."
         }
       ]
     },
@@ -76,27 +52,8 @@
       "heading": "Working fast while ideas are hot",
       "tips": [
         {
-          "t": "Record into a cycle with take folders",
-          "d": "Set the cycle, arm the track, and let it loop. With MIDI cycle recording set to create take folders, every pass is a separate take you can swap between later.",
-          "k": "C"
-        },
-        {
           "t": "Merge takes when you are layering, not replacing",
           "d": "For building up a drum pattern one element per pass, set MIDI cycle recording to Merge instead. Each loop adds to the same region."
-        },
-        {
-          "t": "Use Replace mode to punch over a bad bar",
-          "d": "Enable Replace in the transport and record over a section — the old MIDI in that range is removed rather than layered on top."
-        },
-        {
-          "t": "Name the region before you move on",
-          "d": "Select the region and press ⇧N to rename it, or use the Text tool or the Region inspector. Twenty untitled regions in a week's time is a genuinely expensive mistake.",
-          "k": "⇧N"
-        },
-        {
-          "t": "Use ⌘D to duplicate an instrument track with all its settings",
-          "d": "Instant second layer with the same patch, ready to be detuned, transposed or re‑voiced.",
-          "k": "⌘D"
         },
         {
           "t": "Freeze the instrument as soon as the part is done",
@@ -104,7 +61,7 @@
         },
         {
           "t": "Drag a MIDI region onto an audio track to bounce it instantly",
-          "d": "Logic renders it through the instrument and its plugins. It is the fastest way to commit an idea to audio."
+          "d": "Select the MIDI region and use Bounce in Place. Logic renders it through the instrument and every active plug-in, plus automation, to a 24-bit audio region at the project sample rate. It is the fastest way to commit an idea to audio."
         },
         {
           "t": "Keep one “sketch” instrument track loaded at all times",
@@ -112,11 +69,7 @@
         },
         {
           "t": "Use Note Repeat for hi‑hats and rolls",
-          "d": "Enable Note Repeat in the Step Sequencer or from the drum pad controls and hold a note to generate a perfectly timed roll at the current division."
-        },
-        {
-          "t": "Humanise deliberately with the Randomise function",
-          "d": "Select notes, then Functions > MIDI Transform > Humanize in the Piano Roll. Set small values for position and velocity — 5 to 10 ticks is plenty."
+          "d": "In Step Sequencer, choose Note Repeat from the Edit Mode selector, then drag up on a hi-hat step to slice it into more repeats (1 to 16) or down for fewer. The inspector adds velocity ramp, velocity curve and Distribution for each step, so a roll can accelerate or decelerate instead of sitting flat."
         }
       ]
     }

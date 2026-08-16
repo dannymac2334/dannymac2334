@@ -14,15 +14,15 @@
         },
         {
           "t": "Export your key commands and back them up",
-          "d": "The Key Commands window has an Options menu with Export. Losing a year of custom shortcuts to a reinstall is entirely avoidable."
+          "d": "In the Key Commands window, click the Actions pop-up menu at the top left and choose Save As to write your whole key command set to a file (the default location is ~/Music/Audio Music Apps/Key Commands). Choose Import Key Commands from the same menu to load it back after a reinstall, or on someone else's machine. Losing a year of custom shortcuts to a reinstall is entirely avoidable."
         },
         {
           "t": "Assign key commands to your most used plugins",
-          "d": "Key Commands can insert a specific plugin on the selected channel. One key for your favourite EQ changes your mixing speed noticeably."
+          "d": "Logic has no key command that inserts a specific plug-in, so get the speed a different way: save the plug-in (or a whole chain) as a channel strip setting and recall it from the channel strip's Settings menu, which inserts every associated plug-in in one click. If you want it on a physical button, assign a controller button to the relevant key command in the Controller Assignments window."
         },
         {
           "t": "Use Touch Bar or a stream deck for tool switching",
-          "d": "Any command with a key assignment can be triggered by external hardware. Tools, zoom levels and transport are the highest‑value candidates."
+          "d": "Logic's Touch Bar screens are fixed (Smart Controls, keyboard, drum pads, project overview), so you cannot put your own key commands there. For hardware triggering, use a Stream Deck sending the keystroke, or assign a controller button directly to a key command in the Controller Assignments window — search the command by name in the Search field, then press the button. Tools, zoom levels and transport are the highest-value candidates."
         }
       ]
     },
@@ -36,15 +36,7 @@
         },
         {
           "t": "Use Project Alternatives instead of Save As",
-          "d": "File > Alternatives keeps every version inside one project file with shared audio, so you are not duplicating 4 GB of recordings to try a different arrangement."
-        },
-        {
-          "t": "Turn on “Copy external audio files to project folder”",
-          "d": "In Project Settings > Assets. It is the difference between a project that opens on another machine and one that does not."
-        },
-        {
-          "t": "Consolidate before archiving",
-          "d": "File > Project Management > Consolidate gathers every asset the project depends on into the project package. Do this before backing up, always."
+          "d": "File > Project Alternatives > New Alternative keeps every version inside one project, and Apple's guide is explicit that alternatives \"are saved as part of the project and share the same assets\" — so you are not duplicating 4 GB of recordings to try a different arrangement."
         },
         {
           "t": "Keep a reference track in every project, muted at the top",
@@ -61,18 +53,8 @@
       "tips": [
         {
           "t": "⌘B bounces the project or the current section",
-          "d": "Set the locators first and Logic bounces exactly that range. Bounce multiple formats in one pass by ticking more than one file type.",
+          "d": "File > Bounce > Project or Section, or Command-B. By default Logic bounces the whole project; to bounce a section, turn Cycle mode on and the bounce range matches the locator positions, or set the range directly with the Start and End sliders in the Bounce dialog. Bounce multiple formats in one pass by selecting more than one destination in the Destination area.",
           "k": "⌘B"
-        },
-        {
-          "t": "Use “Bounce in Place” to commit a track to audio",
-          "d": "⌃B for the selected regions, or File > Bounce > Track in Place for a whole track. You choose whether to include the effects, the volume and the pan.",
-          "k": "⌃B",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Export all tracks as audio files for stems",
-          "d": "File > Export > All Tracks as Audio Files gives you one file per track, all starting at bar 1, ready to hand to anyone."
         },
         {
           "t": "Turn off “Normalize” when bouncing stems",
@@ -80,11 +62,11 @@
         },
         {
           "t": "Bounce offline unless you have external hardware",
-          "d": "Offline is faster and bit‑identical. Realtime is only needed when audio has to physically leave and return through outboard gear."
+          "d": "Bounce offline unless something outside the computer is involved. Apple's own wording is that offline bouncing \"can be faster than real time for more complex projects, and can perform bounces not possible in real time\". Realtime is required when the signal is not purely internal: only audio and software instrument tracks can be bounced offline, not MIDI tracks feeding external instruments or live audio channel inputs."
         },
         {
           "t": "Add 2 bars of silence at the end of the bounce range",
-          "d": "Reverb and delay tails get cut off constantly. Extend the right locator past the last note and listen to the tail before you send it."
+          "d": "Leave room for the tails. Reverb and delay tails get cut off constantly, so before you bounce, push the End position past the last note — either by adjusting the End value slider in the Bounce dialog, or, with Cycle mode on, by dragging the right locator, since Apple documents that the bounce range matches the locator positions only when Cycle is on. Then listen to the end of the file before you send it."
         }
       ]
     },

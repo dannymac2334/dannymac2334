@@ -245,13 +245,23 @@ def build_section(section, counter_start):
     i = counter_start
     last = len(section["groups"]) - 1
     for gi, group in enumerate(section["groups"]):
-        # The closing group is kept whole (a split there strands cards on an
-        # otherwise empty page), and so are small interior groups, which cost
-        # little to move as a unit. Large interior groups still split freely —
-        # keeping those whole punches more holes than it fixes.
-        tight = " group-tight" if (
-            (gi == last and len(group["tips"]) <= 7) or len(group["tips"]) <= 4
-        ) else ""
+        # Only a SMALL closing group is kept whole: that is the one case where a
+        # split strands a card or two on an otherwise empty page. Everything else
+        # splits freely.
+        #
+        # Retuned after the verification pass cut the book from 364 tricks to 265.
+        # The old rule also pinned any group of four or fewer, which was harmless
+        # when groups were large but pins two thirds of them at this size — each
+        # one demanding a fresh page. Measured over the current content:
+        #
+        #   closing<=7 or any<=4 (old)   86pp   5 holes   1 stranded
+        #   closing<=7 only              85pp   4 holes   1 stranded
+        #   closing<=4 only              84pp   1 hole    1 stranded   <- this
+        #   never                        84pp   1 hole    2 stranded
+        #
+        # Re-run /tmp/tune2.py after any large content change; the right threshold
+        # is a function of group size, so it moves when the content does.
+        tight = " group-tight" if (gi == last and len(group["tips"]) <= 4) else ""
         bits.append(f'<div class="group{tight}">')
         bits.append('<div class="group-head reveal">')
         bits.append(f'<h3 class="sub">{esc(group["heading"])}</h3>')

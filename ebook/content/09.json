@@ -8,8 +8,7 @@
       "tips": [
         {
           "t": "⌘‑drag anywhere to marquee select",
-          "d": "Marquee is Logic's default secondary tool, so you never need to switch tools to use it. Drag a box across any range on any number of tracks.",
-          "k": "⌘ + drag",
+          "d": "Make Marquee your ⌘-click tool and you never have to switch tools again. In the Tracks area, click the Command-click Tool menu and choose the Marquee tool; from then on, holding ⌘ turns the pointer into a Marquee anywhere in the Tracks area, and releasing ⌘ puts you straight back on your Left-click tool. Drag a box across any range on any number of tracks. (If you would rather not use a modifier at all, switching on Marquee Tool Click Zones makes the lower half of a region behave as a marquee, with the exception of the lower-left and lower-right edges, which stay as fade/loop handles.)",
           "b": "GAME CHANGER"
         },
         {
@@ -23,13 +22,8 @@
           "k": "Delete"
         },
         {
-          "t": "Click any region after marqueeing to split at the marquee edges",
-          "d": "Marquee a range, then single‑click inside it, and Logic splits the regions at both marquee boundaries automatically. This is the fastest split in the program.",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Set the locators to the marquee instantly",
-          "d": "With a marquee selection active, hitting U sets the cycle locators to exactly that range. Marquee then U then C gives you a perfect loop in three keystrokes.",
+          "d": "With a marquee selection active, press ⌘U — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop. It snaps the cycle locators to exactly that range and switches Cycle on in the same keystroke, so marquee then ⌘U gives you a perfect loop in two moves, not three. (Cycle can still be toggled on and off afterwards with C.)",
           "k": "U"
         }
       ]
@@ -44,15 +38,6 @@
         {
           "t": "Use marquee to create a drop",
           "d": "Marquee the bar before a chorus across every track and delete. Instant, clean, arrangement‑wide silence with no dragging."
-        },
-        {
-          "t": "⌥‑drag a marquee selection to copy that time range",
-          "d": "Copies the audio and MIDI inside the marquee to a new position without disturbing the surrounding regions.",
-          "k": "⌥ + drag"
-        },
-        {
-          "t": "Marquee inside a take folder to edit, not to comp",
-          "d": "Comping is swiping with the Pointer while Quick Swipe Comping is on. Turn comping off and marquee becomes a region-editing tool inside the folder — for cutting, not for choosing takes."
         },
         {
           "t": "Hold ⇧ to extend an existing marquee",

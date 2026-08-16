@@ -8,8 +8,7 @@
       "tips": [
         {
           "t": "X toggles the Mixer, and it remembers your scroll position",
-          "d": "Flip between arrangement and mixer constantly. It costs nothing.",
-          "k": "X"
+          "d": "Press X to show and hide the Mixer inside the main window. Flip between arrangement and mixer constantly — it costs nothing, and it is far faster than reaching for the menu."
         },
         {
           "t": "Use the Single view to see one channel and its full signal path",
@@ -17,17 +16,16 @@
         },
         {
           "t": "Filter the mixer by channel type",
-          "d": "The buttons along the top of the Mixer show or hide audio, instrument, aux, bus, VCA and master channels. Hide everything but auxes when you are setting up sends."
+          "d": "The Mixer's filter buttons limit the display to specific channel strip types. Click a filter button to show or hide that type — or Option-click one to show only that type and hide everything else in a single gesture. When you are setting up sends, Option-click the Aux filter to get a mixer of nothing but your effect returns. (Filtering requires Show Advanced Tools to be enabled in Settings > Advanced.)"
         },
         {
           "t": "⌥‑click any control to reset it to default",
-          "d": "Faders to 0, pans to centre, sends to their default. Works on every control in the mixer.",
-          "k": "⌥ + click",
+          "d": "Option-click a fader to snap it back to 0 dB unity, and Option-click a send dial to do the same. It is the fastest way to undo a level you have talked yourself into. To reset an entire strip rather than one control, click the Setting button at the top of the channel strip and choose Reset Channel Strip.",
           "b": "GAME CHANGER"
         },
         {
           "t": "⌥-click Solo for exclusive solo",
-          "d": "⌥-clicking a Solo button solos that channel and clears every other solo — one gesture to hear one thing. There is no equivalent mute-everything click.",
+          "d": "Option-clicking an unsoloed channel strip solos it and unsolos every other channel strip — one gesture to hear one thing. Option-clicking any active Solo button clears all solos at once. Mute has its own bulk gesture, using Command rather than Option: Command-click a Mute button and every Mute button currently in the same state flips with it, including the output and master strips.",
           "k": "⌥ + click"
         }
       ]
@@ -37,7 +35,7 @@
       "tips": [
         {
           "t": "Use VCA faders for level groups without changing routing",
-          "d": "A VCA controls the faders of its member channels without summing them through a bus, so your existing routing and sends are untouched.",
+          "d": "A VCA controls the volume of each of its member channels without summing them through a bus, so nothing gets re-patched — your existing output routing stays exactly as it was. Be aware of one consequence, though: post-fader sends follow the VCA. Apple documents that the amount of signal a VCA-assigned channel sends to an effect tracks the VCA group's volume changes, so pulling a VCA down pulls its reverb and delay sends down too. Use pre-fader sends for anything that must stay constant regardless of the group level.",
           "b": "GAME CHANGER"
         },
         {
@@ -51,11 +49,7 @@
         },
         {
           "t": "Set sends to pre‑fader for headphone mixes and effects that must stay constant",
-          "d": "Right‑click a send to switch between pre and post fader. Post is right for reverb; pre is right for a cue mix."
-        },
-        {
-          "t": "Copy a whole channel strip the reliable way",
-          "d": "Use the channel strip settings menu — Copy Channel Strip Setting on the source, Paste on the destination. Every insert, send and setting comes across. Individual plugins can still be ⌥-dragged between slots."
+          "d": "Logic gives every send one of three signal-flow modes, not two. Click the Send knob to open its pop-up menu and choose Post Pan (follows both fader and pan), Post Fader (follows the fader but not the pan), or Pre Fader (ignores both — the send level stays put no matter what you do to the channel's volume or pan). Post is what you want for reverb, so the effect tracks the part. Pre is what you want for a headphone cue mix, or for any effect that must stay constant while you ride the fader."
         },
         {
           "t": "Colour your channels to match your regions",
@@ -70,12 +64,6 @@
           "t": "Bypass with ⌥-click, browse with the slot arrows",
           "d": "⌥-click an insert slot to bypass the plugin without opening it. To browse plugins, click the arrows at the right edge of the slot.",
           "k": "⌥ + click"
-        },
-        {
-          "t": "V hides every open plugin window at once",
-          "d": "Press it again and they all come back exactly where they were. Essential on a laptop screen.",
-          "k": "V",
-          "b": "GAME CHANGER"
         },
         {
           "t": "Drag plugins between insert slots and between channels",

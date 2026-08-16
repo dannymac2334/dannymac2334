@@ -7,34 +7,20 @@
       "heading": "Session Players — the fundamentals",
       "tips": [
         {
-          "t": "Session Players are Drummer, extended to bass and keys",
-          "d": "Create a Session Player track and choose Drummer, Bass Player or Keyboard Player. Each one generates a real, editable performance rather than playing back a loop.",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Every Session Player region is convertible to MIDI",
-          "d": "Right‑click the region and choose Convert to MIDI Region. You keep the generated performance and gain full note‑level control."
-        },
-        {
           "t": "Use the Follow parameter to lock players to each other",
-          "d": "Set the Bass Player to follow the Drummer's kick, and the Keyboard Player to follow the bass. The three of them lock like a band rather than three separate parts."
+          "d": "In the Session Player Editor, click Patterns and look under Follow Rhythm Of. Leave the Chords switch on so the player tracks your progression, then use the Track pop-up menu to make the Bass Player follow your drum track and the Keyboard Player follow the bass. The three of them lock like a band rather than three separate parts. (Kick-and-snare-level following is a Drummer control: the Drummer's kick and snare can follow another track's rhythm.)"
         },
         {
           "t": "Session Players respond to region length, so write in sections",
-          "d": "Give each song section its own region and set complexity and intensity per section. That is how you get a verse that builds into a chorus."
+          "d": "Session Player settings are region-based, so write in sections. Give each song section its own region and set complexity and intensity per region in the Session Player Editor. That is how you get a verse that builds into a chorus."
         },
         {
           "t": "Swap the player character without losing your settings",
-          "d": "The performance settings persist when you change the player, so you can audition every character against the same arrangement in seconds."
-        },
-        {
-          "t": "Set Feel to push or pull against the grid",
-          "d": "Ahead of the beat for urgency, behind for laid‑back. It is a per‑region setting and it is the single most musical control in the panel.",
-          "b": "GAME CHANGER"
+          "d": "Before you start auditioning characters, choose 'Keep Settings when Changing Style' from the Preset pop-up menu in the Session Player Editor. With that on, your performance settings survive the swap and you can hear every character against the same arrangement in seconds. Use the Lock Settings button if you want to protect individual parameters such as Fills and Swing."
         },
         {
           "t": "Regenerate a performance without changing anything else",
-          "d": "Small nudges to complexity or intensity produce a fresh take of the same part. If a phrase is not landing, nudge rather than rebuild."
+          "d": "Small nudges to the Complexity or Intensity sliders often shift a phrase enough to fix it. If a bar is not landing, try nudging those sliders before you rebuild the part from scratch."
         },
         {
           "t": "Layer two Session Players on the same part",
@@ -46,20 +32,12 @@
       "heading": "Bass Player",
       "tips": [
         {
-          "t": "Bass Player follows the Chord track by default",
-          "d": "Build your progression once on the Chord track and the bassline follows it, including inversions and passing notes."
-        },
-        {
-          "t": "Use the Note Range control to keep the part in a register",
-          "d": "Constraining the range stops the generated line from jumping octaves and keeps it sitting in the same place in the mix."
-        },
-        {
           "t": "Adjust the Complexity slider before you adjust anything else",
-          "d": "It controls how many notes the player uses per bar. Low complexity in a verse and high in a chorus is an arrangement decision made with one slider."
+          "d": "Reach for the Complexity slider first: drag it higher for a more complex performance, lower for a plainer one. Low complexity in a verse and high in a chorus is an arrangement decision made with one slider."
         },
         {
           "t": "Turn on or off specific articulations",
-          "d": "Slides, hammer‑ons, dead notes and muted notes are individually switchable. Turning slides off alone makes a part sound completely different."
+          "d": "Click Details in the Session Player Editor and you get bass-specific articulation controls: a Dead Notes knob for percussive unpitched notes, a Slides knob for how often the player slides between and before notes, a Dynamic Mute button, and a Pickup Hits button. Depending on the style you also get probability controls such as Buzz Trills, Double Stops, Blue Notes and Slaps. Pulling the Slides knob down on its own makes a part sound completely different."
         },
         {
           "t": "Pair Bass Player with Studio Bass for the intended sound",
@@ -75,17 +53,12 @@
       "heading": "Keyboard Player",
       "tips": [
         {
-          "t": "Set the left-hand voicing before anything else",
-          "d": "Keyboard Player's left hand can play Root Only, Root & Octave or Root & Fifth, and the right hand has its own voicing type plus a movement amount. Same chords, entirely different mood — and it is the fastest way to stop the part fighting your bass.",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Use the left‑ and right‑hand controls independently",
           "d": "You can simplify the left hand and keep the right hand busy, which is how real players comp behind a vocal."
         },
         {
           "t": "Set the rhythmic density separately from the complexity",
-          "d": "Sparse and complex is a very different thing from busy and simple. Both controls exist for that reason."
+          "d": "Complexity and Intensity are two different things, and so are the two hands. Set overall Complexity and Intensity with the sliders, then use the left hand's Style menu (Sustain Only, Simple, Moderate, Complex) to make the left hand sparse while the right hand stays busy. Sparse and complex is a very different thing from busy and simple."
         },
         {
           "t": "Convert to MIDI and delete the left hand entirely",
@@ -97,7 +70,7 @@
         },
         {
           "t": "Try it on a synth patch, not just a piano",
-          "d": "The performance engine is instrument‑agnostic. Point it at a pad or a pluck and the results are often better than on piano."
+          "d": "Do not assume the Keyboard Player only belongs on piano. Try swapping the instrument on the track for a pad or a pluck and listen — and check whether the Synth Keyboard Player or Synth Bass Player suits the sound you are after."
         }
       ]
     },
@@ -115,20 +88,12 @@
           "d": "Drag a MIDI region onto the Chord track and Logic analyses it and builds the progression for you. Works on audio via the Chord analysis too."
         },
         {
-          "t": "Change one chord and hear the whole arrangement follow",
-          "d": "This is the point of the feature. Swapping a minor for a major in bar 12 updates bass, keys and any following track instantly."
-        },
-        {
-          "t": "Use the Chord track to transpose the whole song correctly",
-          "d": "Unlike a blanket transpose, chord‑aware transposition keeps voicings musical rather than just shifting everything by semitones."
-        },
-        {
           "t": "Set chord duration precisely by dragging chord boundaries",
           "d": "Chords snap to the grid, so a half‑bar change is a two‑second edit."
         },
         {
           "t": "Turn Follow Chord Track off for parts that should not move",
-          "d": "Each track has a Follow Chord Track setting in the region inspector. Turn it off for drums, samples and anything already committed."
+          "d": "Following the Chord track is a per-region setting, not a per-track one, and it is called Pitch Source. Select the region, then use the Pitch Source pop-up in the Region inspector: Chord Track makes it follow your progression, and the other options (region chords, key signature) take it off the Chord track. Set it away from Chord Track for samples and anything already committed."
         }
       ]
     },
@@ -146,7 +111,7 @@
         },
         {
           "t": "Split first, then process — artefacts are frequency dependent",
-          "d": "The separated stems have artefacts in predictable places. A gentle high shelf or a de‑esser on the vocal stem cleans up most of it."
+          "d": "Split first, then process. Treat each stem as a new source: listen for separation artefacts on their own before you commit, and clean them up with gentle EQ or a de-esser on the stems that need it rather than processing the whole split."
         },
         {
           "t": "Use single stems as layers, not as full replacements",
@@ -158,7 +123,7 @@
         },
         {
           "t": "Splitting is non‑destructive to the original",
-          "d": "Your source region stays untouched on its own track, so you can always start again."
+          "d": "Splitting adds rather than replaces. Clicking Apply creates a summing stack below the track holding the selected region, with the extracted stems on its subtracks — so the split lives alongside your source material and you can always start again."
         }
       ]
     },
@@ -204,15 +169,11 @@
         },
         {
           "t": "It works while the transport is stopped",
-          "d": "Noodling with the song not playing is exactly when the good ideas arrive. Flashback Capture catches those too, and since 11.2 that safety net covers audio input as well as MIDI."
-        },
-        {
-          "t": "Use Mastering Assistant as an analysis tool, not a finisher",
-          "d": "Run it, look at what it decided to do to your mix, then go and fix those things in the mix itself. Its EQ curve is a free critique of your master bus."
+          "d": "MIDI is caught either way — noodling with the song stopped is exactly when the good ideas arrive, and Flashback Capture catches those. The audio side added in 11.2 has one condition: you can capture audio only while the project is playing, so leave the transport rolling when the mic is the thing you might want back."
         },
         {
           "t": "Check plugin compatibility after updating",
-          "d": "Major releases drop support for older plugin formats. Open your three most important old projects and check every insert before you rely on the new version."
+          "d": "Before you rely on a new version for real work, open your three most important old projects and check every insert. Updates can change how third-party plug-ins load, and finding that out mid-session is expensive."
         }
       ]
     }

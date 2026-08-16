@@ -4,7 +4,7 @@
 Checks four classes of problem that a proofread will not reliably catch:
 
   1. Structural   — malformed JSON, missing fields, trick count below the
-                    350 the cover promises.
+                    count the cover promises.
   2. Duplication  — the same trick written twice under a different section.
   3. Contradiction— one key command claimed for two different actions, which
                     means at least one of them is wrong.
@@ -21,7 +21,7 @@ import re
 import sys
 
 CONTENT = pathlib.Path(__file__).parent / "content"
-MIN_TIPS = 350
+MIN_TIPS = 265  # the surviving, verified count — raise only by verifying more
 
 # --------------------------------------------------------------------------
 # Verified key command registry.

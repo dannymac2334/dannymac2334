@@ -7,17 +7,8 @@
       "heading": "Dynamics",
       "tips": [
         {
-          "t": "Compressor — switch the model, not just the settings",
-          "d": "The Compressor plugin contains seven circuit models. Platinum Digital for clean, transparent control, Studio FET for fast aggressive transients, Vintage Opto for vocals, and Vintage VCA — the SSL bus emulation — for glue across a mix bus. Same plugin, completely different characters.",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Compressor — use the side‑chain filter before reaching for a multiband",
           "d": "Filtering low end out of the detector stops a kick from ducking the whole mix. It solves most “my compressor is pumping” problems in one move."
-        },
-        {
-          "t": "Limiter — set it as a safety, not a loudness tool",
-          "d": "One Limiter at the very end of the master with 0.5 dB of gain reduction stops overs. Anything more than 3 dB and you should be fixing the mix instead."
         },
         {
           "t": "Multipressor — use it to control one problem band only",
@@ -41,21 +32,8 @@
           "d": "Seeing what you are cutting is worth more than any preset. Post‑EQ analysis shows the result rather than the source."
         },
         {
-          "t": "Channel EQ — drag the band’s vertical line sideways to set Q",
-          "d": "Dragging the band itself moves frequency and gain together. Drag the vertical line through it horizontally and you change only Q. Hold ⌘ to lock a drag to one axis, ⌥‑click any band to reset it, and double‑click a gain value to type it exactly.",
-          "k": "⌘ + drag"
-        },
-        {
-          "t": "Linear Phase EQ on the master, Channel EQ everywhere else",
-          "d": "Linear phase avoids phase smearing on the bus but costs latency and CPU. On individual tracks, the phase shift of the standard EQ is usually a feature."
-        },
-        {
-          "t": "Vintage EQ Collection — three genuinely different colours",
-          "d": "The Console, Graphic and Tube EQs are modelled on classic hardware and they add character even with the controls flat. Try them before the Channel EQ on anything that needs attitude."
-        },
-        {
           "t": "Match EQ — steal a tone rather than guess at it",
-          "d": "Learn the spectrum of a reference, learn your track, and Match EQ builds the curve between them. Then pull the amount slider back to 40% — never use it at 100%.",
+          "d": "Learn the spectrum of a reference, learn your track, and Match EQ builds the curve between them from the difference. Then pull the Apply slider — Apple's name for it — back below 100%: values under 100% reduce the impact of the matched curve, and something around 40% usually keeps the tonal direction without the artefacts. Apply also runs past 100% to exaggerate the curve, and into negative values to invert its peaks and troughs. Use the Smoothing slider to coarsen the curve if it comes out too spiky.",
           "b": "GAME CHANGER"
         }
       ]
@@ -67,10 +45,6 @@
           "t": "ChromaVerb — use the Damping display as the main control",
           "d": "The frequency‑dependent decay curve is what makes it sound expensive. Roll off the high end decay and the reverb sits behind the source instead of on top of it.",
           "b": "GAME CHANGER"
-        },
-        {
-          "t": "Space Designer — load your own impulse responses",
-          "d": "Any short audio file can be used as an IR. Drop in a snare hit, a room recording, or a synth stab and you get convolution effects nothing else can produce."
         },
         {
           "t": "Delay Designer — build rhythmic patterns, not echoes",
@@ -91,7 +65,7 @@
       "tips": [
         {
           "t": "Phat FX — one plugin, an entire character chain",
-          "d": "Distortion, filter, modulation, compression and a magnetic saturator in a single window. It is the fastest way to make a sterile synth interesting."
+          "d": "Six effects modules in a single window — Band-pass, Distortion, Mod FX, Bass Enhancer, Compressor and Filter — plus an assignable X/Y pad, three modulation sources (Env Follower, LFO 1, LFO 2) and an Effect Order strip for reordering the chain. The Distortion module alone offers Bitcrusher, Diode, Dirt, Downsampler, Grit, Scream, Soft Saturation, Tube and Vari Drive. It is the fastest way to make a sterile synth interesting."
         },
         {
           "t": "Remix FX — perform DJ effects live and record them",

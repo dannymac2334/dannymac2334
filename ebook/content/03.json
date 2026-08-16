@@ -7,43 +7,29 @@
       "heading": "Getting around",
       "tips": [
         {
-          "t": "Z is the only zoom command you need",
-          "d": "Select anything and press Z to zoom that selection to fill the window. Press Z again to return to where you were. With nothing selected it fits the whole project.",
-          "k": "Z",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Drag‑zoom to any area with ⌃⌥",
           "d": "Hold ⌃⌥ and drag a box around any part of the arrangement to zoom straight to it. Hold ⌃⌥ and click empty space to zoom back out.",
           "k": "⌃⌥ + drag"
         },
         {
           "t": "Know what the number keys actually do",
-          "d": "The top-row number keys recall screensets, not markers. Marker navigation sits on the numeric keypad, or assign your own in Key Commands — search “Go to Marker”.",
-          "k": "⌥K to assign"
+          "d": "The top-row number keys recall screensets, not markers — Apple's guide says you recall a screenset by pressing any numeric key except 0, so 1–9 switch window layouts. If you want marker jumps on a key, open Key Commands (⌥K) and search “Go to Marker Number” — there are 20 of them, numbered by the order the markers appear in the project."
         },
         {
           "t": "Assign a key to “Play Selection”",
-          "d": "It plays the selected region from its start and stops at its end without touching the locators or the position you were working at. Search the command name in Key Commands and give it a key — it is not on one by default.",
-          "k": "⌥K to assign"
-        },
-        {
-          "t": "Jump to an exact bar with the Go to Position dialog",
-          "d": "Press / and type a bar number. Faster and more accurate than dragging the playhead, especially in a long project.",
-          "k": "/"
+          "d": "Open Key Commands with ⌥K and search “Selection”. Logic has several selection-based playback commands — Play from Selection is on ⇧Space by default and starts playback at the beginning of whatever you have selected — so you can audition just the part you are working on. Browse the list and put the one that matches your workflow on a key you can reach."
         },
         {
           "t": "Scroll horizontally without the scrollbar",
-          "d": "Two‑finger swipe left and right on a trackpad, or hold ⇧ while scrolling with a wheel mouse. Keep your hand off the scrollbar entirely."
+          "d": "Two‑finger swipe left and right on a trackpad to move through the project. Apple documents gesture scrolling in the Tracks area, and dragging two fingers scrolls a pane horizontally as well as vertically — keep your hand off the scrollbar entirely."
         },
         {
           "t": "Use the Cycle area as a bookmark",
-          "d": "Set the locators around the part you are working on with U. Even when you play elsewhere, clicking the cycle bar in the ruler takes you straight back to it.",
-          "k": "U"
+          "d": "Select the region or passage you are working on and press U. Logic sets the left and right locators around it — rounded to bar lines — and turns Cycle on, so the yellow strip in the ruler marks your work area and keeps looping it. Use ⌘U instead if you want the locators exactly on the selection boundaries rather than rounded."
         },
         {
           "t": "Toggle Catch to stop the screen running away",
-          "d": "The Catch button makes the view follow the playhead. Click it off when you are doing detailed editing and the view will hold still while the song plays. Search “Catch Playhead Position” in Key Commands to put it on a key.",
+          "d": "The Catch button makes the view follow the playhead. Click it off when you are doing detailed editing and the view will hold still while the song plays. You do not need to assign anything — Catch Playhead Position is already on the backquote (`) key, so you can toggle it without leaving the keyboard.",
           "k": "⌥K to assign"
         }
       ]

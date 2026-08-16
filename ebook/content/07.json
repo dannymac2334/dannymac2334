@@ -7,34 +7,9 @@
       "heading": "Universal region commands",
       "tips": [
         {
-          "t": "⌘T splits every selected region at the playhead",
-          "d": "Select multiple regions across multiple tracks and one keystroke cuts them all at the same point. This is how you chop a whole arrangement in one move.",
-          "k": "⌘T",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "⌘J joins regions back into one",
-          "d": "Works on audio and MIDI. On audio it creates a new merged file; on MIDI it merges the events into a single region.",
-          "k": "⌘J"
-        },
-        {
-          "t": "⌥‑drag copies, ⌥⇧‑drag makes an alias or clone",
-          "d": "The single most useful modifier in the program, and it behaves consistently everywhere.",
-          "k": "⌥ + drag"
-        },
-        {
-          "t": "⌘R repeats the selection once, instantly",
-          "d": "For a numeric count, use Edit > Repeat Multiple… and type the number.",
-          "k": "⌘R"
-        },
-        {
           "t": "Trim to the playhead from either direction",
-          "d": "The commands are “Trim Region Start to Playhead” and the matching End command — search them in Key Commands and put them on keys. No mouse precision needed.",
+          "d": "The commands are “Set Region/Event/Marquee Start to Playhead Position” and the matching End command — search Key Commands (⌥K) for “Playhead Position” and put them on keys. (Note that on audio regions the Start command also moves the region anchor to the playhead.) Related one-shot trims live under Edit > Trim, such as Region End to Next Region. No mouse precision needed.",
           "k": "⌥K to assign"
-        },
-        {
-          "t": "Use the length fields in the Region inspector",
-          "d": "Position, length and loop status are all typeable. When precision matters, stop dragging and start typing."
         }
       ]
     },
@@ -42,23 +17,8 @@
       "heading": "Snap, grid and precision",
       "tips": [
         {
-          "t": "Set Snap to Smart and leave it there",
-          "d": "Smart snap adapts to your zoom level, so you get bar accuracy zoomed out and tick accuracy zoomed in, automatically.",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Two modifiers, two grades of precision",
-          "d": "Hold ⌃ while dragging for a finer snap division, and ⌃⇧ for tick-level free movement. Release and normal snap comes back.",
-          "k": "⌃⇧ + drag"
-        },
-        {
           "t": "Turn on “Snap Regions to Absolute Value”",
-          "d": "In the Snap menu. Regions snap to the grid itself rather than preserving their offset from it. Turn it on for tidy work, off when you are moving a region that is deliberately off‑grid."
-        },
-        {
-          "t": "Use Nudge for repeatable movement",
-          "d": "Set the nudge value in Edit > Move, then ⌥← and ⌥→ move anything by exactly that value, every time.",
-          "k": "⌥← / ⌥→"
+          "d": "In the Snap menu. “Snap Regions to Absolute Value” is Logic's default: move or edit an item and it snaps exactly to the nearest grid position, ignoring any offset it had. The opposite is not an off switch but a second menu item, “Snap Regions to Relative Value” — choose that when you are moving a region that sits deliberately off‑grid, so it keeps its distance from the grid (a region at 2.1.1.16 moved one beat forward lands on 2.2.1.16, not 2.2.1.1)."
         }
       ]
     },
@@ -67,13 +27,12 @@
       "tips": [
         {
           "t": "Esc opens the tool menu, Esc twice returns to the pointer",
-          "d": "Fastest tool switching in the program. Numbers 1–9 pick tools directly from the menu.",
+          "d": "T opens the Tool menu at the pointer — Apple's default assignment for Show Tool Menu — and pressing T twice puts you straight back on the Pointer tool. Fastest tool switching in the program. (Esc-based tool switching was the Logic 9 way and is no longer the default.)",
           "k": "Esc"
         },
         {
           "t": "⌘ is your secondary tool",
-          "d": "Hold ⌘ to temporarily switch to your assigned secondary tool. It is Marquee by default, which is exactly right.",
-          "k": "⌘"
+          "d": "Hold ⌘ to temporarily switch to the Command‑click tool; let go and you are instantly back on your Left‑click tool. Set it from the Command‑click Tool menu (the right‑hand one in the Tracks area menu bar) — most editors put Marquee there, and it is hard to beat."
         },
         {
           "t": "Assign the Fade tool to ⌘ when doing audio cleanup",
@@ -81,16 +40,16 @@
         },
         {
           "t": "Select everything after this point in one keystroke",
-          "d": "⇧F is Select All Following: it grabs every region after the current selection, across all tracks — the fastest way to shift a whole song later. To stay on one track, use Edit > Select > All Following of Same Track; it ships with no default key, so give it one in Key Commands.",
+          "d": "⇧F is Select All Following: it grabs every region after the current selection, across all tracks — the fastest way to shift a whole song later. To stay on one track, use Edit > Select > All Following of Same Track, which already has a default key command of ⌥⇧F.",
           "k": "⇧F"
         },
         {
           "t": "Select equal or similar regions in one command",
-          "d": "Edit > Select > Similar Regions (⇧S), Equal Regions, or Equal Colored Regions finds all matching regions across the project instantly."
+          "d": "Edit > Select > Similar Regions, Equal Regions (⇧E) and Equal Colored Regions (⇧C) find all matching regions across the project instantly — colour-code your parts and you can grab every one of them with a single keystroke. If you use Similar Regions often, check or set its key command in the Key Commands window (⌥K)."
         },
         {
           "t": "Lock a region so you cannot move it by accident",
-          "d": "Control-click the region and choose Lock SMPTE Position, or use the track's protect padlock — it is hidden by default, so turn it on via the track header configuration."
+          "d": "Control-click a region and choose Lock SMPTE Position to pin it to its absolute time position, so later tempo changes cannot drag it out of sync — note this locks it against tempo, not against your mouse. To stop edits altogether, use the track's Protect button: click the padlock and it turns green, and any attempt to change that track raises a “track is locked” dialog. It is not shown by default (track headers start with Mute, Solo and Record Enable), so switch it on by Control-clicking the track header and choosing Track Header Components, or via Track > Configure Track Header."
         }
       ]
     }

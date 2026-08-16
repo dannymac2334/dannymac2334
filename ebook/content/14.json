@@ -7,11 +7,6 @@
       "heading": "Loading and slicing",
       "tips": [
         {
-          "t": "Drag any audio onto an empty track area while holding nothing",
-          "d": "Logic offers to create a Quick Sampler instrument from it. You can drag from the Finder, the browser, or straight from another region in your project.",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Know the four modes and pick deliberately",
           "d": "Classic for straight playback, One Shot for drums and stabs, Slice to chop a loop across the keyboard, Recorder to sample live input. Choosing the mode is 90% of the work."
         },
@@ -21,16 +16,8 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Change slice division to Beat or Division instead of Transient",
-          "d": "For loops with soft transients, slicing at a fixed 1/8 or 1/16 gives cleaner results than transient detection."
-        },
-        {
-          "t": "Sample directly from your input with Recorder mode",
-          "d": "Quick Sampler will record from a mic or a bus. Sample your own reverb tail, your own voice, or another track in the project."
-        },
-        {
           "t": "Drag audio directly from the Tracks area into a loaded Quick Sampler",
-          "d": "Replaces the sample while keeping every setting — your filter, envelope and effects stay exactly as dialled in."
+          "d": "Drag a region straight from the Tracks area into Quick Sampler's waveform display to swap the sound without leaving the plug-in. Drop it on the Original half to keep the file's own tuning, loudness, looping and length; drop it on Optimized and Quick Sampler analyses the file, optimises tuning, loudness and length, and adds loop and crossfade markers for you. Dropping a region triggers an offline bounce before it lands in the display, so give it a moment. (Dragging to the track header instead brings up a Replace Existing Sound dialog.) Glance over your filter and envelope after the swap rather than assuming everything carried across."
         }
       ]
     },
@@ -39,28 +26,11 @@
       "tips": [
         {
           "t": "Use Flex/Follow Tempo to lock a loop to the project",
-          "d": "Turn on Flex in Quick Sampler and the sample follows tempo changes without changing pitch."
+          "d": "Flex and Follow Tempo are two separate buttons, at the lower right of Quick Sampler's waveform display in Classic, One Shot and Slice modes. Turning Flex on by itself only plays the sample at its original speed for all note pitches — it does not chase the project tempo. Turn Flex on, then turn Follow Tempo on as well: with both active, slices stretch or contract according to the original tempo of the loop and the current project tempo, so the loop tracks tempo changes without shifting pitch."
         },
         {
           "t": "Set the root key correctly or nothing will be in tune",
           "d": "Quick Sampler guesses the pitch. If your bass is a semitone out across the keyboard, this is why. Set it manually in the Pitch section."
-        },
-        {
-          "t": "Turn on Loop with crossfade for infinite sustain",
-          "d": "Set the loop start and end in the sustain portion of the sample and add a crossfade. A one‑second sample becomes a pad you can hold forever.",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Use the Sample Start modulation for variation",
-          "d": "Modulate sample start with velocity or randomness and each hit sounds slightly different, which stops sampled drums sounding machine‑gunned."
-        },
-        {
-          "t": "Reverse the sample for instant risers",
-          "d": "One button in the waveform display. Reverse a crash, put it before the drop, done."
-        },
-        {
-          "t": "Use the Filter and its envelope, not an insert plugin",
-          "d": "The internal filter is per‑voice, so it responds to every note independently. An insert filter processes the summed output and sounds completely different."
         }
       ]
     },
@@ -75,14 +45,6 @@
         {
           "t": "Convert Quick Sampler to Sampler for full control",
           "d": "Swap the instrument slot from Quick Sampler to Sampler and your loaded content transfers across automatically. Do it when you need multiple velocity layers, round robins or key zones. It is a one-way trip — Sampler settings will not open back up in Quick Sampler."
-        },
-        {
-          "t": "Save your instrument as a patch immediately",
-          "d": "Chopped a break you like? Save it to the Library before you close the project, or it exists only in that one session."
-        },
-        {
-          "t": "Use one Quick Sampler per element rather than one big kit",
-          "d": "Separate instances mean separate channel strips, separate processing and separate automation. Disk space is free; flexibility is not."
         }
       ]
     }

@@ -12,16 +12,16 @@
         },
         {
           "t": "Drop the buffer to 64 samples for tracking",
-          "d": "Round‑trip latency below about 10 ms is the point where a performer stops noticing it. Do this before the singer walks in, not while they wait.",
+          "d": "Drop the I/O buffer before tracking, not during. In Logic's Audio settings, lower the I/O Buffer Size — Apple's own guidance for recording is to set the buffer to the lowest setting your Mac can handle, then step it back up one notch if you start getting system overload alerts. Logic shows the resulting round-trip latency directly beneath the I/O Buffer Size menu, so judge by that readout rather than by the sample number, and do it before the singer walks in, not while they wait.",
           "b": "GAME CHANGER"
         },
         {
           "t": "Turn on Low Latency Mode instead of disabling plugins one by one",
-          "d": "It bypasses only the plugins that actually cause delay, keeping your monitoring chain intact."
+          "d": "Turn on Low Latency Monitoring mode instead of disabling plugins one by one. Logic bypasses the latency-inducing plug-ins whose latency pushes the track past the Limit slider value in Logic Pro > Settings > Audio > General (up to 30 ms) — plug-ins under that limit keep running, so quiet chains sound identical. Be aware it also switches off that track's Aux sends, so it will kill a headphone reverb fed from a send. It affects only the focused instrument track plus any track with Input Monitoring or Record Enable turned on."
         },
         {
           "t": "Count-in and pre-roll are either/or — pick the right one",
-          "d": "They are exclusive options in the recording settings, not two dials you stack. Count-in gives the performer the tempo from silence; pre-roll rolls the actual track into the punch. For punch-ins, choose pre-roll."
+          "d": "Count-in and pre-roll are either/or — pick the right one. In the Recording project settings, the When Beginning buttons let you choose a count-in or a pre-roll, not both. The difference is the unit: count-in sets the lead-in in bars or beats, so it stays locked to the tempo map; pre-roll sets it as a playback time in seconds, up to 60. Reach for pre-roll when the lead-in you want is a fixed number of seconds — free-tempo material, dialogue, anything where bars are meaningless — and count-in when you want the performer to arrive on a downbeat."
         },
         {
           "t": "Name the track before you record, always",
@@ -30,7 +30,7 @@
         },
         {
           "t": "Record‑enable multiple tracks at once",
-          "d": "⌥‑click a record enable button to arm every track, or select several track headers and hit the record enable on one."
+          "d": "Record‑enable multiple tracks at once. Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\", and you will never lose a multitrack take to a stray modifier."
         }
       ]
     },
@@ -38,26 +38,13 @@
       "heading": "While recording",
       "tips": [
         {
-          "t": "Cycle record into take folders",
-          "d": "Turn on cycle and let the performer keep going. Every pass stacks into a take folder, ready to be comped. Never stop between takes."
-        },
-        {
-          "t": "Punch in on the fly with R",
-          "d": "With Quick Punch‑In enabled, hitting R during playback drops you into record with the audio before the punch preserved.",
-          "k": "R"
-        },
-        {
-          "t": "Use Autopunch for surgical fixes",
-          "d": "Enable Autopunch and drag the punch range in the ruler — Logic records only inside that range no matter when you start playback. If you cannot see the Autopunch button, add it via Customize Control Bar."
-        },
-        {
           "t": "⌘. discards the take you just recorded",
           "d": "Stop and delete in one keystroke, when you know instantly that it was not the one.",
           "k": "⌘."
         },
         {
           "t": "Watch the take folder count, not the waveform",
-          "d": "The take folder header shows how many passes you have. If the performer is on take 14 and getting worse, it is time to stop and move on."
+          "d": "Watch the take count, not the waveform. The take folder header carries a Takes pop-up menu showing the name of the currently active take; open it (or click the disclosure arrow to expand the folder) to see every pass you have banked. If the performer is on take 14 and getting worse, that list is your cue to stop and move on rather than to keep rolling."
         }
       ]
     },
@@ -68,10 +55,6 @@
           "t": "Build a dedicated headphone mix on a bus",
           "d": "Send every track to a second output bus and give the performer more of themselves and more reverb than you would ever put in the mix. Comfort produces better takes than accuracy does.",
           "b": "GAME CHANGER"
-        },
-        {
-          "t": "Add reverb to the monitoring only, not the recording",
-          "d": "Put the reverb on the headphone bus, not the input channel. The singer hears the polish; the file stays dry."
         },
         {
           "t": "Use Input Monitoring rather than record enable to rehearse",

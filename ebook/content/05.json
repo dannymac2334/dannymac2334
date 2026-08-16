@@ -13,19 +13,11 @@
         },
         {
           "t": "Select similar notes with Edit > Select > Same Note Pitch",
-          "d": "Works across the whole region and respects your current selection as the reference."
-        },
-        {
-          "t": "Select all following notes",
-          "d": "Edit > Select > All Following selects every note from the current selection to the end of the region. Ideal for transposing the back half of a part."
-        },
-        {
-          "t": "Rubber‑band select without hitting notes",
-          "d": "Drag in empty space to lasso notes. Hold ⇧ to add to the existing selection rather than replacing it."
+          "d": "Select one note, then choose Edit > Select > Similar Events (⇧S) to grab the other notes of the same pitch — the selected note acts as the reference. Clicking the key on the Piano Roll keyboard does the same job in one gesture."
         },
         {
           "t": "Use Select > Inside Locators to grab a bar range",
-          "d": "Set the locators, then select only the notes inside them. Precise, repeatable, no mouse accuracy required."
+          "d": "Set the left and right locators around the bars you want, then choose Edit > Select > Inside Locators to select everything that falls between them. Precise, repeatable, no mouse accuracy required."
         }
       ]
     },
@@ -33,35 +25,30 @@
       "heading": "Editing notes",
       "tips": [
         {
-          "t": "Nudge notes by tick with ⌥ and the arrow keys",
-          "d": "Set your nudge value in Edit > Move, then ⌥← and ⌥→ move the selection by exactly that amount. Groove work without the mouse.",
-          "k": "⌥← / ⌥→"
-        },
-        {
           "t": "Change note length numerically in the inspector",
-          "d": "The event inspector at the top left shows position, pitch, velocity, length and channel for the selection. Type a value and every selected note updates at once.",
+          "d": "Open the Event Float window — Window > Show Event Float, or ⌥E — to read and type a selected note's values numerically: Position, Status, Channel, Number (pitch), Velocity and Length. It floats above the Piano Roll, so you can nudge a value without leaving the editor.",
           "b": "GAME CHANGER"
         },
         {
           "t": "Type one length and every selected note follows",
-          "d": "Select the notes and type a length in the event inspector — they all take it. Force Legato is a different job: it stretches each note to meet the next, which is not the same as equal lengths."
+          "d": "Force Legato is a different job from setting one length: it stretches each note to end where the next one begins, which is not the same as giving every note an equal length. Reach for Edit > Trim > Note End to Following Notes (Force Legato) when you want notes to join up — not when you want them all the same size."
         },
         {
           "t": "Force legato to fix gappy pads",
-          "d": "Piano Roll Edit > Trim > Note Force Legato extends every note to meet the next. Pads and basslines stop sounding stuttery instantly."
+          "d": "Select the notes, then choose Edit > Trim > Note End to Following Notes (Force Legato) in the Piano Roll. Every note extends to end where the next one begins, and pads and basslines stop sounding stuttery instantly."
         },
         {
           "t": "Trim overlaps automatically",
-          "d": "Piano Roll Edit > Trim > Note Overlaps cleans up doubled notes that cause phasing and stuck voices on hardware."
+          "d": "Select the notes and choose Edit > Trim > Note End to Remove Overlaps to Following Notes (8 Ticks Gap) in the Piano Roll. Logic shortens the note ends so nothing overlaps, leaving an eight-tick gap — which is what stops the phasing and stuck voices you get on hardware. There are matching versions for selected notes and for repeated notes."
         },
         {
           "t": "⌥‑drag a note to duplicate it",
-          "d": "Hold ⌥ while dragging any note or selection to copy rather than move. Hold ⇧ too and it stays on the same pitch.",
+          "d": "Hold ⌥ while dragging any note or selection to copy rather than move — you can even ⌥-drag notes between two Piano Roll windows, or between two different projects. To stop a drag changing pitch, turn on Logic Pro > Settings > General > Editing > \"Limit Dragging to One Direction In Piano Roll and Score\": the direction you start in is then the only one you can move in. Pressing ⇧ while dragging switches that behaviour on and off; it is not a pitch lock on its own.",
           "k": "⌥ + drag"
         },
         {
           "t": "Place a note between grid divisions",
-          "d": "Set Snap to a finer division, or switch Snap off for the drag. Do not reach for ⌃⌥-drag here — that gesture is drag-zoom, and using it will move your view instead of your note."
+          "d": "Set Snap to a finer value — Ticks snaps to 1/3840 of a beat — or just press Control-Shift as you drag, which moves the note in tick steps and overrides the Snap value entirely. Do not reach for ⌃⌥-drag here: that is the Zoom tool, so it will move your view instead of your note."
         }
       ]
     },
@@ -70,21 +57,16 @@
       "tips": [
         {
           "t": "Change velocity by dragging with the Velocity tool",
-          "d": "Pick the Velocity tool from the tool menu and drag up or down on a note. The note colour updates live and you never leave the Piano Roll.",
+          "d": "Pick the Velocity tool from the Tool menu — or press and hold Control-Command to turn the Pointer into it temporarily — and drag up or down on a note. A help tag shows the velocity as you drag, and the line inside the note grows or shrinks. Turn on View > Set Note Color > By Velocity first if you want the note colour to track it too. Either way you never leave the Piano Roll.",
           "b": "GAME CHANGER"
         },
         {
           "t": "Draw a velocity ramp across a selection",
-          "d": "Select a run of notes, then draw a line across the velocity lane with the Pointer or the Pencil. Hold ⌘ while you do it to keep the relative differences between notes."
-        },
-        {
-          "t": "Scale velocities rather than replacing them",
-          "d": "Typing a velocity value flattens everything to the same number. Instead, drag the velocity of one note in a selection and the others move relatively, preserving the performance."
+          "d": "For a crescendo across a run of notes, select them all and drag one note upward with the Velocity tool. Logic moves the whole selection and keeps the relative differences between their velocity values, so you scale the shape of the performance instead of flattening it into a straight line."
         },
         {
           "t": "Show the automation lane inside the Piano Roll",
-          "d": "Press A with the Piano Roll focused to reveal MIDI CC lanes underneath the notes. Modwheel, expression and sustain edit right next to the notes they affect.",
-          "k": "A"
+          "d": "Click the Show/Hide Automation button in the Piano Roll Editor menu bar to open the Automation/MIDI lane under the notes. Choose modwheel, expression or sustain from the Automation/MIDI Parameter pop-up menu and edit that data right next to the notes it affects."
         },
         {
           "t": "Colour notes by velocity to read dynamics instantly",
@@ -107,10 +89,6 @@
         {
           "t": "Quantise only the notes that need it",
           "d": "Select the offending notes in the Piano Roll and quantise the selection rather than the whole region. The good parts of the take stay untouched."
-        },
-        {
-          "t": "Use Q‑Range to leave close notes alone",
-          "d": "Q‑Range quantises only notes that are further from the grid than a set amount, so a naturally tight performance is left alone while the strays get pulled in."
         }
       ]
     }

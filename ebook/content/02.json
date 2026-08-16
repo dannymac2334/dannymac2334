@@ -14,7 +14,7 @@
         },
         {
           "t": "⌘-drag one arrangement marker onto another to swap sections",
-          "d": "A plain drag moves or inserts. Hold ⌘ while dragging one marker onto another and they swap places. Trying three song orders takes about fifteen seconds.",
+          "d": "A plain drag moves a section, or inserts it between two others. To swap two sections outright, drag one arrangement marker directly over another — the two markers switch places and all their content is swapped. Trying three song orders takes about fifteen seconds.",
           "k": "⌘ + drag"
         },
         {
@@ -28,11 +28,11 @@
         },
         {
           "t": "Insert silence across the whole project",
-          "d": "Set the locators, then Edit > Cut/Insert Time > Insert Silence at Locators. Every track and every automation point shifts. This is how you add two bars to an intro without wrecking the mix."
+          "d": "Set the locators, then Edit > Cut/Insert Time > Insert Silence Between Locators. Every track and every automation point shifts. This is how you add two bars to an intro without wrecking the mix."
         },
         {
           "t": "Snap arrangement markers to your actual section boundaries",
-          "d": "Select a region that spans exactly one section, hit U to set the locators to it, then create the arrangement marker. It lands perfectly instead of approximately.",
+          "d": "New arrangement markers always appear at the start of the project or after the last existing marker, eight bars long, regardless of where the playhead or locators sit. So create the marker first, then drag its right edge to the exact end of the section — the edge snaps to bars, so it lands on the boundary rather than near it.",
           "k": "U"
         }
       ]
@@ -41,18 +41,8 @@
       "heading": "Building and duplicating",
       "tips": [
         {
-          "t": "Repeat regions numerically instead of dragging",
-          "d": "Select regions and hit ⌘R for a single repeat, or use Edit > Repeat Multiple… to type an exact number of copies and choose whether they land as copies or aliases.",
-          "k": "⌘R"
-        },
-        {
-          "t": "Loop a region instead of copying it",
-          "d": "Grab the top‑right corner of a region and drag right to loop it. Looped regions update everywhere when you edit the original, and they cost nothing to change.",
-          "k": "L"
-        },
-        {
           "t": "Convert loops to real regions only at the very end",
-          "d": "Edit > Convert > Loops to Regions, or control-click the region and choose Convert. Stay looped as long as possible so a single edit propagates, then commit when the arrangement is locked."
+          "d": "Edit > Convert > Loops to Aliases turns software-instrument loop repetitions into aliases and audio loop repeats into cloned audio regions. Stay looped as long as possible so a single edit propagates, then convert once the arrangement is locked."
         },
         {
           "t": "Use aliases for parts that must stay identical",
@@ -75,23 +65,18 @@
       "heading": "Judging the arrangement",
       "tips": [
         {
-          "t": "Zoom all the way out and squint",
-          "d": "Hit Z with nothing selected to fit the whole project on screen. If the energy shape of the song is not visible from the region blocks alone, the arrangement is probably flat.",
-          "k": "Z"
-        },
-        {
           "t": "Use Track Stacks to collapse instrument families",
           "d": "Select related tracks and hit ⇧⌘D, then choose Summing Stack in the dialog. Drums become one lane and the arrangement becomes readable.",
           "k": "⌘⇧D"
         },
         {
           "t": "Solo an arrangement section with the locators",
-          "d": "Click the arrangement marker to select that section's regions, hit U to set the locators to them, then C. Three keys and you are looping exactly that section.",
+          "d": "Select the regions that make up the section, then press U. That single key is Set Rounded Locators by Regions/Events and Enable Cycle — it rounds the locators to the nearest barlines around your selection and switches Cycle mode on in one go. Don't press C afterwards; that would switch Cycle back off.",
           "k": "U"
         },
         {
           "t": "Mute regions instead of deleting them while experimenting",
-          "d": "Click a region with the Mute tool, or select and press M. Arrangement experiments become reversible without touching undo.",
+          "d": "Click a region with the Mute tool, or select the regions and press Control-M. Muted regions turn grey with a dot before the name, so arrangement experiments become reversible without touching undo.",
           "k": "M"
         },
         {

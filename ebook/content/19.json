@@ -12,7 +12,7 @@
       "tips": [
         {
           "t": "Synth Player is the third Session Player",
-          "d": "Create a Session Player track and choose Synth. It generates synth parts that follow your Chord track the same way Bass Player and Keyboard Player do — so a progression can arrange itself across three instruments.",
+          "d": "Synth Player is not a new Session Player — it is a set of styles inside the Bass Player and Keyboard Player you already have. Create a Bass Player or Keyboard Player track, open the Session Player Editor, and choose a Synth style the same way you choose any other style. The performance still follows the Chord track, so one progression can arrange bass and keys at once.",
           "b": "GAME CHANGER"
         },
         {
@@ -25,7 +25,7 @@
         },
         {
           "t": "Intensity changes tone, not just level",
-          "d": "On Pump Bass especially, raising Intensity opens the filter as well as pushing the level. It is the fastest way to make a bassline build without drawing a single automation point."
+          "d": "Pump Bass gets its movement from a modulated ducking effect, and you can shape it directly: in the Session Player Editor click the Details button, then drag the Amount knob vertically to change how hard it pumps and the Shape knob to change the curve of the duck. It is the fastest way to make a bassline build without drawing a single automation point."
         },
         {
           "t": "Point Synth Player at a third-party synth",
@@ -38,11 +38,11 @@
         },
         {
           "t": "Chord ID gets the harmonic rhythm, not just the chords",
-          "d": "It works out when the chords change as well as what they are, so the Chord track lands on the right bars instead of needing to be dragged into place afterwards."
+          "d": "Chord ID writes what it finds straight onto the Chord track — drag an audio or MIDI region onto the Chord track and Logic analyses it and adds the chords it contains as a chord group. Play it back against the source before you build on it; the Chord track's Change Display Only mode lets you correct any chord that does not match what you are hearing without altering playback."
         },
         {
           "t": "Everything downstream follows the Chord track",
-          "d": "Once Chord ID has populated it, Session Players, the Step Sequencer and arpeggiators all follow the progression. One analysis pass can arrange three parts at once.",
+          "d": "Once Chord ID has populated the Chord track, other tracks can lock to it. Apple: \"By following the Chord track, multiple tracks — such as tracks using Step Sequencer, Session Player tracks, and other software instrument tracks — can play in sync harmonically.\" Set a Session Player region to follow with Control-click > Chords > Follow Global Chord Track; set a Step Sequencer pattern to follow by choosing Chord Track, which renames the note rows to chord degrees. One analysis pass can arrange several parts at once.",
           "b": "GAME CHANGER"
         },
         {
@@ -51,11 +51,11 @@
         },
         {
           "t": "Preview sound packs before you download them",
-          "d": "The rebuilt Sound Library plays an audio preview of any pack before you install it, and lets you delete packs you never use to get the disk space back."
+          "d": "The rebuilt Sound Library lets you look a pack over before you commit — click Preview on a pack to see what is in it, then Get to download it. It is also where you reclaim space: select an installed pack and click Delete. The total space used by all installed packs is shown at the top of the list, with each pack's size beside it."
         },
         {
           "t": "Re-run Mastering Assistant on older masters",
-          "d": "Genre detection and the interface both changed in 12. A master you processed under Logic 11 is worth analysing again before you call it finished."
+          "d": "Mastering Assistant is worth re-running on an older master after any major update. Reanalyse the mix on the master bus, then A/B the result against the version you signed off on before you call it finished — Apple's character presets (Clean, Valve, Punch, Transparent) give you four quick comparisons at once."
         }
       ]
     },
@@ -74,11 +74,11 @@
         },
         {
           "t": "Keep the previous version installed alongside the new one",
-          "d": "Before updating, duplicate Logic Pro in your Applications folder and rename the copy with its version number. macOS will run both, and you have an instant fallback."
+          "d": "Keep the outgoing version before you update, using Apple's own procedure: make a folder inside Applications named for the version (for example \"Logic Pro 11.1.2\"), select Logic Pro and choose File > Compress \"Logic Pro\", then move the resulting Logic Pro.zip into that folder. If the new version gives you trouble, unzip that copy and drag it into Applications and you are back where you were."
         },
         {
           "t": "Back up your key commands, templates and channel strip settings",
-          "d": "These live in your user Library, not in the app. Export key commands from the Key Commands window and copy your templates folder somewhere safe."
+          "d": "Key commands are the only one of these that lives in your user Library. Open the Key Commands window (Option-K), choose Options > Export Key Commands, and save the file somewhere safe — the dialog defaults to ~/Library/Application Support/Logic/Key Commands. Your templates and channel strip settings live somewhere else entirely: ~/Music/Audio Music Apps/Project Templates and ~/Music/Audio Music Apps/Channel Strip Settings. Copy those two folders as well."
         },
         {
           "t": "Consolidate and archive your three most important projects",
@@ -90,7 +90,7 @@
         },
         {
           "t": "Note your current I/O and buffer settings",
-          "d": "Major updates sometimes reset audio device preferences. A screenshot of your Audio settings takes five seconds and saves a confusing afternoon."
+          "d": "Screenshot your Audio settings before you update — output device, input device and I/O buffer size. It takes five seconds, and if anything about your setup looks different afterwards you can restore the exact configuration you were working with instead of guessing at it."
         },
         {
           "t": "Update macOS and Logic separately, a week apart",
@@ -102,26 +102,8 @@
       "heading": "After you update",
       "tips": [
         {
-          "t": "Open an old project and audit every insert",
-          "d": "Look for greyed‑out or missing plugins on every channel. Do this before you assume everything migrated cleanly.",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Rebuild your templates rather than opening old ones",
-          "d": "New versions add track types, settings and defaults that an old template will not have. Rebuilding takes an hour and you get every new default for free."
-        },
-        {
-          "t": "Re-check Enable Complete Features after updating",
-          "d": "Settings > Advanced holds a single Enable Complete Features checkbox. If half the program seems to have disappeared after an update, this is the first place to look."
-        },
-        {
           "t": "Read the new Key Commands list for additions",
-          "d": "Open ⌥K and sort by command name. New features arrive with new commands, many of them unassigned by default.",
-          "k": "⌥K"
-        },
-        {
-          "t": "Run the Sound Library update fully before working",
-          "d": "Logic Pro > Sound Library > Download All Available Sounds. A half‑downloaded library produces silent tracks that look fine."
+          "d": "Open the Key Commands window after every update — Logic Pro > Key Commands > Edit, or Option-K — and read through it for commands you have not seen before. New features arrive with new commands, many of them unassigned by default, and this is the only place they announce themselves."
         },
         {
           "t": "Test your bounce path end to end before you need it",

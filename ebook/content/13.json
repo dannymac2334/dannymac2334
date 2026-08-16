@@ -19,16 +19,11 @@
         },
         {
           "t": "⌥‑drag a pad to copy it, including all its processing",
-          "d": "Perfect for layering — copy the snare, pitch the copy down, and blend.",
-          "k": "⌥ + drag"
+          "d": "Copy a pad when you want to layer. Control-click the pad and choose Copy, then Control-click the pad you want to replace and choose Paste. Pitch the copy down and blend it under the original for a thicker snare. (Dragging a pad to an empty slot in the grid moves it rather than copying it, which is how you reorder a kit.)"
         },
         {
           "t": "Use the pad's Sound tab for quick shaping",
-          "d": "Pitch, filter, start point, envelope and gain are all on the pad itself, so you can shape a sample without opening the sampler."
-        },
-        {
-          "t": "Assign pads to an Exclusive Group",
-          "d": "Put the open and closed hi-hat in the same Exclusive Group and the closed hat cuts the open one off, exactly like a real drum machine."
+          "d": "Use the Pad Controls button for quick shaping. Select a pad and click Pad Controls in the bar below the grid: the pad's tone and effect Smart Controls appear in the Plug-in pane, so you can reshape a kit piece without going into its plug-in. When you do need the sample itself — playback mode, sample start, the pitch, filter and amp envelopes — the same bar has Q-Sampler Main, Q-Sampler Details or Drum Synth buttons that open that pad's instrument right below the grid."
         }
       ]
     },
@@ -36,20 +31,8 @@
       "heading": "Mixing and performing",
       "tips": [
         {
-          "t": "Add a bus inside the stack for parallel compression",
-          "d": "Create a send from every pad to one aux, put a heavy compressor on it, and blend it back. The whole kit gets glued without touching the individual hits."
-        },
-        {
-          "t": "Automate individual pads, not the whole kit",
-          "d": "Because each pad is a channel, each pad has its own automation lanes. Filter just the hats in the breakdown."
-        },
-        {
           "t": "Use the main stack fader for the whole kit",
           "d": "The Track Stack's top level is a summing bus. Put your kit compressor and limiter there and process everything together."
-        },
-        {
-          "t": "Convert a Drummer track to Drum Machine Designer",
-          "d": "The electronic drummers use Drum Machine Designer natively, which means you can take a generated performance and then rebuild the kit sample by sample."
         },
         {
           "t": "Save your kit as a patch",

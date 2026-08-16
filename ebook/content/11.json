@@ -7,19 +7,9 @@
       "heading": "The basics done right",
       "tips": [
         {
-          "t": "Create a Pattern Region to open the Step Sequencer",
-          "d": "Right‑click an empty area on a drum or instrument track and choose Create Pattern Region. The grid opens in the editor pane below — press E to show and hide it while you work.",
-          "k": "E",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Give every row a different step rate",
-          "d": "Click a row's edit button and change its subdivision. Hi‑hats at 1/16 against a kick at 1/8 against a perc at 1/12 creates polyrhythms with no effort at all.",
+          "d": "Rows do not have to share the pattern's subdivision. Click a row header to select the row, then in the Step Sequencer inspector click Row and choose a note value from the Step Rate pop-up menu. (You can also switch the grid to Step Rate edit mode and drag vertically inside a single step to change just that step.) Hi-hats at 1/16 against a kick at 1/8 gives you cross-rhythms with no extra work at all.",
           "b": "GAME CHANGER"
-        },
-        {
-          "t": "Set different pattern lengths per row",
-          "d": "A 16‑step kick against a 15‑step hi‑hat takes 240 steps to repeat. This is how you get a loop that never sounds looped."
         },
         {
           "t": "Use the row's Playback Mode for variation",
@@ -35,11 +25,6 @@
       "heading": "Per‑step editing",
       "tips": [
         {
-          "t": "Switch the edit mode to change what you are drawing",
-          "d": "The Edit Mode menu switches the grid between Velocity, Gate, Note Repeat, Chance, Tie, Loop Start, Skip and more. The same grid draws a dozen different parameters.",
-          "b": "GAME CHANGER"
-        },
-        {
           "t": "Use Chance to make a pattern breathe",
           "d": "Set a ghost snare to 40% chance and it appears roughly twice every five bars. Nothing else creates natural variation this cheaply."
         },
@@ -49,7 +34,7 @@
         },
         {
           "t": "Set Gate to shorten or lengthen individual hits",
-          "d": "Short gates on a bass pattern create staccato stabs; long gates create glides. Per‑step, not per‑pattern."
+          "d": "Gate sets a step's note length as a percentage of the step, shortening it to less than the step's full duration — short gates on a bass pattern give you staccato stabs. It only ever shortens; to make a note run longer than its step, switch to Tie edit mode and click the right edge of the step to tie it to the following one, which lengthens its duration by the value of the step it is tied to. Both are per-step, not per-pattern."
         },
         {
           "t": "Tie steps together for sustained notes",
@@ -57,8 +42,7 @@
         },
         {
           "t": "⌥‑click a step to reset it to default",
-          "d": "Works on every parameter in every edit mode.",
-          "k": "⌥ + click"
+          "d": "Reset a step you have over-edited: select the step, then choose Functions > Clear Step from the Step Sequencer menu bar. That clears all of the step's edit-mode values back to their defaults in one move — for step rate, the default is whatever the row's step rate is. (Retitle the trick 'Clear a step to reset all its edit-mode values' and drop the ⌥ + click key command field, which is not documented.)"
         }
       ]
     },
@@ -73,10 +57,6 @@
           "t": "Automate plugin parameters per step",
           "d": "Add a row and assign it to any automatable plugin parameter. Now you can sequence filter cutoff step by step alongside the notes.",
           "b": "GAME CHANGER"
-        },
-        {
-          "t": "Convert a pattern region to MIDI to edit it in the Piano Roll",
-          "d": "Right‑click the pattern region and choose Convert to MIDI Region when you need finer control than the grid allows."
         },
         {
           "t": "Build a library of pattern regions",
