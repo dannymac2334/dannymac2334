@@ -8,7 +8,9 @@ structured content files so the text and the design can be changed independently
 | File | What it is |
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
-| `dist/logic-pro-crash-course-page.html` | **Drop-in page for dannnymcccarthy.com.** Links the site's own `css/style.css` and `js/main.js`, carries the site header and footer, and uses the site's `.reveal` classes so the existing observer animates it. Put it at the site root. |
+| `dist/logic-pro-crash-course-sales.html` | **The sales page** for the $14.99 product. Drop-in for the site; sells the book without containing it. Built by `build_sales_page.py`. |
+| `dist/logic-pro-crash-course-page.html` | Full 355-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
+| `HANDOFF.md` / `AGENT-PROMPT.md` / `PITCH.md` | Handoff spec, paste-ready prompt for the site agent, and the sales copy in reviewable form. |
 | `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 82 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
