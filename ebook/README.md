@@ -1,6 +1,6 @@
 # Logic Pro Crash Course — eBook
 
-A clickable eBook of **355 Logic Pro tricks** across **19 sections**, built from
+A clickable eBook of **367 Logic Pro tricks** across **19 sections**, built from
 structured content files so the text and the design can be changed independently.
 
 ## Output
@@ -9,9 +9,9 @@ structured content files so the text and the design can be changed independently
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
 | `dist/logic-pro-crash-course-sales.html` | **The sales page** for the $14.99 product. Drop-in for the site; sells the book without containing it. Built by `build_sales_page.py`. |
-| `dist/logic-pro-crash-course-page.html` | Full 355-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
+| `dist/logic-pro-crash-course-page.html` | Full 367-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
 | `HANDOFF.md` / `AGENT-PROMPT.md` / `PITCH.md` | Handoff spec, paste-ready prompt for the site agent, and the sales copy in reviewable form. |
-| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 82 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
+| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 84 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -40,7 +40,7 @@ The book is sold, not given away, so **only the sales page goes on the site** an
 never enters the site repo. `HANDOFF.md` is the full spec and `AGENT-PROMPT.md` is the
 message to hand the site agent.
 
-`dist/logic-pro-crash-course-page.html` — the full 355-trick web page — is **not for
+`dist/logic-pro-crash-course-page.html` — the full 367-trick web page — is **not for
 publication while the book is paid**; it contains the entire product. Keep it for a future
 free sample if that is ever wanted.
 
@@ -134,7 +134,10 @@ token on the paper surfaces rather than re-listing selectors, so nothing gets mi
 
 ## Section 19
 
-**Logic Pro 12 Update** is an upgrade playbook only — what to do before, during and after a
-major release. It deliberately carries no feature-by-feature notes, because version-specific
-claims go stale as soon as Apple ships a point update. If you want those, add them as new
-tricks against the release notes for the build you are running.
+**Logic Pro 12 Update** covers the Logic Pro 12 release (28 January 2026): the Synth Player,
+Chord ID, the rebuilt Sound Library, and the fact that 12 is Apple silicon only — Intel Macs
+stop at Logic Pro 11. It also keeps the upgrade playbook for surviving any major release.
+
+Logic 12 feature claims were verified against multiple independent sources rather than Apple's
+own documentation, which this environment's network proxy blocks. Re-check them against the
+release notes for the build you are on before a major reprint.

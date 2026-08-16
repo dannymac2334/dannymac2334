@@ -1,15 +1,72 @@
 {
   "number": 19,
   "title": "Logic Pro 12 Update",
-  "intro": "A major Logic release is the one moment a working producer can genuinely lose a week. This section is the upgrade playbook — everything to do before, during and after — so a new version costs you an afternoon instead of a fortnight.",
+  "intro": "Logic Pro 12 arrived in January 2026 and it is an Apple silicon release — Intel Macs stop here. The headline additions are the Synth Player and Chord ID, which together change how a track gets arranged. This section covers what is new, plus the upgrade playbook for surviving any major release.",
   "notice": {
-    "title": "Why there are no feature-by-feature notes here",
-    "text": "Version-specific claims go stale the moment Apple ships a point update, so this section deliberately sticks to what stays true across every release. For what is actually new in the build you are running, read the release notes and check ⌥K for commands that arrived unassigned."
+    "title": "One requirement before anything else",
+    "text": "Logic Pro 12 requires an Apple silicon Mac running macOS 15.6 or later. There is no Intel version. If you are still on an Intel machine, Logic Pro 11 is the end of the road — plan around that before you update anything."
   },
   "groups": [
     {
+      "heading": "What's new in Logic Pro 12",
+      "tips": [
+        {
+          "t": "Synth Player is the third Session Player",
+          "d": "Create a Session Player track and choose Synth. It generates synth parts that follow your Chord track the same way Bass Player and Keyboard Player do — so a progression can arrange itself across three instruments.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Pick the Synth Keyboard style before you touch anything else",
+          "d": "Simple Pad for a sustained harmonic bed, Modulated Pad when you want movement, Rhythmic Chords when the part needs to drive. Same chords, three completely different jobs."
+        },
+        {
+          "t": "Synth Bass ships with three distinct characters",
+          "d": "808 Bass for trap-leaning low end, Pump Bass for filtered movement, Sequenced Bass for driving sixteenths. Audition all three before you start editing the pattern."
+        },
+        {
+          "t": "Intensity changes tone, not just level",
+          "d": "On Pump Bass especially, raising Intensity opens the filter as well as pushing the level. It is the fastest way to make a bassline build without drawing a single automation point."
+        },
+        {
+          "t": "Point Synth Player at a third-party synth",
+          "d": "The performance engine and the sound source are separate. Synth Player can drive any Audio Unit, and external hardware too, so you keep the chord-following performance and choose your own sound."
+        },
+        {
+          "t": "Chord ID reads chords off audio, not just MIDI",
+          "d": "Drag in a guitar demo, a piano take or a rough bounce and Chord ID analyses it and writes the progression to the Chord track in seconds. It is the fastest route from an idea to a working arrangement.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Chord ID gets the harmonic rhythm, not just the chords",
+          "d": "It works out when the chords change as well as what they are, so the Chord track lands on the right bars instead of needing to be dragged into place afterwards."
+        },
+        {
+          "t": "Everything downstream follows the Chord track",
+          "d": "Once Chord ID has populated it, Session Players, the Step Sequencer and arpeggiators all follow the progression. One analysis pass can arrange three parts at once.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Run Chord ID on your own old bounces",
+          "d": "The fastest way to rebuild a session you have lost is to drag the bounce in, let Chord ID read the changes, and start again from a chord track you know is correct."
+        },
+        {
+          "t": "Preview sound packs before you download them",
+          "d": "The rebuilt Sound Library plays an audio preview of any pack before you install it, and lets you delete packs you never use to get the disk space back."
+        },
+        {
+          "t": "Re-run Mastering Assistant on older masters",
+          "d": "Genre detection and the interface both changed in 12. A master you processed under Logic 11 is worth analysing again before you call it finished."
+        }
+      ]
+    },
+    {
       "heading": "Before you update",
       "tips": [
+        {
+          "t": "Logic Pro 12 drops Intel Macs entirely",
+          "d": "It requires an Apple silicon Mac and macOS 15.6 or later. If you are on Intel, Logic Pro 11 is the last version you can run — check your machine before you plan an upgrade.",
+          "b": "GAME CHANGER"
+        },
         {
           "t": "Never update in the middle of a paid project",
           "d": "The one rule that matters. Finish and deliver, then update. A new version halfway through a mix is a self‑inflicted deadline problem.",

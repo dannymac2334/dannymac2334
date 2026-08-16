@@ -249,7 +249,7 @@ def build_section(section, counter_start):
         # lone card on an otherwise empty page, because nothing follows it.
         # Doing this to every group instead pushes mid-section groups onto fresh
         # pages and punches far more holes than it fixes.
-        tight = " group-tight" if gi == last and len(group["tips"]) <= 6 else ""
+        tight = " group-tight" if gi == last and len(group["tips"]) <= 7 else ""
         bits.append(f'<div class="group{tight}">')
         bits.append('<div class="group-head reveal">')
         bits.append(f'<h3 class="sub">{esc(group["heading"])}</h3>')

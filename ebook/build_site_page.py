@@ -27,7 +27,9 @@ PDF_HREF = "assets/resources/logic-pro-crash-course.pdf"
 HIGHLIGHT = "GAME CHANGER"
 
 TITLE = "Logic Pro Crash Course | Dannny McCcarthy"
-DESC = ("355 Logic Pro tricks across 19 sections — key commands, editing, mixing and "
+_front, _sections = load()
+TRICKS = count_tips(_sections)
+DESC = (f"{TRICKS} Logic Pro tricks across {len(_sections)} sections — key commands, editing, mixing and "
         "workflow. A free resource from Seattle designer and producer Dannny McCcarthy.")
 URL = "https://www.dannnymcccarthy.com/logic-pro-crash-course"
 
@@ -106,7 +108,7 @@ def page_css():
   text-transform:uppercase;opacity:.6}
 .lp .lp-cta{margin-top:38px}
 
-/* filter bar — 355 tricks on one page is a search problem, not a scroll problem */
+/* filter bar — hundreds of tricks on one page is a search problem, not a scroll problem */
 .lp-tools{position:sticky;top:56px;z-index:91;padding:12px var(--pad);box-sizing:border-box;
   background:rgba(0,0,0,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   border-top:1px solid var(--line-dark)}
@@ -429,7 +431,7 @@ NAV_JS = """
   spy();
 
   /* ---- filter ------------------------------------------------------
-     355 tricks is a search problem. Match on the card's own text plus its
+     Hundreds of tricks is a search problem. Match on the card's own text plus its
      group heading and section title, so "drums" finds the Drummer section
      even when the word is not in the card itself. */
   var page = document.querySelector('.lp');
@@ -537,7 +539,7 @@ def main():
         '<div class="lp-search" role="search">',
         '<label class="visually-hidden" for="lp-q">Search the tricks</label>',
         '<input id="lp-q" type="search" autocomplete="off" spellcheck="false" '
-        'placeholder="Search 355 tricks — try marquee, flex, bounce">',
+        f'placeholder="Search {total} tricks — try marquee, flex, bounce">',
         "<kbd>/</kbd>",
         "</div>",
         '<button class="lp-toggle" type="button" id="lp-gc" aria-pressed="false">'

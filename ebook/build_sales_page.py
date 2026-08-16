@@ -25,11 +25,24 @@ DIST = ROOT / "dist"
 
 PRICE = "14.99"
 BUY_HREF = "/buy"
-PAGES = 82
+# Read the real page count off the built PDF when it is there, so the sales
+# page can never advertise a length the product does not have.
+def _pdf_pages(default=84):
+    try:
+        import pypdfium2
+        return len(pypdfium2.PdfDocument(DIST / "logic-pro-crash-course.pdf"))
+    except Exception:
+        return default
 
-TITLE = "Logic Pro Crash Course — 355 Tricks | Dannny McCcarthy"
-DESC = ("355 Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and "
-        f"workflow across 19 sections. ${PRICE}, instant download.")
+PAGES = _pdf_pages()
+
+# Counts are derived from content/ so the marketing can never outrun the book.
+_front, _sections = load()
+TRICKS = count_tips(_sections)
+SECTIONS = len(_sections)
+TITLE = f"Logic Pro Crash Course — {TRICKS} Tricks | Dannny McCcarthy"
+DESC = (f"{TRICKS} Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and "
+        f"workflow across {SECTIONS} sections. ${PRICE}, instant download.")
 URL = "https://www.dannnymcccarthy.com/logic-pro-crash-course"
 
 # (section number, fragment of the trick title) — resolved against content/
@@ -46,9 +59,12 @@ FAQ = [
     ("Which version of Logic does it cover?",
      "It works with Logic Pro 10.7, 11 and 12. Every key command is the factory default on a "
      "US keyboard, and where a command could move between versions the book gives the exact "
-     "command name and menu path instead, so it stays correct. To be straight with you: Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 is an upgrade playbook for handling any major release, not a feature-by-feature tour of Logic Pro 12."),
+     "command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 "
+     "features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 "
+     "covers Logic Pro 12: the Synth Player, Chord ID, the rebuilt Sound Library, and the fact "
+     "that 12 is Apple silicon only."),
     ("Is this a video course?",
-     "No. It is 355 written tricks: title, what it does, the key command. Most take ten "
+     f"No. It is {TRICKS} written tricks: title, what it does, the key command. Most take ten "
      "seconds to read. It is built to sit open on a second screen while you work, not to be "
      "watched."),
     ("Do I need any third-party plugins?",
