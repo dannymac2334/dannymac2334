@@ -43,16 +43,16 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Set every selected note to the same length",
-          "d": "Select notes, then Functions > Note Events > Note Force Legato, or simply type a length in the inspector to overwrite them all."
+          "t": "Type one length and every selected note follows",
+          "d": "Select the notes and type a length in the event inspector — they all take it. Force Legato is a different job: it stretches each note to meet the next, which is not the same as equal lengths."
         },
         {
           "t": "Force legato to fix gappy pads",
-          "d": "Functions > Note Events > Note Force Legato extends every note to meet the next. Pads and basslines stop sounding stuttery instantly."
+          "d": "Piano Roll Edit > Trim > Note Force Legato extends every note to meet the next. Pads and basslines stop sounding stuttery instantly."
         },
         {
           "t": "Trim overlaps automatically",
-          "d": "Functions > Note Events > Note Overlap Correction cleans up doubled notes that cause phasing and stuck voices on hardware."
+          "d": "Piano Roll Edit > Trim > Note Overlaps cleans up doubled notes that cause phasing and stuck voices on hardware."
         },
         {
           "t": "⌥‑drag a note to duplicate it",
@@ -60,9 +60,8 @@
           "k": "⌥ + drag"
         },
         {
-          "t": "Use ⌃⌥‑drag for fine positioning",
-          "d": "Bypasses the snap grid so you can place a note anywhere, tick by tick.",
-          "k": "⌃⌥ + drag"
+          "t": "Place a note between grid divisions",
+          "d": "Set Snap to a finer division, or switch Snap off for the drag. Do not reach for ⌃⌥-drag here — that gesture is drag-zoom, and using it will move your view instead of your note."
         }
       ]
     },
@@ -70,14 +69,13 @@
       "heading": "Velocity and expression",
       "tips": [
         {
-          "t": "Drag velocity directly on the note with ⌃⌥",
-          "d": "Hold ⌃⌥ and drag up or down on a note to change its velocity without switching tools. The note colour updates live.",
-          "k": "⌃⌥ + drag",
+          "t": "Change velocity by dragging with the Velocity tool",
+          "d": "Pick the Velocity tool from the tool menu and drag up or down on a note. The note colour updates live and you never leave the Piano Roll.",
           "b": "GAME CHANGER"
         },
         {
           "t": "Draw a velocity ramp across a selection",
-          "d": "Select a run of notes, then in the velocity lane hold ⌃⇧ and drag to create a linear ramp from first to last. Instant crescendo."
+          "d": "Select a run of notes, then draw a line across the velocity lane with the Pointer or the Pencil. Hold ⌘ while you do it to keep the relative differences between notes."
         },
         {
           "t": "Scale velocities rather than replacing them",

@@ -24,7 +24,7 @@
         },
         {
           "t": "Enable Multithreading on Playback Tracks",
-          "d": "Under Audio > Devices, set Multithreading to “Playback Tracks”. It spreads live tracks across cores instead of choking one."
+          "d": "Settings > Audio > Devices — set Multithreading to “Playback Tracks”. It spreads live tracks across cores instead of choking one."
         },
         {
           "t": "Raise Process Buffer Range to Large for mixing",
@@ -73,8 +73,8 @@
       "path": "Logic Pro > Settings > MIDI",
       "tips": [
         {
-          "t": "Turn on “Scrub Instrument Regions in Arrange”",
-          "d": "Off by default. On, you can drag the playhead over MIDI and hear the notes, which makes finding a spot by ear instantly possible."
+          "t": "Turn on scrubbing with audio in the Tracks area",
+          "d": "Settings > Audio > Editing > “Scrubbing with audio in Tracks area”. With it on you can drag the playhead over audio and hear it, which makes finding a spot by ear possible."
         },
         {
           "t": "Set the MIDI reset options to send Notes Off only",
@@ -85,12 +85,8 @@
           "d": "Under Display > General, choose whether middle C reads as C3 or C4 and match it to whatever your hardware and sample libraries use. Mismatched octave numbering causes more transposition mistakes than anything else."
         },
         {
-          "t": "Raise the maximum MIDI recording time",
-          "d": "In MIDI > General, the default cap on cycle recording length will cut you off during long improvised passes. Raise it once and forget it."
-        },
-        {
-          "t": "Turn off “Soft Through” for controllers with local control on",
-          "d": "If your synth plays a doubled, slightly flammed note when you press a key, this is why. Turn off local control on the synth or Soft Through in Logic — one of the two, never neither."
+          "t": "Fix doubled notes from a controller",
+          "d": "If your synth plays a doubled, slightly flammed note on every key press, turn Local Control off on the synth, or use Project Settings > MIDI > General > “Instrument Without MIDI Thru Function”. One or the other, never neither."
         }
       ]
     },
@@ -99,17 +95,9 @@
       "path": "Logic Pro > Settings > Display",
       "tips": [
         {
-          "t": "Turn on “Show Advanced Tools” first, always",
-          "d": "Under Settings > Advanced, tick Show Advanced Tools and then tick every sub‑option. Without this, huge parts of Logic — including surround, MIDI environment and advanced editing — are simply hidden from you.",
+          "t": "Turn on Enable Complete Features first, always",
+          "d": "Settings > Advanced > Enable Complete Features. It is one checkbox. Leave it off and Logic runs in Simplified mode with whole areas hidden — project alternatives, beat mapping, the full mixer and automation.",
           "b": "GAME CHANGER"
-        },
-        {
-          "t": "Set region names to display at a size you can read",
-          "d": "Display > Tracks lets you scale region name text independently of zoom. Bump it up; squinting is not a workflow."
-        },
-        {
-          "t": "Enable waveform display “Rectified” for level work",
-          "d": "Rectified waveforms fold the negative half up, which makes level differences between takes far easier to eyeball."
         },
         {
           "t": "Turn off region colouring by track and colour by region instead",
@@ -147,8 +135,8 @@
           "d": "Under General > Editing, raise the undo count. RAM is cheap; a lost hour is not."
         },
         {
-          "t": "Turn on “Ask before deleting unused audio files”",
-          "d": "The Project > Clean Up command can permanently delete audio. Make it ask you first, every single time."
+          "t": "Read the Clean Up list before you confirm it",
+          "d": "File > Project Management > Clean Up always asks first and shows exactly what it will remove. Read the list — it deletes whole unused audio files, not just unused portions of them."
         }
       ]
     },
@@ -161,8 +149,8 @@
           "d": "Under Project Settings > Audio, pick 48 kHz for anything that might touch video and 44.1 kHz for pure music. Changing it later resamples everything and softens transients."
         },
         {
-          "t": "Set the project bit depth to 24‑bit",
-          "d": "32‑bit float is available and useful if your interface supports it, but 24‑bit is the safe universal default. Never record at 16‑bit."
+          "t": "Set the recording bit depth to 24-bit",
+          "d": "It lives in Settings > Recording, not Project Settings. 32-bit float is available from Logic 11.1 and depends on your interface. Never record at 16-bit."
         },
         {
           "t": "Turn on Smart Tempo “Keep Project Tempo” by default",
@@ -170,8 +158,8 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Set the default region quantise to Off",
-          "d": "Under Project Settings > Recording, make sure incoming MIDI is not auto‑quantised. Capture the performance first; quantise as a decision, not as an accident."
+          "t": "Stop new recordings arriving pre-quantised",
+          "d": "There is no auto-quantize switch. The default applied to new recordings is the Region inspector's Quantize value with no region selected — set it to off there. Capture the performance first; quantise as a decision."
         },
         {
           "t": "Set Tuning to Equal Temperament unless you mean otherwise",
@@ -192,8 +180,8 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Set a default channel strip for new audio tracks",
-          "d": "Right‑click any channel strip setting in the Library and choose “Save as Performance Default”. Every new track of that type starts with your gain staging and metering already in place."
+          "t": "Set a default channel strip for new tracks",
+          "d": "Save Channel Strip Setting from the channel strip's settings menu, then control-click that setting in the Library and choose “Set as default”. Every new track of that type starts with your gain staging in place."
         },
         {
           "t": "Set the default region colour palette",

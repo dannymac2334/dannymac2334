@@ -49,10 +49,10 @@ URL = "https://www.dannnymcccarthy.com/logic-pro-crash-course"
 PREVIEW = [
     (4, "Capture the last thing you played"),
     (9, "Click any region after marqueeing"),
-    (18, "Split any mixed audio into four parts"),
+    (18, "Split any mixed audio into stems"),
     (11, "Give every row a different step rate"),
-    (1, "Run two buffer sizes"),
-    (12, "Set the Follow parameter"),
+    (19, "Chord ID reads chords off audio"),
+    (12, "Turn on Follow Rhythm"),
 ]
 
 FAQ = [

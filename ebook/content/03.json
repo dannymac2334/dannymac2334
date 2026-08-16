@@ -18,8 +18,9 @@
           "k": "⌃⌥ + drag"
         },
         {
-          "t": "Navigate by marker with the number keys",
-          "d": "Markers 1 through 9 are jumpable directly. Set your song sections as markers and the whole arrangement is one keypress away."
+          "t": "Know what the number keys actually do",
+          "d": "The top-row number keys recall screensets, not markers. Marker navigation sits on the numeric keypad, or assign your own in Key Commands — search “Go to Marker”.",
+          "k": "⌥K to assign"
         },
         {
           "t": "Assign a key to “Play Selection”",

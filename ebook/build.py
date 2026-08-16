@@ -245,11 +245,13 @@ def build_section(section, counter_start):
     i = counter_start
     last = len(section["groups"]) - 1
     for gi, group in enumerate(section["groups"]):
-        # Only the closing group is kept whole. That is where a split strands a
-        # lone card on an otherwise empty page, because nothing follows it.
-        # Doing this to every group instead pushes mid-section groups onto fresh
-        # pages and punches far more holes than it fixes.
-        tight = " group-tight" if gi == last and len(group["tips"]) <= 7 else ""
+        # The closing group is kept whole (a split there strands cards on an
+        # otherwise empty page), and so are small interior groups, which cost
+        # little to move as a unit. Large interior groups still split freely —
+        # keeping those whole punches more holes than it fixes.
+        tight = " group-tight" if (
+            (gi == last and len(group["tips"]) <= 7) or len(group["tips"]) <= 4
+        ) else ""
         bits.append(f'<div class="group{tight}">')
         bits.append('<div class="group-head reveal">')
         bits.append(f'<h3 class="sub">{esc(group["heading"])}</h3>')
@@ -958,8 +960,19 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   /* Tighter vertical rhythm on paper. The screen spacing is generous because
      it scrolls; on a fixed page it wastes rows and strands single cards after
      a break. */
-  .group {{ margin-top: 5mm; }}
-  .group-head {{ padding-bottom: 9px; }}
+  /* In print the group becomes the grid itself and the cards join it via
+     display:contents. The heading is then a grid item spanning both columns,
+     so it physically cannot be stranded on its own page when Chromium moves
+     or fragments the grid — it travels with the first row of cards. */
+  .group {{
+    margin-top: 4mm;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }}
+  .group-head {{ grid-column: 1 / -1; padding-bottom: 9px; }}
+  .group-note {{ grid-column: 1 / -1; margin: 0; }}
+  .tips {{ display: contents; }}
   .sec-body .lead {{ font-size: 11pt; }}
   .notice {{ margin-top: 7mm; padding: 5mm; }}
 

@@ -43,8 +43,8 @@
           "d": "In Project Settings > Assets. It is the difference between a project that opens on another machine and one that does not."
         },
         {
-          "t": "Use Project > Consolidate before archiving",
-          "d": "Gathers every asset the project depends on into the project package. Do this before backing up, always."
+          "t": "Consolidate before archiving",
+          "d": "File > Project Management > Consolidate gathers every asset the project depends on into the project package. Do this before backing up, always."
         },
         {
           "t": "Keep a reference track in every project, muted at the top",

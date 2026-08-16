@@ -7,13 +7,13 @@
       "heading": "Getting a real performance",
       "tips": [
         {
-          "t": "Set the Follow parameter to your bass or guitar track",
-          "d": "In the Drummer Editor, the Follow menu makes the kick pattern lock to the rhythm of another track. Your drums and bass become one part instead of two.",
+          "t": "Turn on Follow Rhythm and pick the track to lock to",
+          "d": "In the editor, select the Follow Rhythm checkbox — the Kick & Snare slider becomes a menu for choosing which track the drums lock to. Your drums and bass become one part instead of two.",
           "b": "GAME CHANGER"
         },
         {
-          "t": "Use the X/Y pad, then fine‑tune with the individual sliders",
-          "d": "The pad sets loud/soft against simple/complex. The sliders to the right control each kit piece independently, which is where the real detail lives."
+          "t": "Use Complexity and Intensity, then the kit-piece controls",
+          "d": "In Logic 11 and 12 the Drummer lives in the Session Player Editor: Complexity and Intensity sliders replace the old X/Y pad, and the kit-piece controls still shape each drum independently. (In 10.7 it is the X/Y pad.)"
         },
         {
           "t": "Change the drummer, not just the preset",
@@ -46,8 +46,8 @@
           "d": "Click the triangle in the Drummer Editor to reveal Feel (ahead or behind the beat), Ghost Notes and Hi‑Hat openness. This is where a stiff pattern becomes a groove."
         },
         {
-          "t": "Give Drummer a groove template from your own track",
-          "d": "Drag any region to the Groove Track slot and set the Drummer track to follow it, so the drums swing exactly like your guitar does."
+          "t": "Set a groove track and make Drummer follow it",
+          "d": "Click the star at the left edge of the track header to make that track the groove track, then opt other tracks in via their Match Groove Track checkbox — so the drums swing exactly like your guitar."
         },
         {
           "t": "Swap the kit without losing the performance",

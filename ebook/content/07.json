@@ -24,12 +24,12 @@
         },
         {
           "t": "⌘R repeats the selection once, instantly",
-          "d": "For a numeric count, use Edit > Repeat Regions and type the number.",
+          "d": "For a numeric count, use Edit > Repeat Multiple… and type the number.",
           "k": "⌘R"
         },
         {
           "t": "Trim to the playhead from either direction",
-          "d": "Functions > Trim > Region Start to Playhead Position, and the matching End command, trim exactly to the playhead. Both are worth putting on keys in ⌥K — no mouse precision needed.",
+          "d": "The commands are “Trim Region Start to Playhead” and the matching End command — search them in Key Commands and put them on keys. No mouse precision needed.",
           "k": "⌥K to assign"
         },
         {
@@ -47,9 +47,9 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Hold ⌃ to temporarily override the grid",
-          "d": "Any drag becomes free‑positioned while ⌃ is held. Release and snap comes back.",
-          "k": "⌃ + drag"
+          "t": "Two modifiers, two grades of precision",
+          "d": "Hold ⌃ while dragging for a finer snap division, and ⌃⇧ for tick-level free movement. Release and normal snap comes back.",
+          "k": "⌃⇧ + drag"
         },
         {
           "t": "Turn on “Snap Regions to Absolute Value”",
@@ -81,15 +81,16 @@
         },
         {
           "t": "Use Select All Following on a Track",
-          "d": "Edit > Select > All Following selects everything after the current selection on that track. Perfect for shifting the second half of a song."
+          "d": "Edit > Select > All Following of Same Track (⇧F) selects everything after the current selection on that track. Plain “All Following” grabs every track — a whole-song shift instead.",
+          "k": "⇧F"
         },
         {
           "t": "Select equal or similar regions in one command",
-          "d": "Edit > Select > Same Colour, Same Name or Equal Regions finds all matching regions across the project instantly."
+          "d": "Edit > Select > Similar Regions (⇧S), Equal Regions, or Equal Colored Regions finds all matching regions across the project instantly."
         },
         {
           "t": "Lock a region so you cannot move it by accident",
-          "d": "Select the region and use Region > Lock SMPTE Position, or lock the whole track with the padlock in the track header."
+          "d": "Control-click the region and choose Lock SMPTE Position, or use the track's protect padlock — it is hidden by default, so turn it on via the track header configuration."
         }
       ]
     }

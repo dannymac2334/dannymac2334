@@ -20,8 +20,8 @@
           "d": "It bypasses only the plugins that actually cause delay, keeping your monitoring chain intact."
         },
         {
-          "t": "Set the count‑in and pre‑roll separately",
-          "d": "Count‑in gives the performer the tempo. Pre‑roll gives them musical context by rolling the actual track before the punch. Use both for punch‑ins."
+          "t": "Count-in and pre-roll are either/or — pick the right one",
+          "d": "They are exclusive options in the recording settings, not two dials you stack. Count-in gives the performer the tempo from silence; pre-roll rolls the actual track into the punch. For punch-ins, choose pre-roll."
         },
         {
           "t": "Name the track before you record, always",
@@ -48,7 +48,7 @@
         },
         {
           "t": "Use Autopunch for surgical fixes",
-          "d": "Enable the Autopunch button in the transport and drag the punch range in the ruler. Logic records only inside that range no matter when you start playback."
+          "d": "Enable Autopunch and drag the punch range in the ruler — Logic records only inside that range no matter when you start playback. If you cannot see the Autopunch button, add it via Customize Control Bar."
         },
         {
           "t": "⌘. discards the take you just recorded",

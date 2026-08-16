@@ -27,8 +27,8 @@
           "d": "Pitch, filter, start point, envelope and gain are all on the pad itself, so you can shape a sample without opening the sampler."
         },
         {
-          "t": "Assign pads to choke groups",
-          "d": "Put the open and closed hi‑hat in the same mute group and the closed hat cuts the open one, exactly like a real drum machine."
+          "t": "Assign pads to an Exclusive Group",
+          "d": "Put the open and closed hi-hat in the same Exclusive Group and the closed hat cuts the open one off, exactly like a real drum machine."
         }
       ]
     },

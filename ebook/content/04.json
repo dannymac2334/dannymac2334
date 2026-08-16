@@ -25,15 +25,15 @@
         },
         {
           "t": "Use the Step Input Keyboard for parts you cannot play",
-          "d": "Open it from the Piano Roll and enter notes one at a time at an exact rhythmic value. Complex parts get entered accurately without a single quantise pass."
+          "d": "Window > Show Step Input Keyboard. Enter notes one at a time at an exact rhythmic value. Complex parts get entered accurately without a single quantise pass."
         },
         {
-          "t": "Draw notes with the Pencil tool and ⌘‑click to remove",
-          "d": "In the Piano Roll, the Pencil creates notes at the current division. ⌥‑drag any note you drew to duplicate it at the same pitch."
+          "t": "Draw notes with the Pencil, delete with the Eraser",
+          "d": "The Pencil creates notes at the current division. To remove one, double-click it with the Pointer or switch to the Eraser tool. ⌥-drag any note to duplicate it at the same pitch."
         },
         {
-          "t": "Set the input velocity manually for drawn notes",
-          "d": "In the Piano Roll's local inspector, set the velocity that new notes are created at. Draw hi‑hats at 70 and kicks at 120 without editing afterwards."
+          "t": "New notes inherit the last note you touched",
+          "d": "There is no default-velocity field. A note you draw takes the velocity and length of the last note you selected or edited — so set one hi-hat to 70, then draw the rest and they follow."
         }
       ]
     },
@@ -46,12 +46,12 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Force everything into key with the Scale Quantize MIDI plugin",
-          "d": "Insert Scale Quantize, pick your root and scale, and every wrong note you play is bent to the nearest right one in real time. Improvise freely without theory getting in the way."
+          "t": "Force everything into key with Transposer's scale quantize",
+          "d": "Insert the Transposer MIDI FX and turn on its scale quantize, then pick your root and scale. Every wrong note you play is bent to the nearest right one in real time."
         },
         {
           "t": "Use Arpeggiator to generate parts, then commit them",
-          "d": "Insert Arpeggiator, dial in a pattern, then drag the region onto a new track while holding the MIDI FX bypass to print the actual notes. You get an editable part instead of a live effect."
+          "d": "Insert Arpeggiator and dial in a pattern, then use Bounce in Place — or record its output to another track — to turn the live effect into editable notes."
         },
         {
           "t": "Transpose without touching the notes",
@@ -59,8 +59,8 @@
         },
         {
           "t": "Transpose only the notes, permanently",
-          "d": "Select notes in the Piano Roll and use ⇧↑ or ⇧↓ to move them by an octave, or ↑ and ↓ for semitones. This is destructive and intentional.",
-          "k": "⇧↑ / ⇧↓"
+          "d": "Select notes in the Piano Roll and transpose with the Transpose key commands: ⌥↑ and ⌥↓ by semitone, ⇧⌥↑ and ⇧⌥↓ by octave. Plain arrow keys move the selection, they do not transpose.",
+          "k": "⌥↑ / ⌥↓"
         },
         {
           "t": "Use the Modifier MIDI plugin to remap anything to anything",
@@ -90,7 +90,8 @@
         },
         {
           "t": "Name the region before you move on",
-          "d": "Double‑click a region name and type what it is. Twenty untitled regions in a week's time is a genuinely expensive mistake."
+          "d": "Select the region and press ⇧N to rename it, or use the Text tool or the Region inspector. Twenty untitled regions in a week's time is a genuinely expensive mistake.",
+          "k": "⇧N"
         },
         {
           "t": "Use ⌘D to duplicate an instrument track with all its settings",

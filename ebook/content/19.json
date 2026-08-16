@@ -82,7 +82,7 @@
         },
         {
           "t": "Consolidate and archive your three most important projects",
-          "d": "Project > Consolidate on each, then copy them to a separate drive. If the new version changes something, you have untouched originals."
+          "d": "File > Project Management > Consolidate on each, then copy them to a separate drive. If the new version changes something, you have untouched originals."
         },
         {
           "t": "Check your critical third‑party plugins against the new version first",
@@ -111,8 +111,8 @@
           "d": "New versions add track types, settings and defaults that an old template will not have. Rebuilding takes an hour and you get every new default for free."
         },
         {
-          "t": "Re‑check Settings > Advanced and turn everything on again",
-          "d": "Advanced Tools sometimes resets. If half the program has disappeared, this is the first place to look."
+          "t": "Re-check Enable Complete Features after updating",
+          "d": "Settings > Advanced holds a single Enable Complete Features checkbox. If half the program seems to have disappeared after an update, this is the first place to look."
         },
         {
           "t": "Read the new Key Commands list for additions",

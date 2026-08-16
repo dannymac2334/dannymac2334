@@ -16,6 +16,7 @@
       "list": [
         "Every key command shown is the Logic Pro factory default on a US keyboard. If you have remapped anything, open Key Commands with ⌥K and search the command name — the name is always given.",
         "Where a trick lives in a menu rather than on a key, the full menu path is written out, so it stays correct across versions.",
+        "Menu names follow current Logic. On versions before 10.7.4, “Settings” is called “Preferences”, and a few panels moved between 10.7 and 11 — where they did, the trick says so.",
         "Tricks marked GAME CHANGER are the ones worth stealing first.",
         "Nothing here requires third-party plugins. It is all stock Logic."
       ],
@@ -71,7 +72,7 @@
       ],
       "callout": {
         "title": "Three modifier rules that explain most of Logic",
-        "text": "Hold ⌥ while dragging anything and you copy it instead of moving it. Hold ⌥ while clicking any control and you reset it to its default. Hold ⌥ while clicking a button in a channel strip and the change applies to every channel at once. Learn these three and you can guess your way through most of the program."
+        "text": "Hold ⌥ while dragging anything and you copy it instead of moving it. Hold ⌥ while clicking a knob or fader and it resets to its default. ⌥-click a Solo button and it becomes an exclusive solo — that channel alone. Learn these three and you can guess your way through most of the program."
       }
     },
     {

@@ -23,7 +23,7 @@
         },
         {
           "t": "Use the row's Playback Mode for variation",
-          "d": "Forward, Reverse, Ping‑Pong and Random per row. Set the hats to Random and the pattern changes every bar on its own."
+          "d": "Forward, Backward, Ping-Pong, Pendulum, Wander, Shuffle and Random, per row. Set the hats to Random and the pattern changes every bar on its own."
         },
         {
           "t": "Increase pattern length beyond 16 steps",
@@ -80,11 +80,11 @@
         },
         {
           "t": "Build a library of pattern regions",
-          "d": "Save patterns to the Library or simply keep a muted track of favourites at the bottom of a template project."
+          "d": "Save patterns through the Pattern Browser, or keep a muted track of favourites at the bottom of a template project."
         },
         {
-          "t": "Use Skip and Loop Start for live rearranging",
-          "d": "Skip removes a step from the cycle entirely, changing the pattern's effective length. Loop Start moves where the row restarts. Both are performable."
+          "t": "Use Skip and Loop Start/End for live rearranging",
+          "d": "Skip removes a step from the cycle entirely, changing the row's effective length. Loop Start/End moves where the row cycles. Both are performable."
         }
       ]
     }

@@ -136,8 +136,8 @@
       "heading": "Stem Splitter",
       "tips": [
         {
-          "t": "Split any mixed audio into four parts",
-          "d": "Select an audio region and choose Stem Splitter from the region's contextual menu. Logic separates vocals, drums, bass and other into four new tracks.",
+          "t": "Split any mixed audio into stems",
+          "d": "Control-click an audio region and choose Processing > Stem Splitter. Since 11.2 it separates up to six stems — vocals, drums, bass, guitar, piano and other — and it needs an Apple silicon Mac.",
           "b": "GAME CHANGER"
         },
         {
@@ -153,8 +153,8 @@
           "d": "A split drum stem buried under real drums adds character without exposing the artefacts."
         },
         {
-          "t": "Split a loop to remove the element you do not want",
-          "d": "Delete the vocal stem and you have an instrumental. Delete everything but drums and you have a break."
+          "t": "Make an instrumental with one preset",
+          "d": "Stem Splitter's preset combinations do the common jobs in one click — Instrumental drops the vocal, Acapella keeps only it. Or pick your own stems and let the submix option bounce them to a single file."
         },
         {
           "t": "Splitting is non‑destructive to the original",
@@ -179,8 +179,8 @@
           "d": "Saturating transients before compression gives the compressor less to fight and produces a much more controlled result."
         },
         {
-          "t": "Use the Detail control for high‑frequency behaviour",
-          "d": "It adjusts how the saturation treats top end, which is the difference between “warm” and “harsh”."
+          "t": "Use Bypass Below to keep the low end clean",
+          "d": "ChromaGlow's Bypass Below control leaves everything under the frequency you set unsaturated, so the bass stays solid while the mids and top take the colour."
         },
         {
           "t": "Try it on the master at very low drive",
@@ -193,7 +193,7 @@
       "tips": [
         {
           "t": "Flashback Capture retrieves what you just played",
-          "d": "The dedicated button in the control bar — or ⇧R — grabs the MIDI you performed even though you were not recording. A region appears at the playhead containing the performance.",
+          "d": "Added in Logic 11.1 — the control bar button, or ⇧R, grabs the MIDI you performed even though you were not recording. From 11.2 it captures audio too, so a great vocal run you never armed is still recoverable.",
           "k": "⇧R",
           "b": "GAME CHANGER"
         },
@@ -204,7 +204,7 @@
         },
         {
           "t": "It works while the transport is stopped",
-          "d": "Noodling with the song not playing is exactly when the good ideas arrive. Flashback Capture catches those too, and it captures controller moves as well as notes."
+          "d": "Noodling with the song not playing is exactly when the good ideas arrive. Flashback Capture catches those too, and since 11.2 that safety net covers audio input as well as MIDI."
         },
         {
           "t": "Use Mastering Assistant as an analysis tool, not a finisher",

@@ -12,8 +12,8 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Use ⌃ plus a number key to switch takes instantly",
-          "d": "Each take in a take folder can be selected directly from the folder's header menu, and the take‑switching commands live under “Take Folder” in Key Commands. Put the first three on keys and auditioning take 3 against take 7 becomes two keypresses.",
+          "t": "Put take-switching on keys you choose",
+          "d": "The take-selection commands ship unassigned. Search “Take” in Key Commands and put the first few on keys — auditioning take 3 against take 7 becomes two keypresses.",
           "k": "⌥K to assign"
         },
         {
@@ -39,21 +39,21 @@
       "tips": [
         {
           "t": "Crossfade every edit point, without exception",
-          "d": "Set the Fade tool as your secondary tool and drag across any region edge, or select the boundary and use Functions > Fades > Crossfade. Fades kill clicks, and every audio edit needs one."
+          "d": "Set the Fade tool as your secondary tool and drag across any region edge, or type values into the Region inspector's Fade fields. Fades kill clicks, and every audio edit needs one."
         },
         {
           "t": "Set default fade lengths in the Region inspector",
           "d": "Type a fade‑in and fade‑out value once, select all your regions, and apply it to everything at once."
         },
         {
-          "t": "Change fade curves by ⌃‑dragging on the fade",
-          "d": "An S‑curve on a vocal edit sounds far more natural than a straight line.",
-          "k": "⌃ + drag"
+          "t": "Curve the fade after you draw it",
+          "d": "Drag the middle of a drawn fade with the Fade tool to bend it, or edit the Curve value in the Region inspector. An S-curve on a vocal edit sounds far more natural than a straight line."
         },
         {
           "t": "Use “Remove Silence from Audio Region” for noisy tracks",
-          "d": "In the Audio menu, this strips everything below a threshold you set and leaves separate regions. Great for cleaning up a live drum kit or a spoken word track.",
-          "b": "GAME CHANGER"
+          "d": "Control-click the audio region and choose Split > Remove Silence from Audio Region (⌃X). It strips everything below a threshold you set and leaves separate regions — great for a live kit or spoken word.",
+          "b": "GAME CHANGER",
+          "k": "⌃X"
         },
         {
           "t": "Add a tiny fade to the start of every region as policy",
@@ -88,7 +88,7 @@
         },
         {
           "t": "Reset a bad Flex edit rather than undoing repeatedly",
-          "d": "The Flex track header has a Reset command that clears all flex data for the track and starts you fresh."
+          "d": "Control-click the flexed region and choose Reset All Flex Edits. It clears the region's flex data and starts you fresh."
         }
       ]
     },
@@ -105,15 +105,16 @@
         },
         {
           "t": "Strip silence at the file level to reclaim disk space",
-          "d": "After comping, Project > Clean Up removes unused portions of audio files. Back up first — this is genuinely destructive."
+          "d": "After comping, File > Project Management > Clean Up removes audio files the project no longer uses — whole files, not unused portions. Back up first; it is genuinely destructive."
         },
         {
           "t": "Reverse a region for a riser in two clicks",
           "d": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version."
         },
         {
-          "t": "Convert a region to a new audio file to lock in edits",
-          "d": "Audio File > Convert Regions to New Audio Files prints your gain, fades and flex to a fresh file, which keeps big sessions responsive."
+          "t": "Commit edits with Bounce Regions in Place",
+          "d": "Bounce Regions in Place (⌃B) renders your gain, fades and flex into a fresh file. Edit > Convert > Convert Regions to New Audio Files (⌥⌘F) is the lighter tool — it makes a new file but does not print those edits.",
+          "k": "⌃B"
         }
       ]
     }

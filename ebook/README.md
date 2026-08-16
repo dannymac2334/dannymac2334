@@ -1,6 +1,6 @@
 # Logic Pro Crash Course — eBook
 
-A clickable eBook of **367 Logic Pro tricks** across **19 sections**, built from
+A clickable eBook of **364 Logic Pro tricks** across **19 sections**, built from
 structured content files so the text and the design can be changed independently.
 
 ## Output
@@ -9,9 +9,9 @@ structured content files so the text and the design can be changed independently
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
 | `dist/logic-pro-crash-course-sales.html` | **The sales page** for the $14.99 product. Drop-in for the site; sells the book without containing it. Built by `build_sales_page.py`. |
-| `dist/logic-pro-crash-course-page.html` | Full 367-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
+| `dist/logic-pro-crash-course-page.html` | Full 364-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
 | `HANDOFF.md` / `AGENT-PROMPT.md` / `PITCH.md` | Handoff spec, paste-ready prompt for the site agent, and the sales copy in reviewable form. |
-| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 84 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
+| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 85 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -40,7 +40,7 @@ The book is sold, not given away, so **only the sales page goes on the site** an
 never enters the site repo. `HANDOFF.md` is the full spec and `AGENT-PROMPT.md` is the
 message to hand the site agent.
 
-`dist/logic-pro-crash-course-page.html` — the full 367-trick web page — is **not for
+`dist/logic-pro-crash-course-page.html` — the full 364-trick web page — is **not for
 publication while the book is paid**; it contains the entire product. Keep it for a future
 free sample if that is ever wanted.
 

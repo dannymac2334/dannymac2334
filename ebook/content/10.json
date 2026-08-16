@@ -18,7 +18,7 @@
         },
         {
           "t": "Convert between the two without redrawing",
-          "d": "Right‑click in an automation lane and choose Move Visible Automation to Region, or the reverse. Nothing is lost."
+          "d": "Mix > Convert Automation > Convert Visible Track Automation to Region Automation, and the reverse. Nothing is lost either way."
         },
         {
           "t": "Press A to toggle automation view",
@@ -44,9 +44,8 @@
           "d": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes."
         },
         {
-          "t": "⌥‑click an automation point to delete it",
-          "d": "Faster than selecting and deleting, and it works on curves too.",
-          "k": "⌥ + click"
+          "t": "Delete an automation point without dragging it",
+          "d": "Double-click the point with the Pointer, or select it and press Delete, or use the Eraser. It works on curves too."
         },
         {
           "t": "Curve any line by dragging its middle with ⌃⇧",
@@ -86,11 +85,11 @@
         },
         {
           "t": "Automation follows regions if you tell it to",
-          "d": "In Settings > General > Editing, turn on “Move track automation with regions”. Now dragging a region takes its automation with it, which is what you almost always want."
+          "d": "Settings > Automation > “Move Track Automation with Regions” — set the pop-up to Always, or Ask if you want the choice each time. Dragging a region then takes its automation with it."
         },
         {
           "t": "Thin dense automation after recording a controller pass",
-          "d": "Recording modwheel or a fader creates thousands of points. Select the range and use Mix > Delete Automation > Thin Automation to make it editable again."
+          "d": "Recording modwheel or a fader creates thousands of points. Select the range, then Mix > Delete Automation > Delete Redundant Automation Points to make it editable again."
         },
         {
           "t": "Snap automation to the grid when it needs to be rhythmic",

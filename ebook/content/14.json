@@ -17,7 +17,7 @@
         },
         {
           "t": "Use Slice mode with Transient detection on any break",
-          "d": "Load a drum loop, switch to Slice, and every hit is mapped to its own key. Hit “Create MIDI” or drag the MIDI out and you have the original groove, fully rearrangeable.",
+          "d": "Load a drum loop, switch to Slice, and every hit is mapped to its own key. Drag from the lower waveform display into the Tracks area to get the MIDI — the original groove, fully rearrangeable.",
           "b": "GAME CHANGER"
         },
         {

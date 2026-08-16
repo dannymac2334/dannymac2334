@@ -3,16 +3,16 @@
 _Extracted from the built page, so this is exactly what ships._
 
 **Price line:** $14.99 One payment · Yours to keep  
-**Trust line:** 84 pages · Instant download · Logic Pro 10.7, 11 & 12
+**Trust line:** 85 pages · Instant download · Logic Pro 10.7, 11 & 12
 
 Logic Pro · Digital download
 
 
 # Logic Pro Crash Course
 
-367 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff.
+364 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff.
 
-84 pages · Instant download · Logic Pro 10.7, 11 & 12
+85 pages · Instant download · Logic Pro 10.7, 11 & 12
 
 The problem
 
@@ -23,14 +23,14 @@ You are three hours into a session, the idea is finally working, and you stop �
 
 That is not a skill problem. It is a lookup problem. Logic Pro has over two thousand commands, and the useful ones are buried three menus deep or sitting on a key nobody mentions.
 
-This book is the lookup. 367 tricks, sorted into 19 sections, each one short enough to read in ten seconds and use immediately.
+This book is the lookup. 364 tricks, sorted into 19 sections, each one short enough to read in ten seconds and use immediately.
 
 A few of them
 
 
 ## Six tricks, free, right now.
 
-Taken straight from the book. If these are new to you, the other 361 will be too.
+Taken straight from the book. If these are new to you, the other 358 will be too.
 
 - **Capture the last thing you played, even when not recording**
 If you played something great while the transport was rolling but not recording, hit ⇧R — Flashback Capture — and Logic writes it to a region retroactively. This has saved more ideas than any other command in the program.
@@ -38,22 +38,22 @@ If you played something great while the transport was rolling but not recording,
 - **Click any region after marqueeing to split at the marquee edges**
 Marquee a range, then single‑click inside it, and Logic splits the regions at both marquee boundaries automatically. This is the fastest split in the program.
 
-- **Split any mixed audio into four parts**
-Select an audio region and choose Stem Splitter from the region's contextual menu. Logic separates vocals, drums, bass and other into four new tracks.
+- **Split any mixed audio into stems**
+Control-click an audio region and choose Processing > Stem Splitter. Since 11.2 it separates up to six stems — vocals, drums, bass, guitar, piano and other — and it needs an Apple silicon Mac.
 
 - **Give every row a different step rate**
 Click a row's edit button and change its subdivision. Hi‑hats at 1/16 against a kick at 1/8 against a perc at 1/12 creates polyrhythms with no effort at all.
 
-- **Run two buffer sizes, not one**
-Set I/O Buffer to 64 or 128 while tracking so you can play in time, then switch to 512 or 1024 when you mix so plugins stop crackling. Nothing else in Logic changes your day this much.
+- **Chord ID reads chords off audio, not just MIDI**
+Drag in a guitar demo, a piano take or a rough bounce and Chord ID analyses it and writes the progression to the Chord track in seconds. It is the fastest route from an idea to a working arrangement.
 
-- **Set the Follow parameter to your bass or guitar track**
-In the Drummer Editor, the Follow menu makes the kick pattern lock to the rhythm of another track. Your drums and bass become one part instead of two.
+- **Turn on Follow Rhythm and pick the track to lock to**
+In the editor, select the Follow Rhythm checkbox — the Kick & Snare slider becomes a menu for choosing which track the drums lock to. Your drums and bass become one part instead of two.
 
 What’s inside
 
 
-## 19 sections. 367 tricks.
+## 19 sections. 364 tricks.
 
 Organised by what you are doing, not by what menu it lives in — so you can find the right one mid-project without breaking your flow.
 
@@ -86,7 +86,7 @@ It works with Logic Pro 10.7, 11 and 12. Every key command is the factory defaul
 
 **Q. Is this a video course?**
 
-No. It is 367 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.
+No. It is 364 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.
 
 **Q. Do I need any third-party plugins?**
 
@@ -98,14 +98,14 @@ The early sections are settings and fundamentals — the things worth fixing bef
 
 **Q. What exactly do I get?**
 
-One PDF, 84 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.
+One PDF, 85 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.
 
 **Q. How is it delivered?**
 
 Instantly. You get a download link as soon as the payment clears.
 
 
-## Get the 367.
+## Get the 364.
 
-A single PDF, 84 pages, delivered the moment your payment clears. Every key command in it is the Logic Pro factory default; where a command could move between versions, the book gives the command name and menu path so it stays correct.
+A single PDF, 85 pages, delivered the moment your payment clears. Every key command in it is the Logic Pro factory default; where a command could move between versions, the book gives the command name and menu path so it stays correct.
 

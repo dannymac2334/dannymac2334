@@ -26,8 +26,8 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "⌥‑click a Solo or Mute to apply it everywhere",
-          "d": "Instantly mute or unmute the entire mixer.",
+          "t": "⌥-click Solo for exclusive solo",
+          "d": "⌥-clicking a Solo button solos that channel and clears every other solo — one gesture to hear one thing. There is no equivalent mute-everything click.",
           "k": "⌥ + click"
         }
       ]
@@ -42,7 +42,7 @@
         },
         {
           "t": "Use Summing Stacks for processing groups",
-          "d": "Select tracks and hit ⌘⇧D. Everything routes to one aux you can compress and EQ as a unit.",
+          "d": "Select tracks and hit ⇧⌘D, then choose Summing Stack in the dialog that appears. Everything routes to one aux you can compress and EQ as a unit.",
           "k": "⌘⇧D"
         },
         {
@@ -54,9 +54,8 @@
           "d": "Right‑click a send to switch between pre and post fader. Post is right for reverb; pre is right for a cue mix."
         },
         {
-          "t": "Copy a whole channel strip with ⌥‑drag",
-          "d": "Drag the channel strip settings area from one channel to another while holding ⌥ to copy every insert, send and setting.",
-          "k": "⌥ + drag"
+          "t": "Copy a whole channel strip the reliable way",
+          "d": "Use the channel strip settings menu — Copy Channel Strip Setting on the source, Paste on the destination. Every insert, send and setting comes across. Individual plugins can still be ⌥-dragged between slots."
         },
         {
           "t": "Colour your channels to match your regions",
@@ -68,8 +67,9 @@
       "heading": "Plugins in the mixer",
       "tips": [
         {
-          "t": "⌥‑click an insert slot to see the plugin menu without loading",
-          "d": "And ⇧‑click an insert to bypass it without opening it."
+          "t": "Bypass with ⌥-click, browse with the slot arrows",
+          "d": "⌥-click an insert slot to bypass the plugin without opening it. To browse plugins, click the arrows at the right edge of the slot.",
+          "k": "⌥ + click"
         },
         {
           "t": "V hides every open plugin window at once",

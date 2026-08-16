@@ -13,8 +13,9 @@
           "b": "GAME CHANGER"
         },
         {
-          "t": "Drag an arrangement marker onto another to swap sections",
-          "d": "Dropping a Chorus marker on top of a Verse marker swaps their positions rather than overwriting. Trying three different song orders takes about fifteen seconds."
+          "t": "⌘-drag one arrangement marker onto another to swap sections",
+          "d": "A plain drag moves or inserts. Hold ⌘ while dragging one marker onto another and they swap places. Trying three song orders takes about fifteen seconds.",
+          "k": "⌘ + drag"
         },
         {
           "t": "⌥‑drag an arrangement marker to duplicate a section",
@@ -22,8 +23,8 @@
           "k": "⌥ + drag"
         },
         {
-          "t": "Delete a section and close the gap in one move",
-          "d": "Right‑click an arrangement marker and choose Delete to remove the marker only, or Delete and Move to pull everything after it back and close the hole."
+          "t": "Delete a section and close the gap",
+          "d": "Select the arrangement marker and press Delete once — that removes the section's regions. Press Delete again and the marker goes too, pulling everything after it back to close the hole."
         },
         {
           "t": "Insert silence across the whole project",
@@ -41,7 +42,7 @@
       "tips": [
         {
           "t": "Repeat regions numerically instead of dragging",
-          "d": "Select regions and hit ⌘R for a single repeat, or use Edit > Repeat Regions to type an exact number of copies and choose whether they land as copies or aliases.",
+          "d": "Select regions and hit ⌘R for a single repeat, or use Edit > Repeat Multiple… to type an exact number of copies and choose whether they land as copies or aliases.",
           "k": "⌘R"
         },
         {
@@ -51,7 +52,7 @@
         },
         {
           "t": "Convert loops to real regions only at the very end",
-          "d": "Region > Loops > Convert Loops to Real Copies. Stay looped as long as possible so a single edit propagates, then commit when the arrangement is locked."
+          "d": "Edit > Convert > Loops to Regions, or control-click the region and choose Convert. Stay looped as long as possible so a single edit propagates, then commit when the arrangement is locked."
         },
         {
           "t": "Use aliases for parts that must stay identical",
@@ -80,13 +81,13 @@
         },
         {
           "t": "Use Track Stacks to collapse instrument families",
-          "d": "Select related tracks and hit ⌘⇧D to create a Summing Stack. Drums become one lane, and the arrangement becomes readable.",
+          "d": "Select related tracks and hit ⇧⌘D, then choose Summing Stack in the dialog. Drums become one lane and the arrangement becomes readable.",
           "k": "⌘⇧D"
         },
         {
           "t": "Solo an arrangement section with the locators",
-          "d": "Click an arrangement marker to set the locators to that section instantly, then hit C. You are now looping exactly that section with zero dragging.",
-          "k": "C"
+          "d": "Click the arrangement marker to select that section's regions, hit U to set the locators to them, then C. Three keys and you are looping exactly that section.",
+          "k": "U"
         },
         {
           "t": "Mute regions instead of deleting them while experimenting",

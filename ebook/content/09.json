@@ -51,8 +51,8 @@
           "k": "⌥ + drag"
         },
         {
-          "t": "Marquee across a take folder to comp by range",
-          "d": "Instead of swiping, marquee the exact bars you want and Logic uses the current take for that range."
+          "t": "Marquee inside a take folder to edit, not to comp",
+          "d": "Comping is swiping with the Pointer while Quick Swipe Comping is on. Turn comping off and marquee becomes a region-editing tool inside the folder — for cutting, not for choosing takes."
         },
         {
           "t": "Hold ⇧ to extend an existing marquee",

@@ -3,7 +3,7 @@
 Paste this whole file to the agent doing the site work, along with the attached sales page.
 
 > **This replaces an earlier handoff that published the book as a free resource.**
-> If you were given `logic-pro-crash-course-page.html` (the full 367-trick page), **do not
+> If you were given `logic-pro-crash-course-page.html` (the full 364-trick page), **do not
 > publish it.** It contains the entire product. It may be cut down into a free sample later,
 > but that is a separate decision.
 
@@ -11,7 +11,7 @@ Paste this whole file to the agent doing the site work, along with the attached 
 
 ## What is being sold
 
-A single PDF — *Logic Pro Crash Course*, 367 tricks, 84 pages — for **$14.99 USD**, one-time.
+A single PDF — *Logic Pro Crash Course*, 364 tricks, 85 pages — for **$14.99 USD**, one-time.
 Payment via **Stripe**, which the owner already uses on this site.
 
 ## Repo
@@ -148,7 +148,7 @@ higher fee — but that is a different build from this one.
 - Sections: hero + price, the problem, six preview tricks, the 19-section index, who it is
   and is not for, FAQ, final CTA
 - The six preview tricks are real content from the book — deliberate, they do the selling
-- `<title>`: `Logic Pro Crash Course — 367 Tricks | Dannny McCcarthy`
+- `<title>`: `Logic Pro Crash Course — 364 Tricks | Dannny McCcarthy`
 - Canonical / `og:url`: `https://www.dannnymcccarthy.com/logic-pro-crash-course`
 - `og:type` is `product`; JSON-LD is `Product` with an `Offer`
 - A `<noscript>` block disables the reveal animation so the page still renders without JS
