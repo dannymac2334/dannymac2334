@@ -30,22 +30,24 @@ python3 finish_pdf.py                # bookmarks + metadata; makes the PDF stand
 python3 build_site_page.py           # writes the drop-in page for the portfolio site
 ```
 
-### Installing the site page
+```bash
+python3 build_sales_page.py          # writes the $14.99 sales page for the site
+```
 
-1. Copy `dist/logic-pro-crash-course-page.html` to the **root** of the site repo as
-   `logic-pro-crash-course.html` — next to `work.html`. The relative `css/` and `js/`
-   paths depend on it sitting there.
-2. Copy the PDF to `assets/resources/logic-pro-crash-course.pdf` (the download button
-   points there).
-3. Add one line to `sitemap.xml`:
-   `<url><loc>https://www.dannnymcccarthy.com/logic-pro-crash-course</loc></url>`
-   Netlify already serves extensionless URLs, so no `_redirects` entry is needed.
-4. Add a nav or footer link if you want it discoverable.
+### Publishing
 
-The page carries `Article` JSON-LD matching the pattern on the rest of the site, and a
-client-side filter: search across all 355 tricks (matching card text, group heading and
-section title), a Game changers toggle, live result count, dimmed nav pills for sections
-with no matches, an empty state, and `/` to focus the search box.
+The book is sold, not given away, so **only the sales page goes on the site** and the PDF
+never enters the site repo. `HANDOFF.md` is the full spec and `AGENT-PROMPT.md` is the
+message to hand the site agent.
+
+`dist/logic-pro-crash-course-page.html` — the full 355-trick web page — is **not for
+publication while the book is paid**; it contains the entire product. Keep it for a future
+free sample if that is ever wanted.
+
+The sales page carries `Product` JSON-LD with an `Offer` at 14.99 USD, and its six preview
+tricks are pulled from `content/` by section and title rather than retyped, so a copy change
+cannot leave a stale claim on it. The buy buttons point at `/buy` with `data-product` and
+`data-price-usd` attributes, for the site agent to wire to Stripe Checkout.
 
 Only components the site lacks — trick cards, the contents list, key tables and the
 sticky section nav — are styled in the page, scoped under `.lp` so nothing leaks.
