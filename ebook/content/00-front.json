@@ -2,7 +2,7 @@
   "title": "Logic Pro Crash Course",
   "subtitle": "350+ Tricks That Actually Work",
   "tagline": "No long tutorials. No fluff.",
-  "edition": "Covers Logic Pro 10.7 → 11 → 12",
+  "edition": "Works with Logic Pro 10.7, 11 and 12",
   "pages": [
     {
       "id": "how-to-use",
@@ -33,13 +33,41 @@
         "Logic's documentation and this book both use the Mac modifier symbols. If you are coming from another DAW, this is the page to bookmark."
       ],
       "keys": [
-        { "sym": "⌘", "name": "Command", "note": "The workhorse. Most structural commands." },
-        { "sym": "⌥", "name": "Option", "note": "Almost always means copy, all, or alternate behaviour." },
-        { "sym": "⇧", "name": "Shift", "note": "Extends a selection or reverses a command." },
-        { "sym": "⌃", "name": "Control", "note": "Fine adjustments, and secondary click." },
-        { "sym": "↩", "name": "Return", "note": "Sends the playhead to the start of the project." },
-        { "sym": "⌫", "name": "Delete", "note": "Removes the selection." },
-        { "sym": "␣", "name": "Space", "note": "Play / Stop. The most used key in the program." }
+        {
+          "sym": "⌘",
+          "name": "Command",
+          "note": "The workhorse. Most structural commands."
+        },
+        {
+          "sym": "⌥",
+          "name": "Option",
+          "note": "Almost always means copy, all, or alternate behaviour."
+        },
+        {
+          "sym": "⇧",
+          "name": "Shift",
+          "note": "Extends a selection or reverses a command."
+        },
+        {
+          "sym": "⌃",
+          "name": "Control",
+          "note": "Fine adjustments, and secondary click."
+        },
+        {
+          "sym": "↩",
+          "name": "Return",
+          "note": "Sends the playhead to the start of the project."
+        },
+        {
+          "sym": "⌫",
+          "name": "Delete",
+          "note": "Removes the selection."
+        },
+        {
+          "sym": "␣",
+          "name": "Space",
+          "note": "Play / Stop. The most used key in the program."
+        }
       ],
       "callout": {
         "title": "Three modifier rules that explain most of Logic",
@@ -58,66 +86,186 @@
         {
           "heading": "Transport",
           "rows": [
-            ["Space", "Play / Stop"],
-            ["↩", "Go to beginning of project"],
-            ["R", "Record"],
-            ["C", "Cycle on / off"],
-            ["K", "Metronome on / off"],
-            ["⌘.", "Stop and discard the recording just made"],
-            ["U", "Set locators by selected regions"],
-            ["/", "Open the Go to Position dialog"]
+            [
+              "Space",
+              "Play / Stop"
+            ],
+            [
+              "↩",
+              "Go to beginning of project"
+            ],
+            [
+              "R",
+              "Record"
+            ],
+            [
+              "C",
+              "Cycle on / off"
+            ],
+            [
+              "K",
+              "Metronome on / off"
+            ],
+            [
+              "⌘.",
+              "Stop and discard the recording just made"
+            ],
+            [
+              "U",
+              "Set locators by selected regions"
+            ],
+            [
+              "/",
+              "Open the Go to Position dialog"
+            ]
           ]
         },
         {
           "heading": "Windows and views",
           "rows": [
-            ["X", "Show / hide Mixer"],
-            ["P", "Show / hide Piano Roll"],
-            ["E", "Show / hide Editor"],
-            ["N", "Show / hide Score Editor"],
-            ["Y", "Show / hide Library"],
-            ["O", "Show / hide Loop Browser"],
-            ["F", "Show / hide Browsers"],
-            ["B", "Show / hide Smart Controls"],
-            ["I", "Show / hide Inspector"],
-            ["G", "Show / hide Global Tracks"],
-            ["V", "Hide / show all plug-in windows"]
+            [
+              "X",
+              "Show / hide Mixer"
+            ],
+            [
+              "P",
+              "Show / hide Piano Roll"
+            ],
+            [
+              "E",
+              "Show / hide Editor"
+            ],
+            [
+              "N",
+              "Show / hide Score Editor"
+            ],
+            [
+              "Y",
+              "Show / hide Library"
+            ],
+            [
+              "O",
+              "Show / hide Loop Browser"
+            ],
+            [
+              "F",
+              "Show / hide Browsers"
+            ],
+            [
+              "B",
+              "Show / hide Smart Controls"
+            ],
+            [
+              "I",
+              "Show / hide Inspector"
+            ],
+            [
+              "G",
+              "Show / hide Global Tracks"
+            ],
+            [
+              "V",
+              "Hide / show all plug-in windows"
+            ]
           ]
         },
         {
           "heading": "Editing",
           "rows": [
-            ["⌘Z", "Undo"],
-            ["⇧⌘Z", "Redo"],
-            ["⌘T", "Split regions at playhead"],
-            ["⌘J", "Join selected regions"],
-            ["⌘R", "Repeat regions or events"],
-            ["⌘D", "New track with duplicate settings"],
-            ["⌘A", "Select all"],
-            ["⇧⌘A", "Deselect all"],
-            ["⌥ + drag", "Copy instead of move"],
-            ["⌘ + drag", "Marquee select (default secondary tool)"]
+            [
+              "⌘Z",
+              "Undo"
+            ],
+            [
+              "⇧⌘Z",
+              "Redo"
+            ],
+            [
+              "⌘T",
+              "Split regions at playhead"
+            ],
+            [
+              "⌘J",
+              "Join selected regions"
+            ],
+            [
+              "⌘R",
+              "Repeat regions or events"
+            ],
+            [
+              "⌘D",
+              "New track with duplicate settings"
+            ],
+            [
+              "⌘A",
+              "Select all"
+            ],
+            [
+              "⇧⌘A",
+              "Deselect all"
+            ],
+            [
+              "⌥ + drag",
+              "Copy instead of move"
+            ],
+            [
+              "⌘ + drag",
+              "Marquee select (default secondary tool)"
+            ]
           ]
         },
         {
           "heading": "Zoom and navigation",
           "rows": [
-            ["Z", "Zoom to fit selection, press again to return"],
-            ["⌘← / ⌘→", "Zoom out / in horizontally"],
-            ["⌘↑ / ⌘↓", "Zoom out / in vertically"],
-            ["⌃⌥ + drag", "Drag-zoom to any area"]
+            [
+              "Z",
+              "Zoom to fit selection, press again to return"
+            ],
+            [
+              "⌘← / ⌘→",
+              "Zoom out / in horizontally"
+            ],
+            [
+              "⌘↑ / ⌘↓",
+              "Zoom out / in vertically"
+            ],
+            [
+              "⌃⌥ + drag",
+              "Drag-zoom to any area"
+            ]
           ]
         },
         {
           "heading": "Capture and output",
           "rows": [
-            ["⇧R", "Flashback Capture — grab what you just played"],
-            ["⌘S", "Save"],
-            ["⇧⌘S", "Save as"],
-            ["⌘B", "Bounce project or section"],
-            ["⌃B", "Bounce regions in place"],
-            ["⌥K", "Open Key Commands"],
-            ["⌘,", "Open Settings"]
+            [
+              "⇧R",
+              "Flashback Capture — grab what you just played"
+            ],
+            [
+              "⌘S",
+              "Save"
+            ],
+            [
+              "⇧⌘S",
+              "Save as"
+            ],
+            [
+              "⌘B",
+              "Bounce project or section"
+            ],
+            [
+              "⌃B",
+              "Bounce regions in place"
+            ],
+            [
+              "⌥K",
+              "Open Key Commands"
+            ],
+            [
+              "⌘,",
+              "Open Settings"
+            ]
           ]
         }
       ]

@@ -74,7 +74,7 @@
         },
         {
           "t": "Convert Quick Sampler to Sampler for full control",
-          "d": "Right‑click the plugin header and choose Convert to Sampler when you need multiple velocity layers, round robins or key zones."
+          "d": "Swap the instrument slot from Quick Sampler to Sampler and your loaded content transfers across automatically. Do it when you need multiple velocity layers, round robins or key zones. It is a one-way trip — Sampler settings will not open back up in Quick Sampler."
         },
         {
           "t": "Save your instrument as a patch immediately",

@@ -44,9 +44,9 @@ PREVIEW = [
 
 FAQ = [
     ("Which version of Logic does it cover?",
-     "Logic Pro 10.7, 11 and 12. Every key command is the factory default on a US keyboard, "
-     "and where a command could move between versions the book gives the exact command name "
-     "and menu path instead, so it stays correct."),
+     "It works with Logic Pro 10.7, 11 and 12. Every key command is the factory default on a "
+     "US keyboard, and where a command could move between versions the book gives the exact "
+     "command name and menu path instead, so it stays correct. To be straight with you: Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 is an upgrade playbook for handling any major release, not a feature-by-feature tour of Logic Pro 12."),
     ("Is this a video course?",
      "No. It is 355 written tricks: title, what it does, the key command. Most take ten "
      "seconds to read. It is built to sit open on a second screen while you work, not to be "

@@ -8,7 +8,7 @@
       "tips": [
         {
           "t": "Compressor — switch the model, not just the settings",
-          "d": "The Compressor plugin contains seven distinct emulations. Platinum for transparent control, VCA for punch, FET for aggression, Opto for vocals, Classic VCA for glue. Same plugin, completely different characters.",
+          "d": "The Compressor plugin contains seven circuit models. Platinum Digital for clean, transparent control, Studio FET for fast aggressive transients, Vintage Opto for vocals, and Vintage VCA — the SSL bus emulation — for glue across a mix bus. Same plugin, completely different characters.",
           "b": "GAME CHANGER"
         },
         {
