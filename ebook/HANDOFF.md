@@ -153,10 +153,19 @@ higher fee — but that is a different build from this one.
 - `og:type` is `product`; JSON-LD is `Product` with an `Offer`
 - A `<noscript>` block disables the reveal animation so the page still renders without JS
 
-## Still to be decided by the owner
+## Decided — do not add these
 
-- **Refund policy.** There is deliberately no refund promise on the page. Digital goods
-  normally carry one to reduce chargebacks. If they want it, it needs adding to the FAQ *and*
-  honouring in Stripe.
+- **No refund promise.** The owner has decided against stating one. Do not add a guarantee,
+  "money back", or refund language to the page, the checkout, or the receipt.
+- **No bio or "who made this" section.** Do not add one, and do not write claims about the
+  author's experience or credits anywhere.
+
+## Still open
+
+- **EU digital-goods consent.** Separate from refund policy, and worth raising with the owner:
+  in the EU a buyer normally has a 14-day withdrawal right on distance sales, and the usual way
+  to be exempt for instantly-delivered digital content is an explicit checkout consent to
+  immediate delivery. Stripe Checkout supports adding consent/terms acceptance. Ask before
+  adding it — it is a legal question, not a design one.
 - **A free sample page** for SEO and to feed the sales page. Recommended, not built.
 - **Where the buy button appears elsewhere** on the site (nav, footer, project pages).
