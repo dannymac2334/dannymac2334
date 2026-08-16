@@ -153,7 +153,31 @@ def main():
         if len(claims) > 1 and k not in KNOWN:
             failures.append(f"key {k!r} claimed for conflicting actions: {uses}")
 
-    # 4. provenance
+    # 4. stale marketing — the built HTML derives its counts from content/, but the
+    #    handoff and pitch docs are hand-written, so they drift. They are what gets
+    #    sent to other people, which makes a stale number worse there than anywhere.
+    pages = 0
+    pdf = pathlib.Path(__file__).parent / "dist" / "logic-pro-crash-course.pdf"
+    if pdf.exists():
+        try:
+            import pypdfium2
+            pages = len(pypdfium2.PdfDocument(str(pdf)))
+        except Exception:
+            pages = 0
+    for name in ("README.md", "HANDOFF.md", "PITCH.md", "AGENT-PROMPT.md"):
+        doc = pathlib.Path(__file__).parent / name
+        if not doc.exists():
+            continue
+        text = doc.read_text()
+        for n in set(re.findall(r"\b(\d{3})\s+(?:written\s+)?tricks\b", text)):
+            if int(n) != total:
+                failures.append(f"{name} says {n} tricks; the book has {total}")
+        if pages:
+            for n in set(re.findall(r"\b(\d{2,3})\s+pages\b", text)):
+                if int(n) != pages:
+                    failures.append(f"{name} says {n} pages; the PDF has {pages}")
+
+    # 5. provenance
     for k in sorted(keys):
         if k not in KNOWN:
             warnings.append(f"key {k!r} is not in the verified registry")

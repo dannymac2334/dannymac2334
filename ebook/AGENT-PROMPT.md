@@ -8,7 +8,7 @@ Have the PDF ready but **do not attach it to the chat** — it goes into private
 I want to sell a digital product from my portfolio site. Please read the attached `HANDOFF.md`
 first — it is the spec, and it contains constraints that will not be obvious from the code.
 
-**The product:** *Logic Pro Crash Course*, a single PDF, 85 pages. **$14.99 USD, one-time.**
+**The product:** *Logic Pro Crash Course*, a single PDF, 84 pages. **$14.99 USD, one-time.**
 
 **My site:** `dannymac2334/dannnymcccarthy-site` — private repo, static HTML, deployed on
 Netlify with `publish = "."`, so the repo root is the web root. I already use Stripe.
