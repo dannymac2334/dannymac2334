@@ -1,117 +1,162 @@
-# Handoff — publish "Logic Pro Crash Course" to dannnymcccarthy.com
+# Handoff — sell "Logic Pro Crash Course" ($14.99) on dannnymcccarthy.com
 
-Paste this whole file to the agent doing the site work, along with the two attached files.
+Paste this whole file to the agent doing the site work, along with the attached sales page.
+
+> **This replaces an earlier handoff that published the book as a free resource.**
+> If you were given `logic-pro-crash-course-page.html` (the full 355-trick page), **do not
+> publish it.** It contains the entire product. It may be cut down into a free sample later,
+> but that is a separate decision.
 
 ---
 
-## Goal
+## What is being sold
 
-Publish a free resource page at **https://www.dannnymcccarthy.com/logic-pro-crash-course**,
-with a downloadable PDF.
+A single PDF — *Logic Pro Crash Course*, 355 tricks, 82 pages — for **$14.99 USD**, one-time.
+Payment via **Stripe**, which the owner already uses on this site.
 
 ## Repo
 
-`dannymac2334/dannnymcccarthy-site` — private, static, deployed on Netlify
-(`netlify.toml` has `publish = "."`, so the repo root is the web root).
-
-## Files supplied
-
-| File you were given | Goes to | Notes |
-| --- | --- | --- |
-| `logic-pro-crash-course-page.html` | **`/logic-pro-crash-course.html`** (repo ROOT, next to `work.html`) | **Rename it** — drop the `-page` suffix. |
-| `logic-pro-crash-course.pdf` | **`/assets/resources/logic-pro-crash-course.pdf`** | Create the `resources` folder. |
-
-The page must sit at the repo **root**. It loads `css/style.css` and `js/main.js` by
-relative path, and the download button points at `assets/resources/logic-pro-crash-course.pdf`.
-Putting it in a subfolder breaks all three.
+`dannymac2334/dannnymcccarthy-site` — private, static, Netlify (`publish = "."`, so repo root
+is the web root).
 
 ---
 
-## Steps
+## 1. Add the sales page
 
-### 1. Add the two files at the paths above.
+| File you were given | Goes to |
+| --- | --- |
+| `logic-pro-crash-course-sales.html` | **`/logic-pro-crash-course.html`** (repo ROOT, next to `work.html`) |
 
-### 2. Add one line to `sitemap.xml`
+Rename it — drop the `-sales` suffix. It must sit at the root: it loads `css/style.css` and
+`js/main.js` by relative path. Live URL will be `/logic-pro-crash-course` (Netlify serves
+extensionless URLs, so **no `_redirects` entry is needed**).
 
-Insert alongside the other top-level pages (after the `/contact` entry):
+Add one line to `sitemap.xml`:
 
 ```xml
 <url><loc>https://www.dannnymcccarthy.com/logic-pro-crash-course</loc></url>
 ```
 
-### 3. Do NOT add a `_redirects` entry
+---
 
-Netlify already serves extensionless URLs, so `/logic-pro-crash-course` resolves to
-`logic-pro-crash-course.html` on its own. The existing `_redirects` file is only for 301s
-from old Squarespace URLs — nothing to add there.
+## 2. THE PDF MUST NOT GO IN THIS REPO
 
-### 4. Optional — make it discoverable
+Everything in the repo is served publicly by Netlify. There is no auth layer. A file at
+`assets/resources/logic-pro-crash-course.pdf` is a free download for anyone who guesses or is
+sent the URL, and it will end up indexed.
 
-Ask the owner before doing either of these; they change every page.
-
-- **Footer link.** In the `Explore` column of `<footer class="foot">`, add:
-  `<a href="logic-pro-crash-course.html">Logic Pro Course</a>`
-  The footer is duplicated in every HTML file, so this is a find-and-replace across all of them.
-- **Header nav link.** `<nav class="nav">` is likewise duplicated in every page. The nav is
-  already 5 items; adding a 6th may crowd it at tablet widths. Check before committing.
+**Store the PDF in private object storage** — S3, Cloudflare R2, Netlify Blobs, or similar —
+with public access off. It is only ever served through a signed, expiring URL generated after
+payment is verified. The owner will supply the PDF separately; do not commit it.
 
 ---
 
-## Constraints — please respect these
+## 3. Wire the buy buttons
 
-1. **Do not edit `css/style.css` or `js/main.js`.** The page needs no changes to either.
-   All of its own CSS is inline in the page and scoped under `.lp`, so it cannot leak into
-   other pages. Its only dependency on the site is:
-   - `.reveal` / `.d1` / `.d2` / `.d3` classes, animated by the existing IntersectionObserver
-     in `main.js`
-   - `.site-head`, `.nav`, `.pill`, `.foot`, `.proj` from `style.css`
-2. **Do not reformat or minify the page.** It is generated from a build script in a separate
-   repo (`dannymac2334/dannymac2334`, `ebook/build_site_page.py`). Hand edits will be lost the
-   next time it is regenerated. If content needs to change, say so rather than editing in place.
-3. **Do not change the `<script>` block at the bottom of the page.** It runs the section
-   jump-nav and the search filter, and is deliberately self-contained so it does not depend
-   on markup elsewhere on the site.
+The page has **two** identical buttons (hero and footer CTA):
 
----
+```html
+<a class="pill solid" href="/buy"
+   data-product="logic-pro-crash-course"
+   data-price-usd="14.99">Get instant access</a>
+```
 
-## Known gotcha — PDF caching
+They currently point at `/buy`, which does not exist yet — so it 404s, which is a visible
+failure rather than a silent one. Make `/buy` work. Either:
 
-`netlify.toml` sets `/assets/*` to `Cache-Control: public, max-age=31536000, immutable`.
+- a Netlify redirect from `/buy` to a serverless function that creates a Stripe Checkout
+  Session and 303s to `session.url`, or
+- attach a click handler that POSTs to your function and redirects.
 
-That is correct for the images, but it means **if the PDF is ever replaced at the same path,
-returning visitors will keep the old one for up to a year.** Two options — the owner should pick:
+Prefer the redirect approach: it still works if JS fails.
 
-- Put the version in the filename on each update
-  (`logic-pro-crash-course-v2.pdf`) and update the two links in the page, or
-- Add a `netlify.toml` header block excluding `/assets/resources/*` from the immutable rule.
-
-Nothing needs doing for the first publish. Flag it if a v2 ever ships.
+Use **Stripe Checkout** (`mode: "payment"`) rather than hand-rolling a card form — Stripe hosts
+the page, handles 3DS/SCA, and keeps you out of PCI scope.
 
 ---
 
-## Verification checklist
+## 4. Deliver only to people who paid
 
-After deploying, confirm:
+Three rules, all of them load-bearing:
 
-- [ ] `https://www.dannnymcccarthy.com/logic-pro-crash-course` loads (no `.html` needed)
-- [ ] Site header, nav and footer look identical to `work.html`
-- [ ] Content fades in on scroll (that means `main.js` is reaching it)
-- [ ] The sticky section bar highlights the current section as you scroll, and drags sideways
-- [ ] Typing `marquee` in the search box shows **13 of 355 tricks**
-- [ ] The **Game changers** toggle shows **61 of 355 tricks**
-- [ ] Pressing `/` focuses the search box
-- [ ] Both **Download the PDF** buttons return the 82-page PDF, not a 404
-- [ ] Mobile: header collapses to the burger menu, cards go single column
-- [ ] View source: one `application/ld+json` block, `@type: Article`
+1. **Fulfil from the `checkout.session.completed` webhook**, and
+   **verify the webhook signature** with `stripe.webhooks.constructEvent` and your signing
+   secret. An unverified endpoint can be POSTed by anyone.
+2. **Never treat reaching the success URL as proof of payment.** It is a plain URL that can be
+   guessed, shared or bookmarked. If the success page shows a download, it must first look up
+   the `session_id` server-side and confirm `payment_status === "paid"`.
+3. **Issue a short-lived signed URL** (15–60 minutes is plenty), not a permanent path. Emailing
+   the link as well as showing it on the success page is worth doing — people close tabs.
+
+Also worth building, in rough priority order:
+
+- Record each purchase (email + session id + timestamp) so the owner can re-send a link
+- Cap downloads per session (say 5) to blunt link sharing
+- A cancel URL that returns to `/logic-pro-crash-course` rather than dead-ending
+
+---
+
+## 5. Tax — flag this to the owner, do not decide it
+
+With Stripe, **the owner is the merchant of record**. Selling a digital download can create VAT
+/ GST / US sales-tax obligations depending on where buyers are. Stripe Tax can calculate and
+collect, but registering and filing is still on them.
+
+This is a business decision, not a technical one. Do not quietly ignore it, and do not
+configure tax settings without being asked. If they would rather not deal with it, a
+merchant-of-record platform (Lemon Squeezy, Paddle, Gumroad) handles it in exchange for a
+higher fee — but that is a different build from this one.
+
+---
+
+## 6. Do not do these
+
+1. **Do not edit `css/style.css` or `js/main.js`.** The page needs no changes to either. All of
+   its CSS is inline and scoped under `.lp`, so it cannot affect other pages. It depends only on
+   `.reveal` (animated by the existing observer in `main.js`) and `.site-head` / `.nav` /
+   `.pill` / `.foot` / `.proj` from `style.css`.
+2. **Do not reformat, minify or hand-edit the page.** It is generated by
+   `ebook/build_sales_page.py` in a separate repo (`dannymac2334/dannymac2334`). Hand edits are
+   lost on the next build. If copy needs to change, say what and it gets regenerated.
+3. **Do not put the price anywhere but the page and Stripe.** It appears in three places on the
+   page (hero, final CTA, JSON-LD `offers.price`) and must match the Stripe price object.
+   If the price changes, all four move together.
+
+---
+
+## 7. Verification checklist
+
+- [ ] `https://www.dannnymcccarthy.com/logic-pro-crash-course` loads without `.html`
+- [ ] Header, nav and footer match `work.html`; content fades in on scroll
+- [ ] Both **Get instant access** buttons reach Stripe Checkout showing **$14.99**
+- [ ] Test-mode card `4242 4242 4242 4242` completes a purchase
+- [ ] The webhook fires and is signature-verified (check Stripe dashboard → webhook attempts)
+- [ ] A download link arrives, works, and **expires** afterwards
+- [ ] Visiting the success URL directly, with no session, gives **no download**
+- [ ] Requesting the PDF's storage URL directly, unsigned, is **denied**
+- [ ] `curl -I https://www.dannnymcccarthy.com/assets/resources/logic-pro-crash-course.pdf`
+      returns **404** — the PDF must not be in the repo
+- [ ] Cancelling checkout returns to the sales page, not an error
+- [ ] Mobile: header collapses to the burger menu, FAQ accordion opens, buttons are tappable
+- [ ] View source: one `application/ld+json`, `@type: Product`, price `14.99`
 
 ---
 
 ## Page reference
 
-- 355 tricks, 19 sections, ~166 KB of HTML, no images, no build step
-- Fonts come from the site's existing Poppins link — nothing new loaded
-- `<title>`: `Logic Pro Crash Course | Dannny McCcarthy`
-- Canonical + `og:url`: `https://www.dannnymcccarthy.com/logic-pro-crash-course`
-- OG image reuses `assets/brand/og-cover.jpg`
-- A `<noscript>` block disables the reveal animation if JS is blocked, so the page still
-  renders in full rather than appearing blank
+- ~30 KB, no images, no build step, no external requests beyond the site's existing Poppins
+- Sections: hero + price, the problem, six preview tricks, the 19-section index, who it is
+  and is not for, FAQ, final CTA
+- The six preview tricks are real content from the book — deliberate, they do the selling
+- `<title>`: `Logic Pro Crash Course — 355 Tricks | Dannny McCcarthy`
+- Canonical / `og:url`: `https://www.dannnymcccarthy.com/logic-pro-crash-course`
+- `og:type` is `product`; JSON-LD is `Product` with an `Offer`
+- A `<noscript>` block disables the reveal animation so the page still renders without JS
+
+## Still to be decided by the owner
+
+- **Refund policy.** There is deliberately no refund promise on the page. Digital goods
+  normally carry one to reduce chargebacks. If they want it, it needs adding to the FAQ *and*
+  honouring in Stripe.
+- **A free sample page** for SEO and to feed the sales page. Recommended, not built.
+- **Where the buy button appears elsewhere** on the site (nav, footer, project pages).
