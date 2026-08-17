@@ -3,7 +3,7 @@
 _Extracted from the built page, so this is exactly what ships._
 
 **Price line:** $14.99 One payment · Yours to keep  
-**Trust line:** 84 pages · Instant download · Logic Pro 10.7, 11 & 12
+**Trust line:** 84 pages · Instant download · Logic Pro 11 & 12
 
 Logic Pro · Digital download
 
@@ -12,7 +12,7 @@ Logic Pro · Digital download
 
 265 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff.
 
-84 pages · Instant download · Logic Pro 10.7, 11 & 12
+84 pages · Instant download · Logic Pro 11 & 12
 
 The problem
 
@@ -82,7 +82,7 @@ Questions
 
 **Q. Which version of Logic does it cover?**
 
-It works with Logic Pro 10.7, 11 and 12. Every key command is the factory default on a US keyboard, and where a command could move between versions the book gives the exact command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic Pro 12: the Synth Player, Chord ID, the rebuilt Sound Library, and the fact that 12 is Apple silicon only.
+It works with Logic Pro 11 and 12. Every key command is the factory default on a US keyboard, and where a command could move between versions the book gives the exact command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic Pro 12: the Synth Player, Chord ID, the rebuilt Sound Library, and the fact that 12 is Apple silicon only.
 
 **Q. Is this a video course?**
 

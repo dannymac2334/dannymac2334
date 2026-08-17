@@ -57,7 +57,7 @@
       "tips": [
         {
           "t": "Marquee a range then drag the line to change only that section",
-          "d": "Select the Marquee tool and drag across the bars you want to change, then drag the automation line inside that selection. Logic creates two automation points at each edge of the marquee automatically, so the change is boxed in and does not bleed into the surrounding bars. If you have assigned Marquee as your Command-click tool (Logic Pro > Preferences > Advanced must have the full feature set enabled for that menu to appear), you can hold Command to grab it without switching tools.",
+          "d": "Select the Marquee tool and drag across the bars you want to change, then drag the automation line inside that selection. Logic creates two automation points at each edge of the marquee automatically, so the change is boxed in and does not bleed into the surrounding bars. If you have assigned Marquee as your Command-click tool (Logic Pro > Settings > Advanced must have the full feature set enabled for that menu to appear), you can hold Command to grab it without switching tools.",
           "b": "GAME CHANGER"
         },
         {

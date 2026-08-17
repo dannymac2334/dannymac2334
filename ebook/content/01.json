@@ -64,8 +64,8 @@
       ]
     },
     {
-      "heading": "Display preferences",
-      "path": "Logic Pro > Settings > Display",
+      "heading": "View settings",
+      "path": "Logic Pro > Settings > View",
       "tips": [
         {
           "t": "Turn on Enable Complete Features first, always",

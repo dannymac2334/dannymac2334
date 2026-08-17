@@ -17,6 +17,8 @@ Output: dist/logic-pro-crash-course-sales.html
 
 import pathlib
 
+import re
+
 from build import esc, keycap, load, slug, count_tips
 from build_site_page import FOOTER, SITE_NAV, page_css
 
@@ -39,6 +41,11 @@ PAGES = _pdf_pages()
 # Counts are derived from content/ so the marketing can never outrun the book.
 _front, _sections = load()
 TRICKS = count_tips(_sections)
+# e.g. "Covers Logic Pro 11 and 12" -> "Logic Pro 11 and 12" / "Logic Pro 11 & 12".
+# Derived, not typed: a version-scope change in content/00-front.json has to reach the
+# sales page, or the page ends up promising support the book does not claim.
+VERSIONS = re.sub(r'^Covers\s+', '', _front['edition']).strip()
+VERSIONS_SHORT = VERSIONS.replace(' and ', ' &amp; ')
 SECTIONS = len(_sections)
 TITLE = f"Logic Pro Crash Course — {TRICKS} Tricks | Dannny McCcarthy"
 DESC = (f"{TRICKS} Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and "
@@ -57,7 +64,7 @@ PREVIEW = [
 
 FAQ = [
     ("Which version of Logic does it cover?",
-     "It works with Logic Pro 10.7, 11 and 12. Every key command is the factory default on a "
+     f"It works with {VERSIONS}. Every key command is the factory default on a "
      "US keyboard, and where a command could move between versions the book gives the exact "
      "command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 "
      "features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 "
@@ -256,7 +263,7 @@ def main():
     <div class="lp-price reveal d2"><b>${PRICE}</b><span>One payment &middot; Yours to keep</span></div>
     <div class="lp-cta reveal d2">{buy("Get instant access")}</div>
     <p class="lp-trust reveal d3"><span>{PAGES} pages</span><i>&middot;</i>
-      <span>Instant download</span><i>&middot;</i><span>Logic Pro 10.7, 11 &amp; 12</span></p>
+      <span>Instant download</span><i>&middot;</i><span>{VERSIONS_SHORT}</span></p>
   </div>
 
   <div class="lp-sec"><div class="lp-sec-inner">

@@ -1,8 +1,8 @@
 {
   "title": "Logic Pro Crash Course",
-  "subtitle": "265 Tricks, Every One Checked",
-  "tagline": "No long tutorials. No fluff. Nothing we could not verify.",
-  "edition": "Covers Logic Pro 10.7, 11 and 12",
+  "subtitle": "265 Tricks That Actually Work",
+  "tagline": "Checked against Apple's documentation. Anything unconfirmed was cut.",
+  "edition": "Covers Logic Pro 11 and 12",
   "pages": [
     {
       "id": "how-to-use",
@@ -16,10 +16,10 @@
       "list": [
         "Every key command shown is the Logic Pro factory default on a US keyboard. If you have remapped anything, open Key Commands with ⌥K and search the command name — the name is always given.",
         "Where a trick lives in a menu rather than on a key, the full menu path is written out, so it stays correct across versions.",
-        "Menu names follow current Logic. On versions before 10.7.4, “Settings” is called “Preferences”, and a few panels moved between 10.7 and 11 — where they did, the trick says so.",
-        "Nothing here requires third-party plugins. It is all stock Logic.",
-        "Every trick here was checked against Apple's Logic Pro documentation, or against two independent sources where Apple is silent. Anything that failed was corrected; anything that could not be confirmed was cut rather than printed on a guess.",
-        "Tricks marked GAME CHANGER are the ones worth stealing first."
+        "This edition covers Logic Pro 11 and 12. Earlier versions differ in ways that would make some of these wrong — 10.7 calls Settings “Preferences” and the View pane “Display”, among others — so it is not written for them.",
+        "Every claim was checked against Apple's Logic Pro documentation, or against two independent sources where Apple is silent. Anything that failed was corrected; anything that could not be confirmed was cut rather than printed on a guess.",
+        "Tricks marked GAME CHANGER are the ones worth stealing first.",
+        "Nothing here requires third-party plugins. It is all stock Logic."
       ],
       "callout": {
         "title": "The one habit that matters most",
