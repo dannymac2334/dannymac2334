@@ -1,0 +1,276 @@
+{
+  "title": "Logic Pro Crash Course",
+  "subtitle": "265 Tricks That Actually Work",
+  "tagline": "Checked against Apple's documentation. Anything unconfirmed was cut.",
+  "edition": "Covers Logic Pro 11 and 12",
+  "pages": [
+    {
+      "id": "how-to-use",
+      "label": "How to Use This Book",
+      "kicker": "Start here",
+      "title": "How to Use This Book",
+      "body": [
+        "Do not read this front to back. Jump to the section that matches what you are stuck on right now, take the trick, and get back to the music. Every section is one click away from every page.",
+        "Each entry is short on purpose. Title, what it does, the key command. Ten seconds to read, yours for good."
+      ],
+      "list": [
+        "Every key command shown is the Logic Pro factory default on a US keyboard. If you have remapped anything, open Key Commands with ⌥K and search the command name — the name is always given.",
+        "Where a trick lives in a menu rather than on a key, the full menu path is written out, so it stays correct across versions.",
+        "This edition covers Logic Pro 11 and 12. Earlier versions differ in ways that would make some of these wrong — 10.7 calls Settings “Preferences” and the View pane “Display”, among others — so it is not written for them.",
+        "Every claim was checked against Apple's Logic Pro documentation, or against two independent sources where Apple is silent. Anything that failed was corrected; anything that could not be confirmed was cut rather than printed on a guess.",
+        "Tricks marked GAME CHANGER are the ones worth stealing first.",
+        "Nothing here requires third-party plugins. It is all stock Logic."
+      ],
+      "callout": {
+        "title": "The one habit that matters most",
+        "text": "Every time you catch yourself doing something with the mouse for the third time, check whether it has a key command. If it does, learn it. If it does not, make one. That single habit is worth more than any individual trick in this book."
+      }
+    },
+    {
+      "id": "legend",
+      "label": "Key Legend",
+      "kicker": "Reference",
+      "title": "Key Legend",
+      "body": [
+        "Logic's documentation and this book both use the Mac modifier symbols. If you are coming from another DAW, this is the page to bookmark."
+      ],
+      "keys": [
+        {
+          "sym": "⌘",
+          "name": "Command",
+          "note": "The workhorse. Most structural commands."
+        },
+        {
+          "sym": "⌥",
+          "name": "Option",
+          "note": "Almost always means copy, all, or alternate behaviour."
+        },
+        {
+          "sym": "⇧",
+          "name": "Shift",
+          "note": "Extends a selection or reverses a command."
+        },
+        {
+          "sym": "⌃",
+          "name": "Control",
+          "note": "Fine adjustments, and secondary click."
+        },
+        {
+          "sym": "↩",
+          "name": "Return",
+          "note": "Sends the playhead to the start of the project."
+        },
+        {
+          "sym": "⌫",
+          "name": "Delete",
+          "note": "Removes the selection."
+        },
+        {
+          "sym": "␣",
+          "name": "Space",
+          "note": "Play / Stop. The most used key in the program."
+        }
+      ],
+      "callout": {
+        "title": "Three modifier rules that explain most of Logic",
+        "text": "Hold ⌥ while dragging anything and you copy it instead of moving it. Hold ⌥ while clicking a knob or fader and it resets to its default. ⌥-click a Solo button and it becomes an exclusive solo — that channel alone. Learn these three and you can guess your way through most of the program."
+      }
+    },
+    {
+      "id": "basics",
+      "label": "The Basic Key Commands",
+      "kicker": "Learn these first",
+      "title": "The Basic Key Commands",
+      "body": [
+        "If you learn nothing else, learn this page. These are the commands you will use hundreds of times a day, and they are the foundation every other section builds on."
+      ],
+      "tables": [
+        {
+          "heading": "Transport",
+          "rows": [
+            [
+              "Space",
+              "Play / Stop"
+            ],
+            [
+              "↩",
+              "Go to beginning of project"
+            ],
+            [
+              "R",
+              "Record"
+            ],
+            [
+              "C",
+              "Cycle on / off"
+            ],
+            [
+              "K",
+              "Metronome on / off"
+            ],
+            [
+              "⌘.",
+              "Stop and discard the recording just made"
+            ],
+            [
+              "U",
+              "Set locators by selected regions"
+            ],
+            [
+              "/",
+              "Open the Go to Position dialog"
+            ]
+          ]
+        },
+        {
+          "heading": "Windows and views",
+          "rows": [
+            [
+              "X",
+              "Show / hide Mixer"
+            ],
+            [
+              "P",
+              "Show / hide Piano Roll"
+            ],
+            [
+              "E",
+              "Show / hide Editor"
+            ],
+            [
+              "N",
+              "Show / hide Score Editor"
+            ],
+            [
+              "Y",
+              "Show / hide Library"
+            ],
+            [
+              "O",
+              "Show / hide Loop Browser"
+            ],
+            [
+              "F",
+              "Show / hide Browsers"
+            ],
+            [
+              "B",
+              "Show / hide Smart Controls"
+            ],
+            [
+              "I",
+              "Show / hide Inspector"
+            ],
+            [
+              "G",
+              "Show / hide Global Tracks"
+            ],
+            [
+              "V",
+              "Hide / show all plug-in windows"
+            ]
+          ]
+        },
+        {
+          "heading": "Editing",
+          "rows": [
+            [
+              "⌘Z",
+              "Undo"
+            ],
+            [
+              "⇧⌘Z",
+              "Redo"
+            ],
+            [
+              "⌘T",
+              "Split regions at playhead"
+            ],
+            [
+              "⌘J",
+              "Join selected regions"
+            ],
+            [
+              "⌘R",
+              "Repeat regions or events"
+            ],
+            [
+              "⌘D",
+              "New track with duplicate settings"
+            ],
+            [
+              "⌘A",
+              "Select all"
+            ],
+            [
+              "⇧⌘A",
+              "Deselect all"
+            ],
+            [
+              "⌥ + drag",
+              "Copy instead of move"
+            ],
+            [
+              "⌘ + drag",
+              "Marquee select (default secondary tool)"
+            ]
+          ]
+        },
+        {
+          "heading": "Zoom and navigation",
+          "rows": [
+            [
+              "Z",
+              "Zoom to fit selection, press again to return"
+            ],
+            [
+              "⌘← / ⌘→",
+              "Zoom out / in horizontally"
+            ],
+            [
+              "⌘↑ / ⌘↓",
+              "Zoom out / in vertically"
+            ],
+            [
+              "⌃⌥ + drag",
+              "Drag-zoom to any area"
+            ]
+          ]
+        },
+        {
+          "heading": "Capture and output",
+          "rows": [
+            [
+              "⇧R",
+              "Flashback Capture — grab what you just played"
+            ],
+            [
+              "⌘S",
+              "Save"
+            ],
+            [
+              "⇧⌘S",
+              "Save as"
+            ],
+            [
+              "⌘B",
+              "Bounce project or section"
+            ],
+            [
+              "⌃B",
+              "Bounce regions in place"
+            ],
+            [
+              "⌥K",
+              "Open Key Commands"
+            ],
+            [
+              "⌘,",
+              "Open Settings"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "number": 18,
+  "title": "Logic Pro 11 Update",
+  "intro": "Logic Pro 11 was the biggest release in years. Session Players, the Chord track, Stem Splitter, ChromaGlow and Flashback Capture between them change how a song gets written, not just how it gets edited. This section is everything worth knowing about the new tools.",
+  "groups": [
+    {
+      "heading": "Session Players — the fundamentals",
+      "tips": [
+        {
+          "t": "Use the Follow parameter to lock players to each other",
+          "d": "In the Session Player Editor, click Patterns and look under Follow Rhythm Of. Leave the Chords switch on so the player tracks your progression, then use the Track pop-up menu to make the Bass Player follow your drum track and the Keyboard Player follow the bass. The three of them lock like a band rather than three separate parts. (Kick-and-snare-level following is a Drummer control: the Drummer's kick and snare can follow another track's rhythm.)"
+        },
+        {
+          "t": "Session Players respond to region length, so write in sections",
+          "d": "Session Player settings are region-based, so write in sections. Give each song section its own region and set complexity and intensity per region in the Session Player Editor. That is how you get a verse that builds into a chorus."
+        },
+        {
+          "t": "Swap the player character without losing your settings",
+          "d": "Before you start auditioning characters, choose 'Keep Settings when Changing Style' from the Preset pop-up menu in the Session Player Editor. With that on, your performance settings survive the swap and you can hear every character against the same arrangement in seconds. Use the Lock Settings button if you want to protect individual parameters such as Fills and Swing."
+        },
+        {
+          "t": "Regenerate a performance without changing anything else",
+          "d": "Small nudges to the Complexity or Intensity sliders often shift a phrase enough to fix it. If a bar is not landing, try nudging those sliders before you rebuild the part from scratch."
+        },
+        {
+          "t": "Layer two Session Players on the same part",
+          "d": "One playing simply, one playing busily, with the busy one low in the mix. Instant realistic double‑tracking."
+        }
+      ]
+    },
+    {
+      "heading": "Bass Player",
+      "tips": [
+        {
+          "t": "Adjust the Complexity slider before you adjust anything else",
+          "d": "Reach for the Complexity slider first: drag it higher for a more complex performance, lower for a plainer one. Low complexity in a verse and high in a chorus is an arrangement decision made with one slider."
+        },
+        {
+          "t": "Turn on or off specific articulations",
+          "d": "Click Details in the Session Player Editor and you get bass-specific articulation controls: a Dead Notes knob for percussive unpitched notes, a Slides knob for how often the player slides between and before notes, a Dynamic Mute button, and a Pickup Hits button. Depending on the style you also get probability controls such as Buzz Trills, Double Stops, Blue Notes and Slaps. Pulling the Slides knob down on its own makes a part sound completely different."
+        },
+        {
+          "t": "Pair Bass Player with Studio Bass for the intended sound",
+          "d": "The playing engine and the instrument are separate. Studio Bass is the sampled instrument designed to respond to the articulations Bass Player generates."
+        },
+        {
+          "t": "Set the Bass Player to follow a specific track's rhythm",
+          "d": "Point Follow at your guitar or piano and the bass locks to that rhythm instead of the drums, which is how you get a riff‑driven arrangement."
+        }
+      ]
+    },
+    {
+      "heading": "Keyboard Player",
+      "tips": [
+        {
+          "t": "Use the left‑ and right‑hand controls independently",
+          "d": "You can simplify the left hand and keep the right hand busy, which is how real players comp behind a vocal."
+        },
+        {
+          "t": "Set the rhythmic density separately from the complexity",
+          "d": "Complexity and Intensity are two different things, and so are the two hands. Set overall Complexity and Intensity with the sliders, then use the left hand's Style menu (Sustain Only, Simple, Moderate, Complex) to make the left hand sparse while the right hand stays busy. Sparse and complex is a very different thing from busy and simple."
+        },
+        {
+          "t": "Convert to MIDI and delete the left hand entirely",
+          "d": "The fastest route to a usable pad or Rhodes comp is to generate a full part and then remove what you do not need."
+        },
+        {
+          "t": "Use Keyboard Player as a writing tool, not a final part",
+          "d": "Generate a progression, convert it to MIDI, then play the good bits yourself. The generated part becomes your reference."
+        },
+        {
+          "t": "Try it on a synth patch, not just a piano",
+          "d": "Do not assume the Keyboard Player only belongs on piano. Try swapping the instrument on the track for a pad or a pluck and listen — and check whether the Synth Keyboard Player or Synth Bass Player suits the sound you are after."
+        }
+      ]
+    },
+    {
+      "heading": "The Chord track",
+      "tips": [
+        {
+          "t": "Show the Chord track in Global Tracks",
+          "d": "Press G, then enable Chord. Every Session Player and any track you tell to follow it will play the progression you enter.",
+          "k": "G",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Generate chords from an existing MIDI region",
+          "d": "Drag a MIDI region onto the Chord track and Logic analyses it and builds the progression for you. Works on audio via the Chord analysis too."
+        },
+        {
+          "t": "Set chord duration precisely by dragging chord boundaries",
+          "d": "Chords snap to the grid, so a half‑bar change is a two‑second edit."
+        },
+        {
+          "t": "Turn Follow Chord Track off for parts that should not move",
+          "d": "Following the Chord track is a per-region setting, not a per-track one, and it is called Pitch Source. Select the region, then use the Pitch Source pop-up in the Region inspector: Chord Track makes it follow your progression, and the other options (region chords, key signature) take it off the Chord track. Set it away from Chord Track for samples and anything already committed."
+        }
+      ]
+    },
+    {
+      "heading": "Stem Splitter",
+      "tips": [
+        {
+          "t": "Split any mixed audio into stems",
+          "d": "Control-click an audio region and choose Processing > Stem Splitter. Since 11.2 it separates up to six stems — vocals, drums, bass, guitar, piano and other — and it needs an Apple silicon Mac.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Use it on your own rough mixes, not just other people's records",
+          "d": "The most legitimate and useful application is recovering a part from a bounce when the original session is gone."
+        },
+        {
+          "t": "Split first, then process — artefacts are frequency dependent",
+          "d": "Split first, then process. Treat each stem as a new source: listen for separation artefacts on their own before you commit, and clean them up with gentle EQ or a de-esser on the stems that need it rather than processing the whole split."
+        },
+        {
+          "t": "Use single stems as layers, not as full replacements",
+          "d": "A split drum stem buried under real drums adds character without exposing the artefacts."
+        },
+        {
+          "t": "Make an instrumental with one preset",
+          "d": "Stem Splitter's preset combinations do the common jobs in one click — Instrumental drops the vocal, Acapella keeps only it. Or pick your own stems and let the submix option bounce them to a single file."
+        },
+        {
+          "t": "Splitting is non‑destructive to the original",
+          "d": "Splitting adds rather than replaces. Clicking Apply creates a summing stack below the track holding the selected region, with the extracted stems on its subtracks — so the split lives alongside your source material and you can always start again."
+        }
+      ]
+    },
+    {
+      "heading": "ChromaGlow",
+      "tips": [
+        {
+          "t": "ChromaGlow is five saturation models in one plugin",
+          "d": "Each model has a distinct character. Audition all five before you touch a single control — the model choice matters far more than the settings.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Use the Drive and Output together to stay level‑matched",
+          "d": "Saturation makes things louder, and louder always sounds better. Match levels before you decide whether it is actually helping."
+        },
+        {
+          "t": "Put it on the drum bus before the compressor",
+          "d": "Saturating transients before compression gives the compressor less to fight and produces a much more controlled result."
+        },
+        {
+          "t": "Use Bypass Below to keep the low end clean",
+          "d": "ChromaGlow's Bypass Below control leaves everything under the frequency you set unsaturated, so the bass stays solid while the mids and top take the colour."
+        },
+        {
+          "t": "Try it on the master at very low drive",
+          "d": "A tiny amount across the whole mix does what analogue summing is supposed to do. Anything you can obviously hear is too much."
+        }
+      ]
+    },
+    {
+      "heading": "Flashback Capture and workflow additions",
+      "tips": [
+        {
+          "t": "Flashback Capture retrieves what you just played",
+          "d": "MIDI capture has been in Logic for years as “Capture Recording”. Logic 11.2 renamed it Flashback Capture and taught it audio as well, so a great vocal run you never armed is now recoverable too. The control bar button, or ⇧R.",
+          "k": "⇧R",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "⇧R is already on the keyboard, so build the reflex",
+          "d": "The whole value of the feature is that it costs nothing to reach for. Hit it the moment you play something you like, before you have decided whether it was any good.",
+          "k": "⇧R"
+        },
+        {
+          "t": "It works while the transport is stopped",
+          "d": "MIDI is caught either way — noodling with the song stopped is exactly when the good ideas arrive, and Flashback Capture catches those. The audio side added in 11.2 has one condition: you can capture audio only while the project is playing, so leave the transport rolling when the mic is the thing you might want back."
+        },
+        {
+          "t": "Check plugin compatibility after updating",
+          "d": "Before you rely on a new version for real work, open your three most important old projects and check every insert. Updates can change how third-party plug-ins load, and finding that out mid-session is expensive."
+        }
+      ]
+    }
+  ]
+}

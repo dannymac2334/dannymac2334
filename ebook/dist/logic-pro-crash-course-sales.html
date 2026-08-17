@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logic Pro Crash Course — 265 Tricks | Dannny McCcarthy</title>
+<meta name="description" content="265 Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and workflow across 19 sections. $14.99, instant download.">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Dannny McCcarthy">
+<meta property="og:title" content="Logic Pro Crash Course — 265 Tricks | Dannny McCcarthy">
+<meta property="og:description" content="265 Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and workflow across 19 sections. $14.99, instant download.">
+<meta property="og:url" content="https://www.dannnymcccarthy.com/logic-pro-crash-course">
+<link rel="canonical" href="https://www.dannnymcccarthy.com/logic-pro-crash-course">
+<meta property="og:image" content="https://www.dannnymcccarthy.com/assets/brand/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Logic Pro Crash Course — 265 Tricks | Dannny McCcarthy">
+<meta name="twitter:description" content="265 Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and workflow across 19 sections. $14.99, instant download.">
+<meta name="twitter:image" content="https://www.dannnymcccarthy.com/assets/brand/og-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+<script defer src="js/main.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Logic Pro Crash Course","description":"265 Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and workflow across 19 sections. $14.99, instant download.","image":"https://www.dannnymcccarthy.com/assets/brand/og-cover.jpg","brand":{"@type":"Brand","name":"Dannny McCcarthy"},"offers":{"@type":"Offer","price":"14.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://www.dannnymcccarthy.com/logic-pro-crash-course"}}
+</script>
+<style>
+/* ===== Logic Pro Crash Course — page-only styles =====
+   Everything is scoped under .lp. Colours, type, easing and the glass rim all
+   come from the site's own tokens so this page cannot drift from the rest. */
+.lp{--lp-card:#171922;--lp-dim:#d5d4cf}
+.lp .lp-hero{padding:clamp(130px,20vh,220px) var(--pad) clamp(40px,7vh,72px);text-align:center;
+  border-bottom:1px solid var(--line-dark)}
+.lp .lp-hero h1{font-size:clamp(38px,7.5vw,110px);letter-spacing:-.035em;line-height:.92;
+  text-transform:uppercase;margin:18px 0 0}
+.lp .lp-lead{margin:24px auto 0;max-width:60ch;font-size:clamp(15px,1.3vw,19px);line-height:1.6;color:var(--lp-dim)}
+.lp .lp-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.lp .lp-stat{border:1px solid var(--line-dark);border-radius:100px;padding:13px 28px;min-width:120px}
+.lp .lp-stat b{display:block;font-size:24px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.lp .lp-stat span{display:block;margin-top:6px;font-size:10px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;opacity:.6}
+.lp .lp-cta{margin-top:38px}
+
+/* filter bar — hundreds of tricks on one page is a search problem, not a scroll problem */
+.lp-tools{position:sticky;top:56px;z-index:91;padding:12px var(--pad);box-sizing:border-box;
+  background:rgba(0,0,0,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--line-dark)}
+.lp-tools-inner{max-width:1200px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.lp-search{position:relative;flex:1 1 280px;min-width:0}
+.lp-search input{width:100%;background:transparent;border:1px solid #3a3a3a;border-radius:100px;
+  color:#fff;font-family:inherit;font-size:13px;letter-spacing:.02em;padding:11px 74px 11px 18px;
+  outline:none;transition:border-color .25s var(--ease)}
+.lp-search input::placeholder{color:#7d7d7a}
+.lp-search input:focus{border-color:#fff}
+.lp-search kbd{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;
+  font-family:inherit;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:#7d7d7a;border:1px solid #3a3a3a;border-radius:100px;padding:3px 8px}
+.lp-search input:not(:placeholder-shown)+kbd{display:none}
+.lp-toggle{flex:0 0 auto;cursor:pointer;background:transparent;color:#e8e8e6;border:1px solid #3a3a3a;
+  border-radius:100px;font-family:inherit;font-weight:500;font-size:11px;text-transform:uppercase;
+  letter-spacing:.12em;padding:10px 18px;white-space:nowrap;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.lp-toggle:hover{background:#141414;border-color:#5a5a5a;color:#fff}
+.lp-toggle[aria-pressed="true"]{background:#fff;border-color:#fff;color:#000}
+.lp-count-live{flex:0 0 auto;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:#8a8a86;font-variant-numeric:tabular-nums}
+.lp-empty{display:none;text-align:center;padding:clamp(60px,12vh,140px) var(--pad)}
+.lp-empty h3{font-size:clamp(22px,3.4vw,40px);letter-spacing:-.02em;text-transform:uppercase;margin:0}
+.lp-empty p{margin:16px auto 0;max-width:40ch;color:var(--lp-dim);font-size:15px}
+.lp.is-empty .lp-empty{display:block}
+.lp.is-filtering .lp-doc{display:none}
+.lp.is-filtering .lp-nav-inner a.dim{opacity:.3}
+
+/* back to top — the page is long enough to earn one */
+.lp-top{position:fixed;right:22px;bottom:22px;z-index:95;opacity:0;pointer-events:none;
+  transform:translateY(8px);transition:opacity .3s var(--ease),transform .3s var(--ease);
+  background:#fff;color:#000;border:0;border-radius:100px;cursor:pointer;font-family:inherit;
+  font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:13px 20px}
+.lp-top.show{opacity:1;pointer-events:auto;transform:none}
+
+.lp :focus-visible,.lp-tools :focus-visible,.lp-nav :focus-visible{outline:2px solid #fff;outline-offset:3px}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* Once filtering starts, stop hiding things behind the scroll reveal — a match
+   that has never been scrolled past would otherwise come back as an empty slot.
+   The transition is killed too, so results appear instantly instead of fading
+   in over .9s, which would read as lag while typing. */
+.lp.no-anim .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+
+/* sticky section nav — same behaviour language as the site's other jump bars */
+.lp-nav{position:sticky;top:110px;z-index:90;padding:11px var(--pad);box-sizing:border-box;
+  background:rgba(0,0,0,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.lp-nav-inner{--fade:32px;max-width:1200px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;
+  overscroll-behavior-x:contain;touch-action:pan-x;-webkit-overflow-scrolling:touch;cursor:grab;
+  scrollbar-width:none;-ms-overflow-style:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%)}
+.lp-nav-inner::-webkit-scrollbar{display:none}
+.lp-nav-inner.dragging{cursor:grabbing}
+.lp-nav-inner a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;padding:7px 15px;
+  border:1px solid #3a3a3a;border-radius:100px;font-size:11px;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;color:#e8e8e6;white-space:nowrap;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.lp-nav-inner a i{font-style:normal;opacity:.45;font-variant-numeric:tabular-nums}
+.lp-nav-inner a:hover{background:#141414;border-color:#5a5a5a;color:#fff}
+.lp-nav-inner a.active{background:#fff;border-color:#fff;color:#000}
+.lp-nav-inner a.active i{opacity:.5}
+
+.lp-body{max-width:1200px;margin:0 auto;padding:clamp(50px,9vh,100px) var(--pad) 0}
+.lp-block{scroll-margin-top:140px;margin-bottom:clamp(60px,11vh,130px)}
+.lp-block-head{border-bottom:1px solid var(--line-dark);padding-bottom:18px;margin-bottom:34px}
+.lp-eyebrow{font-weight:600;text-transform:uppercase;letter-spacing:.24em;font-size:11px;opacity:.55;margin:0}
+.lp-block-head h2{font-size:clamp(30px,5.4vw,72px);letter-spacing:-.02em;line-height:.95;
+  text-transform:uppercase;margin:14px 0 0}
+.lp-count{display:inline-block;margin-top:16px;border:1px solid var(--line-dark);border-radius:100px;
+  padding:6px 16px;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.lp-intro{max-width:68ch;font-size:clamp(15px,1.2vw,18px);line-height:1.7;color:var(--lp-dim);margin:0 0 8px}
+/* Front-matter blocks have no card grid, so hold every element to one measure
+   instead of letting prose sit narrow while callouts run the full width. */
+.lp-doc .lp-intro,.lp-doc .lp-rules,.lp-doc .lp-legend,.lp-doc .lp-table,
+.lp-doc .lp-callout,.lp-doc .lp-sub{max-width:900px}
+
+.lp-group{margin-top:clamp(34px,5.5vh,58px)}
+.lp-group-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+  border-bottom:1px solid var(--line-dark);padding-bottom:12px;margin-bottom:20px}
+.lp-group-head h3{font-size:clamp(15px,1.5vw,19px);font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;line-height:1.2;margin:0}
+.lp-path{margin:0;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;
+  border:1px solid var(--line-dark);border-radius:100px;padding:5px 13px;opacity:.7}
+.lp-note{margin:0 0 18px;font-size:13px;color:#8a8a86}
+
+.lp-tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(20rem,1fr));gap:18px}
+
+/* the site's liquid-glass rim, applied to a text card instead of an image */
+.lp-tip{position:relative;border-radius:16px;padding:1px;display:flex;flex-direction:column;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.28) 16%,rgba(255,255,255,.08) 42%,
+      rgba(255,255,255,.08) 60%,rgba(255,255,255,.3) 82%,rgba(255,255,255,.8) 100%),
+    linear-gradient(0deg,var(--lp-card),var(--lp-card));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),0 0 0 1px rgba(255,255,255,.1),
+    0 20px 44px -24px rgba(0,0,0,.7),0 4px 14px -10px rgba(0,0,0,.55);
+  transition:box-shadow .5s var(--ease),transform .5s var(--ease)}
+.lp-tip::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:16px;
+  padding:1px;
+  background:linear-gradient(120deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.9) 50%,rgba(255,255,255,0) 62%);
+  background-size:260% 100%;background-position:100% 0;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;opacity:0;
+  transition:opacity .5s var(--ease),background-position .9s var(--ease)}
+.lp-tip:hover::before{opacity:1;background-position:0 0}
+.lp-tip:hover{transform:translateY(-3px);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),0 0 0 1px rgba(255,255,255,.2),
+    0 0 22px -2px rgba(220,230,255,.32),0 24px 48px -22px rgba(0,0,0,.7)}
+.lp-tip>*{position:relative;z-index:2;background:var(--lp-card)}
+.lp-tip-head{display:flex;align-items:center;gap:11px;padding:20px 22px 0;border-radius:15px 15px 0 0}
+.lp-tip h4{margin:0;padding:11px 22px 0;font-size:16px;font-weight:600;letter-spacing:-.01em;
+  line-height:1.3;text-transform:none}
+.lp-tip p{margin:0;padding:9px 22px 0;font-size:13.5px;line-height:1.65;color:var(--lp-dim);flex:1}
+.lp-keys{padding:16px 22px 20px;border-radius:0 0 15px 15px;margin-top:auto}
+.lp-tip.no-keys p{padding-bottom:22px;border-radius:0 0 15px 15px}
+.lp-num{font-size:11px;font-weight:600;letter-spacing:.14em;opacity:.45;font-variant-numeric:tabular-nums}
+.lp-badge{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border-radius:100px;
+  padding:4px 11px;background:#fff;color:#000}
+.lp-tip.is-key{box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),0 0 0 1px rgba(255,255,255,.2),
+  0 20px 44px -24px rgba(0,0,0,.7)}
+
+.lp-kbd{display:inline-block;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  background:#fff;color:#000;border-radius:100px;padding:.34rem .8rem;white-space:nowrap}
+.lp-kbd.phrase{background:transparent;color:#fff;border:1px solid var(--line-dark);letter-spacing:.08em}
+
+/* front-matter blocks */
+.lp-rules{margin:0;padding:0;list-style:none}
+.lp-rules li{padding:15px 0 15px 30px;border-bottom:1px solid var(--line-dark);position:relative;
+  color:var(--lp-dim);font-size:15px;line-height:1.6;max-width:74ch}
+.lp-rules li:first-child{border-top:1px solid var(--line-dark)}
+.lp-rules li::before{content:"";position:absolute;left:0;top:1.5em;width:14px;height:1px;
+  background:currentColor;opacity:.5}
+.lp-legend{margin:0}
+.lp-legend div{display:grid;grid-template-columns:14rem minmax(0,1fr);gap:1.2rem;align-items:baseline;
+  padding:15px 0;border-bottom:1px solid var(--line-dark)}
+.lp-legend div:first-child{border-top:1px solid var(--line-dark)}
+.lp-legend dt{display:flex;align-items:baseline;gap:1rem}
+.lp-sym{font-size:26px;font-weight:500;line-height:1;min-width:2rem}
+.lp-legend dt b{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.16em}
+.lp-legend dd{margin:0;font-size:14px;color:var(--lp-dim)}
+.lp-table{width:100%;border-collapse:collapse;margin-bottom:34px}
+.lp-table tr{border-bottom:1px solid var(--line-dark)}
+.lp-table tr:first-child{border-top:1px solid var(--line-dark)}
+.lp-table th{text-align:left;padding:11px 20px 11px 0;width:11rem;vertical-align:baseline}
+.lp-table td{padding:11px 0;font-size:14px;color:var(--lp-dim);vertical-align:baseline}
+.lp-sub{font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(15px,1.5vw,19px);
+  margin:0 0 14px}
+.lp-callout{border:1px solid var(--line-dark);border-radius:16px;padding:clamp(22px,3vw,34px);margin-top:30px}
+.lp-callout h3{margin:0 0 12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:17px}
+.lp-callout p{margin:0;font-size:15px;line-height:1.7;color:var(--lp-dim)}
+.lp-notice{border:1px solid var(--line-dark);border-radius:16px;padding:24px;margin:26px 0 0}
+.lp-notice h3{margin:0 0 10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:15px}
+.lp-notice p{margin:0;font-size:14px;line-height:1.7;color:var(--lp-dim)}
+
+.lp-end{text-align:center;padding:clamp(60px,10vh,120px) var(--pad);border-top:1px solid var(--line-dark)}
+.lp-end h2{font-size:clamp(30px,6vw,84px);letter-spacing:-.03em;line-height:.95;text-transform:uppercase}
+.lp-end p{margin:22px auto 0;max-width:46ch;font-size:16px;line-height:1.6;color:var(--lp-dim)}
+
+@media(max-width:820px){
+  .lp-legend div{grid-template-columns:1fr;gap:.3rem}
+  .lp-tips{grid-template-columns:1fr}
+  .lp-nav{top:50px}
+}
+@media(prefers-reduced-motion:reduce){
+  .lp-tip,.lp-tip::before{transition:none}
+  .lp-tip:hover{transform:none}
+}
+
+/* ---- sales page additions ---- */
+.lp-price{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-top:34px}
+.lp-price b{font-size:clamp(38px,6vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.lp-price span{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;opacity:.55}
+.pill.solid{background:#fff;color:#000;border-color:#fff}
+.pill.solid:hover{background:transparent;color:#fff;border-color:#fff}
+.lp-trust{margin:22px auto 0;font-size:11px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:#8a8a86}
+.lp-trust span{white-space:nowrap}
+.lp-trust i{font-style:normal;opacity:.4;padding:0 10px}
+
+.lp-sec{padding:clamp(64px,11vh,130px) var(--pad);border-top:1px solid var(--line-dark)}
+.lp-sec-inner{max-width:1100px;margin:0 auto}
+.lp-h2{font-size:clamp(30px,5.6vw,76px);letter-spacing:-.025em;line-height:.96;
+  text-transform:uppercase;margin:14px 0 0;max-width:20ch}
+.lp-sec .lp-intro{margin-top:26px}
+
+.lp-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:44px}
+@media(max-width:820px){.lp-cols{grid-template-columns:1fr}}
+.lp-col h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+  margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--line-dark)}
+.lp-col ul{margin:0;padding:0;list-style:none}
+.lp-col li{position:relative;padding:12px 0 12px 30px;font-size:15px;line-height:1.6;color:var(--lp-dim)}
+.lp-col li::before{content:"";position:absolute;left:0;top:1.35em;width:14px;height:1px;
+  background:currentColor;opacity:.5}
+.lp-col.no li{opacity:.62}
+
+/* section index — proves the scope without giving it away */
+.lp-index{margin-top:44px;border-top:1px solid var(--line-dark)}
+.lp-index div{display:flex;align-items:baseline;gap:clamp(12px,2vw,28px);padding:14px 0;
+  border-bottom:1px solid var(--line-dark)}
+.lp-index i{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.14em;opacity:.4;
+  min-width:2rem;font-variant-numeric:tabular-nums}
+.lp-index b{flex:1;font-size:clamp(15px,2vw,24px);font-weight:700;text-transform:uppercase;
+  letter-spacing:-.015em}
+.lp-index em{font-style:normal;font-size:10px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;opacity:.5;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.lp-faq{margin-top:44px;border-top:1px solid var(--line-dark)}
+.lp-faq details{border-bottom:1px solid var(--line-dark)}
+.lp-faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;position:relative;
+  font-size:clamp(15px,1.8vw,20px);font-weight:600;letter-spacing:-.01em}
+.lp-faq summary::-webkit-details-marker{display:none}
+.lp-faq summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  font-size:22px;font-weight:400;opacity:.5;transition:transform .3s var(--ease)}
+.lp-faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.lp-faq p{margin:0;padding:0 40px 24px 0;font-size:15px;line-height:1.7;color:var(--lp-dim);
+  max-width:70ch}
+
+.lp-final{text-align:center;padding:clamp(70px,13vh,150px) var(--pad);border-top:1px solid var(--line-dark)}
+.lp-final .lp-h2{margin-left:auto;margin-right:auto}
+.lp-note{margin:26px auto 0;max-width:52ch;font-size:13px;line-height:1.7;color:#8a8a86}
+</style>
+<noscript><style>.lp .reveal{opacity:1 !important;transform:none !important}</style></noscript>
+</head>
+<body>
+<header class="site-head" data-header>
+  <a href="index.html" aria-label="Home">
+    <img class="logo white" src="assets/brand/DM_WHITE.png" alt="Dannny McCcarthy">
+    <img class="logo black" src="assets/brand/DM_BLACK.png" alt="Dannny McCcarthy">
+  </a>
+  <nav class="nav"><a href="index.html">Home</a><a href="work.html">Work</a><a href="maccaroni.html">Maccaroni</a><a href="services.html">Work with me</a><a href="contact.html">Contact</a></nav>
+</header>
+
+<section class="proj lp">
+
+  <div class="lp-hero">
+    <p class="lp-eyebrow reveal">Logic Pro &middot; Digital download</p>
+    <h1 class="reveal d1">Logic Pro<br>Crash Course</h1>
+    <p class="lp-lead reveal d1">265 tricks that actually work — the ones nobody tells you,
+    in one clickable PDF you keep open while you produce. No long tutorials. No fluff.</p>
+    <div class="lp-price reveal d2"><b>$14.99</b><span>One payment &middot; Yours to keep</span></div>
+    <div class="lp-cta reveal d2"><a class="pill solid" href="/buy" data-product="logic-pro-crash-course" data-price-usd="14.99">Get instant access</a></div>
+    <p class="lp-trust reveal d3"><span>84 pages</span><i>&middot;</i>
+      <span>Instant download</span><i>&middot;</i><span>Logic Pro 11 &amp; 12</span></p>
+  </div>
+
+  <div class="lp-sec"><div class="lp-sec-inner">
+    <p class="lp-eyebrow reveal">The problem</p>
+    <h2 class="lp-h2 reveal">Logic can already do it. You just can&rsquo;t remember where it lives.</h2>
+    <p class="lp-intro reveal">You are three hours into a session, the idea is finally working, and
+    you stop — because you know Logic can do the thing you need and you cannot remember how. So you
+    open a browser, watch four minutes of somebody clearing their throat, find the answer, and come
+    back. The idea has gone cold.</p>
+    <p class="lp-intro reveal">That is not a skill problem. It is a lookup problem. Logic Pro has
+    over two thousand commands, and the useful ones are buried three menus deep or sitting on a
+    key nobody mentions.</p>
+    <p class="lp-intro reveal">This book is the lookup. 265 tricks, sorted into 19
+    sections, each one short enough to read in ten seconds and use immediately.</p>
+  </div></div>
+
+  <div class="lp-sec"><div class="lp-sec-inner">
+    <p class="lp-eyebrow reveal">A few of them</p>
+    <h2 class="lp-h2 reveal">Six tricks, free, right now.</h2>
+    <p class="lp-intro reveal">Taken straight from the book. If these are new to you, the other
+    261 will be too.</p>
+    <div class="lp-tips" style="margin-top:40px"><article class="lp-tip reveal is-key"><div class="lp-tip-head"><span class="lp-num">001</span><span class="lp-badge">Section 04</span></div><h4>Capture the last thing you played, even when not recording</h4><p>If you played something great while the transport was rolling but not recording, hit ⇧R and Logic writes it to a region retroactively. MIDI works on any recent version, whether the project is playing or stopped. Audio needs Logic 11.2 or later: make sure the audio track is in focus and the transport is playing — Logic captures only while there is an incoming signal, needs at least four seconds of playback, and can save up to one minute of audio.</p><div class="lp-keys"><span class="lp-kbd">⇧R</span></div></article><article class="lp-tip reveal no-keys is-key"><div class="lp-tip-head"><span class="lp-num">002</span><span class="lp-badge">Section 18</span></div><h4>Split any mixed audio into stems</h4><p>Control-click an audio region and choose Processing &gt; Stem Splitter. Since 11.2 it separates up to six stems — vocals, drums, bass, guitar, piano and other — and it needs an Apple silicon Mac.</p></article><article class="lp-tip reveal no-keys is-key"><div class="lp-tip-head"><span class="lp-num">003</span><span class="lp-badge">Section 11</span></div><h4>Give every row a different step rate</h4><p>Rows do not have to share the pattern's subdivision. Click a row header to select the row, then in the Step Sequencer inspector click Row and choose a note value from the Step Rate pop-up menu. (You can also switch the grid to Step Rate edit mode and drag vertically inside a single step to change just that step.) Hi-hats at 1/16 against a kick at 1/8 gives you cross-rhythms with no extra work at all.</p></article><article class="lp-tip reveal no-keys is-key"><div class="lp-tip-head"><span class="lp-num">004</span><span class="lp-badge">Section 19</span></div><h4>Chord ID reads chords off audio, not just MIDI</h4><p>Drag in a guitar demo, a piano take or a rough bounce and Chord ID analyses it and writes the progression to the Chord track in seconds. It is the fastest route from an idea to a working arrangement.</p></article></div>
+  </div></div>
+
+  <div class="lp-sec"><div class="lp-sec-inner">
+    <p class="lp-eyebrow reveal">What&rsquo;s inside</p>
+    <h2 class="lp-h2 reveal">19 sections. 265 tricks.</h2>
+    <p class="lp-intro reveal">Organised by what you are doing, not by what menu it lives in — so
+    you can find the right one mid-project without breaking your flow.</p>
+    <div class="lp-index reveal"><div><i>01</i><b>Setting Up My Preferred Settings</b><em>30 tricks</em></div><div><i>02</i><b>Arrangement Tricks</b><em>15 tricks</em></div><div><i>03</i><b>Navigating Tricks</b><em>6 tricks</em></div><div><i>04</i><b>Composing MIDI Tricks</b><em>13 tricks</em></div><div><i>05</i><b>Piano Roll Tricks</b><em>16 tricks</em></div><div><i>06</i><b>Recording Audio Tricks</b><em>12 tricks</em></div><div><i>07</i><b>Editing Tips — Audio + MIDI</b><em>8 tricks</em></div><div><i>08</i><b>Audio Editing Tricks</b><em>15 tricks</em></div><div><i>09</i><b>Marquee Tool Tricks</b><em>7 tricks</em></div><div><i>10</i><b>Automation Tricks</b><em>17 tricks</em></div><div><i>11</i><b>Step Sequencer Tricks</b><em>12 tricks</em></div><div><i>12</i><b>Logic Drummer Tricks</b><em>6 tricks</em></div><div><i>13</i><b>Drum Machine Designer Tricks</b><em>6 tricks</em></div><div><i>14</i><b>Quick Sampler Tricks</b><em>7 tricks</em></div><div><i>15</i><b>Mixer Tricks</b><em>12 tricks</em></div><div><i>16</i><b>Favorite Logic Plugins</b><em>14 tricks</em></div><div><i>17</i><b>More Tricks</b><em>14 tricks</em></div><div><i>18</i><b>Logic Pro 11 Update</b><em>33 tricks</em></div><div><i>19</i><b>Logic Pro 12 Update</b><em>22 tricks</em></div></div>
+  </div></div>
+
+  <div class="lp-sec"><div class="lp-sec-inner">
+    <p class="lp-eyebrow reveal">Honestly</p>
+    <h2 class="lp-h2 reveal">Who this is for, and who it isn&rsquo;t.</h2>
+    <div class="lp-cols">
+      <div class="lp-col reveal"><h3>Get it if</h3><ul><li>You already know your way around Logic, and keep thinking there must be a faster way to do this.</li><li>You lose your thread hunting through menus mid-session.</li><li>You have watched hours of tutorials and still cannot remember the one thing you needed.</li><li>You want the shortcuts a working producer actually uses, not a feature tour.</li></ul></div>
+      <div class="lp-col no reveal d1"><h3>Skip it if</h3><ul><li>You have never opened Logic Pro and need a from-scratch beginner course.</li><li>You want video walkthroughs rather than something to reference quickly.</li><li>You are looking for mixing theory or a genre-specific production course.</li></ul></div>
+    </div>
+  </div></div>
+
+  <div class="lp-sec"><div class="lp-sec-inner">
+    <p class="lp-eyebrow reveal">Questions</p>
+    <h2 class="lp-h2 reveal">Before you buy.</h2>
+    <div class="lp-faq reveal"><details><summary>Which version of Logic does it cover?</summary><p>It works with Logic Pro 11 and 12. Every key command is the factory default on a US keyboard, and where a command could move between versions the book gives the exact command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic Pro 12: the Synth Player, Chord ID, the rebuilt Sound Library, and the fact that 12 is Apple silicon only.</p></details><details><summary>Is this a video course?</summary><p>No. It is 265 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.</p></details><details><summary>Do I need any third-party plugins?</summary><p>No. Every trick uses stock Logic Pro. Nothing to buy, nothing to install.</p></details><details><summary>I am fairly new to Logic. Is it too advanced?</summary><p>The early sections are settings and fundamentals — the things worth fixing before you record a note. It gets deeper from there. You should be comfortable opening a project and recording a track; you do not need to be an expert.</p></details><details><summary>What exactly do I get?</summary><p>One PDF, 84 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.</p></details><details><summary>How is it delivered?</summary><p>Instantly. You get a download link as soon as the payment clears.</p></details></div>
+  </div></div>
+
+  <div class="lp-final">
+    <h2 class="lp-h2 reveal">Get the 265.</h2>
+    <div class="lp-price reveal d1"><b>$14.99</b><span>One payment &middot; Yours to keep</span></div>
+    <div class="lp-cta reveal d1"><a class="pill solid" href="/buy" data-product="logic-pro-crash-course" data-price-usd="14.99">Get instant access</a></div>
+    <p class="lp-note reveal d2">A single PDF, 84 pages, delivered the moment your payment
+    clears. Every key command in it is the Logic Pro factory default; where a command could move
+    between versions, the book gives the command name and menu path so it stays correct.</p>
+  </div>
+
+</section>
+
+<footer class="foot">
+  <div class="ready reveal"><a href="contact.html">Ready to work together?</a></div>
+  <div class="foot-cols">
+    <div class="fcol reveal">
+      <h4>Explore</h4>
+      <a href="work.html">Work</a>
+      <a href="maccaroni.html">Maccaroni</a>
+      <a href="services.html">Work with me</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="fcol reveal d1">
+      <h4>Connect<br>With Me</h4>
+      <a href="https://www.instagram.com/dannnymaccc_/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/channel/UCwNgSiOTmtKOH5ybC1zxwrw" target="_blank" rel="noopener">YouTube</a><a href="https://www.linkedin.com/in/danielmccarthy23" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="fcol newsletter reveal d2">
+      <h4>Let's Be<br>Friends</h4>
+      <p class="copy">Drop your email address to receive news and updates.</p>
+      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="?signup=1">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="hidden"><label>Skip<input name="bot-field"></label></p>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <div class="base">
+    <span>&copy; 2026 Dannny McCcarthy</span>
+    <span>Brand Identity &amp; Strategy in Seattle</span>
+  </div>
+</footer>
+
+</body>
+</html>

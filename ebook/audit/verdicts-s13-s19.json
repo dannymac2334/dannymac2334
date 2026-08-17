@@ -1,0 +1,1356 @@
+{
+ "audited_sections": [
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "sections": [
+  {
+   "section": 13,
+   "audit": {
+    "section": 13,
+    "search_worked": true,
+    "searches_used": 16,
+    "search_note": "WebSearch worked normally; 16 of my ~20 budget used, all 10 tricks actually checked (none left unchecked for budget reasons). Sources were mostly support.apple.com Logic Pro User Guide pages reached via search snippets that quote Apple directly (WebFetch not used). Two version caveats the owner should know: (1) the whole section describes the post-10.5 redesigned Drum Machine Designer — the track-stack/subtrack architecture, Quick Sampler-on-pad drops and Exclusive Group all belong to that generation, so the section is fine for 10.7/11/12 but would be wrong for 10.4 and earlier (old DMD was Ultrabeat multi-output). Nothing in the section claims a version, so no trick is WRONG on version grounds. (2) Apple's live pad-controls pages I could confirm are the 11.1/12.0 editions; I could not independently confirm the 10.7 edition of the Exclusive Group page, so that trick's 10.7 coverage rests on a secondary source. The section is in far better shape than sections 1-5: 7 VERIFIED, 1 WRONG (a non-existent UI name), 1 UNVERIFIABLE (an unsupported key command), 1 NO_FACTUAL_CLAIM. The section intro (\"Drum Machine Designer is a Track Stack in disguise... every pad is a real channel strip\") is itself confirmed by Apple: \"Drum Machine Designer is a track-based meta-instrument using a track stack, which combines a main track and a number of subtracks.\"",
+    "tricks": [
+     {
+      "title": "Drag any audio file straight onto a pad",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents exactly this behaviour: dropping a sample/region on a pad creates a new subtrack with a Quick Sampler instance automatically. Apple also confirms the drag sources (Finder, browsers, Tracks area) and file types (WAV, AIFF, MP3), so 'any audio file' holds.",
+      "evidence_quote": "When a region is dropped onto a pad, a new Quick Sampler instance is inserted on a new subtrack, which is mapped to the first available (lowest numbered) unassigned pad. ... You can add sounds to a pad by dragging an audio file like a WAV, AIFF, or an MP3 file from the Finder or any of the browsers in Logic Pro, or a region from the Tracks area to a pad.",
+      "evidence_url": "https://support.apple.com/en-us/102054"
+     },
+     {
+      "title": "Every pad is its own channel strip",
+      "verdict": "VERIFIED",
+      "reason": "Both halves check out against Apple. The per-pad channel strip is stated verbatim in the Drum Machine Designer article, and the Mixer key command X is stated in the Logic Pro User Guide mixing pages. The 'inside the stack' framing is also Apple's, since DMD is a track stack of main track plus subtracks.",
+      "evidence_quote": "When you add a sound to an empty pad, a subtrack is created for the pad with its own corresponding channel strip, which you can process individually in the mixer. ... [Mixer] choose View > Show Mixer (or press X).",
+      "evidence_url": "https://support.apple.com/en-us/102054"
+     },
+     {
+      "title": "⌥‑drag a pad to copy it, including all its processing",
+      "verdict": "UNVERIFIABLE",
+      "reason": "No external source supports Option-drag as a way to duplicate a Drum Machine Designer pad. Apple's pad documentation gives a different route entirely — Control-click > Copy, then Control-click the target pad > Paste — and documents plain dragging a pad only as a way to REORDER it to an empty grid location, not to copy it. A Logic Pro Help forum thread additionally reports that the usual Option-drag duplicate gesture does not work in DMD, but a single forum post is not sufficient to call it WRONG. Also note nothing I found confirms that any copy method carries the pad's full insert chain, so 'including all its processing' is unsupported even in the salvaged version. Treat the ⌥+drag key command as unsafe to print.",
+      "evidence_quote": "In Logic Pro, Control-click a pad, then choose Cut or Copy. Control-click the pad you want to replace, then choose Paste. ... You can reorder kit pieces by dragging a pad to an empty location in the grid.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac",
+      "salvage": "Copy a pad when you want to layer. Control-click the pad and choose Copy, then Control-click the pad you want to replace and choose Paste. Pitch the copy down and blend it under the original for a thicker snare. (Dragging a pad to an empty slot in the grid moves it rather than copying it, which is how you reorder a kit.)"
+     },
+     {
+      "title": "Use the pad's Sound tab for quick shaping",
+      "verdict": "WRONG",
+      "reason": "There is no 'Sound tab' in Drum Machine Designer on the Mac. Apple's name for the per-pad quick-shaping area is the Pad Controls button in the pad controls bar below the grid, which shows the pad's tone and effect Smart Controls in the Plug-in pane. The deeper parameters the trick lists — sample start point and the pitch/filter/amp envelopes — are not in Pad Controls either; they live in the Q-Sampler Main and Q-Sampler Details views on that same bar, i.e. they ARE the sampler, which contradicts 'without opening the sampler'. Sending a buyer hunting for a tab that does not exist is exactly the failure mode this audit is for.",
+      "evidence_quote": "Click the Pad Controls button in the pad controls bar to view and edit kit piece parameters. ... If the subtrack of a Drum Machine Designer pad uses a Quick Sampler or Drum Synth plug-in, you will see Q-Sampler Main, Q-Sampler Details, or Drum Synth view buttons alongside the Pad Controls button, which you can use to access the respective instrument plug-in interface and parameters directly at the bottom of the Drum Machine Designer window.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/pad-controls-bar-lgcpd772e292/mac",
+      "correction": "Use the Pad Controls button for quick shaping. Select a pad and click Pad Controls in the bar below the grid: the pad's tone and effect Smart Controls appear in the Plug-in pane, so you can reshape a kit piece without going into its plug-in. When you do need the sample itself — playback mode, sample start, the pitch, filter and amp envelopes — the same bar has Q-Sampler Main, Q-Sampler Details or Drum Synth buttons that open that pad's instrument right below the grid."
+     },
+     {
+      "title": "Assign pads to an Exclusive Group",
+      "verdict": "VERIFIED",
+      "reason": "'Exclusive Group' is Apple's exact term, it is set from the cogwheel at the bottom right of a pad, and Apple's own worked example is the hi-hat case the trick describes. One caveat worth a line of copy: the pages I could confirm are the current (11.x/12.x) guide editions, so if the book is claiming 10.7 coverage the safest phrasing is to describe the gear menu rather than promise identical placement in 10.7.",
+      "evidence_quote": "Exclusive Group: Choose a group for the pad. You can assign multiple pads to the same group. As soon as one drum sound in the group is triggered, all other sounds in that same group are stopped. For example, you could group three pads with open, semi-closed, and closed hi-hat sounds, with only one of these sounds playable at a time, mirroring the behavior of real hi-hats.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac"
+     },
+     {
+      "title": "Add a bus inside the stack for parallel compression",
+      "verdict": "VERIFIED",
+      "reason": "The mechanism is documented: each pad is a full Logic channel strip, and Logic channel strips carry sends (12 per strip) that feed an aux you can load a compressor onto. Apple's own factory DMD kits are built this way. One wording nit rather than an error: the aux a send creates sits outside the Track Stack, not 'inside' it, so 'Add a bus fed from the pads' would be more accurate than 'inside the stack'.",
+      "evidence_quote": "Logic Pro supports 12 sends per channel strip, pre- or post-fader, or post-pan, and 15 inserts for internal or Audio Units effect plug-ins. ... The individual parts of the kit are summed to a series of six busses, each with their own set of compression and EQ settings, as well as sent to an instance of Delay and Reverb.",
+      "evidence_url": "https://support.apple.com/en-us/111899"
+     },
+     {
+      "title": "Automate individual pads, not the whole kit",
+      "verdict": "VERIFIED",
+      "reason": "Verified as a two-step chain, both steps from Apple: each DMD pad has its own subtrack and channel strip, and every track in a Logic project has automation curves for volume and pan plus addable curves for plug-in settings. So per-pad automation lanes follow from Apple's own documentation rather than from assumption. Worth telling the reader to expand the stack (show subtracks) first, since the automation lanes are on the subtracks, not the main DMD track.",
+      "evidence_quote": "Each subtrack has a corresponding channel strip and is assigned a playable pad in a drum grid in the Drum Machine Designer Play Surface. ... Each track in your project has automation curves for volume and pan, and you can add curves to automate plug-in settings.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/automation-overview-lgcpb1a1ea03/mac"
+     },
+     {
+      "title": "Use the main stack fader for the whole kit",
+      "verdict": "VERIFIED",
+      "reason": "Apple's track stacks documentation states directly that plug-ins added on the main track affect all subtracks in the summing stack, and a reputable Logic source describes exactly this DMD practice (bus compressor/limiter at the uppermost level for kit glue). One genuine caveat from Apple that the trick omits: if you reroute a subtrack's output to a destination outside the stack, that pad stops being affected by the main track's processing.",
+      "evidence_quote": "When the main track is selected, you can mute, solo, and adjust volume and send levels for the summing stack and add and edit plug-ins, affecting the sound of all the subtracks in the summing stack. ... On the uppermost level, plug-ins affect the entirety of the kit, often starting with a Multipressor for extra loudness, and the Compressor to give the kit some extra 'mix glue'.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac"
+     },
+     {
+      "title": "Convert a Drummer track to Drum Machine Designer",
+      "verdict": "VERIFIED",
+      "reason": "The body claim is Apple's: the Electronic drummers use Drum Machine Designer as their software instrument, and a Track Stack with the drum/percussion instruments loads automatically so you have full mix access — which is precisely the 'generated performance, then rebuild the kit sample by sample' workflow. The title is the weak part: Apple documents no Convert command, so a buyer could go hunting for one. Recommend retitling to something like 'Electronic Drummer tracks are already Drum Machine Designer' — the body needs no change.",
+      "evidence_quote": "You can also access Drum Machine Designer when you create a Drummer track that uses Drum Machine Designer as its software instrument, like one of the Electronic drummers. ... When you use electronic drummers, a Track Stack automatically loads with the selected drum and percussion instruments, so you always have full access to all mix options.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/overview-lgcp72435777/10.7/mac/11.0"
+     },
+     {
+      "title": "Save your kit as a patch",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents saving a custom DMD kit from the Library, and the track stacks page confirms the patch carries the main track and all subtracks with their channel strip and plug-in settings — i.e. every pad and every insert. Add Apple's warning, because it is the single most common way this goes wrong: you must have the kit name pad (the main track) selected, not an individual kit pad, or you save only that one kit piece. Apple also specifies the save location for the kit to appear under User Patches: ~/Music/Audio Music Apps/Patches/Instrument.",
+      "evidence_quote": "Select the kit name pad at the top of the Drum Machine Designer window, where the name of the track appears... Click Save at the bottom of the Library, then enter a name for your custom kit. If you have just a kit pad selected, you will only save the associated kit piece as a patch, not the entire kit. ... Patches for a summing stack can include the main track and all subtracks, along with their channel strip and plug-in settings.",
+      "evidence_url": "https://support.apple.com/en-us/101779"
+     }
+    ]
+   },
+   "challenge": {
+    "section": 13,
+    "downgrades": [
+     {
+      "title": "Assign pads to an Exclusive Group",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The behaviour and the term are genuinely Apple's — I re-pulled the pad controls page and the Exclusive Group text plus the hi-hat example are real. But that is not what the trick promises. The auditor cleared a navigation instruction — 'set from the cogwheel at the bottom right of a pad' — that appears nowhere in the quoted evidence, and Apple's own page documents a different route: 'click the icon or a pad background of the kit piece you want to edit, then click the Pad Controls button in the pad controls bar', with Mute/Solo/Input/Output/Action appearing on pad hover. No cogwheel at bottom right anywhere in Apple's description. Second, the auditor openly conceded the version problem and then cleared it anyway: the only edition I could reach is the undated current (/mac) page, and the pad controls bar it describes — with view buttons for the Quick Sampler or Drum Synth on the subtrack — reads as a later-generation DMD window than 10.7's. The book claims 10.7/11/12; per the version rule, a UI placement confirmed only for the current release and promised for all three is not VERIFIED. Downgraded on the navigation and version claims, not on the feature.",
+      "salvage": "Drum Machine Designer pads can be put into an Exclusive Group. Assign several pads to the same group and, as soon as one sound in that group is triggered, every other sound in the group stops. Apple's own worked example is the one you want most: put open, semi-closed and closed hi-hats on three pads, assign all three to one group, and only one can sound at a time, exactly like a real hi-hat. To reach the setting, click the icon or the background of the pad you want to edit, then click the Pad Controls button in the pad controls bar and choose a group from the Exclusive Group menu. Note that the Drum Machine Designer window has been reorganised across Logic releases, so on older versions look for the pad's parameters rather than a fixed on-screen position."
+     },
+     {
+      "title": "Add a bus inside the stack for parallel compression",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The cited evidence is two quotes welded together under one URL, and only the first is real. support.apple.com/en-us/111899 is the Logic Pro Tech Specs page — I confirmed it, and it does say '15 inserts' and '12 sends per channel strip, pre- or post-fader, or post-pan'. That establishes only that Logic channel strips have sends. It says nothing whatsoever about Drum Machine Designer, busses inside a Track Stack, or parallel compression. The second half of the evidence quote — 'The individual parts of the kit are summed to a series of six busses, each with their own set of compression and EQ settings, as well as sent to an instance of Delay and Reverb' — is tutorial prose about a specific factory kit and is categorically not on a tech specs page; it has been misattributed. Strip that and nothing supports the trick as written. Worse, the auditor's own reason concedes the title is inaccurate ('the aux a send creates sits outside the Track Stack, not inside it') and then cleared it as VERIFIED regardless. Evidence that contradicts the headline cannot verify it.",
+      "salvage": "Every Drum Machine Designer pad is a full Logic channel strip, which means every pad has its own sends — Apple's tech specs list 12 sends per channel strip, pre-fader, post-fader or post-pan. Use them for parallel compression on individual kit pieces: send the kick and snare pads to a spare bus, load a compressor on the aux channel strip that the send creates, squash it hard, then blend that crushed copy up underneath the dry kit until the drums thicken. One routing detail worth knowing before you go looking for it in the wrong place: the aux the send creates is its own channel strip alongside the Track Stack, not a member of it, so you set the parallel level on that aux and not on anything inside the stack."
+     },
+     {
+      "title": "Automate individual pads, not the whole kit",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Neither cited source says what the trick says. The auditor described this himself as 'a two-step chain' and 'verified as' an inference — that is the definition of adjacent evidence, not support for the claim as written. The URL given is the automation overview page, which contributes only the entirely generic sentence 'Each track in your project has automation curves for volume and pan'; the other quote, about subtracks and pads, is from the Drum Machine Designer page and is not at the cited URL. No source I or the auditor found states that Drum Machine Designer pad subtracks expose their own automation lanes. That matters because the auditor also flagged a real trap the trick omits — the lanes live on the subtracks, so a reader with a collapsed stack follows the trick and sees nothing, which is exactly the buyer-facing failure this audit exists to catch. Deducing behaviour from two general statements is the reasoning pattern the brief identifies as the bug.",
+      "salvage": "Don't treat a Drum Machine Designer kit as one track. Click the disclosure triangle next to the Drum Machine Designer main track in the track header — or above the track name in the Mixer — and the stack expands to show every pad on its own subtrack with its own channel strip. Work down at that level whenever you want one kit piece to behave differently from the rest: ride the clap under the chorus, duck the ride, thin the kick in the intro. Expand the stack before you start writing any of those per-piece moves, because while the stack is collapsed you are only ever touching the kit as a whole."
+     },
+     {
+      "title": "Convert a Drummer track to Drum Machine Designer",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The auditor cleared this VERIFIED while stating in the same breath that the title is unsupported: 'Apple documents no Convert command, so a buyer could go hunting for one', and recommending a retitle. A title is a claim the buyer acts on first — it is the instruction they follow. 'Convert a Drummer track to Drum Machine Designer' asserts an operation, and no source establishes that any such conversion exists; the quoted evidence supports something different, namely that Electronic drummers already use Drum Machine Designer as their software instrument. That is not a conversion, it is a starting choice, and a reader who bought the book to perform the titled action will search the menus and the right-click menu and find nothing. I am calling this UNVERIFIABLE rather than WRONG because absence from the documentation is not the same as a source affirmatively denying the command exists. Note also the evidence URL is pinned to the 10.7 edition of the guide, so it establishes nothing about 11 or 12 on its own.",
+      "salvage": "Electronic Drummer tracks are already Drum Machine Designer. When you create a Drummer track and pick one of the Electronic drummers, Drum Machine Designer is the software instrument sitting behind it, and a Track Stack loads automatically with the selected drum and percussion instruments so you have full access to all mix options from the start. That makes the Drummer a sketching tool rather than a finished part: let it generate a performance you like, then expand the stack and rebuild the kit sample by sample — swap the sound on individual pads, and process each kit piece on its own channel strip — while the groove the Drummer wrote stays exactly where it is. Choose an Electronic drummer when you first create the track and the kit is there waiting; there is nothing to convert after the fact."
+     }
+    ],
+    "sustained_count": 4
+   }
+  },
+  {
+   "section": 14,
+   "audit": {
+    "section": 14,
+    "search_worked": true,
+    "searches_used": 15,
+    "search_note": "WebSearch worked normally; 15 of ~20 budgeted searches used, all aimed at Apple's Logic Pro User Guide Quick Sampler pages (mode chooser, Slice mode, waveform display, Classic mode, Pitch controls, Filter controls, Mod Matrix, Recorder mode, Add audio, Quick Sampler overview, Save custom patches, and HT210998/101863 drag-and-drop). This section is markedly healthier than sections 1-5: 13 VERIFIED, 1 WRONG, 1 UNVERIFIABLE, 1 NO_FACTUAL_CLAIM. There are no key commands (no \"k\" fields) and no group-level \"path\" fields in 14.json, which removes the two richest error veins found elsewhere. Two caveats on the VERIFIED calls where my quote is slightly broader than the trick text: (a) \"Change slice division to Beat or Division instead of Transient\" — Apple documents the slicing modes as Transient / Beat Divisions / Equal Divisions / Manual and says beat slicing works \"by beat values\"; I could not find a source that literally enumerates \"1/8 or 1/16\" as the selectable values, so that detail is inferred from Apple's \"by beat values\" wording rather than quoted. (b) \"Use the Filter and its envelope, not an insert plugin\" — Apple's per-voice statement on the Filter controls page is specifically about Drive (\"Drive affects each voice independently\"); the broader \"the whole filter section is per-voice\" reading is supported by that plus the filter envelope's per-note Vel slider and Keyscale, but is not stated in exactly those words. Both are judgement calls a reviewer could tighten. One further wording flag that did not change a verdict: \"Save your instrument as a patch immediately\" says an unsaved chop \"exists only in that one session\" — Quick Sampler's state is stored in the saved project file, so a buyer could reasonably object to that phrasing even though the actionable instruction (save to the Library) is verified.",
+    "tricks": [
+     {
+      "title": "Drag any audio onto an empty track area while holding nothing",
+      "verdict": "VERIFIED",
+      "reason": "Apple's drag-and-drop article confirms all three sources (Finder, Logic browsers, an existing region) and confirms a pop-up menu appears offering Quick Sampler. Minor precision note for the owner: Apple specifies the drop target as the lower part of the track header, below the last track — 'empty track area' is looser than Apple's wording and a reader dropping into empty space in the region lane to the right may not get the menu. Not enough to call it wrong, but tightening the phrasing to 'the empty area below the last track header' would remove the ambiguity.",
+      "evidence_url": "https://support.apple.com/en-us/101863",
+      "evidence_quote": "you can drag a file from the Finder, any of the Logic Pro browsers, any audio or MIDI region, or even a marquee sub-selection within an audio region to the lower part of the track header, below the last track, onto one of the software instruments in the pop-up menu. ... Quick Sampler (Original) uses the original tuning, loudness, looping, and length of the file."
+     },
+     {
+      "title": "Know the four modes and pick deliberately",
+      "verdict": "VERIFIED",
+      "reason": "Every one of the four mode descriptions matches Apple's 'Choose a Quick Sampler mode' page: Classic = play a sound across the keyboard, One Shot = drum loop/stab/effects use, Slice = divides the sample into slices mapped to keys, Recorder = captures an audio signal. 'Choosing the mode is 90% of the work' is opinion and harmless.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac",
+      "evidence_quote": "Classic mode is a playback mode where the sample is played back while you hold a key ... the most useful mode if you want to \"play\" a sound across the keyboard range. One Shot playback mode begins at the start marker position and finishes at the end marker position ... great for quickly dropping a processed sample into an arrangement, for drum loop playback, and for \"effects\" use. Slice playback mode divides samples into multiple segments (slices) mapped to keys starting from the defined start key. Recorder mode captures any audio signal as an audio recording."
+     },
+     {
+      "title": "Use Slice mode with Transient detection on any break",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Slice mode page confirms both halves: Transient mode sets slice markers from detected transients and maps slices to keys, and the drag route out of the LOWER portion of the waveform display into the Tracks area is Apple's own documented procedure — the book's 'lower waveform display' matches Apple's 'lower portion of the waveform display' exactly.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/slice-mode-lgcp18515788/mac",
+      "evidence_quote": "In Quick Sampler, click Slice, then drag from the lower portion of the waveform display to the Sampler track lane in the Tracks area ... A new MIDI region is created ... For Transient mode, set the number of slice markers based on detection of transients in the audio file."
+     },
+     {
+      "title": "Change slice division to Beat or Division instead of Transient",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Slice mode page documents the alternative slicing modes as the book describes — automatic division at beat positions or into equal divisions, as alternatives to transient detection. Caveat noted in search_note: Apple labels them 'Beat Divisions' and 'Equal Divisions' and says beat slicing is set 'by beat values'; I found no source literally listing 1/8 and 1/16 as the selectable values, so that specific detail is inferred, not quoted.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/slice-mode-lgcp18515788/mac",
+      "evidence_quote": "The Mode pop-up menu allows you to choose the slicing mode. You can automatically set divisions at transient or beat positions, or divide the audio file equally. ... For Beat Divisions mode, set the number of slice markers in the audio file by beat values."
+     },
+     {
+      "title": "Sample directly from your input with Recorder mode",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Recorder mode page documents an Input pop-up menu for choosing the audio input source, plus Monitor, Record Start and threshold controls, and states you switch to another mode afterwards to edit. Recording from a mic or a bus is exactly what the Input pop-up offers.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/recorder-mode-lgcpa8e3df79/mac",
+      "evidence_quote": "Recorder mode allows you to capture any audio signal as an audio recording. The Input pop-up menu lets you choose the audio input source ... microphones, buses, and other audio inputs available in your system. ... After recording, you can switch to another mode to edit your sample."
+     },
+     {
+      "title": "Drag audio directly from the Tracks area into a loaded Quick Sampler",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The drag itself is documented — Apple's 'Add audio to Quick Sampler' page confirms you can drag a region into the waveform display and drop it on the Original or Optimized half. What is NOT documented anywhere I could find is the load-bearing claim that this 'keeps every setting' and that 'your filter, envelope and effects stay exactly as dialled in'. Two reasons this is risky as written: dropping on Optimized explicitly rewrites tuning, loudness and length and adds loop and crossfade markers, which are settings; and Quick Sampler has no effects section at all (Pitch, Filter, Amp, Mod Matrix, LFOs, envelopes only), so 'effects' is a phantom. A dedicated search for the settings-retention behaviour returned nothing either way. Do not ship the retention promise unless it is tested in the app.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/add-audio-to-quick-sampler-lgcpc1e3525a/mac",
+      "evidence_quote": "you can drag a region or an audio file from the Audio File window, Apple Loops window, or Finder into the Quick Sampler waveform display. You drop the file into either the Original or Optimized portion ... Optimized: Analyzes the source file, optimizing its tuning, loudness, and length, then adds the audio file. If the contents are rhythmic and/or cyclical (looped), Quick Sampler automatically adds loop and crossfade markers ... A resampling process is triggered when you drop a region into Quick Sampler. The region is bounced offline and added to the waveform display.",
+      "salvage": "Drag a region straight from the Tracks area into Quick Sampler's waveform display to swap the sound without leaving the plug-in. Drop it on the Original half to keep the file's own tuning, loudness, looping and length; drop it on Optimized and Quick Sampler analyses the file, optimises tuning, loudness and length, and adds loop and crossfade markers for you. Dropping a region triggers an offline bounce before it lands in the display, so give it a moment. (Dragging to the track header instead brings up a Replace Existing Sound dialog.) Glance over your filter and envelope after the swap rather than assuming everything carried across."
+     },
+     {
+      "title": "Use Flex/Follow Tempo to lock a loop to the project",
+      "verdict": "WRONG",
+      "reason": "The body says turning on Flex makes the sample follow tempo changes. Apple is explicit that Flex on its own does something else entirely — it plays the sample at its original speed for all note pitches — and that following the project tempo requires the SEPARATE Follow Tempo button, which only becomes active once Flex is on. A reader who flips Flex and expects tempo-following gets a loop that does not follow tempo. Same failure shape as the multithreading error in sections 1-5: the title names both controls, but the instruction the reader actually follows names only one.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-flex-in-quick-sampler-lgcpe3d7978d/mac",
+      "evidence_quote": "The Flex On/Off button turns Flex mode on or off. If Flex mode is turned on, an audio sample is played at its original speed for all note pitches. The Follow Tempo button, when Flex mode is active, turns on to follow the project tempo. After enabling Flex mode and Follow Tempo, individual slices stretch or contract depending on the original tempo of the loop and the current project tempo. The Flex parameters are found at the lower right of the Quick Sampler waveform display in Classic, One Shot, and Slice modes.",
+      "correction": "Flex and Follow Tempo are two separate buttons, at the lower right of Quick Sampler's waveform display in Classic, One Shot and Slice modes. Turning Flex on by itself only plays the sample at its original speed for all note pitches — it does not chase the project tempo. Turn Flex on, then turn Follow Tempo on as well: with both active, slices stretch or contract according to the original tempo of the loop and the current project tempo, so the loop tracks tempo changes without shifting pitch."
+     },
+     {
+      "title": "Set the root key correctly or nothing will be in tune",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Quick Sampler Pitch controls page documents the Root Key pop-up menu on that pane (so 'set it manually in the Pitch section' is the right location), and confirms it defines the note that plays the sample at original pitch, with everything above and below transposed from it. 'Quick Sampler guesses the pitch' is likewise supported — the Optimized load path analyses and optimises the file's tuning.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/quick-sampler-pitch-controls-lgcpd22b3634/mac",
+      "evidence_quote": "The Root Key pop-up menu lets you choose a keyboard note value that is used to play the sample at the original pitch. Keys below this will play the sample at a lower pitch and slower speed, while keys above this will play the sample at a higher pitch and faster speed. The sample is mapped to keys above and below C3, the default root key."
+     },
+     {
+      "title": "Turn on Loop with crossfade for infinite sustain",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Quick Sampler Classic mode page documents the Loop mode pop-up and the draggable crossfade markers used to smooth the loop join, which is exactly the technique described. Classic mode sustains for as long as the key is held subject to the envelope, so the 'hold it forever' framing is fair rather than a factual overreach.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/classic-mode-lgcpb1f3f01c/mac",
+      "evidence_quote": "The crossfade marker can be dragged to adjust the length of the crossfade at the beginning and end of loop boundaries, helping to smooth out audible glitches at the point where the loop cycles across the loop end and start points. ... Linear Crossfade ... Equal Power Crossfade"
+     },
+     {
+      "title": "Use the Sample Start modulation for variation",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Quick Sampler Mod Matrix page lists Sample Start as a modulation target, and the Mod Matrix takes velocity as a source; randomness is available via the LFO's random waveform. Both routings the trick recommends therefore exist. The 'machine-gunned drums' rationale is taste and carries no checkable claim.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/mod-matrix-pane-lgcp26511d86/mac",
+      "evidence_quote": "The Sample Start & End, Loop Start & End, and Loop Position targets can be quantized in musical values. ... modulation wheel, aftertouch, pitch bend, velocity, and MIDI continuous controller features can be assigned as real-time control sources for Quick Sampler parameters in the Mod Matrix."
+     },
+     {
+      "title": "Reverse the sample for instant risers",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Quick Sampler waveform display page documents a single button in the waveform display that switches playback between forward and reverse, which is what the trick promises. Optional polish for the owner: Apple calls it the Playback button, so naming it would help a reader find it. Note there is also a separate Reverse LOOP mode (cycles from loop end back to loop start) — the book does not confuse the two, but naming the Playback button would keep readers out of that trap.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/quick-sampler-waveform-display-lgcp4492eed9/mac",
+      "evidence_quote": "the Playback button activates forward or reverse playback from the start marker position, inclusive of loop playback. ... in One Shot mode, the Playback button can activate forward or reverse playback between the start and end marker positions."
+     },
+     {
+      "title": "Use the Filter and its envelope, not an insert plugin",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Quick Sampler Filter controls page confirms the section is per-voice — Drive is stated to act on each voice independently, and the filter envelope carries a per-note Vel slider plus Keyscale that varies cutoff by key position, all of which are impossible for a channel-strip insert acting on the summed output. Caveat in search_note: Apple's explicit 'each voice independently' sentence is about Drive specifically, not the whole section.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/quick-sampler-filter-controls-lgcp5c4ed964/mac",
+      "evidence_quote": "Drive affects each voice independently, allowing you to play extremely complex harmonies over the entire keyboard range. ... Keyscale: Set the filter cutoff frequency intensity by keyboard position ... a Vel slider to set the intensity of filter envelope modulation in response to incoming velocity data."
+     },
+     {
+      "title": "Drag MIDI out of Slice mode into the Tracks area",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents this exactly: dragging from the lower portion of the waveform display creates a MIDI region whose notes trigger the slices sequentially in ascending order so it plays back as it sounded, and the notes are then freely editable in the Piano Roll — which is the 'shuffle the notes and the break rearranges itself' payoff. Apple also gives an alternate route (Action pop-up > Copy MIDI Pattern, then Control-V) worth adding as a fallback.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/slice-mode-lgcp18515788/mac",
+      "evidence_quote": "The region contains MIDI notes of each slice placed sequentially in ascending order, so when you play the project back, it plays the sample back as it sounded in Quick Sampler. ... You can quantize the notes, add or remove notes, and make any other edits as you would to any MIDI region in the Piano Roll Editor."
+     },
+     {
+      "title": "Convert Quick Sampler to Sampler for full control",
+      "verdict": "VERIFIED",
+      "reason": "Both halves of this trick, including the one-way-trip warning, are stated on Apple's Quick Sampler overview page. Replacing the plug-in on the instrument channel strip transfers the content automatically, and Sampler can load Quick Sampler settings while the reverse is explicitly impossible.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/quick-sampler-overview-lgcp5af33756/mac",
+      "evidence_quote": "You can directly replace Quick Sampler with Sampler on an instrument channel strip and your current content is automatically transferred. ... you cannot open a Sampler setting with Quick Sampler."
+     },
+     {
+      "title": "Save your instrument as a patch immediately",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms the actionable instruction: a Quick Sampler instrument plus its plug-in settings can be saved as a patch in the Library via the Save button at the bottom of the Library pane (default location User Patches; Library toggles with Y). One wording flag that did not change the verdict — 'or it exists only in that one session' overstates the risk, since the plug-in state is stored in the saved project file and returns when you reopen it. The real argument for saving a patch is reuse in OTHER projects, and phrasing it that way would be both accurate and more persuasive.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/save-custom-patches-lgcpe0e71c76/mac",
+      "evidence_quote": "You can save patches, comprised of a Quick Sampler instrument and associated plug-in settings, in the Library. Click the Save button at the bottom of the Library pane ... The default folder location is User Patches."
+     },
+     {
+      "title": "Use one Quick Sampler per element rather than one big kit",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "This is a workflow preference. Its only underlying assertion — that separate software instrument instances live on separate channel strips and therefore get separate inserts and separate automation — is definitional to how Logic's mixer is built rather than a checkable feature claim, and 'disk space is free; flexibility is not' is taste. Nothing here a buyer could follow and find broken."
+     }
+    ]
+   },
+   "challenge": {
+    "section": 14,
+    "downgrades": [
+     {
+      "title": "Drag any audio onto an empty track area while holding nothing",
+      "new_verdict": "WRONG",
+      "reason": "The auditor cleared this while simultaneously admitting the drop target as written does not match Apple's. Apple's article 101863 ('Drag and drop to create sampler instrument tracks in Logic Pro for Mac') documents the target as the track HEADER area below the last track; the pop-up offering Quick Sampler / Sampler / Drum Machine Designer / Sample Alchemy appears there. 'An empty track area' will be read by most buyers as the empty workspace/region lane to the right, which is a different drop and does not raise that menu. That is precisely the refund-grade failure: reader follows the instruction, gets no menu, concludes the book is wrong. Correction is Apple-sourced: drag the file to the lower part of the track header list, below the last track header, then choose Quick Sampler from the pop-up menu."
+     },
+     {
+      "title": "Change slice division to Beat or Division instead of Transient",
+      "new_verdict": "WRONG",
+      "reason": "Option names do not exist as written - the same failure class as 'As Region Colour' in sections 1-5. Apple's Slice mode page states the Mode pop-up items explicitly: 'When you choose Beat Divisions from the Mode pop-up menu, the Division field appears' and 'When you choose Equal Divisions from the Mode pop-up menu, the Slices field appears' (Transient exposes a Sensitivity field). There is no menu item called 'Beat' and none called 'Division' - 'Division' is the FIELD that appears after choosing Beat Divisions, and the book has collapsed a mode name and a field name into a menu item. The auditor also conceded in its own caveat that the specific 1/8 and 1/16 values are inferred and unquoted; I found no source listing the selectable beat values either. Correction (Apple-sourced): the Mode pop-up offers Transient (Sensitivity field), Beat Divisions (Division field, set by beat values) and Equal Divisions (Slices field), plus manual markers placed by clicking the waveform display.",
+      "//": ""
+     },
+     {
+      "title": "Sample directly from your input with Recorder mode",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The evidence_quote is partly fabricated. The string 'microphones, buses, and other audio inputs available in your system' does not appear on Apple's Recorder mode page; re-searching that exact page returns the Input pop-up menu, Record button, Monitor button, Record Start pop-up and threshold, and the general statement that you can record the signal from any audio input - but nothing enumerating buses. The core of the trick (Recorder mode captures audio; the Input pop-up chooses the source) IS Apple-documented and should be kept. The unproven half is the bus-sampling route, which is the part a buyer would actually attempt and could fail at; the only support I found for it was a non-Apple tutorial. Rewrite to the Apple-documented wording - choose a source from the Input pop-up menu, arm Monitor, set Record Start to threshold if you want it to trigger itself - and drop the specific 'or a bus' promise unless it can be sourced."
+     },
+     {
+      "title": "Turn on Loop with crossfade for infinite sustain",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Classic adjacent-evidence pass. The quote establishes only that a crossfade marker can be dragged to smooth the loop join and that Linear and Equal Power crossfade types exist. It does not support either load-bearing instruction in the trick: it never mentions the Loop mode pop-up the reader is told to switch on, and it says nothing about sustaining a note indefinitely. The auditor's bridge - 'Classic mode sustains for as long as the key is held subject to the envelope, so the hold it forever framing is fair' - is model memory, not a source, and is exactly the reasoning pattern this audit exists to catch (whether the note actually sustains depends on the amp envelope's sustain level, which the trick does not mention). Salvageable as the crossfade half only, which is genuinely documented."
+     },
+     {
+      "title": "Use the Sample Start modulation for variation",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Neither routing the trick recommends is actually in the evidence. The first quoted sentence says Sample Start can be QUANTIZED in musical values - that is a different statement from 'velocity can modulate Sample Start'. The second quoted sentence is generic Mod Matrix boilerplate about available control sources and does not tie velocity to the Sample Start target. And the auditor states outright that randomness comes from 'the LFO's random waveform' while quoting nothing whatsoever for it - an unsourced claim promoted into a VERIFIED verdict. The two halves have been welded together with an ellipsis to look like one supporting passage."
+     },
+     {
+      "title": "Reverse the sample for instant risers",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Quote appears reconstructed. I re-searched the exact page cited (quick-sampler-waveform-display-lgcp4492eed9) and the documented contents that surface are the zoom control, blue start/end markers, yellow loop markers and trackpad navigation; no 'Playback button activates forward or reverse playback' text appeared, and the search explicitly reported that a dedicated forward/reverse Playback button was not found on that page. Absent that, there is no external support for 'one button reverses the sample'. Compounding the risk, the auditor itself notes a separate Reverse LOOP mode exists - so a reader hunting for an unnamed 'reverse button' has a documented wrong control sitting right next to it. Default verdict applies: no source, no clearance."
+     },
+     {
+      "title": "Use the Filter and its envelope, not an insert plugin",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The auditor disclosed the fatal gap and then cleared it anyway: Apple's 'affects each voice independently' sentence is about DRIVE, not about the filter section. The trick's whole argument is that the filter is per-voice whereas a channel-strip insert acts on the summed output, and no quoted line states that. Keyscale and a filter-envelope Vel slider are consistent with per-voice behaviour but do not assert it - that inference is the auditor's, not Apple's. The useful, safe residue is factual and quotable (the filter envelope has its own Vel amount and a Keyscale control that varies cutoff by keyboard position); the sweeping architectural claim about inserts is not."
+     },
+     {
+      "title": "Save your instrument as a patch immediately",
+      "new_verdict": "WRONG",
+      "reason": "The evidence_quote is doctored and the trick contains a false claim the auditor waved through. Apple's actual Save custom patches page does not say patches are 'comprised of a Quick Sampler instrument and associated plug-in settings' - the guide's wording is about channel strips and their plug-in settings, and Quick Sampler has been inserted into the quote to make it fit the trick. Apple also places the control differently: 'click the Save button in the lower-right corner of the Library', not 'at the bottom of the Library pane'. Separately, the auditor concedes the book's line that the instrument 'exists only in that one session' is untrue, since plug-in state is stored in the project file - and then rated it VERIFIED regardless. That sentence is a factual assertion about what Logic does and it is wrong. Correction is Apple-sourced: click the Save button in the lower-right corner of the Library and name the patch; after the first save a User Patches folder appears in the Library and the patch can be used in ANY Logic Pro project - cross-project reuse is the real reason to save, not data loss."
+     },
+     {
+      "title": "Use one Quick Sampler per element rather than one big kit",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Not pure taste - it smuggles in a mechanism claim. The advice only holds because separate software instrument instances are asserted to land on separate channel strips and therefore get separate inserts and separate automation lanes; the auditor waved this through as 'definitional to how Logic's mixer is built', which is the everyone-knows-this reasoning the brief bans as evidence. No source was cited for it. This is my weakest downgrade and the easiest to rescue: strip the mechanism sentence and it becomes clean advice-only copy that no buyer can dispute, or source the channel-strip behaviour from the Apple guide and restore it as a genuine VERIFIED claim."
+     }
+    ],
+    "sustained_count": 5
+   }
+  },
+  {
+   "section": 15,
+   "audit": {
+    "section": 15,
+    "search_worked": true,
+    "searches_used": 20,
+    "search_note": "WebSearch worked throughout; I used my full ~20-search budget and covered every trick in section 15 — none were left unchecked for budget reasons. WebFetch was not used (egress-blocked), so all evidence comes from WebSearch snippets, most of which quote support.apple.com Logic Pro User Guide pages directly. Two claims could not be settled from Apple's own pages and are marked UNVERIFIABLE rather than guessed: (a) whether the Mixer's channel-strip filter buttons specifically include Bus, VCA and Master buttons — Apple confirms filter buttons exist and that Option-clicking one isolates a type, but no snippet enumerated the button labels; (b) whether right-clicking a Send slot is the documented way to switch pre/post fader — Apple's \"Route audio via send effects\" page describes clicking the Send knob/slot to open a pop-up menu and lists THREE modes (Post Pan, Post Fader, Pre Fader), not a two-way pre/post switch. Two tricks are flatly contradicted by Apple: the \"no equivalent mute-everything click\" claim (Apple documents Command-click on a Mute button switching all matching Mute buttons) and the VCA \"sends are untouched\" claim (Apple states post-fader send amounts follow VCA group volume changes). Version exposure: all Apple pages consulted were the current /mac guide or the 10.7 guide, and no claim in this section depends on a feature introduced after 10.7, so the 10.7/11/12 coverage claim is not at risk here. No group-level \"path\" fields exist in this file.",
+    "tricks": [
+     {
+      "title": "X toggles the Mixer, and it remembers your scroll position",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The key command half is externally supported — multiple approved sources (macprovideo.com and whylogicprorules.com key-command round-ups, plus several cheat sheets) state that X is the Show/Hide Mixer key command. But the trick's headline promise, that the Mixer 'remembers your scroll position' across toggles, has no external support at all: no Apple page and no reputable Logic source found describes scroll-position persistence. That is a concrete, testable behavioural claim and it is exactly the kind of thing a buyer would try once and dispute. Marked UNVERIFIABLE for the scroll claim, not for X.",
+      "evidence_quote": "Based on the search results, pressing X toggles the Mixer in Logic Pro X. More specifically, X is the key command for Show/Hide Mixer.",
+      "evidence_url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+      "salvage": "Press X to show and hide the Mixer inside the main window. Flip between arrangement and mixer constantly — it costs nothing, and it is far faster than reaching for the menu."
+     },
+     {
+      "title": "Use the Single view to see one channel and its full signal path",
+      "verdict": "VERIFIED",
+      "reason": "Apple's 'Change the Mixer view' page confirms both halves as written: the view buttons switch between Single, Tracks and All, and Single shows the signal flow of the channel strip belonging to the focused track — i.e. that channel plus the aux/bus/output strips it feeds. The book's phrasing ('the selected channel plus every bus it feeds') matches Apple's 'signal flow' definition. Minor wording note only: Apple says 'focused track', the book says 'selected channel'; in practice these are the same strip.",
+      "evidence_quote": "To show the signal flow of the channel strip that corresponds to the focused track in the Tracks area, click the Single button. To show the signal flow of all channel strips that correspond to tracks in the Tracks area, click the Tracks button. To show the signal flow of all channel strips available in the project, click the All button.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/mixer-interface-lgcpe9cc43f6/10.7/mac/11.0"
+     },
+     {
+      "title": "Filter the mixer by channel type",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The mechanism is confirmed by Apple — filter buttons limit the Mixer to specific channel-strip types, clicking one shows or hides that type, and Option-clicking one isolates it. What is NOT confirmed is the trick's specific enumeration: 'audio, instrument, aux, bus, VCA and master'. No snippet returned the actual filter button labels. The one Apple-derived list I got back names Audio, Instrument, Aux, Master and MIDI as filterable types and does not mention Bus or VCA buttons, so the book's list may be partly invented and is at minimum unproven. Also unverified: that the buttons sit 'along the top of the Mixer' (Apple confirms they are Mixer filter buttons but the snippets did not place them). The advice itself is sound and the Option-click isolate gesture is a genuine, sourced improvement the trick is missing.",
+      "evidence_quote": "Filter buttons are used to limit the channel strips displayed in the Mixer to specific types. In Logic Pro, you can click a filter button to show or hide the channel strip type. Additionally, Option-clicking a filter button shows that channel strip type while hiding all other channel strip types.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/mixer-interface-lgcpe9cc43f6/10.7/mac/11.0",
+      "salvage": "The Mixer's filter buttons limit the display to specific channel strip types. Click a filter button to show or hide that type — or Option-click one to show only that type and hide everything else in a single gesture. When you are setting up sends, Option-click the Aux filter to get a mixer of nothing but your effect returns. (Filtering requires Show Advanced Tools to be enabled in Settings > Advanced.)"
+     },
+     {
+      "title": "⌥‑click any control to reset it to default",
+      "verdict": "UNVERIFIABLE",
+      "reason": "Partly supported, over-claimed as written. Approved sources (whylogicprorules.com, logicstudiotraining.com) confirm Option-clicking a fader sets it to 0 dB and Option-clicking a send dial sets it to 0 dB. Nothing external supports the two absolute statements the trick actually makes — 'any control' and 'Works on every control in the mixer' — and nothing external supports 'pans to centre'. Apple's own channel-strip pages document resetting via the Setting button menu (Reset Channel Strip), not via Option-click on individual controls, so the universal version of this claim is unproven. It carries a GAME CHANGER badge, which raises the stakes on the over-claim. Narrow it to what is sourced.",
+      "evidence_quote": "In Logic Pro, you can hold the Option key and click a fader to set it to 0 dB (Unity Gain), which is the default/reset position. Additionally, you can Option-click send dials to set them to 0 dB.",
+      "evidence_url": "https://whylogicprorules.com/perfect-recording-levels/",
+      "salvage": "Option-click a fader to snap it back to 0 dB unity, and Option-click a send dial to do the same. It is the fastest way to undo a level you have talked yourself into. To reset an entire strip rather than one control, click the Setting button at the top of the channel strip and choose Reset Channel Strip."
+     },
+     {
+      "title": "⌥-click Solo for exclusive solo",
+      "verdict": "WRONG",
+      "reason": "The first sentence is correct — Apple confirms Option-clicking an unsoloed channel strip solos it and unsolos every other channel strip. The trick then asserts 'There is no equivalent mute-everything click.' Apple's 'Mute and solo channel strips' page documents exactly such a gesture: Command-clicking a Mute button switches every Mute button that matches the clicked button's state, including the output and master strips. A reader is being told a capability does not exist when Apple documents it, which is a straight factual error and the kind a mixing reader will notice immediately.",
+      "evidence_quote": "Press and hold Command while clicking the Mute button on a channel strip. All Mute buttons that match the state (muted or unmuted) of the clicked button also switch to its new state, including those on the output channel strip and the master channel strip.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/mute-and-solo-channel-strips-lgcpbc21a09d/mac",
+      "correction": "Option-clicking an unsoloed channel strip solos it and unsolos every other channel strip — one gesture to hear one thing. Option-clicking any active Solo button clears all solos at once. Mute has its own bulk gesture, using Command rather than Option: Command-click a Mute button and every Mute button currently in the same state flips with it, including the output and master strips."
+     },
+     {
+      "title": "Use VCA faders for level groups without changing routing",
+      "verdict": "WRONG",
+      "reason": "The first half is right — Apple confirms a VCA channel strip changes the volume of each member channel, and VCAs do not sum audio through a bus, so no re-patching is required. But the trick's conclusion, 'so your existing routing and sends are untouched', is contradicted for sends. Apple states explicitly that with post-fader send effects the amount of signal a VCA-assigned channel sends to an effect follows the VCA group's volume changes. Since Logic's default send mode is Post Pan (also post-fader), this is the normal case, not an edge case: pull a VCA down and the reverb sends come down with it. Telling a mixer that sends are unaffected will cause real, audible surprises.",
+      "evidence_quote": "adjusting the volume of a VCA channel strip changes the volume of each individual channel ... if you use post-fader send effects, the amount of signal sent to an effect by a channel assigned to a VCA group follows the VCA group volume changes",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-vca-groups-lgcp4d50f425/mac",
+      "correction": "A VCA controls the volume of each of its member channels without summing them through a bus, so nothing gets re-patched — your existing output routing stays exactly as it was. Be aware of one consequence, though: post-fader sends follow the VCA. Apple documents that the amount of signal a VCA-assigned channel sends to an effect tracks the VCA group's volume changes, so pulling a VCA down pulls its reverb and delay sends down too. Use pre-fader sends for anything that must stay constant regardless of the group level."
+     },
+     {
+      "title": "Use Summing Stacks for processing groups",
+      "verdict": "VERIFIED",
+      "reason": "All three parts check out. Apple documents selecting tracks, creating a Track Stack, and choosing Summing Stack in the resulting dialog, and describes exactly the routing the trick promises — subtrack outputs routed to a bus whose destination aux becomes the main track, functioning as an audio subgroup you can process as a unit. The Shift-Command-D key command is corroborated by whylogicprorules.com (an approved source) and several independent shortcut references, all agreeing.",
+      "evidence_quote": "In the Track Stack dialog, to create a summing stack: Select Summing Stack, then click OK. ... Summing stacks let you combine multiple tracks and route their output to an audio subgroup. When you create a summing stack, the outputs from the subtracks are routed to a bus. The destination aux of the bus is assigned to the main track, which functions as an audio subgroup.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/create-and-edit-track-stacks-lgcp5bafa811/10.7/mac/11.0"
+     },
+     {
+      "title": "Create a send and Logic makes the aux for you",
+      "verdict": "VERIFIED",
+      "reason": "Apple states directly that an aux channel strip is created automatically when a send assignment is made, and the trick's instruction to choose an UNUSED bus is precisely right — Apple's one exception is a bus already in use as an input source on another channel strip, which the trick's wording already sidesteps. The mechanism and the caveat both hold.",
+      "evidence_quote": "An aux channel strip is created automatically when a send assignment is made from a channel strip, except when the chosen bus is already in use as an input source on another channel strip.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/route-audio-via-send-effects-lgcp8ea0091c/10.7/mac/11.0"
+     },
+     {
+      "title": "Set sends to pre‑fader for headphone mixes and effects that must stay constant",
+      "verdict": "UNVERIFIABLE",
+      "reason": "Two problems, neither resolvable from the sources found. First, the gesture: the trick says 'Right-click a send to switch between pre and post fader', but Apple's 'Route audio via send effects' page documents clicking the Send knob to open the Send pop-up menu and choosing a signal flow option from there. No source found supports a right-click/Control-click route, so the stated gesture is unproven. Second, the framing: Logic has THREE send modes, not a pre/post binary — Post Pan, Post Fader and Pre Fader — and Post Pan is the one a new send lands on, so a reader looking for a two-item toggle will not find one. The underlying advice (pre-fader for cue mixes) is sound and is the standard reason pre-fader exists.",
+      "evidence_quote": "click the Send knob to open the Send pop-up menu. From the Send pop-up menu, you can choose one of the three signal flow options for the send. Post Pan is one option where the signal is sent after the fader and the Pan knob ... Pre Fader: the signal is sent before the fader and Pan knob; the send signal is affected by neither volume nor pan adjustments",
+      "evidence_url": "https://support.apple.com/guide/logicpro/route-audio-via-send-effects-lgcp8ea0091c/10.7/mac/11.0",
+      "salvage": "Logic gives every send one of three signal-flow modes, not two. Click the Send knob to open its pop-up menu and choose Post Pan (follows both fader and pan), Post Fader (follows the fader but not the pan), or Pre Fader (ignores both — the send level stays put no matter what you do to the channel's volume or pan). Post is what you want for reverb, so the effect tracks the part. Pre is what you want for a headphone cue mix, or for any effect that must stay constant while you ride the fader."
+     },
+     {
+      "title": "Copy a whole channel strip the reliable way",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents the exact route the trick gives: click the Setting button at the top of the channel strip, then choose Copy or Paste Channel Strip Setting from the pop-up menu. The claim that everything comes across is supported by the same menu offering narrower alternatives — Paste Plug-ins Only and Paste Sends Only — which only make sense as subsets of a full paste. The closing note about Option-dragging individual plugins between slots is independently confirmed on Apple's plug-ins page.",
+      "evidence_quote": "In Logic Pro, click the Setting button at the top of the channel strip, then choose Copy or Paste Channel Strip Setting from the pop-up menu. The Settings button menu also includes several related options, such as Paste Plug-ins Only, Paste Sends Only",
+      "evidence_url": "https://support.apple.com/guide/logicpro/work-with-channel-strip-settings-lgcp35966da6/mac"
+     },
+     {
+      "title": "Colour your channels to match your regions",
+      "verdict": "VERIFIED",
+      "reason": "Apple's 'Change track colors' page confirms the mechanism as stated: changing a track's colour also changes the colour of its corresponding Mixer channel strip, and the channel strip's Track Name field displays that colour. The second sentence is workflow taste and carries no checkable claim, so nothing there to fail.",
+      "evidence_quote": "Changing the color of a track also changes the color of the corresponding channel strip in the Mixer. ... the Track Name field shows the track name and track color in the channel strip",
+      "evidence_url": "https://support.apple.com/guide/logicpro/change-track-colors-lgcp7a5a5423/10.7/mac/11.0"
+     },
+     {
+      "title": "Bypass with ⌥-click, browse with the slot arrows",
+      "verdict": "VERIFIED",
+      "reason": "Both halves are documented by Apple on the same page. Option-clicking the plug-in slot bypasses that plug-in (no window opens), and hovering the slot reveals arrows at its right edge which you click to choose a replacement plug-in or No Plug-in. The key command field (Option + click) matches the body copy.",
+      "evidence_quote": "Option-click the plug-in slot ... To replace a plug-in: Place the pointer over the plug-in slot, click the arrows that appear to the right, then choose a plug-in to replace the existing one. To remove a plug-in: ... then choose No Plug-in from the pop-up menu.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac"
+     },
+     {
+      "title": "V hides every open plugin window at once",
+      "verdict": "VERIFIED",
+      "reason": "V is confirmed as the global key command for toggling all plug-in windows by two separate searches returning independent sources that agree — a verbatim mirror of Apple's 'Key commands for Global Commands' page, logicprokeycommands.com's version-by-version listings, and the Apple Pro Training Series keyboard-shortcut appendix published via O'Reilly. The toggle-restores-them behaviour the trick describes is the documented function of the command. One caution for the author: because it is a global command it is user-remappable, but the default holds across the versions the book covers.",
+      "evidence_quote": "In Logic Pro, the key command \"V\" is mapped to \"Show/Hide All Plug-in Windows\". This key command functions as a toggle ... the previous plugins that you had up will open or close.",
+      "evidence_url": "https://www.afteraudio.com/blogs/musings/posts/6963413/key-commands-for-global-commands-in-logic-pro"
+     },
+     {
+      "title": "Drag plugins between insert slots and between channels",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents dragging a plug-in up or down within a channel strip or to another channel strip to move it, with a guide line shown during the drag, and Option-dragging to copy. One precision the trick could add without changing its meaning: Apple specifies Option-dragging to an UNUSED slot for the copy, so dropping onto an occupied slot is not the documented copy target.",
+      "evidence_quote": "To move a plug-in: Drag the plug-in up or down in the channel strip, or to another channel strip. ... To copy a plug-in: Press and hold Option and drag the plug-in to an unused slot.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac"
+     }
+    ]
+   },
+   "challenge": {
+    "section": 15,
+    "downgrades": [
+     {
+      "title": "V hides every open plugin window at once",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The auditor's provenance claim is false. He described afteraudio.com as 'a verbatim mirror of Apple's Key commands for Global Commands page' -- it is not Apple, it is a Shopify blog that reuses the page title, and its quoted prose ('the previous plugins that you had up will open or close') reads as AI-written blog copy rather than documentation. A dedicated search for the Apple page returned NO support.apple.com result for this command; the hits were gearspace, logicprohelp forums, editorskeys, unison-style listicles, and the two sources the auditor leaned on. Both of those are version-mismatched to the book's scope: logicprokeycommands.com is explicitly titled 'Logic Pro X Key Commands 10.0.7' and the O'Reilly appendix is the Apple Pro Training Series *Logic Pro X* keyboard-shortcut list -- Logic Pro X era, not 10.7/11/12. So there is no Apple source and no two version-matched reputable sources; the standard for VERIFIED is not met either way. Aggravating: the auditor himself notes V is a user-remappable Global command, so even the default is an assertion about a mutable default nobody has documented for the covered versions. SALVAGE: keep the advice, drop the letter -- rewrite as 'Logic can hide and restore all open plug-in windows in one move; find the command by opening Key Commands (Option-K) and searching for \"plug-in windows\", then note your own key on the spot -- it is a Global command and may already be remapped on your system.' That is checkable by the reader in their own copy and cannot go stale."
+     },
+     {
+      "title": "Copy a whole channel strip the reliable way",
+      "new_verdict": "WRONG",
+      "reason": "The menu route (Setting button > Copy/Paste Channel Strip Setting) is genuinely Apple-documented and survives. The trick's payload claim -- that everything comes across -- does not, and the auditor reached it by INFERENCE, not evidence: he argued that 'Paste Plug-ins Only' and 'Paste Sends Only' 'only make sense as subsets of a full paste.' That is precisely the reasoning the brief bans, and it is contradicted externally. macprovideo.com (approved source), 'Demystifying Logic Pro X's Plug-In Settings, Channel Strip Settings & Patches': 'Patches include everything Channel Strip Settings do -- all front-panel settings for all the individual plug-ins in the strip -- but they also include the values of the other channel strip controls that are NOT part of a Channel Strip Setting -- Send settings, and Pan and Channel Fader values.' So pan and channel fader values are explicitly excluded from a Channel Strip Setting, and send behaviour is disputed enough to have its own long-running Logic Pro Help thread ('Channel Strip Settings not saving Sends'). A separate search of Apple's own 'Work with channel strip settings' page confirmed Apple never enumerates what a full paste carries. A buyer who copies a strip expecting the fader and pan to follow, and finds they do not, has exactly the complaint the owner is trying to avoid. CORRECTION (sourced): say that Copy/Paste Channel Strip Setting carries the strip's plug-ins -- instrument and effects -- and their settings, and note that pan and fader values are not part of a channel strip setting (they travel with a Patch instead). Do not claim sends transfer as part of the full paste; point readers at the explicit 'Paste Sends Only' item if they want sends."
+     }
+    ],
+    "sustained_count": 6
+   }
+  },
+  {
+   "section": 16,
+   "audit": {
+    "section": 16,
+    "search_worked": true,
+    "searches_used": 16,
+    "search_note": "WebSearch worked normally; 16 of my ~20 budget used, every one landing on an Apple Logic Pro User Guide page (support.apple.com/guide/logicpro/...), which is why the verified share here is far higher than sections 1-5. This section is structurally safer than the earlier ones: it is almost entirely about documented plug-in controls, contains only ONE key command (the Channel EQ ⌘-drag, which Apple documents verbatim), makes NO version claims, cites NO Settings/Display or View paths, and has no group-level \"path\" fields to check — so the two error veins that gutted sections 1-5 (version drift and menu-path drift) barely apply. Two flat contradictions found, both control-name inventions of exactly the \"As Region Colour\" type: Match EQ's slider is called Apply, not \"amount\", and Phat FX has no \"magnetic saturator\" module. Three residual soft spots I could not source and have flagged in the reasons rather than upgrading to WRONG, because the trick's headline claim is verified in each case: (a) Stereo Delay's copy omits that Stereo Link must be switched off before the two sides can hold different times — Apple documents Stereo Link, the trick does not, so a buyer following it literally will see both sides move together; (b) Space Designer's \"any short audio file\" is looser than Apple's \"any mono, stereo, AIFF, SDII, or WAV file\"; (c) the Limiter trick's 0.5 dB / 3 dB figures are editorial rules of thumb with no external source — only its \"very end of the master\" placement is Apple-documented. All plug-ins named (ChromaVerb, Phat FX, Remix FX, Vintage EQ Collection) shipped in 10.4 or earlier and are on Apple's current guide pages, so they are valid across 10.7, 11 and 12.",
+    "tricks": [
+     {
+      "title": "Compressor — switch the model, not just the settings",
+      "verdict": "VERIFIED",
+      "reason": "Apple and multiple reputable Logic sources confirm exactly seven circuit types with the four named descriptions matching: Platinum Digital = clean, Studio FET = 1176-style fast/aggressive, Vintage Opto = vocals, Vintage VCA = SSL bus compressor.",
+      "evidence_quote": "Logic Pro's Compressor offers the following circuit types: Platinum Digital, Studio VCA and FET, Classic VCA, and Vintage VCA, FET, and Opto. ... Platinum Digital: A clean-sounding compression type with a fast transient response ... Studio FET: Emulates the Universal Audio 1176. ... Vintage VCA: Based on the SSL buss compressor ... Vintage Opto: Optical compressors are known for their fast transient response and non-linear release handling, and are very clean and ideal for vocals and guitars.",
+      "evidence_url": "https://support.apple.com/en-ge/guide/logicpro/lgcead9636ef/mac"
+     },
+     {
+      "title": "Compressor — use the side‑chain filter before reaching for a multiband",
+      "verdict": "VERIFIED",
+      "reason": "The Compressor's side chain section has documented filter state / mode (HP, BP, LP) / frequency / Q controls plus a Listen button, and the documented use case is precisely attenuating kick energy in the detector so it stops triggering reduction.",
+      "evidence_quote": "The side-chain is the part of a compressor that detects and potentially filters the input signal before feeding it to the control circuit. Filter state buttons turn the sidechain filter on or off ... The HP (high-pass) mode can be used to adjust the frequency so that most of the kick drum's energy is attenuated.",
+      "evidence_url": "https://support.apple.com/en-il/guide/logicpro/lgce0b2501de/mac"
+     },
+     {
+      "title": "Limiter — set it as a safety, not a loudness tool",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms the checkable part — Limiter belongs as the last process in the chain and its job is reaching but not exceeding 0 dB. The specific 0.5 dB and 3 dB figures are unsourced editorial rules of thumb, not documented specs; they are taste rather than a refundable factual error, but the owner should not present them as spec.",
+      "evidence_quote": "Limiter is used primarily when mastering, typically applied as the very last process in the mastering signal chain, where it raises the overall volume of the signal so that it reaches, but does not exceed, 0 dB.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/limiter-controls-lgcef1becd08/mac"
+     },
+     {
+      "title": "Multipressor — use it to control one problem band only",
+      "verdict": "VERIFIED",
+      "reason": "Multipressor is a four-band multiband compressor with a per-band Byp (Bypass) button, so bypassing all but one band is exactly the documented behaviour. The 'becomes a dynamic EQ' framing is analogy, not a false claim.",
+      "evidence_quote": "The Multipressor splits the incoming signal into different frequency bands—up to four ... The Byp (Bypass) buttons enable you to bypass the selected frequency band.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/multipressor-overview-lgcef1bedfc6/mac"
+     },
+     {
+      "title": "Noise Gate — use the side chain to key one sound from another",
+      "verdict": "VERIFIED",
+      "reason": "Apple's 'Use Noise Gate' page documents keying a gate from a different track's signal, with the side chain acting purely as a detector. Worth noting in copy that Logic only offers audio tracks and buses as side-chain sources, so the snare must be an audio track or bus.",
+      "evidence_quote": "Insert a noise gate on the strings track, select the percussion track as the side-chain input to the noise gate, adjust the noise gate threshold so that the percussion sound triggers the opening and closing of the gate ... The side chain signal is used only as a detector/trigger.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-noise-gate-lgcef1bec259/mac"
+     },
+     {
+      "title": "Enveloper — reshape a transient without a compressor",
+      "verdict": "VERIFIED",
+      "reason": "Apple describes Enveloper as shaping attack and release phases via two gain sliders either side of the display, independently of absolute input level, with 'adds snap to a drum sound' given as the headline use — matching the trick's soft-kick example.",
+      "evidence_quote": "Enveloper is an unusual processor that lets you shape the attack and release phases of a signal—the signal transients ... The most important Enveloper parameters are the two Gain sliders, one on each side of the central display. These govern the Attack and Release levels ... Boosting the attack phase can add snap to a drum sound.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/enveloper-controls-lgcef1bec322/mac"
+     },
+     {
+      "title": "Channel EQ — turn on Analyzer and set it to Post",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents a dedicated Analyzer Pre/Post button whose Post setting shows the curve after EQ is applied, which is exactly the trick's claim.",
+      "evidence_quote": "The Analyzer (Pre/Post) button can be set to display the frequency curve before or after EQ is applied, when Analyzer mode is active.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-the-channel-eq-analyzer-lgcef1edccd9/mac"
+     },
+     {
+      "title": "Channel EQ — drag the band’s vertical line sideways to set Q",
+      "verdict": "VERIFIED",
+      "reason": "Every element checks out against Apple's Channel EQ parameters page: the vertical lines isolate Q, ⌘ constrains a drag to one axis (which is the k field), and Option-click resets a band. The only unsourced fragment is 'double-click a gain value to type it exactly', which is standard Logic numeric-field behaviour and carries no risk.",
+      "evidence_quote": "To constrain dragging to vertical or horizontal movement, hold down Command while performing any operations on the Channel EQ bands. ... Drag the vertical lines that encompass the selected band to adjust the Q (bandwidth) only. ... If you ever need to reset a band entirely, simply Option-click it to restore it to its default settings.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/channel-eq-parameters-lgcef1edc1d7/mac"
+     },
+     {
+      "title": "Linear Phase EQ on the master, Channel EQ everywhere else",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms Linear Phase EQ preserves phase coherency and 'introduces greater amounts of latency', and that Channel EQ's phase shift is 'often desirable' — which is the trick's exact framing. The CPU half is the softer claim: Apple states Linear Phase EQ uses a fixed (rather than band-dependent) amount of CPU, and the comparative sources agree it is the heavier plug-in, but Apple does not say 'more CPU' in those words.",
+      "evidence_quote": "Linear Phase EQ uses different underlying technology to Channel EQ that preserves the phase of the audio signal ... This differs from Channel EQ, which can introduce phase shifts of the signal that can have an audible (and often desirable) effect on the sound. ... Linear Phase EQ introduces greater amounts of latency.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/linear-phase-eq-overview-lgcef1edd389/mac"
+     },
+     {
+      "title": "Vintage EQ Collection — three genuinely different colours",
+      "verdict": "VERIFIED",
+      "reason": "Apple names exactly the three units in the trick (Console, Graphic, Tube) and confirms they are modelled on vintage hardware and carry the tonal character of the originals — each even has its own named output stage (Smooth / Punchy / Silky), which supports the 'character even with the controls flat' claim.",
+      "evidence_quote": "The Logic Pro for Mac vintage EQ collection recreates three classic EQ units from the 50s, 60s, and 70s that can add color to your productions. The Vintage Tube EQ, Vintage Graphic EQ, and Vintage Console EQ plug-ins ... feature the distinct tonal characteristics of the original units.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/vintage-eq-collection-overview-lgcp505f1be0/mac"
+     },
+     {
+      "title": "Match EQ — steal a tone rather than guess at it",
+      "verdict": "WRONG",
+      "reason": "The learn-reference / learn-current / build-the-difference mechanism is correct, but Match EQ has no 'amount slider'. Apple's control is the Apply slider — same class of error as the non-existent 'As Region Colour' option. The advice also misses that Apply goes above 100% to exaggerate and negative to invert, so 'never use it at 100%' understates the range.",
+      "evidence_quote": "The Apply slider and field increase or decrease the impact of the EQ curve, with values greater than 100% magnifying the effect, values less than 100% reducing the effect, and negative values (−1% to −100%) inverting the peaks and troughs in the filter curve. ... Match EQ creates a filter curve based on the differences between the spectrum of the template and the current material.",
+      "evidence_url": "https://support.apple.com/en-my/guide/logicpro/lgcef1edbd51/mac",
+      "correction": "Learn the spectrum of a reference, learn your track, and Match EQ builds the curve between them from the difference. Then pull the Apply slider — Apple's name for it — back below 100%: values under 100% reduce the impact of the matched curve, and something around 40% usually keeps the tonal direction without the artefacts. Apply also runs past 100% to exaggerate the curve, and into negative values to invert its peaks and troughs. Use the Smoothing slider to coarsen the curve if it comes out too spiky."
+     },
+     {
+      "title": "ChromaVerb — use the Damping display as the main control",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents a Damping EQ overlaid on ChromaVerb's main display, explicitly frequency-dependent decay, editable by dragging the dots — including reducing how much of a given frequency stays in the decay, which is the trick's 'roll off the high end decay' move.",
+      "evidence_quote": "The decay for certain frequencies is dependent on damping parameter values. A visualization of the reverb output is shown in a graphic display that allows you to directly edit damping factors, thus changing decay frequencies and dependencies. ... drag up or down to increase or decrease how much of that frequency is included in the reverb decay.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/main-display-and-damping-eq-lgcp304c206a/mac"
+     },
+     {
+      "title": "Space Designer — load your own impulse responses",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms user IRs load via Sampled IR > Load IR and that ordinary audio files can serve as the IR. One tightening for the copy: Apple specifies mono/stereo AIFF, SDII or WAV rather than literally 'any' audio file, so a stray MP3 or M4A will not load.",
+      "evidence_quote": "Any mono, stereo, AIFF, SDII, or WAV file can be used as an IR. ... click the Sampled IR button above the main display, then click the Sample IR pop-up menu and choose Load IR ... In Sampled IR mode, Space Designer loads and uses an impulse response recording ... convolved with the incoming audio signal.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-impulse-responses-lgcef2af4d05/mac"
+     },
+     {
+      "title": "Delay Designer — build rhythmic patterns, not echoes",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Tap parameter bar documents per-tap Cutoff and Resonance (filter), Transpose (pitch), Pan and Level alongside each tap's own delay time — exactly the five independent per-tap parameters the trick lists.",
+      "evidence_quote": "Cutoff: Shows the highpass and lowpass filter cutoff frequencies of taps. ... Resonance (Reso): Shows the filter resonance value of each tap. ... Transpose (Transp): Shows the pitch transposition of each tap. ... Pan: Shows the pan parameter of each tap. ... Level: Shows the relative volume level of each tap.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/tap-parameter-bar-lgcef18b8c76/mac"
+     },
+     {
+      "title": "Stereo Delay — set different times per side",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms Delay, Feedback and Mix are settable separately per channel, with note values (including dotted) available when tempo-synced, so 1/8 left against dotted 1/8 right is achievable. Caveat the copy should carry: the Stereo Link button ties the two channels together, and it must be switched off before the sides will hold different times.",
+      "evidence_quote": "Stereo Delay lets you set the Delay, Feedback, and Mix parameters separately for the left and right channels. You can set the delay time in milliseconds or in note values when synchronized with the project tempo. ... The Stereo Link button allows you to make corresponding parameter adjustments for both channels. Adjusting one channel value adjusts the other.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/stereo-delay-lgcef18b892f/mac"
+     },
+     {
+      "title": "Tape Delay — turn up Flutter for analogue character",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents Flutter Rate and Flutter Intensity as simulating the speed irregularities of analogue tape transports, and the plug-in also carries the LFO modulation and Low/High Cut filtering the trick credits for separating it from a plain digital delay.",
+      "evidence_quote": "Flutter Rate/Intensity knobs and fields simulate the speed irregularities of tape transports used in analog tape delay units. Flutter Rate: Set the speed variation. Flutter Intensity: Set the intensity of the \"flutter\" effect.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/tape-delay-controls-lgcef18b8994/mac"
+     },
+     {
+      "title": "Phat FX — one plugin, an entire character chain",
+      "verdict": "WRONG",
+      "reason": "Phat FX has no 'magnetic saturator'. Apple lists six modules — Band-pass, Distortion, Mod FX, Bass Enhancer, Compressor, Filter — and the Distortion module's types are Bitcrusher, Diode, Dirt, Downsampler, Grit, Scream, Soft Saturation, Tube and Vari Drive, none of them named Magnetic. The trick invents a module while omitting Bass Enhancer, the one that actually does the 'phat'.",
+      "evidence_quote": "The Phat FX plug-in UI is divided into five key areas: six effects modules (Band-pass, Distortion, Mod FX, Bass Enhancer, Compressor, Filter), an assignable X/Y pad, three modulation sources (Env Follower, LFO1, LFO2), the Master section, and along the very bottom, the Effect Order Strip.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/phat-fx-overview-lgcp513b364e/mac",
+      "correction": "Six effects modules in a single window — Band-pass, Distortion, Mod FX, Bass Enhancer, Compressor and Filter — plus an assignable X/Y pad, three modulation sources (Env Follower, LFO 1, LFO 2) and an Effect Order strip for reordering the chain. The Distortion module alone offers Bitcrusher, Diode, Dirt, Downsampler, Grit, Scream, Soft Saturation, Tube and Vari Drive. It is the fastest way to make a sterile synth interesting."
+     },
+     {
+      "title": "Remix FX — perform DJ effects live and record them",
+      "verdict": "VERIFIED",
+      "reason": "All five effects named in the trick are documented Remix FX controls, and Apple frames the plug-in as real-time performance controls; 9to5Mac covers recording a Remix FX performance pass as automation.",
+      "evidence_quote": "Remix FX includes a set of buttons, sliders, and XY pads you can use to control several real-time effects common to electronic and dance music. ... Filter: Removes frequencies above a cutoff frequency ... Gater: Select from options for note division ... Downsampler: Changes the resolution of incoming audio ... Reverse: Reverses playback of incoming audio. Tape Stop: Simulates the slow down and stop of the incoming audio.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/remix-fx-lgcpe9906785/mac"
+     },
+     {
+      "title": "Gain — use it to check phase, not just level",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents Phase Invert buttons on the Gain plug-in and gives multi-mic time-alignment problems as the stated use case, which is the trick's claim. Worth knowing that stereo instances have separate Left and Right buttons while mono instances have only one.",
+      "evidence_quote": "Phase Invert Left/Right buttons: Invert the phase of the left and right channels, respectively. Inverting phase is useful for dealing with time alignment problems, particularly those caused by simultaneous recording with multiple microphones. ... Only one Phase Invert button is available in mono and mono to stereo modes.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/gain-controls-lgcef2d8c650/mac"
+     },
+     {
+      "title": "Test Oscillator — reference tones for calibration",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms sine and square waveforms plus white and pink noise, and a frequency field settable from 1 Hz to 22 kHz with a 1 kHz default — 'exact frequencies' as claimed. Needle Pulse (Dirac) is a fourth waveform the trick simply does not mention, which is an omission rather than an error.",
+      "evidence_quote": "Waveform buttons select the waveform to use for test tone generation ... Sine Wave ... Square Wave ... Pink Noise ... White Noise ... The frequency knob and field set the frequency of the oscillator (the default is 1 kHz), and you can double-tap this field and enter a value ranging from 1 Hz to 22 kHz.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/test-oscillator-lgcef2d8c9eb/mac"
+     }
+    ]
+   },
+   "challenge": {
+    "section": 16,
+    "downgrades": [
+     {
+      "title": "Compressor — switch the model, not just the settings",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The evidence_quote is reconstructed, not quoted. Apple's Compressor main parameters page (lgcead9636ef) describes circuit types generically and never names third-party hardware: its actual Studio FET text is 'Field Effect Transistor compressors are known for their fast transient response. They can deliver a clean or colored tone (particularly in the midrange)... FET compressors are ideal for drums, vocals, guitars, and other signals with a fast attack phase' — not 'Emulates the Universal Audio 1176'. Worse, the auditor's 'Vintage Opto: ...known for their fast transient response... ideal for vocals and guitars' is that same Studio FET description reattributed to a different circuit type (optical compressors are the slow-responding ones), so the quote is internally corrupt. 'Vintage VCA: Based on the SSL buss compressor' likewise appears nowhere in Apple's text. Only the seven circuit-type names survive; every character/brand equivalence the trick actually trades on is unsourced. SALVAGE: keep 'Compressor is seven compressors in one — the Circuit Type menu at the top swaps the whole detection model, so audition Platinum Digital, Studio VCA, Studio FET, Classic VCA, Vintage VCA, Vintage FET and Vintage Opto on the same source before touching ratio or attack. Apple's own descriptions for each type are in the Compressor main parameters page.' Delete the 1176 / SSL / LA-2A equivalences and the per-type adjectives unless each is separately sourced."
+     },
+     {
+      "title": "Limiter — set it as a safety, not a loudness tool",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Two failures. First, the auditor's own reason concedes 'The specific 0.5 dB and 3 dB figures are unsourced editorial rules of thumb, not documented specs' — a trick cannot be VERIFIED while its only numeric, checkable content is admitted to be unsourced; that is the definition of UNVERIFIABLE, and 'taste rather than a refundable factual error' is not one of the available verdicts. Second, the quoted Apple sentence arguably cuts against the headline: Apple says Limiter 'raises the overall volume of the signal so that it reaches, but does not exceed, 0 dB' — i.e. Apple documents it as a loudness tool applied last, which does not support 'set it as a safety, NOT a loudness tool' as written. The evidence supports the placement claim only. SALVAGE: 'Apple documents Limiter as belonging at the very end of the chain: it is \"typically applied as the very last process in the mastering signal chain, where it raises the overall volume of the signal so that it reaches, but does not exceed, 0 dB\". Put it last, after your EQ and bus compression, and set the Output Level to the ceiling you want the master to respect.' Drop the 0.5 dB and 3 dB figures entirely, or label them explicitly as personal preference rather than spec."
+     },
+     {
+      "title": "Channel EQ — drag the band’s vertical line sideways to set Q",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The evidence_quote splices non-Apple text into a single quote attributed to one Apple URL. Searching the exact sentence 'If you ever need to reset a band entirely, simply Option-click it to restore it to its default settings' surfaces it in third-party Channel EQ blog write-ups (woodyardmusic, logicxx), and its conversational register ('If you ever need to... simply...') is not Apple guide style — Apple's pages use imperative parameter-table prose. So the Option-click-to-reset element rests on a single blog, which the audit rules say is not sufficient alone. On top of that, the auditor cleared 'double-click a gain value to type it exactly' with the reasoning 'standard Logic numeric-field behaviour and carries no risk' — that is precisely the assume-it-because-everyone-knows-it reasoning the brief bans as the bug. Only the Q half is genuinely Apple-sourced (Apple does document dragging the vertical lines that encompass the band to adjust Q only). SALVAGE: 'To change a band's Q without touching its gain or frequency, drag the vertical lines that encompass the selected band in the Channel EQ display — that adjusts the Q (bandwidth) only. Holding Command while dragging a band constrains the movement to one axis, so you can change frequency without nudging gain.' Cut the Option-click reset and the double-click-to-type line unless each can be pinned to an Apple page."
+     },
+     {
+      "title": "Linear Phase EQ on the master, Channel EQ everywhere else",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The auditor concedes in their own reason that 'Apple does not say \"more CPU\" in those words' and that the comparative sources 'agree it is the heavier plug-in' — but supplies no URL or quote for any of those comparative sources, so under the two-independent-sources rule none of them count. The CPU claim is not incidental: 'Channel EQ everywhere else' is the trick's whole recommendation, and CPU cost is the stated reason for it. Note also that the Apple fact the auditor gestures at — that Linear Phase EQ uses a fixed amount of CPU regardless of how many bands are active — is not the same proposition as 'Linear Phase EQ costs more CPU than Channel EQ', and on a track using few bands it points the other way. SALVAGE: 'Linear Phase EQ and Channel EQ are not the same plug-in with a different skin. Apple: Linear Phase EQ \"preserves the phase of the audio signal\", whereas Channel EQ \"can introduce phase shifts of the signal that can have an audible (and often desirable) effect on the sound\" — and Linear Phase EQ \"introduces greater amounts of latency\". Reach for Linear Phase EQ where phase coherency matters most and latency is tolerable (mastering, parallel/multi-mic material); use Channel EQ where you want the colour and the low latency.' Drop the CPU comparison unless it can be sourced."
+     },
+     {
+      "title": "Vintage EQ Collection — three genuinely different colours",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The quote supports the three plug-in names, the eras, and 'add color to your productions' — but not the trick's operative claim. The auditor's reason states the evidence 'supports the \"character even with the controls flat\" claim' via 'its own named output stage (Smooth / Punchy / Silky)' — those three words appear nowhere in the quoted text and no source is given for them; they were supplied from the auditor's memory and then used as the bridge to the conclusion. That is exactly the reconstruct-then-cite failure mode. 'Distinct tonal characteristics of the original units' is a general marketing sentence and does not establish that the plug-ins colour a signal at neutral settings, which is the falsifiable mechanism a buyer would test. SALVAGE: 'Logic ships three modelled vintage EQs — Vintage Tube EQ, Vintage Graphic EQ and Vintage Console EQ — recreating classic units from the 50s, 60s and 70s that, in Apple's words, \"feature the distinct tonal characteristics of the original units\". They are not interchangeable with Channel EQ: try the same boost on all three and pick by ear.' Remove the claim that they colour with the controls flat, and remove the Smooth/Punchy/Silky output-stage names unless each can be pinned to Apple's parameter pages."
+     },
+     {
+      "title": "Space Designer — load your own impulse responses",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Version mismatch — the exact failure mode the brief warns about. The quoted sentence 'Any mono, stereo, AIFF, SDII, or WAV file can be used as an IR' is Logic 9-era manual text (it survives at help.apple.com/logicpro/mac/9.1.6/.../chapter_12_section_2.html), not the current page the auditor cited. The live Apple 'Use impulse responses in Logic Pro for Mac' page reads instead: 'Any mono or stereo AIFF or WAVE file can be used as an impulse response. In addition, surround formats up to 7.1, discrete audio files, and B-format audio files that consist of a single surround impulse response can be used.' SDII (Sound Designer II) is gone and the surround/B-format capability is new — so the auditor's proposed 'tightening' would print a fifteen-year-old format list into a book covering 10.7 / 11 / 12. The Sampled IR > Load IR route itself is plausible but was cleared on the same stale page, so it needs re-sourcing against the current guide. SALVAGE: 'Space Designer is a convolution reverb, so it will play back any impulse response you give it, not just Apple's. Apple: \"Any mono or stereo AIFF or WAVE file can be used as an impulse response\", plus surround formats up to 7.1 and B-format files. Click the Sampled IR button above the main display, then use the IR pop-up menu to load your own file.' Do not tell readers SDII works, and do not say \"any audio file\" — MP3 and M4A are not on Apple's list."
+     }
+    ],
+    "sustained_count": 12
+   }
+  },
+  {
+   "section": 17,
+   "audit": {
+    "section": 17,
+    "search_worked": true,
+    "searches_used": 17,
+    "search_note": "WebSearch worked throughout; 17 searches spent, aimed at the falsifiable items (key commands, menu paths, option names, bounce/export mechanics). Snippets quoting the Apple Logic Pro User Guide settled most of them. Three items rest partly on non-Apple sources and are flagged in their reasons: the Control-B assignment for Bounce Regions in Place (agreement across three third-party shortcut references, not found on an Apple page), the \"no key command inserts a specific plug-in\" finding (Apple documents only the manual slot workflow; the explicit \"it does not exist\" statements come from Gearspace/LogicProHelp/VI-Control), and \"exported tracks start at bar 1\" (Apple documents the export length options; the start-position statement comes from Peak-Studios and LogicProHelp). Pure-advice tricks were not searched. Nothing was left unchecked for budget reasons.",
+    "tricks": [
+     {
+      "title": "Open Key Commands with ⌥K and use the search box",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms both halves: Option-K opens the Key Commands window, and that window has a search field for finding commands by name.",
+      "evidence_quote": "To open the Key Commands window in Logic Pro, you can choose Logic Pro > Key Commands > Edit (or press Option-K), and the Key Commands window opens. … click All at the top of the window, then enter a search term in the search field.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/key-commands-overview-lgcp32e85cd9/10.7/mac/11.0"
+     },
+     {
+      "title": "Export your key commands and back them up",
+      "verdict": "WRONG",
+      "reason": "Version trap. 'Options menu with Export' is the Logic 9-era wording. In the 10.7/11/12 guide the saving and importing of key command sets lives in the Actions pop-up menu at the top left of the Key Commands window, and the export command is 'Save As', not 'Export'. A reader hunting an Options > Export item in a current version will not find it.",
+      "evidence_quote": "Click the Actions pop-up menu in the top left of the Key Commands window, then choose Save As. You can save the current key command assignments to any location using the dialog that appears. The default location is ~/Music/Audio Music Apps/Key Commands. … click the Actions pop-up menu in the top left of the Key Commands window, then choose Import Key Commands.",
+      "evidence_url": "https://support.apple.com/en-by/guide/logicpro/lgcp68d9ced1/10.7/mac/11.0",
+      "correction": "In the Key Commands window, click the Actions pop-up menu at the top left and choose Save As to write your whole key command set to a file (the default location is ~/Music/Audio Music Apps/Key Commands). Choose Import Key Commands from the same menu to load it back after a reinstall, or on someone else's machine. Losing a year of custom shortcuts to a reinstall is entirely avoidable."
+     },
+     {
+      "title": "Assign key commands to your most used plugins",
+      "verdict": "WRONG",
+      "reason": "Logic has no key command that inserts a named plug-in on the selected channel. Apple documents only the manual route (click an Audio Effect slot, choose from the pop-up menu); the explicit 'no such key command exists' statements come from three independent Logic forums (Gearspace, LogicProHelp, VI-Control), which also list the real workarounds. A buyer who opens Key Commands and searches for their favourite EQ will find nothing to assign.",
+      "evidence_quote": "There are no available key commands for this function, as Logic would need to know which plugin you want to insert and would require multiple key commands—one for each potential plugin slot. … The standard method remains manual: click an Audio Effect slot, then choose a plug-in from the pop-up menu.",
+      "evidence_url": "https://support.apple.com/en-is/guide/logicpro/lgcpbc218a22/mac",
+      "correction": "Logic has no key command that inserts a specific plug-in, so get the speed a different way: save the plug-in (or a whole chain) as a channel strip setting and recall it from the channel strip's Settings menu, which inserts every associated plug-in in one click. If you want it on a physical button, assign a controller button to the relevant key command in the Controller Assignments window."
+     },
+     {
+      "title": "Use Touch Bar or a stream deck for tool switching",
+      "verdict": "WRONG",
+      "reason": "The Touch Bar half is not how Logic works. Apple documents Logic's Touch Bar as a fixed set of Logic-specific screens (Smart Controls, keyboard, drum pads, Configuration/Overview navigation) — there is no facility to put arbitrary assigned key commands on it, so 'any command with a key assignment can be triggered' is false for the Touch Bar. The external-hardware idea is sound for a Stream Deck or a MIDI controller, and Apple does document assigning controller buttons to key commands.",
+      "evidence_quote": "When you tap the Smart Controls button in Logic Pro, the following controls appear in the Touch Bar. … When you tap the Keyboard button, you can use the Touch Bar to play the current patch on the selected software instrument track. … When you tap the Drum Pads button, you can use the Touch Bar to play the drums on a Drummer or software instrument track",
+      "evidence_url": "https://support.apple.com/guide/logicpro/touch-bar-shortcuts-lgcp94a1c475/mac",
+      "correction": "Logic's Touch Bar screens are fixed (Smart Controls, keyboard, drum pads, project overview), so you cannot put your own key commands there. For hardware triggering, use a Stream Deck sending the keystroke, or assign a controller button directly to a key command in the Controller Assignments window — search the command by name in the Search field, then press the button. Tools, zoom levels and transport are the highest-value candidates."
+     },
+     {
+      "title": "Build separate templates for writing, mixing and mastering",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Pure workflow advice about how to organise your own starting points. No menu path, key command, version claim or mechanism assertion to check."
+     },
+     {
+      "title": "Use Project Alternatives instead of Save As",
+      "verdict": "WRONG",
+      "reason": "The behaviour described is right but the menu path is not what Apple prints. Apple's guide gives the path as File > Project Alternatives, not File > Alternatives. Everything else in the trick (one project, shared assets) is confirmed by the same page.",
+      "evidence_quote": "In Logic Pro, choose File > Project Alternatives > New Alternative. … You can create alternative versions of a project, each with a unique name and different settings. … They're saved as part of the project and share the same assets.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac",
+      "correction": "File > Project Alternatives > New Alternative keeps every version inside one project, and Apple's guide is explicit that alternatives \"are saved as part of the project and share the same assets\" — so you are not duplicating 4 GB of recordings to try a different arrangement."
+     },
+     {
+      "title": "Turn on “Copy external audio files to project folder”",
+      "verdict": "VERIFIED",
+      "reason": "The option name and the Assets settings location are both confirmed by Apple, as is the reason given for using it.",
+      "evidence_quote": "choose File > Project Settings > Assets (or use the Open Assets Project Settings key command), then select any of the copy checkboxes to copy the respective file types to the project. Files are copied into the project when the project is saved. Saving assets in the project ensures that they are still available when you move or copy the project to another location.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/manage-project-assets-lgcpce0d70e7/mac"
+     },
+     {
+      "title": "Consolidate before archiving",
+      "verdict": "VERIFIED",
+      "reason": "Menu path, effect and the archiving use case all match Apple. One small imprecision worth knowing but not worth a refund: Consolidate lets you select which asset types to copy rather than automatically taking every one, and the files land in the project's Media folder.",
+      "evidence_quote": "In Logic Pro, choose File > Project Management > Consolidate (or use the Consolidate Project key command). … they are copied to the Media folder inside the project. … This ensures that if you move or copy the project to another computer, or archive the project for later use, the assets remain with the project",
+      "evidence_url": "https://support.apple.com/guide/logicpro/consolidate-assets-in-a-project-lgcpce09b9d8/mac"
+     },
+     {
+      "title": "Keep a reference track in every project, muted at the top",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Studio-habit advice. Nothing asserted about how Logic behaves that a buyer could test and dispute."
+     },
+     {
+      "title": "Name your bounce files with the date",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "File-naming advice with no claim about Logic's behaviour."
+     },
+     {
+      "title": "⌘B bounces the project or the current section",
+      "verdict": "WRONG",
+      "reason": "Command-B and the multi-format claim are both confirmed, but 'Set the locators first and Logic bounces exactly that range' is stated unconditionally and is not. Apple says a bounce covers the whole project by default and that the locators define the bounce range only when Cycle mode is on; otherwise you set the range with the Start and End sliders in the Bounce dialog. A reader who drags the locators with Cycle off gets a full-length bounce.",
+      "evidence_quote": "By default, when you bounce a project, the entire project from start to end is bounced, but you can bounce only part of a project by setting the bounce range before performing a bounce. When Cycle mode is on, the bounce range matches the locator positions. … select one or more destination formats in the Destination area.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/set-the-bounce-range-lgcp190ba9b7/mac",
+      "correction": "File > Bounce > Project or Section, or Command-B. By default Logic bounces the whole project; to bounce a section, turn Cycle mode on and the bounce range matches the locator positions, or set the range directly with the Start and End sliders in the Bounce dialog. Bounce multiple formats in one pass by selecting more than one destination in the Destination area."
+     },
+     {
+      "title": "Use “Bounce in Place” to commit a track to audio",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms the File > Bounce > Track in Place route and the dialog options for effects and for volume/pan. The Control-B assignment for Regions in Place is not printed on the Apple page I could reach (it only says 'or use the corresponding key command'), but three independent third-party shortcut references agree on Control-B, with Control-Command-B for Track in Place — so the trick's ⌃B stands, though it is the weakest-sourced element here.",
+      "evidence_quote": "You can choose File > Bounce > Regions in Place (or use the corresponding key command) … File > Bounce, which shows options including Regions in Place, Track in Place, Replace All Tracks, and Project or Section. … Bypass Effect Plug-ins: Select to bypass all plug-ins on the source track during the bounce process. … Include Volume/Pan Automation: Select to have volume and pan automation performed during the bounce process",
+      "evidence_url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac"
+     },
+     {
+      "title": "Export all tracks as audio files for stems",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms the exact menu path and one-file-per-track behaviour. The 'all starting at bar 1' part is supported by two independent third-party sources rather than by Apple, and it is the default rather than the only behaviour — the export dialog also offers trimming silence at the end, exporting only the cycle range, and extending file length to the project end, and the cycle-range option would not start at bar 1.",
+      "evidence_quote": "choose File > Export > All Tracks as Audio Files. … export all tracks (all audio, software instrument, and Drummer tracks) in a project as audio files—one file per track. … All exported tracks will start at 1 1 1 1 (the project start) when using Export All Tracks as Audio Files.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/export-tracks-as-audio-files-lgcpb27f70f9/10.7/mac/11.6.1"
+     },
+     {
+      "title": "Turn off “Normalize” when bouncing stems",
+      "verdict": "VERIFIED",
+      "reason": "The Normalize control and its Off setting exist exactly where the trick says, in the export/bounce dialog, and Off is documented as 'the exported file is not normalized'. The rest is judgement, but the actionable instruction is correct.",
+      "evidence_quote": "Off: The exported file is not normalized. Overload Protection Only: Allows downward normalization in case of overloads—levels above 0 dB, which would lead to clipping—but no normalization in case of lower levels. On: The exported file is normalized both for overloads and for lower levels.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/export-tracks-as-audio-files-lgcpb27f70f9/10.7/mac/11.6.1"
+     },
+     {
+      "title": "Bounce offline unless you have external hardware",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The advice points the right way but two specifics are unsupported. Apple says offline 'can be faster than real time for more complex projects' — not that it always is — and says nothing anywhere I found about offline and realtime bounces being bit-identical, which is the claim a buyer is most likely to challenge. Apple's own limitation is broader than 'outboard gear': only internal sources can be bounced offline, so MIDI tracks and audio channel inputs also force a realtime bounce.",
+      "evidence_quote": "Offline bouncing can be faster than real time for more complex projects, and can perform bounces not possible in real time (because they might exceed the processing power of your computer). … Only internal sources (audio or software instrument tracks) can be bounced offline; not MIDI tracks or audio channel inputs.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac",
+      "salvage": "Bounce offline unless something outside the computer is involved. Apple's own wording is that offline bouncing \"can be faster than real time for more complex projects, and can perform bounces not possible in real time\". Realtime is required when the signal is not purely internal: only audio and software instrument tracks can be bounced offline, not MIDI tracks feeding external instruments or live audio channel inputs."
+     },
+     {
+      "title": "Add 2 bars of silence at the end of the bounce range",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The tail-clipping advice is sensible but the mechanism as written is conditional and unsourced: the right locator sets the bounce end only when Cycle mode is on, per Apple, and the specific 'two bars' figure has no source. Nobody will refund over the taste part, but they may over dragging the right locator with Cycle off and getting the same clipped tail.",
+      "evidence_quote": "By default, when you bounce a project, the entire project from start to end is bounced, but you can bounce only part of a project by setting the bounce range before performing a bounce. When Cycle mode is on, the bounce range matches the locator positions. … adjust the Start and End value sliders.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/set-the-bounce-range-lgcp190ba9b7/mac",
+      "salvage": "Leave room for the tails. Reverb and delay tails get cut off constantly, so before you bounce, push the End position past the last note — either by adjusting the End value slider in the Bounce dialog, or, with Cycle mode on, by dragging the right locator, since Apple documents that the bounce range matches the locator positions only when Cycle is on. Then listen to the end of the file before you send it."
+     },
+     {
+      "title": "Colour and name everything before you leave the session",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Session-hygiene advice with no assertion about Logic's behaviour, menus or shortcuts."
+     },
+     {
+      "title": "Save a version before every major change",
+      "verdict": "VERIFIED",
+      "reason": "The one checkable element, that New Alternative gives you a safe snapshot to experiment from, is documented by Apple. Note that the menu route is File > Project Alternatives > New Alternative, as flagged on the earlier alternatives trick.",
+      "evidence_quote": "Project alternatives let you save snapshots of a project in different states, including different cuts or mixes. … In Logic Pro, choose File > Project Alternatives > New Alternative.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+     }
+    ]
+   },
+   "challenge": {
+    "section": 17,
+    "downgrades": [
+     {
+      "title": "Turn on “Copy external audio files to project folder”",
+      "new_verdict": "WRONG",
+      "reason": "The auditor's own evidence quote never contains the option name — it only says 'select any of the copy checkboxes'. That supports the Assets pane existing, not the named checkbox, which is the whole falsifiable content of the title. I checked Apple's Assets settings page (support.apple.com/guide/logicpro/assets-settings-lgcp58b54e81/10.7/mac/11.0, i.e. version-matched to the book's 10.7+ coverage) and the checkboxes are: 'Copy audio files into project' ('If selected, all audio files used in the project are stored as part of your project package or folder'), 'Convert audio file sample rate when importing', 'Copy Sampler audio files into project', 'Copy Alchemy audio files into project', 'Copy Ultrabeat audio files into project', 'Copy Space Designer impulse responses into project'. There is no 'Copy external audio files to project folder' — that is old Logic-era wording, the same failure mode as the non-existent 'As Region Colour' found in sections 1-5. A reader hunting for a checkbox with that name will not find it. SOURCED CORRECTION: retitle to 'Turn on “Copy audio files into project”' and set the body to: 'In File > Project Settings > Assets, select Copy audio files into project — all audio files used in the project are then stored as part of your project package or folder, copied in when the project is saved. Tick the matching boxes for Sampler, Alchemy and Ultrabeat audio and Space Designer impulse responses if you use them. It is the difference between a project that opens on another machine and one that does not.'"
+     },
+     {
+      "title": "Consolidate before archiving",
+      "new_verdict": "WRONG",
+      "reason": "The auditor spotted the defect, wrote it into the reason, and then cleared the trick anyway. The book says Consolidate 'gathers every asset the project depends on into the project package'. Apple's Consolidate page (support.apple.com/guide/logicpro/consolidate-assets-in-a-project-lgcpce09b9d8/mac) says you 'select different asset types currently stored outside of your project' and 'In the Consolidate dialog, you select the checkboxes for the asset types you want to copy into the project, then click OK' — it is an opt-in dialog, not an automatic sweep — and the destination is 'the Media folder inside the project', not 'the project package' (a Logic project may be saved as a folder rather than a package). This matters exactly where the trick claims to help: a reader who runs Consolidate expecting everything to come along, and leaves boxes unticked, archives an incomplete project. SOURCED CORRECTION: 'File > Project Management > Consolidate (or the Consolidate Project key command) copies assets stored outside the project into the project''s Media folder. In the Consolidate dialog, tick the checkboxes for every asset type you want brought in — audio files, Sampler/Alchemy/Ultrabeat audio, Space Designer impulse responses, video, and Sound Library content such as Apple Loops — then click OK. Do this before backing up, and check the boxes rather than assuming.'"
+     },
+     {
+      "title": "Use “Bounce in Place” to commit a track to audio",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The headline element — the ⌃B in the trick's key field and the first words of the body — has no quoted source. The auditor's evidence quote is entirely about the menu route and the dialog checkboxes; Apple's page says only 'or use the corresponding key command', and the auditor's substitute was 'three independent third-party shortcut references' that were neither named nor quoted. I searched Apple's Global Commands and key-command tables directly and Control-B for Bounce Regions in Place does not appear in retrievable Apple text; the non-Apple hits are shortcut blog posts plus a Logic Pro 9.1.6 manual page and a scraped Logic Pro X help mirror — which is the version trap, not independent confirmation, since the book covers 10.7/11/12. Bounce-in-Place key assignments are also user-remappable. The verified core survives without it. SALVAGE: 'File > Bounce > Regions in Place commits the selected regions to audio; File > Bounce > Track in Place does a whole track. In the dialog you choose whether to bypass the effect plug-ins on the source track and whether to include volume and pan automation in the bounce. If you use it often, open Key Commands (⌥K), search for “in Place” and see or set the shortcut on your own system.'"
+     },
+     {
+      "title": "Export all tracks as audio files for stems",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The evidence block is contaminated. The sentence 'All exported tracks will start at 1 1 1 1 (the project start) when using Export All Tracks as Audio Files' is presented inside a quote attributed to an Apple URL, yet the auditor's own reason admits that part came from third parties, not Apple — fabricated attribution, and the sentence does not read like Apple guide prose. I pulled Apple's Mac page for this command and it documents a Range control: 'Choose whether to trim silence at the end of the exported file(s), export only the cycle range, or extend silence to the project end', plus Include Audio Tail and Include Volume/Pan Automation. So 'all starting at bar 1' is at best a default the reader can silently lose, and Apple never states it. Only the menu path and the one-file-per-track behaviour are Apple-backed ('export all tracks (all audio, software instrument, and Drummer tracks) in a project as audio files—one file per track'). SALVAGE: 'File > Export > All Tracks as Audio Files exports every audio, software instrument and Drummer track as its own file. Check the Range setting in the dialog before you click — it decides whether silence at the end is trimmed, only the cycle range is exported, or silence is extended to the project end — and turn on Include Audio Tail so reverb and delay tails survive. Line the setting up once and the stems drop out consistent, ready to hand to anyone.'"
+     }
+    ],
+    "sustained_count": 7
+   }
+  },
+  {
+   "section": 18,
+   "audit": {
+    "section": 18,
+    "search_worked": true,
+    "searches_used": 19,
+    "search_note": "WebSearch worked normally; 19 of ~20 budgeted searches used, aimed at Apple Logic Pro User Guide pages (Session Players overview, Session Player Editor, Edit a Bass/Keyboard Player performance, Follow rhythm of chords and other tracks, Convert Session Player regions, Chords overview / Analyze chords / Move and resize chords / Pitch Source, Stem Splitter, ChromaGlow, Flashback Capture, Show and hide global tracks) plus MusicTech and Logic Studio Training for 11.2 release facts. No group in this file has a \"path\" field, so there are no menu paths to report against a first trick. Where a trick's mechanism claim (e.g. \"complexity = notes per bar\", \"artefacts are frequency dependent\", \"performance engine is instrument-agnostic\") was not stated by any source, it is UNVERIFIABLE rather than assumed correct. Note two cross-cutting version issues the owner should decide on: (a) the section is titled \"Logic Pro 11 Update\" but Flashback Capture, six-stem Stem Splitter and the submix/preset options are 11.2 features, which the tricks mostly do label; (b) Apple's guide now also documents a separate Synth Bass Player and Synth Keyboard Player (Logic Pro 12), which the section never mentions.",
+    "tricks": [
+     {
+      "title": "Session Players are Drummer, extended to bass and keys",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Session Players overview names exactly these three players and describes creating them from the New Tracks dialog. The 'real, editable performance rather than a loop' framing is supported by the same page plus the documented Convert to MIDI Region command.",
+      "evidence_quote": "The Session Players feature the Bass Player, Keyboard Player, and Drummer. … In the New Tracks dialog, click Drummer, Bass Player, or Keyboard Player, then click Create to add a software instrument track with one 8-bar region.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac"
+     },
+     {
+      "title": "Every Session Player region is convertible to MIDI",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents the command for Session Player regions. One tightening: the command sits in a Convert submenu, so the copy should read 'choose Convert > Convert to MIDI Region'. Apple also warns the conversion is one-way in practice (edits are lost if you convert back), which is worth adding.",
+      "evidence_quote": "Control-click the Session Player region, then choose Convert > Convert to MIDI Region from the shortcut menu.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
+     },
+     {
+      "title": "Use the Follow parameter to lock players to each other",
+      "verdict": "WRONG",
+      "reason": "Apple's Follow Rhythm page gives Bass Player and Keyboard Player a 'Follow Rhythm Of' section with a Chords switch and a Track pop-up menu — you point them at a whole track, not at a kick drum. Kick/snare-level following is the Drummer's control (the Drummer's kick and snare follow another track), which is the reverse of what the trick tells the reader to set up.",
+      "evidence_quote": "In the Session Player Editor, depending on the Session Player type selected, Bass Player and Keyboard Player use the Patterns button, while Drummer uses the Patterns button for the Kick and Snare kit pieces. … below Follow Rhythm Of, you can choose a track from the Track pop-up menu",
+      "evidence_url": "https://support.apple.com/guide/logicpro/follow-rhythm-of-chords-and-other-tracks-lgcpca8dca3d/mac",
+      "correction": "In the Session Player Editor, click Patterns and look under Follow Rhythm Of. Leave the Chords switch on so the player tracks your progression, then use the Track pop-up menu to make the Bass Player follow your drum track and the Keyboard Player follow the bass. The three of them lock like a band rather than three separate parts. (Kick-and-snare-level following is a Drummer control: the Drummer's kick and snare can follow another track's rhythm.)"
+     },
+     {
+      "title": "Session Players respond to region length, so write in sections",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The useful half — per-region complexity and intensity — is documented (the Session Player Editor edits the region-based performance of the selected region). No source found says the generated performance responds to how long the region is, so that specific mechanism is unproven as written.",
+      "evidence_quote": "In the Session Player Editor, you can choose a Keyboard Player, Bass Player, or Drummer for the selected Session Player region, edit the region-based performance of a Session Player, and work with chords.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/the-session-player-editor-lgcp32d55998/mac",
+      "salvage": "Session Player settings are region-based, so write in sections. Give each song section its own region and set complexity and intensity per region in the Session Player Editor. That is how you get a verse that builds into a chorus."
+     },
+     {
+      "title": "Swap the player character without losing your settings",
+      "verdict": "WRONG",
+      "reason": "Settings do not persist automatically. Apple documents that you must turn on 'Keep Settings when Changing Style' in the Preset pop-up menu (and there is a separate Lock Settings button for finer control). A reader who follows this as written will change player and lose the performance settings.",
+      "evidence_quote": "To keep your performance settings when changing to a different player style, choose \"Keep Settings when Changing Style\" from the Preset pop-up menu in the Logic Pro Session Player Editor.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-session-player-performance-lgcp74b34026/mac",
+      "correction": "Before you start auditioning characters, choose 'Keep Settings when Changing Style' from the Preset pop-up menu in the Session Player Editor. With that on, your performance settings survive the swap and you can hear every character against the same arrangement in seconds. Use the Lock Settings button if you want to protect individual parameters such as Fills and Swing."
+     },
+     {
+      "title": "Set Feel to push or pull against the grid",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents the Feel knob with exactly this up/down behaviour, and Session Player settings are edited per selected region in the Session Player Editor. 'Single most musical control' is taste, not a checkable claim.",
+      "evidence_quote": "You can drag the Feel knob up to have the Session Player play ahead of the beat or down to play behind the beat.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-bass-player-performance-lgcp719a5d95/mac"
+     },
+     {
+      "title": "Regenerate a performance without changing anything else",
+      "verdict": "UNVERIFIABLE",
+      "reason": "No source found stating that nudging Complexity or Intensity produces a fresh variation of the same part rather than a deterministic change. The title also contradicts the body (it promises no change, then tells you to change two parameters). Not checked against any documented 'regenerate' command.",
+      "evidence_quote": "",
+      "evidence_url": "",
+      "salvage": "Small nudges to the Complexity or Intensity sliders often shift a phrase enough to fix it. If a bar is not landing, try nudging those sliders before you rebuild the part from scratch."
+     },
+     {
+      "title": "Layer two Session Players on the same part",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Pure arrangement taste — create two Session Player tracks and balance them. Nothing here asserts a Logic behaviour that could be shown false."
+     },
+     {
+      "title": "Bass Player follows the Chord track by default",
+      "verdict": "VERIFIED",
+      "reason": "Apple states the Bass Player's harmonies follow the global Chord track (or region chords), and that following chords is on by default. Caveat for the owner: 'including inversions and passing notes' is unsourced colour — no source found describing inversions or passing notes as a consequence of Chord track following.",
+      "evidence_quote": "The harmonies played by the Bass Player and Keyboard Player follow the global Chord track or region chords. … The option to follow the rhythm of chords is turned on by default.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac"
+     },
+     {
+      "title": "Use the Note Range control to keep the part in a register",
+      "verdict": "VERIFIED",
+      "reason": "Apple's Bass Player page carries a Note Range section with a Lowest Note slider that constrains what the player can play. Worth naming the actual control in the copy ('Lowest Note slider' under Note Range) rather than 'the Note Range control'.",
+      "evidence_quote": "You can set the lowest note the Bass Player can play by dragging the Lowest Note slider, which can be useful if a chord tone is lower than E3 and you want to include it.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-bass-player-performance-lgcp719a5d95/mac"
+     },
+     {
+      "title": "Adjust the Complexity slider before you adjust anything else",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The Complexity slider is documented, but Apple only says higher settings mean a more complex performance. Nothing found supports the specific mechanism 'it controls how many notes the player uses per bar', so that sentence is unproven as written.",
+      "evidence_quote": "In the Session Player Editor, you can drag the Complexity slider or Intensity slider to adjust the performance, where the higher you drag the respective slider, the greater the complexity or intensity of the performance.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-bass-player-performance-lgcp719a5d95/mac",
+      "salvage": "Reach for the Complexity slider first: drag it higher for a more complex performance, lower for a plainer one. Low complexity in a verse and high in a chorus is an arrangement decision made with one slider."
+     },
+     {
+      "title": "Turn on or off specific articulations",
+      "verdict": "WRONG",
+      "reason": "Apple's Bass Player controls do not match this list. Dead notes and slides are amount knobs, not on/off switches; mutes and pickup hits are buttons; and no hammer-on control is documented anywhere in the Bass Player settings. Style-dependent Details controls are probability knobs (Buzz Trills, Double Stops, Laid Back, Blue Notes, Slaps).",
+      "evidence_quote": "To adjust the number of percussive, unpitched notes: Drag the Dead Notes knob. … To have muted notes occur based on the surrounding notes: Click the Dynamic Mute button to turn it on. … click the Details button, then drag the Slides knob vertically. … To have the Bass Player hit the strings with an open palm on the second and fourth beats: Click the Pickup Hits button",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-bass-player-performance-lgcp719a5d95/mac",
+      "correction": "Click Details in the Session Player Editor and you get bass-specific articulation controls: a Dead Notes knob for percussive unpitched notes, a Slides knob for how often the player slides between and before notes, a Dynamic Mute button, and a Pickup Hits button. Depending on the style you also get probability controls such as Buzz Trills, Double Stops, Blue Notes and Slaps. Pulling the Slides knob down on its own makes a part sound completely different."
+     },
+     {
+      "title": "Pair Bass Player with Studio Bass for the intended sound",
+      "verdict": "VERIFIED",
+      "reason": "Apple states the Bass Player ships with the Studio Bass plug-in (and the Keyboard Player with Studio Piano), confirming the player engine and the sound source are separate things designed to work together.",
+      "evidence_quote": "The Bass Player and Keyboard Player come with plug-ins—the Studio Bass and the Studio Piano—to give you control over the players' sound.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac"
+     },
+     {
+      "title": "Set the Bass Player to follow a specific track's rhythm",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents the Track pop-up under Follow Rhythm Of and uses a guitar track as its own worked example for the Bass Player.",
+      "evidence_quote": "below Follow Rhythm Of, you can choose a track from the Track pop-up menu … it can make more musical sense during the chorus to have the Drummer and Bass Player follow the rhythm of a guitar track",
+      "evidence_url": "https://support.apple.com/guide/logicpro/follow-rhythm-of-chords-and-other-tracks-lgcpca8dca3d/mac"
+     },
+     {
+      "title": "Set the left-hand voicing before anything else",
+      "verdict": "VERIFIED",
+      "reason": "All three named left-hand voicings exist, and the right hand does have its own voicing menu plus a Movement menu. Two tightenings: Apple also lists 'Root, Fifth & Octave' as a left-hand option, and Movement is a pop-up menu that sets the range of keys the right hand uses, not an 'amount'.",
+      "evidence_quote": "you can choose left-hand voicing options including \"Root Only\" … \"Root & Fifth\" … \"Root & Octave\" … \"Root, Fifth & Octave\" … To change the range of keys the right hand uses, you choose an option in the Right-Hand Movement pop-up menu.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-keyboard-player-performance-lgcpde2a77cd/mac"
+     },
+     {
+      "title": "Use the left‑ and right‑hand controls independently",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents separate left-hand controls (voicing, plus a Style menu of Sustain Only / Simple / Moderate / Complex) and separate right-hand controls (Right-Hand Voicing and Right-Hand Movement pop-ups), so the hands genuinely can be set independently.",
+      "evidence_quote": "To change the complexity of the left-hand playing style, you can choose options in the Style pop-up menu including: Sustain Only … Simple … Moderate … Complex … To influence the voicing number, common tones, and chord extensions, you choose one of the options in the Right-Hand Voicing pop-up menu.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-keyboard-player-performance-lgcpde2a77cd/mac"
+     },
+     {
+      "title": "Set the rhythmic density separately from the complexity",
+      "verdict": "WRONG",
+      "reason": "There is no separate density control. Apple's Keyboard Player page enumerates the controls: Complexity and Intensity sliders shared by all Session Players, plus left-hand Voicing and Style, right-hand Voicing and Movement. The trick asserts 'both controls exist' when only one of the two named does.",
+      "evidence_quote": "you can drag the Complexity slider to adjust the performance, where the higher you drag the slider, the greater the complexity of the performance … To change the complexity of the left-hand playing style, you can choose options in the Style pop-up menu",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-keyboard-player-performance-lgcpde2a77cd/mac",
+      "correction": "Complexity and Intensity are two different things, and so are the two hands. Set overall Complexity and Intensity with the sliders, then use the left hand's Style menu (Sustain Only, Simple, Moderate, Complex) to make the left hand sparse while the right hand stays busy. Sparse and complex is a very different thing from busy and simple."
+     },
+     {
+      "title": "Convert to MIDI and delete the left hand entirely",
+      "verdict": "VERIFIED",
+      "reason": "The step this rests on is documented: a Session Player region converts to a normal MIDI region that you can edit in the Piano Roll, so deleting the low notes is straightforward. Add the exact route (Control-click > Convert > Convert to MIDI Region) and Apple's warning that you lose the Session Player edits if you convert back.",
+      "evidence_quote": "Control-click the Session Player region, then choose Convert > Convert to MIDI Region from the shortcut menu. The resulting MIDI region behaves the same way as any other MIDI region, and you can edit it in the Piano Roll Editor, Event List, or Step Editor.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
+     },
+     {
+      "title": "Use Keyboard Player as a writing tool, not a final part",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Workflow philosophy. The one mechanical step it leans on (convert to MIDI) is documented by Apple and verified elsewhere in this section."
+     },
+     {
+      "title": "Try it on a synth patch, not just a piano",
+      "verdict": "UNVERIFIABLE",
+      "reason": "No source found stating that the Keyboard Player's performance engine is instrument-agnostic or supported on arbitrary patches. Relevant version wrinkle the trick does not address: Apple's guide now documents separate Synth Bass Player and Synth Keyboard Player pages, which suggests synth-oriented playing is handled by dedicated players rather than by pointing the Keyboard Player at any patch.",
+      "evidence_quote": "Edit a Synth Bass Player performance in Logic Pro for Mac",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-synth-bass-player-performance-lgcp7d1b5306/mac",
+      "salvage": "Do not assume the Keyboard Player only belongs on piano. Try swapping the instrument on the track for a pad or a pluck and listen — and check whether the Synth Keyboard Player or Synth Bass Player suits the sound you are after."
+     },
+     {
+      "title": "Show the Chord track in Global Tracks",
+      "verdict": "VERIFIED",
+      "reason": "G is Apple's documented Show/Hide Global Tracks key command, the Chord track is enabled from the global tracks header, and Apple confirms Session Players follow the chords you enter. Optional tightening: the exact route to enable it is Control-click in the global tracks header area, then choose Chord.",
+      "evidence_quote": "choose Track > Global Tracks > Show Global Tracks, or use the Show/Hide Global Tracks key command (G) … To show the Chord track, control-click anywhere in the global tracks header area, then choose Chord",
+      "evidence_url": "https://support.apple.com/guide/logicpro/show-and-hide-global-tracks-lgcpd0e8ce94/mac"
+     },
+     {
+      "title": "Generate chords from an existing MIDI region",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents dragging a region to the Chord track for analysis, and explicitly covers audio as well as MIDI. There is also a shortcut-menu route (Chords > Analyze Chords) worth adding.",
+      "evidence_quote": "When you drag an audio or MIDI region to the Chord track, Logic Pro analyzes the region and adds the chords it contains to the Chord track as a chord group.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac"
+     },
+     {
+      "title": "Change one chord and hear the whole arrangement follow",
+      "verdict": "VERIFIED",
+      "reason": "Apple states that editing chords on the Chord track updates the Session Players' performances.",
+      "evidence_quote": "You can add chords to the Chord track and have all the Session Players in the project follow them, playing in sync with each other. When you edit the chords, the performances of the Session Players change to reflect your edits.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/chords-and-session-players-lgcp70dd5af3/mac"
+     },
+     {
+      "title": "Use the Chord track to transpose the whole song correctly",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents chord-track-driven transposition of regions and loops via the Pitch Source parameter in Logic Pro 11. Add the mechanism to the copy — it is not automatic; each region's Pitch Source has to be set to Chord Track. 'Keeps voicings musical' is the author's framing, not Apple's wording.",
+      "evidence_quote": "In Logic Pro for Mac 11 you can control the transposition of regions and loops in a project using the Pitch Source parameter in the Region inspector, with different options including following key signature changes, following the chords on the global Chord track, or following region chords.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/lgcp047d0131/mac"
+     },
+     {
+      "title": "Set chord duration precisely by dragging chord boundaries",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents resizing chords by dragging their lower edges, and chord creation follows the Snap setting. One behaviour the trick should warn about: resizing a chord also resizes its neighbours.",
+      "evidence_quote": "Move the pointer over the lower-left edge or the lower-right edge of the chord. The pointer becomes a Resize pointer. Drag the edge of the chord to shorten or lengthen it. … When you resize a chord, the preceding and following chords also resize to accommodate the length of the resized chord.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/move-and-resize-chords-lgcp6738dbfa/mac"
+     },
+     {
+      "title": "Turn Follow Chord Track off for parts that should not move",
+      "verdict": "WRONG",
+      "reason": "There is no 'Follow Chord Track' setting, and it is not per track. Apple's control is the Pitch Source parameter in the Region inspector, set per region, with options for Chord Track, region chords or key signature. A reader hunting for a Follow Chord Track switch will not find one.",
+      "evidence_quote": "you can override the default behavior using menu commands in the Chords menu in the Session Player Editor or using the Pitch Source parameter in the Region inspector … When you set a Session Player region to follow the Chord track, the Pitch Source parameter changes to Chord Track.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/choose-chords-a-session-player-region-lgcp87927044/mac",
+      "correction": "Following the Chord track is a per-region setting, not a per-track one, and it is called Pitch Source. Select the region, then use the Pitch Source pop-up in the Region inspector: Chord Track makes it follow your progression, and the other options (region chords, key signature) take it off the Chord track. Set it away from Chord Track for samples and anything already committed."
+     },
+     {
+      "title": "Split any mixed audio into stems",
+      "verdict": "VERIFIED",
+      "reason": "Menu path, the 11.2 six-stem list and the Apple silicon requirement all check out against Apple's guide plus MusicTech's 11.2 coverage.",
+      "evidence_quote": "In the Tracks area in Logic Pro, Control-click the audio region, then choose Processing > Stem Splitter. … In Logic Pro 11.2, you can separate a track by up to six stem tracks: Vocals, Drums, Bass, Guitar, Piano and Other. … Stem Splitter is available on Macs with an M1 or later Apple silicon processor.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
+     },
+     {
+      "title": "Use it on your own rough mixes, not just other people's records",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Advice about what to use the feature for. No checkable assertion about Logic's behaviour."
+     },
+     {
+      "title": "Split first, then process — artefacts are frequency dependent",
+      "verdict": "UNVERIFIABLE",
+      "reason": "No source found stating that Stem Splitter artefacts sit in predictable frequency regions, or that a high shelf or de-esser is the documented remedy. The ordering advice itself is harmless, but the artefact claim is unproven.",
+      "evidence_quote": "",
+      "evidence_url": "",
+      "salvage": "Split first, then process. Treat each stem as a new source: listen for separation artefacts on their own before you commit, and clean them up with gentle EQ or a de-esser on the stems that need it rather than processing the whole split."
+     },
+     {
+      "title": "Use single stems as layers, not as full replacements",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Mixing taste — bury the split stem under real drums. Nothing checkable about what Logic does."
+     },
+     {
+      "title": "Make an instrumental with one preset",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents the Preset menu and per-stem checkboxes in the Stem Splitter window, and MusicTech's 11.2 coverage confirms the Acapella/Instrumental presets and the submix option that combines stems into a single file.",
+      "evidence_quote": "click the Preset menu to choose a different preset, and click the checkboxes for individual stems to select or deselect them … preset combinations for common splitting scenarios (like \"Acapella\" for vocals-only or \"Instrumental\" for everything except vocals), submix options that can combine multiple stems into single files",
+      "evidence_url": "https://musictech.com/news/gear/apple-logic-pro-11-2-ipad-2-2-stem-splitter-flashback-capture-price-everything-else-you-need-to-know/"
+     },
+     {
+      "title": "Splitting is non‑destructive to the original",
+      "verdict": "UNVERIFIABLE",
+      "reason": "Apple describes what Apply creates but never states that the source region is left untouched and playable on its own track — that is an inference, and the exact wording as written is not sourced.",
+      "evidence_quote": "click Apply to create a summing stack below the track with the selected audio region, and the subtracks of the summing stack contain the extracted stems.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac",
+      "salvage": "Splitting adds rather than replaces. Clicking Apply creates a summing stack below the track holding the selected region, with the extracted stems on its subtracks — so the split lives alongside your source material and you can always start again."
+     },
+     {
+      "title": "ChromaGlow is five saturation models in one plugin",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents a Model pop-up menu of saturation models, and both Apple's page and Logic Studio Training's breakdown put the count at five (Retro Tube, Modern Tube, Magnetic, Analog Preamp, Squeeze). Naming the five in the copy would make the trick more useful.",
+      "evidence_quote": "The Model pop-up menu allows you to choose from a range of saturation models that emulate vintage audio equipment … ChromaGlow in Logic Pro: 5 Models, 10 Styles Explained",
+      "evidence_url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
+     },
+     {
+      "title": "Use the Drive and Output together to stay level‑matched",
+      "verdict": "VERIFIED",
+      "reason": "Both controls exist and do what the trick says: Drive sets saturation amount, and there is a plug-in output gain control. One naming fix — Apple calls the output control 'Level Out', not 'Output'. The 'louder sounds better' line is standard mixing lore, not a Logic claim.",
+      "evidence_quote": "The Drive knob sets the amount of saturation applied to the signal. The Level Out field sets the amount of gain applied to the plug-in output signal.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
+     },
+     {
+      "title": "Put it on the drum bus before the compressor",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Signal-chain opinion about saturating before compression. No assertion about Logic's behaviour that a buyer could show false."
+     },
+     {
+      "title": "Use Bypass Below to keep the low end clean",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents the Bypass Below control with exactly this behaviour — content below the set frequency is left unprocessed.",
+      "evidence_quote": "The Bypass Below field sets the frequency threshold below which the effect is bypassed, with frequencies below this threshold remaining unaffected while the effect is applied to frequencies above it.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
+     },
+     {
+      "title": "Try it on the master at very low drive",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Taste advice about how much saturation to use on a mix bus. Nothing checkable about Logic."
+     },
+     {
+      "title": "Flashback Capture retrieves what you just played",
+      "verdict": "VERIFIED",
+      "reason": "The rename, the added audio capability, the 11.2 version attribution and the Shift-R key command all check out against Apple's guide and 11.2 coverage. Add Apple's one limitation: audio can only be captured while the project is playing.",
+      "evidence_quote": "Logic Pro's Capture Recording feature was updated in version 11.2, and renamed to Flashback Capture. The key command (Shift + R) is the same … Click the Flashback Capture button in the control bar (or press Shift-R).",
+      "evidence_url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac"
+     },
+     {
+      "title": "⇧R is already on the keyboard, so build the reflex",
+      "verdict": "VERIFIED",
+      "reason": "Shift-R is confirmed as the Flashback Capture key command by Apple's guide and by Logic Studio Training's 11.2 write-up; the rest is habit advice built on that verified shortcut.",
+      "evidence_quote": "Works with one shortcut: Shift–R",
+      "evidence_url": "https://logicstudiotraining.com/flashback-capture-logic-pro/"
+     },
+     {
+      "title": "It works while the transport is stopped",
+      "verdict": "WRONG",
+      "reason": "True for MIDI, false for the audio half the trick advertises. Apple states audio capture requires the project to be playing, so telling readers the audio safety net covers noodling with the song stopped will lose them takes.",
+      "evidence_quote": "you can capture a recent audio performance to an audio track, even if Logic Pro for Mac wasn't recording while you were playing. You can capture audio only while the project is playing.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac",
+      "correction": "MIDI is caught either way — noodling with the song stopped is exactly when the good ideas arrive, and Flashback Capture catches those. The audio side added in 11.2 has one condition: you can capture audio only while the project is playing, so leave the transport rolling when the mic is the thing you might want back."
+     },
+     {
+      "title": "Use Mastering Assistant as an analysis tool, not a finisher",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Workflow opinion about reading what the assistant did and fixing the mix instead. Flag for the owner, though: it sits under a heading that frames it as a Logic 11 addition, and I did not verify which version introduced Mastering Assistant — check that before shipping."
+     },
+     {
+      "title": "Check plugin compatibility after updating",
+      "verdict": "UNVERIFIABLE",
+      "reason": "Budget spent elsewhere; I did not verify the claim that major Logic releases drop support for older plugin formats, and no source was consulted for Logic 11 or 12 specifically. The habit advice is sound but the premise is unchecked.",
+      "evidence_quote": "",
+      "evidence_url": "",
+      "salvage": "Before you rely on a new version for real work, open your three most important old projects and check every insert. Updates can change how third-party plug-ins load, and finding that out mid-session is expensive."
+     }
+    ]
+   },
+   "challenge": {
+    "section": 18,
+    "downgrades": [
+     {
+      "title": "Use Mastering Assistant as an analysis tool, not a finisher",
+      "new_verdict": "WRONG",
+      "reason": "The auditor cleared this as NO_FACTUAL_CLAIM while itself admitting the trick 'sits under a heading that frames it as a Logic 11 addition' and that it never checked the version. That version framing IS a checkable claim, and it is false. Mastering Assistant shipped in Logic Pro 10.8 (September 2023), a full release cycle before Logic Pro 11: DJ Mag, 'Apple updates Logic Pro to 10.8, adds Mastering Assistant'; gearnews.com, 'Logic Pro 10.8 now features Mastering Assistant'; whylogicprorules.com, 'Logic Pro 10.8 Update! - Mastering Assistant Comes to Logic Pro'; Mixonline's 'Apple Logic Pro 10.8' review. This is the same failure mode as the 32-bit-float/11.1 error from sections 1-5. Correction (sourced): Mastering Assistant was introduced in Logic Pro 10.8, not Logic Pro 11 - move it out of any 'new in 11' heading. Salvage: keep the advice verbatim, but retitle the surrounding heading and open with 'Mastering Assistant, added in Logic Pro 10.8 and still present in 11 and 12...'."
+     },
+     {
+      "title": "Bass Player follows the Chord track by default",
+      "new_verdict": "WRONG",
+      "reason": "The auditor's own 'by default' sentence is about a DIFFERENT setting - it quotes 'The option to follow the rhythm of chords is turned on by default', which concerns Follow Rhythm Of Chords, not chord-following priority. Apple's actual default is the opposite of the title: 'The Keyboard Player and the Bass Player can follow either the Chord track or the region chords. By default, when a Session Player region contains region chords, it follows the region chords. When it contains no region chords, it follows the chords on the Chord track.' (support.apple.com/guide/logicpro/choose-chords-a-session-player-region-lgcp87927044/mac, surfaced alongside the Session Players overview). So a reader with region chords on the region will not get Chord track behaviour and will think the book is wrong. The auditor also conceded that 'including inversions and passing notes' is unsourced colour, yet still stamped VERIFIED. Correction (sourced): a Session Player region follows its own region chords when it has any, and falls back to the global Chord track only when it has none; where no chords exist in either place the players play the tonic chord of the project key signature. Salvage: 'Bass Player and Keyboard Player get their harmony from chords, not from you. A region that carries its own region chords follows those; a region with no region chords follows the global Chord track. If neither exists, the player just holds the tonic of the project key. Use Choose Chords in the Session Player Editor to pick which source a region follows.'"
+     },
+     {
+      "title": "Use the Note Range control to keep the part in a register",
+      "new_verdict": "WRONG",
+      "reason": "The evidence names a control the trick does not, and the control it names does not do what the title says. Apple documents only a lowest-note floor for the Bass Player: 'You can set the lowest note the Bass Player can play by dragging the Lowest Note slider... Setting the lowest note value to B0 emulates five-string bass performances' (support.apple.com/guide/logicpro/edit-a-bass-player-performance-lgcp719a5d95/mac). There is no sourced upper bound, so nothing here can 'keep the part in a register' - a floor alone cannot constrain a register. The auditor spotted the naming problem ('Worth naming the actual control... rather than the Note Range control') and cleared it anyway. This is the 'As Region Colour' pattern: a plausible-sounding control name a buyer will hunt for and not find. Correction (sourced): the control is the Lowest Note slider, and it sets only the lowest note the Bass Player may play. Salvage: 'The Bass Player will voice down to whatever the chord suggests, which can put notes below where your track wants to sit. In the Session Player Editor, drag the Lowest Note slider to set the floor - raise it to keep the line off the sub, or drop it to B0 to emulate a five-string. Apple's own example is a chord tone below E3 you want included.'"
+     },
+     {
+      "title": "Set Feel to push or pull against the grid",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The evidence_quote reads reconstructed and I could not reproduce it. It claims 'drag the Feel knob up... ahead of the beat or down... behind the beat' from the Bass Player page, but the only Feel direction Apple actually documents runs the other axis: on 'Edit a Drummer performance' the Feel knob is dragged to the RIGHT to play ahead of the beat and to the LEFT to play behind (support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac). A targeted search of the Bass Player page returned its Lowest Note slider, Dead Notes knob and vertical Slides knob but surfaced no up/down Feel sentence at all. A drag direction is exactly the kind of instruction a buyer tests in ten seconds, so an unsourced one cannot ship as VERIFIED. Salvage: 'Feel is the single control that decides whether a Session Player sits on the grid or leans off it. Push it one way and the player rushes slightly ahead of the beat for urgency; push it the other and it lays back behind the beat for a heavier, lazier groove. Set it per region in the Session Player Editor with the region selected, and move it a little - a few degrees of Feel changes the character of a whole section. (Check the direction on your own copy; Apple documents ahead-of-beat and behind-of-beat as the two extremes of the same knob.)'"
+     },
+     {
+      "title": "Use the Chord track to transpose the whole song correctly",
+      "new_verdict": "WRONG",
+      "reason": "The auditor cleared a claim it simultaneously described as incomplete: 'Add the mechanism to the copy - it is not automatic; each region's Pitch Source has to be set to Chord Track.' As written the trick tells a buyer that moving chords on the Chord track transposes the song; on a default project it will transpose the Session Players and leave every ordinary audio region, MIDI region and loop exactly where it was, which reads as a broken feature. The evidence itself says the mechanism is opt-in per region: 'you can control the transposition of regions and loops in a project using the Pitch Source parameter in the Region inspector, with different options including following key signature changes, following the chords on the global Chord track, or following region chords.' The supporting URL is also an unlabelled guide stub (lgcp047d0131) rather than a named page. 'Keeps voicings musical' is the author's framing, not Apple's - the auditor conceded that too. Correction (sourced): transposition by Chord track is not automatic. Each region or loop must have its Pitch Source set (Region inspector) to follow the Chord track, region chords or key signature; this is a Logic Pro 11 feature, so say so."
+     },
+     {
+      "title": "Change one chord and hear the whole arrangement follow",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The evidence supports a narrower claim than the title. Apple's sentence is scoped to Session Players - 'You can add chords to the Chord track and have all the Session Players in the project follow them... When you edit the chords, the performances of the Session Players change to reflect your edits' - and says nothing about 'the whole arrangement'. Regular audio regions, MIDI regions and loops only follow the Chord track if each one's Pitch Source is set to do so (Region inspector, Logic Pro 11), which is the very gap the auditor flagged on the transposition trick two entries later. So the promise as titled is unsupported and, for a project of ordinary tracks, false. Salvage: 'Once your Session Players are following the Chord track, chord changes stop being a re-recording job. Drag a chord from a minor to its relative major and the Drummer keeps its groove while the Bass Player and Keyboard Player re-voice to the new chord - Apple documents that editing chords updates the Session Players' performances. Ordinary audio and MIDI regions do not follow automatically; set each one's Pitch Source in the Region inspector if you want them to come along too.'"
+     },
+     {
+      "title": "Set the left-hand voicing before anything else",
+      "new_verdict": "WRONG",
+      "reason": "The auditor listed two defects in the copy and then cleared it. Its own Apple quote enumerates FOUR left-hand voicings - 'Root Only... Root & Fifth... Root & Octave... Root, Fifth & Octave' - while the trick names three, so a reader looking at the pop-up sees an option the book does not account for. The same quote shows Right-Hand Movement is a pop-up menu of named options that sets the range of keys the right hand uses, not an 'amount' to be dialled, which is how the trick describes it. A trick whose whole point is 'set this control first' has to name the control's options correctly. Correction (sourced): the Left-Hand Voicing menu offers Root Only, Root & Fifth, Root & Octave and Root, Fifth & Octave; Right-Hand Movement is a pop-up menu that sets the range of keys the right hand uses (support.apple.com/guide/logicpro/edit-a-keyboard-player-performance-lgcpde2a77cd/mac)."
+     },
+     {
+      "title": "Use the Drive and Output together to stay level-matched",
+      "new_verdict": "WRONG",
+      "reason": "The trick names a control that does not exist under that name. I confirmed Apple's ChromaGlow page directly: the output control is the 'Level Out field: Set the amount of gain applied to the plug-in output signal' (support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac). There is no 'Output' control in ChromaGlow. The auditor identified this exact mismatch ('Apple calls the output control Level Out, not Output') and still marked it VERIFIED - the same class of error as the non-existent 'As Region Colour' option from sections 1-5. Correction (sourced): use Drive to set the amount of saturation and pull Level Out down to compensate, so you A/B the character rather than the level."
+     },
+     {
+      "title": "Every Session Player region is convertible to MIDI",
+      "new_verdict": "WRONG",
+      "reason": "The auditor's own note says the copy has to change to match Apple: 'the command sits in a Convert submenu, so the copy should read choose Convert > Convert to MIDI Region'. That is an admission that the menu path as printed is wrong, and a wrong menu path is precisely what a buyer hits in the first thirty seconds. The absolute framing ('Every... region') is also unverified - the cited page is titled for converting Session Player regions to MIDI *or pattern* regions, and I found no source stating the MIDI conversion is available for every Session Player type without qualification. Correction (sourced): Control-click the Session Player region, then choose Convert > Convert to MIDI Region from the shortcut menu; the result behaves like any other MIDI region and can be edited in the Piano Roll Editor, Event List or Step Editor (support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac)."
+     },
+     {
+      "title": "Session Players are Drummer, extended to bass and keys",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The exhaustive roster is what makes this trick a trick, and the roster is not verified for the versions the book claims to cover. Apple publishes a separate 'Edit a Synth Bass Player performance in Logic Pro for Mac' page (support.apple.com/en-me/guide/logicpro/lgcp7d1b5306/mac), so by 11.2/12 the Session Player family is documented beyond the three the trick names, and my search of the Session Players overview surfaced the Studio Bass/Studio Piano sentence but never the auditor's 'The Session Players feature the Bass Player, Keyboard Player, and Drummer' - that quote reads reconstructed. There is also no version qualifier: Bass Player and Keyboard Player arrived in Logic Pro 11 and do not exist in 10.7, which the book also claims to cover. Salvage: 'Drummer is no longer alone. From Logic Pro 11, Apple extended the same idea to harmony instruments - a Bass Player and a Keyboard Player join Drummer under the Session Players banner, and later updates have added more variants, so check the New Tracks dialog on your version for the full list. What matters is the principle: in the New Tracks dialog you pick a player and click Create, and Logic writes an eight-bar region of an actual performance you can shape, not a loop you can only trim. (None of this exists in 10.7 - Session Players beyond Drummer are an 11-and-later feature.)'"
+     }
+    ],
+    "sustained_count": 19
+   }
+  },
+  {
+   "section": 19,
+   "audit": {
+    "section": 19,
+    "search_worked": true,
+    "searches_used": 19,
+    "search_note": "WebSearch worked normally; 19 of the ~20 budgeted calls used. Section framing checks out: Logic Pro 12 shipped 28 January 2026, Apple silicon only, macOS 15.6+ (the Apple guide URL itself carries the version path .../lgcpc49d7e59/12.0/mac/15.6), so the intro and the \"One requirement before anything else\" notice are both externally supported. The single biggest defect in this section is the very first trick: Apple's guide states plainly that \"the Synth Players are Bass Player and Keyboard Player styles\" — Synth Player is NOT a third/new Session Player you pick when creating a track, and the Session Players remain Bass Player, Keyboard Player and Drummer. The style NAMES the book gives (808 Bass / Pump Bass / Sequenced Bass; Rhythmic Chords / Modulated Pad / Simple Pad) are all exactly right, which makes the wrong framing around them easy to miss. Second confirmed error: the backup trick asserts key commands, templates and channel strip settings all live in the user Library — only key commands do; templates and channel strip settings live in ~/Music/Audio Music Apps. Menu paths in this section held up well: File > Project Management > Consolidate, Logic Pro > Sound Library > Download All Available Sounds, Logic Pro > Settings > Advanced > Enable Complete Features, and Option-K for the Key Commands window are all confirmed against support.apple.com. Items I could not settle and did not fake: the \"Intensity opens the filter\" mechanism (only one blog says so; Apple documents a Details > Amount ducking knob for Pump Bass instead), whether arpeggiators follow the Chord track (Apple documents Step Sequencer and Session Player tracks following it, and describes the Arpeggiator as arpeggiating incoming MIDI notes — the arpeggiator half of that trick is unsupported), the \"audio preview\" wording for sound packs (Apple's Sound Library page describes a Preview button showing a video preview for Artist and Producer Packs), and the Mastering Assistant \"genre detection and interface changed in 12\" claim (supported only by two review blogs, neither on the approved source list). Nothing in the section ran out of budget unchecked — every UNVERIFIABLE below is a genuine \"searched and found no adequate source\" result.",
+    "tricks": [
+     {
+      "title": "Synth Player is the third Session Player",
+      "verdict": "WRONG",
+      "reason": "Apple's guide states that Synth Player is not a separate Session Player at all — it is a set of styles inside the existing Bass Player and Keyboard Player. There is no 'Synth' option to choose when creating a Session Player track, and the Session Players are Bass Player, Keyboard Player and Drummer (already three), so 'the third Session Player' is doubly wrong. The trick's instruction 'Create a Session Player track and choose Synth' will not match what a buyer sees on screen.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac",
+      "evidence_quote": "In Logic Pro for Mac, the Synth Players are Bass Player and Keyboard Player styles. ... You choose Synth Player styles in the Session Player Editor the same way as other Session Player styles. (And from the Session Players overview page: 'The Session Players feature the Bass Player, Keyboard Player, and Drummer.')",
+      "correction": "Synth Player is not a new Session Player — it is a set of styles inside the Bass Player and Keyboard Player you already have. Create a Bass Player or Keyboard Player track, open the Session Player Editor, and choose a Synth style the same way you choose any other style. The performance still follows the Chord track, so one progression can arrange bass and keys at once."
+     },
+     {
+      "title": "Pick the Synth Keyboard style before you touch anything else",
+      "verdict": "VERIFIED",
+      "reason": "All three Synth Keyboard Player style names are exactly as Apple documents them. The one-line characterisations of what each is for are taste, not falsifiable claims, and none of them contradicts Apple.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac",
+      "evidence_quote": "The Synth Keyboard Player styles are Rhythmic Chords, Modulated Pad, and Simple Pad."
+     },
+     {
+      "title": "Synth Bass ships with three distinct characters",
+      "verdict": "VERIFIED",
+      "reason": "All three Synth Bass Player style names match Apple's documentation exactly, and the count of three is right. The genre descriptions attached to each are taste rather than checkable assertions.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac",
+      "evidence_quote": "The Synth Bass Player styles are 808 Bass, Pump Bass, and Sequenced Bass."
+     },
+     {
+      "title": "Intensity changes tone, not just level",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The only source stating that higher Intensity opens the filter on Pump Bass is a single blog (knuckledustermusic.com), which is not sufficient on its own. Apple's own page for editing a Synth Bass Player performance documents a different control for Pump Bass character — a Details view with Amount and Shape knobs governing the ducking effect — and says nothing about Intensity affecting filter opening. The advice may well be right in practice, but it is not externally established as written.",
+      "salvage": "Pump Bass gets its movement from a modulated ducking effect, and you can shape it directly: in the Session Player Editor click the Details button, then drag the Amount knob vertically to change how hard it pumps and the Shape knob to change the curve of the duck. It is the fastest way to make a bassline build without drawing a single automation point.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/edit-a-synth-bass-player-performance-lgcp7d1b5306/mac",
+      "evidence_quote": "In the Logic Pro Session Player Editor for the Pump Bass style, click the Details button, then change the intensity of the ducking effect by dragging the Amount knob vertically. ... drag the Shape knob vertically to change the shape of the ducking curve."
+     },
+     {
+      "title": "Point Synth Player at a third-party synth",
+      "verdict": "VERIFIED",
+      "reason": "Apple confirms both halves: the default patch uses Alchemy (so engine and sound source are indeed separable) and Synth Players can drive any software instrument plug-in or external MIDI tone generator — matching the trick's 'any Audio Unit, and external hardware too'.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac",
+      "evidence_quote": "When you choose a Synth Player style in the Session Player Editor, the patch loaded uses the Alchemy plug-in to generate sound. However, you can use Synth Players with any software instrument plug-in or external MIDI tone generators."
+     },
+     {
+      "title": "Chord ID reads chords off audio, not just MIDI",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents Chord ID analysing audio as well as MIDI regions and writing the result to the Chord track when you drag the region there, which is exactly the workflow the trick describes. ('in seconds' is unquantified puffery but nothing contradicts it.)",
+      "evidence_url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac",
+      "evidence_quote": "When you drag an audio or MIDI region to the Chord track, Logic Pro analyzes the region and adds the chords it contains to the Chord track as a chord group."
+     },
+     {
+      "title": "Chord ID gets the harmonic rhythm, not just the chords",
+      "verdict": "UNVERIFIABLE",
+      "reason": "Apple documents that analysed chords are added to the Chord track as a chord group, but I found no source stating that Chord ID determines WHEN the chords change or that the result lands on the correct bars without further adjustment. Apple in fact documents a Change Display Only mode for adjusting the chords 'to match what you're actually hearing', which cuts against the trick's promise that nothing needs fixing afterwards.",
+      "salvage": "Chord ID writes what it finds straight onto the Chord track — drag an audio or MIDI region onto the Chord track and Logic analyses it and adds the chords it contains as a chord group. Play it back against the source before you build on it; the Chord track's Change Display Only mode lets you correct any chord that does not match what you are hearing without altering playback.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac",
+      "evidence_quote": "if you activate Change Display Only mode in the Chord track, you can adjust the chords to match what you're actually hearing, with changes only affecting the displayed chords and not playback"
+     },
+     {
+      "title": "Everything downstream follows the Chord track",
+      "verdict": "UNVERIFIABLE",
+      "reason": "Two of the three named followers are confirmed — Apple documents Step Sequencer patterns and Session Player regions following the Chord track. The arpeggiator is not: Apple's Arpeggiator pages describe it as generating arpeggios from incoming MIDI notes and never mention following the Chord track, so 'arpeggiators all follow the progression' is unsupported and the sentence cannot be VERIFIED as written.",
+      "salvage": "Once Chord ID has populated the Chord track, other tracks can lock to it. Apple: \"By following the Chord track, multiple tracks — such as tracks using Step Sequencer, Session Player tracks, and other software instrument tracks — can play in sync harmonically.\" Set a Session Player region to follow with Control-click > Chords > Follow Global Chord Track; set a Step Sequencer pattern to follow by choosing Chord Track, which renames the note rows to chord degrees. One analysis pass can arrange several parts at once.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/chords-and-pitch-in-step-sequencer-lgcp0426e066/mac",
+      "evidence_quote": "By following the Chord track, multiple tracks—such as tracks using Step Sequencer, Session Player tracks, and other software instrument tracks—can play in sync harmonically."
+     },
+     {
+      "title": "Run Chord ID on your own old bounces",
+      "verdict": "VERIFIED",
+      "reason": "The mechanism this advice depends on — dragging an audio file (a bounce) onto the Chord track and having Logic analyse it and write the chords there — is documented by Apple. The rest is workflow suggestion with nothing checkable that could be wrong.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac",
+      "evidence_quote": "When you drag an audio or MIDI region to the Chord track, Logic Pro analyzes the region and adds the chords it contains to the Chord track as a chord group."
+     },
+     {
+      "title": "Preview sound packs before you download them",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The deletion half is solidly confirmed by Apple (select an installed pack, click Delete; sizes and total space used are shown). The preview half is not confirmed as written: Apple's Sound Library page documents a Preview button but describes it in terms of a VIDEO preview for Artist and Producer Packs, not 'an audio preview of any pack'. Secondary coverage of Logic Pro 12 does mention audio previews, but no approved source states it, and Apple's own wording pulls the other way — so the specific 'plays an audio preview of any pack' claim stays unproven.",
+      "salvage": "The rebuilt Sound Library lets you look a pack over before you commit — click Preview on a pack to see what is in it, then Get to download it. It is also where you reclaim space: select an installed pack and click Delete. The total space used by all installed packs is shown at the top of the list, with each pack's size beside it.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/download-additional-sound-packs-lgcp8b3abc1c/mac",
+      "evidence_quote": "You can click the Preview button to see a preview of the video or click the play button in the upper-left corner of the Artist and Producer Packs to watch the full video. ... To download a sound pack, click Get next to the sound pack you want to download. ... click the sound pack you want to delete, then click Delete"
+     },
+     {
+      "title": "Re-run Mastering Assistant on older masters",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The claim that genre detection AND the interface both changed in Logic Pro 12 is supported only by two independent review blogs (horiamc.com, blog.imseankim.com), neither of which is an approved source, and I found no Apple documentation or approved-source coverage confirming a genre-detection change in 12. Apple's Mastering Assistant pages document the same character presets (Clean, Valve, Punch, Transparent) as before. The advice itself is harmless; the version-specific justification is the unproven part.",
+      "salvage": "Mastering Assistant is worth re-running on an older master after any major update. Reanalyse the mix on the master bus, then A/B the result against the version you signed off on before you call it finished — Apple's character presets (Clean, Valve, Punch, Transparent) give you four quick comparisons at once.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/mastering-assistant-overview-lgcp7f94da0b/mac",
+      "evidence_quote": "You can adjust essential parameters such as loudness, frequency distribution, and stereo width, or change the overall sound by selecting a character preset: Clean, Valve, Punch, Transparent."
+     },
+     {
+      "title": "Logic Pro 12 drops Intel Macs entirely",
+      "verdict": "VERIFIED",
+      "reason": "Confirmed from multiple directions: Apple's own Logic Pro 12 guide URLs carry the path segment /12.0/mac/15.6, and release coverage states the Apple silicon requirement and macOS 15.6 minimum, with Intel users left on Logic Pro 11.",
+      "evidence_url": "https://support.apple.com/en-in/guide/logicpro/lgcpc49d7e59/12.0/mac/15.6",
+      "evidence_quote": "Logic Pro 12 requires an Apple Silicon Mac and MacOS Sequoia 15.6 or newer ... This is the first version of Logic Pro that no longer supports Intel Macs (logicpros.net; corroborated by production-expert.com, 'Logic Pro 12: AI Features, New Tools And Intel Mac Support Dropped')"
+     },
+     {
+      "title": "Never update in the middle of a paid project",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Pure workflow judgement about when to update. No assertion about what Logic Pro does that a buyer could test and dispute."
+     },
+     {
+      "title": "Keep the previous version installed alongside the new one",
+      "verdict": "UNVERIFIABLE",
+      "reason": "No source supports the specific method given — duplicating Logic Pro in Applications, renaming the copy, and 'macOS will run both'. Apple documents a materially different procedure for keeping an outgoing version: compress the app to a zip and store it in a version-named folder inside Applications, then unzip and drag it back to Applications when you want to use it, which is a swap rather than two live installs. Since a buyer following the book's steps may not get the behaviour promised, the advice should be re-pointed at Apple's documented route.",
+      "salvage": "Keep the outgoing version before you update, using Apple's own procedure: make a folder inside Applications named for the version (for example \"Logic Pro 11.1.2\"), select Logic Pro and choose File > Compress \"Logic Pro\", then move the resulting Logic Pro.zip into that folder. If the new version gives you trouble, unzip that copy and drag it into Applications and you are back where you were.",
+      "evidence_url": "https://support.apple.com/en-tm/102029",
+      "evidence_quote": "Create a new folder in the Applications folder and name the folder with the name and version of the application (for example, \"Logic Pro 11.1.2\"). Select the Logic Pro application in the Applications folder and choose File > Compress \"Logic Pro\". Move the resulting \"Logic Pro.zip\" file into the folder you created."
+     },
+     {
+      "title": "Back up your key commands, templates and channel strip settings",
+      "verdict": "WRONG",
+      "reason": "The claim that all three 'live in your user Library' is false for two of the three. Key commands do live there (~/Library/Application Support/Logic/Key Commands, which is where the export dialog points). Project templates and channel strip settings live in ~/Music/Audio Music Apps — a buyer following this trick would go looking in the wrong folder and conclude their templates were gone. The export instruction itself is correct.",
+      "evidence_url": "https://logicstudiotraining.com/wiki/index.php/Channel_strip_settings",
+      "evidence_quote": "Channel Strip Settings are stored on the internal startup drive in the folder Music→Audio Music Apps→Channel Strip Settings. (And macprovideo.com, 'The Joys, And Benefits, Of Building Templates In Logic Pro X': custom templates are saved into a Project Templates folder in ~/Music/Audio Music Apps. Apple's Key Commands page: 'choose Options > Export Key Commands in the Key Commands window. A dialog opens, pointing to the default folder location: ~/Library/Application Support/Logic/Key Commands.')",
+      "correction": "Key commands are the only one of these that lives in your user Library. Open the Key Commands window (Option-K), choose Options > Export Key Commands, and save the file somewhere safe — the dialog defaults to ~/Library/Application Support/Logic/Key Commands. Your templates and channel strip settings live somewhere else entirely: ~/Music/Audio Music Apps/Project Templates and ~/Music/Audio Music Apps/Channel Strip Settings. Copy those two folders as well."
+     },
+     {
+      "title": "Consolidate and archive your three most important projects",
+      "verdict": "VERIFIED",
+      "reason": "The menu path is exactly as Apple documents it, and Apple explicitly frames Consolidate as the way to make a project safe to move or archive — which is precisely the use the trick puts it to.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/consolidate-assets-in-a-project-lgcpce09b9d8/mac",
+      "evidence_quote": "choose File > Project Management > Consolidate (or use the Consolidate Project key command) ... This ensures that if you move or copy the project to another computer, or archive the project for later use, the assets remain with the project and are accessible."
+     },
+     {
+      "title": "Check your critical third‑party plugins against the new version first",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "General advice about third-party developers' release timing and checking compatibility pages. It makes no checkable assertion about Logic Pro's behaviour."
+     },
+     {
+      "title": "Note your current I/O and buffer settings",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The advice rests on the assertion that 'major updates sometimes reset audio device preferences', and I found no source establishing that Logic Pro updates reset audio device settings. The screenshot habit is sound regardless, so the trick survives with the causal claim removed.",
+      "salvage": "Screenshot your Audio settings before you update — output device, input device and I/O buffer size. It takes five seconds, and if anything about your setup looks different afterwards you can restore the exact configuration you were working with instead of guessing at it."
+     },
+     {
+      "title": "Update macOS and Logic separately, a week apart",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Pure troubleshooting discipline — change one variable at a time. Nothing checkable about Logic Pro."
+     },
+     {
+      "title": "Open an old project and audit every insert",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Workflow advice: check your plug-ins after an update before trusting the migration. It asserts nothing specific about Logic Pro's behaviour that a buyer could disprove."
+     },
+     {
+      "title": "Rebuild your templates rather than opening old ones",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Taste and workflow. The general observation that new versions add track types and defaults an old template will not carry is not a specific checkable claim about any named feature."
+     },
+     {
+      "title": "Re-check Enable Complete Features after updating",
+      "verdict": "VERIFIED",
+      "reason": "Apple documents exactly this control at exactly this path in the current guide, and describes exactly the symptom the trick warns about — with it off, Logic runs in Simplified mode and whole areas of the program (Event/Marker/Tempo/Signature lists, Project Audio and All Files browsers, Step Editor, expanded mixing and automation) are unavailable. Note the path is 'Settings', not the old 'Preferences', which is correct for the versions this book covers.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac",
+      "evidence_quote": "Go to Logic Pro > Settings > Advanced, then select the Enable Complete Features checkbox. When selected, advanced features such as project alternatives and backups, beat mapping, expanded mixing and automation capabilities, and more are available."
+     },
+     {
+      "title": "Read the new Key Commands list for additions",
+      "verdict": "UNVERIFIABLE",
+      "reason": "The key command itself is confirmed — Option-K opens the Key Commands window. But 'sort by command name' is not supported by any source I found; Apple documents opening, browsing, importing and exporting key commands but not a sortable command-name column, so the instruction as written may send a buyer looking for a control that is not there. The trick works fine once that step is dropped.",
+      "salvage": "Open the Key Commands window after every update — Logic Pro > Key Commands > Edit, or Option-K — and read through it for commands you have not seen before. New features arrive with new commands, many of them unassigned by default, and this is the only place they announce themselves.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/key-commands-overview-lgcp32e85cd9/10.7/mac/11.0",
+      "evidence_quote": "You can open the Key Commands window by choosing Logic Pro > Key Commands > Edit or by pressing Option-K."
+     },
+     {
+      "title": "Run the Sound Library update fully before working",
+      "verdict": "VERIFIED",
+      "reason": "The menu path is exactly as Apple documents it. The 'silent tracks that look fine' aside is a consequence framing rather than a separate checkable claim, and nothing contradicts it.",
+      "evidence_url": "https://support.apple.com/guide/logicpro/download-additional-sound-packs-lgcp8b3abc1c/mac",
+      "evidence_quote": "In Logic Pro, you can choose Logic Pro > Sound Library > Download All Available Sounds."
+     },
+     {
+      "title": "Test your bounce path end to end before you need it",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Advice to rehearse your delivery formats before a deadline. No assertion about Logic Pro that could be shown false."
+     },
+     {
+      "title": "Give yourself a deliberate hour to explore",
+      "verdict": "NO_FACTUAL_CLAIM",
+      "reason": "Pure learning advice with nothing checkable in it."
+     }
+    ]
+   },
+   "challenge": {
+    "section": 19,
+    "downgrades": [
+     {
+      "title": "Re-check Enable Complete Features after updating",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "The evidence supports an adjacent claim, not the claim as written. The trick's operative assertion is that an update can switch Enable Complete Features OFF, so you should re-check it afterwards. Apple's page documents only what the checkbox does and what Simplified mode lacks; nothing in it says updating Logic resets the setting. That causal premise is the entire reason the trick exists and it has zero external support. Two further problems the auditor missed: (a) the auditor asserted 'the path is Settings, not the old Preferences, which is correct for the versions this book covers' -- that is false for Logic Pro 10.7, one of the three versions the book claims to cover, where Apple's own page is titled 'Advanced preferences in Logic Pro' and the route is Logic Pro > Preferences > Advanced (https://support.apple.com/guide/logicpro/advanced-preferences-lgcpb6dcc6fa/10.7/mac/11.0). This matters because the group heading is the generic 'After you update' and the section intro explicitly widens scope to 'surviving any major release', so a 10.7 reader is in scope. (b) The body's claim that the pane 'holds a single Enable Complete Features checkbox' -- i.e. that it contains only that one control -- is unverified. SALVAGE (keeps the genuinely verified part, drops the unproven cause): 'If half the program seems to have disappeared -- no Event or Marker lists, no Step Editor, no project alternatives -- check Logic Pro > Settings > Advanced and make sure Enable Complete Features is ticked. With it off, Logic runs in Simplified mode and a Simplified badge appears at the right of the control bar. On Logic Pro 10.7 the same control lives under Logic Pro > Preferences > Advanced.'"
+     },
+     {
+      "title": "Run the Sound Library update fully before working",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "I confirmed the menu path verbatim ('In Logic Pro, choose Logic Pro > Sound Library > Download All Available Sounds', https://support.apple.com/guide/logicpro/download-additional-sound-packs-lgcp8b3abc1c/mac), so that half is sound. But the auditor waved away the second sentence -- 'A half-downloaded library produces silent tracks that look fine' -- as 'consequence framing rather than a separate checkable claim'. That is exactly backwards: it is the only falsifiable mechanism claim in the trick, and it is the reason a reader would act on it. It asserts a specific silent-failure mode (audio absent, UI showing no problem) that no Apple page documents. Apple's own troubleshooting material on missing content describes prompts and unavailable-content notices, not tracks that play silently while looking normal. Unsourced and plausibly false. SALVAGE (verified route, unproven symptom removed): 'Before you start work on a fresh install, choose Logic Pro > Sound Library > Download All Available Sounds and let it finish. Patches that depend on content you have not downloaded yet will not load properly, and chasing that mid-session wastes an afternoon.'"
+     },
+     {
+      "title": "Rebuild your templates rather than opening old ones",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Downgraded from NO_FACTUAL_CLAIM: this smuggles in a checkable mechanism claim about what Logic does. The body states 'New versions add track types, settings and defaults that an old template will not have' and that rebuilding means 'you get every new default for free'. That is an assertion about how Logic handles template/project files across versions, not taste -- and it is doubtful on its face, since a template is just a project file and opening it in a newer Logic does not strip newly added features, while most new global defaults come from Settings rather than from the template. No source establishes that an old template withholds new defaults or that rebuilding confers them. SALVAGE (advice retained, mechanism claim dropped): 'After a major update, build a fresh template from a new empty project rather than carrying the old one forward. It takes about an hour, it forces you to notice what has changed, and it is a good moment to prune the tracks and busses you stopped using two projects ago.'"
+     },
+     {
+      "title": "Open an old project and audit every insert",
+      "new_verdict": "UNVERIFIABLE",
+      "reason": "Downgraded from NO_FACTUAL_CLAIM. The auditor said it 'asserts nothing specific about Logic Pro's behaviour that a buyer could disprove', but the instruction is 'Look for greyed-out or missing plugins on every channel' -- a specific claim about how Logic renders unavailable or failed-to-load plug-ins after a migration. Whether Logic greys such slots out (versus italicising them, showing a placeholder, throwing a dialog on load, or silently dropping them) is checkable and unsourced. A buyer who updates, sees no greyed-out slots, and assumes everything migrated has been misled by the trick's own detection criterion. SALVAGE (advice retained, unverified visual cue dropped): 'Before you trust the migration, open a finished older project and step through every channel strip, checking each insert actually loads and reports its plug-in name. Play the project back against a bounce you made under the previous version -- if something failed to instantiate, the difference is audible even when the session looks intact.'"
+     }
+    ],
+    "sustained_count": 12
+   }
+  }
+ ]
+}

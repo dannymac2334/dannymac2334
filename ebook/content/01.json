@@ -1,0 +1,175 @@
+{
+  "number": 1,
+  "title": "Setting Up My Preferred Settings",
+  "intro": "Before a single note goes down, get the program out of your way. This is the longest section in the book on purpose — an hour spent here saves you a hundred hours later. Everything below is a setting I change on every fresh install.",
+  "groups": [
+    {
+      "heading": "Audio preferences",
+      "path": "Logic Pro > Settings > Audio",
+      "tips": [
+        {
+          "t": "Run two buffer sizes, not one",
+          "d": "Set I/O Buffer to 64 or 128 while tracking so you can play in time, then switch to 512 or 1024 when you mix so plugins stop crackling. Nothing else in Logic changes your day this much.",
+          "k": "⌘,",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Set Processing Threads to Automatic",
+          "d": "Manually pinning thread counts was useful a decade ago. On Apple silicon, Automatic consistently beats hand tuning. Leave it alone."
+        },
+        {
+          "t": "Enable Multithreading on Playback Tracks",
+          "d": "Settings > Audio > Devices — set Multithreading to \"Playback & Live Tracks\" if you want live, record-enabled tracks spread across cores. \"Playback Tracks\" is the older behaviour: all live input DSP is handled by a single thread on a single core. Apple notes \"Playback & Live Tracks\" places slightly more overall load on the system, so if you have no demanding live tracks, \"Playback Tracks\" is the better choice."
+        },
+        {
+          "t": "Raise Process Buffer Range to Large for mixing",
+          "d": "This is separate from the I/O buffer and it buys you real headroom on plugin‑heavy projects. Drop it back to Small only if you notice sluggish response."
+        },
+        {
+          "t": "Uncheck Software Monitoring if you monitor through your interface",
+          "d": "If your interface has zero‑latency direct monitoring, Logic’s software monitoring just adds a second, slightly late copy of your voice. Turn it off and the doubling disappears."
+        }
+      ]
+    },
+    {
+      "heading": "Recording preferences",
+      "path": "Logic Pro > Settings > Recording",
+      "tips": [
+        {
+          "t": "Turn off “Allow Quick Punch‑In” only if you never punch",
+          "d": "Leave it on. Turn it on at Record > Allow Quick Punch-In (or Control-click the Record button in the control bar and choose it there). With it on, start playback and hit the Record Toggle key command at the moment you want to drop in — the transition happens with no audible gap and the recording before and after the punched section is untouched, which is a lifesaver when a take suddenly gets good."
+        },
+        {
+          "t": "Set the click source to a sound you can actually hear",
+          "d": "Open File > Project Settings > Metronome. The click is the Klopfgeist plug-in sitting on the Click channel strip, and every part of it is yours: raise the Bar velocity above the Beat velocity so the downbeat actually lands, and change the Note values to pitch the click somewhere it cuts through your mix. Want a different sound entirely? Load any instrument you like onto the Click channel strip and drive it with those same note numbers. A click you have to strain for is a click you will drift against."
+        }
+      ]
+    },
+    {
+      "heading": "MIDI preferences",
+      "path": "Logic Pro > Settings > MIDI",
+      "tips": [
+        {
+          "t": "Turn on scrubbing with audio in the Tracks area",
+          "d": "Settings > Audio > Editing > “Scrubbing with audio in Tracks area”. With it on you can drag the playhead over audio and hear it, which makes finding a spot by ear possible."
+        },
+        {
+          "t": "Set the MIDI reset options to send Notes Off only",
+          "d": "Leave the MIDI Reset Messages alone. Under Settings > MIDI > Reset Messages every box is unselected by default and Apple's guidance is to keep it that way — Logic handles MIDI reset messages automatically. The Control 123 (All Notes Off) and Control 121 (Reset Controls) options are there only for compatibility with older hardware; switch one on only if a specific old synth needs it."
+        },
+        {
+          "t": "Fix doubled notes from a controller",
+          "d": "If your synth plays a doubled, slightly flammed note on every key press, turn Local Control off on the synth, or use Project Settings > MIDI > General > “Instrument Without MIDI Thru Function”. One or the other, never neither."
+        }
+      ]
+    },
+    {
+      "heading": "View settings",
+      "path": "Logic Pro > Settings > View",
+      "tips": [
+        {
+          "t": "Turn on Enable Complete Features first, always",
+          "d": "Settings > Advanced > Enable Complete Features. It is one checkbox. Leave it off and Logic runs in Simplified mode with whole areas hidden — project alternatives, beat mapping, the full mixer and automation.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Turn off region colouring by track and colour by region instead",
+          "d": "Under Settings > View > Tracks, set the Region Color pop-up to \"Individual\" rather than \"As Track Color\". Individual lets you colour-code by part rather than by track, which scales much better on big arrangements — and if you switch back and forth, Logic remembers each region's individual colour."
+        },
+        {
+          "t": "Turn on “Show Help Tags”",
+          "d": "Help tags show exact position, length and delta values while you drag. They are how you edit precisely without opening a single numeric field."
+        }
+      ]
+    },
+    {
+      "heading": "General and advanced",
+      "path": "Logic Pro > Settings > General",
+      "tips": [
+        {
+          "t": "Set Cycle to “Auto‑set locators by region selection”",
+          "d": "Control-click the Cycle button in the control bar and turn on Auto Set Locators > by Region Selection. Now selecting a region snaps the locators and the cycle area to that region's borders, so C loops exactly what you picked. It turns cycle into a one-key operation."
+        },
+        {
+          "t": "Turn on “Select regions on track selection”",
+          "d": "Small setting, enormous effect. Clicking a track header selects that track’s regions, so every region command becomes a two‑step operation instead of a hunt."
+        },
+        {
+          "t": "Set “Limit Dragging to One Direction” to Vertically in the Tracks area",
+          "d": "Tick the \"Limit Dragging to One Direction: In Tracks\" checkbox in Logic Pro > Settings > General > Editing. Once you start a drag left or right, movement locks to the horizontal axis, so you cannot nudge a perfectly placed region onto another track by accident. To actually change tracks, let go, reselect, and drag up or down — or hold Shift to override the limit for one move. There is a matching checkbox for the Piano Roll and Score.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Read the Clean Up list before you confirm it",
+          "d": "File > Project Management > Clean Up always asks first and shows exactly what it will remove. Read the list — it deletes whole unused audio files, not just unused portions of them."
+        }
+      ]
+    },
+    {
+      "heading": "Project settings",
+      "path": "File > Project Settings",
+      "tips": [
+        {
+          "t": "Set your sample rate before you record, not after",
+          "d": "Under File > Project Settings > Audio, pick 48 kHz for anything that might touch video and 44.1 kHz for pure music (48 kHz is Logic's default on a fresh install). Change it after you have recorded or imported audio and Logic does not resample those files for you — they play back at the wrong pitch and speed. If you genuinely must convert, use File > Project Settings > Assets and select \"Convert audio file sample rate when importing\"."
+        },
+        {
+          "t": "Set the recording bit depth to 24-bit",
+          "d": "It lives in Settings > Recording, not Project Settings. 32-bit float is available from Logic Pro 10.8 (November 2023) onward and depends on your interface. Never record at 16-bit."
+        },
+        {
+          "t": "Turn on Smart Tempo “Keep Project Tempo” by default",
+          "d": "Under Project Settings > Smart Tempo, set the project mode to Keep. Adaptive mode is powerful but it will rewrite your tempo map from a single dragged‑in loop if you are not paying attention.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Stop new recordings arriving pre-quantised",
+          "d": "There is no auto-quantize switch. The default applied to new recordings is the Region inspector's Quantize value with no region selected — set it to off there. Capture the performance first; quantise as a decision."
+        },
+        {
+          "t": "Set Tuning to Equal Temperament unless you mean otherwise",
+          "d": "Project Settings > Tuning quietly affects every software instrument. If a synth sounds subtly wrong against a sample, check here first."
+        },
+        {
+          "t": "Turn on “Bounce project settings” for consistent exports",
+          "d": "Retitle to \"Copy your assets into the project so it travels\". Under File > Project Settings > Assets, tick the options to copy audio files, Ultrabeat and Sampler samples, Space Designer impulse responses and Apple Sound Library content into the project. The files are copied in the next time you save, and from then on you can move or copy the project without breaking a single file reference. Your project becomes portable in one move."
+        }
+      ]
+    },
+    {
+      "heading": "Defaults, templates and housekeeping",
+      "tips": [
+        {
+          "t": "Save a Session Start template and set it as the default",
+          "d": "Build one project with your usual tracks, buses, reverb and marker colours, then File > Save as Template. Set it to open on launch and you never build a session from zero again.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Set a default channel strip for new tracks",
+          "d": "Build one channel strip the way you always want to start — gain staging, your go-to EQ and compressor, the sends you always use. Click the Setting button at the top of the strip and choose \"Save Channel Strip Setting As\", and file it somewhere you will find it. From then on, every new track is two clicks from your starting point: open the Library, find your saved setting under User Channel Strip Settings, click it. Keeping a copy of that strip in your template gets you the same result with no clicks at all."
+        },
+        {
+          "t": "Set the default region colour palette",
+          "d": "Press ⌥C to open the Color palette (or Control-click a region and choose Name and Color > Show/Hide Colors). Double-click any swatch to open the Colors window and dial in a custom colour with the wheel and the contrast and opacity sliders. Decide once what each colour means to you — drums, vocals, keys, reference — and build that scheme into your template so every project opens with the same language. Consistent colours across projects make navigating an old session instant."
+        },
+        {
+          "t": "Turn on Project Alternatives before you need them",
+          "d": "File > Project Alternatives > New Alternative gives you branching versions inside one project file — name it and click Done. Make one before every big arrangement change. (You will only see the menu if Enable Complete Features is switched on in Settings > Advanced.) The same menu's Edit Alternatives lets you rename or remove them; the Main alternative cannot be removed."
+        },
+        {
+          "t": "Set autosave and then still hit ⌘S",
+          "d": "Retitle to \"Logic autosaves — still hit ⌘S\". Logic autosaves invisibly so you do not lose work if it quits unexpectedly, but there is no autosave setting to turn on or tune, and you will only ever meet it as a recovery prompt after a crash. What you control is ⌘S: every manual save also banks a backup of the current alternative (up to ten), reachable from File > Revert To. Build the reflex of hitting ⌘S every time you finish a thought.",
+          "k": "⌘S"
+        },
+        {
+          "t": "Move the Sound Library to an external drive on purpose",
+          "d": "Logic Pro > Sound Library > Relocate Sound Library lets you move tens of gigabytes off your system drive without breaking a single patch."
+        },
+        {
+          "t": "Set the audio file location to “Project” not “Folder”",
+          "d": "Retitle to \"Set the audio file location to ‘Package’ not ‘Folder’\". In the File > Save As dialog, choose \"Organize my project as: Package\". Keeping recorded audio inside the project package means dragging one file to a hard drive moves everything. Only switch to Folder if you are working with an enormous session across multiple drives."
+        }
+      ]
+    }
+  ]
+}
