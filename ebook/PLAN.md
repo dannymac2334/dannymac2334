@@ -11,7 +11,7 @@ $14.99 rather than exactly $14.99.
 
 ## 1. Why the web version should be the product
 
-The book's own promise is "use while producing." Nobody reads 251 tricks front to
+The book's own promise is "use while producing." Nobody reads 248 tricks front to
 back — they hit a problem, search, take the trick, get back to the music. A PDF
 answers that badly: you scroll, or you use a viewer's find, and you cannot filter.
 
@@ -41,7 +41,7 @@ plane, and "web library + PDF" is a visibly better offer than either alone.
 | --- | --- | --- | --- |
 | **Free sample** | `/logic-pro-tips` | Yes, indexed | ~25 tricks, full search UI |
 | **Sales page** | `/logic-pro-crash-course` | Yes, indexed | Pitch, preview tricks, price |
-| **Library** | `/library` | Token-gated | All 251 tricks + PDF link |
+| **Library** | `/library` | Token-gated | All 248 tricks + PDF link |
 
 The **free sample is the marketing**, not a giveaway. A paid-only page has no SEO —
 Google cannot index what it cannot reach, so a purely gated product has no organic
@@ -68,7 +68,7 @@ IN THE REPO (public, served by Netlify)
   netlify/functions/*.js        checkout, webhook, library, download
 
 NEVER IN THE REPO (private object storage / function-side)
-  library-content.json          all 251 tricks — fetched at runtime after auth
+  library-content.json          all 248 tricks — fetched at runtime after auth
   logic-pro-crash-course.pdf    served only via short-lived signed URL
 ```
 
@@ -151,7 +151,7 @@ Each phase ships something usable. Do not build 2 and 3 in parallel — payment
 without delivery is worse than neither.
 
 **Phase 0 — finish the accuracy work.** *(me, before launch)*
-119 of the 251 surviving tricks are rewrites that were never adversarially
+119 of the 248 surviving tricks are rewrites that were never adversarially
 re-checked. Close that first. Selling a reference whose corrections are unverified
 is the one thing that produces exactly the refund emails you want to avoid.
 

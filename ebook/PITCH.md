@@ -3,16 +3,16 @@
 _Extracted from the built page, so this is exactly what ships._
 
 **Price line:** $14.99 One payment · Yours to keep  
-**Trust line:** 84 pages · Instant download · Logic Pro 11 & 12
+**Trust line:** 91 pages · Instant download · Logic Pro 11 & 12
 
 Logic Pro · Digital download
 
 
 # Logic Pro Crash Course
 
-251 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff.
+248 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff. Every trick cites its source.
 
-84 pages · Instant download · Logic Pro 11 & 12
+91 pages · Instant download · Logic Pro 11 & 12
 
 The problem
 
@@ -23,7 +23,7 @@ You are three hours into a session, the idea is finally working, and you stop �
 
 That is not a skill problem. It is a lookup problem. Logic Pro has over two thousand commands, and the useful ones are buried three menus deep or sitting on a key nobody mentions.
 
-This book is the lookup. 251 tricks, sorted into 19 sections, each one short enough to read in ten seconds and use immediately.
+This book is the lookup. 248 tricks, sorted into 19 sections, each one short enough to read in ten seconds and use immediately.
 
 A few of them
 
@@ -53,7 +53,7 @@ In the editor, select the Follow Rhythm checkbox — the Kick & Snare slider bec
 What’s inside
 
 
-## 19 sections. 251 tricks.
+## 19 sections. 248 tricks.
 
 Organised by what you are doing, not by what menu it lives in — so you can find the right one mid-project without breaking your flow.
 
@@ -82,11 +82,15 @@ Questions
 
 **Q. Which version of Logic does it cover?**
 
-It works with Logic Pro 11 and 12. Every key command is the factory default on a US keyboard, and where a command could move between versions the book gives the exact command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic Pro 12: the Synth Player, Chord ID, the rebuilt Sound Library, and the fact that 12 is Apple silicon only.
+It works with Logic Pro 11 and 12. Every key command is the factory default on a US keyboard, and where a command could move between versions the book gives the exact command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic Pro 12: the Synth Player, Chord ID, and the fact that 12 runs only on Apple silicon.
+
+**Q. How do I know the tricks are right?**
+
+Every trick shows the source it was checked against — usually Apple's own Logic Pro guide — with a live link, so you can read the original yourself. Anything that could not be confirmed against a source was cut rather than printed on a guess.
 
 **Q. Is this a video course?**
 
-No. It is 251 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.
+No. It is 248 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.
 
 **Q. Do I need any third-party plugins?**
 
@@ -98,14 +102,14 @@ The early sections are settings and fundamentals — the things worth fixing bef
 
 **Q. What exactly do I get?**
 
-One PDF, 84 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.
+One PDF, 91 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.
 
 **Q. How is it delivered?**
 
 Instantly. You get a download link as soon as the payment clears.
 
 
-## Get the 251.
+## Get the 248.
 
-A single PDF, 84 pages, delivered the moment your payment clears. Every key command in it is the Logic Pro factory default; where a command could move between versions, the book gives the command name and menu path so it stays correct.
+A single PDF, 91 pages, delivered the moment your payment clears. Every key command in it is the Logic Pro factory default; where a command could move between versions, the book gives the command name and menu path so it stays correct.
 

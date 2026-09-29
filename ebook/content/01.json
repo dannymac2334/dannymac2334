@@ -8,7 +8,7 @@
       "tips": [
         {
           "t": "Run two buffer sizes, not one",
-          "d": "In Settings > Audio > Devices, keep the I/O Buffer Size small while you track so monitoring latency stays low. Raise it when you mix: a larger buffer lowers the load on your Mac's CPU. A buffer too small for your Mac shows up as clicks, pops and crackles.",
+          "d": "Open Settings with ⌘, and go to Audio > Devices. Keep the I/O Buffer Size small while you track so monitoring latency stays low. Raise it when you mix: a larger buffer lowers the load on your Mac's CPU. A buffer too small for your Mac shows up as clicks, pops and crackles.",
           "k": "⌘,",
           "b": "GAME CHANGER",
           "src": [
@@ -51,7 +51,7 @@
           ]
         },
         {
-          "t": "Raise Process Buffer Range to Large for mixing",
+          "t": "Set Process Buffer Range to Large to avoid overloads",
           "d": "In Settings > Audio > Devices, Process Buffer Range sets the buffer Logic uses to compute mixes and effects. It is separate from the I/O buffer and offers Small, Medium and Large. Apple's advice for avoiding system overloads is to set it to Large.",
           "src": [
             {
@@ -84,7 +84,7 @@
       "heading": "Recording",
       "tips": [
         {
-          "t": "Leave Allow Quick Punch-In on",
+          "t": "Turn on Allow Quick Punch-In",
           "d": "Choose Record > Allow Quick Punch-In, or Control-click the Record button in the control bar and choose Allow Quick Punch-In. With it on, you can punch in and out of recording on the fly while the project keeps playing.",
           "src": [
             {
@@ -102,7 +102,7 @@
           ]
         },
         {
-          "t": "Set the click to a sound you can actually hear",
+          "t": "Make the bar and the beat click sound different",
           "d": "In the project settings, the Metronome pane controls the audio click, which comes from Klopfgeist, a virtual metronome sound source on the Click channel strip. Separate Note and Velocity fields set the note number and velocity of the notes generated for the bar, group, beat or division, so you can make the bar and the beat sound different. The Tone slider changes the sound from a short click to a pitched percussion sound like a wood block or claves. The Audio Click checkbox also works with any other plug-in you load on the Click channel strip.",
           "src": [
             {

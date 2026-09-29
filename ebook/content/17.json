@@ -8,7 +8,7 @@
       "tips": [
         {
           "t": "Open Key Commands with ⌥K and use the search box",
-          "d": "In the Key Commands window, type a term in the search field to find a command by name, then assign a key to it.",
+          "d": "Open Key Commands with ⌥K, type a term in the search field to find a command by name, then assign a key to it.",
           "k": "⌥K",
           "b": "GAME CHANGER",
           "src": [
@@ -113,7 +113,7 @@
         },
         {
           "t": "Check the Normalize setting before you bounce",
-          "d": "Before you bounce a project, check the Normalize setting. On scans the audio for its highest peak, then raises the level so that peak reaches the maximum possible level without clipping. Overload Protection Only turns the level down only for overloads (levels above 0 dB, which would clip) and does nothing to lower levels. In Logic's Bounce Regions in Place dialog, the Normalize pop-up menu has three settings: Off (turns normalization off), Overload Protection Only and On.",
+          "d": "Both the project bounce and Bounce Regions in Place have a Normalize setting. Off leaves the level alone. Overload Protection Only turns the level down only where it would clip above 0 dB. On raises the level so the highest peak reaches the maximum possible without clipping.",
           "src": [
             {
               "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",

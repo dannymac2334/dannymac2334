@@ -790,3 +790,33 @@ agent whose job was to strip any sentence the source does not support.
 - `CUT` ⌘← / ⌘→ — Zoom out / in horizontally — The preferred-domain search summary gives Command-Left Arrow = Zoom Horizontal Out and Command-Right Arrow = Zoom Horizontal In. This is PLAUSIBLE because the summary does not attribute the keys to a specific page.
 - `CUT` ⌘↑ / ⌘↓ — Zoom out / in vertically — The preferred-domain search summary gives Command-Up Arrow = Zoom Vertical Out and Command-Down Arrow = Zoom Vertical In, which matches the book. This is PLAUSIBLE: a summary drawn from non-preferred sites reversed the direction, and the preferred summary does not name the page that states it.
 - `CUT` ⇧⌘S — Save as — Shift-Command-S was not confirmed for Logic Pro by any retrieved source. The only mention came from Apple's Impulse Response Utility pages, a different app.
+
+## Consistency pass — titles and key chips checked against verified bodies
+
+- `title` S1 — Raise Process Buffer Range to Large for mixing → Set Process Buffer Range to Large to avoid overloads
+- `title` S1 — Leave Allow Quick Punch-In on → Turn on Allow Quick Punch-In
+- `title` S1 — Set the click to a sound you can actually hear → Make the bar and the beat click sound different
+- `title` S2 — Insert silence across the whole project → Insert silence between the locators
+- `title` S4 — Merge takes when you are layering, not replacing → Merge cycle takes to layer a part pass by pass
+- `title` S6 — Check your input with the channel strip's meter, not your ears → Aim your peaks at −12 to −18 dBFS
+- `title` S6 — Drop the I/O buffer to its lowest setting for tracking → Track at the lowest I/O buffer your Mac can handle
+- `title` S6 — Turn off software monitoring if you hear yourself twice → Turn off Software Monitoring when your interface can monitor
+- `title` S7 — T opens the Tool menu, T twice returns to the Pointer → T opens the Tool menu, T again closes it
+- `title` S8 — Use “Remove Silence from Audio Region” for noisy tracks → Use “Remove Silence from Audio Region” on a live kit or spoken word
+- `title` S8 — Reset a bad Flex edit rather than undoing repeatedly → Reset all Flex edits rather than undoing repeatedly
+- `title` S8 — Normalise regions non‑destructively with Gain → Change region level non‑destructively with Gain
+- `title` S8 — Reverse a region for a riser in two clicks → Reverse a region, destructively or not
+- `title` S9 — ⌘-drag anywhere to marquee select → Make Marquee your ⌘-click tool
+- `title` S14 — Drag MIDI out of Slice mode into the Tracks area → Shuffle the slice MIDI to rearrange the break
+- `title` S11 — Use Skip and Loop Start/End for live rearranging → Use Skip and Loop Start/End to reshape a row
+- `title` S18 — Pair Bass Player with Studio Bass for the intended sound → Pair Bass Player with Studio Bass for its slides
+- `body` S1 — rewritten: Open Settings with ⌘, and go to Audio > Devices. Keep the I/…
+- `body` S4 — rewritten: To build up a drum pattern one element per pass, set MIDI cy…
+- `body` S6 — rewritten: Press ⌘. — Discard Recording and Return to Last Play Positio…
+- `body` S10 — rewritten: Press A to show or hide track automation. In the Audio Track…
+- `body` S17 — rewritten: Open Key Commands with ⌥K, type a term in the search field t…
+- `body` S17 — rewritten: Both the project bounce and Bounce Regions in Place have a N…
+- `body` S19 — rewritten: Logic Pro 12 requires a Mac with Apple silicon and macOS 15.…
+- `cut` S18 — removed: ⇧R is already on the keyboard, so build the reflex
+- `cut` S10 — removed: Draw automation with the Pencil tool for precision
+- `cut` S9 — removed: Hold ⇧ to extend an existing marquee

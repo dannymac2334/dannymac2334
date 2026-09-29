@@ -76,7 +76,7 @@
       "heading": "Getting it into the arrangement",
       "tips": [
         {
-          "t": "Drag MIDI out of Slice mode into the Tracks area",
+          "t": "Shuffle the slice MIDI to rearrange the break",
           "d": "The generated MIDI plays the slices in the original order. Now shuffle the notes and the break rearranges itself.",
           "b": "GAME CHANGER",
           "src": [

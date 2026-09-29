@@ -128,11 +128,15 @@ def main():
 
     keys = collections.defaultdict(list)
     titles = collections.defaultdict(list)
+    cited = {}
     total = 0
 
     for tbl in (t for p in front["pages"] for t in p.get("tables", [])):
-        for k, action in tbl["rows"]:
+        for row in tbl["rows"]:
+            k, action = row[0], row[1]
             keys[k.strip()].append(("front matter", action))
+            if len(row) < 3 or not row[2]:
+                failures.append(f"front matter: key-table row with no source: {k} {action!r}")
 
     for s in secs:
         if not s.get("groups"):
@@ -144,6 +148,7 @@ def main():
                     if not tip.get(field, "").strip():
                         failures.append(f"S{s['number']}: tip missing '{field}'")
                 titles[tip["t"].strip().lower()].append(s["number"])
+                cited[(f"S{s['number']}", tip["t"])] = bool(tip.get("src"))
                 if tip.get("k"):
                     keys[tip["k"].strip()].append((f"S{s['number']}", tip["t"]))
                 # 5. citation — a trick that states a fact about Logic must say where
@@ -203,8 +208,11 @@ def main():
             warnings.append(f"key {k!r} is not in the verified registry")
 
     print(f"tricks: {total}    sections: {len(secs)}    distinct keys: {len(keys)}")
-    confirmed_used = sum(1 for k in keys if k in CONFIRMED)
-    print(f"keys confirmed against documentation: {confirmed_used}/{len(keys)}")
+    # A key is "cited" when every trick that uses it carries a source. That is
+    # the measure that matters now; the registry above is a second, older guard.
+    cited_keys = {k for k, uses in keys.items()
+                  if all(where == "front matter" or cited.get((where, t)) for where, t in uses)}
+    print(f"key commands on cited tricks: {len(cited_keys)}/{len(keys)}")
 
     for w in warnings:
         print(f"  WARN  {w}")

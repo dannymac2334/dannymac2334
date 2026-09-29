@@ -105,7 +105,7 @@
           ]
         },
         {
-          "t": "Pair Bass Player with Studio Bass for the intended sound",
+          "t": "Pair Bass Player with Studio Bass for its slides",
           "d": "The electric and acoustic Bass Players use dedicated MIDI events and articulations to create slides in the Studio Bass plug-in.",
           "src": [
             {
@@ -404,21 +404,6 @@
             {
               "label": "Sound On Sound — Apple Logic Pro 11.2 review",
               "url": "https://www.soundonsound.com/reviews/apple-logic-pro-11-2"
-            },
-            {
-              "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
-              "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac"
-            }
-          ]
-        },
-        {
-          "t": "⇧R is already on the keyboard, so build the reflex",
-          "d": "The whole value of the feature is that it costs nothing to reach for. Hit it the moment you play something you like, before you have decided whether it was any good.",
-          "k": "⇧R",
-          "src": [
-            {
-              "label": "Apple — Capture your most recent MIDI performance in Logic Pro for Mac",
-              "url": "https://support.apple.com/guide/logicpro/capture-your-most-recent-midi-performance-lgcpdc0bf889/mac"
             },
             {
               "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",

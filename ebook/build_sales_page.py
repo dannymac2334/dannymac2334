@@ -19,7 +19,7 @@ import pathlib
 
 import re
 
-from build import esc, keycap, load, slug, count_tips
+from build import esc, keycap, load, slug, count_tips, sources_html
 from build_site_page import FOOTER, SITE_NAV, page_css
 
 ROOT = pathlib.Path(__file__).parent
@@ -55,11 +55,11 @@ URL = "https://www.dannnymcccarthy.com/logic-pro-crash-course"
 # (section number, fragment of the trick title) — resolved against content/
 PREVIEW = [
     (4, "Capture the last thing you played"),
-    (9, "Click any region after marqueeing"),
+    (9, "Make Marquee your ⌘-click tool"),
     (18, "Split any mixed audio into stems"),
     (11, "Give every row a different step rate"),
     (19, "Chord ID reads chords off audio"),
-    (12, "Turn on Follow Rhythm"),
+    (12, "Convert a Drummer region to MIDI"),
 ]
 
 FAQ = [
@@ -68,8 +68,12 @@ FAQ = [
      "US keyboard, and where a command could move between versions the book gives the exact "
      "command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 "
      "features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 "
-     "covers Logic Pro 12: the Synth Player, Chord ID, the rebuilt Sound Library, and the fact "
-     "that 12 is Apple silicon only."),
+     "covers Logic Pro 12: the Synth Player, Chord ID, and the fact that 12 runs only on Apple "
+     "silicon."),
+    ("How do I know the tricks are right?",
+     "Every trick shows the source it was checked against — usually Apple's own Logic Pro guide — "
+     "with a live link, so you can read the original yourself. Anything that could not be confirmed "
+     "against a source was cut rather than printed on a guess."),
     ("Is this a video course?",
      f"No. It is {TRICKS} written tricks: title, what it does, the key command. Most take ten "
      "seconds to read. It is built to sit open on a second screen while you work, not to be "
@@ -186,6 +190,8 @@ def preview_card(sec, tip, i):
         k = keycap(keys).replace('class="kbd kbd-phrase"', 'class="lp-kbd phrase"')
         k = k.replace('class="kbd"', 'class="lp-kbd"')
         o.append(f'<div class="lp-keys">{k}</div>')
+    if tip.get("src"):
+        o.append(sources_html(tip["src"], cls="lp-src"))
     o.append("</article>")
     return "".join(o)
 
@@ -259,7 +265,7 @@ def main():
     <p class="lp-eyebrow reveal">Logic Pro &middot; Digital download</p>
     <h1 class="reveal d1">Logic Pro<br>Crash Course</h1>
     <p class="lp-lead reveal d1">{total} tricks that actually work — the ones nobody tells you,
-    in one clickable PDF you keep open while you produce. No long tutorials. No fluff.</p>
+    in one clickable PDF you keep open while you produce. No long tutorials. No fluff. Every trick cites its source.</p>
     <div class="lp-price reveal d2"><b>${PRICE}</b><span>One payment &middot; Yours to keep</span></div>
     <div class="lp-cta reveal d2">{buy("Get instant access")}</div>
     <p class="lp-trust reveal d3"><span>{PAGES} pages</span><i>&middot;</i>

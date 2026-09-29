@@ -54,7 +54,7 @@
           ]
         },
         {
-          "t": "Insert silence across the whole project",
+          "t": "Insert silence between the locators",
           "d": "Set the locators around the gap you want, then choose Edit > Cut/Insert Time > Insert Silence Between Locators. A region that crosses the left locator is cut there, and the part after it moves to the right of the right locator. It's a quick way to add two bars to an intro.",
           "src": [
             {

@@ -7,7 +7,7 @@
       "heading": "The essentials",
       "tips": [
         {
-          "t": "⌘-drag anywhere to marquee select",
+          "t": "Make Marquee your ⌘-click tool",
           "d": "Make Marquee your Command-click tool. In the Tracks area, click the Command-click Tool menu and choose the Marquee tool. From then on, hold ⌘ and drag to marquee-select parts of regions on one or more tracks. Release ⌘ and you're back on your Left-click tool.",
           "b": "GAME CHANGER",
           "k": "⌘ + drag",
@@ -95,17 +95,6 @@
         {
           "t": "Use marquee to create a drop",
           "d": "Drag in the marquee ruler across the bar before a chorus to select it on every track, then delete. You get clean, arrangement-wide silence for that bar in one edit.",
-          "src": [
-            {
-              "label": "Apple — Select parts of regions in Logic Pro for Mac",
-              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
-            }
-          ]
-        },
-        {
-          "t": "Hold ⇧ to extend an existing marquee",
-          "d": "Fine‑tune the selection edge by edge rather than redrawing the whole thing.",
-          "k": "⇧ + click",
           "src": [
             {
               "label": "Apple — Select parts of regions in Logic Pro for Mac",

@@ -65,7 +65,7 @@
           ]
         },
         {
-          "t": "Use “Remove Silence from Audio Region” for noisy tracks",
+          "t": "Use “Remove Silence from Audio Region” on a live kit or spoken word",
           "d": "Select the audio region and press ⌃X (Remove Silence from Audio Region). Everything below a threshold you set is removed, and new regions are created from what remains. That makes it useful for a live kit or spoken word.",
           "b": "GAME CHANGER",
           "k": "⌃X",
@@ -133,7 +133,7 @@
           ]
         },
         {
-          "t": "Reset a bad Flex edit rather than undoing repeatedly",
+          "t": "Reset all Flex edits rather than undoing repeatedly",
           "d": "Control-click the flexed region and choose Reset All Flex Edits. It clears the region's flex data and starts you fresh.",
           "src": [
             {
@@ -158,7 +158,7 @@
           ]
         },
         {
-          "t": "Normalise regions non‑destructively with Gain",
+          "t": "Change region level non‑destructively with Gain",
           "d": "The Region inspector's Gain parameter changes playback level without touching the file. Always try this before normalising.",
           "src": [
             {
@@ -182,7 +182,7 @@
           ]
         },
         {
-          "t": "Reverse a region for a riser in two clicks",
+          "t": "Reverse a region, destructively or not",
           "d": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version.",
           "src": [
             {

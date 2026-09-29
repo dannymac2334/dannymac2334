@@ -135,7 +135,7 @@
           ]
         },
         {
-          "t": "Use Skip and Loop Start/End for live rearranging",
+          "t": "Use Skip and Loop Start/End to reshape a row",
           "d": "Skip drops a step from playback: the sequencer moves straight to the next step, which shortens the row by that step's length. Loop Start/End sets where the row cycles.",
           "src": [
             {

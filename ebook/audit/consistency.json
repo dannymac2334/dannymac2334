@@ -1,0 +1,159 @@
+[
+ {
+  "checked": 63,
+  "fixes": [
+   {
+    "ref": "1/0/0",
+    "problem": "The key chip ⌘, is never mentioned in the body. The body only gives the menu path Settings > Audio > Devices.",
+    "new_key": ""
+   },
+   {
+    "ref": "1/0/3",
+    "problem": "The title says to use Large 'for mixing', but the body never ties the setting to mixing. It says the buffer is used to compute mixes and effects, and that Apple advises Large to avoid system overloads.",
+    "new_title": "Set Process Buffer Range to Large to avoid overloads"
+   },
+   {
+    "ref": "1/1/0",
+    "problem": "'Leave ... on' suggests the option is already on by default. The body never says so: it tells the reader how to turn it on (Record > Allow Quick Punch-In, or Control-click the Record button).",
+    "new_title": "Turn on Allow Quick Punch-In"
+   },
+   {
+    "ref": "1/1/1",
+    "problem": "The title promises a click 'you can actually hear' (an audibility result). The body only says how to change the click's sound: Note/Velocity per bar/beat, a Tone slider from click to wood block/claves, and other plug-ins on the Click strip. It says nothing about volume or audibility.",
+    "new_title": "Make the bar and the beat click sound different"
+   },
+   {
+    "ref": "2/0/4",
+    "problem": "The title claims the silence goes 'across the whole project'. The body only says Edit > Cut/Insert Time > Insert Silence Between Locators cuts a region that crosses the left locator and moves the rest. It never says every track or the whole project is affected.",
+    "new_title": "Insert silence between the locators"
+   },
+   {
+    "ref": "4/2/0",
+    "problem": "The title's contrast 'not replacing' is not in the body. The body is also garbled from trimming: 'set MIDI cycle recording to Merge instead' refers back to an alternative that was removed, so 'instead' has nothing to point to. Flag the body so the dangling 'instead' gets fixed.",
+    "new_title": "Merge cycle takes to layer a part pass by pass"
+   }
+  ]
+ },
+ {
+  "checked": 63,
+  "fixes": [
+   {
+    "ref": "6/0/0",
+    "problem": "The title's claims about the channel strip's meter and 'not your ears' are not in the body. The body only gives a peak target of −12 to −18 dBFS and says recording hot doesn't help in 24-bit.",
+    "new_title": "Aim your peaks at −12 to −18 dBFS"
+   },
+   {
+    "ref": "6/0/1",
+    "problem": "The title says to use the buffer's lowest setting. The body says to use the lowest size your Mac can handle and to step it up if overloads appear.",
+    "new_title": "Track at the lowest I/O buffer your Mac can handle"
+   },
+   {
+    "ref": "6/0/5",
+    "problem": "Garbled: the body's first sentence repeats the title word for word ('Record‑enable multiple tracks at once.'). No title or key change is needed."
+   },
+   {
+    "ref": "6/1/0",
+    "problem": "Neither the title's ⌘. nor the ⌘. key chip appears in the body. The body only says 'Stop and delete in one keystroke' and never names the key, so the trick no longer tells the reader which key to press. It needs a body fix or should be cut.",
+    "new_title": "Stop and delete a bad take in one keystroke",
+    "new_key": ""
+   },
+   {
+    "ref": "6/2/2",
+    "problem": "The title's symptom, 'if you hear yourself twice', is not in the body. The body says software monitoring always carries some delay, and says to turn it off when the interface supports hardware monitoring.",
+    "new_title": "Turn off Software Monitoring when your interface can monitor"
+   },
+   {
+    "ref": "7/2/0",
+    "problem": "The title says pressing T twice returns to the Pointer. The body only says pressing T again closes the Tool menu.",
+    "new_title": "T opens the Tool menu, T again closes it"
+   },
+   {
+    "ref": "8/1/1",
+    "problem": "The title's use case, 'for noisy tracks', is not in the body. The body says the command is useful for a live kit or spoken word.",
+    "new_title": "Use “Remove Silence from Audio Region” on a live kit or spoken word"
+   },
+   {
+    "ref": "8/2/3",
+    "problem": "The title promises to reset a single bad Flex edit. The body's command, Reset All Flex Edits, clears all of the region's flex data.",
+    "new_title": "Reset all Flex edits rather than undoing repeatedly"
+   },
+   {
+    "ref": "8/3/1",
+    "problem": "The title says Gain normalises regions. The body presents Gain as a non-destructive level change to try before normalising, which makes it an alternative to normalising, not a way to do it.",
+    "new_title": "Change region level non‑destructively with Gain"
+   },
+   {
+    "ref": "8/3/3",
+    "problem": "The title's 'for a riser' and 'in two clicks' are not in the body. The body gives two routes, Functions > Reverse in the Audio File Editor or the Reverse setting in the Region inspector, with no click count.",
+    "new_title": "Reverse a region, destructively or not"
+   },
+   {
+    "ref": "9/0/0",
+    "problem": "The title presents ⌘-drag as working anywhere by default. The body says you must first make Marquee your Command-click tool, and that it then works in the Tracks area. The ⌘ + drag key chip is consistent with the body once that setup is done.",
+    "new_title": "Make Marquee your ⌘-click tool"
+   },
+   {
+    "ref": "9/1/2",
+    "problem": "The body never mentions ⇧, so neither the title's key nor the '⇧ + click' chip is supported. The body is one sentence ('Fine‑tune the selection edge by edge rather than redrawing the whole thing') with no subject or method, which looks trimmed to a fragment. The body needs rework or the trick should be cut.",
+    "new_title": "Fine-tune a marquee instead of redrawing it",
+    "new_key": ""
+   },
+   {
+    "ref": "10/0/1",
+    "problem": "The body never names A, so neither the title's key nor the 'A' chip is supported. The body only says 'One key. Learn it and stop hunting for the button', which gives the reader no key and no action. It looks trimmed to a fragment and needs a body fix or should be cut.",
+    "new_title": "Toggle automation view with one key",
+    "new_key": ""
+   },
+   {
+    "ref": "10/1/2",
+    "problem": "The title's Pencil tool is not in the body. The body is a fragment with no subject ('Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes') and never says what tool or method to use.",
+    "new_title": "Draw rhythmic automation instead of performing it"
+   }
+  ]
+ },
+ {
+  "checked": 63,
+  "fixes": [
+   {
+    "ref": "17/0/0",
+    "problem": "The title and the key chip both give ⌥K as the key that opens Key Commands, but the body never mentions ⌥K. It only describes using the search field inside the Key Commands window.",
+    "new_title": "Find any key command with the search box",
+    "new_key": ""
+   },
+   {
+    "ref": "14/2/0",
+    "problem": "The title says you drag MIDI out of Slice mode into the Tracks area, but this body never describes that drag (it only appears in 14/0/1). This body only says the generated MIDI plays the slices in their original order and that shuffling the notes rearranges the break.",
+    "new_title": "Shuffle the slice MIDI to rearrange the break"
+   },
+   {
+    "ref": "11/2/3",
+    "problem": "The title says Skip and Loop Start/End are for 'live rearranging', but the body never says they work live or during playback. It only says Skip drops a step (shortening the row) and Loop Start/End sets where the row cycles.",
+    "new_title": "Use Skip and Loop Start/End to reshape a row"
+   }
+  ]
+ },
+ {
+  "checked": 62,
+  "fixes": [
+   {
+    "ref": "18/6/1",
+    "problem": "The title says '⇧R is already on the keyboard' (a key that is assigned by default), and the chip shows ⇧R. The body names no key and says nothing about a default assignment. It only says the feature 'costs nothing to reach for' and to 'hit it'. The body is also unclear: 'the feature' and 'it' never say what they refer to (Flashback Capture is not named), so after trimming it only makes sense next to 18/6/0.",
+    "new_title": "Build the reflex",
+    "new_key": ""
+   },
+   {
+    "ref": "18/1/2",
+    "problem": "The title claims the pairing gives 'the intended sound'. The body only says the Bass Players use dedicated MIDI events and articulations to create slides in the Studio Bass plug-in. It says nothing about an intended sound.",
+    "new_title": "Pair Bass Player with Studio Bass for its slides"
+   },
+   {
+    "ref": "17/2/1",
+    "problem": "Flag only. The body opens with 'Before you bounce a project, check the Normalize setting', but the only place it names for that setting is the Bounce Regions in Place dialog, which is a different bounce from the project bounce. Also, 'On scans the audio...' reads as garbled because the setting name 'On' is not marked as a setting (for example, 'On: scans...' or 'The On setting scans...')."
+   },
+   {
+    "ref": "19/1/0",
+    "problem": "Flag only. The body starts 'It requires a Mac with Apple silicon...' and never says what 'It' is. The title's claim that this is 'Logic Pro 12' appears only in the title, so the body cannot stand alone as support for it. Consider naming Logic Pro 12 in the body rather than changing the title."
+   }
+  ]
+ }
+]

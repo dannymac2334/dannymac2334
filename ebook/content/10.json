@@ -18,7 +18,7 @@
         },
         {
           "t": "Press A to toggle automation view",
-          "d": "One key. Learn it and stop hunting for the button.",
+          "d": "Press A to show or hide track automation. In the Audio Track Editor it does the same job as the Show/Hide Automation button.",
           "k": "A",
           "src": [
             {
@@ -58,20 +58,6 @@
             {
               "label": "Apple — Choose automation modes in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
-            }
-          ]
-        },
-        {
-          "t": "Draw automation with the Pencil tool for precision",
-          "d": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes.",
-          "src": [
-            {
-              "label": "Apple — Automation settings in Logic Pro for Mac",
-              "url": "https://support.apple.com/guide/logicpro/automation-settings-lgcp8aa8f24b/mac"
-            },
-            {
-              "label": "Apple — Add and adjust automation points in Logic Pro (Logic Pro 10.7 guide)",
-              "url": "https://support.apple.com/guide/logicpro/add-and-adjust-automation-points-lgcpb1a3327b/10.7/mac/11.0"
             }
           ]
         },

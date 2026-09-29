@@ -7,7 +7,7 @@
       "heading": "Before you hit record",
       "tips": [
         {
-          "t": "Check your input with the channel strip's meter, not your ears",
+          "t": "Aim your peaks at −12 to −18 dBFS",
           "d": "Aim for your loudest peaks to land between −12 and −18 dBFS. In 24-bit, recording hot won't improve the real-world noise performance. It just makes the track harder to mix against others recorded with sensible headroom.",
           "src": [
             {
@@ -21,7 +21,7 @@
           ]
         },
         {
-          "t": "Drop the I/O buffer to its lowest setting for tracking",
+          "t": "Track at the lowest I/O buffer your Mac can handle",
           "d": "Set the buffer before tracking, not during. In Logic Pro > Settings > Audio > Devices, choose the lowest I/O Buffer Size your Mac can handle. If you get system overload alerts, step it up one setting. Logic shows the resulting latency under the I/O Buffer Size menu, so judge by that readout, not the sample number.",
           "b": "GAME CHANGER",
           "src": [
@@ -64,7 +64,7 @@
         },
         {
           "t": "Record‑enable multiple tracks at once",
-          "d": "Record‑enable multiple tracks at once. Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\".",
+          "d": "Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\".",
           "src": [
             {
               "label": "Apple — Record to multiple audio tracks in Logic Pro for Mac",
@@ -79,7 +79,7 @@
       "tips": [
         {
           "t": "⌘. discards the take you just recorded",
-          "d": "Stop and delete in one keystroke, when you know instantly that it was not the one.",
+          "d": "Press ⌘. — Discard Recording and Return to Last Play Position — to stop and throw away the take you just recorded, for when you know instantly it was not the one.",
           "k": "⌘.",
           "src": [
             {
@@ -129,7 +129,7 @@
           ]
         },
         {
-          "t": "Turn off software monitoring if you hear yourself twice",
+          "t": "Turn off Software Monitoring when your interface can monitor",
           "d": "Software monitoring always carries some delay. Apple's advice when your interface supports hardware monitoring: turn off Software monitoring in Logic Pro > Settings > Audio > General, or with its control bar button.",
           "src": [
             {

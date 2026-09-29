@@ -136,6 +136,28 @@ def sources_html(sources, cls="tip-src"):
     return f'<p class="{cls}"><span>Source</span> {links}</p>'
 
 
+def numbered_refs(items):
+    """Footnote-style citations for a list of rows that each carry sources.
+
+    Returns (marks, html): marks[i] is the superscript for item i, and html is
+    one numbered source list for the whole block, each source listed once.
+    """
+    order, marks = [], []
+    for srcs in items:
+        nums = []
+        for s in srcs or []:
+            if s["url"] not in [o["url"] for o in order]:
+                order.append(s)
+            nums.append(1 + [o["url"] for o in order].index(s["url"]))
+        marks.append(f'<sup class="ref">{",".join(map(str, sorted(set(nums))))}</sup>' if nums else "")
+    if not order:
+        return marks, ""
+    links = " · ".join(
+        f'<span class="ref-n">{i}</span>&nbsp;<a href="{html.escape(s["url"], quote=True)}">{esc(s["label"])}</a>'
+        for i, s in enumerate(order, 1))
+    return marks, f'<p class="doc-src"><span>Sources</span> {links}</p>'
+
+
 def figure_html(name, caption=""):
     """Inline a screenshot from figures/ as a data URI.
 
@@ -229,14 +251,16 @@ def build_front_page(page):
         bits.append("</ul>")
 
     if page.get("keys"):
+        marks, refs = numbered_refs([k.get("src") for k in page["keys"]])
         bits.append('<dl class="legend reveal">')
-        for k in page["keys"]:
+        for k, mark in zip(page["keys"], marks):
             bits.append(
                 f'<div class="legend-row"><dt><span class="legend-sym">{esc(k["sym"])}</span>'
                 f'<span class="legend-name">{esc(k["name"])}</span></dt>'
-                f'<dd>{esc(k["note"])}</dd></div>'
+                f'<dd>{esc(k["note"])}{mark}</dd></div>'
             )
         bits.append("</dl>")
+        bits.append(refs)
         if page.get("keys_src"):
             bits.append(sources_html(page["keys_src"], cls="doc-src"))
 
@@ -244,14 +268,14 @@ def build_front_page(page):
         bits.append('<div class="cmd-block reveal">')
         bits.append(f'<h3 class="sub">{esc(table["heading"])}</h3>')
         bits.append('<table class="cmd-table"><tbody>')
-        for key, desc in table["rows"]:
+        marks, refs = numbered_refs([row[2] if len(row) > 2 else table.get("src") for row in table["rows"]])
+        for (key, desc, *_), mark in zip(table["rows"], marks):
             bits.append(
                 f'<tr><th scope="row"><span class="kbd">{esc(key)}</span></th>'
-                f"<td>{esc(desc)}</td></tr>"
+                f"<td>{esc(desc)}{mark}</td></tr>"
             )
         bits.append("</tbody></table>")
-        if table.get("src"):
-            bits.append(sources_html(table["src"], cls="doc-src"))
+        bits.append(refs)
         bits.append("</div>")
 
     if page.get("callout"):
@@ -862,6 +886,8 @@ h1, h2, h3, h4 {{ margin: 0; font-weight: 700; letter-spacing: -.03em; line-heig
   text-underline-offset: 2px; text-decoration-color: rgba(255,255,255,.3); }}
 .tip:has(.tip-src) > .tip-keys {{ padding-bottom: 0; border-radius: 0; }}
 .doc-src {{ margin: 10px 0 0; font-size: 10.5px; line-height: 1.55; color: var(--body-dim); }}
+sup.ref {{ font-size: 9px; font-weight: 600; margin-left: 3px; color: var(--body-dim); letter-spacing: .02em; }}
+.ref-n {{ font-weight: 600; font-size: 9px; opacity: .8; }}
 .doc-src span {{ font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
   font-size: 9px; opacity: .7; margin-right: 4px; }}
 .doc-src a {{ color: inherit; text-decoration: underline; text-underline-offset: 2px;
@@ -1083,6 +1109,7 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   .tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 12px; }}
   .tip > .tip-src {{ background: none; padding: 6px 12px 10px; font-size: 6.8pt; }}
   .doc-src {{ font-size: 6.8pt; }}
+  sup.ref, .ref-n {{ font-size: 6pt; }}
   .doc-src a {{ text-decoration-color: rgba(0,0,0,.3); }}
   .tip-src a {{ text-decoration-color: rgba(0,0,0,.3); }}
   .tip:has(.tip-src) > .tip-keys {{ padding-bottom: 0; }}

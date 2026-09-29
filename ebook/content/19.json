@@ -176,7 +176,7 @@
       "tips": [
         {
           "t": "Logic Pro 12 drops Intel Macs entirely",
-          "d": "It requires a Mac with Apple silicon and macOS 15.6 or later. If you are on an Intel Mac, you can't run it, so check your machine before you plan an upgrade.",
+          "d": "Logic Pro 12 requires a Mac with Apple silicon and macOS 15.6 or later. If you are on an Intel Mac you can't run it, so check your machine before you plan an upgrade.",
           "b": "GAME CHANGER",
           "src": [
             {

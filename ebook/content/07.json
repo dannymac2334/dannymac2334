@@ -45,7 +45,7 @@
       "heading": "Tools and selection",
       "tips": [
         {
-          "t": "T opens the Tool menu, T twice returns to the Pointer",
+          "t": "T opens the Tool menu, T again closes it",
           "d": "Press T to open the Tool menu at the pointer — Apple's default key command for Show Tool Menu. Press T again to close it.",
           "k": "T",
           "src": [

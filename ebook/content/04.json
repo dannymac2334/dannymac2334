@@ -136,8 +136,8 @@
       "heading": "Working fast while ideas are hot",
       "tips": [
         {
-          "t": "Merge takes when you are layering, not replacing",
-          "d": "For building up a drum pattern one element per pass, set MIDI cycle recording to Merge instead. Each loop adds to the same region.",
+          "t": "Merge cycle takes to layer a part pass by pass",
+          "d": "To build up a drum pattern one element per pass, set MIDI cycle recording to Merge: each pass of the cycle adds to the same region.",
           "src": [
             {
               "label": "Apple — Recording settings in Logic Pro for Mac",

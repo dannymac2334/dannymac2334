@@ -18,7 +18,7 @@ Drop it at the ROOT of the site repo, next to work.html — the relative
 
 import pathlib
 
-from build import esc, keycap, load, slug, count_tips, sources_html
+from build import esc, keycap, load, slug, count_tips, sources_html, numbered_refs
 
 ROOT = pathlib.Path(__file__).parent
 DIST = ROOT / "dist"
@@ -233,6 +233,8 @@ def page_css():
 .lp-src a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:2px}
 .lp-src a:hover{text-decoration-color:currentColor}
 .lp-src-intro,.lp-notice .lp-src{padding:6px 0 0;background:none}
+sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
+.ref-n{font-weight:600;font-size:10px;opacity:.8}
 .lp-tip:has(.lp-src) .lp-keys{padding-bottom:0;border-radius:0}
 .lp-tip.no-keys:has(.lp-src) p{padding-bottom:0;border-radius:0}
 .lp-num{font-size:11px;font-weight:600;letter-spacing:.14em;opacity:.45;font-variant-numeric:tabular-nums}
@@ -323,21 +325,28 @@ def front_block(p):
         o += [f"<li>{esc(x)}</li>" for x in p["list"]]
         o.append("</ul>")
     if p.get("keys"):
+        marks, refs = numbered_refs([k.get("src") for k in p["keys"]])
         o.append('<dl class="lp-legend reveal">')
-        for k in p["keys"]:
+        for k, mark in zip(p["keys"], marks):
             o.append(f'<div><dt><span class="lp-sym">{esc(k["sym"])}</span>'
-                     f'<b>{esc(k["name"])}</b></dt><dd>{esc(k["note"])}</dd></div>')
+                     f'<b>{esc(k["name"])}</b></dt><dd>{esc(k["note"])}{mark}</dd></div>')
         o.append("</dl>")
+        o.append(refs.replace('class="doc-src"', 'class="lp-src lp-src-intro"'))
     for tb in p.get("tables", []):
         o.append('<div class="reveal">')
         o.append(f'<h3 class="lp-sub">{esc(tb["heading"])}</h3><table class="lp-table"><tbody>')
-        for key, d in tb["rows"]:
-            o.append(f'<tr><th><span class="lp-kbd">{esc(key)}</span></th><td>{esc(d)}</td></tr>')
-        o.append("</tbody></table></div>")
+        marks, refs = numbered_refs([row[2] if len(row) > 2 else None for row in tb["rows"]])
+        for (key, d, *_), mark in zip(tb["rows"], marks):
+            o.append(f'<tr><th><span class="lp-kbd">{esc(key)}</span></th><td>{esc(d)}{mark}</td></tr>')
+        o.append("</tbody></table>")
+        o.append(refs.replace('class="doc-src"', 'class="lp-src lp-src-intro"'))
+        o.append("</div>")
     if p.get("callout"):
         c = p["callout"]
         o.append(f'<aside class="lp-callout reveal"><h3>{esc(c["title"])}</h3>'
-                 f'<p>{esc(c["text"])}</p></aside>')
+                 f'<p>{esc(c["text"])}</p>'
+                 + (sources_html(c["src"], cls="lp-src lp-src-intro") if c.get("src") else "")
+                 + '</aside>')
     o.append("</section>")
     return "".join(o)
 
