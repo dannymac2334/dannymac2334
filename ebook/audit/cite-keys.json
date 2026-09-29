@@ -1,0 +1,361 @@
+[
+ {
+  "v": {
+   "search_worked": true,
+   "keys": [
+    {
+     "id": "basics:Transport:4",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Toggle Metronome Click",
+     "key_as_stated": "K",
+     "description": "Metronome on / off",
+     "reason": "Two independent qualifying sources agree on K. The studio-interns.com keyboard-command-of-the-day page is titled 'Toggle Metronome Click K'. A search limited to whylogicprorules.com, soundonsound.com and logicstudiotraining.com, which returned only whylogicprorules.com and logicstudiotraining.com pages, said: \"Tap 'K' to toggle the metronome on and off.\" I could not see the row inside Apple's current Global Commands table: support.apple.com is blocked for fetching, and search summaries did not quote the row.",
+     "sources": [
+      {
+       "label": "Studio Interns: Toggle Metronome Click K (Logic Pro X keyboard command of the day)",
+       "url": "https://studio-interns.com/toggle-metronome-click-k-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Page title: 'Toggle Metronome Click K'"
+      },
+      {
+       "label": "Why Logic Pro Rules: How to Customize, Print, & Adapt Logic's Metronome",
+       "url": "https://whylogicprorules.com/customize-metronome/",
+       "evidence": "Search limited to whylogicprorules.com, soundonsound.com and logicstudiotraining.com: \"Tap 'K' to toggle the metronome on and off in Logic Pro.\" The exact page on whylogicprorules.com is not certain; the other metronome result was https://whylogicprorules.com/count-in-and-metronome/"
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:7",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Go to Position",
+     "key_as_stated": "/ (forward slash)",
+     "description": "Open the Go to Position dialog",
+     "reason": "Two independent qualifying sources agree on /. macprovideo.com says Go to Position 'is assigned to the forward slash on the keyboard next to the right Shift key.' A search limited to reputable domains returned only a logicstudiotraining.com page, and it said: press '/' or choose Navigate > Go To > Position to open the Go To Position dialog. I could not see Apple's table row: support.apple.com is blocked for fetching, and the summary did not quote it.",
+     "sources": [
+      {
+       "label": "macProVideo: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+       "evidence": "\"Logic Pro has a pre-assigned key command to simply type in your position... It is assigned to the forward slash on the keyboard next to the right Shift key.\""
+      },
+      {
+       "label": "Logic Studio Training: Logic Pro X Arranging and Editing Tip: Go To Position",
+       "url": "https://logicstudiotraining.com/logic-pro-x-arranging-and-editing-tip-go-to-position/",
+       "evidence": "\"you can press '/' (the slash key) or choose Navigate > Go To > Position to open the Go To Position dialog\" (this was the only result of a search limited to reputable domains)"
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:10",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Show/Hide All Plug-in Windows",
+     "key_as_stated": "V",
+     "description": "Hide / show all plug-in windows",
+     "reason": "A search limited to whylogicprorules.com returned: \"you can hide or show all plugins by using Key Command V.\" Its top result was the site's '10 Logic Pro X Key Commands' article. A search limited to studio-interns.com, logicstudiotraining.com and soundonsound.com named the logicstudiotraining.com beat-making shortcuts article and returned: \"The 'Show/Hide All Plug-in Windows' keyboard command... is triggered by pressing the V key.\" That makes two independent qualifying sources. Caveat: the search summaries do not tie each quote to one exact page. The exact Apple command name comes from those search results, not from an Apple page.",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://whylogicprorules.com/logic-pro-x-key-commands/",
+       "evidence": "Search limited to whylogicprorules.com: \"In Logic Pro, you can hide or show all plugins by using Key Command V.\""
+      },
+      {
+       "label": "Logic Studio Training: 7 Must-Know Logic Pro Shortcuts for Aspiring Beat Makers",
+       "url": "https://logicstudiotraining.com/logic-pro-shortcuts-beat-making/",
+       "evidence": "\"With a simple press of 'V', your plugins make their grand entrance or exit\"; 'Show/Hide All Plug-in Windows' ... triggered by pressing the V key"
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:6",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Show/Hide Browsers",
+     "key_as_stated": "F",
+     "description": "Show / hide Browsers",
+     "reason": "The studio-interns.com keyboard-command-of-the-day page is titled 'Show/Hide Browsers F'. A search limited to macprovideo.com and logicstudiotraining.com said independently: \"pressing F toggles the Browser in Logic Pro... one of the default key commands.\" The result list included the macProVideo '10 Logic Pro X Key Commands' article and the Logic Studio Training cheat sheet. Caveat: that summary does not say which of the two domains it came from. Both are qualifying and independent of studio-interns.com. Apple's table row was not visible.",
+     "sources": [
+      {
+       "label": "Studio Interns: Show/Hide Browsers F (Logic Pro X keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2020/04/28/show-hide-browsers-f-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Page title: 'Show/Hide Browsers F'"
+      },
+      {
+       "label": "macProVideo: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+       "evidence": "Search limited to macprovideo.com and logicstudiotraining.com: \"pressing F toggles the Browser in Logic Pro. This is one of the default key commands used to show or hide the Browser panel.\""
+      }
+     ]
+    },
+    {
+     "id": "basics:Editing:2",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Split Regions/Events at Playhead Position",
+     "key_as_stated": "Command-T (⌘T)",
+     "description": "Split regions at playhead",
+     "reason": "The studio-interns.com page is titled 'Split Regions/Events at Playhead Position ⌘T ⌘1'. A search limited to soundonsound.com said: \"Command+T is the key command for 'Split Regions/Events at the Playhead Position'... you can split your region whilst listening... by hitting Play and then Command+T.\" Its top result was the SOS 'Logic Pro Key Commands' article. That makes two independent qualifying sources. Apple's menu wording is Edit > Split > Regions at Playhead.",
+     "sources": [
+      {
+       "label": "Studio Interns: Split Regions/Events at Playhead Position ⌘T (keyboard command of the day)",
+       "url": "https://studio-interns.com/split-regions-events-at-playhead-positiont-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Page title: 'Split Regions/Events at Playhead Position ⌘T ⌘1'"
+      },
+      {
+       "label": "Sound On Sound: Logic Pro Key Commands",
+       "url": "https://www.soundonsound.com/techniques/logic-pro-key-commands",
+       "evidence": "Search limited to soundonsound.com: \"Command+T is the key command for 'Split Regions/Events at the Playhead Position'... This will split your region whilst listening to your track.\""
+      }
+     ]
+    },
+    {
+     "id": "basics:Editing:3",
+     "verdict": "NOT_FOUND",
+     "apple_command_name": "Join Regions/Notes (Apple's current Join page names the 'Merge Regions per Tracks' key command for Edit > Bounce or Join > Join per Tracks)",
+     "key_as_stated": "Command-J (⌘J), per studio-interns.com only",
+     "description": "Join selected regions",
+     "reason": "Only one qualifying source clearly gives Command-J: studio-interns.com, with the title 'Join Regions/Notes ⌘J ⌘4'. 9to5mac.com (2016) was summarized as 'pressing the J key' joins MIDI regions. The summary may have dropped the Command modifier, so it neither clearly confirms nor clearly contradicts Command-J. Apple's current 'Join regions in Logic Pro for Mac' page, as summarized, gives the menu path Edit > Bounce or Join > Join per Tracks and the 'Merge Regions per Tracks' key command, but not the key. That is a different command (join per track), not a different key for Join. Searches limited to macprovideo.com, soundonsound.com, logicstudiotraining.com and musictech.com found no Command-J statement. Suggestion: keep ⌘J only if a second source is found, and consider matching Apple's current wording (Edit > Bounce or Join > Join).",
+     "sources": [
+      {
+       "label": "Studio Interns: Join Regions/Notes ⌘J (keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2019/06/06/join-regions-notes-%E2%8C%98j-%E2%8C%98four-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Page title: 'Join Regions/Notes ⌘J ⌘4'"
+      },
+      {
+       "label": "Apple Support: Join regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/join-regions-lgcpaa45acde/mac",
+       "evidence": "Summary: choose Edit > Bounce or Join > Join per Tracks (or use the Merge Regions per Tracks key command); no key stated"
+      },
+      {
+       "label": "9to5Mac: The Logic Pros: 3 helpful tricks to streamline your MIDI/audio editing",
+       "url": "https://9to5mac.com/2016/02/21/logic-pros-how-to-solo-tricks-edit/",
+       "evidence": "Summary: \"Selecting any group of MIDI regions and pressing the J key will combine the data together into a single region\" (unclear whether it means Command-J)"
+      }
+     ]
+    }
+   ]
+  },
+  "c": {
+   "rejects": [
+    {
+     "id": "basics:Transport:4",
+     "reason": "Only one cited source is verified. The studio-interns.com page title 'Toggle Metronome Click K' is confirmed (it appeared again in my search at the exact URL cited). The second source is not tied to a page: the confirmer says the exact whylogicprorules.com page is uncertain, and the quote came from a search that also covered logicstudiotraining.com, so it may not come from whylogicprorules.com at all. I re-ran the search limited to whylogicprorules.com. It returned /customize-metronome/, /count-in-and-metronome/, /customize-playback/ and others, and its summary only said a 'K' toggle key command fails with Caps Lock on or the Typing Keyboard open. It did not say that K toggles the metronome, and it did not tie that statement to /customize-metronome/. A targeted search for \"Toggle Metronome Click\" together with Logic Pro for Mac found Apple's Global Commands page (support.apple.com/en-om/guide/logicpro/lgcp02bf31b6/mac), but the summary did not quote the row. That leaves one Logic Pro X-era studio-interns page and nothing else citable, which does not meet the two-source rule. This row needs a second source tied to a specific page, or Apple's Global Commands table row, before it can be marked CONFIRMED."
+    }
+   ]
+  }
+ },
+ {
+  "v": {
+   "search_worked": true,
+   "keys": [
+    {
+     "id": "basics:Editing:4",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Repeat Regions/Events",
+     "key_as_stated": "Command-R",
+     "description": "Repeat selected regions or events once",
+     "reason": "Two independent reputable sources, each found in a search limited to its own domain, say Command-R repeats the selected regions. SOS says each press adds another copy. macProVideo says that since Logic Pro X, Command-R repeats the selection once and the Repeat Multiple Times dialog has no default key. The Apple pages returned name the command but the snippets did not show its key. Suggested wording: '⌘R = Repeat regions or events (once per press)'.",
+     "sources": [
+      {
+       "label": "Sound On Sound - Logic Pro: Handling Repetition",
+       "url": "https://www.soundonsound.com/techniques/logic-pro-handling-repetition",
+       "evidence": "Search limited to soundonsound.com: 'By simply clicking on a region (or group of regions) and hitting Command+R, you can create a duplicate. Keep hitting this combination to continue making additional copies.'"
+      },
+      {
+       "label": "macProVideo - 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+       "evidence": "Search limited to macprovideo.com: 'In Logic Pro X, pressing Command-R with regions selected repeats them one time, and there is no default key command for a dialog box to repeat multiple times' (Repeat Regions/Events)."
+      }
+     ]
+    },
+    {
+     "id": "basics:Editing:5",
+     "verdict": "NOT_FOUND",
+     "apple_command_name": "New Track With Duplicate Settings",
+     "key_as_stated": "",
+     "description": "New track with duplicate settings",
+     "reason": "Apple's 'Duplicate tracks' pages (only /10.7/ versions came back) name the menu item Track > Other > New Track With Duplicate Settings and the Duplicate Track button. The snippets gave no key for it. One combined search over several sites said Command-D duplicates a track, but that line could not be traced to a specific source. A search limited to soundonsound.com found no mention of Command-D. A search limited to logicstudiotraining.com found only Shift-Command-D, which creates a track stack. So no qualifying source was found that ties Command-D to this command.",
+     "sources": [
+      {
+       "label": "Apple - Duplicate tracks in Logic Pro (10.7 version page, not current)",
+       "url": "https://support.apple.com/en-om/guide/logicpro/lgcp9e2b7de4/10.7/mac/11.0",
+       "evidence": "Snippet: 'choose Track > Other > New Track With Duplicate Settings ... Alternatively, click the Duplicate Track button'. No key given in the snippet."
+      }
+     ]
+    },
+    {
+     "id": "basics:Editing:6",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Select All",
+     "key_as_stated": "Command-A",
+     "description": "Select all",
+     "reason": "A search limited to support.apple.com returned the current Apple page 'Select events in the Logic Pro for Mac Event List' plus the Global Commands key-command pages. Its summary said Command-A is the key command to select all visible events and that the command is in the Edit > Select menu. An earlier summary tied to the Global Commands page also gave Select All = Command-A. Caveat: the snippet did not quote the Global Commands table row itself.",
+     "sources": [
+      {
+       "label": "Apple - Select events in the Logic Pro for Mac Event List",
+       "url": "https://support.apple.com/guide/logicpro/select-events-in-the-event-list-lgcp2158bb90/mac",
+       "evidence": "Search limited to Apple: 'Command-A is the key command to select all visible events in Logic Pro for Mac. This command is available in the Edit > Select menu'"
+      },
+      {
+       "label": "Apple - Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "Search for the page title plus 'Select All' returned this page; the summary said 'the key command for \"Select all\" in Logic Pro is Command-A'."
+      }
+     ]
+    },
+    {
+     "id": "basics:Zoom and navigation:0",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Toggle Zoom to fit Selection or all Contents",
+     "key_as_stated": "Z",
+     "description": "Zoom to fit selection; press again to toggle back",
+     "reason": "Separate domain-limited searches found the key on two independent sites. The search over macprovideo.com and soundonsound.com said 'The Z key in Logic Pro is assigned to Toggle Zoom to Fit Selection or All Contents', and the only relevant hit was macProVideo 'The Power of Logic Pro Key Commands'. The search over studio-interns.com and whylogicprorules.com said the shortcut is Z and switches between the two zoom states. A search of whylogicprorules.com alone did not find it, so that statement comes from studio-interns. 'Toggle' supports the 'press again to return' wording. The Apple pages returned did not show the row. Caveat: attribution is from search summaries, not quoted page text.",
+     "sources": [
+      {
+       "label": "macProVideo - The Power of Logic Pro Key Commands",
+       "url": "https://macprovideo.com/article/apple/the-power-of-logic-pro-key-commands",
+       "evidence": "Search limited to macprovideo.com and soundonsound.com: 'The Z key in Logic Pro is assigned to \"Toggle Zoom to Fit Selection or All Contents\". This is described as a very useful key command that has been renamed in different versions'"
+      },
+      {
+       "label": "Studio Interns - Logic Pro keyboard command of the day (zoom entries)",
+       "url": "https://studio-interns.com/zoom-to-fit-selection-horizontally-store-navigation-snapshot-logic-pro-keyboard-command-of-the-day/",
+       "evidence": "Search limited to studio-interns.com and whylogicprorules.com: 'The \"Toggle Zoom to fit Selection or All Contents\" keyboard shortcut in Logic Pro is Z ... switch between two zoom states'. The search did not name which studio-interns page, and this URL is the top hit, which may not be the page making the statement."
+      }
+     ]
+    },
+    {
+     "id": "basics:Zoom and navigation:1",
+     "verdict": "NOT_FOUND",
+     "apple_command_name": "Zoom Horizontal Out / Zoom Horizontal In",
+     "key_as_stated": "Command-Left Arrow / Command-Right Arrow",
+     "description": "Zoom out / in horizontally",
+     "reason": "Only one qualifying source gave the exact key: a search limited to studio-interns.com said Zoom Horizontal Out is Command-Left Arrow. No qualifying source was found stating Command-Right Arrow for Zoom Horizontal In. macProVideo and whylogicprorules only said the Command-Arrow keys zoom, with left/right controlling horizontal. The support.apple.com search returned 'Zoom windows' and 'Scroll and zoom in the Tracks area', but its summary said Command-Left Arrow is not stated there. Every source that was found is consistent with the claim and none gives a different key, but the evidence rules need two independent sources or a current Apple page.",
+     "sources": [
+      {
+       "label": "Studio Interns - keyboard command of the day (zoom series)",
+       "url": "https://studio-interns.com/zoom-vertical-out-logic-pro-keyboard-command-of-the-day/",
+       "evidence": "Search limited to studio-interns.com for \"Zoom Horizontal Out\": 'the keyboard command for \"Zoom Horizontal Out\" in Logic Pro is ⌘← (Command + Left Arrow)'. The exact page was not named; this top-hit URL is the Zoom Vertical Out ⌘↑ entry."
+      },
+      {
+       "label": "Apple - Scroll and zoom in the Tracks area in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/scroll-and-zoom-in-the-tracks-area-lgcpf7c0b924/mac",
+       "evidence": "Search limited to Apple: the returned text described the Horizontal Zoom slider and trackpad zoom, not the Command-Arrow keys."
+      }
+     ]
+    }
+   ]
+  },
+  "c": {
+   "rejects": [
+    {
+     "id": "basics:Zoom and navigation:0",
+     "reason": "Only one cited source is shown to state the key on the page it names. macProVideo 'The Power of Logic Pro Key Commands' (https://macprovideo.com/article/apple/the-power-of-logic-pro-key-commands) does support Z. The second citation (https://studio-interns.com/zoom-to-fit-selection-horizontally-store-navigation-snapshot-logic-pro-keyboard-command-of-the-day/) is admitted to be just the top hit. Its title is about a different command, 'Zoom to fit Selection horizontally, store Navigation Snapshot', so it probably does not state Z for 'Toggle Zoom to fit Selection or All Contents'. My re-search limited to studio-interns, macprovideo, soundonsound and logicstudiotraining again gave a Z summary. It still did not tie the statement to a specific second page, and the only other hits were pages for other studio-interns commands. An unrestricted search for the exact command name summarised the key as Shift-Z (⇧Z). That came from non-qualifying results (logicprohelp forum, shortcutfoo cheat sheet and similar), so it does not count as a contradiction, but it is a conflicting signal. No current Apple page showed the row. The row needs a second qualifying source that states Z on a verified page, or the Apple Global Commands table row, before it can count as CONFIRMED."
+    }
+   ]
+  }
+ },
+ {
+  "v": {
+   "search_worked": true,
+   "keys": [
+    {
+     "id": "basics:Zoom and navigation:2",
+     "verdict": "NOT_FOUND",
+     "apple_command_name": "Zoom Vertical Out / Zoom Vertical In",
+     "key_as_stated": "Command-Up Arrow (Zoom Vertical Out)",
+     "description": "Zoom out / in vertically",
+     "reason": "Only one qualifying source states the key explicitly: the studio-interns.com page title is 'Zoom Vertical Out ⌘↑'. That matches the book's claim (⌘↑ = out, so ⌘↓ = in). A second search limited to reputable sites (whylogicprorules, soundonsound, macprovideo) only said that Command with the up/down arrows zooms vertically, without saying which direction each arrow goes. The Apple Global Commands page (https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac) came up, but its rows did not appear in the search results. Apple's 'Scroll and zoom in the Tracks area' page did not show the key either. An unattributed first summary, probably from a non-qualifying site such as soundalgorithm.io, said Command-Down zooms out, which conflicts. Fetching Apple and studio-interns pages directly was blocked by the network proxy. That leaves one explicit qualifying source, so this stays NOT_FOUND, though the book's direction matches the one explicit source.",
+     "sources": [
+      {
+       "label": "studio-interns.com: Zoom Vertical Out ⌘↑ (Logic Pro keyboard command of the day)",
+       "url": "https://studio-interns.com/zoom-vertical-out-logic-pro-keyboard-command-of-the-day/",
+       "evidence": "Page title: 'Zoom Vertical Out ⌘↑ — Logic Pro keyboard command of the day'"
+      },
+      {
+       "label": "Why Logic Pro Rules: #8 Navigation & Zoom Controls",
+       "url": "https://whylogicprorules.com/navigation-and-zoom/",
+       "evidence": "Summary: Command-arrow keys zoom, up/down change vertical track height (direction not specified)"
+      }
+     ]
+    },
+    {
+     "id": "basics:Capture and output:2",
+     "verdict": "NOT_FOUND",
+     "apple_command_name": "Save As…",
+     "key_as_stated": "",
+     "description": "Save As",
+     "reason": "Three searches (one limited to support.apple.com) returned the Apple Global Commands page (https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac) and the 'Save Logic Pro for Mac projects' page, but no result text showed a Save As row with a key. One summary said the page includes 'Save As…' with Shift-Command-S 'you mentioned', but that only repeats the query, so it is not evidence. Another summary said Apple's Save projects page gives only File > Save As and that Shift-Command-S appears only for Impulse Response Utility. No qualifying source gives a different key, so this is not CONTRADICTED.",
+     "sources": []
+    },
+    {
+     "id": "basics:Capture and output:4",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Bounce Regions in Place",
+     "key_as_stated": "Control-B (^B)",
+     "description": "Bounce regions in place",
+     "reason": "A search limited to reputable Logic sites (whylogicprorules.com, logicstudiotraining.com, musictech.com and others) returned two differently worded statements that agree: 'using Key Command Control – B provides swift and easy access to Bounce in Place' and 'Control and B is the key command for Bounce Regions in Place.' An open search also said '^B (Control-B)'. Apple's current 'Bounce regions in place' page only says to use 'the corresponding key command' and does not name it. Caveat: the search summary did not say which site each sentence came from, so the two sources below are the qualifying-domain results the statements came from. It is worth checking the pages by eye before print.",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://whylogicprorules.com/logic-pro-x-key-commands/",
+       "evidence": "Result in a search limited to reputable domains; summary: 'Key Command Control – B ... swift and easy access to Bounce in Place'"
+      },
+      {
+       "label": "Logic Studio Training: 7 Must-Know Logic Pro Shortcuts for Aspiring Beat Makers",
+       "url": "https://logicstudiotraining.com/logic-pro-shortcuts-beat-making/",
+       "evidence": "Result in the same search limited to reputable domains; summary: 'Control and B is the key command for Bounce Regions in Place'"
+      },
+      {
+       "label": "MusicTech: Logic's Bounce In Place function is essential",
+       "url": "https://musictech.com/tutorials/logic-bounce-in-place/",
+       "evidence": "Result in the same search limited to reputable domains (no row-level text shown)"
+      }
+     ]
+    },
+    {
+     "id": "legend:⇧",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "",
+     "key_as_stated": "Shift-click",
+     "description": "Shift extends a selection",
+     "reason": "This is a modifier behavior, not a key command row. Apple's current 'Select parts of regions in Logic Pro for Mac' page (no version segment) was summarized as: 'Shift-click a track lane between the left and right border of a marquee selection to add that track to the selection.' Apple's region-selection page also says 'Press and hold Shift as you click the regions in the Tracks area to select multiple regions,' but the only URL for that page in the results is versioned (/10.7/), so it is supporting evidence only. Together these support 'Shift extends a selection'. Caveat: the summary did not label each sentence with its URL. The book may want to say 'Shift-click adds to a selection' more specifically.",
+     "sources": [
+      {
+       "label": "Select parts of regions in Logic Pro for Mac - Apple Support",
+       "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+       "evidence": "'Shift-click a track lane between the left and right border of a marquee selection to add that track to the selection.'"
+      },
+      {
+       "label": "Select regions in the Tracks area in Logic Pro - Apple Support (10.7, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/select-regions-lgcpf7c0e62a/10.7/mac/11.0",
+       "evidence": "'Press and hold Shift as you click the regions in the Tracks area to select multiple regions.'"
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:6",
+     "verdict": "CONFIRMED",
+     "apple_command_name": "Set Rounded Locators by Regions/Events and Enable Cycle",
+     "key_as_stated": "U",
+     "description": "Set locators to the selected regions (rounded to bars) and turn on Cycle",
+     "reason": "Searches limited to reputable domains (macprovideo.com, studio-interns.com, logicstudiotraining.com and others) returned agreeing statements: 'The Set Rounded Locators by Regions/Events and Enable Cycle command is triggered by pressing the U key'; 'select an area with the Marquee tool and type U' (macprovideo cycling-tips article); and 'U sets the loop rounded around the chosen region...'. One summary also said the variant without Cycle, 'Set Rounded Locators by Regions/Events', is on Control-Option-Shift-Command-U. That is consistent with U being the Enable Cycle version. The studio-interns '⌘U' title belongs to a different command (the non-rounded 'Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop'), so it does not conflict. Apple's current Global Commands page (https://support.apple.com/en-ca/guide/logicpro/lgcp02bf31b6/mac) came up, but its row did not appear in the results. Caveat: the summary did not attribute each sentence to a specific URL.",
+     "sources": [
+      {
+       "label": "macProVideo: 6 Logic Pro X Cycling Tips For A Faster Production Workflow",
+       "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow",
+       "evidence": "'select an area with the Marquee tool and type U' (sets rounded locators and enables cycle)"
+      },
+      {
+       "label": "Logic Studio Training Wiki: Locators",
+       "url": "https://logicstudiotraining.com/wiki/index.php/Locators",
+       "evidence": "Result in a search limited to reputable domains; summary: 'U sets the loop rounded around the chosen region so if it didn't start at the beginning of a bar, you won't lose sync'"
+      },
+      {
+       "label": "studio-interns.com: Set Rounded Locators by Regions/Events (keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2019/09/28/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Summary: rounds locators to the nearest barlines of the selected regions/events; Control-Option-Shift-Command-U is the version without cycle"
+      }
+     ]
+    }
+   ]
+  },
+  "c": {
+   "rejects": []
+  }
+ }
+]

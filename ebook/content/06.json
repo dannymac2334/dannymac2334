@@ -8,29 +8,69 @@
       "tips": [
         {
           "t": "Check your input with the channel strip's meter, not your ears",
-          "d": "Aim for peaks around −12 dBFS with your loudest phrase. Recording hot is a habit from tape and it buys you nothing in 24‑bit."
+          "d": "Aim for your loudest peaks to land between −12 and −18 dBFS. In 24-bit, recording hot won't improve the real-world noise performance. It just makes the track harder to mix against others recorded with sensible headroom.",
+          "src": [
+            {
+              "label": "Sound On Sound — Q. How much headroom should I leave with 24-bit recording?",
+              "url": "https://www.soundonsound.com/sound-advice/q-how-much-headroom-should-leave-24-bit-recording"
+            },
+            {
+              "label": "Sound On Sound — Q. Should I gain-stage to -6dBFS or -18dBFS?",
+              "url": "https://www.soundonsound.com/sound-advice/q-should-gain-stage-6dbfs-or-18dbfs"
+            }
+          ]
         },
         {
-          "t": "Drop the buffer to 64 samples for tracking",
-          "d": "Drop the I/O buffer before tracking, not during. In Logic's Audio settings, lower the I/O Buffer Size — Apple's own guidance for recording is to set the buffer to the lowest setting your Mac can handle, then step it back up one notch if you start getting system overload alerts. Logic shows the resulting round-trip latency directly beneath the I/O Buffer Size menu, so judge by that readout rather than by the sample number, and do it before the singer walks in, not while they wait.",
-          "b": "GAME CHANGER"
+          "t": "Drop the I/O buffer to its lowest setting for tracking",
+          "d": "Set the buffer before tracking, not during. In Logic Pro > Settings > Audio > Devices, choose the lowest I/O Buffer Size your Mac can handle. If you get system overload alerts, step it up one setting. Logic shows the resulting latency under the I/O Buffer Size menu, so judge by that readout, not the sample number.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Manage input monitoring latency in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/105040"
+            }
+          ]
         },
         {
-          "t": "Turn on Low Latency Mode instead of disabling plugins one by one",
-          "d": "Turn on Low Latency Monitoring mode instead of disabling plugins one by one. Logic bypasses the latency-inducing plug-ins whose latency pushes the track past the Limit slider value in Logic Pro > Settings > Audio > General (up to 30 ms) — plug-ins under that limit keep running, so quiet chains sound identical. Be aware it also switches off that track's Aux sends, so it will kill a headphone reverb fed from a send. It affects only the focused instrument track plus any track with Input Monitoring or Record Enable turned on."
+          "t": "Turn on Low Latency Monitoring mode instead of disabling plug-ins one by one",
+          "d": "Low Latency Monitoring mode bypasses the latency-inducing plug-ins that push a track past the Limit slider in Logic Pro > Settings > Audio > General (up to 30 ms). It also turns off that track's Aux sends, which kills a headphone reverb fed from a send. It affects only the focused instrument track and tracks with Input Monitoring or Record Enable on.",
+          "src": [
+            {
+              "label": "Apple — Work with plug-in latencies in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/work-with-plug-in-latencies-lgcpe11997ba/mac"
+            }
+          ]
         },
         {
           "t": "Count-in and pre-roll are either/or — pick the right one",
-          "d": "Count-in and pre-roll are either/or — pick the right one. In the Recording project settings, the When Beginning buttons let you choose a count-in or a pre-roll, not both. The difference is the unit: count-in sets the lead-in in bars or beats, so it stays locked to the tempo map; pre-roll sets it as a playback time in seconds, up to 60. Reach for pre-roll when the lead-in you want is a fixed number of seconds — free-tempo material, dialogue, anything where bars are meaningless — and count-in when you want the performer to arrive on a downbeat."
+          "d": "In the Recording project settings, the When Beginning buttons make you choose a count-in or a pre-roll. Count-in is set in bars or beats. Pre-roll is a playback time in seconds, up to 60. Use pre-roll when bars mean nothing (free-tempo material, dialogue) and count-in when you want the performer counted in musically.",
+          "src": [
+            {
+              "label": "Apple — Recording project settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/recording-project-settings-lgcpbc10f1ea/mac"
+            }
+          ]
         },
         {
           "t": "Name the track before you record, always",
-          "d": "Logic names audio files after the track. “Audio 3#12.wav” three months later is a file you will never open again.",
-          "b": "GAME CHANGER"
+          "d": "Regions that use the track name as their region name, and their source audio files, follow a default track name like “Audio 3”. That name means nothing to you three months later.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Rename tracks in Logic Pro for Mac (from prior audit; not re-retrieved this session)",
+              "url": "https://support.apple.com/guide/logicpro/rename-tracks-lgcp591273b9/mac"
+            }
+          ]
         },
         {
           "t": "Record‑enable multiple tracks at once",
-          "d": "Record‑enable multiple tracks at once. Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\", and you will never lose a multitrack take to a stray modifier."
+          "d": "Record‑enable multiple tracks at once. Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\".",
+          "src": [
+            {
+              "label": "Apple — Record to multiple audio tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/record-to-multiple-audio-tracks-lgcpb19dcf78/mac"
+            }
+          ]
         }
       ]
     },
@@ -40,11 +80,27 @@
         {
           "t": "⌘. discards the take you just recorded",
           "d": "Stop and delete in one keystroke, when you know instantly that it was not the one.",
-          "k": "⌘."
+          "k": "⌘.",
+          "src": [
+            {
+              "label": "Apple — Advanced recording commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-recording-commands-lgcpb19d5875/mac"
+            }
+          ]
         },
         {
-          "t": "Watch the take folder count, not the waveform",
-          "d": "Watch the take count, not the waveform. The take folder header carries a Takes pop-up menu showing the name of the currently active take; open it (or click the disclosure arrow to expand the folder) to see every pass you have banked. If the performer is on take 14 and getting worse, that list is your cue to stop and move on rather than to keep rolling."
+          "t": "Watch the take list, not the waveform",
+          "d": "The Take Folder pop-up menu in the upper-left corner of a take folder lists every take you've banked, and you can pick one from it during playback. If the performer is on take 14 and getting worse, that list is your cue to stop and move on.",
+          "src": [
+            {
+              "label": "Apple — Preview take recordings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/preview-take-recordings-lgcp317d76de/mac"
+            },
+            {
+              "label": "Apple — Create and save comps in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac"
+            }
+          ]
         }
       ]
     },
@@ -53,20 +109,48 @@
       "tips": [
         {
           "t": "Build a dedicated headphone mix on a bus",
-          "d": "Send every track to a second output bus and give the performer more of themselves and more reverb than you would ever put in the mix. Comfort produces better takes than accuracy does.",
-          "b": "GAME CHANGER"
+          "d": "Select every channel strip, choose a bus in a Send slot, and route the aux channel strip Logic creates to the output that feeds the headphone amp. Give the performer more of themselves and more reverb than you would ever put in the mix. Comfort produces better takes than accuracy does.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Send a mix to multiple destinations in Logic Pro for Mac (from prior audit; not re-retrieved this session)",
+              "url": "https://support.apple.com/guide/logicpro/send-a-mix-to-multiple-destinations-lgcp8e8e6538/mac"
+            }
+          ]
         },
         {
           "t": "Use Input Monitoring rather than record enable to rehearse",
-          "d": "The I button lets you hear the input without arming anything, so you can set levels and rehearse with zero risk of recording over something."
+          "d": "The Input Monitoring (I) button in the track header lets you hear a track that isn't record-enabled, so you can set levels and practise the part before committing. On audio tracks it still involves some latency, depending on your hardware and driver settings.",
+          "src": [
+            {
+              "label": "Apple — Use input monitoring with tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac"
+            }
+          ]
         },
         {
           "t": "Turn off software monitoring if you hear yourself twice",
-          "d": "The doubling is your interface's direct monitoring fighting Logic's. Pick one."
+          "d": "Software monitoring always carries some delay. Apple's advice when your interface supports hardware monitoring: turn off Software monitoring in Logic Pro > Settings > Audio > General, or with its control bar button.",
+          "src": [
+            {
+              "label": "Apple — General Audio settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-is/guide/logicpro/lgcp0ed343a9/mac"
+            },
+            {
+              "label": "Apple — Work with plug-in latencies in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/work-with-plug-in-latencies-lgcpe11997ba/mac"
+            }
+          ]
         },
         {
           "t": "Give the performer a click they can feel",
-          "d": "Swap the metronome sound, add a bar accent, or better, program a simple drum loop. A musical reference beats a woodblock every time."
+          "d": "Swap the metronome sound, add a bar accent, or better, program a simple drum loop. A musical reference beats a woodblock every time.",
+          "src": [
+            {
+              "label": "Apple — Metronome project settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/metronome-project-settings-lgcpe1d6118e/mac"
+            }
+          ]
         }
       ]
     }

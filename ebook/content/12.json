@@ -7,16 +7,42 @@
       "heading": "Getting a real performance",
       "tips": [
         {
-          "t": "Use Complexity and Intensity, then the kit-piece controls",
-          "d": "The Drummer keeps its X/Y pad in both 11 and 12 — drag the puck right for a busier part, up for a louder one, and use the Complexity Range sliders to offset individual kit pieces against it. Logic 11 renamed the surrounding editor to the Session Player Editor and added Bass Player and Keyboard Player alongside the Drummer; Complexity and Intensity sliders are those two players' controls, not the Drummer's."
+          "t": "Use Complexity and Intensity, then the kit-piece sliders",
+          "d": "In the Session Player Editor, drag the Complexity slider up for a busier part and the Intensity slider up for a louder one. Apple lists both as settings common to all Session Players, Drummer included. Then click Details and drag the kit piece sliders to set the complexity range of individual kit pieces.",
+          "src": [
+            {
+              "label": "Apple — Edit a Session Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-session-player-performance-lgcp74b34026/mac"
+            },
+            {
+              "label": "Logic Pro Help — Logic Pro 11 new features explained",
+              "url": "https://www.logicprohelp.com/articles/logic-pro-11-new-features-explained-r23/"
+            }
+          ]
         },
         {
           "t": "Change the drummer, not just the preset",
-          "d": "Each drummer character has genuinely different playing tendencies. If a preset is close but the feel is wrong, swap the drummer rather than hunting for another preset — but click the lock next to any setting you want to survive the swap (the Fills knob has one), because Apple's locks exist precisely to 'prevent any changes to the setting when switching presets or drummers'."
+          "d": "If a preset is close but the feel is wrong, try other presets or drummers. Lock the fills first if you like them: Apple says the lock stops 'any changes to the fills setting when switching presets or drummers.'",
+          "src": [
+            {
+              "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac"
+            },
+            {
+              "label": "Apple — Session Players overview in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac"
+            }
+          ]
         },
         {
           "t": "Turn individual kit pieces on and off per region",
-          "d": "Click a kit piece in the editor to enable or disable it for that region only. Drop the crash out of the verse and back in for the chorus."
+          "d": "Click a kit piece in the editor to enable or disable it for that region only. Drop the crash out of the verse and back in for the chorus.",
+          "src": [
+            {
+              "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac"
+            }
+          ]
         }
       ]
     },
@@ -26,15 +52,41 @@
         {
           "t": "Convert a Drummer region to MIDI and edit it by hand",
           "d": "Right‑click the region and choose Convert > Convert to MIDI Region. You get the full performance in the Piano Roll to nudge, delete and re‑velocity as you like.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Convert Session Player regions into MIDI or pattern regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
+            }
+          ]
         },
         {
           "t": "Use the Details panel for feel, ghost notes and hi‑hat",
-          "d": "Click the Details button in the Drummer Editor to reveal Feel (drag right to play ahead of the beat, left to play behind it), Ghost Notes (syncopated snare and kick hits), Hi-Hat openness and Humanize. This is where a stiff pattern becomes a groove."
+          "d": "Click the Details button in the Drummer Editor to reveal Feel (drag right to play ahead of the beat, left to play behind it), Ghost Notes (syncopated snare and kick hits), Hi-Hat openness and Humanize. This is where a stiff pattern becomes a groove.",
+          "src": [
+            {
+              "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac"
+            }
+          ]
         },
         {
-          "t": "Swap the kit without losing the performance",
-          "d": "The Drummer track's instrument depends on the drummer: acoustic drummers load Drum Kit Designer, electronic and hip-hop drummers load Drum Machine Designer. Click the kit icon or kit name at the left of the editor to open whichever one is loaded. In Drum Kit Designer you can exchange the kit and, per selected piece, adjust Tune (pitch), Dampen (sustain) and Gain — and on multi-channel kits switch the Overheads mic in or out and pick room A, room B or no room emulation — all without touching a single note."
+          "t": "Swap and tune kit pieces in Drum Kit Designer",
+          "d": "In Drum Kit Designer, click a kit piece to open its Edit and Exchange panes. Swap the kick or snare (toms, cymbals and hi-hat too on multi-channel kits) and set Tune, Dampen (sustain) and Gain per piece. Multi-channel kits add Overheads and Room (A, B or off) switches.",
+          "src": [
+            {
+              "label": "Apple — Drum Kit Designer Edit pane in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-pane-lgsi5df170e9/mac"
+            },
+            {
+              "label": "Apple — Use Drum Kit Designer in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-drum-kit-designer-lgsi825fc878/mac"
+            },
+            {
+              "label": "Apple — Get started with Drummer in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/drummer-lgcpa4324884/mac"
+            }
+          ]
         }
       ]
     }

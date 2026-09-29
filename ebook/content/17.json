@@ -8,21 +8,53 @@
       "tips": [
         {
           "t": "Open Key Commands with ⌥K and use the search box",
-          "d": "Every command in Logic is searchable by name. If you can describe what you want to do, you can find and assign a key for it in about ten seconds.",
+          "d": "In the Key Commands window, type a term in the search field to find a command by name, then assign a key to it.",
           "k": "⌥K",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Assign key commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
+            }
+          ]
         },
         {
-          "t": "Export your key commands and back them up",
-          "d": "In the Key Commands window, click the Actions pop-up menu at the top left and choose Save As to write your whole key command set to a file (the default location is ~/Music/Audio Music Apps/Key Commands). Choose Import Key Commands from the same menu to load it back after a reinstall, or on someone else's machine. Losing a year of custom shortcuts to a reinstall is entirely avoidable."
+          "t": "Save your key commands as a set and back it up",
+          "d": "In the Key Commands window (⌥K), click the Actions button, choose Save As, name the set and click Save. That captures your whole set of custom shortcuts, including any Touch Bar assignments. Keep a copy of the file somewhere safe; losing a year of custom shortcuts to a reinstall is entirely avoidable.",
+          "src": [
+            {
+              "label": "Apple — Create custom keyboard shortcuts for Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101929"
+            },
+            {
+              "label": "Apple — Assign key commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
+            }
+          ]
         },
         {
-          "t": "Assign key commands to your most used plugins",
-          "d": "Logic has no key command that inserts a specific plug-in, so get the speed a different way: save the plug-in (or a whole chain) as a channel strip setting and recall it from the channel strip's Settings menu, which inserts every associated plug-in in one click. If you want it on a physical button, assign a controller button to the relevant key command in the Controller Assignments window."
+          "t": "Save your go-to plug-in chains as channel strip settings",
+          "d": "Set up a channel strip with the plug-ins you reach for most, then click the Setting button at the top of the channel strip and choose Save Channel Strip Setting as. A channel strip setting stores the plug-ins and their settings, so choosing it later from the same Setting pop-up menu brings back the whole chain at once.",
+          "src": [
+            {
+              "label": "Apple — Work with channel strip settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/work-with-channel-strip-settings-lgcp35966da6/mac"
+            }
+          ]
         },
         {
-          "t": "Use Touch Bar or a stream deck for tool switching",
-          "d": "Logic's Touch Bar screens are fixed (Smart Controls, keyboard, drum pads, project overview), so you cannot put your own key commands there. For hardware triggering, use a Stream Deck sending the keystroke, or assign a controller button directly to a key command in the Controller Assignments window — search the command by name in the Search field, then press the button. Tools, zoom levels and transport are the highest-value candidates."
+          "t": "Put your key commands on the Touch Bar or a controller button",
+          "d": "In the Key Commands window, select a command, click Learn by Touch Bar, tap a Touch Bar button and give it a name. It then appears on the Touch Bar's Keyboard Shortcuts screen. For hardware, select the command (use the Search field) and press a button on your control surface. Its name appears in the Assignments field.",
+          "src": [
+            {
+              "label": "Apple — Create custom keyboard shortcuts for Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101929"
+            },
+            {
+              "label": "Apple — Assign controller buttons to key commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/assign-buttons-to-key-commands-ctls71c31056/mac"
+            }
+          ]
         }
       ]
     },
@@ -32,19 +64,28 @@
         {
           "t": "Build separate templates for writing, mixing and mastering",
           "d": "A writing template loads instantly with a handful of instruments. A mixing template has your buses and reference chain. They are different jobs and they deserve different starting points.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "advice": true
         },
         {
           "t": "Use Project Alternatives instead of Save As",
-          "d": "File > Project Alternatives > New Alternative keeps every version inside one project, and Apple's guide is explicit that alternatives \"are saved as part of the project and share the same assets\" — so you are not duplicating 4 GB of recordings to try a different arrangement."
+          "d": "File > Project Alternatives > New Alternative keeps every version inside one project. Apple's guide says alternatives are \"saved as part of the project and share the same assets\", so you are not duplicating gigabytes of recordings to try a different arrangement.",
+          "src": [
+            {
+              "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+            }
+          ]
         },
         {
           "t": "Keep a reference track in every project, muted at the top",
-          "d": "A commercial track at the top of the session, routed to the master, muted. Unmute it whenever you lose perspective — which will be every hour."
+          "d": "A commercial track at the top of the session, routed to the master, muted. Unmute it whenever you lose perspective — which will be every hour.",
+          "advice": true
         },
         {
           "t": "Name your bounce files with the date",
-          "d": "“Mix_v3.wav” tells you nothing in six weeks. “Song_2026‑04‑18_mix3.wav” tells you everything."
+          "d": "“Mix_v3.wav” tells you nothing in six weeks. “Song_2026‑04‑18_mix3.wav” tells you everything.",
+          "advice": true
         }
       ]
     },
@@ -53,20 +94,56 @@
       "tips": [
         {
           "t": "⌘B bounces the project or the current section",
-          "d": "File > Bounce > Project or Section, or Command-B. By default Logic bounces the whole project; to bounce a section, turn Cycle mode on and the bounce range matches the locator positions, or set the range directly with the Start and End sliders in the Bounce dialog. Bounce multiple formats in one pass by selecting more than one destination in the Destination area.",
-          "k": "⌘B"
+          "d": "Choose File > Bounce > Project or Section, or press ⌘B. With Cycle mode off and no regions selected, Logic bounces the whole project. With Cycle on, the bounce range matches the locators; with regions selected, it matches the selection. You can also set it with the Start and End value sliders. Select more than one destination file type to bounce several formats in one pass.",
+          "k": "⌘B",
+          "src": [
+            {
+              "label": "Apple — Set the bounce range in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/set-the-bounce-range-lgcp190ba9b7/mac"
+            },
+            {
+              "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-ca/guide/logicpro/lgcp785a41c3/mac"
+            },
+            {
+              "label": "Why Logic Pro Rules — 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+              "url": "https://whylogicprorules.com/logic-pro-x-key-commands/"
+            }
+          ]
         },
         {
-          "t": "Turn off “Normalize” when bouncing stems",
-          "d": "Normalising each stem independently destroys the relative balance you spent all day building. Set it to Off for stems and On only for a final master if you want it."
+          "t": "Check the Normalize setting before you bounce",
+          "d": "Before you bounce a project, check the Normalize setting. On scans the audio for its highest peak, then raises the level so that peak reaches the maximum possible level without clipping. Overload Protection Only turns the level down only for overloads (levels above 0 dB, which would clip) and does nothing to lower levels. In Logic's Bounce Regions in Place dialog, the Normalize pop-up menu has three settings: Off (turns normalization off), Overload Protection Only and On.",
+          "src": [
+            {
+              "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac"
+            },
+            {
+              "label": "Apple — Bounce regions in place in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-ca/guide/logicpro/lgcp8ae5826e/mac"
+            }
+          ]
         },
         {
-          "t": "Bounce offline unless you have external hardware",
-          "d": "Bounce offline unless something outside the computer is involved. Apple's own wording is that offline bouncing \"can be faster than real time for more complex projects, and can perform bounces not possible in real time\". Realtime is required when the signal is not purely internal: only audio and software instrument tracks can be bounced offline, not MIDI tracks feeding external instruments or live audio channel inputs."
+          "t": "Bounce offline unless external MIDI or inputs are involved",
+          "d": "Offline bouncing is typically faster than realtime. But only internal sources — audio and software instrument tracks — can bounce offline, not MIDI tracks or audio channel inputs. External MIDI sound sources routed to the Mixer through aux channels need Realtime. If you're unsure, choose Automatic and Logic decides, based on whether channels have plug-ins that need a realtime bounce.",
+          "src": [
+            {
+              "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-am/guide/logicpro/lgcp785a41c3/mac"
+            }
+          ]
         },
         {
-          "t": "Add 2 bars of silence at the end of the bounce range",
-          "d": "Leave room for the tails. Reverb and delay tails get cut off constantly, so before you bounce, push the End position past the last note — either by adjusting the End value slider in the Bounce dialog, or, with Cycle mode on, by dragging the right locator, since Apple documents that the bounce range matches the locator positions only when Cycle is on. Then listen to the end of the file before you send it."
+          "t": "Leave room for tails at the end of the bounce range",
+          "d": "To leave room for reverb and delay tails, push the End position past the last note with the End value slider in the Bounce dialog before you bounce. With Cycle mode on, you can drag the right locator instead, because the bounce range matches the locators. Then listen to the end of the file before you send it.",
+          "src": [
+            {
+              "label": "Apple — Set the bounce range in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/set-the-bounce-range-lgcp190ba9b7/mac"
+            }
+          ]
         }
       ]
     },
@@ -75,11 +152,18 @@
       "tips": [
         {
           "t": "Colour and name everything before you leave the session",
-          "d": "Five minutes at the end of a session saves twenty at the start of the next one."
+          "d": "Five minutes at the end of a session saves twenty at the start of the next one.",
+          "advice": true
         },
         {
           "t": "Save a version before every major change",
-          "d": "New Alternative, then experiment freely. Fear of breaking something is the biggest brake on creative decisions."
+          "d": "New Alternative, then experiment freely. Fear of breaking something is the biggest brake on creative decisions.",
+          "src": [
+            {
+              "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+            }
+          ]
         }
       ]
     }

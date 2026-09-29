@@ -10,7 +10,7 @@ Logic Pro · Digital download
 
 # Logic Pro Crash Course
 
-265 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff.
+251 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff.
 
 84 pages · Instant download · Logic Pro 11 & 12
 
@@ -23,7 +23,7 @@ You are three hours into a session, the idea is finally working, and you stop �
 
 That is not a skill problem. It is a lookup problem. Logic Pro has over two thousand commands, and the useful ones are buried three menus deep or sitting on a key nobody mentions.
 
-This book is the lookup. 265 tricks, sorted into 19 sections, each one short enough to read in ten seconds and use immediately.
+This book is the lookup. 251 tricks, sorted into 19 sections, each one short enough to read in ten seconds and use immediately.
 
 A few of them
 
@@ -53,7 +53,7 @@ In the editor, select the Follow Rhythm checkbox — the Kick & Snare slider bec
 What’s inside
 
 
-## 19 sections. 265 tricks.
+## 19 sections. 251 tricks.
 
 Organised by what you are doing, not by what menu it lives in — so you can find the right one mid-project without breaking your flow.
 
@@ -86,7 +86,7 @@ It works with Logic Pro 11 and 12. Every key command is the factory default on a
 
 **Q. Is this a video course?**
 
-No. It is 265 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.
+No. It is 251 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.
 
 **Q. Do I need any third-party plugins?**
 
@@ -105,7 +105,7 @@ One PDF, 84 pages, full colour. Clickable contents, bookmarks in the sidebar, an
 Instantly. You get a download link as soon as the payment clears.
 
 
-## Get the 265.
+## Get the 251.
 
 A single PDF, 84 pages, delivered the moment your payment clears. Every key command in it is the Logic Pro factory default; where a command could move between versions, the book gives the command name and menu path so it stays correct.
 

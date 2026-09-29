@@ -60,6 +60,12 @@ CONFIRMED = {
     "⌘K": "Musical Typing",
     "⌘ + drag": "Marquee select; swap arrangement markers; constrain a drag to one axis",
     "⌥ + drag": "Copy instead of move; duplicate an arrangement section",
+    # Added in the citation pass; each is cited in the trick that uses it.
+    "T": "Show Tool Menu (Apple: Key commands for Tool Menu)",
+    "⌃M": "Mute/unmute selected regions (Apple: Mute and solo regions)",
+    "⌘U": "Set locators by selection and enable Cycle, unrounded",
+    "⌥E": "Show/hide Event Float (Apple: Event Float window)",
+    "⌃⌘ (hold)": "Temporarily switch the Pointer to the Velocity tool (Apple: Edit note velocity)",
 }
 
 STANDARD = {

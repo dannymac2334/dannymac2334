@@ -8,25 +8,75 @@
       "tips": [
         {
           "t": "Run two buffer sizes, not one",
-          "d": "Set I/O Buffer to 64 or 128 while tracking so you can play in time, then switch to 512 or 1024 when you mix so plugins stop crackling. Nothing else in Logic changes your day this much.",
+          "d": "In Settings > Audio > Devices, keep the I/O Buffer Size small while you track so monitoring latency stays low. Raise it when you mix: a larger buffer lowers the load on your Mac's CPU. A buffer too small for your Mac shows up as clicks, pops and crackles.",
           "k": "⌘,",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
+            },
+            {
+              "label": "Apple — Overview of Logic Pro settings",
+              "url": "https://support.apple.com/guide/logicpro/logic-pro-settings-overview-lgcp53689108/mac"
+            }
+          ]
         },
         {
           "t": "Set Processing Threads to Automatic",
-          "d": "Manually pinning thread counts was useful a decade ago. On Apple silicon, Automatic consistently beats hand tuning. Leave it alone."
+          "d": "In Settings > Audio > Devices, Processing Threads is set to Automatic by default, and Apple recommends leaving it there. The one exception Apple names: set a thread count yourself when you run other CPU-intensive apps at the same time as Logic.",
+          "src": [
+            {
+              "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
+            },
+            {
+              "label": "Apple — Avoid system overloads in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/108295"
+            }
+          ]
         },
         {
-          "t": "Enable Multithreading on Playback Tracks",
-          "d": "Settings > Audio > Devices — set Multithreading to \"Playback & Live Tracks\" if you want live, record-enabled tracks spread across cores. \"Playback Tracks\" is the older behaviour: all live input DSP is handled by a single thread on a single core. Apple notes \"Playback & Live Tracks\" places slightly more overall load on the system, so if you have no demanding live tracks, \"Playback Tracks\" is the better choice."
+          "t": "Choose the right Multithreading mode",
+          "d": "In Settings > Audio > Devices, the Multithreading pop-up offers two modes. Playback Tracks is the older behaviour: when several audio tracks record, or a Track Stack is selected for live input, all the input DSP runs on one thread and one core. Playback & Live Tracks spreads that load across threads but adds slightly more overall load. Use it only if you have demanding live tracks.",
+          "src": [
+            {
+              "label": "Apple — About the Multithreading setting in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101975"
+            },
+            {
+              "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
+            }
+          ]
         },
         {
           "t": "Raise Process Buffer Range to Large for mixing",
-          "d": "This is separate from the I/O buffer and it buys you real headroom on plugin‑heavy projects. Drop it back to Small only if you notice sluggish response."
+          "d": "In Settings > Audio > Devices, Process Buffer Range sets the buffer Logic uses to compute mixes and effects. It is separate from the I/O buffer and offers Small, Medium and Large. Apple's advice for avoiding system overloads is to set it to Large.",
+          "src": [
+            {
+              "label": "Apple — Avoid system overloads in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/108295"
+            },
+            {
+              "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
+            }
+          ]
         },
         {
           "t": "Uncheck Software Monitoring if you monitor through your interface",
-          "d": "If your interface has zero‑latency direct monitoring, Logic’s software monitoring just adds a second, slightly late copy of your voice. Turn it off and the doubling disappears."
+          "d": "If your audio interface supports hardware (direct) monitoring, turn off Software Monitoring in Settings > Audio > General. With it on, your input is processed in software and some latency is unavoidable. Apple's advice is to switch it off whenever you listen through your interface or mixing console.",
+          "src": [
+            {
+              "label": "Apple — General Audio settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/general-settings-lgcp0ed343a9/mac"
+            },
+            {
+              "label": "Apple — General Audio settings in Logic Pro for Mac (IS locale)",
+              "url": "https://support.apple.com/en-is/guide/logicpro/lgcp0ed343a9/mac"
+            }
+          ]
         }
       ]
     },
@@ -34,12 +84,36 @@
       "heading": "Recording",
       "tips": [
         {
-          "t": "Turn off “Allow Quick Punch‑In” only if you never punch",
-          "d": "Leave it on. Turn it on at Record > Allow Quick Punch-In (or Control-click the Record button in the control bar and choose it there). With it on, start playback and hit the Record Toggle key command at the moment you want to drop in — the transition happens with no audible gap and the recording before and after the punched section is untouched, which is a lifesaver when a take suddenly gets good."
+          "t": "Leave Allow Quick Punch-In on",
+          "d": "Choose Record > Allow Quick Punch-In, or Control-click the Record button in the control bar and choose Allow Quick Punch-In. With it on, you can punch in and out of recording on the fly while the project keeps playing.",
+          "src": [
+            {
+              "label": "Why Logic Pro Rules — Never Lose An Audio Take Again With Quick Punch-In",
+              "url": "https://whylogicprorules.com/quick-punch-in/"
+            },
+            {
+              "label": "Why Logic Pro Rules — #16 Autopunch, Quick Punch-In, & Replace Recording Modes",
+              "url": "https://whylogicprorules.com/autopunch-recording-modes/"
+            },
+            {
+              "label": "Apple — Punch in and out of audio recordings in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/punch-in-and-out-of-audio-recordings-lgcpb19bfd0d/10.7/mac/11.0"
+            }
+          ]
         },
         {
-          "t": "Set the click source to a sound you can actually hear",
-          "d": "Open File > Project Settings > Metronome. The click is the Klopfgeist plug-in sitting on the Click channel strip, and every part of it is yours: raise the Bar velocity above the Beat velocity so the downbeat actually lands, and change the Note values to pitch the click somewhere it cuts through your mix. Want a different sound entirely? Load any instrument you like onto the Click channel strip and drive it with those same note numbers. A click you have to strain for is a click you will drift against."
+          "t": "Set the click to a sound you can actually hear",
+          "d": "In the project settings, the Metronome pane controls the audio click, which comes from Klopfgeist, a virtual metronome sound source on the Click channel strip. Separate Note and Velocity fields set the note number and velocity of the notes generated for the bar, group, beat or division, so you can make the bar and the beat sound different. The Tone slider changes the sound from a short click to a pitched percussion sound like a wood block or claves. The Audio Click checkbox also works with any other plug-in you load on the Click channel strip.",
+          "src": [
+            {
+              "label": "Apple — Metronome project settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/metronome-project-settings-lgcpe1d6118e/mac"
+            },
+            {
+              "label": "Apple — Klopfgeist in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/klopfgeist-lgcp67edcb1f/mac"
+            }
+          ]
         }
       ]
     },
@@ -48,15 +122,33 @@
       "tips": [
         {
           "t": "Turn on scrubbing with audio in the Tracks area",
-          "d": "Settings > Audio > Editing > “Scrubbing with audio in Tracks area”. With it on you can drag the playhead over audio and hear it, which makes finding a spot by ear possible."
+          "d": "Settings > Audio > Editing > “Scrubbing with audio in Tracks area”. With it on, you can scrub audio regions in the Tracks area with the Scissors or Solo tool and find a spot by ear. Maximum Scrub Speed and Scrub Response fine-tune how it feels.",
+          "src": [
+            {
+              "label": "Apple — Audio Editing settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/editing-settings-lgcp0d6a4f6f/mac"
+            }
+          ]
         },
         {
-          "t": "Set the MIDI reset options to send Notes Off only",
-          "d": "Leave the MIDI Reset Messages alone. Under Settings > MIDI > Reset Messages every box is unselected by default and Apple's guidance is to keep it that way — Logic handles MIDI reset messages automatically. The Control 123 (All Notes Off) and Control 121 (Reset Controls) options are there only for compatibility with older hardware; switch one on only if a specific old synth needs it."
+          "t": "Leave the MIDI Reset Messages at their defaults",
+          "d": "Leave Logic's Reset Messages settings alone. Apple says Logic handles MIDI reset messages automatically and intelligently, so you can keep the defaults. The Control 123 (All Notes Off) and Control 121 (Reset Controls) options exist for compatibility with older MIDI devices. Switch one on only if an older synth needs it.",
+          "src": [
+            {
+              "label": "Apple — Reset Messages settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/reset-messages-settings-lgcp7123ac34/mac"
+            }
+          ]
         },
         {
           "t": "Fix doubled notes from a controller",
-          "d": "If your synth plays a doubled, slightly flammed note on every key press, turn Local Control off on the synth, or use Project Settings > MIDI > General > “Instrument Without MIDI Thru Function”. One or the other, never neither."
+          "d": "If notes double when you record from a keyboard synth, turn Local Off on the synth. If your keyboard has no Local Off setting, use Project Settings > MIDI > General > “Instrument Without MIDI Thru Function” and choose that instrument there. When a track assigned to it is selected, Logic does not pass your controller's MIDI through, which avoids the doubled notes.",
+          "src": [
+            {
+              "label": "Apple — General MIDI project settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/general-project-settings-lgcp94b70f34/mac"
+            }
+          ]
         }
       ]
     },
@@ -64,17 +156,39 @@
       "heading": "View settings",
       "tips": [
         {
-          "t": "Turn on Enable Complete Features first, always",
-          "d": "Settings > Advanced > Enable Complete Features. It is one checkbox. Leave it off and Logic runs in Simplified mode with whole areas hidden — project alternatives, beat mapping, the full mixer and automation.",
-          "b": "GAME CHANGER"
+          "t": "Turn on Enable Complete Features first",
+          "d": "Go to Logic Pro > Settings > Advanced and select Enable Complete Features. It is one checkbox. Leave it off and advanced features stay hidden, including project alternatives and backups, beat mapping, and expanded mixing and automation.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Advanced settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac"
+            }
+          ]
         },
         {
-          "t": "Turn off region colouring by track and colour by region instead",
-          "d": "Under Settings > View > Tracks, set the Region Color pop-up to \"Individual\" rather than \"As Track Color\". Individual lets you colour-code by part rather than by track, which scales much better on big arrangements — and if you switch back and forth, Logic remembers each region's individual colour."
+          "t": "Colour regions individually, not by track",
+          "d": "Choose Logic Pro > Settings > View, click Tracks, and set the Region Color pop-up to Individual instead of As Track Color. With Individual you can colour regions independently of their track, so you can colour-code by part. With As Track Color you cannot colour regions individually.",
+          "src": [
+            {
+              "label": "Apple — Tracks View settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/tracks-settings-lgcp8e0207b2/mac"
+            },
+            {
+              "label": "Apple — Color regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac"
+            }
+          ]
         },
         {
-          "t": "Turn on “Show Help Tags”",
-          "d": "Help tags show exact position, length and delta values while you drag. They are how you edit precisely without opening a single numeric field."
+          "t": "Turn on “Show help tags”",
+          "d": "In Logic Pro > Settings > View > General, select Show help tags. While you edit, help tags show the function name, the region or event name or number, the position and parameter values.",
+          "src": [
+            {
+              "label": "Apple — General View settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/general-settings-lgcp9793a910/mac"
+            }
+          ]
         }
       ]
     },
@@ -82,21 +196,43 @@
       "heading": "General and advanced",
       "tips": [
         {
-          "t": "Set Cycle to “Auto‑set locators by region selection”",
-          "d": "Control-click the Cycle button in the control bar and turn on Auto Set Locators > by Region Selection. Now selecting a region snaps the locators and the cycle area to that region's borders, so C loops exactly what you picked. It turns cycle into a one-key operation."
+          "t": "Set Auto Set Locators to By Region Selection",
+          "d": "Control-click the Cycle button in the control bar, click Auto Set Locators and choose By Region Selection. The locators and the cycle area are then set to the borders of the selected region.",
+          "src": [
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            },
+            {
+              "label": "macProVideo — 6 Logic Pro X Cycling Tips",
+              "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow"
+            }
+          ]
         },
         {
-          "t": "Turn on “Select regions on track selection”",
-          "d": "Small setting, enormous effect. Clicking a track header selects that track’s regions, so every region command becomes a two‑step operation instead of a hunt."
-        },
-        {
-          "t": "Set “Limit Dragging to One Direction” to Vertically in the Tracks area",
+          "t": "Turn on “Limit Dragging to One Direction” in the Tracks area",
           "d": "Tick the \"Limit Dragging to One Direction: In Tracks\" checkbox in Logic Pro > Settings > General > Editing. Once you start a drag left or right, movement locks to the horizontal axis, so you cannot nudge a perfectly placed region onto another track by accident. To actually change tracks, let go, reselect, and drag up or down — or hold Shift to override the limit for one move. There is a matching checkbox for the Piano Roll and Score.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Move regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-ae/guide/logicpro/lgcpf7c0d489/mac"
+            },
+            {
+              "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-jo/guide/logicpro/lgcpa905f117/mac"
+            }
+          ]
         },
         {
           "t": "Read the Clean Up list before you confirm it",
-          "d": "File > Project Management > Clean Up always asks first and shows exactly what it will remove. Read the list — it deletes whole unused audio files, not just unused portions of them."
+          "d": "File > Project Management > Clean Up always asks first and shows exactly what it will remove. Read the list — it deletes whole unused audio files, not just unused portions of them.",
+          "src": [
+            {
+              "label": "Apple — Clean up projects in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/clean-up-projects-lgcpce0efc05/mac"
+            }
+          ]
         }
       ]
     },
@@ -105,28 +241,64 @@
       "tips": [
         {
           "t": "Set your sample rate before you record, not after",
-          "d": "Under File > Project Settings > Audio, pick 48 kHz for anything that might touch video and 44.1 kHz for pure music (48 kHz is Logic's default on a fresh install). Change it after you have recorded or imported audio and Logic does not resample those files for you — they play back at the wrong pitch and speed. If you genuinely must convert, use File > Project Settings > Assets and select \"Convert audio file sample rate when importing\"."
+          "d": "Choose File > Project Settings > Audio and set the Sample Rate before you record or import anything. If an audio file's sample rate does not match the project's, it plays back at a different pitch. To have incoming files matched to the project rate, select \"Convert audio file sample rate when importing\" in File > Project Settings > Assets.",
+          "src": [
+            {
+              "label": "Apple — Set the sample rate of a project in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/set-the-project-sample-rate-lgcpce0958b8/mac"
+            }
+          ]
         },
         {
-          "t": "Set the recording bit depth to 24-bit",
-          "d": "It lives in Settings > Recording, not Project Settings. 32-bit float is available from Logic Pro 10.8 (November 2023) onward and depends on your interface. Never record at 16-bit."
+          "t": "Set the recording bit depth in Settings > Recording",
+          "d": "Recording bit depth is set in Logic Pro > Settings > Recording. Match it to your audio device's bit depth. With 32-bit float, files are about 33% larger than 24-bit, but you can remove clipping just by lowering the region's gain.",
+          "src": [
+            {
+              "label": "Apple — Recording settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/recording-settings-lgcp411dd5c8/mac"
+            }
+          ]
         },
         {
           "t": "Turn on Smart Tempo “Keep Project Tempo” by default",
-          "d": "Under Project Settings > Smart Tempo, set the project mode to Keep. Adaptive mode is powerful but it will rewrite your tempo map from a single dragged‑in loop if you are not paying attention.",
-          "b": "GAME CHANGER"
+          "d": "In File > Project Settings > Smart Tempo, set the project tempo mode to Keep Project Tempo. In Keep mode Logic Pro maintains the project tempo when you record or import audio. Adapt Project Tempo changes the project tempo to match a recording or imported file, so use it only temporarily.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Choose the project tempo mode in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-the-project-tempo-mode-lgcpca199cf6/mac"
+            }
+          ]
         },
         {
           "t": "Stop new recordings arriving pre-quantised",
-          "d": "There is no auto-quantize switch. The default applied to new recordings is the Region inspector's Quantize value with no region selected — set it to off there. Capture the performance first; quantise as a decision."
+          "d": "With no region selected, the Region inspector shows \"Default Settings\", and those values are applied to newly recorded regions. If new takes arrive quantised, check the Quantize value there and set it to off. Capture the performance first; quantise as a decision.",
+          "src": [
+            {
+              "label": "Apple — Use the Region inspector in Logic Pro for Mac (from prior audit, not re-retrieved)",
+              "url": "https://support.apple.com/guide/logicpro/use-the-region-inspector-lgcpd8a8780c/mac"
+            }
+          ]
         },
         {
-          "t": "Set Tuning to Equal Temperament unless you mean otherwise",
-          "d": "Project Settings > Tuning quietly affects every software instrument. If a synth sounds subtly wrong against a sample, check here first."
+          "t": "Check Tuning when a synth sounds subtly off",
+          "d": "Project Settings > Tuning sets the tuning for Logic's included software instruments. If a synth sounds subtly wrong against a sample, check here first: Equal Tempered turns off any alternative tuning, and the Tune slider should read A 440 Hz unless you meant to change it.",
+          "src": [
+            {
+              "label": "Apple — Tuning project settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/tuning-project-settings-lgcp452f2693/mac"
+            }
+          ]
         },
         {
-          "t": "Turn on “Bounce project settings” for consistent exports",
-          "d": "Retitle to \"Copy your assets into the project so it travels\". Under File > Project Settings > Assets, tick the options to copy audio files, Ultrabeat and Sampler samples, Space Designer impulse responses and Apple Sound Library content into the project. The files are copied in the next time you save, and from then on you can move or copy the project without breaking a single file reference. Your project becomes portable in one move."
+          "t": "Copy your assets into the project so it travels",
+          "d": "In File > Project Settings > Assets, select the copy checkboxes, such as \"Copy audio files into project\". The files are copied in the next time you save. From then on you can move or copy the project without losing any file references.",
+          "src": [
+            {
+              "label": "Apple — Manage project assets in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/manage-project-assets-lgcpce0d70e7/mac"
+            }
+          ]
         }
       ]
     },
@@ -135,33 +307,83 @@
       "tips": [
         {
           "t": "Save a Session Start template and set it as the default",
-          "d": "Build one project with your usual tracks, buses, reverb and marker colours, then File > Save as Template. Set it to open on launch and you never build a session from zero again.",
-          "b": "GAME CHANGER"
+          "d": "Build one project with your usual tracks, buses, reverb and marker colours, then choose File > Save As Template. Then, in Project Handling settings, set the Startup Action pop-up to \"Create New Project Using Default Template\" and use the Default Template button to choose your template.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Project Handling settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/project-handling-settings-lgcp43defb63/mac"
+            }
+          ]
         },
         {
-          "t": "Set a default channel strip for new tracks",
-          "d": "Build one channel strip the way you always want to start — gain staging, your go-to EQ and compressor, the sends you always use. Click the Setting button at the top of the strip and choose \"Save Channel Strip Setting As\", and file it somewhere you will find it. From then on, every new track is two clicks from your starting point: open the Library, find your saved setting under User Channel Strip Settings, click it. Keeping a copy of that strip in your template gets you the same result with no clicks at all."
+          "t": "Save your starting channel strip as a setting",
+          "d": "Build one channel strip the way you always start: your go-to EQ, compressor and sends. Click the Setting button at the top of the strip, choose \"Save Channel Strip Setting as\", pick a folder, name it and click Save. On any new track, load it from the Setting button's pop-up menu or from the Library.",
+          "src": [
+            {
+              "label": "Apple — Work with channel strip settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/work-with-channel-strip-settings-lgcp35966da6/mac"
+            }
+          ]
         },
         {
-          "t": "Set the default region colour palette",
-          "d": "Press ⌥C to open the Color palette (or Control-click a region and choose Name and Color > Show/Hide Colors). Double-click any swatch to open the Colors window and dial in a custom colour with the wheel and the contrast and opacity sliders. Decide once what each colour means to you — drums, vocals, keys, reference — and build that scheme into your template so every project opens with the same language. Consistent colours across projects make navigating an old session instant."
+          "t": "Give each colour a fixed meaning",
+          "d": "Press ⌥C to open the Color palette (or Control-click a region and choose Name and Color > Show/Hide Colors), then click a colour. Decide once what each colour means to you (drums, vocals, keys, reference) and colour your template that way, so every project opens with the same language.",
+          "src": [
+            {
+              "label": "Apple — Color regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac"
+            }
+          ]
         },
         {
-          "t": "Turn on Project Alternatives before you need them",
-          "d": "File > Project Alternatives > New Alternative gives you branching versions inside one project file — name it and click Done. Make one before every big arrangement change. (You will only see the menu if Enable Complete Features is switched on in Settings > Advanced.) The same menu's Edit Alternatives lets you rename or remove them; the Main alternative cannot be removed."
+          "t": "Make a Project Alternative before big changes",
+          "d": "File > Project Alternatives > New Alternative gives you another version of the project: name it and click Done. Make one before every big arrangement change. Alternatives need Enable Complete Features in Logic Pro > Settings > Advanced. File > Project Alternatives > Edit Alternatives lets you rename or delete them; you can't remove the Main alternative.",
+          "src": [
+            {
+              "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+            },
+            {
+              "label": "Apple — Advanced settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac"
+            }
+          ]
         },
         {
-          "t": "Set autosave and then still hit ⌘S",
-          "d": "Retitle to \"Logic autosaves — still hit ⌘S\". Logic autosaves invisibly so you do not lose work if it quits unexpectedly, but there is no autosave setting to turn on or tune, and you will only ever meet it as a recovery prompt after a crash. What you control is ⌘S: every manual save also banks a backup of the current alternative (up to ten), reachable from File > Revert To. Build the reflex of hitting ⌘S every time you finish a thought.",
-          "k": "⌘S"
+          "t": "Hit ⌘S often: every save banks a backup",
+          "d": "Each time you save with File > Save (⌘S), Logic keeps a backup of the current project alternative, up to ten per alternative. To go back, choose File > Revert to and pick one; they're listed newest first. Backups need Enable Complete Features. Build the reflex of hitting ⌘S every time you finish a thought.",
+          "k": "⌘S",
+          "src": [
+            {
+              "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+            },
+            {
+              "label": "Apple — Advanced settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac"
+            }
+          ]
         },
         {
           "t": "Move the Sound Library to an external drive on purpose",
-          "d": "Logic Pro > Sound Library > Relocate Sound Library lets you move tens of gigabytes off your system drive without breaking a single patch."
+          "d": "Logic Pro > Sound Library > Relocate Sound Library moves the library off your system drive: pick the drive or volume and click Relocate. Afterwards, don't rename that drive, or Logic Pro won't be able to find the Sound Library.",
+          "src": [
+            {
+              "label": "Apple Support - Relocate the Sound Library (from prior audit, not re-retrieved)",
+              "url": "https://support.apple.com/en-us/111094"
+            }
+          ]
         },
         {
-          "t": "Set the audio file location to “Project” not “Folder”",
-          "d": "Retitle to \"Set the audio file location to ‘Package’ not ‘Folder’\". In the File > Save As dialog, choose \"Organize my project as: Package\". Keeping recorded audio inside the project package means dragging one file to a hard drive moves everything. Only switch to Folder if you are working with an enormous session across multiple drives."
+          "t": "Save the project as a Package so it travels",
+          "d": "In the File > Save As dialog, choose \"Organize my project as: Package\" to save the project as a single file (package) containing its assets. Assets saved in the project are still there when you move or copy it. Choose Folder instead if you want a project folder with subfolders for each asset type.",
+          "src": [
+            {
+              "label": "Apple — Save Logic Pro for Mac projects",
+              "url": "https://support.apple.com/guide/logicpro/save-projects-lgcpce128e82/mac"
+            }
+          ]
         }
       ]
     }

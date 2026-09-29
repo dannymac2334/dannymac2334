@@ -9,15 +9,13 @@
         {
           "t": "Select all notes of the same pitch in one click",
           "d": "Click a key on the keyboard graphic at the left of the Piano Roll and every note at that pitch in the region is selected. Perfect for grabbing all the hi‑hats at once.",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Select similar notes with Edit > Select > Same Note Pitch",
-          "d": "Select one note, then choose Edit > Select > Similar Events (⇧S) to grab the other notes of the same pitch — the selected note acts as the reference. Clicking the key on the Piano Roll keyboard does the same job in one gesture."
-        },
-        {
-          "t": "Use Select > Inside Locators to grab a bar range",
-          "d": "Set the left and right locators around the bars you want, then choose Edit > Select > Inside Locators to select everything that falls between them. Precise, repeatable, no mouse accuracy required."
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Select notes in the Piano Roll Editor in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/en-mn/guide/logicpro/lgcpa906bc30/10.7/mac/11.0"
+            }
+          ]
         }
       ]
     },
@@ -25,30 +23,82 @@
       "heading": "Editing notes",
       "tips": [
         {
-          "t": "Change note length numerically in the inspector",
-          "d": "Open the Event Float window — Window > Show Event Float, or ⌥E — to read and type a selected note's values numerically: Position, Status, Channel, Number (pitch), Velocity and Length. It floats above the Piano Roll, so you can nudge a value without leaving the editor.",
-          "b": "GAME CHANGER"
-        },
-        {
-          "t": "Type one length and every selected note follows",
-          "d": "Force Legato is a different job from setting one length: it stretches each note to end where the next one begins, which is not the same as giving every note an equal length. Reach for Edit > Trim > Note End to Following Notes (Force Legato) when you want notes to join up — not when you want them all the same size."
+          "t": "Change note length numerically in the Event Float",
+          "d": "Open the Event Float window with Window > Show Event Float, or press ⌥E. It shows the selected note as one line in the same format as the Event List, and you can type new values straight in, length included.",
+          "b": "GAME CHANGER",
+          "k": "⌥E",
+          "src": [
+            {
+              "label": "Apple — Use the Event Float window in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/event-float-window-lgcp2158f388/mac"
+            },
+            {
+              "label": "Studio Interns — Show/Hide Event Float ⌥E, Logic Pro keyboard command of the day",
+              "url": "https://studio-interns.com/show-hide-event-float-e-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "Logic Pro GEM — Fader Event: A MIDI Event Wannabe",
+              "url": "https://logicprogem.com/Logic-Pro-X-Tutorials/Entries/2015/7/23_Fader_Event_-_A_MIDI_Event_Wannabe.html"
+            }
+          ]
         },
         {
           "t": "Force legato to fix gappy pads",
-          "d": "Select the notes, then choose Edit > Trim > Note End to Following Notes (Force Legato) in the Piano Roll. Every note extends to end where the next one begins, and pads and basslines stop sounding stuttery instantly."
+          "d": "Select the notes, then choose Edit > Trim > Note End to Following Notes (Force Legato) in the Piano Roll. Every note extends to end where the next one begins, and pads and basslines stop sounding stuttery instantly.",
+          "src": [
+            {
+              "label": "9to5Mac — The Logic Pros: 3 helpful tricks to streamline your MIDI/audio editing",
+              "url": "https://9to5mac.com/2016/02/21/logic-pros-how-to-solo-tricks-edit/"
+            },
+            {
+              "label": "Your Local Musician — Logic Pro X Tutorial: Force Legato",
+              "url": "https://www.yourlocalmusician.com/logic-pro-x-tutorial-force-legato/"
+            },
+            {
+              "label": "Apple — Resize notes in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/resize-notes-lgcpa90a4474/mac"
+            }
+          ]
         },
         {
           "t": "Trim overlaps automatically",
-          "d": "Select the notes and choose Edit > Trim > Note End to Remove Overlaps to Following Notes (8 Ticks Gap) in the Piano Roll. Logic shortens the note ends so nothing overlaps, leaving an eight-tick gap — which is what stops the phasing and stuck voices you get on hardware. There are matching versions for selected notes and for repeated notes."
+          "d": "Select the notes and choose Edit > Trim > Note End to Remove Overlaps to Following Notes (8 Ticks Gap) in the Piano Roll. Logic shortens the note ends so nothing overlaps, leaving an eight-tick gap before the next note. A Selected Notes version does the same job measured only against the other selected notes.",
+          "src": [
+            {
+              "label": "Apple — Resize notes in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/resize-notes-lgcpa90a4474/mac"
+            }
+          ]
         },
         {
           "t": "⌥‑drag a note to duplicate it",
           "d": "Hold ⌥ while dragging any note or selection to copy rather than move — you can even ⌥-drag notes between two Piano Roll windows, or between two different projects. To stop a drag changing pitch, turn on Logic Pro > Settings > General > Editing > \"Limit Dragging to One Direction In Piano Roll and Score\": the direction you start in is then the only one you can move in. Pressing ⇧ while dragging switches that behaviour on and off; it is not a pitch lock on its own.",
-          "k": "⌥ + drag"
+          "k": "⌥ + drag",
+          "src": [
+            {
+              "label": "Apple — Copy notes in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/copy-notes-lgcpa917aaef/mac"
+            },
+            {
+              "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/move-notes-lgcpa905f117/mac"
+            }
+          ]
         },
         {
           "t": "Place a note between grid divisions",
-          "d": "Set Snap to a finer value — Ticks snaps to 1/3840 of a beat — or just press Control-Shift as you drag, which moves the note in tick steps and overrides the Snap value entirely. Do not reach for ⌃⌥-drag here: that is the Zoom tool, so it will move your view instead of your note."
+          "d": "Set the Snap pop-up menu to Ticks, which snaps to 1/3840 of a beat, or press Control-Shift as you drag to move the note in tick steps, overriding the Snap value. You can also switch snapping off with the On/Off button beside the Snap pop-up menu.",
+          "k": "⌃⇧ + drag",
+          "src": [
+            {
+              "label": "Apple — Snap items to the grid in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/snap-items-to-the-grid-lgcpf7c0f66a/mac"
+            },
+            {
+              "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/move-notes-lgcpa905f117/mac"
+            }
+          ]
         }
       ]
     },
@@ -57,20 +107,45 @@
       "tips": [
         {
           "t": "Change velocity by dragging with the Velocity tool",
-          "d": "Pick the Velocity tool from the Tool menu — or press and hold Control-Command to turn the Pointer into it temporarily — and drag up or down on a note. A help tag shows the velocity as you drag, and the line inside the note grows or shrinks. Turn on View > Set Note Color > By Velocity first if you want the note colour to track it too. Either way you never leave the Piano Roll.",
-          "b": "GAME CHANGER"
+          "d": "Pick the Velocity tool from the Tool menu, or hold Control-Command to turn the Pointer into it temporarily, then drag up or down on a note. A help tag shows the velocity as you drag. Choose View > Set Note Color > By Velocity if you want the note colour to track it too.",
+          "b": "GAME CHANGER",
+          "k": "⌃⌘ (hold)",
+          "src": [
+            {
+              "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac"
+            }
+          ]
         },
         {
-          "t": "Draw a velocity ramp across a selection",
-          "d": "For a crescendo across a run of notes, select them all and drag one note upward with the Velocity tool. Logic moves the whole selection and keeps the relative differences between their velocity values, so you scale the shape of the performance instead of flattening it into a straight line."
+          "t": "Change a selection's velocity without flattening it",
+          "d": "Select the notes, then drag one of them vertically with the Velocity tool, or drag the Velocity slider in the Piano Roll header. Logic keeps the relative differences between the notes' velocities. When any note hits 0 or 127, the rest stop too. Hold ⌥ while dragging to override this.",
+          "src": [
+            {
+              "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac"
+            }
+          ]
         },
         {
           "t": "Show the automation lane inside the Piano Roll",
-          "d": "Click the Show/Hide Automation button in the Piano Roll Editor menu bar to open the Automation/MIDI lane under the notes. Choose modwheel, expression or sustain from the Automation/MIDI Parameter pop-up menu and edit that data right next to the notes it affects."
+          "d": "Click the Show/Hide Automation button in the Piano Roll Editor menu bar, then choose a parameter from the Automation/MIDI Parameter pop-up menu. Its MIDI or automation data appears in a lane under the notes, where you can edit it. Track automation shown there is the same curve as in the Tracks area, so edits appear in both places.",
+          "src": [
+            {
+              "label": "Apple — The Automation/MIDI area in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/automationmidi-area-in-the-piano-roll-editor-lgcpa90a61bf/mac"
+            }
+          ]
         },
         {
           "t": "Colour notes by velocity to read dynamics instantly",
-          "d": "In the Piano Roll's View menu, set note colour to Velocity. Flat parts become visibly, obviously flat."
+          "d": "In the Piano Roll's View menu, set note colour to Velocity. Flat parts become visibly, obviously flat.",
+          "src": [
+            {
+              "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac"
+            }
+          ]
         }
       ]
     },
@@ -80,15 +155,33 @@
         {
           "t": "Quantise from the region inspector, not destructively",
           "d": "The Quantize field in the Region inspector is non‑destructive and can be dialled back or removed at any point. Use it before you ever use the destructive version.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Quantize parameter values in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/quantize-parameter-values-lgcp47452db8/mac"
+            }
+          ]
         },
         {
           "t": "Use Q‑Strength to keep the human feel",
-          "d": "Under the region's more‑options triangle, Q‑Strength at 60 to 80 percent pulls notes toward the grid without gluing them to it."
+          "d": "Under the region's more‑options triangle, Q‑Strength at 60 to 80 percent pulls notes toward the grid without gluing them to it.",
+          "src": [
+            {
+              "label": "Apple — Advanced quantization parameters in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-quantization-parameters-lgcp35029a2b/mac"
+            }
+          ]
         },
         {
           "t": "Quantise only the notes that need it",
-          "d": "Select the offending notes in the Piano Roll and quantise the selection rather than the whole region. The good parts of the take stay untouched."
+          "d": "Select the offending notes in the Piano Roll and quantise the selection rather than the whole region. The good parts of the take stay untouched.",
+          "src": [
+            {
+              "label": "Apple — Quantize the timing of notes in the Piano Roll Editor in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/en-mo/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/10.7/mac/11.0"
+            }
+          ]
         }
       ]
     }

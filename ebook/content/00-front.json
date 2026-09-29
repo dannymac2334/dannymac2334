@@ -36,45 +36,96 @@
       ],
       "keys": [
         {
-          "sym": "⌘",
-          "name": "Command",
-          "note": "The workhorse. Most structural commands."
-        },
-        {
           "sym": "⌥",
           "name": "Option",
-          "note": "Almost always means copy, all, or alternate behaviour."
+          "note": "⌥ (Option): Option-drag copies a region; Option-click a Solo button for an exclusive solo."
         },
         {
           "sym": "⇧",
           "name": "Shift",
-          "note": "Extends a selection or reverses a command."
+          "note": "Shift-click to add to a selection."
         },
         {
           "sym": "⌃",
           "name": "Control",
-          "note": "Fine adjustments, and secondary click."
+          "note": "⌃ (Control): Control-click a selected region to open its shortcut menu."
         },
         {
           "sym": "↩",
           "name": "Return",
-          "note": "Sends the playhead to the start of the project."
+          "note": "↩ (Return): Sends the playhead to the start of the project."
         },
         {
           "sym": "⌫",
           "name": "Delete",
-          "note": "Removes the selection."
+          "note": "⌫ (Delete): Deletes the selected regions."
         },
         {
           "sym": "␣",
           "name": "Space",
-          "note": "Play / Stop. The most used key in the program."
+          "note": "␣ (Space): Play / Stop."
         }
       ],
       "callout": {
         "title": "Three modifier rules that explain most of Logic",
-        "text": "Hold ⌥ while dragging anything and you copy it instead of moving it. Hold ⌥ while clicking a knob or fader and it resets to its default. ⌥-click a Solo button and it becomes an exclusive solo — that channel alone. Learn these three and you can guess your way through most of the program."
-      }
+        "text": "Hold ⌥ while dragging a region and you copy it instead of moving it. ⌥-click a channel's Volume fader and it returns to 0 dB. ⌥-click a Solo button and it becomes an exclusive solo — that channel alone.",
+        "src": [
+          {
+            "label": "Apple — Cut, copy, and paste regions in Logic Pro for Mac",
+            "url": "https://support.apple.com/guide/logicpro/cut-copy-and-paste-regions-lgcpf7c0d424/mac"
+          },
+          {
+            "label": "Apple — Set channel strip volume in Logic Pro for Mac",
+            "url": "https://support.apple.com/guide/logicpro/set-volume-levels-lgcp8ec34eec/mac"
+          },
+          {
+            "label": "Apple — Mute and solo channel strips in Logic Pro for Mac",
+            "url": "https://support.apple.com/en-lk/guide/logicpro/lgcpbc21a09d/mac"
+          }
+        ]
+      },
+      "keys_src": [
+        {
+          "label": "Apple — Cut, copy, and paste regions in Logic Pro for Mac",
+          "url": "https://support.apple.com/guide/logicpro/cut-copy-and-paste-regions-lgcpf7c0d424/mac"
+        },
+        {
+          "label": "Apple — Mute and solo channel strips in Logic Pro for Mac",
+          "url": "https://support.apple.com/en-lk/guide/logicpro/lgcpbc21a09d/mac"
+        },
+        {
+          "label": "Select parts of regions in Logic Pro for Mac - Apple Support",
+          "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+        },
+        {
+          "label": "Select regions in the Tracks area in Logic Pro - Apple Support (Logic Pro 10.7 guide)",
+          "url": "https://support.apple.com/guide/logicpro/select-regions-lgcpf7c0e62a/10.7/mac/11.0"
+        },
+        {
+          "label": "Apple — Use selection-based processing in Logic Pro for Mac",
+          "url": "https://support.apple.com/guide/logicpro/use-selection-based-processing-lgcp58245be1/mac"
+        },
+        {
+          "label": "Apple — Control playback in Logic Pro (Logic Pro 10.7 guide)",
+          "url": "https://support.apple.com/guide/logicpro/control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1"
+        },
+        {
+          "label": "studio-interns.com — Play from Beginning (keyboard command of the day)",
+          "url": "https://www.studio-interns.com/2021/03/11/play-from-beginning-logic-pro-keyboard-command-of-the-day/"
+        },
+        {
+          "label": "Apple — Delete regions in Logic Pro for Mac",
+          "url": "https://support.apple.com/guide/logicpro/delete-regions-lgcpf7c0bd98/mac"
+        },
+        {
+          "label": "Apple — Use transport key commands in Logic Pro (Logic Pro 10.7 guide)",
+          "url": "https://support.apple.com/guide/logicpro/use-transport-key-commands-lgcp2814a670/10.7/mac/11.0"
+        },
+        {
+          "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+          "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers"
+        }
+      ]
     },
     {
       "id": "basics",
@@ -105,21 +156,71 @@
               "Cycle on / off"
             ],
             [
-              "K",
-              "Metronome on / off"
-            ],
-            [
               "⌘.",
-              "Stop and discard the recording just made"
+              "Discard recording, return to last play position"
             ],
             [
               "U",
-              "Set locators by selected regions"
+              "Set locators around the selection, rounded to bars, and turn Cycle on"
             ],
             [
               "/",
               "Open the Go to Position dialog"
             ]
+          ],
+          "src": [
+            {
+              "label": "Apple — Use transport key commands in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/use-transport-key-commands-lgcp2814a670/10.7/mac/11.0"
+            },
+            {
+              "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+              "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers"
+            },
+            {
+              "label": "studio-interns.com — Play from Beginning",
+              "url": "https://www.studio-interns.com/2021/03/11/play-from-beginning-logic-pro-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "Apple — Control playback in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1"
+            },
+            {
+              "label": "Apple — Record sound from a microphone or instrument in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/record-sound-a-microphone-electric-instrument-lgcpb19e49e4/10.7/mac/11.0"
+            },
+            {
+              "label": "Apple — Record to multiple audio tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/record-to-multiple-audio-tracks-lgcpb19dcf78/mac"
+            },
+            {
+              "label": "Apple — Use the cycle area in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/en-om/guide/logicpro/lgcp59e41e86/10.7/mac/11.0"
+            },
+            {
+              "label": "Logic Studio Training Wiki — Locators",
+              "url": "https://logicstudiotraining.com/wiki/index.php/Locators"
+            },
+            {
+              "label": "Apple — Advanced recording commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-recording-commands-lgcpb19d5875/mac"
+            },
+            {
+              "label": "macProVideo: 6 Logic Pro X Cycling Tips For A Faster Production Workflow",
+              "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow"
+            },
+            {
+              "label": "studio-interns.com: Set Rounded Locators by Regions/Events (keyboard command of the day)",
+              "url": "https://www.studio-interns.com/2019/09/28/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "macProVideo: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+              "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow"
+            },
+            {
+              "label": "Logic Studio Training: Logic Pro X Arranging and Editing Tip: Go To Position",
+              "url": "https://logicstudiotraining.com/logic-pro-x-arranging-and-editing-tip-go-to-position/"
+            }
           ]
         },
         {
@@ -167,8 +268,74 @@
             ],
             [
               "V",
-              "Hide / show all plug-in windows"
+              "Show / hide all plug-in windows"
             ]
+          ],
+          "src": [
+            {
+              "label": "Apple — Overview of mixing in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/mixing-overview-lgcpbc219818/mac"
+            },
+            {
+              "label": "Apple — Logic Pro Mixer interface (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/mixer-interface-lgcpe9cc43f6/10.7/mac/11.0"
+            },
+            {
+              "label": "Apple — Overview of the Piano Roll Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/overview-lgcpa9111b0d/mac"
+            },
+            {
+              "label": "macProVideo — 5 Essential Logic Pro X Piano Roll Tips",
+              "url": "https://macprovideo.com/article/audio-software/5-essential-logic-pro-x-piano-roll-tips"
+            },
+            {
+              "label": "Apple — Key commands for Main Window Tracks and Various Editors in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/main-window-tracks-and-various-editors-lgcpe8314fe2/mac"
+            },
+            {
+              "label": "Apple — Key commands for Score Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/score-editor-lgcpe96f8c91/mac"
+            },
+            {
+              "label": "macProVideo — Speed Up Your Workflow with Logic Pro X's Library",
+              "url": "https://macprovideo.com/article/audio-software/speed-up-your-workflow-with-logic-pro-xs-library"
+            },
+            {
+              "label": "Apple — Key commands for Library in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/library-lgcpa6a41488/mac"
+            },
+            {
+              "label": "afteraudio — Key commands for Global Commands in Logic Pro (copy of Apple table)",
+              "url": "https://www.afteraudio.com/blogs/musings/posts/6963413/key-commands-for-global-commands-in-logic-pro"
+            },
+            {
+              "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac"
+            },
+            {
+              "label": "Studio Interns: Show/Hide Browsers F (Logic Pro X keyboard command of the day)",
+              "url": "https://www.studio-interns.com/2020/04/28/show-hide-browsers-f-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "macProVideo: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+              "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow"
+            },
+            {
+              "label": "Apple — Overview of Smart Controls in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/smart-controls-overview-lgcp7e59f24b/mac"
+            },
+            {
+              "label": "Apple — Show and hide global tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/show-and-hide-global-tracks-lgcpd0e8ce94/mac"
+            },
+            {
+              "label": "Why Logic Pro Rules: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+              "url": "https://whylogicprorules.com/logic-pro-x-key-commands/"
+            },
+            {
+              "label": "Logic Studio Training: 7 Must-Know Logic Pro Shortcuts for Aspiring Beat Makers",
+              "url": "https://logicstudiotraining.com/logic-pro-shortcuts-beat-making/"
+            }
           ]
         },
         {
@@ -184,19 +351,11 @@
             ],
             [
               "⌘T",
-              "Split regions at playhead"
-            ],
-            [
-              "⌘J",
-              "Join selected regions"
+              "Split regions at the playhead"
             ],
             [
               "⌘R",
               "Repeat regions or events"
-            ],
-            [
-              "⌘D",
-              "New track with duplicate settings"
             ],
             [
               "⌘A",
@@ -208,33 +367,81 @@
             ],
             [
               "⌥ + drag",
-              "Copy instead of move"
+              "Copy a region instead of moving it"
             ],
             [
               "⌘ + drag",
-              "Marquee select (default secondary tool)"
+              "Use your Command-click tool (Marquee is a popular choice)"
             ]
+          ],
+          "src": [
+            {
+              "label": "Apple — Undo and redo edits in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/undo-and-redo-edits-lgcp1dbd67ab/mac"
+            },
+            {
+              "label": "Studio Interns: Split Regions/Events at Playhead Position ⌘T (keyboard command of the day)",
+              "url": "https://studio-interns.com/split-regions-events-at-playhead-positiont-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "Sound On Sound: Logic Pro Key Commands",
+              "url": "https://www.soundonsound.com/techniques/logic-pro-key-commands"
+            },
+            {
+              "label": "Sound On Sound - Logic Pro: Handling Repetition",
+              "url": "https://www.soundonsound.com/techniques/logic-pro-handling-repetition"
+            },
+            {
+              "label": "macProVideo - 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+              "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow"
+            },
+            {
+              "label": "Apple — Select events in the Logic Pro for Mac Event List",
+              "url": "https://support.apple.com/guide/logicpro/select-events-in-the-event-list-lgcp2158bb90/mac"
+            },
+            {
+              "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac"
+            },
+            {
+              "label": "Apple — Select tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-tracks-lgcp66ed91bd/mac"
+            },
+            {
+              "label": "Apple — Cut, copy, and paste regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/cut-copy-and-paste-regions-lgcpf7c0d424/mac"
+            },
+            {
+              "label": "Apple — Set channel strip volume in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/set-volume-levels-lgcp8ec34eec/mac"
+            },
+            {
+              "label": "Apple — Mute and solo channel strips in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-lk/guide/logicpro/lgcpbc21a09d/mac"
+            },
+            {
+              "label": "Apple — Overview of tools in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac"
+            }
           ]
         },
         {
           "heading": "Zoom and navigation",
           "rows": [
             [
-              "Z",
-              "Zoom to fit selection, press again to return"
-            ],
-            [
-              "⌘← / ⌘→",
-              "Zoom out / in horizontally"
-            ],
-            [
-              "⌘↑ / ⌘↓",
-              "Zoom out / in vertically"
-            ],
-            [
               "⌃⌥ + drag",
               "Drag-zoom to any area"
             ]
+          ],
+          "src": [
+            {
+              "label": "Apple — Zoom windows in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/zoom-windows-lgcp5cbf2096/mac"
+            },
+            {
+              "label": "Why Logic Pro Rules — Speed Up Your Zooms in Logic Pro With These 2 Keys",
+              "url": "https://whylogicprorules.com/zoom-tool/"
+            }
           ]
         },
         {
@@ -247,10 +454,6 @@
             [
               "⌘S",
               "Save"
-            ],
-            [
-              "⇧⌘S",
-              "Save as"
             ],
             [
               "⌘B",
@@ -268,6 +471,52 @@
               "⌘,",
               "Open Settings"
             ]
+          ],
+          "src": [
+            {
+              "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac"
+            },
+            {
+              "label": "Apple — Capture your most recent MIDI performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/capture-your-most-recent-midi-performance-lgcpdc0bf889/mac"
+            },
+            {
+              "label": "Logic Studio Training — Flashback Capture: Recover the Take You Forgot to Record",
+              "url": "https://logicstudiotraining.com/flashback-capture-logic-pro/"
+            },
+            {
+              "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+            },
+            {
+              "label": "Apple — Advanced settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac"
+            },
+            {
+              "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac"
+            },
+            {
+              "label": "Why Logic Pro Rules: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+              "url": "https://whylogicprorules.com/logic-pro-x-key-commands/"
+            },
+            {
+              "label": "Logic Studio Training: 7 Must-Know Logic Pro Shortcuts for Aspiring Beat Makers",
+              "url": "https://logicstudiotraining.com/logic-pro-shortcuts-beat-making/"
+            },
+            {
+              "label": "MusicTech: Logic's Bounce In Place function is essential",
+              "url": "https://musictech.com/tutorials/logic-bounce-in-place/"
+            },
+            {
+              "label": "Apple — Assign key commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
+            },
+            {
+              "label": "Apple — Overview of Logic Pro settings",
+              "url": "https://support.apple.com/guide/logicpro/logic-pro-settings-overview-lgcp53689108/mac"
+            }
           ]
         }
       ]

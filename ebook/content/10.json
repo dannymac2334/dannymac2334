@@ -8,12 +8,32 @@
       "tips": [
         {
           "t": "Use Region automation for anything that belongs to the part",
-          "d": "A filter sweep that is part of a synth riff should move with the riff. Region automation does that; track automation does not."
+          "d": "A filter sweep that is part of a synth riff should move with the riff. Region automation does that; track automation does not.",
+          "src": [
+            {
+              "label": "Apple — Track automation vs region automation in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/track-automation-vs-region-automation-lgcp967649d0/mac"
+            }
+          ]
         },
         {
           "t": "Press A to toggle automation view",
           "d": "One key. Learn it and stop hunting for the button.",
-          "k": "A"
+          "k": "A",
+          "src": [
+            {
+              "label": "Apple — Automation in the Logic Pro for Mac Audio Track Editor",
+              "url": "https://support.apple.com/guide/logicpro/use-automation-in-the-audio-track-editor-lgcp00e320cb/mac"
+            },
+            {
+              "label": "Apple — Show automation curves in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/10.7/mac/11.0"
+            },
+            {
+              "label": "Why Logic Pro Rules — Logic Pro X Automation",
+              "url": "https://whylogicprorules.com/automation/"
+            }
+          ]
         }
       ]
     },
@@ -23,32 +43,86 @@
         {
           "t": "Use Latch mode for almost everything",
           "d": "Latch writes while you move the control and holds the last value when you let go. Touch snaps back, Write erases as it goes, and Read plays only. Latch is the right default.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Choose automation modes in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
+            }
+          ]
         },
         {
           "t": "Never leave a track in Write mode",
-          "d": "Write mode erases existing automation as the playhead passes, whether you touch the fader or not. It has destroyed more mixes than any other setting in Logic."
+          "d": "Write mode erases existing automation as the playhead passes, whether you touch the fader or not.",
+          "src": [
+            {
+              "label": "Apple — Choose automation modes in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
+            }
+          ]
         },
         {
           "t": "Draw automation with the Pencil tool for precision",
-          "d": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes."
+          "d": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes.",
+          "src": [
+            {
+              "label": "Apple — Automation settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/automation-settings-lgcp8aa8f24b/mac"
+            },
+            {
+              "label": "Apple — Add and adjust automation points in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/add-and-adjust-automation-points-lgcpb1a3327b/10.7/mac/11.0"
+            }
+          ]
         },
         {
           "t": "Delete an automation point without dragging it",
-          "d": "Double-click the point with the Pointer, or select it and press Delete, or use the Eraser. It works on curves too."
+          "d": "Double-click the point, or select it and press Delete, or drag across it with the Eraser.",
+          "src": [
+            {
+              "label": "Apple — Delete automation in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac"
+            }
+          ]
         },
         {
-          "t": "Curve any line by dragging its middle with ⌃⇧",
-          "d": "Straight automation ramps sound mechanical. Curving them takes one drag and makes the move sound intentional.",
-          "k": "⌃⇧ + drag"
+          "t": "Curve an automation line with ⌃⇧-drag",
+          "d": "Hold ⌃⇧ and, with the Pointer tool, drag the line between two automation points to bend it into a curve. This works as long as the two points aren't directly above each other.",
+          "k": "⌃⇧ + drag",
+          "src": [
+            {
+              "label": "macProVideo - 5 Automation Power-User Tips and Tricks in Logic Pro",
+              "url": "https://www.macprovideo.com/article/logic-pro/logic-automation-tips-tricks"
+            },
+            {
+              "label": "Sound On Sound - Fine-tuning Automation In Logic",
+              "url": "https://www.soundonsound.com/techniques/fine-tuning-automation-logic"
+            },
+            {
+              "label": "Apple — Select, copy, and move automation in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/select-copy-and-move-automation-lgcpb1a5aad6/10.7/mac/11.0"
+            }
+          ]
         },
         {
-          "t": "Trim automation up or down as a group",
-          "d": "Trim is not a mode on its own — you switch it on in combination with Touch or Latch. Once it is on, moving the fader offsets the existing automation up or down by the amount you move, keeping the shape of the curve, and it applies to Volume, Pan and Send levels. Run the section you want to lift with Trim Latch engaged to push a whole automated vocal up by a decibel."
+          "t": "Trim existing automation up or down",
+          "d": "Trim is not a mode on its own. It works in combination with Touch or Latch. With it on, moving the fader offsets existing automation up or down by the amount you move it. It applies only to Volume, Pan and Send levels, so use it to lift an already-automated vocal without redrawing its moves.",
+          "src": [
+            {
+              "label": "Apple — Choose automation modes in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
+            }
+          ]
         },
         {
           "t": "Use Relative mode to layer a second pass",
-          "d": "Relative automation sits on top of your existing pass as an offset, so you can add a ride without destroying the original moves."
+          "d": "Relative automation sits on top of your existing pass as an offset, so you can add a ride without destroying the original moves.",
+          "src": [
+            {
+              "label": "Apple — Choose automation modes in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
+            }
+          ]
         }
       ]
     },
@@ -56,37 +130,67 @@
       "heading": "Editing and managing automation",
       "tips": [
         {
-          "t": "Marquee a range then drag the line to change only that section",
-          "d": "Select the Marquee tool and drag across the bars you want to change, then drag the automation line inside that selection. Logic creates two automation points at each edge of the marquee automatically, so the change is boxed in and does not bleed into the surrounding bars. If you have assigned Marquee as your Command-click tool (Logic Pro > Settings > Advanced must have the full feature set enabled for that menu to appear), you can hold Command to grab it without switching tools.",
-          "b": "GAME CHANGER"
+          "t": "Marquee a range, then drag the line to change only that section",
+          "d": "Drag across the bars you want to change with the Marquee tool, then drag the automation line inside that selection. Logic creates two automation points at the left edge and two at the right edge of the selection, so the change stays boxed in and does not bleed into the surrounding bars.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            }
+          ]
         },
         {
-          "t": "Show every automated parameter at once",
-          "d": "Press A to show automation, then click the small disclosure triangle at the lower left of the track header to open an extra automation lane underneath the track. Repeat it to stack more lanes, and pick the parameter for each lane from the automation parameter pop-up menu in its header — that way you can see several written parameters side by side instead of flipping between them."
-        },
-        {
-          "t": "Copy automation between tracks",
-          "d": "Drag across the range with the Marquee tool and choose Edit > Copy. Select the destination track, move the playhead to the point where you want the data to start, then choose Edit > Paste — the automation lands at the playhead, so park the playhead deliberately (or set it from the original selection first) if you want the copy to sit at the same bar."
+          "t": "Show several automation lanes at once",
+          "d": "Instead of switching one automation curve between parameters, show automation sub-lanes, which appear below the main track. Click the automation sub-lane disclosure triangle, then choose each lane's parameter from its Automation Parameter pop-up menu. You can then see several parameters at once.",
+          "src": [
+            {
+              "label": "Apple — Logic Pro for Mac release notes",
+              "url": "https://support.apple.com/en-us/109503"
+            },
+            {
+              "label": "Apple — Overview of automation in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/automation-overview-lgcpb1a1ea03/mac"
+            },
+            {
+              "label": "Apple — Show automation curves in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/10.7/mac/11.0"
+            }
+          ]
         },
         {
           "t": "Delete all automation on a track in one command",
-          "d": "Mix > Delete Automation > Delete All Automation on Selected Track wipes every parameter on that track in one move. The same submenu also holds Delete Visible Automation on Selected Track, which clears only the parameter currently displayed, and Delete Orphaned Automation on Selected Track for data left behind by plug-ins you have removed."
+          "d": "Choose Mix > Delete Automation > Delete All Automation on Selected Track to remove every automation parameter from that track at once. The same submenu has Delete Visible Automation on Selected Track, which removes only the active parameter, and Delete Orphaned Automation on Selected Track. Automation can become orphaned when it is copied between tracks.",
+          "src": [
+            {
+              "label": "Apple — Delete automation in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac"
+            }
+          ]
         },
         {
           "t": "Thin dense automation after recording a controller pass",
-          "d": "Recording modwheel or a fader creates thousands of points. Delete Redundant Automation Points (key command Control-Delete) strips the points that do not change the shape of the curve — but note it is a global command: it acts on all regions and all tracks, not just the range you have selected. To thin one passage only, select the points in that range with the Marquee or Pointer tool and press Delete, then redraw."
+          "d": "Delete Redundant Automation Points cleans up heavy controller passes, but it is global: it removes redundant points on all regions and all tracks, not just your selection. To thin one passage only, select the points in that range and press Delete, then redraw.",
+          "src": [
+            {
+              "label": "Apple — Delete automation in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac"
+            },
+            {
+              "label": "studio-interns — Delete Redundant Automation Points",
+              "url": "https://studio-interns.com/delete-redundant-automation-points-logic-pro-x-keyboard-command-of-the-day/"
+            }
+          ]
         },
         {
           "t": "Snap automation to the grid when it needs to be rhythmic",
-          "d": "Automation snaps to its own grid value, set separately from regions: open the Snap pop-up menu in the Tracks area, choose Snap Automation, and pick a value from the submenu. Automation edits then snap to that value, and you can set it independently in the Tracks area and the Piano Roll Editor — so your filter stabs land on the beat without changing how regions snap."
-        },
-        {
-          "t": "Automate plugin bypass for effect changes",
-          "d": "Insert bypass usually appears in the track's automation parameter pop-up menu alongside the plug-in's own parameters, so you can switch an effect in and out on the timeline. Automating a delay in and out this way is cleaner than riding its mix knob. Check the parameter list for the slot in question before you commit to the approach — bypass is not exposed identically for every plug-in and every insert slot."
-        },
-        {
-          "t": "Automate send levels rather than plugin mix knobs",
-          "d": "Sends give you a fader you can see on the mixer and a lane you can find later. Buried plugin mix knobs are neither."
+          "d": "Open the Snap pop-up menu in the Tracks area, choose Snap Automation, and pick a value from the submenu. Automation edits then snap to that value, so filter stabs land on the grid. You can set it independently in the Tracks area and the Piano Roll Editor.",
+          "src": [
+            {
+              "label": "Apple — Snap automation to grid position in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/snap-automation-to-grid-positions-lgcpb1a5eb20/mac"
+            }
+          ]
         }
       ]
     }

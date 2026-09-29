@@ -8,15 +8,42 @@
       "tips": [
         {
           "t": "Put take-switching on keys you choose",
-          "d": "Take switching is worth a key command of your own. Press ⌥K to open the Key Commands window, type “Take” in the search field, and assign keys to the take-selection commands you use most. Auditioning take 3 against take 7 then becomes two keypresses instead of two trips to the Take Folder menu. (Use the Unused filter in that window to see which of them are still free on your system.)"
+          "d": "Press ⌥K to open the Key Commands window and type “Take” in the search field. Find Select Previous Take or Comp and Select Next Take or Comp, which step through the takes and comps listed in the take folder’s pop-up menu. Check what they are assigned to, and put them on keys you can reach while you audition.",
+          "k": "⌥K",
+          "src": [
+            {
+              "label": "Apple — Assign key commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
+            },
+            {
+              "label": "Apple — Create custom keyboard shortcuts for Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101929"
+            },
+            {
+              "label": "Apple — Preview take recordings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/preview-take-recordings-lgcp317d76de/mac"
+            }
+          ]
         },
         {
           "t": "Save your comp as a new comp before changing it",
-          "d": "The take folder menu has “Duplicate Comp”. Do this before every significant change and you can always go back to the version that was working."
+          "d": "The take folder menu has “Duplicate Comp”. Do this before every significant change and you can always go back to the version that was working.",
+          "src": [
+            {
+              "label": "Apple — Create and save comps in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac"
+            }
+          ]
         },
         {
           "t": "Move a comp edit point without redoing the comp",
-          "d": "Drag the vertical divider between two take sections to slide the edit point earlier or later."
+          "d": "Drag the vertical divider between two take sections to slide the edit point earlier or later.",
+          "src": [
+            {
+              "label": "Apple — Edit comps in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-comps-lgcpb19217b1/mac"
+            }
+          ]
         }
       ]
     },
@@ -25,17 +52,42 @@
       "tips": [
         {
           "t": "Curve the fade after you draw it",
-          "d": "Drag the middle of a drawn fade with the Fade tool to bend it, or edit the Curve value in the Region inspector. An S-curve on a vocal edit sounds far more natural than a straight line."
+          "d": "With the Fade tool, hover over the middle of a fade you've made and drag left or right to change its curve. Or select the region and adjust the fade's Curve value in the Region inspector.",
+          "src": [
+            {
+              "label": "Why Logic Pro Rules - How to Get the Most Out of Logic Pro X's Fade Tool",
+              "url": "https://whylogicprorules.com/logic-pro-x-fade-tool/"
+            },
+            {
+              "label": "Apple — Edit fades in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/edit-fades-lgcpf7c0cd53/10.7/mac/11.0"
+            }
+          ]
         },
         {
           "t": "Use “Remove Silence from Audio Region” for noisy tracks",
-          "d": "Control-click the audio region and choose Split > Remove Silence from Audio Region (⌃X). It strips everything below a threshold you set and leaves separate regions — great for a live kit or spoken word.",
+          "d": "Select the audio region and press ⌃X (Remove Silence from Audio Region). Everything below a threshold you set is removed, and new regions are created from what remains. That makes it useful for a live kit or spoken word.",
           "b": "GAME CHANGER",
-          "k": "⌃X"
+          "k": "⌃X",
+          "src": [
+            {
+              "label": "studio-interns.com — Remove Silence from Audio Region… ⌃X",
+              "url": "https://studio-interns.com/remove-silence-from-audio-region-x-logic-pro-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "9to5Mac — Editing noisy audio files with Remove Silence in Logic Pro X",
+              "url": "https://9to5mac.com/2019/09/15/remove-silence-in-logic-noise/"
+            },
+            {
+              "label": "Apple — Uses for Remove Silence in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/uses-for-remove-silence-lgcp5e08f225/mac"
+            }
+          ]
         },
         {
           "t": "Add a tiny fade to the start of every region as policy",
-          "d": "Even 3 ms removes the click from a non‑zero‑crossing start. Do it to everything and you never chase a mystery click again."
+          "d": "Even 3 ms removes the click from a non‑zero‑crossing start. Do it to everything and you never chase a mystery click again.",
+          "advice": true
         }
       ]
     },
@@ -44,19 +96,51 @@
       "tips": [
         {
           "t": "Add flex markers either side before you move one",
-          "d": "Placing anchor markers on the neighbouring transients stops your edit from stretching the whole bar."
+          "d": "Placing anchor markers on the neighbouring transients stops your edit from stretching the whole bar.",
+          "src": [
+            {
+              "label": "Apple — Flex tool time stretching in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/flex-tool-time-stretching-lgcp54a78604/mac"
+            }
+          ]
         },
         {
           "t": "Quantise audio with Flex enabled",
-          "d": "With Flex on, the region's Quantize field in the inspector works on audio exactly like MIDI. Drums snap to the grid without a single cut."
+          "d": "Give the audio track a Flex mode and make sure Flex is selected for the region in the Region inspector. You can then quantize that audio by choosing a value from the Quantize pop-up menu in the Region inspector. It's real-time, so you can change the value later, or turn it off to get the original timing back.",
+          "src": [
+            {
+              "label": "macProVideo - Quantizing In Logic: The Essentials",
+              "url": "https://macprovideo.com/article/audio-software/quantizing-in-logic-the-essentials"
+            },
+            {
+              "label": "Sound On Sound - Logic Pro: Editing Drum Timings",
+              "url": "https://www.soundonsound.com/techniques/logic-pro-editing-drum-timings"
+            },
+            {
+              "label": "Apple — Quantize regions in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/quantize-regions-lgcpd12112da/10.7/mac/11.0"
+            }
+          ]
         },
         {
           "t": "Use Flex Pitch to fix a single flat note",
-          "d": "Switch the track's Flex mode to Flex Pitch, then drag the note blob vertically. The gain, vibrato, pitch drift and formant handles are all on the same blob."
+          "d": "Switch the track's Flex mode to Flex Pitch, then drag the note blob vertically. The gain, vibrato, pitch drift and formant handles are all on the same blob.",
+          "src": [
+            {
+              "label": "Apple — Edit pitch and timing with Flex Pitch in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-pitch-and-timing-with-flex-pitch-lgcpc53e6bef/mac"
+            }
+          ]
         },
         {
           "t": "Reset a bad Flex edit rather than undoing repeatedly",
-          "d": "Control-click the flexed region and choose Reset All Flex Edits. It clears the region's flex data and starts you fresh."
+          "d": "Control-click the flexed region and choose Reset All Flex Edits. It clears the region's flex data and starts you fresh.",
+          "src": [
+            {
+              "label": "Apple — Delete, reset and move flex markers in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/delete-reset-and-move-flex-markers-lgcpe639c41a/mac"
+            }
+          ]
         }
       ]
     },
@@ -65,23 +149,57 @@
       "tips": [
         {
           "t": "Use the Audio File Editor for true destructive edits",
-          "d": "Double‑click a region and switch to the File tab. Silence, reverse, normalise and pencil‑edit at the sample level. Changes here affect the file itself."
+          "d": "Double‑click a region and switch to the File tab. Silence, reverse, normalise and pencil‑edit at the sample level. Changes here affect the file itself.",
+          "src": [
+            {
+              "label": "Apple — Audio File Editor overview in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/audio-file-editor-overview-lgcp21587d1c/mac"
+            }
+          ]
         },
         {
           "t": "Normalise regions non‑destructively with Gain",
-          "d": "The Region inspector's Gain parameter changes playback level without touching the file. Always try this before normalising."
+          "d": "The Region inspector's Gain parameter changes playback level without touching the file. Always try this before normalising.",
+          "src": [
+            {
+              "label": "Apple — Change gain of audio regions in the Tracks area (Logic Pro for Mac)",
+              "url": "https://support.apple.com/guide/logicpro/change-gain-audio-regions-tracks-area-lgcp8e4c781d/mac"
+            }
+          ]
         },
         {
-          "t": "Strip silence at the file level to reclaim disk space",
-          "d": "Title: “Reclaim disk space with Project Management > Clean Up”. Body: After comping, File > Project Management > Clean Up deletes media the project no longer needs. Its options are Delete Unused Audio Files (files not used in any project alternative are removed from the Project Audio Browser and deleted from disk), Delete Unreferenced Audio Files and Delete Backups. It removes whole files, not unused portions of files, and it deletes from disk — a dialog lists everything to be deleted, so deselect the Delete checkbox for anything you want to keep, and back up first."
+          "t": "Reclaim disk space with Project Management > Clean Up",
+          "d": "Once your comps are final, choose File > Project Management > Clean Up. Its options are Delete Unused Audio Files, Delete Unreferenced Audio Files and Delete Backups, and files are deleted from disk. A dialog lists everything to be deleted, so deselect the Delete checkbox for anything you want to keep, and back up first.",
+          "src": [
+            {
+              "label": "Apple — Clean up Logic Pro for Mac projects",
+              "url": "https://support.apple.com/guide/logicpro/clean-up-projects-lgcpce0efc05/mac"
+            },
+            {
+              "label": "Apple — Remove unused audio files in your Logic Pro for Mac project",
+              "url": "https://support.apple.com/en-us/118567"
+            }
+          ]
         },
         {
           "t": "Reverse a region for a riser in two clicks",
-          "d": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version."
+          "d": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version.",
+          "src": [
+            {
+              "label": "Apple — Reverse audio regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/reverse-audio-regions-lgcp99b0012e/mac"
+            }
+          ]
         },
         {
           "t": "Commit edits with Bounce Regions in Place",
-          "d": "When you are happy with a comp, commit it. Select the regions, then choose File > Bounce > Regions in Place — or Control-click the selection and choose Bounce Regions in Place from the shortcut menu — to render them to a fresh audio file on the track. Check the options in the dialog (name, destination, and whether effect plug-ins are bypassed) before you click OK, and keep the original in case you need to go back."
+          "d": "When you are happy with a comp, select the regions and choose File > Bounce > Regions in Place. In the dialog, set the name and a Destination: New Track, or Selected Track to replace the regions. Set Source to Leave, Mute or Delete, and decide whether to Bypass Effect Plug-ins. Choose Leave or Mute to keep the original.",
+          "src": [
+            {
+              "label": "Apple — Bounce regions in place in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac"
+            }
+          ]
         }
       ]
     }

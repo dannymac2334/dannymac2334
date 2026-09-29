@@ -7,24 +7,67 @@
       "heading": "The essentials",
       "tips": [
         {
-          "t": "⌘‑drag anywhere to marquee select",
-          "d": "Make Marquee your ⌘-click tool and you never have to switch tools again. In the Tracks area, click the Command-click Tool menu and choose the Marquee tool; from then on, holding ⌘ turns the pointer into a Marquee anywhere in the Tracks area, and releasing ⌘ puts you straight back on your Left-click tool. Drag a box across any range on any number of tracks. (If you would rather not use a modifier at all, switching on Marquee Tool Click Zones makes the lower half of a region behave as a marquee, with the exception of the lower-left and lower-right edges, which stay as fade/loop handles.)",
-          "b": "GAME CHANGER"
+          "t": "⌘-drag anywhere to marquee select",
+          "d": "Make Marquee your Command-click tool. In the Tracks area, click the Command-click Tool menu and choose the Marquee tool. From then on, hold ⌘ and drag to marquee-select parts of regions on one or more tracks. Release ⌘ and you're back on your Left-click tool.",
+          "b": "GAME CHANGER",
+          "k": "⌘ + drag",
+          "src": [
+            {
+              "label": "Apple — Overview of tools in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac"
+            },
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            },
+            {
+              "label": "Sound On Sound — Marque Of Distinction",
+              "url": "https://www.soundonsound.com/techniques/marque-distinction"
+            },
+            {
+              "label": "Apple — Assign tools in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0"
+            }
+          ]
         },
         {
-          "t": "Press Space and Logic plays only the marquee selection",
-          "d": "Playback starts at the marquee's left edge and stops at its right edge. It is the fastest way to audition a specific range without touching the locators.",
-          "k": "Space"
+          "t": "Play just the marquee selection",
+          "d": "Start playback while a marquee selection is active and Logic plays from the selection's left edge to its right edge, then stops. It's the fastest way to audition a specific range without touching the locators.",
+          "src": [
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            }
+          ]
         },
         {
-          "t": "Hit Delete to cut a hole in every track at once",
-          "d": "Marquee across all tracks and delete. Every region in that time range is trimmed, on every track, in one action.",
-          "k": "Delete"
+          "t": "Cut a hole in every track at once",
+          "d": "Choose View > Marquee Ruler, then drag in the marquee ruler to select across all tracks. Delete, and only the parts of regions inside the marquee are removed, on every track, in one action.",
+          "src": [
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            }
+          ]
         },
         {
           "t": "Set the locators to the marquee instantly",
-          "d": "With a marquee selection active, press ⌘U — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop. It snaps the cycle locators to exactly that range and switches Cycle on in the same keystroke, so marquee then ⌘U gives you a perfect loop in two moves, not three. (Cycle can still be toggled on and off afterwards with C.)",
-          "k": "U"
+          "d": "With a marquee selection active, press ⌘U (Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop). The cycle locators snap to the selection and Cycle turns on. Prefer the mouse? Control-click the marquee ruler and choose Set Locators by Selection and Enable Cycle.",
+          "k": "⌘U",
+          "src": [
+            {
+              "label": "studio-interns.com — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop ⌘U",
+              "url": "https://studio-interns.com/set-locators-loop-by-regions-events-marquee-and-enable-cycle-loopu-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+              "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers"
+            },
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            }
+          ]
         }
       ]
     },
@@ -33,16 +76,42 @@
       "tips": [
         {
           "t": "Marquee automation to move only that range",
-          "d": "With Automation view showing, a marquee selection over an automation lane creates edit points at both boundaries so you can raise or lower only that section."
+          "d": "With automation showing, drag a marquee across part of an automation lane, then click inside the selection. Logic creates two automation points at each edge, so you can drag that section up or down without changing anything on either side.",
+          "src": [
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            },
+            {
+              "label": "Why Logic Pro Rules — Logic Pro X Automation",
+              "url": "https://whylogicprorules.com/automation/"
+            },
+            {
+              "label": "Apple — Add and adjust automation points in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/add-and-adjust-automation-points-lgcpb1a3327b/10.7/mac/11.0"
+            }
+          ]
         },
         {
           "t": "Use marquee to create a drop",
-          "d": "Marquee the bar before a chorus across every track and delete. Instant, clean, arrangement‑wide silence with no dragging."
+          "d": "Drag in the marquee ruler across the bar before a chorus to select it on every track, then delete. You get clean, arrangement-wide silence for that bar in one edit.",
+          "src": [
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            }
+          ]
         },
         {
           "t": "Hold ⇧ to extend an existing marquee",
           "d": "Fine‑tune the selection edge by edge rather than redrawing the whole thing.",
-          "k": "⇧ + click"
+          "k": "⇧ + click",
+          "src": [
+            {
+              "label": "Apple — Select parts of regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+            }
+          ]
         }
       ]
     }

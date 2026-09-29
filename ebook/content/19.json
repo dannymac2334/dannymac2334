@@ -21,51 +21,153 @@
       "heading": "What's new in Logic Pro 12",
       "tips": [
         {
-          "t": "Synth Player is the third Session Player",
-          "d": "Synth Player is not a new Session Player — it is a set of styles inside the Bass Player and Keyboard Player you already have. Create a Bass Player or Keyboard Player track, open the Session Player Editor, and choose a Synth style the same way you choose any other style. The performance still follows the Chord track, so one progression can arrange bass and keys at once.",
-          "b": "GAME CHANGER"
+          "t": "Synth Player lives inside Bass Player and Keyboard Player",
+          "d": "Synth Player is not a new Session Player. It is a set of styles inside the Bass Player and Keyboard Player you already have. Create a Bass Player or Keyboard Player track, open the Session Player Editor and choose a Synth style. Both players can follow the Chord track, so one progression drives bass and keys together.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Intro to Synth Player styles in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac"
+            },
+            {
+              "label": "Apple — Chords and Session Players in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/chords-and-session-players-lgcp70dd5af3/mac"
+            }
+          ]
         },
         {
           "t": "Pick the Synth Keyboard style before you touch anything else",
-          "d": "Simple Pad for a sustained harmonic bed, Modulated Pad when you want movement, Rhythmic Chords when the part needs to drive. Same chords, three completely different jobs."
+          "d": "The Synth Keyboard Player has three styles: Rhythmic Chords, Modulated Pad and Simple Pad. Audition all three against the same chords before you start editing.",
+          "src": [
+            {
+              "label": "Apple — Intro to Synth Player styles in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac"
+            }
+          ]
         },
         {
           "t": "Synth Bass ships with three distinct characters",
-          "d": "808 Bass for trap-leaning low end, Pump Bass for filtered movement, Sequenced Bass for driving sixteenths. Audition all three before you start editing the pattern."
+          "d": "The Synth Bass Player has three styles: 808 Bass, Pump Bass and Sequenced Bass. Audition all three before you start editing the pattern.",
+          "src": [
+            {
+              "label": "Apple — Intro to Synth Player styles in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac release notes",
+              "url": "https://support.apple.com/en-us/109503"
+            }
+          ]
         },
         {
-          "t": "Intensity changes tone, not just level",
-          "d": "Pump Bass gets its movement from a modulated ducking effect, and you can shape it directly: in the Session Player Editor click the Details button, then drag the Amount knob vertically to change how hard it pumps and the Shape knob to change the curve of the duck. It is the fastest way to make a bassline build without drawing a single automation point."
+          "t": "Shape the Pump Bass pump directly",
+          "d": "Pump Bass gets its pumping from modulated ducking, like a sidechained compressor, and you can shape it. In the Session Player Editor, click the Details button. Drag the Amount knob vertically to set how hard it ducks, and the Shape knob to change the ducking curve.",
+          "src": [
+            {
+              "label": "Apple — Edit a Synth Bass Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-ca/guide/logicpro/lgcp7d1b5306/mac"
+            }
+          ]
         },
         {
           "t": "Point Synth Player at a third-party synth",
-          "d": "The performance engine and the sound source are separate. Synth Player can drive any Audio Unit, and external hardware too, so you keep the chord-following performance and choose your own sound."
+          "d": "The performance and the sound source are separate. A Synth Player style loads an Alchemy patch by default, but you can use Synth Players with any software instrument plug-in or an external MIDI tone generator. You keep the chord-following performance and choose your own sound.",
+          "src": [
+            {
+              "label": "Apple — Intro to Synth Player styles in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac"
+            }
+          ]
         },
         {
           "t": "Chord ID reads chords off audio, not just MIDI",
-          "d": "Drag in a guitar demo, a piano take or a rough bounce and Chord ID analyses it and writes the progression to the Chord track in seconds. It is the fastest route from an idea to a working arrangement.",
-          "b": "GAME CHANGER"
+          "d": "Drag a guitar demo, a piano take or a rough bounce onto the Chord track. Chord ID analyses the region and adds the chords it finds to the Chord track as a chord group. It works on audio and MIDI regions, and Apple says it handles single instruments and full mixes.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Analyze the chords in audio or MIDI regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac release notes",
+              "url": "https://support.apple.com/en-us/109503"
+            }
+          ]
         },
         {
-          "t": "Chord ID gets the harmonic rhythm, not just the chords",
-          "d": "Chord ID writes what it finds straight onto the Chord track — drag an audio or MIDI region onto the Chord track and Logic analyses it and adds the chords it contains as a chord group. Play it back against the source before you build on it; the Chord track's Change Display Only mode lets you correct any chord that does not match what you are hearing without altering playback."
+          "t": "Check Chord ID's chords before you build on them",
+          "d": "Chord ID writes what it finds straight onto the Chord track as a chord group. Play it back against the source before you build on it. If a chord is wrong, edit it on the Chord track: you can change the root note and chord type, add or remove extensions, and set a bass note other than the root.",
+          "src": [
+            {
+              "label": "Apple — Analyze the chords in audio or MIDI regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac"
+            },
+            {
+              "label": "Apple — Edit chords in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-chords-lgcp5bdc8ead/mac"
+            }
+          ]
         },
         {
           "t": "Everything downstream follows the Chord track",
           "d": "Once Chord ID has populated the Chord track, other tracks can lock to it. Apple: \"By following the Chord track, multiple tracks — such as tracks using Step Sequencer, Session Player tracks, and other software instrument tracks — can play in sync harmonically.\" Set a Session Player region to follow with Control-click > Chords > Follow Global Chord Track; set a Step Sequencer pattern to follow by choosing Chord Track, which renames the note rows to chord degrees. One analysis pass can arrange several parts at once.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Choose which chords a Session Player region follows in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-chords-a-session-player-region-lgcp87927044/mac"
+            },
+            {
+              "label": "Apple — Chords and pitch in Step Sequencer in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/chords-and-pitch-in-step-sequencer-lgcp0426e066/mac"
+            },
+            {
+              "label": "Apple — Overview of chords in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/chords-overview-lgcp2633963f/mac"
+            }
+          ]
         },
         {
           "t": "Run Chord ID on your own old bounces",
-          "d": "The fastest way to rebuild a session you have lost is to drag the bounce in, let Chord ID read the changes, and start again from a chord track you know is correct."
+          "d": "Lost the project but kept the bounce? Drag the bounce onto the Chord track and Chord ID adds its chords there as a chord group. Check them against the bounce, fix any that are wrong, then rebuild from there.",
+          "src": [
+            {
+              "label": "Apple — Analyze the chords in audio or MIDI regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac release notes",
+              "url": "https://support.apple.com/en-us/109503"
+            }
+          ]
         },
         {
           "t": "Preview sound packs before you download them",
-          "d": "The rebuilt Sound Library lets you look a pack over before you commit — click Preview on a pack to see what is in it, then Get to download it. It is also where you reclaim space: select an installed pack and click Delete. The total space used by all installed packs is shown at the top of the list, with each pack's size beside it."
+          "d": "Open Logic Pro > Sound Library and click a sound pack to preview it before you commit to downloading. It is also where you reclaim space: click Manage Packs, then click Delete next to a pack you no longer need. The total space all installed packs use is shown at the top of the list, and each pack's size appears in the list.",
+          "src": [
+            {
+              "label": "Apple — Download additional sound packs in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/download-additional-sound-packs-lgcp8b3abc1c/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac release notes",
+              "url": "https://support.apple.com/en-us/109503"
+            }
+          ]
         },
         {
-          "t": "Re-run Mastering Assistant on older masters",
-          "d": "Mastering Assistant is worth re-running on an older master after any major update. Reanalyse the mix on the master bus, then A/B the result against the version you signed off on before you call it finished — Apple's character presets (Clean, Valve, Punch, Transparent) give you four quick comparisons at once."
+          "t": "Reanalyze and try each Character",
+          "d": "When the mix changes, click Reanalyze in Mastering Assistant so it analyses the project again. Then try the Character options: Transparent (the default), Clean, Valve and Punch. A/B each against the master you signed off on before you call it finished. Transparent, Punch and Valve require an Apple silicon Mac.",
+          "src": [
+            {
+              "label": "Apple — Mastering Assistant parameters in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/mastering-assistant-parameters-lgcpa4b810ba/mac"
+            },
+            {
+              "label": "Apple — Use Mastering Assistant in Logic Pro",
+              "url": "https://support.apple.com/en-us/108294"
+            }
+          ]
         }
       ]
     },
@@ -74,37 +176,86 @@
       "tips": [
         {
           "t": "Logic Pro 12 drops Intel Macs entirely",
-          "d": "It requires an Apple silicon Mac and macOS 15.6 or later. If you are on Intel, Logic Pro 11 is the last version you can run — check your machine before you plan an upgrade.",
-          "b": "GAME CHANGER"
+          "d": "It requires a Mac with Apple silicon and macOS 15.6 or later. If you are on an Intel Mac, you can't run it, so check your machine before you plan an upgrade.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Logic Pro for Mac - Technical Specifications",
+              "url": "https://www.apple.com/in/logic-pro/specs/"
+            },
+            {
+              "label": "Apple Support — Logic Pro - Tech Specs",
+              "url": "https://support.apple.com/en-us/111899"
+            }
+          ]
         },
         {
           "t": "Never update in the middle of a paid project",
           "d": "The one rule that matters. Finish and deliver, then update. A new version halfway through a mix is a self‑inflicted deadline problem.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "advice": true
         },
         {
-          "t": "Keep the previous version installed alongside the new one",
-          "d": "Keep the outgoing version before you update, using Apple's own procedure: make a folder inside Applications named for the version (for example \"Logic Pro 11.1.2\"), select Logic Pro and choose File > Compress \"Logic Pro\", then move the resulting Logic Pro.zip into that folder. If the new version gives you trouble, unzip that copy and drag it into Applications and you are back where you were."
+          "t": "Back up the current version before you update",
+          "d": "Use Apple's procedure. Make a folder in Applications named for the version (for example \"Logic Pro 11.1.2\"), select Logic Pro and choose File > Compress \"Logic Pro\", then move Logic Pro.zip into that folder. If the update causes problems, reinstall the backed-up version.",
+          "src": [
+            {
+              "label": "Apple Support — Back up Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/102029"
+            }
+          ]
         },
         {
-          "t": "Back up your key commands, templates and channel strip settings",
-          "d": "Key commands are the only one of these that lives in your user Library. Open the Key Commands window (Option-K), choose Options > Export Key Commands, and save the file somewhere safe — the dialog defaults to ~/Library/Application Support/Logic/Key Commands. Your templates and channel strip settings live somewhere else entirely: ~/Music/Audio Music Apps/Project Templates and ~/Music/Audio Music Apps/Channel Strip Settings. Copy those two folders as well."
+          "t": "Back up your key commands and channel strip settings",
+          "d": "Choose Logic Pro > Key Commands > Edit, click the Actions button, choose Save As, name your set and save it somewhere safe, such as an external drive. Your channel strip settings live in ~/Music/Audio Music Apps/Channel Strip Settings, so copy that folder too.",
+          "src": [
+            {
+              "label": "Apple Support — Create custom keyboard shortcuts for Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101929"
+            },
+            {
+              "label": "Logic Studio Training Wiki — Channel strip settings",
+              "url": "https://logicstudiotraining.com/wiki/index.php/Channel_strip_settings"
+            },
+            {
+              "label": "macProVideo — Demystifying Logic Pro X's Plug-In Settings, Channel Strip Settings & Patches",
+              "url": "https://www.macprovideo.com/article/logic-pro/demystifying-logic-pro-x-s-plug-in-settings-channel-strip-settings-patches?sess_id=o54fmmrisrm95vu94au0sddj26"
+            }
+          ]
         },
         {
           "t": "Consolidate and archive your three most important projects",
-          "d": "File > Project Management > Consolidate on each, then copy them to a separate drive. If the new version changes something, you have untouched originals."
+          "d": "File > Project Management > Consolidate on each, then copy them to a separate drive. If the new version changes something, you have untouched originals.",
+          "src": [
+            {
+              "label": "Apple Support — Consolidate assets in a Logic Pro for Mac project",
+              "url": "https://support.apple.com/guide/logicpro/consolidate-assets-in-a-project-lgcpce09b9d8/mac"
+            }
+          ]
         },
         {
           "t": "Check your critical third‑party plugins against the new version first",
-          "d": "Plugin developers lag major DAW releases. Check their compatibility pages before you update, not after."
+          "d": "Plugin developers lag major DAW releases. Check their compatibility pages before you update, not after.",
+          "advice": true
         },
         {
           "t": "Note your current I/O and buffer settings",
-          "d": "Screenshot your Audio settings before you update — output device, input device and I/O buffer size. It takes five seconds, and if anything about your setup looks different afterwards you can restore the exact configuration you were working with instead of guessing at it."
+          "d": "Screenshot your Audio settings before you update — output device, input device and I/O buffer size. It takes five seconds, and if anything about your setup looks different afterwards you can restore the exact configuration you were working with instead of guessing at it.",
+          "src": [
+            {
+              "label": "Apple Support — Avoid system overloads in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/108295"
+            },
+            {
+              "label": "macProVideo — Logic Pro X Audio Preferences Explained",
+              "url": "https://macprovideo.com/article/logic-pro/logic-pro-x-audio-preferences-explained"
+            }
+          ]
         },
         {
           "t": "Update macOS and Logic separately, a week apart",
-          "d": "If something breaks, you want to know which of the two did it."
+          "d": "If something breaks, you want to know which of the two did it.",
+          "advice": true
         }
       ]
     },
@@ -113,15 +264,23 @@
       "tips": [
         {
           "t": "Read the new Key Commands list for additions",
-          "d": "Open the Key Commands window after every update — Logic Pro > Key Commands > Edit, or Option-K — and read through it for commands you have not seen before. New features arrive with new commands, many of them unassigned by default, and this is the only place they announce themselves."
+          "d": "After every update, choose Logic Pro > Key Commands > Edit and browse for commands you haven't seen before. Click Unused to show commands that have no shortcut yet. For any you'll use, select it, click Learn by Key Label and press the keys you want.",
+          "src": [
+            {
+              "label": "Apple Support — Create custom keyboard shortcuts for Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101929"
+            }
+          ]
         },
         {
           "t": "Test your bounce path end to end before you need it",
-          "d": "Bounce a short section to every format you deliver in. Export bugs are the ones that bite at the worst possible moment."
+          "d": "Bounce a short section to every format you deliver in. Export bugs are the ones that bite at the worst possible moment.",
+          "advice": true
         },
         {
           "t": "Give yourself a deliberate hour to explore",
-          "d": "Not on a project. Open a scratch session and use every new feature once. An hour of play beats a month of accidental discovery."
+          "d": "Not on a project. Open a scratch session and use every new feature once. An hour of play beats a month of accidental discovery.",
+          "advice": true
         }
       ]
     }

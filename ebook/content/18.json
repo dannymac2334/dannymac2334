@@ -7,24 +7,65 @@
       "heading": "Session Players — the fundamentals",
       "tips": [
         {
-          "t": "Use the Follow parameter to lock players to each other",
-          "d": "In the Session Player Editor, click Patterns and look under Follow Rhythm Of. Leave the Chords switch on so the player tracks your progression, then use the Track pop-up menu to make the Bass Player follow your drum track and the Keyboard Player follow the bass. The three of them lock like a band rather than three separate parts. (Kick-and-snare-level following is a Drummer control: the Drummer's kick and snare can follow another track's rhythm.)"
+          "t": "Use Follow Rhythm Of to lock players together",
+          "d": "In the Session Player Editor, click Patterns and look under Follow Rhythm Of. Following the chord rhythm is on by default. For the Bass Player or Keyboard Player, choose a track from the Track pop-up menu to follow its rhythm. For the Drummer, click Patterns for the Kick and Snare kit pieces, then choose a track the same way.",
+          "src": [
+            {
+              "label": "Apple — Follow rhythm of chords and other tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/follow-rhythm-of-chords-and-other-tracks-lgcpca8dca3d/mac"
+            },
+            {
+              "label": "Apple (UK) — Follow rhythm of chords and other tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-gb/guide/logicpro/lgcpca8dca3d/mac"
+            }
+          ]
         },
         {
-          "t": "Session Players respond to region length, so write in sections",
-          "d": "Session Player settings are region-based, so write in sections. Give each song section its own region and set complexity and intensity per region in the Session Player Editor. That is how you get a verse that builds into a chorus."
+          "t": "Session Player performances are per region, so write in sections",
+          "d": "The Session Player Editor edits the performance of the selected region, and its Complexity and Intensity sliders adjust that region's performance. Give each song section its own region and set the sliders per region. That is how you get a verse that builds into a chorus.",
+          "src": [
+            {
+              "label": "Apple — Logic Pro for Mac Session Player Editor interface",
+              "url": "https://support.apple.com/guide/logicpro/session-player-editor-interface-lgcpe331a1dc/mac"
+            },
+            {
+              "label": "Apple — The Session Player Editor in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/the-session-player-editor-lgcp32d55998/mac"
+            }
+          ]
         },
         {
-          "t": "Swap the player character without losing your settings",
-          "d": "Before you start auditioning characters, choose 'Keep Settings when Changing Style' from the Preset pop-up menu in the Session Player Editor. With that on, your performance settings survive the swap and you can hear every character against the same arrangement in seconds. Use the Lock Settings button if you want to protect individual parameters such as Fills and Swing."
+          "t": "Change style without losing your settings",
+          "d": "Before you audition styles, choose Keep Settings when Changing Style from the Preset pop-up menu in the Session Player Editor. Your performance settings then survive the switch, so you hear every style against the same settings. To protect just one parameter, click the lock next to the Fill Amount or Swing knob.",
+          "src": [
+            {
+              "label": "Apple — Edit a Session Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-session-player-performance-lgcp74b34026/mac"
+            },
+            {
+              "label": "Apple — Edit a Session Player performance in Logic Pro for iPad",
+              "url": "https://support.apple.com/guide/logicpro-ipad/edit-a-session-player-performance-lpip6efdfca1/ipados"
+            }
+          ]
         },
         {
-          "t": "Regenerate a performance without changing anything else",
-          "d": "Small nudges to the Complexity or Intensity sliders often shift a phrase enough to fix it. If a bar is not landing, try nudging those sliders before you rebuild the part from scratch."
+          "t": "Nudge Complexity or Intensity before you rebuild a part",
+          "d": "The Complexity and Intensity sliders change the region's performance: higher means a busier or louder part. If a bar is not landing, try nudging those sliders before you rebuild the part from scratch.",
+          "src": [
+            {
+              "label": "Apple — Edit a Session Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-session-player-performance-lgcp74b34026/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac Session Player Editor interface",
+              "url": "https://support.apple.com/guide/logicpro/session-player-editor-interface-lgcpe331a1dc/mac"
+            }
+          ]
         },
         {
           "t": "Layer two Session Players on the same part",
-          "d": "One playing simply, one playing busily, with the busy one low in the mix. Instant realistic double‑tracking."
+          "d": "Put two Session Players on the same part: one playing simply, one playing busily, with the busy one low in the mix.",
+          "advice": true
         }
       ]
     },
@@ -33,19 +74,59 @@
       "tips": [
         {
           "t": "Adjust the Complexity slider before you adjust anything else",
-          "d": "Reach for the Complexity slider first: drag it higher for a more complex performance, lower for a plainer one. Low complexity in a verse and high in a chorus is an arrangement decision made with one slider."
+          "d": "Reach for the Complexity slider first: drag it higher for a more complex performance, lower for a plainer one. Low complexity in a verse and high in a chorus is an arrangement decision made with one slider.",
+          "src": [
+            {
+              "label": "Apple — Edit a Session Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-session-player-performance-lgcp74b34026/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac Session Player Editor interface",
+              "url": "https://support.apple.com/guide/logicpro/session-player-editor-interface-lgcpe331a1dc/mac"
+            },
+            {
+              "label": "Sound On Sound — Logic Pro: Session Players",
+              "url": "https://www.soundonsound.com/techniques/logic-pro-session-players"
+            }
+          ]
         },
         {
-          "t": "Turn on or off specific articulations",
-          "d": "Click Details in the Session Player Editor and you get bass-specific articulation controls: a Dead Notes knob for percussive unpitched notes, a Slides knob for how often the player slides between and before notes, a Dynamic Mute button, and a Pickup Hits button. Depending on the style you also get probability controls such as Buzz Trills, Double Stops, Blue Notes and Slaps. Pulling the Slides knob down on its own makes a part sound completely different."
+          "t": "Shape the bass articulations in Details",
+          "d": "Click Details in the Session Player Editor for bass-specific controls: a Dead Notes knob for percussive, unpitched notes; a Slides knob for how often the player slides between and before notes; a Dynamic Mute button; and a Pickup Hits button for open-palm hits on beats 2 and 4. There are also probability controls for Buzz Trills and Double Stops.",
+          "src": [
+            {
+              "label": "Apple — Edit a Bass Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-bass-player-performance-lgcp719a5d95/mac"
+            },
+            {
+              "label": "Apple (UK) — Edit a Bass Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-gb/guide/logicpro/lgcp719a5d95/mac"
+            }
+          ]
         },
         {
           "t": "Pair Bass Player with Studio Bass for the intended sound",
-          "d": "The playing engine and the instrument are separate. Studio Bass is the sampled instrument designed to respond to the articulations Bass Player generates."
+          "d": "The electric and acoustic Bass Players use dedicated MIDI events and articulations to create slides in the Studio Bass plug-in.",
+          "src": [
+            {
+              "label": "Apple — Edit a Bass Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-bass-player-performance-lgcp719a5d95/mac"
+            },
+            {
+              "label": "Apple — Session Players overview in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac"
+            }
+          ]
         },
         {
           "t": "Set the Bass Player to follow a specific track's rhythm",
-          "d": "Point Follow at your guitar or piano and the bass locks to that rhythm instead of the drums, which is how you get a riff‑driven arrangement."
+          "d": "In the Session Player Editor, click Patterns, then choose your guitar or piano track from the Track pop-up menu under Follow Rhythm Of. The bass then follows that part's rhythm.",
+          "src": [
+            {
+              "label": "Apple — Follow rhythm of chords and other tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/follow-rhythm-of-chords-and-other-tracks-lgcpca8dca3d/mac"
+            }
+          ]
         }
       ]
     },
@@ -53,24 +134,66 @@
       "heading": "Keyboard Player",
       "tips": [
         {
-          "t": "Use the left‑ and right‑hand controls independently",
-          "d": "You can simplify the left hand and keep the right hand busy, which is how real players comp behind a vocal."
+          "t": "Use the left- and right-hand controls independently",
+          "d": "The left hand has its own Voicing and Style menus; the right hand has its own Voicing and Movement menus. Set the left hand's Style to Sustain Only or Simple and it stays out of the way while the right hand carries the chords, which is useful for comping behind a vocal.",
+          "src": [
+            {
+              "label": "Apple — Edit a Keyboard Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-keyboard-player-performance-lgcpde2a77cd/mac"
+            },
+            {
+              "label": "Apple (MD) — Edit a Keyboard Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-md/guide/logicpro/lgcpde2a77cd/mac"
+            }
+          ]
         },
         {
-          "t": "Set the rhythmic density separately from the complexity",
-          "d": "Complexity and Intensity are two different things, and so are the two hands. Set overall Complexity and Intensity with the sliders, then use the left hand's Style menu (Sustain Only, Simple, Moderate, Complex) to make the left hand sparse while the right hand stays busy. Sparse and complex is a very different thing from busy and simple."
+          "t": "Thin out the left hand without touching the right",
+          "d": "Complexity and Intensity are different controls: Complexity sets how complex the part is, Intensity how loud and intense. Set them with the sliders, then use the left hand's Style menu (Sustain Only, Simple, Moderate, Complex) to make the left hand sparser or busier independently of the right hand.",
+          "src": [
+            {
+              "label": "Apple (MD) — Edit a Keyboard Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-md/guide/logicpro/lgcpde2a77cd/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac Session Player Editor interface",
+              "url": "https://support.apple.com/guide/logicpro/session-player-editor-interface-lgcpe331a1dc/mac"
+            }
+          ]
         },
         {
-          "t": "Convert to MIDI and delete the left hand entirely",
-          "d": "The fastest route to a usable pad or Rhodes comp is to generate a full part and then remove what you do not need."
+          "t": "Convert to MIDI, then thin out the part",
+          "d": "Control-click the Session Player region and choose Convert > Convert to MIDI Region. The result behaves like any other MIDI region, so open it in the Piano Roll and delete the left-hand notes to leave a lighter pad or comp.",
+          "src": [
+            {
+              "label": "Apple — Convert Session Player regions into MIDI or pattern regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
+            }
+          ]
         },
         {
           "t": "Use Keyboard Player as a writing tool, not a final part",
-          "d": "Generate a progression, convert it to MIDI, then play the good bits yourself. The generated part becomes your reference."
+          "d": "Generate a progression, convert it to MIDI, then play the good bits yourself. The generated part becomes your reference.",
+          "src": [
+            {
+              "label": "Apple — Convert Session Player regions into MIDI or pattern regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
+            }
+          ]
         },
         {
-          "t": "Try it on a synth patch, not just a piano",
-          "d": "Do not assume the Keyboard Player only belongs on piano. Try swapping the instrument on the track for a pad or a pluck and listen — and check whether the Synth Keyboard Player or Synth Bass Player suits the sound you are after."
+          "t": "Try the Synth Player styles, not just piano",
+          "d": "Session Players include Synth Player styles. For keys: Rhythmic Chords, Modulated Pad and Simple Pad. For bass: 808 Bass, Pump Bass and Sequenced Bass. Choosing one loads a patch that uses Alchemy.",
+          "src": [
+            {
+              "label": "Apple — Intro to Synth Player styles in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac"
+            },
+            {
+              "label": "Apple — Edit a Synth Keyboard Player performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/edit-a-synth-keyboard-player-performance-lgcp4ea55ff5/mac"
+            }
+          ]
         }
       ]
     },
@@ -79,21 +202,53 @@
       "tips": [
         {
           "t": "Show the Chord track in Global Tracks",
-          "d": "Press G, then enable Chord. Every Session Player and any track you tell to follow it will play the progression you enter.",
+          "d": "Press G to show the global tracks, then choose Track > Global Tracks > Configure Global Tracks and select Chord. Session Player regions without their own region chords follow the progression you enter there.",
           "k": "G",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Show and hide global tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/show-and-hide-global-tracks-lgcpd0e8ce94/mac"
+            },
+            {
+              "label": "Apple — Choose which chords a Session Player region follows in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-chords-a-session-player-region-lgcp87927044/mac"
+            }
+          ]
         },
         {
-          "t": "Generate chords from an existing MIDI region",
-          "d": "Drag a MIDI region onto the Chord track and Logic analyses it and builds the progression for you. Works on audio via the Chord analysis too."
+          "t": "Generate chords from an existing region",
+          "d": "Drag a MIDI or audio region onto the Chord track and Logic analyses it and adds its chords as a chord group. Or Control-click the region, choose Chords > Analyze Chords, then Chords > Apply Region Chords to Chord Track.",
+          "src": [
+            {
+              "label": "Apple — Analyze the chords in audio or MIDI regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac"
+            }
+          ]
         },
         {
-          "t": "Set chord duration precisely by dragging chord boundaries",
-          "d": "Chords snap to the grid, so a half‑bar change is a two‑second edit."
+          "t": "Resize chords by dragging their lower edges",
+          "d": "Move the pointer over the lower-left or lower-right edge of a chord until it becomes the Resize pointer, then drag to shorten or lengthen it.",
+          "src": [
+            {
+              "label": "Apple — Move and resize chords in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/move-and-resize-chords-lgcp6738dbfa/mac"
+            }
+          ]
         },
         {
-          "t": "Turn Follow Chord Track off for parts that should not move",
-          "d": "Following the Chord track is a per-region setting, not a per-track one, and it is called Pitch Source. Select the region, then use the Pitch Source pop-up in the Region inspector: Chord Track makes it follow your progression, and the other options (region chords, key signature) take it off the Chord track. Set it away from Chord Track for samples and anything already committed."
+          "t": "Use Pitch Source to keep parts off the Chord track",
+          "d": "Select the region and open the Pitch Source pop-up in the Region inspector. Chord Track makes it follow your progression; Region Chords, Key Signature or Off take it off the Chord track. Use that for loops and parts you have already committed.",
+          "src": [
+            {
+              "label": "Apple — Control transposition with the Pitch Source parameter in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/control-transposition-pitch-source-parameter-lgcp047d0131/mac"
+            },
+            {
+              "label": "Apple — Choose which chords a Session Player region follows in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-chords-a-session-player-region-lgcp87927044/mac"
+            }
+          ]
         }
       ]
     },
@@ -103,27 +258,79 @@
         {
           "t": "Split any mixed audio into stems",
           "d": "Control-click an audio region and choose Processing > Stem Splitter. Since 11.2 it separates up to six stems — vocals, drums, bass, guitar, piano and other — and it needs an Apple silicon Mac.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
+            },
+            {
+              "label": "Why Logic Pro Rules — Logic Pro 11.2 Update is Out! Improved Stem Splitter",
+              "url": "https://whylogicprorules.com/logic-pro-11-2-update-is-out-improved-stem-splitter-track-search-more/"
+            },
+            {
+              "label": "Production Expert — Apple Updates Logic Pro with Improved Stem Separation",
+              "url": "https://www.production-expert.com/production-expert-1/apple-updates-logic-pro-with-improved-stem-separation-flashback-recording-and-new-sound-packs"
+            }
+          ]
         },
         {
           "t": "Use it on your own rough mixes, not just other people's records",
-          "d": "The most legitimate and useful application is recovering a part from a bounce when the original session is gone."
+          "d": "The most legitimate and useful application is recovering a part from a bounce when the original session is gone.",
+          "advice": true,
+          "src": [
+            {
+              "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
+            }
+          ]
         },
         {
-          "t": "Split first, then process — artefacts are frequency dependent",
-          "d": "Split first, then process. Treat each stem as a new source: listen for separation artefacts on their own before you commit, and clean them up with gentle EQ or a de-esser on the stems that need it rather than processing the whole split."
+          "t": "Solo each stem and listen before you commit",
+          "d": "Stem Splitter can leave artefacts: bits of a vocal sometimes land in the wrong stem, and results depend on how busy the mix is and how much reverb and delay it has. Solo each stem from its subtrack header and listen for artefacts before you build on it.",
+          "src": [
+            {
+              "label": "Sound On Sound — Logic Pro: How To Get The Best From The Stem Splitter",
+              "url": "https://www.soundonsound.com/techniques/logic-pro-how-get-best-stem-splitter"
+            },
+            {
+              "label": "Sound On Sound — Logic Pro: How To Use The Stem Splitter",
+              "url": "https://www.soundonsound.com/techniques/logic-pro-how-use-stem-splitter"
+            },
+            {
+              "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
+            }
+          ]
         },
         {
           "t": "Use single stems as layers, not as full replacements",
-          "d": "A split drum stem buried under real drums adds character without exposing the artefacts."
+          "d": "A split drum stem buried under real drums adds character without exposing the artefacts.",
+          "advice": true
         },
         {
           "t": "Make an instrumental with one preset",
-          "d": "Stem Splitter's preset combinations do the common jobs in one click — Instrumental drops the vocal, Acapella keeps only it. Or pick your own stems and let the submix option bounce them to a single file."
+          "d": "Stem Splitter's presets cover the common jobs in one click: Acapella gives you the vocal, Instrumental removes it. Or tick stems yourself. Selected stems come out individually, and two or more unselected stems are combined into a submix, which you extract by selecting the Submix checkbox.",
+          "src": [
+            {
+              "label": "Apple Newsroom — Logic Pro amplifies beat making on Mac and iPad with advanced new capabilities",
+              "url": "https://www.apple.com/newsroom/2025/05/logic-pro-amplifies-beat-making-on-mac-and-ipad-with-advanced-new-capabilities/"
+            },
+            {
+              "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
+            }
+          ]
         },
         {
-          "t": "Splitting is non‑destructive to the original",
-          "d": "Splitting adds rather than replaces. Clicking Apply creates a summing stack below the track holding the selected region, with the extracted stems on its subtracks — so the split lives alongside your source material and you can always start again."
+          "t": "Splitting adds rather than replaces",
+          "d": "Clicking Apply creates a summing stack below the track holding the selected region, with the extracted stems on its subtracks. The original region is muted so you hear the stems straight away. It is still there if you want to go back to it.",
+          "src": [
+            {
+              "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
+            }
+          ]
         }
       ]
     },
@@ -132,24 +339,56 @@
       "tips": [
         {
           "t": "ChromaGlow is five saturation models in one plugin",
-          "d": "Each model has a distinct character. Audition all five before you touch a single control — the model choice matters far more than the settings.",
-          "b": "GAME CHANGER"
+          "d": "The Model menu offers Retro Tube, Modern Tube, Magnetic, Squeeze and Analog Preamp, and each has its own character. Audition all five on the source before you start adjusting the other controls. ChromaGlow needs a Mac with Apple silicon, running Logic natively rather than in Rosetta.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — ChromaGlow in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
+            },
+            {
+              "label": "MusicRadar — Apple Logic Pro for Mac 11/Logic Pro for iPad 2 review",
+              "url": "https://musicradar.com/news/apple-logic-pro-11-logic-pro-for-ipad-2-review"
+            },
+            {
+              "label": "Logic Studio Training — ChromaGlow in Logic Pro: 5 Models, 10 Styles Explained",
+              "url": "https://logicstudiotraining.com/chromaglow-models-styles/"
+            },
+            {
+              "label": "Apple — If you can't find ChromaGlow, Stem Splitter, or other Logic Pro features on Mac",
+              "url": "https://support.apple.com/en-us/120406"
+            }
+          ]
         },
         {
-          "t": "Use the Drive and Output together to stay level‑matched",
-          "d": "Saturation makes things louder, and louder always sounds better. Match levels before you decide whether it is actually helping."
+          "t": "Use Drive and Level Out together to stay level‑matched",
+          "d": "Drive sets how much saturation you get, and Level Out sets the plug-in's output gain. When you push Drive, pull Level Out down so you are comparing at matched loudness. Otherwise you are only hearing louder, not better.",
+          "src": [
+            {
+              "label": "Apple — ChromaGlow in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
+            }
+          ]
         },
         {
           "t": "Put it on the drum bus before the compressor",
-          "d": "Saturating transients before compression gives the compressor less to fight and produces a much more controlled result."
+          "d": "Saturating transients before compression gives the compressor less to fight and produces a much more controlled result.",
+          "advice": true
         },
         {
           "t": "Use Bypass Below to keep the low end clean",
-          "d": "ChromaGlow's Bypass Below control leaves everything under the frequency you set unsaturated, so the bass stays solid while the mids and top take the colour."
+          "d": "ChromaGlow's Bypass Below control leaves everything under the frequency you set unsaturated, so the bass stays solid while the mids and top take the colour.",
+          "src": [
+            {
+              "label": "Apple — ChromaGlow in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
+            }
+          ]
         },
         {
           "t": "Try it on the master at very low drive",
-          "d": "A tiny amount across the whole mix does what analogue summing is supposed to do. Anything you can obviously hear is too much."
+          "d": "A tiny amount across the whole mix does what analogue summing is supposed to do. Anything you can obviously hear is too much.",
+          "advice": true
         }
       ]
     },
@@ -158,22 +397,70 @@
       "tips": [
         {
           "t": "Flashback Capture retrieves what you just played",
-          "d": "MIDI capture has been in Logic for years as “Capture Recording”. Logic 11.2 renamed it Flashback Capture and taught it audio as well, so a great vocal run you never armed is now recoverable too. The control bar button, or ⇧R.",
+          "d": "Logic's MIDI-only Capture Recording was renamed Flashback Capture in 11.2 and can now capture audio as well. A vocal run you played while Logic wasn't recording is recoverable too, as long as the project was playing. Use the control bar button, or press ⇧R.",
           "k": "⇧R",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Sound On Sound — Apple Logic Pro 11.2 review",
+              "url": "https://www.soundonsound.com/reviews/apple-logic-pro-11-2"
+            },
+            {
+              "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac"
+            }
+          ]
         },
         {
           "t": "⇧R is already on the keyboard, so build the reflex",
           "d": "The whole value of the feature is that it costs nothing to reach for. Hit it the moment you play something you like, before you have decided whether it was any good.",
-          "k": "⇧R"
+          "k": "⇧R",
+          "src": [
+            {
+              "label": "Apple — Capture your most recent MIDI performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/capture-your-most-recent-midi-performance-lgcpdc0bf889/mac"
+            },
+            {
+              "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac"
+            }
+          ]
         },
         {
-          "t": "It works while the transport is stopped",
-          "d": "MIDI is caught either way — noodling with the song stopped is exactly when the good ideas arrive, and Flashback Capture catches those. The audio side added in 11.2 has one condition: you can capture audio only while the project is playing, so leave the transport rolling when the mic is the thing you might want back."
+          "t": "MIDI capture works with the transport stopped",
+          "d": "MIDI is caught whether the project is playing or stopped, so noodling with the song stopped is safe. Audio, added in 11.2, can be captured only while the project is playing, so leave the transport rolling when the mic is what you might want back.",
+          "src": [
+            {
+              "label": "Apple — Capture your most recent MIDI performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/capture-your-most-recent-midi-performance-lgcpdc0bf889/mac"
+            },
+            {
+              "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac"
+            },
+            {
+              "label": "Sound On Sound — Apple Logic Pro 11.2 review",
+              "url": "https://www.soundonsound.com/reviews/apple-logic-pro-11-2"
+            }
+          ]
         },
         {
-          "t": "Check plugin compatibility after updating",
-          "d": "Before you rely on a new version for real work, open your three most important old projects and check every insert. Updates can change how third-party plug-ins load, and finding that out mid-session is expensive."
+          "t": "Check plug-in compatibility after updating",
+          "d": "Logic scans your plug-ins the first time it opens after an update. Before relying on a new version for real work, open the Plug-in Manager and look for 'failed validation' in the Compatibility column. Select that plug-in and click Reset & Rescan Selection. If it fails again, check with the developer for an update.",
+          "src": [
+            {
+              "label": "Apple — If Logic Pro for Mac hangs after updating",
+              "url": "https://support.apple.com/en-us/101926"
+            },
+            {
+              "label": "Apple — Use the Plug-in Manager in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-the-plug-in-manager-lgcp9e26ef17/mac"
+            },
+            {
+              "label": "Apple — If you can't find a recently installed plug-in for Logic Pro for Mac or MainStage",
+              "url": "https://support.apple.com/en-us/122179"
+            }
+          ]
         }
       ]
     }

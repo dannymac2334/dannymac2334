@@ -1,0 +1,1968 @@
+[
+ {
+  "kind": "rescue",
+  "i": 0,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 16,
+   "search_note": "No current (unversioned) Apple page surfaced for Quick Punch-In, MIDI aliases, Loops to Aliases, or the \"Select regions on track selection\" setting. Every Apple hit for those was /10.7/. The current Apple \"Key commands for Global Commands in Logic Pro for Mac\" page (lgcp02bf31b6/mac) exists, but the search summary did not show its table, so it is not cited for U. The rescues below rest on two agreeing sources, a listed third-party site plus Apple's 10.7 page (or two listed third-party sites). They are flagged as weaker than a current Apple page.",
+   "tricks": [
+    {
+     "section": 1,
+     "index": 5,
+     "original_title": "Turn off “Allow Quick Punch‑In” only if you never punch",
+     "action": "FIX",
+     "final_title": "Leave Allow Quick Punch-In on",
+     "final_key": "",
+     "final_body": "Keep Record > Allow Quick Punch-In turned on. You can also Control-click the Record button in the control bar to choose it. With it on, you can punch into recording on the fly while the project keeps playing, and Logic switches from playing to recording without an audible gap.",
+     "reason": "The title contradicted the body, so it now matches the advice to leave the setting on. The menu item, the Control-click on the Record button and punching in on the fly during playback are backed by whylogicprorules.com (two pages) and Apple's 10.7 punch page, which agree. The no-gap behaviour and Apple's 'leave it on' recommendation come from the 10.7 page only. I dropped the Record Toggle key command and the 'before and after untouched' claim because no second source retrieved in this session states them. This is still weak: no current Apple page surfaced after four searches.",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules — Never Lose An Audio Take Again With Quick Punch-In",
+       "url": "https://whylogicprorules.com/quick-punch-in/",
+       "evidence": "Search summary: Quick Punch-In lets you punch in and out while the project keeps playing, tape-recorder style. Turn it on with Record > Allow Quick Punch-In, or Control-click the Record button in the control bar."
+      },
+      {
+       "label": "Why Logic Pro Rules — #16 Autopunch, Quick Punch-In, & Replace Recording Modes",
+       "url": "https://whylogicprorules.com/autopunch-recording-modes/",
+       "evidence": "Came up for the Quick Punch-In query; covers the Quick Punch-In recording mode."
+      },
+      {
+       "label": "Apple — Punch in and out of audio recordings in Logic Pro (10.7 page, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/punch-in-and-out-of-audio-recordings-lgcpb19bfd0d/10.7/mac/11.0",
+       "evidence": "To make the switch between playing and recording happen without any audible gaps, you must turn on Quick Punch-In mode. Apple recommends leaving it on (it is on by default). Choose Record > Allow Quick Punch-In, or Control-click the Record button."
+      }
+     ]
+    },
+    {
+     "section": 1,
+     "index": 14,
+     "original_title": "Turn on “Select regions on track selection”",
+     "action": "CUT",
+     "reason": "The only sources that name the 'Select regions on track selection' checkbox are Apple's /10.7/ Editing preferences page and logicpro.skydocu.com, which must never be cited. The current Apple 'Select tracks in Logic Pro for Mac' page came up, but the summaries never clearly tied the default behaviour or the setting name to it. The behaviour is also on by default, so 'Turn on' misleads. There is no current support for the setting name, and the premise is wrong.",
+     "sources": []
+    },
+    {
+     "section": 2,
+     "index": 6,
+     "original_title": "Convert loops to real regions only at the very end",
+     "action": "CUT",
+     "reason": "Three searches found Edit > Convert > Loops to Aliases only on Apple's /10.7/ pages, plus the Logic 9 manual, a single blog and skydocu. No current Apple page or second reputable source turned up. The premise is also contradicted: the command turns MIDI loop repeats into aliases and audio loop repeats into cloned regions, and Apple says changes to the original's length still affect all of them. So converting does not make the parts independent 'real regions'.",
+     "sources": []
+    },
+    {
+     "section": 2,
+     "index": 7,
+     "original_title": "Use aliases for parts that must stay identical",
+     "action": "FIX",
+     "final_title": "Use aliases for parts that must stay identical",
+     "final_key": "⌥⇧ + drag",
+     "final_body": "Option-Shift-drag a MIDI region to where you want the alias to start. An alias is a reference to the original region, so when you change the original, every alias changes too. Use it for a part that has to repeat identically across the song.",
+     "reason": "The key and behaviour have two agreeing sources: Apple's 10.7 'Create MIDI aliases' page, and macProVideo's 'Understanding Aliases in Logic Pro', which says to hold Shift and Option and drag to create the alias. I tightened the wording to Apple's ('alter the original region'), since 'parent' is not Apple's term. This is weak: no current unversioned Apple page surfaced in three searches. The macProVideo article mentions a 'MIDI pull down menu', which suggests it was written for an older Logic version.",
+     "sources": [
+      {
+       "label": "macProVideo — Understanding Aliases in Logic Pro",
+       "url": "https://macprovideo.com/article/audio-software/understanding-aliases-in-logic-pro",
+       "evidence": "Search summary: holding the Shift and Option keys lets you drag the region to the desired track to create the alias."
+      },
+      {
+       "label": "Apple — Create MIDI aliases in Logic Pro (10.7 page, supporting only)",
+       "url": "https://support.apple.com/en-lb/guide/logicpro/lgcpf7c0cea3/10.7/mac/11.0",
+       "evidence": "Option-Shift-drag the region to the position where you want the alias to start. An alias is a reference to a region... If you alter the original region, all aliases of the region are similarly altered."
+      }
+     ]
+    },
+    {
+     "section": 2,
+     "index": 11,
+     "original_title": "Solo an arrangement section with the locators",
+     "action": "FIX",
+     "final_title": "Loop an arrangement section with one key",
+     "final_key": "U",
+     "final_body": "Select the regions that make up the section and press U (Set Rounded Locators by Regions/Events and Enable Cycle). Logic sets the locators around your selection, rounded to the nearest barlines, and turns Cycle on, so the section loops in time. Press ⌘U instead to set the locators exactly at the selection's edges.",
+     "reason": "'Solo' was wrong: U loops the section and does not solo it. macProVideo's cycling-tips article says U sets the loop rounded around the chosen region so it stays in sync, and that Command-U loops the region exactly. Studio-interns agrees that U is the Set Rounded Locators and Enable Cycle command and that ⌘U is the unrounded version. I removed 'Don't press C' because no source retrieved in this session supports it. Both sources are from the Logic Pro X era. The current Apple Global Commands key command page surfaced, but its table was not visible in the search summary.",
+     "sources": [
+      {
+       "label": "macProVideo — 6 Logic Pro X Cycling Tips For A Faster Production Workflow",
+       "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow",
+       "evidence": "Click the region you want to loop/cycle and use either U or Command-U. U sets the loop 'rounded' around the chosen region, so if it didn't start at the beginning of a bar you won't lose sync; Command-U loops the region itself whether or not it is in sync."
+      },
+      {
+       "label": "studio-interns.com — Set Rounded Locators by Regions/Events (keyboard command of the day)",
+       "url": "https://studio-interns.com/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Search summary: rounds the locators to the barline nearest the start and end of the selected regions or events; notes the separate 'U' command for Set Rounded Locators and Enable Cycle."
+      },
+      {
+       "label": "studio-interns.com — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop ⌘U",
+       "url": "https://studio-interns.com/set-locators-loop-by-regions-events-marquee-and-enable-cycle-loopu-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "The page title gives ⌘U for setting the locators by the selection and enabling Cycle, without rounding."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": {
+   "reviews": [
+    {
+     "ref": "S1#5",
+     "outcome": "TRIM",
+     "reason": "Two agreeing sources back only three things: the menu item (Record > Allow Quick Punch-In), the Control-click on the Record button, and punching in and out while the project keeps playing. Those sources are whylogicprorules.com and Apple's 10.7 punch page, which I re-retrieved. Two claims are gone. The advice to 'keep it on' (Apple's recommendation) did not appear in anything I retrieved. The 'no audible gap' claim rests only on the old 10.7 Apple page. That page says Record Toggle without Quick Punch-In causes a delay and an audio dropout, but it is not a current Logic 11/12 page and no second source says the same. Two more searches for a current unversioned Apple page returned only /10.7/ copies. Suggested title with no added claim: 'Punch in on the fly with Quick Punch-In'.",
+     "trimmed_key": "",
+     "trimmed_text": "Choose Record > Allow Quick Punch-In, or Control-click the Record button in the control bar and choose Allow Quick Punch-In. With it on, you can punch in and out of recording on the fly while the project keeps playing."
+    }
+   ]
+  }
+ },
+ {
+  "kind": "rescue",
+  "i": 1,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 24,
+   "search_note": "This covers rescue batch [1]: s03#2, s04#6, s05#10, s07#4 and s07#5. I found current (unversioned /mac) Apple pages for the Region inspector, Edit velocity in the Piano Roll Editor, Key commands for Main Window Tracks and Various Editors, and Key commands for Global Commands. Apple's Fade-tool creation page and its Select regions page came back only as /10.7/ copies. The 'Play from Selection' key is still unsettled: Apple's 10.7 page says Shift-Return and a Logic Pro X-era studio-interns post says ⇧Space. I therefore took the default key out of that trick.",
+   "tricks": [
+    {
+     "section": 3,
+     "index": 2,
+     "action": "FIX",
+     "original_title": "Assign a key to “Play Selection”",
+     "final_title": "Find Play from Selection in Key Commands",
+     "final_body": "Press ⌥K to open Key Commands and type “Play from Selection” in the search field. You'll see which key it has, or you can assign one. The command starts playback at the start point of the first selected region or event, so you hear only the part you're working on.",
+     "final_key": "⌥K",
+     "reason": "The original ⇧Space default is contradicted: Apple's Control playback page gives Shift-Return, while a Logic Pro X-era studio-interns post says ⇧Space. No current page settled it, so the rewrite names no default key. The ⌥K and search-field steps come from Apple's current Assign key commands page. The behaviour line is Apple wording. The search that returned it was restricted to Apple and returned the current Global Commands page, but the same wording also appears on the 10.7 Control playback page. Medium confidence. I dropped the unsourced 'several selection-based playback commands' claim.",
+     "sources": [
+      {
+       "label": "Apple — Assign key commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac",
+       "evidence": "Search summary: open the Key Commands window with Logic Pro > Key Commands > Edit (or Option-K), search for a command by name, then assign a key with Learn by Key Label."
+      },
+      {
+       "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "Returned for an Apple-only query on 'Play from Selection'. The summary: Play from Selection plays from the start point of the first selected region or event."
+      },
+      {
+       "label": "Apple — Control playback in Logic Pro (10.7 page, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1",
+       "evidence": "The Play from Selection button plays from the start point of the first selected region or event; you can also press Shift-Return."
+      }
+     ]
+    },
+    {
+     "section": 4,
+     "index": 6,
+     "action": "FIX",
+     "original_title": "Transpose without touching the notes",
+     "final_title": "Transpose without touching the notes",
+     "final_body": "Select the regions and change Transpose in the Region inspector. Region parameters affect how regions play back but don't alter the data inside them, and every selected region changes together. If the project is playing, you hear the change immediately, so you can audition a new key and set it back to zero if it doesn't work.",
+     "final_key": "",
+     "reason": "Apple's current Region inspector page says region parameters, including transposition, change playback without altering the region's data. It also says the change applies to all selected regions and is heard immediately during playback. Logic Studio Training independently says Region inspector edits are nondestructive. I dropped 'for the whole song', which the sources don't support.",
+     "sources": [
+      {
+       "label": "Apple — Use the Region inspector in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/use-the-region-inspector-lgcpd8a8780c/mac",
+       "evidence": "You can view and edit playback parameters, including transposition and quantization, for selected regions. Region parameters affect playback but don't alter the data in the region. Changes made during playback are heard immediately, and altering a parameter affects all selected regions."
+      },
+      {
+       "label": "Logic Studio Training — Master Region Editing with Logic Pro's Inspector Tools",
+       "url": "https://logicstudiotraining.com/logic-pro-region-inspector-editing/",
+       "evidence": "All Region inspector edits are nondestructive, so you can change settings without permanently altering the original audio or MIDI data."
+      },
+      {
+       "label": "Apple — Logic Pro MIDI region parameters (10.7 page, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/midi-region-parameters-lgcpf7c0d270/10.7/mac/11.0",
+       "evidence": "Transpose: all note events in the region are transposed up or down in semitones during playback."
+      }
+     ]
+    },
+    {
+     "section": 5,
+     "index": 10,
+     "action": "FIX",
+     "original_title": "Draw a velocity ramp across a selection",
+     "final_title": "Change a selection's velocity without flattening it",
+     "final_body": "Select the notes, then drag one of them vertically with the Velocity tool, or drag the Velocity slider in the Piano Roll header. Logic keeps the relative differences between the notes' velocities. When any note hits 0 or 127, the rest stop too. Hold ⌥ while dragging to keep going, which changes that note's relationship to the others.",
+     "final_key": "",
+     "reason": "Apple's current Edit velocity page confirms the behaviour: relative differences are kept when you edit several notes, they stop together at 0/127, and Option overrides this. It also confirms both routes, the Velocity tool and the Velocity slider. I removed the misleading 'ramp/crescendo' framing, because the edit shifts every velocity by the same amount instead of drawing a ramp.",
+     "sources": [
+      {
+       "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac",
+       "evidence": "Drag over a note vertically with the Velocity tool, or select notes and drag the Velocity slider in the header. When you edit the velocity of multiple notes, the relative differences in their velocity values are retained. If any selected note reaches 0 or 127, none can be adjusted further, and holding Option while dragging overrides this."
+      }
+     ]
+    },
+    {
+     "section": 7,
+     "index": 4,
+     "action": "CUT",
+     "original_title": "Assign the Fade tool to ⌘ when doing audio cleanup",
+     "reason": "The core claim is that dragging with the Fade tool over a region edge creates a fade. On Apple's site it still surfaced only on /10.7/ and /10.6/ 'Create fades on audio regions' pages. The only independent support is one Why Logic Pro Rules post from the Logic Pro X era, and MusicTech's fades tutorial does not describe the drag. Current Apple pages confirm only the Command-click Tool menu and that Option-clicking a fade with the Fade tool deletes it. That is not enough for the trick as written.",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules — How to Get the Most Out of Logic Pro X's Fade Tool",
+       "url": "https://whylogicprorules.com/logic-pro-x-fade-tool/",
+       "evidence": "Click inside a region near its edge and drag over the edge to create a fade (single source)."
+      },
+      {
+       "label": "Apple — Create fades on audio regions in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/create-fades-on-audio-regions-lgcpf7c0ee6c/10.7/mac/11.0",
+       "evidence": "Select the Fade tool and drag over the start or end point of an audio region (10.7 only)."
+      }
+     ]
+    },
+    {
+     "section": 7,
+     "index": 5,
+     "action": "FIX",
+     "original_title": "Select everything after this point in one keystroke",
+     "final_title": "Select everything after this point in one keystroke",
+     "final_body": "Press ⇧F (Select All Following) to select every region, on any track, that comes after the current selection. If a marquee selection is active, ⇧F instead extends the marquee, across the tracks it covers, to the project end. Either way, you're one keystroke from moving the rest of the song.",
+     "final_key": "⇧F",
+     "reason": "Apple's current key command page for Main Window Tracks and Various Editors confirms ⇧F, including the marquee behaviour. Apple's current Event List page also gives Shift-F for All Following, and studio-interns agrees independently that it selects regions on any track. I dropped the ⌥⇧F claim for All Following of Same Track: studio-interns' 2021 post gives ⌃⇧F for Select All Following of Same Track/Pitch, and Apple's current Event List page gives Control-Shift-F for All Following of Same Pitch. That contradicts ⌥⇧F.",
+     "sources": [
+      {
+       "label": "Apple — Key commands for Main Window Tracks and Various Editors in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/main-window-tracks-and-various-editors-lgcpe8314fe2/mac",
+       "evidence": "Search summary: Select All Following is Shift-F. When a marquee selection is active, the key command extends the marquee, over all tracks within it, to the project end point."
+      },
+      {
+       "label": "Apple — Select events in the Logic Pro for Mac Event List",
+       "url": "https://support.apple.com/guide/logicpro/select-events-in-the-event-list-lgcp2158bb90/mac",
+       "evidence": "All Following (or press Shift-F) selects all events after the currently selected event; All Following of Same Pitch uses Control-Shift-F."
+      },
+      {
+       "label": "studio-interns.com — Select All Following ⇧F",
+       "url": "https://www.studio-interns.com/2020/06/24/select-all-following-%E2%87%A7f-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "In the Tracks area, Select All Following selects all regions, on any track, that start later in the timeline."
+      },
+      {
+       "label": "studio-interns.com — Select All Following of Same Track/Pitch ⌃⇧F",
+       "url": "https://www.studio-interns.com/2021/06/19/select-all-following-of-same-track-pitch%E2%8C%83%E2%87%A7f-logic-pro-keyboard-command-of-the-day-kcotd/",
+       "evidence": "Gives the Same Track/Pitch variant as ⌃⇧F, not ⌥⇧F. I used this only to drop the book's ⌥⇧F claim."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": {
+   "reviews": [
+    {
+     "ref": "S3#2",
+     "outcome": "CUT",
+     "reason": "The trick depends on what Play from Selection does, and no current Apple page backs that. I searched Apple for 'Play from Selection', and the only page that describes it is the 10.7 Control playback page (support.apple.com/.../control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1). The current Global Commands page (lgcp02bf31b6/mac) does exist, but no search summary showed it describing the command or its behaviour, so the verifier's evidence for that page could not be reproduced. The current Assign key commands page confirms only the ⌥K / Learn by Key Label steps. Without a current source for the command's behaviour, what is left has no point, so I cut it rather than trim it."
+    },
+    {
+     "ref": "S5#10",
+     "outcome": "TRIM",
+     "reason": "I removed the trailing clause 'which changes that note's relationship to the others'. The cited Apple evidence says only that holding Option overrides the 0/127 stop. The clause is the writer's inference, and it is misleading: after the override, the notes held at the limit stop while the others keep moving, not 'that note'. Everything else matches the cited current Edit velocity page.",
+     "trimmed_text": "Select the notes, then drag one of them vertically with the Velocity tool, or drag the Velocity slider in the Piano Roll header. Logic keeps the relative differences between the notes' velocities. When any note hits 0 or 127, the rest stop too. Hold ⌥ while dragging to override this.",
+     "trimmed_key": ""
+    },
+    {
+     "ref": "S7#5",
+     "outcome": "TRIM",
+     "reason": "The marquee claim (⇧F extends a marquee selection across its tracks to the project end) appeared only in the Logic Pro 9.1.6 manual on help.apple.com when I searched. My Apple-restricted search for the current Main Window Tracks and Various Editors page (lgcpe8314fe2/mac) did not show that text, so the verifier's summary could not be reproduced and the claim is dropped. Shift-F for Select All Following is backed by Apple's current Event List page and by studio-interns, and studio-interns plus the Logic 9 manual describe it selecting what comes after the current selection. 'On any track' rests on the single studio-interns post, so I softened it.",
+     "trimmed_text": "Press ⇧F (Select All Following) to select everything that comes after the current selection. That puts you one keystroke from moving the rest of the song.",
+     "trimmed_key": "⇧F"
+    }
+   ]
+  }
+ },
+ {
+  "kind": "rescue",
+  "i": 2,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 14,
+   "search_note": "No current (unversioned) Apple Mac page surfaced for any of the five topics. Every Apple hit for select regions, edit fades, quantize regions and select/copy/move automation was a /10.7/ page or a regional copy of one. Where rescues succeeded, it was through preferred-list independent sources (whylogicprorules, macProVideo, Sound On Sound), with the /10.7/ Apple page as supporting evidence only. Where more than one source appeared in one search summary, I credit a statement only to the source it clearly came from, and I flag the attributions I'm unsure of.",
+   "tricks": [
+    {
+     "section": 7,
+     "index": 6,
+     "action": "CUT",
+     "original_title": "Select equal or similar regions in one command",
+     "reason": "Still no current source, and the keys conflict. Apple's Select regions page surfaced only as /10.7/. Search summaries gave different defaults: Shift-E for Similar or Equal, versus Shift-S/Shift-P from a ShortcutFoo cheat sheet. Equal Colored Regions (Shift-C) is backed only by one Logic Pro X-era studio-interns post and the Logic 9 manual. The trick rests on those keys, so it goes.",
+     "sources": [
+      {
+       "label": "studio-interns.com - Select Equal Colored Regions/Events (keyboard command of the day)",
+       "url": "https://studio-interns.com/select-equal-colored-regions-events-c-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Single Logic Pro X-era blog. The search summary says the default key is Shift-C. Not enough alone."
+      },
+      {
+       "label": "Apple - Select regions in the Tracks area in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/select-regions-lgcpf7c0e62a/10.7/mac/11.0",
+       "evidence": "Only a versioned page surfaced, even for the exact 'in Logic Pro for Mac' title."
+      }
+     ]
+    },
+    {
+     "section": 8,
+     "index": 3,
+     "action": "FIX",
+     "original_title": "Curve the fade after you draw it",
+     "final_title": "Curve the fade after you draw it",
+     "final_body": "With the Fade tool, hover over the middle of a fade you've made and drag left or right to change its curve. Or select the region and adjust the fade's Curve value in the Region inspector.",
+     "final_key": "",
+     "reason": "The earlier cut was because neither secondary source was on the preferred list. whylogicprorules.com, which is on the list, now independently confirms both routes: drag the middle of the fade with the Fade tool, and the fade curve controls in the Region inspector. Apple's /10.7/ Edit fades page says the same. I dropped the S-curve vocal line: it's opinion, and 'S-curve' is a separate crossfade type (X S). Confidence is medium, because no current Apple page surfaced and the whylogicprorules article is Logic Pro X-era.",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules - How to Get the Most Out of Logic Pro X's Fade Tool",
+       "url": "https://whylogicprorules.com/logic-pro-x-fade-tool/",
+       "evidence": "Hover the mouse over the middle of the fade you created and a version of the Fade Tool appears that adjusts the curve; click and drag left or right to change it. The Region Inspector holds the fade controls, including lengths and curves."
+      },
+      {
+       "label": "Apple - Edit fades in Logic Pro (10.7 page, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/edit-fades-lgcpf7c0cd53/10.7/mac/11.0",
+       "evidence": "You can drag the fade curve with the Fade tool. You can also select a region and edit the Curve value in the Region inspector."
+      }
+     ]
+    },
+    {
+     "section": 8,
+     "index": 7,
+     "action": "FIX",
+     "original_title": "Quantise audio with Flex enabled",
+     "final_title": "Quantise audio with Flex enabled",
+     "final_body": "Give the audio track a Flex mode and make sure Flex is selected for the region in the Region inspector. The inspector's Quantize pop-up then works on that audio just as it does on MIDI. It's real-time, so you can change the value later, or turn it off to get the original timing back.",
+     "final_key": "",
+     "reason": "Independent sources confirm that Region inspector quantize applies to audio on Flex-enabled tracks and is real-time and reversible. I dropped 'without a single cut': Apple says Logic time-stretches the audio, and that page is only the /10.7/ version. I added the prerequisite from Apple's /10.7/ page: a Flex mode on the track and the Flex parameter on the region. Attribution caveat: the search summary merged macProVideo and Sound On Sound text. The 'MIDI and audio with Flex activated' line reads as macProVideo's; the 'Region Parameters box... real-time' line came from a result set of SoS/macProVideo/whylogicprorules drum-flex articles.",
+     "sources": [
+      {
+       "label": "macProVideo - Quantizing In Logic: The Essentials",
+       "url": "https://macprovideo.com/article/audio-software/quantizing-in-logic-the-essentials",
+       "evidence": "Quantization can be applied both to MIDI and to audio on tracks that have Flex activated. The main Quantization control near the top of the Region Inspector turns quantization on or off and sets the grid."
+      },
+      {
+       "label": "Sound On Sound - Logic Pro: Editing Drum Timings",
+       "url": "https://www.soundonsound.com/techniques/logic-pro-editing-drum-timings",
+       "evidence": "Search summary: go to the Region Parameters box in the Inspector and choose the Quantize value. It is a real-time process, so you can change it at any time or turn it off to return to the recorded timing. (Attribution to this article is probable, not certain.)"
+      },
+      {
+       "label": "Apple - Quantize regions in Logic Pro (10.7 page, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/quantize-regions-lgcpd12112da/10.7/mac/11.0",
+       "evidence": "Before you quantize audio regions, you must assign a flex mode to the audio track and select the Flex parameter in the Region inspector for that region. Quantize flex markers show where audio has been time-stretched."
+      }
+     ]
+    },
+    {
+     "section": 10,
+     "index": 6,
+     "action": "FIX",
+     "original_title": "Curve any line by dragging its middle with ⌃⇧",
+     "final_title": "Curve an automation line with ⌃⇧-drag",
+     "final_body": "Hold ⌃⇧ and, with the Pointer tool, drag the line between two automation points to bend it into a curve. This works as long as the two points aren't directly above each other.",
+     "final_key": "⌃⇧ + drag",
+     "reason": "macProVideo, on the preferred list, explicitly states the Control-Shift drag on the line between nodes with the Pointer tool. A second summary, from a Sound On Sound-dominated result set, gives the same move and adds the caveat that the nodes must not be directly above each other. Apple's /10.7/ page agrees. I removed the 'sounds mechanical' opinion. Medium confidence: no current Apple Mac page surfaced, and the second statement's attribution to a specific SoS article is probable, not certain.",
+     "sources": [
+      {
+       "label": "macProVideo - 5 Automation Power-User Tips and Tricks in Logic Pro",
+       "url": "https://www.macprovideo.com/article/logic-pro/logic-automation-tips-tricks",
+       "evidence": "Hold Shift and Control, position the Pointer tool over the line between the nodes, then drag right or left for an S-curve or up or down for a concave or convex curve. Shift-Control single-click resets it to a straight line."
+      },
+      {
+       "label": "Sound On Sound - Fine-tuning Automation In Logic",
+       "url": "https://www.soundonsound.com/techniques/fine-tuning-automation-logic",
+       "evidence": "Search summary: curve automation by using the pointer, holding Ctrl-Shift and dragging the line between two nodes, as long as the nodes are not directly above each other. (This came from an SoS-dominated result set; which SoS article said it is uncertain.)"
+      },
+      {
+       "label": "Apple - Select, copy, and move automation in Logic Pro (10.7 page, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/select-copy-and-move-automation-lgcpb1a5aad6/10.7/mac/11.0",
+       "evidence": "Hold down Control-Shift while dragging an automation curve with the Pointer tool to bend the automation curve."
+      }
+     ]
+    },
+    {
+     "section": 10,
+     "index": 11,
+     "action": "CUT",
+     "original_title": "Copy automation between tracks",
+     "reason": "The key detail, that the paste lands at the playhead, comes only from Apple's /10.7/ page. That page also says the marquee copies the region content along with its automation, which the trick leaves out. The only current independent statement is macProVideo's, and it describes copying automation from one region to another region, not between tracks at the playhead. The 10.7 summary this session also described a different route: in automation mode, Shift-drag a selection, then Copy and Paste. The sources don't agree on one procedure, so this is cut.",
+     "sources": [
+      {
+       "label": "macProVideo - Logic Pro Marquee Tool (5 amazing ways)",
+       "url": "https://www.macprovideo.com/article/logic-pro/5-amazing-ways-logics-marquee-tool",
+       "evidence": "Copy automation from one region to another by dragging over it with the Marquee tool, pressing Command-C, choosing the other region and pressing Command-V. This is a region-to-region procedure, not the track-to-track one at the playhead."
+      },
+      {
+       "label": "Apple - Select, copy, and move automation in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/select-copy-and-move-automation-lgcpb1a5aad6/10.7/mac/11.0",
+       "evidence": "Only a versioned page surfaced, even for the exact 'in Logic Pro for Mac' title."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": {
+   "reviews": [
+    {
+     "ref": "S8#7",
+     "outcome": "TRIM",
+     "reason": "All three cited URLs showed up in this session's searches, and the prerequisite and real-time/reversible claims are backed (macProVideo: quantizing is non-destructive and switching it off restores the original timing; Apple 10.7: you need a flex mode on the track and the Flex parameter on the region). 'Just as it does on MIDI' goes further than the sources. macProVideo only says quantizing can be applied to MIDI and to audio on Flex-activated tracks, not that it behaves the same way on both. Apple adds that audio gets time-stretched, with quantize flex markers. I removed the comparison and kept only what the sources state.",
+     "trimmed_text": "Give the audio track a Flex mode and make sure Flex is selected for the region in the Region inspector. You can then quantize that audio by choosing a value from the Quantize pop-up menu in the Region inspector. It's real-time, so you can change the value later, or turn it off to get the original timing back.",
+     "trimmed_key": ""
+    }
+   ]
+  }
+ },
+ {
+  "kind": "rescue",
+  "i": 3,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 8,
+   "search_note": "Batch [3]: s15#1, s15#2, s17#9. For the two Mixer tricks, every Apple search (including 'Logic Pro for Mac' phrasing and a plain-name retry) only returned the /10.7/ 'Mixer interface' and 'Change the Mixer view' pages and their regional copies. The current 'Overview of mixing in Logic Pro for Mac' page appeared, but no summary tied the Single/Tracks/All or filter-button text to it. The only non-Apple sources were Sound On Sound's Logic 9-era 'Logic Mixer Modes' and skydocu. For Normalize, the current 'Bounce a project to an audio file in Logic Pro for Mac' page came back with the Normalize On and Overload Protection Only descriptions. 'Export tracks as audio files' still only exists as /10.7/, so I rewrote the trick around the Bounce dialog rather than track export.",
+   "tricks": [
+    {
+     "section": 15,
+     "index": 1,
+     "original_title": "Use the Single view to see one channel and its full signal path",
+     "action": "CUT",
+     "reason": "Three Apple-restricted searches, one using the plain feature name and one using 'Logic Pro for Mac' phrasing, returned only the /10.7/ 'Mixer interface' and 'Change the Mixer view' pages and their regional copies. None of the search text was attributable to a current unversioned page. The only independent source is Sound On Sound's Logic 9-era 'Logic Mixer Modes' article. That leaves no current support for the Single/Tracks/All button names in Logic 11/12.",
+     "sources": []
+    },
+    {
+     "section": 15,
+     "index": 2,
+     "original_title": "Filter the mixer by channel type",
+     "action": "CUT",
+     "reason": "Two searches found the filter-button and Option-click behaviour only on the /10.7/ Mixer interface page and its regional copies, plus the Logic 9-era Sound On Sound article and skydocu, which may not be cited. No current Apple page and no two reputable current sources surfaced. The 'Show Advanced Tools' sentence was already found wrong in an earlier pass.",
+     "sources": []
+    },
+    {
+     "section": 17,
+     "index": 9,
+     "original_title": "Turn off “Normalize” when bouncing stems",
+     "action": "FIX",
+     "reason": "The current Apple 'Bounce a project to an audio file in Logic Pro for Mac' page documents the Normalize setting. On raises the level so the highest peak reaches maximum without clipping. Overload Protection Only lowers the level only for overloads above 0 dB. The Off option also appeared in the current-page search results for Apple's bounce functions. The stem context ('Export tracks as audio files') only surfaced as /10.7/, so the rewrite covers the Bounce dialog's Normalize setting and describes what On does rather than naming stem export. The hype line 'destroys the relative balance you spent all day building' was removed.",
+     "final_title": "Check the Normalize setting before you bounce",
+     "final_body": "In the Bounce dialog, the Normalize pop-up menu has three settings: Off, Overload Protection Only and On. On scans for the loudest peak and raises the whole file so that peak reaches maximum level. Overload Protection Only turns the level down only if it would clip above 0 dB. To keep your mix level exactly as it is, choose Off.",
+     "final_key": "",
+     "sources": [
+      {
+       "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac",
+       "evidence": "Normalize On: the audio is scanned for the highest amplitude peak, then the level is raised so the peak sits at the maximum possible level without clipping. Overload Protection Only: downward normalization happens only for overloads (levels above 0 dB), with none for lower levels."
+      },
+      {
+       "label": "Apple — Bounce regions in place in Logic Pro for Mac",
+       "url": "https://support.apple.com/en-ca/guide/logicpro/lgcp8ae5826e/mac",
+       "evidence": "Came back from a current-page search. The summary says the Normalize pop-up menu in Logic's bounce functions has three settings: Off, Overload Protection Only and On."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": {
+   "reviews": [
+    {
+     "ref": "S17#9",
+     "outcome": "TRIM",
+     "reason": "Both URLs came back from my searches and are current /mac pages, not skydocu. Apple's 'Bounce a project to an audio file in Logic Pro for Mac' page backs the On and Overload Protection Only descriptions. My searches of that page did not show it listing an Off setting or 'three settings' for the Bounce dialog. The Off / Overload Protection Only / On list is confirmed on Apple's 'Bounce regions in place in Logic Pro for Mac' page, which covers a different dialog. Only whylogicprorules.com, a single blog, places all three in the Bounce and Export dialogs. So the three-setting list should be tied to the page that documents it. The added promise 'keep your mix level exactly as it is' goes beyond the evidence, which says only that Off turns normalization off, so I removed it.",
+     "trimmed_key": "",
+     "trimmed_text": "Before you bounce a project, check the Normalize setting. On scans the audio for its highest peak, then raises the level so that peak reaches the maximum possible level without clipping. Overload Protection Only turns the level down only for overloads (levels above 0 dB, which would clip) and does nothing to lower levels. In Logic's Bounce Regions in Place dialog, the Normalize pop-up menu has three settings: Off (turns normalization off), Overload Protection Only and On."
+    }
+   ]
+  }
+ },
+ {
+  "kind": "modern",
+  "i": 0,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 12,
+   "search_note": "I found current Apple pages for Track Stacks (the track stacks overview) and for the U / ⌘U locator commands (Key commands for Global Commands). For Add or remove gaps, Select notes in the Piano Roll, Quantize timing in the Piano Roll, Assign tools and Freeze tracks, searches returned only /10.7/ copies, so those sources are unchanged. The Freeze and Command-click tool tricks already cite a current Apple page as their main source.",
+   "tricks": [
+    {
+     "section": 2,
+     "index": 4,
+     "action": "KEEP",
+     "original_title": "Insert silence across the whole project",
+     "final_title": "Insert silence across the whole project",
+     "final_body": "Set the locators around the gap you want, then choose Edit > Cut/Insert Time > Insert Silence Between Locators. A region that crosses the left locator is cut there, and the part after it moves to the right of the right locator. It's a quick way to add two bars to an intro.",
+     "final_key": "",
+     "reason": "No current Apple page found. Two searches (the exact title 'Add or remove gaps in Logic Pro for Mac', and an Apple-only search on 'Cut/Insert Time Insert Silence Between Locators') returned only /10.7/ copies of Add or remove gaps. Other current pages came back, but none covers this command. Sources are unchanged. macProVideo and 9to5Mac still agree with the text independently.",
+     "sources": [
+      {
+       "label": "macProVideo — Making Whole Project Edits in Logic Pro",
+       "url": "https://macprovideo.com/article/logic-pro/making-whole-project-edits-in-logic-pro",
+       "evidence": "Insert Silence Between Locators is accessed via Edit > Cut/Insert Time; regions longer than the cycle are cut at the left locator and the second part moved to the right of the right locator."
+      },
+      {
+       "label": "9to5Mac — Logic Pros: One-click Logic arrangement tricks",
+       "url": "https://9to5mac.com/2019/08/25/logic-arrangement-tricks-insert-gap/",
+       "evidence": "Insert Silence creates a gap anywhere in the arrangement, useful to bump the whole song over to make room for an intro; set it up with a left/right locator selection."
+      },
+      {
+       "label": "Apple — Add or remove gaps in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/add-or-remove-gaps-lgcp21e2cb21/10.7/mac/11.0",
+       "evidence": "Choose Edit > Cut/Insert Time > Insert Silence Between Locators; if no selection is made, all regions between the locators are affected."
+      }
+     ]
+    },
+    {
+     "section": 2,
+     "index": 10,
+     "action": "KEEP",
+     "original_title": "Use Track Stacks to collapse instrument families",
+     "final_title": "Use Track Stacks to collapse instrument families",
+     "final_body": "Select related tracks, create a Track Stack and choose Summing Stack. All the tracks in a summing stack send their audio to one shared auxiliary track, so a whole drum kit sits under a single stack.",
+     "final_key": "",
+     "reason": "The current Apple page 'Logic Pro for Mac track stacks overview' (unversioned /mac URL) replaces the 10.7 Create and edit Track Stacks page. It confirms the two stack types, folder and summing. It also confirms that a summing stack routes its subtracks' outputs to a bus whose destination aux is the main track. That supports the text. A search for the current 'Create and edit Track Stacks' page returned only /10.7/ copies.",
+     "sources": [
+      {
+       "label": "Apple — Logic Pro for Mac track stacks overview",
+       "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac",
+       "evidence": "There are two types of track stacks: folder stacks and summing stacks. When you create a summing stack, the outputs from the subtracks are routed to a bus; the destination aux of the bus is assigned to the main track, which functions as an audio subgroup."
+      },
+      {
+       "label": "Logic Studio Training — How To Organize Your Logic Pro Projects With Folder Track Stacks",
+       "url": "https://logicstudiotraining.com/folder-track-stacks/",
+       "evidence": "Returned for the Shift-Command-D track stack query; covers creating folder track stacks to organise projects."
+      }
+     ]
+    },
+    {
+     "section": 3,
+     "index": 4,
+     "action": "KEEP",
+     "original_title": "Use the Cycle area as a bookmark",
+     "final_title": "Use the Cycle area as a bookmark",
+     "final_body": "Select the region or passage you are working on and press U (Set Rounded Locators by Regions/Events and Enable Cycle). Logic sets the left and right locators around the selection, rounded, and turns Cycle on, so the cycle area marks your work area. Use ⌘U instead if you want the locators set by the selection without rounding.",
+     "final_key": "U",
+     "reason": "The current Apple page 'Key commands for Global Commands in Logic Pro for Mac' (unversioned /mac URL) replaces the /10.7/ 'Use the cycle area' page. A search for the current cycle-area page returned only /10.7/ copies. The Global Commands search gave U for Set Rounded Locators by Regions/Events and Enable Cycle, and Command-U for Set Locators by Regions/Events/Marquee and Enable Cycle. That matches the text. Caveat: the result mixed the Apple page with afteraudio, so which source gave the key assignments is not certain. The studio-interns sources are kept.",
+     "sources": [
+      {
+       "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "Returned for the exact command-name query. The search summary lists Set Rounded Locators by Regions/Events and Enable Cycle as U, and Set Locators by Regions/Events/Marquee and Enable Cycle as Command-U."
+      },
+      {
+       "label": "studio-interns.com — Set Rounded Locators by Regions/Events (keyboard command of the day)",
+       "url": "https://studio-interns.com/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Documents the Set Rounded Locators by Regions/Events command. The search summary says the command rounds the locators to the bar lines nearest the start and end of the selection, and it gives the key as U."
+      },
+      {
+       "label": "studio-interns.com — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop ⌘U",
+       "url": "https://studio-interns.com/set-locators-loop-by-regions-events-marquee-and-enable-cycle-loopu-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "The page title gives the command as ⌘U: set locators by the selected regions, events or marquee and enable Cycle, with no rounding."
+      },
+      {
+       "label": "afteraudio.com — Key commands for Global Commands in Logic Pro",
+       "url": "https://www.afteraudio.com/musings/blog/key-commands-for-global-commands-in-logic-pro",
+       "evidence": "A copy of the Global Commands key command table. It came up for the exact command name 'Set Rounded Locators by Regions/Events and Enable Cycle'."
+      }
+     ]
+    },
+    {
+     "section": 4,
+     "index": 9,
+     "action": "KEEP",
+     "original_title": "Freeze the instrument as soon as the part is done",
+     "final_title": "Freeze the instrument as soon as the part is done",
+     "final_body": "Freeze the software instrument track once the part is done. Logic renders its instrument and effect plug-ins so they stop costing CPU, and unlike Bounce in Place, Freeze lets you return to the original track and its automation more easily.",
+     "final_key": "",
+     "reason": "The main source is already a current Apple page, the Bounce in Place overview (unversioned /mac). Two searches for a current 'Freeze tracks in Logic Pro for Mac' page returned only /10.7/ copies. Sources are unchanged. The 10.7 Freeze page stays as supporting-only evidence for the mechanism.",
+     "sources": [
+      {
+       "label": "Apple — Logic Pro for Mac bounce in place overview",
+       "url": "https://support.apple.com/guide/logicpro/bounce-in-place-overview-lgcpe2a9f868/mac",
+       "evidence": "Both Bounce in Place and Freeze save CPU power by rendering all effect and instrument plug-ins of a track. However, Freeze allows you to return to the original state of the tracks and their automation data more easily."
+      },
+      {
+       "label": "Apple — Freeze tracks in Logic Pro (10.7 guide, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/freeze-tracks-lgcpf1cbfd51/10.7/mac/11.6",
+       "evidence": "Freezing bounces the track to an audio file that includes plug-in output and automation, and reduces the processing power needed. Cited for the mechanism only, not for UI names."
+      }
+     ]
+    },
+    {
+     "section": 5,
+     "index": 0,
+     "action": "KEEP",
+     "original_title": "Select all notes of the same pitch in one click",
+     "final_title": "Select all notes of the same pitch in one click",
+     "final_body": "Click a key on the keyboard graphic at the left of the Piano Roll and every note at that pitch in the region is selected. Perfect for grabbing all the hi‑hats at once.",
+     "final_key": "",
+     "reason": "No current Apple 'Select notes in the Piano Roll Editor' page found. Two searches returned only /10.7/ regional copies (en-mn, en-om, en-my), plus current pages on other Piano Roll topics. One search summary did say 'click the key on the keyboard at the left edge of the Piano Roll Editor to select all notes of that pitch'. But it did not show which page said it, and that could be the 10.7 copy, so no current page is cited. Sources are unchanged.",
+     "sources": [
+      {
+       "label": "Apple — Select notes in the Piano Roll Editor in Logic Pro",
+       "url": "https://support.apple.com/en-mn/guide/logicpro/lgcpa906bc30/10.7/mac/11.0",
+       "evidence": "Notes can be selected by clicking, Shift-clicking, marquee, and using the keyboard at the left edge of the Piano Roll Editor; Shift-click or drag over keys to select a range of pitches."
+      }
+     ]
+    },
+    {
+     "section": 5,
+     "index": 15,
+     "action": "KEEP",
+     "original_title": "Quantise only the notes that need it",
+     "final_title": "Quantise only the notes that need it",
+     "final_body": "Select the offending notes in the Piano Roll and quantise the selection rather than the whole region. The good parts of the take stay untouched.",
+     "final_key": "",
+     "reason": "No current Apple 'Quantize timing in the Piano Roll Editor' page found. Two searches returned only /10.7/ copies, plus current pages on other quantize topics (Quantize pitch, advanced quantization parameters) that don't cover this procedure. The 10.7 text found this session still says you can 'select individual notes you want to quantize in a region' and then choose a Time Quantize value. Sources are unchanged.",
+     "sources": [
+      {
+       "label": "Apple — Quantize the timing of notes in the Piano Roll Editor in Logic Pro (via prior audit)",
+       "url": "https://support.apple.com/en-mo/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/10.7/mac/11.0",
+       "evidence": "Prior audit quote: 'select individual notes you want to quantize in a region... The selected notes are quantized to the active Quantize value.'"
+      }
+     ]
+    },
+    {
+     "section": 7,
+     "index": 3,
+     "action": "KEEP",
+     "original_title": "⌘ is your secondary tool",
+     "final_title": "⌘ is your secondary tool",
+     "final_body": "Logic has two Tool menus: Left-click and Command-click. Choose a tool from the Command-click Tool menu, then hold ⌘ to use it. Let go and you are back on your Left-click tool.",
+     "final_key": "",
+     "reason": "The main source is already the current Apple 'Overview of tools in Logic Pro for Mac' page, and it is confirmed again this session: there are two Tool menus, Left-click and Command-click, with separate tools assigned to each. Two searches for a current 'Assign tools' page returned only /10.7/ copies. That 10.7 page stays as the source for 'releasing Command reverts to the Left-click tool'. Sources are unchanged.",
+     "sources": [
+      {
+       "label": "Apple — Overview of tools in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac",
+       "evidence": "Where tools are available there are two Tool menus, Left-click and Command-click, and you can assign separate tools to each."
+      },
+      {
+       "label": "Apple — Assign tools in Logic Pro (10.7 guide)",
+       "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0",
+       "evidence": "Click the Command-click Tool menu, then choose a tool. Releasing the Command key reverts to the Left-click tool."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": null
+ },
+ {
+  "kind": "modern",
+  "i": 1,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 14,
+   "search_note": "Batch = modern[1], 7 tricks. Found current (unversioned /mac) Apple pages for Tools overview, Select parts of regions (it states the marquee/automation two-points rule), Track stacks overview, Automation settings, and the Audio Track Editor automation page. For 'Assign tools', 'Add and adjust automation points', 'Show automation curves', 'Create and edit Track Stacks', 'Overview of aux channel strips' and 'Route audio via send effects', every search, including ones with 'for Mac' in the query, returned only /10.7/ copies. The current 'Key commands for Main Window Tracks and Various Editors' page (https://support.apple.com/guide/logicpro/main-window-tracks-and-various-editors-lgcpe8314fe2/mac) surfaced, but its table text did not appear in the summary, so I could not confirm Shift-Command-D from it. Also seen: current 'Pointer shortcuts for automation in Logic Pro for Mac' at https://support.apple.com/guide/logicpro/automation-lgcp77f2a7bb/mac.",
+   "tricks": [
+    {
+     "section": 9,
+     "index": 0,
+     "action": "KEEP",
+     "original_title": "⌘-drag anywhere to marquee select",
+     "final_title": "⌘-drag anywhere to marquee select",
+     "final_body": "Make Marquee your Command-click tool. In the Tracks area, click the Command-click Tool menu and choose the Marquee tool. From then on, hold ⌘ and drag to marquee-select parts of regions on one or more tracks. Release ⌘ and you're back on your Left-click tool.",
+     "final_key": "⌘ + drag",
+     "reason": "There is no current 'Assign tools in Logic Pro for Mac' page. All three searches returned only /10.7/ copies. The current 'Overview of tools in Logic Pro for Mac' page covers the same topic: there are two Tool menus, Left-click and Command-click, and you can assign a separate tool to each. The current 'Select parts of regions' page supports the Marquee drag. The search summary that drew on the current overview page repeated 'Releasing the Command key reverts to the Left-click tool', but it did not clearly attribute that sentence to the current page. So the 10.7 Assign tools page stays, labelled supporting only, for that detail. The text is unchanged.",
+     "sources": [
+      {
+       "label": "Apple — Overview of tools in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac",
+       "evidence": "Where tools are available there are two Tool menus, a Left-click and a Command-click Tool menu, and you can assign separate tools to each."
+      },
+      {
+       "label": "Apple — Select parts of regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+       "evidence": "Select the Marquee tool, then drag in the Tracks area to select parts of one or more regions."
+      },
+      {
+       "label": "Sound On Sound — Marque Of Distinction",
+       "url": "https://www.soundonsound.com/techniques/marque-distinction",
+       "evidence": "Says your choice of Command-click tool is personal and argues that the Marquee is the best choice for Command-click (prior-audit quote)."
+      },
+      {
+       "label": "Apple — Assign tools in Logic Pro (10.7 guide, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0",
+       "evidence": "Click the Command-click Tool menu, then choose a tool. Releasing the Command key reverts to the Left-click tool. No current version of this page was found."
+      }
+     ]
+    },
+    {
+     "section": 9,
+     "index": 4,
+     "action": "KEEP",
+     "original_title": "Marquee automation to move only that range",
+     "final_title": "Marquee automation to move only that range",
+     "final_body": "With automation showing, drag a marquee across part of an automation lane, then click inside the selection. Logic creates two automation points at each edge, so you can drag that section up or down without changing anything on either side.",
+     "final_key": "",
+     "reason": "There is no current 'Add and adjust automation points' page. Only /10.7/ copies surfaced. The search that returned the current 'Select parts of regions in Logic Pro for Mac' page (and the current Pointer shortcuts for automation page) produced this text: 'When you edit automation data that is spanned by a marquee selection, two automation points are automatically created at the left edge, and two at the right edge, of the selection.' The current page is cited as the main source. Why Logic Pro Rules is kept, and the 10.7 page stays as supporting only for the 'click the marquee selection' step. The text is unchanged.",
+     "sources": [
+      {
+       "label": "Apple — Select parts of regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+       "evidence": "When you edit automation data that is spanned by a marquee selection, two automation points are automatically created at the left edge, and two at the right edge, of the selection."
+      },
+      {
+       "label": "Why Logic Pro Rules — Logic Pro X Automation",
+       "url": "https://whylogicprorules.com/automation/",
+       "evidence": "Use the Marquee Tool to select a spot on the track lane, click the selected area and Logic creates 4 new automation points; drag the line between them to change the level."
+      },
+      {
+       "label": "Apple — Add and adjust automation points in Logic Pro (10.7 guide, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/add-and-adjust-automation-points-lgcpb1a3327b/10.7/mac/11.0",
+       "evidence": "Drag across a region with the Marquee tool, then click the marquee selection. No current version of this page was found."
+      }
+     ]
+    },
+    {
+     "section": 10,
+     "index": 1,
+     "action": "KEEP",
+     "original_title": "Press A to toggle automation view",
+     "final_title": "Press A to toggle automation view",
+     "final_body": "One key. Learn it and stop hunting for the button.",
+     "final_key": "A",
+     "reason": "There is no current 'Show automation curves in Logic Pro for Mac' page. Two searches returned only /10.7/ copies. The sources are unchanged. They already include the current Audio Track Editor automation page, which gives A for Show/Hide Automation. The 10.7 page stays for the Mix > Show Automation (A) wording.",
+     "sources": [
+      {
+       "label": "Apple — Automation in the Logic Pro for Mac Audio Track Editor",
+       "url": "https://support.apple.com/guide/logicpro/use-automation-in-the-audio-track-editor-lgcp00e320cb/mac",
+       "evidence": "Click the Show/Hide Automation button in the Audio Track Editor menu bar (or press A) to show automation."
+      },
+      {
+       "label": "Apple — Show automation curves in Logic Pro (10.7 guide)",
+       "url": "https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/10.7/mac/11.0",
+       "evidence": "To show automation curves, choose Mix > Show Automation (or press A)."
+      },
+      {
+       "label": "Why Logic Pro Rules — Logic Pro X Automation",
+       "url": "https://whylogicprorules.com/automation/",
+       "evidence": "Search summary: the Hide/Show Track Automation key command is assigned to A by default."
+      }
+     ]
+    },
+    {
+     "section": 10,
+     "index": 4,
+     "action": "KEEP",
+     "original_title": "Draw automation with the Pencil tool for precision",
+     "final_title": "Draw automation with the Pencil tool for precision",
+     "final_body": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes.",
+     "final_key": "",
+     "reason": "There is no current 'Add and adjust automation points' page. The Pencil-tool automation search returned only /10.7/ copies, plus the current Automation settings page, which is already cited (it covers the Pencil Tool's stepped and curved editing option). The sources are unchanged.",
+     "sources": [
+      {
+       "label": "Apple — Automation settings in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/automation-settings-lgcp8aa8f24b/mac",
+       "evidence": "The Pencil Tool pop-up menu sets how the Pencil Tool behaves with Option held while dragging an automation lane: Stepped Editing or Curved Editing."
+      },
+      {
+       "label": "Apple — Add and adjust automation points in Logic Pro (10.7 guide)",
+       "url": "https://support.apple.com/guide/logicpro/add-and-adjust-automation-points-lgcpb1a3327b/10.7/mac/11.0",
+       "evidence": "Click-drag or Option-click-drag the Pencil Tool across the automation curve to draw multiple automation points."
+      }
+     ]
+    },
+    {
+     "section": 10,
+     "index": 10,
+     "action": "KEEP",
+     "original_title": "Show several automation lanes at once",
+     "final_title": "Show several automation lanes at once",
+     "final_body": "Instead of switching one automation curve between parameters, show automation sub-lanes, which appear below the main track. Click the automation sub-lane disclosure triangle, then choose each lane's parameter from its Automation Parameter pop-up menu. You can then see several parameters at once.",
+     "final_key": "",
+     "reason": "There is no current 'Show automation curves' page. The sub-lane search returned the current release notes (already cited) and only /10.7/ copies of the Show automation curves page. The sources are unchanged. They already rest on the current release notes and the current Automation overview page, with the 10.7 page as supporting only.",
+     "sources": [
+      {
+       "label": "Apple — Logic Pro for Mac release notes",
+       "url": "https://support.apple.com/en-us/109503",
+       "evidence": "Release note: repeated clicks on the automation sub-lane disclosure triangle now respond to every click; there are also key commands to control the display of Automation Subtracks."
+      },
+      {
+       "label": "Apple — Overview of automation in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/automation-overview-lgcpb1a1ea03/mac",
+       "evidence": "Search summary for current Apple pages: to show an automation parameter, choose it from the Automation Parameter pop-up menu in the track header. Volume, Pan, Solo and Mute are in the Main submenu, with a submenu for each plug-in."
+      },
+      {
+       "label": "Apple — Show automation curves in Logic Pro (10.7 guide, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/10.7/mac/11.0",
+       "evidence": "You can work with multiple parameters on the same track by switching curves, or work in separate subtracks, which appear below the main track."
+      }
+     ]
+    },
+    {
+     "section": 15,
+     "index": 6,
+     "action": "KEEP",
+     "original_title": "Use Summing Stacks for processing groups",
+     "final_title": "Use Summing Stacks for processing groups",
+     "final_body": "Select tracks and hit ⇧⌘D, then choose Summing Stack in the dialog that appears. Everything routes to one aux you can compress and EQ as a unit.",
+     "final_key": "⌘⇧D",
+     "reason": "The current 'Logic Pro for Mac track stacks overview' page is already cited. It surfaced again and says that tracks added to a summing stack are routed to the aux assigned to the main track. No current 'Create and edit track stacks' page was found: two searches returned only /10.7/ copies and a Logic Pro X kb page. Shift-Command-D was not confirmed on any current page. The current 'Key commands for Main Window Tracks and Various Editors in Logic Pro for Mac' page surfaced, but its table contents did not appear in the summary. The sources are unchanged, and the 10.7 page remains the only Apple source for the key.",
+     "sources": [
+      {
+       "label": "Apple - Logic Pro for Mac track stacks overview",
+       "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac",
+       "evidence": "A summing stack sends all its tracks' audio outputs to a collective aux track; when you add a track to a summing stack, its routing changes to the aux assigned to the main track."
+      },
+      {
+       "label": "Apple - Create and edit Track Stacks in Logic Pro (10.7 guide)",
+       "url": "https://support.apple.com/guide/logicpro/create-and-edit-track-stacks-lgcp5bafa811/10.7/mac/11.0",
+       "evidence": "Select tracks, press Shift-Command-D or choose Track > Create Track Stack; in the Track Stack dialog select Summing Stack, then click OK."
+      }
+     ]
+    },
+    {
+     "section": 15,
+     "index": 7,
+     "action": "KEEP",
+     "original_title": "Create a send and Logic makes the aux for you",
+     "final_title": "Create a send and Logic makes the aux for you",
+     "final_body": "Click any Send slot and choose an unused bus. The aux channel appears automatically, already receiving.",
+     "final_key": "",
+     "reason": "No current Apple page was found. Two searches for the aux channel strip overview, including 'Logic Pro for Mac' phrasing, returned only /10.7/ copies and the iPad guide. A search for the related 'Route audio via send effects' page also returned only /10.7/ copies. The original sources are unchanged, and the 10.7 page is still the only citation.",
+     "sources": [
+      {
+       "label": "Apple - Overview of aux channel strips in Logic Pro (10.7 guide)",
+       "url": "https://support.apple.com/guide/logicpro/aux-channel-strips-overview-lgcp8e7db552/10.7/mac/11.0",
+       "evidence": "An aux channel strip is created automatically when a send assignment is made from a channel strip, except when the chosen bus is already in use as an input source on another channel strip."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": null
+ },
+ {
+  "kind": "modern",
+  "i": 2,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 8,
+   "search_note": "Searches were restricted to support.apple.com. None found a current (/mac) version of \"Route audio via send effects\" (lgcp8ea0091c) or \"Change track colors\" (lgcp7a5a5423). Every hit for those two was a /10.7/mac/11.0 copy, so their original sources stay. For the key-commands trick, the current \"Assign key commands in Logic Pro for Mac\" page (lgcp41ff6979/mac) came up again and covers both claims, so the 10.7 overview citation has been removed.",
+   "tricks": [
+    {
+     "section": 15,
+     "index": 8,
+     "action": "KEEP",
+     "original_title": "Set sends to pre‑fader for headphone mixes and effects that must stay constant",
+     "final_title": "Set sends to pre‑fader for headphone mixes and effects that must stay constant",
+     "final_body": "Every send has three signal-flow modes, set from the send's pop-up menu: Post Pan (after fader and pan), Post Fader (follows volume but not pan) and Pre Fader (affected by neither). Use a post mode for reverb, so the effect tracks the part. Use Pre Fader for a headphone cue mix, or any send that must stay put while you ride the fader.",
+     "final_key": "",
+     "reason": "No current (/mac) Apple page found, so the original sources are unchanged. Three Apple-only searches, including the exact title and a Post Pan query, returned only /10.7/mac/11.0 copies of 'Route audio via send effects'. Those copies still confirm the Post Pan, Post Fader and Pre Fader definitions. Current pages that came up, such as 'Channel strip controls in Logic Pro for Mac' and 'Adjust panning for sends independently in Logic Pro for Mac', could not be tied to the three-mode definitions from the search text, so they were not added. The whylogicprorules source still applies.",
+     "sources": [
+      {
+       "label": "Apple - Route audio via send effects in Logic Pro (10.7 guide)",
+       "url": "https://support.apple.com/guide/logicpro/route-audio-via-send-effects-lgcp8ea0091c/10.7/mac/11.0",
+       "evidence": "Send pop-up menu offers Post Pan, Post Fader (affected by volume, not pan) and Pre Fader (affected by neither volume nor pan)."
+      },
+      {
+       "label": "Why Logic Pro Rules - Pre-Fader vs Post-Fader vs Post-Pan Explained",
+       "url": "https://whylogicprorules.com/pre-fader-post-fader-post-pan-explained/",
+       "evidence": "Explains the three send options; post-fader sends typically feed reverbs, pre-fader sends create an independent cue mix."
+      }
+     ]
+    },
+    {
+     "section": 15,
+     "index": 9,
+     "action": "KEEP",
+     "original_title": "Colour your tracks and the mixer follows",
+     "final_title": "Colour your tracks and the mixer follows",
+     "final_body": "Mixer channels take the track colour. A consistent colour scheme means you find the vocal bus without reading a single label.",
+     "final_key": "",
+     "reason": "No current (/mac) Apple page found, so the original source is unchanged. Two Apple-only searches ('Change track colors in Logic Pro for Mac' and an assign-track-colour/mixer query) returned only /10.7/mac/11.0 copies of 'Change track colors'. Those copies confirm that changing a track's colour also changes its channel strip colour in the Mixer. The current 'Color regions in Logic Pro for Mac' and 'Channel strip controls in Logic Pro for Mac' pages came up, but neither was shown to state the track-to-mixer colour link, so they were not used.",
+     "sources": [
+      {
+       "label": "Apple - Change track colors in Logic Pro (10.7 guide, from prior audit)",
+       "url": "https://support.apple.com/guide/logicpro/change-track-colors-lgcp7a5a5423/10.7/mac/11.0",
+       "evidence": "Changing the color of a track also changes the color of the corresponding channel strip in the Mixer (prior-audit quote; this session's search returned the same statement)."
+      }
+     ]
+    },
+    {
+     "section": 17,
+     "index": 0,
+     "action": "KEEP",
+     "original_title": "Open Key Commands with ⌥K and use the search box",
+     "final_title": "Open Key Commands with ⌥K and use the search box",
+     "final_body": "In the Key Commands window, type a term in the search field to find a command by name, then assign a key to it.",
+     "final_key": "⌥K",
+     "reason": "The current Apple page 'Assign key commands in Logic Pro for Mac' (lgcp41ff6979/mac) came up again in this session's search results and covers both claims: Option-K (or Logic Pro > Key Commands > Edit) opens the window, and the search field finds commands. It is now the only Apple citation; the 10.7 'Key commands overview' supporting source has been removed. The current 'Key commands for Global Commands in Logic Pro for Mac' page also came up for an Option-K query, but its search summary did not clearly tie Option-K to that page, so it was not added.",
+     "sources": [
+      {
+       "label": "Apple — Assign key commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac",
+       "evidence": "Search summary: open the Key Commands window by pressing Option-K or choosing Logic Pro > Key Commands > Edit, then enter a search term in the search field to find commands."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": null
+ },
+ {
+  "kind": "front",
+  "i": 0,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 18,
+   "search_note": "WebSearch worked, but it returns summaries rather than page text, so most evidence below is the search summary for that query. It did not always say which listed page a sentence came from. Apple's current Global Commands page (lgcp02bf31b6/mac) came up for almost every query, but no search showed its table text, so it is never cited as the only source. Weak points for the orchestrator. K (Metronome) rests on one studio-interns post plus Hyperbits, which is not on the preferred list. No Apple page was found stating K. Return (Go to Beginning) and Shift-click rest on /10.7/ Apple pages plus one independent source each. The ⌘ legend has no source and is cut. I went over budget (18 searches, against about 12).",
+   "items": [
+    {
+     "id": "legend:⌘",
+     "action": "CUT",
+     "reason": "'The workhorse. Most structural commands' is a generalisation that no retrieved source makes, and no search this session returned a narrower, sourced claim about Command.",
+     "sources": []
+    },
+    {
+     "id": "legend:⌥",
+     "action": "FIX",
+     "final_text": "⌥ (Option): Option-drag copies a region; Option-click a Solo button for an exclusive solo.",
+     "reason": "No source says Option 'almost always means copy, all, or alternate'. Current Apple pages support two specific uses: Option-drag to copy a region, and Option-click Solo to solo that channel exclusively. The legend is narrowed to those.",
+     "sources": [
+      {
+       "label": "Apple — Cut, copy, and paste regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/cut-copy-and-paste-regions-lgcpf7c0d424/mac",
+       "evidence": "Search summary: Option-drag the region to copy it; with an audio region, a new region is created in the Project Audio Browser with the original's name plus a number."
+      },
+      {
+       "label": "Apple — Mute and solo channel strips in Logic Pro for Mac",
+       "url": "https://support.apple.com/en-lk/guide/logicpro/lgcpbc21a09d/mac",
+       "evidence": "Search summary: Option-click the Solo button of an unsoloed channel strip ('Solo Exclusive') to solo that channel strip and unsolo all the others."
+      }
+     ]
+    },
+    {
+     "id": "legend:⇧",
+     "action": "FIX",
+     "final_text": "⇧ (Shift): Shift-click adds to a selection.",
+     "reason": "'Reverses a command' has no source. The search supports Shift-click adding regions to a selection. The only Apple page stating it that surfaced is /10.7/, so this is weak for 11/12.",
+     "sources": [
+      {
+       "label": "Apple — Select regions in the Tracks area in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/select-regions-lgcpf7c0e62a/10.7/mac/11.0",
+       "evidence": "Search summary: click a region in the Tracks area to select it, then hold Shift and click other regions to add them to the selection."
+      }
+     ]
+    },
+    {
+     "id": "legend:⌃",
+     "action": "FIX",
+     "final_text": "⌃ (Control): Control-click opens shortcut menus.",
+     "reason": "'Fine adjustments' has no source. A current Apple page supports Control-click opening a shortcut menu, which is what the secondary click does.",
+     "sources": [
+      {
+       "label": "Apple — Use selection-based processing in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/use-selection-based-processing-lgcp58245be1/mac",
+       "evidence": "Search summary: Control-click a selected region, then choose Processing > Selection-Based Processing from the shortcut menu."
+      }
+     ]
+    },
+    {
+     "id": "legend:↩",
+     "action": "KEEP",
+     "final_text": "↩ (Return): Sends the playhead to the start of the project.",
+     "reason": "Apple's Control playback page (only a /10.7/ copy surfaced) says Go to Beginning moves the playhead to the start of the project, or press Return. studio-interns agrees independently: Return goes to the beginning.",
+     "sources": [
+      {
+       "label": "Apple — Control playback in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1",
+       "evidence": "Search summary: the Go to Beginning button moves the playhead to the start of the project; click it in the control bar or press Return."
+      },
+      {
+       "label": "studio-interns.com — Play from Beginning (keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2021/03/11/play-from-beginning-logic-pro-keyboard-command-of-the-day/",
+       "evidence": "Search summary: rather than assigning a command, press Return (go to beginning) then Space to play from the start of the project."
+      }
+     ]
+    },
+    {
+     "id": "legend:⌫",
+     "action": "FIX",
+     "final_text": "⌫ (Delete): Deletes the selected regions.",
+     "reason": "Apple's current page supports Delete removing selected regions. 'Removes the selection' is narrowed to what the source states.",
+     "sources": [
+      {
+       "label": "Apple — Delete regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/delete-regions-lgcpf7c0bd98/mac",
+       "evidence": "Search summary: select one or more regions, then choose Edit > Delete (or press the Delete key)."
+      }
+     ]
+    },
+    {
+     "id": "legend:␣",
+     "action": "FIX",
+     "final_text": "␣ (Space): Play / Stop.",
+     "reason": "Space as Play or Stop is supported. 'The most used key in the program' is an unsourced opinion and is removed.",
+     "sources": [
+      {
+       "label": "Apple — Use transport key commands in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/use-transport-key-commands-lgcp2814a670/10.7/mac/11.0",
+       "evidence": "Search summary for Apple transport key commands: the Play or Stop key command uses the Space bar."
+      },
+      {
+       "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+       "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers",
+       "evidence": "Search summary: Logic lets you play by pressing the Space bar."
+      }
+     ]
+    },
+    {
+     "id": "legend:callout",
+     "action": "FIX",
+     "final_text": "Hold ⌥ while dragging a region and you copy it instead of moving it. ⌥-click a channel's Volume fader and it returns to 0 dB. ⌥-click a Solo button and it becomes an exclusive solo — that channel alone.",
+     "reason": "Current Apple pages support all three moves, narrowed as follows. Option-drag copies regions (not 'anything'). Option-click resets a Volume fader to 0 dB; resetting any knob was not confirmed. Option-click Solo is Solo Exclusive. 'Learn these three and you can guess your way through most of the program' is unsourced opinion and is removed.",
+     "sources": [
+      {
+       "label": "Apple — Cut, copy, and paste regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/cut-copy-and-paste-regions-lgcpf7c0d424/mac",
+       "evidence": "Search summary: Option-drag the region to copy it."
+      },
+      {
+       "label": "Apple — Set channel strip volume in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/set-volume-levels-lgcp8ec34eec/mac",
+       "evidence": "Search summary: Option-click the Volume fader to return it to a neutral level (0 dB gain)."
+      },
+      {
+       "label": "Apple — Mute and solo channel strips in Logic Pro for Mac",
+       "url": "https://support.apple.com/en-lk/guide/logicpro/lgcpbc21a09d/mac",
+       "evidence": "Search summary: Option-clicking an unsoloed channel strip's Solo button (Solo Exclusive) solos it and unsolos every other channel strip."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:0",
+     "action": "KEEP",
+     "final_key": "Space",
+     "final_text": "Play / Stop",
+     "reason": "The Apple transport key command summary and macProVideo agree that Space plays and stops.",
+     "sources": [
+      {
+       "label": "Apple — Use transport key commands in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/use-transport-key-commands-lgcp2814a670/10.7/mac/11.0",
+       "evidence": "Search summary: the Play or Stop key command uses the Space bar."
+      },
+      {
+       "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+       "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers",
+       "evidence": "Search summary: play by pressing the Space bar."
+      },
+      {
+       "label": "studio-interns.com — Play from Beginning",
+       "url": "https://www.studio-interns.com/2021/03/11/play-from-beginning-logic-pro-keyboard-command-of-the-day/",
+       "evidence": "Search summary: the Spacebar starts and stops playback."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:1",
+     "action": "KEEP",
+     "final_key": "↩",
+     "final_text": "Go to beginning of project",
+     "reason": "Apple's Control playback page (10.7 copy only) and studio-interns both give Return as Go to Beginning. There is no current Apple page text, so this is moderately weak.",
+     "sources": [
+      {
+       "label": "Apple — Control playback in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1",
+       "evidence": "Search summary: the Go to Beginning button moves the playhead to the start of the project; or press Return."
+      },
+      {
+       "label": "studio-interns.com — Play from Beginning",
+       "url": "https://www.studio-interns.com/2021/03/11/play-from-beginning-logic-pro-keyboard-command-of-the-day/",
+       "evidence": "Search summary: the Return key moves the playhead to the beginning."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:2",
+     "action": "KEEP",
+     "final_key": "R",
+     "final_text": "Record",
+     "reason": "Apple's recording pages say to click the Record button in the control bar or press R. macProVideo independently agrees.",
+     "sources": [
+      {
+       "label": "Apple — Record sound from a microphone or instrument in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/guide/logicpro/record-sound-a-microphone-electric-instrument-lgcpb19e49e4/10.7/mac/11.0",
+       "evidence": "Search summary: to start recording, click the Record button in the control bar (or press R)."
+      },
+      {
+       "label": "Apple — Record to multiple audio tracks in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/record-to-multiple-audio-tracks-lgcpb19dcf78/mac",
+       "evidence": "Current page returned for the same query. The summary said 'click the Record button (or press R)' is the standard method across Apple's recording pages."
+      },
+      {
+       "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+       "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers",
+       "evidence": "Search summary: in Logic you can simply press R to record."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:3",
+     "action": "KEEP",
+     "final_key": "C",
+     "final_text": "Cycle on / off",
+     "reason": "Apple's cycle-area material and Logic Studio Training both give C as the Cycle toggle.",
+     "sources": [
+      {
+       "label": "Apple — Use the cycle area in Logic Pro (10.7 page)",
+       "url": "https://support.apple.com/en-om/guide/logicpro/lgcp59e41e86/10.7/mac/11.0",
+       "evidence": "Search summary: to turn Cycle mode on or off, click the Cycle button in the control bar or press C."
+      },
+      {
+       "label": "Logic Studio Training Wiki — Locators",
+       "url": "https://logicstudiotraining.com/wiki/index.php/Locators",
+       "evidence": "Search summary: press the letter C to toggle Cycle on and off; it won't work with Caps Lock on or the Typing Keyboard open."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:4",
+     "action": "KEEP",
+     "final_key": "K",
+     "final_text": "Metronome on / off",
+     "reason": "Weak. studio-interns names K as Toggle Metronome Click, and Hyperbits (not on the preferred list) agrees. Apple's current metronome page mentions only 'the key command assigned', without naming K. Demote to CUT if two preferred sources are strictly required.",
+     "sources": [
+      {
+       "label": "studio-interns.com — Toggle Metronome Click K (keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2020/06/23/toggle-metronome-click-k-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Title and summary: K is Toggle Metronome Click, which turns the metronome on and off."
+      },
+      {
+       "label": "Hyperbits — 40+ Logic Pro Shortcuts You Need to Know (2026)",
+       "url": "https://hyperbits.com/blog/logic-pro-shortcuts/",
+       "evidence": "Search summary: pressing K toggles Logic Pro's click (metronome) on and off."
+      },
+      {
+       "label": "Apple — Metronome project settings in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/metronome-project-settings-lgcpe1d6118e/mac",
+       "evidence": "Search summary: toggle the metronome by clicking the Metronome button in the control bar or pressing the assigned key command (the key is not named)."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:5",
+     "action": "FIX",
+     "final_key": "⌘.",
+     "final_text": "Discard recording, return to last play position",
+     "reason": "The key is right. The text is changed to Apple's command name, Discard Recording and Return to Last Play Position, from a current Apple page.",
+     "sources": [
+      {
+       "label": "Apple — Advanced recording commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/advanced-recording-commands-lgcpb19d5875/mac",
+       "evidence": "Search summary: to use Discard Recording and Return to Last Play Position, press Command-Period (.)."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:6",
+     "action": "FIX",
+     "final_key": "U",
+     "final_text": "Set rounded locators by selection, enable Cycle",
+     "reason": "U is Set Rounded Locators by Regions/Events and Enable Cycle. It rounds the locators to the nearest barlines and turns Cycle on, so 'Set locators by selected regions' was imprecise.",
+     "sources": [
+      {
+       "label": "studio-interns.com — Set Rounded Locators by Regions/Events (keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2019/09/28/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Search summary: pressing U sets rounded locators, rounding them to the nearest barline at the start and end of the selected regions or events."
+      },
+      {
+       "label": "macProVideo — 6 Logic Pro X Cycling Tips For A Faster Production Workflow",
+       "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow",
+       "evidence": "Search summary: U sets the loop 'rounded' around the chosen region, so the loop stays in sync if the region doesn't start on a bar."
+      },
+      {
+       "label": "afteraudio.com — Key commands for Global Commands in Logic Pro",
+       "url": "https://www.afteraudio.com/musings/blog/key-commands-for-global-commands-in-logic-pro",
+       "evidence": "A copy of the Global Commands table, returned in this session for the key command queries (supporting only)."
+      }
+     ]
+    },
+    {
+     "id": "basics:Transport:7",
+     "action": "KEEP",
+     "final_key": "/",
+     "final_text": "Open the Go to Position dialog",
+     "reason": "macProVideo documents the default Go to Position key as forward slash, which opens a field for a bar/beat or SMPTE position. A copy of the Global Commands table also came up for the query.",
+     "sources": [
+      {
+       "label": "macProVideo — 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+       "evidence": "Search summary: the pre-assigned Go to Position key command is the forward slash next to the right Shift key; type a bar/beat or SMPTE position, click OK and the playhead moves there."
+      },
+      {
+       "label": "afteraudio.com — Key commands for Global Commands in Logic Pro",
+       "url": "https://www.afteraudio.com/musings/blog/key-commands-for-global-commands-in-logic-pro",
+       "evidence": "Returned for the 'Go to Position' / slash key command query (a copy of Apple's Global Commands table)."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": {
+   "reviews": [
+    {
+     "ref": "basics:Transport:4",
+     "outcome": "CUT",
+     "reason": "Only one preferred source (studio-interns) names K. Hyperbits is not on the approved list, and Apple's metronome page does not name the key. A re-search gave mixed results: one result summary named Shift-K for a metronome command and the other source was unclear. The cited studio-interns URL (/2020/06/23/...) also differs from the URL that search returned (studio-interns.com/toggle-metronome-click-k-logic-pro-x-keyboard-command-of-the-day/), so it may be reconstructed. That falls short of the two-source standard. Restore it only if a retrieved Apple Global Commands snippet explicitly shows K."
+    },
+    {
+     "ref": "basics:Transport:7",
+     "outcome": "CUT",
+     "reason": "Only macProVideo explicitly states that / is Go to Position. afteraudio is an unofficial copy of Apple's table, not an independent reputable source. Apple's current Global Commands page (support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac) came up in the re-search, but no retrieved text showed the slash assignment. One reputable source is below the standard."
+    },
+    {
+     "ref": "basics:Transport:6",
+     "outcome": "TRIM",
+     "trimmed_key": "U",
+     "trimmed_text": "Set locators to the selected regions/events, rounded to the nearest bar",
+     "reason": "Both cited evidence summaries support only the rounding of locators to the nearest barlines around the selected regions/events. Neither summary says the command turns Cycle on. macProVideo's 'sets the loop' does not clearly mean enabling Cycle, and the re-search summary naming '...and Enable Cycle' may just repeat the query. Also, the cited studio-interns URL (/2019/09/28/...) differs from the retrieved one (studio-interns.com/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/)."
+    },
+    {
+     "ref": "legend:⌃",
+     "outcome": "TRIM",
+     "trimmed_text": "⌃ (Control): Control-click a selected region to open its shortcut menu.",
+     "reason": "The only evidence is one specific case: Control-click a selected region, then choose from the shortcut menu. The general claim that Control-click opens shortcut menus goes beyond the cited page, so it is narrowed to what the source shows."
+    },
+    {
+     "ref": "legend:⇧",
+     "outcome": "CUT",
+     "reason": "The only source is an old /10.7/ Apple page (select-regions-lgcpf7c0e62a/10.7/mac/11.0). The verifier admits it is weak for Logic Pro 11/12, and no current page or second reputable source backs it. Restore it with a current 'Select regions ... in Logic Pro for Mac' citation if one is retrieved."
+    }
+   ]
+  }
+ },
+ {
+  "kind": "front",
+  "i": 1,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 18,
+   "search_note": "This batch is front[1]: Windows and views rows 0-10 and Editing rows 0-4. The search tool returns summaries rather than page text, so for several rows it is unclear which of the returned pages actually states the key. The evidence fields flag each of those. Apple's current Global Commands page (lgcp02bf31b6/mac) was returned, but its table text never came through in a summary. afteraudio.com hosts a copy of that table, and its summary did show I, F and O. I cut V, ⌘T and ⌘J because none of them was supported by a current Apple page or by two independent reputable sources. ⌘T came only from /10.7/ Apple pages and cheat sheets. ⌘J came only from a YouTube video; Apple's current Join regions page gives the menu path Edit > Bounce or Join > Join and no key. V came only from forums and an O'Reilly Logic Pro X appendix. All three are worth reinstating if a later search gets the Global Commands or Main Window Tracks table text.",
+   "items": [
+    {
+     "id": "basics:Windows and views:0",
+     "action": "KEEP",
+     "final_key": "X",
+     "final_text": "Show / hide Mixer",
+     "reason": "A current Apple page returned for the exact phrases 'Show Mixer' and 'press X' says to choose View > Show Mixer (or press X).",
+     "sources": [
+      {
+       "label": "Apple — Overview of mixing in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/mixing-overview-lgcpbc219818/mac",
+       "evidence": "Returned first for the query \"Logic Pro for Mac\" \"Show Mixer\" \"press X\". Search summary: 'To show the Mixer in Logic Pro, choose View > Show Mixer (or press X).'"
+      },
+      {
+       "label": "Apple — Logic Pro Mixer interface (10.7 page, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/mixer-interface-lgcpe9cc43f6/10.7/mac/11.0",
+       "evidence": "Returned for the same query; the same View > Show Mixer (press X) instruction."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:1",
+     "action": "KEEP",
+     "final_key": "P",
+     "final_text": "Show / hide Piano Roll",
+     "reason": "macProVideo says to press P to open the Piano Roll. A current Apple Piano Roll overview page was returned for the exact phrases 'Show Piano Roll' and 'press P'. Moderate confidence, because the summary did not quote Apple directly.",
+     "sources": [
+      {
+       "label": "Apple — Overview of the Piano Roll Editor in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/overview-lgcpa9111b0d/mac",
+       "evidence": "Returned for the query \"Logic Pro for Mac\" \"Show Piano Roll\" \"press P\". Summary: Window > Open Piano Roll is Command-4, and pressing P opens the Piano Roll for a selected MIDI region."
+      },
+      {
+       "label": "macProVideo — 5 Essential Logic Pro X Piano Roll Tips",
+       "url": "https://macprovideo.com/article/audio-software/5-essential-logic-pro-x-piano-roll-tips",
+       "evidence": "Summary: click a MIDI region and press P to open the Piano Roll."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:2",
+     "action": "KEEP",
+     "final_key": "E",
+     "final_text": "Show / hide Editor",
+     "reason": "The search summary gives E as Hide/Show Editor, and says editors open via View > Show Editors. The only source returned was Apple's current Key commands for Main Window Tracks and Various Editors page. Moderate confidence: the summary did not quote a specific page for the key.",
+     "sources": [
+      {
+       "label": "Apple — Key commands for Main Window Tracks and Various Editors in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/main-window-tracks-and-various-editors-lgcpe8314fe2/mac",
+       "evidence": "Returned for the query \"Show Editor\" \"press E\". Summary: 'The E key is used to Hide/Show Editor in Logic Pro'; editors open via View > Show Editors."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:3",
+     "action": "KEEP",
+     "final_key": "N",
+     "final_text": "Show / hide Score Editor",
+     "reason": "The search summary gives Show/Hide Score Editor as N, and Window > Open Score Editor as Command-5. Apple's current Score Editor key command page was the top result.",
+     "sources": [
+      {
+       "label": "Apple — Key commands for Score Editor in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/score-editor-lgcpe96f8c91/mac",
+       "evidence": "Summary: 'The keyboard shortcut to Show/Hide Score Editor in Logic Pro for Mac is N'; Window > Open Score Editor is Command-5."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:4",
+     "action": "KEEP",
+     "final_key": "Y",
+     "final_text": "Show / hide Library",
+     "reason": "macProVideo says Y opens and closes the Library, alongside View > Show Library. Apple's current Library key command page was also returned. Moderate confidence.",
+     "sources": [
+      {
+       "label": "macProVideo — Speed Up Your Workflow with Logic Pro X's Library",
+       "url": "https://macprovideo.com/article/audio-software/speed-up-your-workflow-with-logic-pro-xs-library",
+       "evidence": "Summary: 'You can open the Library with the Y key. You can close it with the Y key too. Alternatively, you can choose View > Show Library.'"
+      },
+      {
+       "label": "Apple — Key commands for Library in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/library-lgcpa6a41488/mac",
+       "evidence": "Current Apple Library key command page, returned for the same query."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:5",
+     "action": "KEEP",
+     "final_key": "O",
+     "final_text": "Show / hide Loop Browser",
+     "reason": "The afteraudio copy of Apple's Global Commands table lists Show/Hide Loop Browser as O. Apple's current Global Commands page was returned in the same results.",
+     "sources": [
+      {
+       "label": "afteraudio — Key commands for Global Commands in Logic Pro (copy of Apple table)",
+       "url": "https://www.afteraudio.com/blogs/musings/posts/6963413/key-commands-for-global-commands-in-logic-pro",
+       "evidence": "Summary: 'Show/Hide Loop Browser · O'."
+      },
+      {
+       "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "The current Apple table of default Global Commands key commands. Its text was not shown in the summary."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:6",
+     "action": "KEEP",
+     "final_key": "F",
+     "final_text": "Show / hide Browsers",
+     "reason": "The afteraudio copy of Apple's Global Commands table lists Show/Hide Browsers as F.",
+     "sources": [
+      {
+       "label": "afteraudio — Key commands for Global Commands in Logic Pro (copy of Apple table)",
+       "url": "https://www.afteraudio.com/blogs/musings/posts/6963413/key-commands-for-global-commands-in-logic-pro",
+       "evidence": "Summary: 'Show/Hide Browsers · F'."
+      },
+      {
+       "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "The current Apple table of default Global Commands key commands. Its text was not shown in the summary."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:7",
+     "action": "KEEP",
+     "final_key": "B",
+     "final_text": "Show / hide Smart Controls",
+     "reason": "Apple's current Smart Controls overview says to choose View > Show Smart Controls or press B.",
+     "sources": [
+      {
+       "label": "Apple — Overview of Smart Controls in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/smart-controls-overview-lgcp7e59f24b/mac",
+       "evidence": "Summary: 'To show the Smart Controls pane ... choose View > Show Smart Controls or press B.'"
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:8",
+     "action": "KEEP",
+     "final_key": "I",
+     "final_text": "Show / hide Inspector",
+     "reason": "The afteraudio copy of Apple's Global Commands table lists Show/Hide Inspector as I, and a second search gave I as Show/Hide Inspector.",
+     "sources": [
+      {
+       "label": "afteraudio — Key commands for Global Commands in Logic Pro (copy of Apple table)",
+       "url": "https://www.afteraudio.com/blogs/musings/posts/6963413/key-commands-for-global-commands-in-logic-pro",
+       "evidence": "Summary: 'Show/Hide Inspector · I'."
+      },
+      {
+       "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "The current Apple table of default Global Commands key commands. Its text was not shown in the summary."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:9",
+     "action": "KEEP",
+     "final_key": "G",
+     "final_text": "Show / hide Global Tracks",
+     "reason": "Apple's current Global Tracks page names the Show/Hide Global Tracks key command (G).",
+     "sources": [
+      {
+       "label": "Apple — Show and hide global tracks in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/show-and-hide-global-tracks-lgcpd0e8ce94/mac",
+       "evidence": "Summary: choose Track > Global Tracks > Show Global Tracks, or use the Show/Hide Global Tracks key command (G)."
+      }
+     ]
+    },
+    {
+     "id": "basics:Windows and views:10",
+     "action": "CUT",
+     "reason": "No source I found qualifies. V for Hide/Show All Plug-in Windows appeared only in forum threads (logicprohelp, Gearspace) and an O'Reilly Logic Pro X appendix. An Apple-restricted search for plug-in windows and 'press V' found no current page stating it. Reinstate if the Global Commands table text can be retrieved."
+    },
+    {
+     "id": "basics:Editing:0",
+     "action": "KEEP",
+     "final_key": "⌘Z",
+     "final_text": "Undo",
+     "reason": "Apple's current Undo and redo page says to choose Edit > Undo or press Command-Z.",
+     "sources": [
+      {
+       "label": "Apple — Undo and redo edits in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/undo-and-redo-edits-lgcp1dbd67ab/mac",
+       "evidence": "Summary: 'To undo ... choose Edit > Undo or press Command-Z'."
+      }
+     ]
+    },
+    {
+     "id": "basics:Editing:1",
+     "action": "KEEP",
+     "final_key": "⇧⌘Z",
+     "final_text": "Redo",
+     "reason": "Apple's current Undo and redo page says to choose Edit > Redo or press Shift-Command-Z.",
+     "sources": [
+      {
+       "label": "Apple — Undo and redo edits in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/undo-and-redo-edits-lgcp1dbd67ab/mac",
+       "evidence": "Summary: 'To redo, choose Edit > Redo or press Shift-Command-Z'."
+      }
+     ]
+    },
+    {
+     "id": "basics:Editing:2",
+     "action": "CUT",
+     "reason": "Command-T for Split Regions at Playhead came back only from Apple's /10.7/ and /10.6/ Split regions pages, plus cheat sheets and skydocu. No current Apple page or two reputable independent sources stated the key. The current menu path is Edit > Split > Regions at Playhead, with no key given."
+    },
+    {
+     "id": "basics:Editing:3",
+     "action": "CUT",
+     "reason": "Apple's current Join regions page gives Edit > Bounce or Join > Join per Tracks and the Merge Regions per Tracks key command, but the summary showed no key. Command-J was stated only by a YouTube video."
+    },
+    {
+     "id": "basics:Editing:4",
+     "action": "KEEP",
+     "final_key": "⌘R",
+     "final_text": "Repeat regions or events",
+     "reason": "Apple's current Repeat regions page documents Edit > Repeat and the Repeat Regions key command. The search summary says Command-R repeats a selected region, and the independent sources returned for the Command-R query were macProVideo and Sound On Sound. Moderate confidence: the summary did not say which page stated Command-R.",
+     "sources": [
+      {
+       "label": "Apple — Repeat regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/repeat-regions-lgcpe51317b6/mac",
+       "evidence": "Summary: choose Edit > Repeat or use the Repeat Regions key command; it pastes copies (or aliases) after the selected regions on the same track."
+      },
+      {
+       "label": "Sound On Sound — Logic Pro: Handling Repetition",
+       "url": "https://www.soundonsound.com/techniques/logic-pro-handling-repetition",
+       "evidence": "Returned for the query \"Logic Pro for Mac\" repeat regions \"Command-R\". Summary: clicking a region and pressing Command+R creates a duplicate. The summary did not name the page this came from."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": {
+   "reviews": [
+    {
+     "ref": "basics:Editing:4",
+     "outcome": "TRIM",
+     "trimmed_key": "Edit > Repeat",
+     "trimmed_text": "Repeat selected regions (copies are pasted right after them on the same track)",
+     "reason": "I re-searched this. Apple's current Repeat regions page (https://support.apple.com/guide/logicpro/repeat-regions-lgcpe51317b6/mac) documents Edit > Repeat and a 'Repeat Regions key command' but never gives Command-R as its default. The only source for Command-R is one undated Sound On Sound article (https://www.soundonsound.com/techniques/logic-pro-handling-repetition), which is below the two-source standard. Nothing supports the word 'events'. Keep only the menu path and what Apple says the command does, citing the Apple page alone."
+    },
+    {
+     "ref": "basics:Windows and views:6",
+     "outcome": "TRIM",
+     "trimmed_key": "F",
+     "trimmed_text": "Open the All Files browser in the Browsers pane",
+     "reason": "The only source for 'Show/Hide Browsers · F' was afteraudio, a single blog copy, and the Apple Global Commands page's text never confirmed it. My searches did not return F as 'Show/Hide Browsers' on any Apple page. One search summary even said View > Show Browsers was B, which conflicts. Apple's current All Files Browser interface page (https://support.apple.com/guide/logicpro/all-files-browser-interface-lgcpc788e736/mac) says to click the Browsers button, then All Files (or press F). Keep only that and cite this Apple page. Drop afteraudio."
+    },
+    {
+     "ref": "basics:Windows and views:8",
+     "outcome": "TRIM",
+     "trimmed_key": "I",
+     "trimmed_text": "Show / hide Inspector",
+     "reason": "The claim holds, but the evidence has to change. afteraudio is a single blog and must not be cited. Apple's current Inspector interface page (https://support.apple.com/guide/logicpro/inspector-interface-lgcpe9cc3b1d/mac) says to choose View > Show Inspector (or press I). Replace the afteraudio source with this Apple page. The text stays the same."
+    },
+    {
+     "ref": "basics:Windows and views:5",
+     "outcome": "TRIM",
+     "trimmed_key": "O",
+     "trimmed_text": "Show / hide Loop Browser",
+     "reason": "The claim holds, but the evidence has to change. My search of Apple's current Global Commands page (https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac) returned 'Show/Hide Loop Browser: O' directly. Cite that Apple page alone and drop the afteraudio blog. The text stays the same."
+    },
+    {
+     "ref": "basics:Windows and views:0",
+     "outcome": "TRIM",
+     "trimmed_key": "X",
+     "trimmed_text": "Show / hide Mixer",
+     "reason": "Remove the second source. It is a 10.7 page (https://support.apple.com/guide/logicpro/mixer-interface-lgcpe9cc43f6/10.7/mac/11.0), and the book must not cite old-version Apple pages. The current Mixing overview page supports View > Show Mixer (or press X). A search that returned Apple's current Global Commands page also gave 'Show/Hide Mixer: X', so the hide half is backed too, but that summary was unattributed. The text stays the same."
+    }
+   ]
+  }
+ },
+ {
+  "kind": "front",
+  "i": 2,
+  "verify": {
+   "search_worked": true,
+   "searches_used": 15,
+   "search_note": "Batch front[2]: 18 rows. Apple's Global Commands page (support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac) came up several times, but the search summaries never showed its table rows, so I could not cite it for any specific key. Keys that only a /10.7/ Apple page or cheat-sheet sites supported were cut: Command-D, Command-A, Option-drag, Command-drag default tool, Control-B, Command-S and Shift-Command-S. Several of these are probably still correct and are worth one targeted search each to reinstate, for example on Apple's \"Save Logic Pro for Mac projects\" page or the Tools overview page. Flashback Capture (Shift-R) exists only from Logic Pro 11.2 onward. For the zoom rows, the search summary pooled several sites. The two preferred-list sites (whylogicprorules, macProVideo) appeared in results for the query, but the summary does not say which page states which key. A secondary summary drawn from non-preferred sites contradicted itself on vertical zoom direction. Treat those rows as PLAUSIBLE.",
+   "items": [
+    {
+     "id": "basics:Editing:5",
+     "action": "CUT",
+     "reason": "Command-D for New Track With Duplicate Settings was confirmed only by /10.7/ copies of Apple's 'Duplicate tracks in Logic Pro' page (and skydocu/blogs). An Apple-restricted search for the current page returned only /10.7/ versions, so there is no current source."
+    },
+    {
+     "id": "basics:Editing:6",
+     "action": "CUT",
+     "reason": "No source retrieved this session states Command-A = Select All for Logic Pro. The combined search result explicitly said Select All was not confirmed."
+    },
+    {
+     "id": "basics:Editing:7",
+     "action": "KEEP",
+     "final_key": "⇧⌘A",
+     "final_text": "Deselect all",
+     "reason": "A search result states that Deselect All has the default key assignment Shift-Command-A. Current Apple pages (Select tracks, Global Commands) came back for the query, but the summary did not attribute the line to a specific page, so this is PLAUSIBLE.",
+     "sources": [
+      {
+       "label": "Apple — Select tracks in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/select-tracks-lgcp66ed91bd/mac",
+       "evidence": "Returned for the Deselect All / Shift-Command-A query. The search summary: 'The Deselect All command uses the default key assignment Shift-Command-A.'"
+      },
+      {
+       "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "The default U.S. key command table for global commands. It was returned for the same query, but the summary did not show its rows."
+      }
+     ]
+    },
+    {
+     "id": "basics:Editing:8",
+     "action": "CUT",
+     "reason": "The only statement found this session is on a /10.7/ Apple page (Duplicate tracks: 'Option-drag them' to copy regions). No current Apple page or two preferred sources were retrieved for Option-drag = copy."
+    },
+    {
+     "id": "basics:Editing:9",
+     "action": "CUT",
+     "reason": "I did not retrieve a current source showing that Marquee is the default Command-click tool. Apple's current tools pages were not returned in this session's searches. This can be reinstated from Apple's 'Overview of tools in Logic Pro for Mac' page if a search confirms the default."
+    },
+    {
+     "id": "basics:Zoom and navigation:0",
+     "action": "FIX",
+     "final_key": "Z",
+     "final_text": "Toggle zoom to fit selection or all contents",
+     "reason": "The command is 'Toggle Zoom to Fit Selection or All Contents', with Z as the default key. With nothing selected it zooms to fit all content, which is more precise than 'press again to return'. Both sources are on the preferred list and came back for the query; the summary did not say which page states the key.",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules — 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://whylogicprorules.com/logic-pro-x-key-commands/",
+       "evidence": "Search summary (preferred-domain results): the 'Toggle Zoom to Fit Selection or All Contents' command defaults to the Z key."
+      },
+      {
+       "label": "macProVideo — The Power of Logic Pro Key Commands",
+       "url": "https://macprovideo.com/article/apple/the-power-of-logic-pro-key-commands",
+       "evidence": "Returned in the same preferred-domain search for the Z / Zoom to Fit Selection key command."
+      }
+     ]
+    },
+    {
+     "id": "basics:Zoom and navigation:1",
+     "action": "KEEP",
+     "final_key": "⌘← / ⌘→",
+     "final_text": "Zoom out / in horizontally",
+     "reason": "The preferred-domain search summary gives Command-Left Arrow = Zoom Horizontal Out and Command-Right Arrow = Zoom Horizontal In. This is PLAUSIBLE because the summary does not attribute the keys to a specific page.",
+     "sources": [
+      {
+       "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+       "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers",
+       "evidence": "Preferred-domain search summary: 'Command + Left Arrow for Zoom Horizontal Out, Command + Right Arrow for Zoom Horizontal In'."
+      },
+      {
+       "label": "Why Logic Pro Rules — 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://whylogicprorules.com/logic-pro-x-key-commands/",
+       "evidence": "Returned in the same preferred-domain search for zoom key commands."
+      }
+     ]
+    },
+    {
+     "id": "basics:Zoom and navigation:2",
+     "action": "KEEP",
+     "final_key": "⌘↑ / ⌘↓",
+     "final_text": "Zoom out / in vertically",
+     "reason": "The preferred-domain search summary gives Command-Up Arrow = Zoom Vertical Out and Command-Down Arrow = Zoom Vertical In, which matches the book. This is PLAUSIBLE: a summary drawn from non-preferred sites reversed the direction, and the preferred summary does not name the page that states it.",
+     "sources": [
+      {
+       "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+       "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers",
+       "evidence": "Preferred-domain search summary: 'Command + Up Arrow for Zoom Vertical Out, and Command + Down Arrow for Zoom Vertical In'."
+      },
+      {
+       "label": "Why Logic Pro Rules — 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://whylogicprorules.com/logic-pro-x-key-commands/",
+       "evidence": "Returned in the same preferred-domain search for zoom key commands."
+      }
+     ]
+    },
+    {
+     "id": "basics:Zoom and navigation:3",
+     "action": "KEEP",
+     "final_key": "⌃⌥ + drag",
+     "final_text": "Drag-zoom to any area",
+     "reason": "Apple's current Zoom windows page says to select the Zoom tool or press and hold Control-Option, then drag over the area; the selected area fills the window. Why Logic Pro Rules independently agrees that Control-Option switches to the Zoom tool.",
+     "sources": [
+      {
+       "label": "Apple — Zoom windows in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/zoom-windows-lgcp5cbf2096/mac",
+       "evidence": "To access the Zoom tool, select it from the Tool menu or press and hold Control-Option; drag to select the area you want to zoom, and the selected area fills the window."
+      },
+      {
+       "label": "Why Logic Pro Rules — Speed Up Your Zooms in Logic Pro With These 2 Keys",
+       "url": "https://whylogicprorules.com/zoom-tool/",
+       "evidence": "Hold Control and Option to change the current mouse tool to the Zoom tool."
+      }
+     ]
+    },
+    {
+     "id": "basics:Capture and output:0",
+     "action": "KEEP",
+     "final_key": "⇧R",
+     "final_text": "Flashback Capture — grab what you just played",
+     "reason": "Apple's current Flashback Capture pages say to click the Flashback Capture button in the control bar or press Shift-R. The feature replaced Capture Recording in Logic Pro 11.2. Logic Studio Training independently gives Shift-R.",
+     "sources": [
+      {
+       "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac",
+       "evidence": "Click the Flashback Capture button in the control bar or press Shift-R; audio can be captured only while the project is playing."
+      },
+      {
+       "label": "Apple — Capture your most recent MIDI performance in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/capture-your-most-recent-midi-performance-lgcpdc0bf889/mac",
+       "evidence": "Flashback Capture creates MIDI regions from a recent performance, even if Logic Pro wasn't recording."
+      },
+      {
+       "label": "Logic Studio Training — Flashback Capture: Recover the Take You Forgot to Record",
+       "url": "https://logicstudiotraining.com/flashback-capture-logic-pro/",
+       "evidence": "New in Logic Pro 11.2; works with one shortcut, Shift-R."
+      }
+     ]
+    },
+    {
+     "id": "basics:Capture and output:1",
+     "action": "CUT",
+     "reason": "An Apple-restricted search for saving projects returned 'Save Logic Pro for Mac projects' (File > Save), but the summary explicitly said the Logic Pro page does not state Command-S. No other retrieved source confirmed it for Logic."
+    },
+    {
+     "id": "basics:Capture and output:2",
+     "action": "CUT",
+     "reason": "Shift-Command-S was not confirmed for Logic Pro by any retrieved source. The only mention came from Apple's Impulse Response Utility pages, a different app."
+    },
+    {
+     "id": "basics:Capture and output:3",
+     "action": "KEEP",
+     "final_key": "⌘B",
+     "final_text": "Bounce project or section",
+     "reason": "Apple's current bounce page says to choose File > Bounce > Project or Section, or use the Bounce key command, whose default assignment is Command-B.",
+     "sources": [
+      {
+       "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac",
+       "evidence": "To open the Bounce window, choose File > Bounce > Project or Section or use the Bounce key command with the default assignment of Command-B."
+      }
+     ]
+    },
+    {
+     "id": "basics:Capture and output:4",
+     "action": "CUT",
+     "reason": "Apple's current 'Bounce regions in place in Logic Pro for Mac' page says only 'File > Bounce > Regions in Place (or use the corresponding key command)' and names no key. Control-B appears only on the /10.7/ page and in a forum thread, which is not enough for Logic 11/12."
+    },
+    {
+     "id": "basics:Capture and output:5",
+     "action": "KEEP",
+     "final_key": "⌥K",
+     "final_text": "Open Key Commands",
+     "reason": "Apple's current 'Assign key commands in Logic Pro for Mac' page came back for the Option-K query. The search summary says Option-K opens the Key Commands window.",
+     "sources": [
+      {
+       "label": "Apple — Assign key commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac",
+       "evidence": "Search summary: you can open the Key Commands window by pressing Option-K."
+      }
+     ]
+    },
+    {
+     "id": "basics:Capture and output:6",
+     "action": "KEEP",
+     "final_key": "⌘,",
+     "final_text": "Open Settings",
+     "reason": "Apple's current 'Overview of Logic Pro settings' page came back for the query. The search summary says Command-Comma opens Logic Pro's settings (called preferences in the summary). This is PLAUSIBLE because the line was not attributed to a specific page.",
+     "sources": [
+      {
+       "label": "Apple — Overview of Logic Pro settings",
+       "url": "https://support.apple.com/guide/logicpro/logic-pro-settings-overview-lgcp53689108/mac",
+       "evidence": "Search summary: to open Logic Pro Preferences/Settings, press Command-Comma (,)."
+      }
+     ]
+    }
+   ]
+  },
+  "challenge": {
+   "reviews": [
+    {
+     "ref": "basics:Zoom and navigation:0",
+     "outcome": "CUT",
+     "reason": "Nothing from Apple backs the Z key. I re-searched Apple's current 'Zoom windows in Logic Pro for Mac' page, and the result explicitly did not include a Z key command. The cited sources are Logic Pro X-era articles, and the verifier admits the summary did not say which page states the key. The whylogicprorules URL also looks reconstructed: the article title it carries, '10 Logic Pro X Key Commands That Will Rock Your Workflow', came back in my search as a macprovideo.com article at a different URL. The macProVideo 'power-of-logic-pro-key-commands' URL was only 'returned', with no quoted evidence. That is not enough for a book covering Logic Pro 11 and 12."
+    },
+    {
+     "ref": "basics:Zoom and navigation:1",
+     "outcome": "CUT",
+     "reason": "Only one source actually carries the claim: a Logic Pro X-era macProVideo listicle, quoted through an unattributed search summary. The second citation, whylogicprorules.com/logic-pro-x-key-commands/, has no evidence of its own and its title/URL pairing looks reconstructed (that title belongs to a macprovideo.com article). I re-searched Apple's current Zoom windows page, and it did not show any Command-arrow zoom key commands. The standard requires two agreeing independent sources or an Apple page, so this falls short."
+    },
+    {
+     "ref": "basics:Zoom and navigation:2",
+     "outcome": "CUT",
+     "reason": "This has the same weak sourcing as the Command-Left/Right Arrow item: one Logic Pro X-era macProVideo article quoted through an unattributed summary, plus a whylogicprorules URL that looks reconstructed and has no evidence of its own. The verifier also reports that another summary reversed the zoom direction, so the assertion is contested. Apple's current Zoom windows page, re-searched, gave no Command-Up/Down Arrow key commands."
+    }
+   ]
+  }
+ },
+ {
+  "kind": "front",
+  "i": 99,
+  "verify": {
+   "search_worked": true,
+   "items": [
+    {
+     "id": "basics:Transport:7",
+     "action": "FIX",
+     "final_text": "Open the Go to Position dialog",
+     "sources": [
+      {
+       "label": "macProVideo: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+       "evidence": "\"Logic Pro has a pre-assigned key command to simply type in your position... It is assigned to the forward slash on the keyboard next to the right Shift key.\""
+      },
+      {
+       "label": "Logic Studio Training: Logic Pro X Arranging and Editing Tip: Go To Position",
+       "url": "https://logicstudiotraining.com/logic-pro-x-arranging-and-editing-tip-go-to-position/",
+       "evidence": "\"you can press '/' (the slash key) or choose Navigate > Go To > Position to open the Go To Position dialog\" (this was the only result of a search limited to reputable domains)"
+      }
+     ],
+     "reason": "key-command lookup: Two independent qualifying sources agree on /. macprovideo.com says Go to Position 'is assigned to the forward slash on the keyboard next to the right Shift key.' A search limited to reputable domains returned only a logicstudiotraining.com page, and it said: press '/' or choose Navigate > Go To > P"
+    },
+    {
+     "id": "basics:Windows and views:10",
+     "action": "FIX",
+     "final_text": "Show / hide all plug-in windows",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://whylogicprorules.com/logic-pro-x-key-commands/",
+       "evidence": "Search limited to whylogicprorules.com: \"In Logic Pro, you can hide or show all plugins by using Key Command V.\""
+      },
+      {
+       "label": "Logic Studio Training: 7 Must-Know Logic Pro Shortcuts for Aspiring Beat Makers",
+       "url": "https://logicstudiotraining.com/logic-pro-shortcuts-beat-making/",
+       "evidence": "\"With a simple press of 'V', your plugins make their grand entrance or exit\"; 'Show/Hide All Plug-in Windows' ... triggered by pressing the V key"
+      }
+     ],
+     "reason": "key-command lookup: A search limited to whylogicprorules.com returned: \"you can hide or show all plugins by using Key Command V.\" Its top result was the site's '10 Logic Pro X Key Commands' article. A search limited to studio-interns.com, logicstudiotraining.com and soundonsound.com named the logicstudiotraining.com be"
+    },
+    {
+     "id": "basics:Windows and views:6",
+     "action": "FIX",
+     "final_text": "Show / hide Browsers",
+     "sources": [
+      {
+       "label": "Studio Interns: Show/Hide Browsers F (Logic Pro X keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2020/04/28/show-hide-browsers-f-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Page title: 'Show/Hide Browsers F'"
+      },
+      {
+       "label": "macProVideo: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+       "evidence": "Search limited to macprovideo.com and logicstudiotraining.com: \"pressing F toggles the Browser in Logic Pro. This is one of the default key commands used to show or hide the Browser panel.\""
+      }
+     ],
+     "reason": "key-command lookup: The studio-interns.com keyboard-command-of-the-day page is titled 'Show/Hide Browsers F'. A search limited to macprovideo.com and logicstudiotraining.com said independently: \"pressing F toggles the Browser in Logic Pro... one of the default key commands.\" The result list included the macProVideo '10"
+    },
+    {
+     "id": "basics:Editing:2",
+     "action": "FIX",
+     "final_text": "Split regions at the playhead",
+     "sources": [
+      {
+       "label": "Studio Interns: Split Regions/Events at Playhead Position ⌘T (keyboard command of the day)",
+       "url": "https://studio-interns.com/split-regions-events-at-playhead-positiont-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Page title: 'Split Regions/Events at Playhead Position ⌘T ⌘1'"
+      },
+      {
+       "label": "Sound On Sound: Logic Pro Key Commands",
+       "url": "https://www.soundonsound.com/techniques/logic-pro-key-commands",
+       "evidence": "Search limited to soundonsound.com: \"Command+T is the key command for 'Split Regions/Events at the Playhead Position'... This will split your region whilst listening to your track.\""
+      }
+     ],
+     "reason": "key-command lookup: The studio-interns.com page is titled 'Split Regions/Events at Playhead Position ⌘T ⌘1'. A search limited to soundonsound.com said: \"Command+T is the key command for 'Split Regions/Events at the Playhead Position'... you can split your region whilst listening... by hitting Play and then Command+T.\" "
+    },
+    {
+     "id": "basics:Editing:4",
+     "action": "FIX",
+     "final_text": "Repeat regions or events",
+     "sources": [
+      {
+       "label": "Sound On Sound - Logic Pro: Handling Repetition",
+       "url": "https://www.soundonsound.com/techniques/logic-pro-handling-repetition",
+       "evidence": "Search limited to soundonsound.com: 'By simply clicking on a region (or group of regions) and hitting Command+R, you can create a duplicate. Keep hitting this combination to continue making additional copies.'"
+      },
+      {
+       "label": "macProVideo - 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://macprovideo.com/article/audio-software/10-logic-pro-x-key-commands-that-will-rock-your-workflow",
+       "evidence": "Search limited to macprovideo.com: 'In Logic Pro X, pressing Command-R with regions selected repeats them one time, and there is no default key command for a dialog box to repeat multiple times' (Repeat Regions/Events)."
+      }
+     ],
+     "reason": "key-command lookup: Two independent reputable sources, each found in a search limited to its own domain, say Command-R repeats the selected regions. SOS says each press adds another copy. macProVideo says that since Logic Pro X, Command-R repeats the selection once and the Repeat Multiple Times dialog has no default ke"
+    },
+    {
+     "id": "basics:Editing:6",
+     "action": "FIX",
+     "final_text": "Select all",
+     "sources": [
+      {
+       "label": "Apple - Select events in the Logic Pro for Mac Event List",
+       "url": "https://support.apple.com/guide/logicpro/select-events-in-the-event-list-lgcp2158bb90/mac",
+       "evidence": "Search limited to Apple: 'Command-A is the key command to select all visible events in Logic Pro for Mac. This command is available in the Edit > Select menu'"
+      },
+      {
+       "label": "Apple - Key commands for Global Commands in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac",
+       "evidence": "Search for the page title plus 'Select All' returned this page; the summary said 'the key command for \"Select all\" in Logic Pro is Command-A'."
+      }
+     ],
+     "reason": "key-command lookup: A search limited to support.apple.com returned the current Apple page 'Select events in the Logic Pro for Mac Event List' plus the Global Commands key-command pages. Its summary said Command-A is the key command to select all visible events and that the command is in the Edit > Select menu. An earli"
+    },
+    {
+     "id": "basics:Capture and output:4",
+     "action": "FIX",
+     "final_text": "Bounce regions in place",
+     "sources": [
+      {
+       "label": "Why Logic Pro Rules: 10 Logic Pro X Key Commands That Will Rock Your Workflow",
+       "url": "https://whylogicprorules.com/logic-pro-x-key-commands/",
+       "evidence": "Result in a search limited to reputable domains; summary: 'Key Command Control – B ... swift and easy access to Bounce in Place'"
+      },
+      {
+       "label": "Logic Studio Training: 7 Must-Know Logic Pro Shortcuts for Aspiring Beat Makers",
+       "url": "https://logicstudiotraining.com/logic-pro-shortcuts-beat-making/",
+       "evidence": "Result in the same search limited to reputable domains; summary: 'Control and B is the key command for Bounce Regions in Place'"
+      },
+      {
+       "label": "MusicTech: Logic's Bounce In Place function is essential",
+       "url": "https://musictech.com/tutorials/logic-bounce-in-place/",
+       "evidence": "Result in the same search limited to reputable domains (no row-level text shown)"
+      }
+     ],
+     "reason": "key-command lookup: A search limited to reputable Logic sites (whylogicprorules.com, logicstudiotraining.com, musictech.com and others) returned two differently worded statements that agree: 'using Key Command Control – B provides swift and easy access to Bounce in Place' and 'Control and B is the key command for Bounc"
+    },
+    {
+     "id": "legend:⇧",
+     "action": "FIX",
+     "final_text": "Shift-click to add to a selection.",
+     "sources": [
+      {
+       "label": "Select parts of regions in Logic Pro for Mac - Apple Support",
+       "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+       "evidence": "'Shift-click a track lane between the left and right border of a marquee selection to add that track to the selection.'"
+      },
+      {
+       "label": "Select regions in the Tracks area in Logic Pro - Apple Support (10.7, supporting only)",
+       "url": "https://support.apple.com/guide/logicpro/select-regions-lgcpf7c0e62a/10.7/mac/11.0",
+       "evidence": "'Press and hold Shift as you click the regions in the Tracks area to select multiple regions.'"
+      }
+     ],
+     "reason": "key-command lookup: This is a modifier behavior, not a key command row. Apple's current 'Select parts of regions in Logic Pro for Mac' page (no version segment) was summarized as: 'Shift-click a track lane between the left and right border of a marquee selection to add that track to the selection.' Apple's region-selec"
+    },
+    {
+     "id": "basics:Transport:6",
+     "action": "FIX",
+     "final_text": "Set locators around the selection, rounded to bars, and turn Cycle on",
+     "sources": [
+      {
+       "label": "macProVideo: 6 Logic Pro X Cycling Tips For A Faster Production Workflow",
+       "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow",
+       "evidence": "'select an area with the Marquee tool and type U' (sets rounded locators and enables cycle)"
+      },
+      {
+       "label": "Logic Studio Training Wiki: Locators",
+       "url": "https://logicstudiotraining.com/wiki/index.php/Locators",
+       "evidence": "Result in a search limited to reputable domains; summary: 'U sets the loop rounded around the chosen region so if it didn't start at the beginning of a bar, you won't lose sync'"
+      },
+      {
+       "label": "studio-interns.com: Set Rounded Locators by Regions/Events (keyboard command of the day)",
+       "url": "https://www.studio-interns.com/2019/09/28/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/",
+       "evidence": "Summary: rounds locators to the nearest barlines of the selected regions/events; Control-Option-Shift-Command-U is the version without cycle"
+      }
+     ],
+     "reason": "key-command lookup: Searches limited to reputable domains (macprovideo.com, studio-interns.com, logicstudiotraining.com and others) returned agreeing statements: 'The Set Rounded Locators by Regions/Events and Enable Cycle command is triggered by pressing the U key'; 'select an area with the Marquee tool and type U' (m"
+    },
+    {
+     "id": "basics:Capture and output:1",
+     "action": "KEEP",
+     "final_text": "Save",
+     "sources": [
+      {
+       "label": "Apple - Use project alternatives and backups in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac",
+       "evidence": "Each time you save using File > Save (or Command-S), a version of the current project alternative is saved (up to ten backups per alternative); File > Revert to lists backups newest to oldest."
+      },
+      {
+       "label": "Apple - Advanced settings in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac",
+       "evidence": "Enable Complete Features makes project alternatives and backups available."
+      }
+     ],
+     "reason": "confirmed in the S1 ⌘S trick"
+    },
+    {
+     "id": "basics:Editing:8",
+     "action": "FIX",
+     "final_text": "Copy a region instead of moving it",
+     "sources": [
+      {
+       "label": "Apple — Cut, copy, and paste regions in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/cut-copy-and-paste-regions-lgcpf7c0d424/mac",
+       "evidence": "Search summary: Option-drag the region to copy it."
+      },
+      {
+       "label": "Apple — Set channel strip volume in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/set-volume-levels-lgcp8ec34eec/mac",
+       "evidence": "Search summary: Option-click the Volume fader to return it to a neutral level (0 dB gain)."
+      },
+      {
+       "label": "Apple — Mute and solo channel strips in Logic Pro for Mac",
+       "url": "https://support.apple.com/en-lk/guide/logicpro/lgcpbc21a09d/mac",
+       "evidence": "Search summary: Option-clicking an unsoloed channel strip's Solo button (Solo Exclusive) solos it and unsolos every other channel strip."
+      }
+     ],
+     "reason": "confirmed by the callout's current Apple sources"
+    },
+    {
+     "id": "basics:Editing:9",
+     "action": "FIX",
+     "final_text": "Use your Command-click tool (Marquee is a popular choice)",
+     "sources": [
+      {
+       "label": "Apple — Overview of tools in Logic Pro for Mac",
+       "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac"
+      }
+     ],
+     "reason": "no source says Marquee is the default Command-click tool; Apple documents the separate Command-click Tool menu"
+    }
+   ]
+  },
+  "challenge": null
+ }
+]

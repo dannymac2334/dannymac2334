@@ -8,16 +8,42 @@
       "tips": [
         {
           "t": "Know the four modes and pick deliberately",
-          "d": "Classic for straight playback, One Shot for drums and stabs, Slice to chop a loop across the keyboard, Recorder to sample live input. Choosing the mode is 90% of the work."
+          "d": "Classic plays the sample while you hold a key, the way to play a sound across the keyboard. One Shot plays from start marker to end marker on each note, good for drum loops and effects. Slice chops a sample into slices mapped to keys. Recorder captures live input as an audio recording.",
+          "src": [
+            {
+              "label": "Apple — Choose a Quick Sampler mode in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac"
+            }
+          ]
         },
         {
           "t": "Use Slice mode with Transient detection on any break",
-          "d": "Load a drum loop, switch to Slice, and every hit is mapped to its own key. Drag from the lower waveform display into the Tracks area to get the MIDI — the original groove, fully rearrangeable.",
-          "b": "GAME CHANGER"
+          "d": "Load a drum loop, switch to Slice, choose Transient from the Mode pop-up menu, and each slice is mapped to its own key. Drag from the lower part of the waveform display to a software instrument track in the Tracks area to get the MIDI — the original groove, fully rearrangeable.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Quick Sampler Slice mode in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/slice-mode-lgcp18515788/mac"
+            },
+            {
+              "label": "Apple — Choose a Quick Sampler mode in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac"
+            }
+          ]
         },
         {
           "t": "Drag audio directly from the Tracks area into a loaded Quick Sampler",
-          "d": "Drag a region straight from the Tracks area into Quick Sampler's waveform display to swap the sound without leaving the plug-in. Drop it on the Original half to keep the file's own tuning, loudness, looping and length; drop it on Optimized and Quick Sampler analyses the file, optimises tuning, loudness and length, and adds loop and crossfade markers for you. Dropping a region triggers an offline bounce before it lands in the display, so give it a moment. (Dragging to the track header instead brings up a Replace Existing Sound dialog.) Glance over your filter and envelope after the swap rather than assuming everything carried across."
+          "d": "Drag a region into Quick Sampler's waveform display to swap the sound. Drop it on Original to keep the file's own tuning, loudness, looping and length. Drop it on Optimized and Quick Sampler optimizes tuning, loudness and length, and adds loop and crossfade markers to rhythmic or looped material. The region is bounced offline first. Dragging to the track header instead opens the Replace existing sound dialog.",
+          "src": [
+            {
+              "label": "Apple — Add audio to Quick Sampler in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/add-audio-to-quick-sampler-lgcpc1e3525a/mac"
+            },
+            {
+              "label": "Apple — Drag and drop to create sampler instrument tracks in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101863"
+            }
+          ]
         }
       ]
     },
@@ -25,12 +51,24 @@
       "heading": "Shaping the sound",
       "tips": [
         {
-          "t": "Use Flex/Follow Tempo to lock a loop to the project",
-          "d": "Flex and Follow Tempo are two separate buttons, at the lower right of Quick Sampler's waveform display in Classic, One Shot and Slice modes. Turning Flex on by itself only plays the sample at its original speed for all note pitches — it does not chase the project tempo. Turn Flex on, then turn Follow Tempo on as well: with both active, slices stretch or contract according to the original tempo of the loop and the current project tempo, so the loop tracks tempo changes without shifting pitch."
+          "t": "Use Flex and Follow Tempo to lock a loop to the project",
+          "d": "Flex and Follow Tempo are separate buttons at the lower right of the waveform display in Classic, One Shot and Slice modes. Flex alone plays the sample at its original speed on every key: the pitch changes, the speed doesn't. Turn on Follow Tempo as well and playback syncs to the project tempo, with slices stretching or contracting to match.",
+          "src": [
+            {
+              "label": "Apple — Use Flex in Quick Sampler in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-flex-in-quick-sampler-lgcpe3d7978d/mac"
+            }
+          ]
         },
         {
           "t": "Set the root key correctly or nothing will be in tune",
-          "d": "Quick Sampler guesses the pitch. If your bass is a semitone out across the keyboard, this is why. Set it manually in the Pitch section."
+          "d": "The root key is the note that plays your sample at its original pitch; keys above and below transpose it up or down. If a sample plays out of tune across the keyboard, open the Pitch controls and set the Root Key pop-up menu to the note the sample actually is.",
+          "src": [
+            {
+              "label": "Apple — Quick Sampler Pitch controls in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/quick-sampler-pitch-controls-lgcpd22b3634/mac"
+            }
+          ]
         }
       ]
     },
@@ -40,11 +78,27 @@
         {
           "t": "Drag MIDI out of Slice mode into the Tracks area",
           "d": "The generated MIDI plays the slices in the original order. Now shuffle the notes and the break rearranges itself.",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Quick Sampler Slice mode in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/slice-mode-lgcp18515788/mac"
+            },
+            {
+              "label": "Apple — Choose a Quick Sampler mode in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac"
+            }
+          ]
         },
         {
           "t": "Convert Quick Sampler to Sampler for full control",
-          "d": "Swap the instrument slot from Quick Sampler to Sampler and your loaded content transfers across automatically. Do it when you need multiple velocity layers, round robins or key zones. It is a one-way trip — Sampler settings will not open back up in Quick Sampler."
+          "d": "Replace Quick Sampler with Sampler on the instrument channel strip and your current content transfers automatically. Do it when you need to work with more than one audio file at a time. It is a one-way trip: Sampler can load Quick Sampler settings, but Quick Sampler cannot open a Sampler setting.",
+          "src": [
+            {
+              "label": "Apple — Quick Sampler overview in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/quick-sampler-overview-lgcp5af33756/mac"
+            }
+          ]
         }
       ]
     }

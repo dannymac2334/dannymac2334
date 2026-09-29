@@ -9,28 +9,78 @@
         {
           "t": "Drag‑zoom to any area with ⌃⌥",
           "d": "Hold ⌃⌥ and drag a box around any part of the arrangement to zoom straight to it. Hold ⌃⌥ and click empty space to zoom back out.",
-          "k": "⌃⌥ + drag"
+          "k": "⌃⌥ + drag",
+          "src": [
+            {
+              "label": "Apple — Zoom windows in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/zoom-windows-lgcp5cbf2096/mac"
+            }
+          ]
         },
         {
           "t": "Know what the number keys actually do",
-          "d": "The top-row number keys recall screensets, not markers — Apple's guide says you recall a screenset by pressing any numeric key except 0, so 1–9 switch window layouts. If you want marker jumps on a key, open Key Commands (⌥K) and search “Go to Marker Number” — there are 20 of them, numbered by the order the markers appear in the project."
+          "d": "The number keys recall screensets, not markers — Apple's guide says you recall a screenset by pressing any numeric key except 0, so 1–9 switch window layouts. If you want marker jumps on a key, open Key Commands (⌥K) and search “Go to Marker Number” — there are 20 of them, numbered by the order the markers appear in the project.",
+          "src": [
+            {
+              "label": "Apple — Create and recall screensets in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/create-recall-and-switch-screensets-lgcp9bbbcb23/mac"
+            },
+            {
+              "label": "Apple — Navigate using markers in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/navigate-using-markers-lgcpa855b268/mac"
+            },
+            {
+              "label": "Apple — Assign key commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
+            }
+          ]
         },
         {
-          "t": "Assign a key to “Play Selection”",
-          "d": "Open Key Commands with ⌥K and search “Selection”. Logic has several selection-based playback commands — Play from Selection is on ⇧Space by default and starts playback at the beginning of whatever you have selected — so you can audition just the part you are working on. Browse the list and put the one that matches your workflow on a key you can reach."
-        },
-        {
-          "t": "Scroll horizontally without the scrollbar",
-          "d": "Two‑finger swipe left and right on a trackpad to move through the project. Apple documents gesture scrolling in the Tracks area, and dragging two fingers scrolls a pane horizontally as well as vertically — keep your hand off the scrollbar entirely."
+          "t": "Scroll without the scrollbar",
+          "d": "If your Mac has a trackpad that supports gestures, you can scroll and zoom the Tracks area with gestures instead of reaching for the scrollbars. On a Mac with a Touch Bar, swipe left or right on the Touch Bar to scroll through the visible area of the project.",
+          "src": [
+            {
+              "label": "Apple — Scroll and zoom in the Tracks area in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/scroll-and-zoom-in-the-tracks-area-lgcpf7c0b924/mac"
+            }
+          ]
         },
         {
           "t": "Use the Cycle area as a bookmark",
-          "d": "Select the region or passage you are working on and press U. Logic sets the left and right locators around it — rounded to bar lines — and turns Cycle on, so the yellow strip in the ruler marks your work area and keeps looping it. Use ⌘U instead if you want the locators exactly on the selection boundaries rather than rounded."
+          "d": "Select the region or passage you are working on and press U (Set Rounded Locators by Regions/Events and Enable Cycle). Logic sets the left and right locators around the selection, rounded, and turns Cycle on, so the cycle area marks your work area. Use ⌘U instead if you want the locators set by the selection without rounding.",
+          "k": "U",
+          "src": [
+            {
+              "label": "Apple — Key commands for Global Commands in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/global-commands-lgcp02bf31b6/mac"
+            },
+            {
+              "label": "studio-interns.com — Set Rounded Locators by Regions/Events (keyboard command of the day)",
+              "url": "https://studio-interns.com/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "studio-interns.com — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop ⌘U",
+              "url": "https://studio-interns.com/set-locators-loop-by-regions-events-marquee-and-enable-cycle-loopu-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "afteraudio.com — Key commands for Global Commands in Logic Pro",
+              "url": "https://www.afteraudio.com/musings/blog/key-commands-for-global-commands-in-logic-pro"
+            }
+          ]
         },
         {
           "t": "Toggle Catch to stop the screen running away",
-          "d": "The Catch button makes the view follow the playhead. Click it off when you are doing detailed editing and the view will hold still while the song plays. You do not need to assign anything — Catch Playhead Position is already on the backquote (`) key, so you can toggle it without leaving the keyboard.",
-          "k": "⌥K to assign"
+          "d": "With Catch on, the visible section of a window follows the playhead during playback. For detailed editing, click the Catch button in the Tracks area (or editor) menu bar to turn it off, and the view holds still. If it keeps switching back on, check Logic Pro > Settings > General > Catch: “Catch when starting playback” and “Catch when moving playhead” re-enable it.",
+          "src": [
+            {
+              "label": "Apple — Control windows using Catch modes in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/control-windows-using-catch-modes-lgcp5cbf1727/mac"
+            },
+            {
+              "label": "Apple — Catch settings in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/catch-settings-lgcp237ca5ad/mac"
+            }
+          ]
         }
       ]
     }

@@ -8,22 +8,54 @@
       "tips": [
         {
           "t": "Drag any audio file straight onto a pad",
-          "d": "Drop a sample onto a pad and Drum Machine Designer loads it into a Quick Sampler instance automatically. Building a custom kit takes about a minute.",
-          "b": "GAME CHANGER"
+          "d": "Drag a WAV, AIFF or MP3 from the Finder or a Logic Pro browser, or a region from the Tracks area, onto a pad to add it to your kit. When you drop a region onto a pad, Drum Machine Designer inserts a new Quick Sampler instance on a new subtrack.",
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/102054"
+            }
+          ]
         },
         {
           "t": "Every pad is its own channel strip",
           "d": "Open the Mixer with X and you will see each pad as a separate channel inside the stack. Compress the snare, saturate the kick, send only the claps to reverb.",
           "k": "X",
-          "b": "GAME CHANGER"
+          "b": "GAME CHANGER",
+          "src": [
+            {
+              "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/102054"
+            },
+            {
+              "label": "Apple — Overview of mixing in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/mixing-overview-lgcpbc219818/mac"
+            }
+          ]
         },
         {
-          "t": "⌥‑drag a pad to copy it, including all its processing",
-          "d": "Copy a pad when you want to layer. Control-click the pad and choose Copy, then Control-click the pad you want to replace and choose Paste. Pitch the copy down and blend it under the original for a thicker snare. (Dragging a pad to an empty slot in the grid moves it rather than copying it, which is how you reorder a kit.)"
+          "t": "Copy a pad with Control-click",
+          "d": "To copy a pad, Control-click it and choose Copy. Then Control-click the pad you want to replace and choose Paste. Cut works the same way. Dragging a pad to an empty location in the grid reorders it rather than copying it.",
+          "src": [
+            {
+              "label": "Apple — Use Drum Machine Designer pad controls in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac"
+            }
+          ]
         },
         {
-          "t": "Use the pad's Sound tab for quick shaping",
-          "d": "Use the Pad Controls button for quick shaping. Select a pad and click Pad Controls in the bar below the grid: the pad's tone and effect Smart Controls appear in the Plug-in pane, so you can reshape a kit piece without going into its plug-in. When you do need the sample itself — playback mode, sample start, the pitch, filter and amp envelopes — the same bar has Q-Sampler Main, Q-Sampler Details or Drum Synth buttons that open that pad's instrument right below the grid."
+          "t": "Use Pad Controls for quick shaping",
+          "d": "Select a pad and click Pad Controls in the bar below the grid. The pad's tone and effect parameters appear in the Plug-in pane. For Quick Sampler pads, Q-Sampler Main shows the waveform editor and Q-Sampler Details shows the LFOs and the pitch, filter and amp envelopes. Drum Synth pads get a Drum Synth button.",
+          "src": [
+            {
+              "label": "Apple — Drum Machine Designer pad controls bar in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/pad-controls-bar-lgcpd772e292/mac"
+            },
+            {
+              "label": "Apple — Use Drum Machine Designer pad controls in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac"
+            }
+          ]
         }
       ]
     },
@@ -31,12 +63,32 @@
       "heading": "Mixing and performing",
       "tips": [
         {
-          "t": "Use the main stack fader for the whole kit",
-          "d": "The Track Stack's top level is a summing bus. Put your kit compressor and limiter there and process everything together."
+          "t": "Use the main track for the whole kit",
+          "d": "A Drum Machine Designer kit is a track stack. Plug-ins on its main track affect every subtrack, so put your kit compressor and limiter there. Any pad whose output you route outside the stack skips that processing.",
+          "src": [
+            {
+              "label": "Apple — Logic Pro for Mac track stacks overview",
+              "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac"
+            },
+            {
+              "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/102054"
+            }
+          ]
         },
         {
           "t": "Save your kit as a patch",
-          "d": "With the stack selected, save to the Library. Every pad, every sample and every insert comes back in one click on the next project."
+          "d": "In Drum Machine Designer, select the kit name pad at the top so you save the complete kit, then click Save at the bottom of the Library. A summing-stack patch can include the main track and all subtracks, along with their channel strip and plug-in settings.",
+          "src": [
+            {
+              "label": "Apple — Copy a custom Drum Machine Designer kit to another Mac",
+              "url": "https://support.apple.com/en-us/101779"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac track stacks overview",
+              "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac"
+            }
+          ]
         }
       ]
     }

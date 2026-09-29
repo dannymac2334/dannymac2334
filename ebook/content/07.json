@@ -8,8 +8,21 @@
       "tips": [
         {
           "t": "Trim to the playhead from either direction",
-          "d": "The commands are “Set Region/Event/Marquee Start to Playhead Position” and the matching End command — search Key Commands (⌥K) for “Playhead Position” and put them on keys. (Note that on audio regions the Start command also moves the region anchor to the playhead.) Related one-shot trims live under Edit > Trim, such as Region End to Next Region. No mouse precision needed.",
-          "k": "⌥K to assign"
+          "d": "The commands are “Set Region/Event/Marquee Start to Playhead Position” and the matching End command — search the Key Commands window for “Playhead Position” and put them on keys. (Note that on audio regions the Start command also moves the region anchor to the playhead.) Related one-shot trims live under Edit > Trim, such as Region End to Next Region. No mouse precision needed.",
+          "src": [
+            {
+              "label": "Apple — Resize regions in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/resize-regions-lgcpf7c0c964/mac"
+            },
+            {
+              "label": "Apple — Create custom keyboard shortcuts for Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/101929"
+            },
+            {
+              "label": "Studio Interns — Trim Region End to Next Region",
+              "url": "https://studio-interns.com/trim-region-end-to-next-region-logic-pro-x-keyboard-command-of-the-day/"
+            }
+          ]
         }
       ]
     },
@@ -17,8 +30,14 @@
       "heading": "Snap, grid and precision",
       "tips": [
         {
-          "t": "Turn on “Snap Regions to Absolute Value”",
-          "d": "In the Snap menu. “Snap Regions to Absolute Value” is Logic's default: move or edit an item and it snaps exactly to the nearest grid position, ignoring any offset it had. The opposite is not an off switch but a second menu item, “Snap Regions to Relative Value” — choose that when you are moving a region that sits deliberately off‑grid, so it keeps its distance from the grid (a region at 2.1.1.16 moved one beat forward lands on 2.2.1.16, not 2.2.1.1)."
+          "t": "Use Snap Regions to Relative Value for off-grid parts",
+          "d": "By default, Logic's Snap menu is set to Snap Regions to Absolute Value: a moved item snaps exactly to the nearest grid position. For a region that sits deliberately off-grid, choose Snap > Snap Regions to Relative Value in the Tracks area menu bar. It keeps its distance from the grid: a region at 2.1.1.16 moved one beat forward lands on 2.2.1.16, not 2.2.1.1.",
+          "src": [
+            {
+              "label": "Apple — Snap items to the grid in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/snap-items-to-the-grid-lgcpf7c0f66a/mac"
+            }
+          ]
         }
       ]
     },
@@ -26,30 +45,66 @@
       "heading": "Tools and selection",
       "tips": [
         {
-          "t": "Esc opens the tool menu, Esc twice returns to the pointer",
-          "d": "T opens the Tool menu at the pointer — Apple's default assignment for Show Tool Menu — and pressing T twice puts you straight back on the Pointer tool. Fastest tool switching in the program. (Esc-based tool switching was the Logic 9 way and is no longer the default.)",
-          "k": "Esc"
+          "t": "T opens the Tool menu, T twice returns to the Pointer",
+          "d": "Press T to open the Tool menu at the pointer — Apple's default key command for Show Tool Menu. Press T again to close it.",
+          "k": "T",
+          "src": [
+            {
+              "label": "Apple — Key commands for Tool Menu in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/tool-menu-lgcp0182c4e5/mac"
+            },
+            {
+              "label": "Apple — Overview of tools in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac"
+            }
+          ]
         },
         {
           "t": "⌘ is your secondary tool",
-          "d": "Hold ⌘ to temporarily switch to the Command‑click tool; let go and you are instantly back on your Left‑click tool. Set it from the Command‑click Tool menu (the right‑hand one in the Tracks area menu bar) — most editors put Marquee there, and it is hard to beat."
-        },
-        {
-          "t": "Assign the Fade tool to ⌘ when doing audio cleanup",
-          "d": "Set the secondary tool via the right‑hand tool menu, then every ⌘‑drag across a region edge creates a fade."
+          "d": "Logic has two Tool menus: Left-click and Command-click. Choose a tool from the Command-click Tool menu, then hold ⌘ to use it. Let go and you are back on your Left-click tool.",
+          "src": [
+            {
+              "label": "Apple — Overview of tools in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac"
+            },
+            {
+              "label": "Apple — Assign tools in Logic Pro (Logic Pro 10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0"
+            }
+          ]
         },
         {
           "t": "Select everything after this point in one keystroke",
-          "d": "⇧F is Select All Following: it grabs every region after the current selection, across all tracks — the fastest way to shift a whole song later. To stay on one track, use Edit > Select > All Following of Same Track, which already has a default key command of ⌥⇧F.",
-          "k": "⇧F"
+          "d": "Press ⇧F (Select All Following) to select everything that comes after the current selection. That puts you one keystroke from moving the rest of the song.",
+          "k": "⇧F",
+          "src": [
+            {
+              "label": "Apple — Key commands for Main Window Tracks and Various Editors in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/main-window-tracks-and-various-editors-lgcpe8314fe2/mac"
+            },
+            {
+              "label": "Apple — Select events in the Logic Pro for Mac Event List",
+              "url": "https://support.apple.com/guide/logicpro/select-events-in-the-event-list-lgcp2158bb90/mac"
+            },
+            {
+              "label": "studio-interns.com — Select All Following ⇧F",
+              "url": "https://www.studio-interns.com/2020/06/24/select-all-following-%E2%87%A7f-logic-pro-x-keyboard-command-of-the-day/"
+            },
+            {
+              "label": "studio-interns.com — Select All Following of Same Track/Pitch ⌃⇧F",
+              "url": "https://www.studio-interns.com/2021/06/19/select-all-following-of-same-track-pitch%E2%8C%83%E2%87%A7f-logic-pro-keyboard-command-of-the-day-kcotd/"
+            }
+          ]
         },
         {
-          "t": "Select equal or similar regions in one command",
-          "d": "Edit > Select > Similar Regions, Equal Regions (⇧E) and Equal Colored Regions (⇧C) find all matching regions across the project instantly — colour-code your parts and you can grab every one of them with a single keystroke. If you use Similar Regions often, check or set its key command in the Key Commands window (⌥K)."
-        },
-        {
-          "t": "Lock a region so you cannot move it by accident",
-          "d": "Control-click a region and choose Lock SMPTE Position to pin it to its absolute time position, so later tempo changes cannot drag it out of sync — note this locks it against tempo, not against your mouse. To stop edits altogether, use the track's Protect button: click the padlock and it turns green, and any attempt to change that track raises a “track is locked” dialog. It is not shown by default (track headers start with Mute, Solo and Record Enable), so switch it on by Control-clicking the track header and choosing Track Header Components, or via Track > Configure Track Header."
+          "t": "Lock events so tempo changes cannot move them",
+          "d": "Lock SMPTE Position keeps events at their absolute time when you change the tempo later. In the Event List, select events and choose Functions > Lock SMPTE Position, or Control-click and choose it from the shortcut menu; a padlock appears in the Lock column. Lock a region and every event inside it is locked. It requires Enable Complete Features in Logic Pro > Settings > Advanced.",
+          "src": [
+            {
+              "label": "Apple — Protect the position of events in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/protect-the-position-of-events-lgcp21581f00/mac"
+            }
+          ]
         }
       ]
     }
