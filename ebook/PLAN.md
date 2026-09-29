@@ -1,5 +1,12 @@
 # Selling plan — Logic Pro Crash Course
 
+> **Update — decided: sell through Gumroad.** The owner's store already sells plug-ins through
+> Gumroad, which takes payment, delivers files, sends updates to buyers and handles refunds and
+> tax as merchant of record. The book is sold the same way: the PDF plus the searchable
+> library as a downloadable file (it is self-contained and works offline, so no login or
+> server is needed). See `GUMROAD.md` and `HANDOFF.md`. Sections 3–5 below (Stripe checkout,
+> webhook, access keys, gated library) are **superseded** and kept only for reference.
+
 How to sell this, and what to build in what order.
 
 The short version: **stop selling a PDF and start selling access.** The searchable

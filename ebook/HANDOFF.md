@@ -1,173 +1,123 @@
-# Handoff — sell "Logic Pro Crash Course" ($9) on dannnymcccarthy.com
+# Handoff — add "Logic Pro Crash Course" ($9) to the store on dannnymcccarthy.com
 
-Paste this whole file to the agent doing the site work, along with the attached sales page.
+Paste this whole file to the agent doing the site work, and attach:
 
-> **This replaces an earlier handoff that published the book as a free resource.**
-> If you were given `logic-pro-crash-course-page.html` (the full 248-trick page), **do not
-> publish it.** It contains the entire product. It may be cut down into a free sample later,
-> but that is a separate decision.
+- `logic-pro-crash-course-sales.html` (the product page)
+- `store/logic-pro-crash-course.png`, `.webp` (1080×1080 card cover)
+- `store/logic-pro-crash-course-wide.png`, `.webp` (1920×1080 banner, optional)
+
+> **This replaces the earlier Stripe handoff.** The book is sold through the owner's existing
+> **Gumroad** store, exactly like the plug-ins in `store/`. There is **no checkout code, no
+> webhook, no serverless function and no file storage** to build. Gumroad takes the payment
+> and delivers the files. If you started on Stripe functions for this, stop and remove them.
 
 ---
 
 ## What is being sold
 
-A single PDF — *Logic Pro Crash Course*, 248 tricks, 89 pages — for **$9 USD**, one-time. The Stripe Price must be exactly 9.00 USD.
-Payment via **Stripe**, which the owner already uses on this site.
+*Logic Pro Crash Course*: 248 Logic Pro tricks as an 89-page PDF plus a searchable
+library file, **$9 USD**, one-time, sold at
+`https://dannnymcccarthy.gumroad.com/l/logic-pro-crash-course`. The owner sets up the Gumroad
+product (see `GUMROAD.md` in the ebook folder); the buy buttons on the page already point
+there.
 
 ## Repo
 
-`dannymac2334/dannnymcccarthy-site` — private, static, Netlify (`publish = "."`, so repo root
-is the web root).
+`dannymac2334/dannnymcccarthy-site` — static, Netlify (`publish = "."`, repo root is the web
+root). Store products live in `store/`, one HTML page each, with covers in `store/covers/`.
 
 ---
 
-## 1. Add the sales page
+## 1. Add the product page
 
 | File you were given | Goes to |
 | --- | --- |
-| `logic-pro-crash-course-sales.html` | **`/logic-pro-crash-course.html`** (repo ROOT, next to `work.html`) |
+| `logic-pro-crash-course-sales.html` | **`store/logic-pro-crash-course.html`** |
+| `logic-pro-crash-course.png` / `.webp` | `store/covers/` |
+| `logic-pro-crash-course-wide.png` / `.webp` | `store/covers-wide/` |
 
-Rename it — drop the `-sales` suffix. It is fully self-contained in the rates-page design
-(Figtree and the signature are embedded; it loads nothing from the site). Live URL will be `/logic-pro-crash-course` (Netlify serves
-extensionless URLs, so **no `_redirects` entry is needed**).
+Live URL: `/store/logic-pro-crash-course` (the page's canonical already says so). Netlify
+serves extensionless URLs, so no `_redirects` entry is needed.
 
-Add one line to `sitemap.xml`:
+The page is **self-contained**: its fonts, signature and styles are embedded. It deliberately
+does not use the site's header, footer or `css/style.css`; it follows the owner's rates-page
+design. Do not wrap it in the site chrome and do not hand-edit it (it is generated; edits are
+overwritten). If copy needs to change, tell the owner.
 
-```xml
-<url><loc>https://www.dannnymcccarthy.com/logic-pro-crash-course</loc></url>
-```
+## 2. Add it to the store index (`store/index.html`)
 
----
-
-## 2. THE PDF MUST NOT GO IN THIS REPO
-
-Everything in the repo is served publicly by Netlify. There is no auth layer. A file at
-`assets/resources/logic-pro-crash-course.pdf` is a free download for anyone who guesses or is
-sent the URL, and it will end up indexed.
-
-**Store the PDF in private object storage** — S3, Cloudflare R2, Netlify Blobs, or similar —
-with public access off. It is only ever served through a signed, expiring URL generated after
-payment is verified. The owner will supply the PDF separately; do not commit it.
-
----
-
-## 3. Wire the buy buttons
-
-The page has **two** identical buttons (hero and footer CTA):
+Add a card in the same markup as the plug-in cards:
 
 ```html
-<a class="pill solid" href="/buy"
-   data-product="logic-pro-crash-course"
-   data-price-usd="9.00">Get instant access</a>
+<a class="card reveal" href="/store/logic-pro-crash-course">
+  <div class="thumb"><picture><source srcset="covers/logic-pro-crash-course.webp" type="image/webp"><img src="covers/logic-pro-crash-course.png" alt="Logic Pro Crash Course: 248 Logic Pro tricks, eBook cover" width="1080" height="1080" loading="lazy"></picture></div>
+  <div class="cat">eBook · PDF + searchable library</div>
+  <div class="name">Logic Pro Crash Course</div>
+  <div class="pmeta-row"><span class="pprice">$9</span><span class="pshop">View book<svg class="ico ico-arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <p class="pdesc">248 Logic Pro tricks that actually work, each one citing its source. Starts from zero for beginners, and the library finds tricks by what you want to make.</p>
+  <div class="ptags"><span class="ptag">Logic Pro 11 &amp; 12</span><span class="ptag">Beginner friendly</span><span class="ptag">Searchable</span></div>
+</a>
 ```
 
-They currently point at `/buy`, which does not exist yet — so it 404s, which is a visible
-failure rather than a silent one. Make `/buy` work. Either:
+Also add it to the `ItemList` JSON-LD at the top of `store/index.html` (next `position`,
+`url` `https://www.dannnymcccarthy.com/store/logic-pro-crash-course`, `name`
+`Logic Pro Crash Course`).
 
-- a Netlify redirect from `/buy` to a serverless function that creates a Stripe Checkout
-  Session and 303s to `session.url`, or
-- attach a click handler that POSTs to your function and redirects.
+## 3. Sitemap
 
-Prefer the redirect approach: it still works if JS fails.
+Add to `sitemap.xml`:
 
-Use **Stripe Checkout** (`mode: "payment"`) rather than hand-rolling a card form — Stripe hosts
-the page, handles 3DS/SCA, and keeps you out of PCI scope.
+```xml
+<url><loc>https://www.dannnymcccarthy.com/store/logic-pro-crash-course</loc></url>
+```
 
----
+## 4. The product files never go in the site repo
 
-## 4. Deliver only to people who paid
+The PDF and the library HTML are the paid product. They are uploaded to Gumroad only. Do not
+add either to the repo, to `store/downloads/`, or anywhere else Netlify serves. (The free
+`VocalClean` installer in `store/downloads/` is a different case: it is free.)
 
-Three rules, all of them load-bearing:
+## 5. Do not do these
 
-1. **Fulfil from the `checkout.session.completed` webhook**, and
-   **verify the webhook signature** with `stripe.webhooks.constructEvent` and your signing
-   secret. An unverified endpoint can be POSTed by anyone.
-2. **Never treat reaching the success URL as proof of payment.** It is a plain URL that can be
-   guessed, shared or bookmarked. If the success page shows a download, it must first look up
-   the `session_id` server-side and confirm `payment_status === "paid"`.
-3. **Issue a short-lived signed URL** (15–60 minutes is plenty), not a permanent path. Emailing
-   the link as well as showing it on the success page is worth doing — people close tabs.
+1. **Do not build checkout, webhooks, functions or storage** for this product. Gumroad does it.
+2. **Do not edit `css/style.css` or `js/main.js`** for this page. It needs neither.
+3. **Do not reformat, minify or hand-edit the page.**
+4. **Do not remove the Apple notice** at the bottom of the page ("…is an independent
+   publication and has not been authorized, sponsored, or otherwise approved by Apple Inc."
+   plus the trademark line). Apple's guidelines for third-party publications require it on the
+   publication and all related materials:
+   https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html.
+   Do not add the Apple logo or the Logic Pro app icon anywhere, including the store card.
 
-Also worth building, in rough priority order:
+## 6. Verification checklist
 
-- Record each purchase (email + session id + timestamp) so the owner can re-send a link
-- Cap downloads per session (say 5) to blunt link sharing
-- A cancel URL that returns to `/logic-pro-crash-course` rather than dead-ending
-
----
-
-## 5. Tax — flag this to the owner, do not decide it
-
-With Stripe, **the owner is the merchant of record**. Selling a digital download can create VAT
-/ GST / US sales-tax obligations depending on where buyers are. Stripe Tax can calculate and
-collect, but registering and filing is still on them.
-
-This is a business decision, not a technical one. Do not quietly ignore it, and do not
-configure tax settings without being asked. If they would rather not deal with it, a
-merchant-of-record platform (Lemon Squeezy, Paddle, Gumroad) handles it in exchange for a
-higher fee — but that is a different build from this one.
-
----
-
-## 6. Do not do these
-
-1. **Do not edit `css/style.css` or `js/main.js` for these pages.** The sales page and the
-   library are self-contained: every style, font and image is inline, so they neither need nor
-   affect the site's stylesheet. Do not wrap them in the site header or footer either — they
-   follow the rates document's design, which has its own signature header and footer.
-2. **Do not reformat, minify or hand-edit the page.** It is generated by
-   `ebook/build_sales_page.py` in a separate repo (`dannymac2334/dannymac2334`). Hand edits are
-   lost on the next build. If copy needs to change, say what and it gets regenerated.
-3. **Do not put the price anywhere but the page and Stripe.** It appears in three places on the
-   page (hero, final CTA, JSON-LD `offers.price`) and must match the Stripe price object.
-   If the price changes, all four move together.
-
----
-
-## 7. Verification checklist
-
-- [ ] `https://www.dannnymcccarthy.com/logic-pro-crash-course` loads without `.html`
-- [ ] Header, nav and footer match `work.html`; content fades in on scroll
-- [ ] Both **Get instant access** buttons reach Stripe Checkout showing **$9.00**
-- [ ] Test-mode card `4242 4242 4242 4242` completes a purchase
-- [ ] The webhook fires and is signature-verified (check Stripe dashboard → webhook attempts)
-- [ ] A download link arrives, works, and **expires** afterwards
-- [ ] Visiting the success URL directly, with no session, gives **no download**
-- [ ] Requesting the PDF's storage URL directly, unsigned, is **denied**
-- [ ] `curl -I https://www.dannnymcccarthy.com/assets/resources/logic-pro-crash-course.pdf`
-      returns **404** — the PDF must not be in the repo
-- [ ] Cancelling checkout returns to the sales page, not an error
-- [ ] Mobile: header collapses to the burger menu, FAQ accordion opens, buttons are tappable
-- [ ] View source: one `application/ld+json`, `@type: Product`, price `9.00`
-
----
+- [ ] `/store/logic-pro-crash-course` loads, looks like the attached file, no console errors
+- [ ] Both **Get it for $9** buttons open
+      `https://dannnymcccarthy.gumroad.com/l/logic-pro-crash-course` (once the owner has
+      published the Gumroad product; before then Gumroad shows a not-found page, which is
+      expected)
+- [ ] The store index shows the new card with its cover; the card links to the page
+- [ ] `sitemap.xml` has the new URL
+- [ ] View source: one `application/ld+json` `Product`, price `9.00`
+- [ ] No PDF or library HTML anywhere in the repo: `git ls-files | grep -i "logic-pro-crash-course.*\.\(pdf\|html\)"`
+      shows only `store/logic-pro-crash-course.html`
+- [ ] The Apple notice is at the bottom of the page
 
 ## Page reference
 
 - ~240 KB self-contained (Figtree and the signature are embedded), no external requests
-- Sections: hero + price, the problem, six preview tricks, the 19-section index, who it is
-  and is not for, FAQ, final CTA
-- The six preview tricks are real content from the book — deliberate, they do the selling
-- `<title>`: `Logic Pro Crash Course — 248 Tricks | Dannny McCcarthy`
-- Canonical / `og:url`: `https://www.dannnymcccarthy.com/logic-pro-crash-course`
-- `og:type` is `product`; JSON-LD is `Product` with an `Offer`
-- A `<noscript>` block disables the reveal animation so the page still renders without JS
+- Sections: hero with price, the problem and the price card, six preview tricks, the
+  19-section index, who it is and is not for, FAQ, final call to action
+- The six preview tricks are real content from the book, deliberately; they do the selling
+- `og:type` is `product`; JSON-LD is `Product` with an `Offer` at 9.00 USD
 
 ## Decided — do not add these
 
-- **Do not remove the Apple notice** at the bottom of the sales page ("…is an independent publication and has not been authorized, sponsored, or otherwise approved by Apple Inc." plus the trademark line). Apple's guidelines for third-party publications require it on the publication and all related materials: https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html. Do not add the Apple logo or the Logic Pro app icon anywhere.
+- **No refund promise.** No guarantee, "money back" or refund language on the page.
+- **No bio or "who made this" section**, and no claims about the author's experience.
+- **No crossed-out "was" price.**
 
-- **No refund promise.** The owner has decided against stating one. Do not add a guarantee,
-  "money back", or refund language to the page, the checkout, or the receipt.
-- **No bio or "who made this" section.** Do not add one, and do not write claims about the
-  author's experience or credits anywhere.
+## Still open (owner's decisions, not the site agent's)
 
-## Still open
-
-- **EU digital-goods consent.** Separate from refund policy, and worth raising with the owner:
-  in the EU a buyer normally has a 14-day withdrawal right on distance sales, and the usual way
-  to be exempt for instantly-delivered digital content is an explicit checkout consent to
-  immediate delivery. Stripe Checkout supports adding consent/terms acceptance. Ask before
-  adding it — it is a legal question, not a design one.
-- **A free sample page** for SEO and to feed the sales page. Recommended, not built.
-- **Where the buy button appears elsewhere** on the site (nav, footer, project pages).
+- **A free sample page** for search traffic. Recommended, not built.
+- **Where else the book is promoted** on the site (home page, nav, project pages).

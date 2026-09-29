@@ -29,7 +29,10 @@ DIST = ROOT / "dist"
 # considered price (as on the rates page), ".99" reads as a discount.
 PRICE = "9"
 PRICE_USD = f"{float(PRICE):.2f}"   # machine-readable form for Stripe data and JSON-LD
-BUY_HREF = "/buy"
+# Sold through the same Gumroad store as the plug-ins. Create the product with this
+# exact custom permalink ("logic-pro-crash-course") and nothing else needs to change.
+GUMROAD_PERMALINK = "logic-pro-crash-course"
+BUY_HREF = f"https://dannnymcccarthy.gumroad.com/l/{GUMROAD_PERMALINK}"
 # Read the real page count off the built PDF when it is there, so the sales
 # page can never advertise a length the product does not have.
 def _pdf_pages(default=84):
@@ -55,7 +58,7 @@ TITLE = f"Logic Pro Crash Course — {TRICKS} Tricks | Dannny McCcarthy"
 PER_TRICK = f"under {math.ceil(float(PRICE) * 100 / TRICKS)}¢ a trick"
 DESC = (f"{TRICKS} Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and "
         f"workflow across {SECTIONS} sections. ${PRICE}, instant download.")
-URL = "https://www.dannnymcccarthy.com/logic-pro-crash-course"
+URL = "https://www.dannnymcccarthy.com/store/logic-pro-crash-course"
 
 # (section number, fragment of the trick title) — resolved against content/
 PREVIEW = [
@@ -85,10 +88,12 @@ def faq_items(n_start, n_steps, n_gloss):
     ("Do I need any third-party plugins?",
      "No. Every trick uses stock Logic Pro. Nothing to buy, nothing to install."),
     ("What exactly do I get?",
-     f"One PDF, {PAGES} pages. Clickable contents, bookmarks in the sidebar, and it opens on any device. "
-     "It is yours to keep and it works offline."),
+     f"Two files. The PDF: {PAGES} pages, clickable contents and bookmarks in the sidebar. The searchable "
+     "library: one file you open in any browser, where you type what you want to do (record vocals, make a "
+     "beat) and the right tricks come up first. Both are yours to keep and both work offline."),
     ("How is it delivered?",
-     "Instantly. You get a download link as soon as the payment clears."),
+     "Instantly, through Gumroad, the same store as my plug-ins. You get a download link on screen and "
+     "by email as soon as the payment clears."),
     ]
 
 
@@ -259,6 +264,7 @@ def main():
         f"{n_start} tricks marked Start Here, safe for your first day",
         f"I Want To…: {len(goals)} goals, from making a beat to exporting a song",
         f"A glossary of {len(glossary)} Logic words in plain English",
+        "The searchable library: one file, works offline, finds tricks by what you want to do",
         "Clickable contents and PDF bookmarks on every section",
         f"Covers {VERSIONS}",
         "Stock Logic Pro only, no plug-ins to buy",
@@ -313,7 +319,7 @@ def main():
         <h3>Logic Pro Crash Course</h3>
         <div class="amount">${PRICE}</div>
         <div class="terms">One payment &middot; {PER_TRICK} &middot; {PAGES} pages &middot; yours to keep</div>
-        <p class="who">One PDF, delivered the moment your payment clears. Built to sit open on a second screen while you work.</p>
+        <p class="who">The PDF and the searchable library, delivered the moment your payment clears. Built to sit open on a second screen while you work.</p>
         <ul>{inside_li}</ul>
       </article>
     </div>
@@ -361,7 +367,7 @@ def main():
   <div class="wrap">
     <div class="kicker">Logic Pro Crash Course</div>
     <h2 class="sec-title">Get the {total}.</h2>
-    <p class="sec-lede">${PRICE}, one payment, {PER_TRICK}. A single PDF, {PAGES} pages, delivered the moment your payment clears.</p>
+    <p class="sec-lede">${PRICE}, one payment, {PER_TRICK}. The {PAGES}-page PDF and the searchable library, delivered the moment your payment clears.</p>
     {buy(f"Get it for ${PRICE}")}
   </div>
 </section>

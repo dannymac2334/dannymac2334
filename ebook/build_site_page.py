@@ -23,9 +23,8 @@ from build import (esc, keycap, load, slug, count_tips, sources_html, numbered_r
 ROOT = pathlib.Path(__file__).parent
 DIST = ROOT / "dist"
 
-# The PDF is paid content: it is never a public file. The site agent wires
-# /download to a function that checks the buyer's key and returns a signed URL.
-PDF_HREF = "/download"
+# Delivered as a file alongside the PDF (Gumroad), so it links to nothing on a server:
+# it has to work opened straight from someone's Downloads folder.
 HIGHLIGHT = "GAME CHANGER"
 
 TITLE = "Logic Pro Crash Course | dannny mcccarthy"
@@ -798,7 +797,7 @@ def main():
     <div class="lp-stat"><span class="label">Start here</span><b>{n_start}</b><span>Safe for your first day</span></div>
     <div class="lp-stat"><span class="label">Sources</span><b>{n_src}</b><span>Mostly Apple&rsquo;s own guide</span></div>
   </div>
-  <div class="lp-ctas"><a class="pill solid" href="#start">Start here</a><a class="pill" href="{PDF_HREF}">Download the PDF</a></div>
+  <div class="lp-ctas"><a class="pill solid" href="#start">Start here</a><a class="pill" href="#lp-q">Search the tricks</a></div>
 </div></section>
 """
     nav = []
@@ -851,7 +850,6 @@ def main():
   <p class="kicker">The end</p>
   <h2 class="sec-title">That&rsquo;s the {total}. Go finish the song.</h2>
   <p class="sec-lede">Come back whenever you get stuck. The search bar is always at the top.</p>
-  <a class="pill" href="{PDF_HREF}" style="margin-top:clamp(30px,5vh,54px)">Download the PDF</a>
 </div></section></main>
 """)
     cfg = {

@@ -211,7 +211,7 @@ def main():
     price_src = (pathlib.Path(__file__).parent / "build_sales_page.py").read_text()
     m = re.search(r'^PRICE = "([0-9.]+)"', price_src, re.M)
     price = float(m.group(1)) if m else None
-    for name in ("README.md", "HANDOFF.md", "PITCH.md", "AGENT-PROMPT.md"):
+    for name in ("README.md", "HANDOFF.md", "PITCH.md", "AGENT-PROMPT.md", "GUMROAD.md"):
         doc = pathlib.Path(__file__).parent / name
         if not doc.exists():
             continue

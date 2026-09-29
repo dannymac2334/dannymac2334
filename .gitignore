@@ -7,3 +7,4 @@
 # Logic install instead.
 ebook/manuals/
 __pycache__/
+ebook/dist/gumroad/
