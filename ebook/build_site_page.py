@@ -18,7 +18,7 @@ Drop it at the ROOT of the site repo, next to work.html — the relative
 
 import pathlib
 
-from build import esc, keycap, load, slug, count_tips
+from build import esc, keycap, load, slug, count_tips, sources_html
 
 ROOT = pathlib.Path(__file__).parent
 DIST = ROOT / "dist"
@@ -227,6 +227,13 @@ def page_css():
 .lp-tip p{margin:0;padding:9px 22px 0;font-size:13.5px;line-height:1.65;color:var(--lp-dim);flex:1}
 .lp-keys{padding:16px 22px 20px;border-radius:0 0 15px 15px;margin-top:auto}
 .lp-tip.no-keys p{padding-bottom:22px;border-radius:0 0 15px 15px}
+.lp-src{margin:0;padding:12px 22px 18px;border-radius:0 0 15px 15px;font-size:11px;line-height:1.5;
+  color:var(--lp-dim);flex:0 0 auto}
+.lp-src span{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:9px;opacity:.7;margin-right:4px}
+.lp-src a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:2px}
+.lp-src a:hover{text-decoration-color:currentColor}
+.lp-tip:has(.lp-src) .lp-keys{padding-bottom:0;border-radius:0}
+.lp-tip.no-keys:has(.lp-src) p{padding-bottom:0;border-radius:0}
 .lp-num{font-size:11px;font-weight:600;letter-spacing:.14em;opacity:.45;font-variant-numeric:tabular-nums}
 .lp-badge{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border-radius:100px;
   padding:4px 11px;background:#fff;color:#000}
@@ -297,6 +304,8 @@ def tip(t, i):
         k = keycap(keys).replace('class="kbd kbd-phrase"', 'class="lp-kbd phrase"')
         k = k.replace('class="kbd"', 'class="lp-kbd"')
         out.append(f'<div class="lp-keys">{k}</div>')
+    if t.get("src"):
+        out.append(sources_html(t["src"], cls="lp-src"))
     out.append("</article>")
     return "".join(out)
 
@@ -446,8 +455,9 @@ NAV_JS = """
   cards.forEach(function (c) {
     var block = c.closest('.lp-block');
     var group = c.closest('.lp-group');
+    var src = c.querySelector('.lp-src');
     c._t = [
-      c.textContent,
+      src ? c.textContent.replace(src.textContent, '') : c.textContent,
       group ? group.querySelector('h3').textContent : '',
       block ? block.querySelector('h2').textContent : ''
     ].join(' ').toLowerCase().replace(/\\s+/g, ' ');

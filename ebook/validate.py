@@ -9,6 +9,7 @@ Checks four classes of problem that a proofread will not reliably catch:
   3. Contradiction— one key command claimed for two different actions, which
                     means at least one of them is wrong.
   4. Provenance   — a key command that is not in the verified registry below.
+  5. Citation     — every factual trick cites the source it was checked against.
 
 Run it before every build:  python3 validate.py
 Exit status is non-zero if anything fails, so it drops straight into CI.
@@ -21,7 +22,9 @@ import re
 import sys
 
 CONTENT = pathlib.Path(__file__).parent / "content"
-MIN_TIPS = 265  # the surviving, verified count — raise only by verifying more
+# The cover states the count, derived at build time, so there is no promised
+# floor to police any more — only that the book is not empty.
+MIN_TIPS = 1
 
 # --------------------------------------------------------------------------
 # Verified key command registry.
@@ -137,10 +140,21 @@ def main():
                 titles[tip["t"].strip().lower()].append(s["number"])
                 if tip.get("k"):
                     keys[tip["k"].strip()].append((f"S{s['number']}", tip["t"]))
+                # 5. citation — a trick that states a fact about Logic must say where
+                #    that fact comes from. Pure workflow advice is marked "advice".
+                if not tip.get("advice"):
+                    srcs = tip.get("src") or []
+                    if not srcs:
+                        failures.append(f"S{s['number']}: no source cited: {tip['t']!r}")
+                    for src in srcs:
+                        if not str(src.get("url", "")).startswith("https://"):
+                            failures.append(f"S{s['number']}: bad source url on {tip['t']!r}")
+                        if re.search(r"/(10\.[0-9])/", str(src.get("url", ""))):
+                            warnings.append(f"S{s['number']}: cites a pre-11 Apple page: {tip['t']!r}")
 
     # 1. structural
     if total < MIN_TIPS:
-        failures.append(f"only {total} tricks; cover promises {MIN_TIPS}+")
+        failures.append(f"only {total} tricks")
 
     # 2. duplication
     for title, where in titles.items():

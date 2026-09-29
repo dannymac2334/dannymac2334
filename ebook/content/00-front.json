@@ -1,7 +1,7 @@
 {
   "title": "Logic Pro Crash Course",
-  "subtitle": "265 Tricks That Actually Work",
-  "tagline": "Checked against Apple's documentation. Anything unconfirmed was cut.",
+  "subtitle": "{n} Tricks That Actually Work",
+  "tagline": "Every trick cites its source. Anything unconfirmed was cut.",
   "edition": "Covers Logic Pro 11 and 12",
   "pages": [
     {
@@ -17,7 +17,7 @@
         "Every key command shown is the Logic Pro factory default on a US keyboard. If you have remapped anything, open Key Commands with ⌥K and search the command name — the name is always given.",
         "Where a trick lives in a menu rather than on a key, the full menu path is written out, so it stays correct across versions.",
         "This edition covers Logic Pro 11 and 12. Earlier versions differ in ways that would make some of these wrong — 10.7 calls Settings “Preferences” and the View pane “Display”, among others — so it is not written for them.",
-        "Every claim was checked against Apple's Logic Pro documentation, or against two independent sources where Apple is silent. Anything that failed was corrected; anything that could not be confirmed was cut rather than printed on a guess.",
+        "Every trick shows the source it was checked against — usually Apple's own Logic Pro guide — and the link is live, so you can read the original. Anything that could not be confirmed against a source was cut rather than printed on a guess. Tricks with no source are workflow habits, not claims about what Logic does.",
         "Tricks marked GAME CHANGER are the ones worth stealing first.",
         "Nothing here requires third-party plugins. It is all stock Logic."
       ],

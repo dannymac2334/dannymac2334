@@ -117,8 +117,23 @@ def tip_html(tip, index):
         bits.append(figure_html(tip["img"], tip.get("caption", "")))
     if tip.get("k"):
         bits.append(f'<div class="tip-keys">{keycap(tip["k"])}</div>')
+    if tip.get("src"):
+        bits.append(sources_html(tip["src"]))
     bits.append("</article>")
     return "".join(bits)
+
+
+def sources_html(sources, cls="tip-src"):
+    """The citation line under a trick.
+
+    Every factual trick carries the source it was checked against, so a reader
+    can confirm it themselves. Links stay live in the PDF.
+    """
+    links = " · ".join(
+        f'<a href="{html.escape(s["url"], quote=True)}">{esc(s["label"])}</a>'
+        for s in sources
+    )
+    return f'<p class="{cls}"><span>Source</span> {links}</p>'
 
 
 def figure_html(name, caption=""):
@@ -158,7 +173,7 @@ def build_cover(front, total_tips, section_count):
 <section class="page hero" id="cover">
   <p class="hero-kicker reveal">{esc(front["edition"])}</p>
   <h1 class="hero-title reveal d1">Logic&nbsp;Pro<br/>Crash&nbsp;Course</h1>
-  <p class="hero-sub reveal d2">{esc(front["subtitle"])}</p>
+  <p class="hero-sub reveal d2">{esc(front["subtitle"].format(n=total_tips))}</p>
   <p class="hero-tag reveal d2">{esc(front["tagline"])}</p>
   <div class="stats reveal d3">{chips}</div>
 </section>"""
@@ -222,6 +237,8 @@ def build_front_page(page):
                 f'<dd>{esc(k["note"])}</dd></div>'
             )
         bits.append("</dl>")
+        if page.get("keys_src"):
+            bits.append(sources_html(page["keys_src"], cls="doc-src"))
 
     for table in page.get("tables", []):
         bits.append('<div class="cmd-block reveal">')
@@ -232,13 +249,18 @@ def build_front_page(page):
                 f'<tr><th scope="row"><span class="kbd">{esc(key)}</span></th>'
                 f"<td>{esc(desc)}</td></tr>"
             )
-        bits.append("</tbody></table></div>")
+        bits.append("</tbody></table>")
+        if table.get("src"):
+            bits.append(sources_html(table["src"], cls="doc-src"))
+        bits.append("</div>")
 
     if page.get("callout"):
         c = page["callout"]
         bits.append(
             f'<aside class="callout reveal"><h3>{esc(c["title"])}</h3>'
-            f'<p>{esc(c["text"])}</p></aside>'
+            f'<p>{esc(c["text"])}</p>'
+            + (sources_html(c["src"], cls="doc-src") if c.get("src") else "")
+            + "</aside>"
         )
 
     bits.append("</div>")
@@ -828,6 +850,19 @@ h1, h2, h3, h4 {{ margin: 0; font-weight: 700; letter-spacing: -.03em; line-heig
 .tip-fig figcaption {{ margin-top: 8px; font-size: 11px; line-height: 1.5;
   color: var(--body-dim); letter-spacing: .01em; }}
 .tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 22px; border-radius: 0 0 15px 15px; }}
+.tip > .tip-src {{ background: var(--glass); margin: 0; padding: 12px 22px 18px;
+  border-radius: 0 0 15px 15px; font-size: 10.5px; line-height: 1.5; color: var(--body-dim); }}
+.tip-src span {{ font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 9px; opacity: .7; margin-right: 4px; }}
+.tip-src a {{ color: inherit; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 2px; text-decoration-color: rgba(255,255,255,.3); }}
+.tip:has(.tip-src) > .tip-keys {{ padding-bottom: 0; border-radius: 0; }}
+.doc-src {{ margin: 10px 0 0; font-size: 10.5px; line-height: 1.55; color: var(--body-dim); }}
+.doc-src span {{ font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 9px; opacity: .7; margin-right: 4px; }}
+.doc-src a {{ color: inherit; text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-color: rgba(255,255,255,.3); }}
+.tip:has(.tip-src):not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 0; border-radius: 0; }}
 
 .tip-num {{
   font-size: 11px;
@@ -1042,6 +1077,12 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
   .tip-fig img {{ border-color: var(--line-light); }}
   .tip-fig figcaption {{ font-size: 8pt; color: var(--body-dim); }}
   .tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 12px; }}
+  .tip > .tip-src {{ background: none; padding: 6px 12px 10px; font-size: 6.8pt; }}
+  .doc-src {{ font-size: 6.8pt; }}
+  .doc-src a {{ text-decoration-color: rgba(0,0,0,.3); }}
+  .tip-src a {{ text-decoration-color: rgba(0,0,0,.3); }}
+  .tip:has(.tip-src) > .tip-keys {{ padding-bottom: 0; }}
+  .tip:has(.tip-src):not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 0; }}
   /* The inverted card keeps the dark-surface token so its copy stays legible. */
   .tip-gold {{
     --body-dim: #d5d4cf;

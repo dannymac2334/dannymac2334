@@ -1,0 +1,6 @@
+# Build dependencies for the PDF pipeline (build.py itself is stdlib-only).
+# finish_pdf.py: bookmarks + metadata.  Measurement/rendering checks: pypdfium2, numpy, pillow.
+pikepdf
+pypdfium2
+numpy
+pillow
