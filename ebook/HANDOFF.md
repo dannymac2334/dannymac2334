@@ -155,6 +155,8 @@ higher fee — but that is a different build from this one.
 
 ## Decided — do not add these
 
+- **Do not remove the Apple notice** at the bottom of the sales page ("…is an independent publication and has not been authorized, sponsored, or otherwise approved by Apple Inc." plus the trademark line). Apple's guidelines for third-party publications require it on the publication and all related materials: https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html. Do not add the Apple logo or the Logic Pro app icon anywhere.
+
 - **No refund promise.** The owner has decided against stating one. Do not add a guarantee,
   "money back", or refund language to the page, the checkout, or the receipt.
 - **No bio or "who made this" section.** Do not add one, and do not write claims about the

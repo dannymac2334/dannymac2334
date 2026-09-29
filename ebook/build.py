@@ -49,6 +49,21 @@ WEIGHTS = ["400", "500", "600", "700"]
 HIGHLIGHT_BADGE = "GAME CHANGER"
 
 
+# Apple's guidelines for third-party publications require a non-affiliation
+# disclaimer and a trademark attribution in the credits of the publication and
+# its related materials. Wording follows Apple's own template:
+# https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html
+APPLE_MARKS = ["Apple", "Logic Pro", "Mac", "macOS", "MainStage", "iPad", "Finder"]
+
+
+def legal_notice(title="Logic Pro Crash Course"):
+    marks = ", ".join(APPLE_MARKS[:-1]) + " and " + APPLE_MARKS[-1]
+    return (f"{title} is an independent publication and has not been authorized, sponsored, "
+            f"or otherwise approved by Apple Inc. {marks} are trademarks of Apple Inc., registered "
+            f"in the U.S. and other countries and regions. Cited sources belong to their "
+            f"publishers and are linked so you can check them.")
+
+
 def esc(text):
     return html.escape(str(text), quote=False)
 
@@ -387,6 +402,7 @@ def build_outro(total_tips):
   <p class="outro-note reveal d2">Come back whenever you get stuck. Every section is one click
   away from every page — that is the entire point of it.</p>
   <p class="eyebrow outro-mark reveal d3">Logic Pro Crash Course</p>
+  <p class="legal">{esc(legal_notice())}</p>
 </section>"""
 
 
@@ -955,6 +971,7 @@ sup.ref {{ font-size: 9px; font-weight: 600; margin-left: 3px; color: var(--body
 .outro-lead {{ margin: 0; max-width: 46ch; font-size: clamp(16px, 1.5vw, 21px); line-height: 1.55; }}
 .outro-note {{ margin: 0; max-width: 48ch; font-size: 14px; line-height: 1.7; color: var(--muted-light); }}
 .outro-mark {{ margin-top: 26px; }}
+.legal {{ margin: 40px 0 0; max-width: 70ch; font-size: 10.5px; line-height: 1.6; color: rgba(255,255,255,.62); }}
 
 /* ---------- reveal (matches the site) ----------
    Content is visible by default and only hidden once the script confirms it

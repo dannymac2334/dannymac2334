@@ -19,7 +19,7 @@ import pathlib
 
 import re
 
-from build import esc, keycap, load, slug, count_tips, sources_html
+from build import esc, keycap, load, slug, count_tips, sources_html, legal_notice
 from build_site_page import FOOTER, SITE_NAV, page_css
 
 ROOT = pathlib.Path(__file__).parent
@@ -327,6 +327,7 @@ def main():
   </div>
 
 </section>
+<p class="lp-legal">{esc(legal_notice())}</p>
 {FOOTER}
 </body>
 </html>

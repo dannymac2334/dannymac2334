@@ -18,7 +18,7 @@ Drop it at the ROOT of the site repo, next to work.html — the relative
 
 import pathlib
 
-from build import esc, keycap, load, slug, count_tips, sources_html, numbered_refs
+from build import esc, keycap, load, slug, count_tips, sources_html, numbered_refs, legal_notice
 
 ROOT = pathlib.Path(__file__).parent
 DIST = ROOT / "dist"
@@ -233,6 +233,7 @@ def page_css():
 .lp-src a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:2px}
 .lp-src a:hover{text-decoration-color:currentColor}
 .lp-src-intro,.lp-notice .lp-src{padding:6px 0 0;background:none}
+.lp-legal{max-width:1100px;margin:40px auto 0;padding:0 clamp(16px,4vw,40px);font-size:11px;line-height:1.6;color:var(--lp-dim);opacity:.75}
 sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
 .ref-n{font-weight:600;font-size:10px;opacity:.8}
 .lp-tip:has(.lp-src) .lp-keys{padding-bottom:0;border-radius:0}
@@ -617,6 +618,7 @@ def main():
     body.append("</section>")
 
     body.append('<button class="lp-top" type="button">Back to top</button>')
+    body.append(f'<p class="lp-legal">{esc(legal_notice())}</p>')
     body.append(FOOTER)
     body.append(NAV_JS)
     body.append("</body>\n</html>\n")
