@@ -1,0 +1,75 @@
+{
+  "number": 15,
+  "title": "Mixer Tricks",
+  "intro": "The Mixer is where a collection of good parts becomes a record. These are the organisational and workflow tricks — the ones that stop a 60‑track session from becoming unmanageable.",
+  "groups": [
+    {
+      "heading": "Getting around the mixer",
+      "tips": [
+        {
+          "t": "X toggles the Mixer, and it remembers your scroll position",
+          "d": "Press X to show and hide the Mixer inside the main window. Flip between arrangement and mixer constantly — it costs nothing, and it is far faster than reaching for the menu."
+        },
+        {
+          "t": "Use the Single view to see one channel and its full signal path",
+          "d": "The Mixer's view buttons switch between All, Single and Tracks. Single shows the selected channel plus every bus it feeds — the fastest way to debug routing."
+        },
+        {
+          "t": "Filter the mixer by channel type",
+          "d": "The Mixer's filter buttons limit the display to specific channel strip types. Click a filter button to show or hide that type — or Option-click one to show only that type and hide everything else in a single gesture. When you are setting up sends, Option-click the Aux filter to get a mixer of nothing but your effect returns. (Filtering requires Show Advanced Tools to be enabled in Settings > Advanced.)"
+        },
+        {
+          "t": "⌥‑click any control to reset it to default",
+          "d": "Option-click a fader to snap it back to 0 dB unity, and Option-click a send dial to do the same. It is the fastest way to undo a level you have talked yourself into. To reset an entire strip rather than one control, click the Setting button at the top of the channel strip and choose Reset Channel Strip.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "⌥-click Solo for exclusive solo",
+          "d": "Option-clicking an unsoloed channel strip solos it and unsolos every other channel strip — one gesture to hear one thing. Option-clicking any active Solo button clears all solos at once. Mute has its own bulk gesture, using Command rather than Option: Command-click a Mute button and every Mute button currently in the same state flips with it, including the output and master strips.",
+          "k": "⌥ + click"
+        }
+      ]
+    },
+    {
+      "heading": "Routing and organisation",
+      "tips": [
+        {
+          "t": "Use VCA faders for level groups without changing routing",
+          "d": "A VCA controls the volume of each of its member channels without summing them through a bus, so nothing gets re-patched — your existing output routing stays exactly as it was. Be aware of one consequence, though: post-fader sends follow the VCA. Apple documents that the amount of signal a VCA-assigned channel sends to an effect tracks the VCA group's volume changes, so pulling a VCA down pulls its reverb and delay sends down too. Use pre-fader sends for anything that must stay constant regardless of the group level.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Use Summing Stacks for processing groups",
+          "d": "Select tracks and hit ⇧⌘D, then choose Summing Stack in the dialog that appears. Everything routes to one aux you can compress and EQ as a unit.",
+          "k": "⌘⇧D"
+        },
+        {
+          "t": "Create a send and Logic makes the aux for you",
+          "d": "Click any Send slot and choose an unused bus. The aux channel appears automatically, already receiving."
+        },
+        {
+          "t": "Set sends to pre‑fader for headphone mixes and effects that must stay constant",
+          "d": "Logic gives every send one of three signal-flow modes, not two. Click the Send knob to open its pop-up menu and choose Post Pan (follows both fader and pan), Post Fader (follows the fader but not the pan), or Pre Fader (ignores both — the send level stays put no matter what you do to the channel's volume or pan). Post is what you want for reverb, so the effect tracks the part. Pre is what you want for a headphone cue mix, or for any effect that must stay constant while you ride the fader."
+        },
+        {
+          "t": "Colour your channels to match your regions",
+          "d": "Mixer channels take the track colour. A consistent colour scheme means you find the vocal bus without reading a single label."
+        }
+      ]
+    },
+    {
+      "heading": "Plugins in the mixer",
+      "tips": [
+        {
+          "t": "Bypass with ⌥-click, browse with the slot arrows",
+          "d": "⌥-click an insert slot to bypass the plugin without opening it. To browse plugins, click the arrows at the right edge of the slot.",
+          "k": "⌥ + click"
+        },
+        {
+          "t": "Drag plugins between insert slots and between channels",
+          "d": "Reorder your chain by dragging, and hold ⌥ while dragging to another channel to copy rather than move."
+        }
+      ]
+    }
+  ]
+}

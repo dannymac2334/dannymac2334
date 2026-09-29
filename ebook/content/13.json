@@ -1,0 +1,44 @@
+{
+  "number": 13,
+  "title": "Drum Machine Designer Tricks",
+  "intro": "Drum Machine Designer is a Track Stack in disguise. Every pad is a real channel strip with its own inserts, sends and automation — which means you can mix a drum kit exactly like you mix a band.",
+  "groups": [
+    {
+      "heading": "Building the kit",
+      "tips": [
+        {
+          "t": "Drag any audio file straight onto a pad",
+          "d": "Drop a sample onto a pad and Drum Machine Designer loads it into a Quick Sampler instance automatically. Building a custom kit takes about a minute.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Every pad is its own channel strip",
+          "d": "Open the Mixer with X and you will see each pad as a separate channel inside the stack. Compress the snare, saturate the kick, send only the claps to reverb.",
+          "k": "X",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "⌥‑drag a pad to copy it, including all its processing",
+          "d": "Copy a pad when you want to layer. Control-click the pad and choose Copy, then Control-click the pad you want to replace and choose Paste. Pitch the copy down and blend it under the original for a thicker snare. (Dragging a pad to an empty slot in the grid moves it rather than copying it, which is how you reorder a kit.)"
+        },
+        {
+          "t": "Use the pad's Sound tab for quick shaping",
+          "d": "Use the Pad Controls button for quick shaping. Select a pad and click Pad Controls in the bar below the grid: the pad's tone and effect Smart Controls appear in the Plug-in pane, so you can reshape a kit piece without going into its plug-in. When you do need the sample itself — playback mode, sample start, the pitch, filter and amp envelopes — the same bar has Q-Sampler Main, Q-Sampler Details or Drum Synth buttons that open that pad's instrument right below the grid."
+        }
+      ]
+    },
+    {
+      "heading": "Mixing and performing",
+      "tips": [
+        {
+          "t": "Use the main stack fader for the whole kit",
+          "d": "The Track Stack's top level is a summing bus. Put your kit compressor and limiter there and process everything together."
+        },
+        {
+          "t": "Save your kit as a patch",
+          "d": "With the stack selected, save to the Library. Every pad, every sample and every insert comes back in one click on the next project."
+        }
+      ]
+    }
+  ]
+}

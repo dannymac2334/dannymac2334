@@ -1,0 +1,86 @@
+{
+  "number": 16,
+  "title": "Favorite Logic Plugins",
+  "intro": "Logic ships with a genuinely world‑class plugin set and most people use six of them. These are the ones worth knowing properly, and the specific tricks that make each one worth reaching for.",
+  "groups": [
+    {
+      "heading": "Dynamics",
+      "tips": [
+        {
+          "t": "Compressor — use the side‑chain filter before reaching for a multiband",
+          "d": "Filtering low end out of the detector stops a kick from ducking the whole mix. It solves most “my compressor is pumping” problems in one move."
+        },
+        {
+          "t": "Multipressor — use it to control one problem band only",
+          "d": "Bypass every band except the one you need. It becomes a dynamic EQ rather than a mix‑flattening machine."
+        },
+        {
+          "t": "Noise Gate — use the side chain to key one sound from another",
+          "d": "Gate a white noise layer from the snare's signal and you have an instant layered snare that follows the performance."
+        },
+        {
+          "t": "Enveloper — reshape a transient without a compressor",
+          "d": "Attack and release sliders that add or remove the front and tail of any sound. It makes a soft kick punchy in about four seconds."
+        }
+      ]
+    },
+    {
+      "heading": "EQ and tone",
+      "tips": [
+        {
+          "t": "Channel EQ — turn on Analyzer and set it to Post",
+          "d": "Seeing what you are cutting is worth more than any preset. Post‑EQ analysis shows the result rather than the source."
+        },
+        {
+          "t": "Match EQ — steal a tone rather than guess at it",
+          "d": "Learn the spectrum of a reference, learn your track, and Match EQ builds the curve between them from the difference. Then pull the Apply slider — Apple's name for it — back below 100%: values under 100% reduce the impact of the matched curve, and something around 40% usually keeps the tonal direction without the artefacts. Apply also runs past 100% to exaggerate the curve, and into negative values to invert its peaks and troughs. Use the Smoothing slider to coarsen the curve if it comes out too spiky.",
+          "b": "GAME CHANGER"
+        }
+      ]
+    },
+    {
+      "heading": "Time and space",
+      "tips": [
+        {
+          "t": "ChromaVerb — use the Damping display as the main control",
+          "d": "The frequency‑dependent decay curve is what makes it sound expensive. Roll off the high end decay and the reverb sits behind the source instead of on top of it.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Delay Designer — build rhythmic patterns, not echoes",
+          "d": "Each tap has independent time, pan, pitch, filter and level. It is a sequencer for delay taps and it will do things no other delay can."
+        },
+        {
+          "t": "Stereo Delay — set different times per side",
+          "d": "1/8 on the left and dotted 1/8 on the right creates width and movement from a single mono source."
+        },
+        {
+          "t": "Tape Delay — turn up Flutter for analogue character",
+          "d": "The modulation and filtering are what separate it from a plain digital delay. Feed it a little and it glues into the track."
+        }
+      ]
+    },
+    {
+      "heading": "Character and utility",
+      "tips": [
+        {
+          "t": "Phat FX — one plugin, an entire character chain",
+          "d": "Six effects modules in a single window — Band-pass, Distortion, Mod FX, Bass Enhancer, Compressor and Filter — plus an assignable X/Y pad, three modulation sources (Env Follower, LFO 1, LFO 2) and an Effect Order strip for reordering the chain. The Distortion module alone offers Bitcrusher, Diode, Dirt, Downsampler, Grit, Scream, Soft Saturation, Tube and Vari Drive. It is the fastest way to make a sterile synth interesting."
+        },
+        {
+          "t": "Remix FX — perform DJ effects live and record them",
+          "d": "Filter, gater, downsampler, tape stop and reverse, all designed to be automated. Put it on a bus and record a performance pass."
+        },
+        {
+          "t": "Gain — use it to check phase, not just level",
+          "d": "The Gain plugin's Phase Invert button is the fastest phase check in Logic. Flip it, listen for the low end, keep whichever is bigger.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Test Oscillator — reference tones for calibration",
+          "d": "Generates sine, square and noise at exact frequencies. Essential when you are matching levels or setting up a room."
+        }
+      ]
+    }
+  ]
+}

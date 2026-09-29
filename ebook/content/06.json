@@ -1,0 +1,74 @@
+{
+  "number": 6,
+  "title": "Recording Audio Tricks",
+  "intro": "Recording is the one part of the process you cannot fix later. These tricks are about getting a clean, usable, well‑organised take the first time, and never losing a good performance to a technical mistake.",
+  "groups": [
+    {
+      "heading": "Before you hit record",
+      "tips": [
+        {
+          "t": "Check your input with the channel strip's meter, not your ears",
+          "d": "Aim for peaks around −12 dBFS with your loudest phrase. Recording hot is a habit from tape and it buys you nothing in 24‑bit."
+        },
+        {
+          "t": "Drop the buffer to 64 samples for tracking",
+          "d": "Drop the I/O buffer before tracking, not during. In Logic's Audio settings, lower the I/O Buffer Size — Apple's own guidance for recording is to set the buffer to the lowest setting your Mac can handle, then step it back up one notch if you start getting system overload alerts. Logic shows the resulting round-trip latency directly beneath the I/O Buffer Size menu, so judge by that readout rather than by the sample number, and do it before the singer walks in, not while they wait.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Turn on Low Latency Mode instead of disabling plugins one by one",
+          "d": "Turn on Low Latency Monitoring mode instead of disabling plugins one by one. Logic bypasses the latency-inducing plug-ins whose latency pushes the track past the Limit slider value in Logic Pro > Settings > Audio > General (up to 30 ms) — plug-ins under that limit keep running, so quiet chains sound identical. Be aware it also switches off that track's Aux sends, so it will kill a headphone reverb fed from a send. It affects only the focused instrument track plus any track with Input Monitoring or Record Enable turned on."
+        },
+        {
+          "t": "Count-in and pre-roll are either/or — pick the right one",
+          "d": "Count-in and pre-roll are either/or — pick the right one. In the Recording project settings, the When Beginning buttons let you choose a count-in or a pre-roll, not both. The difference is the unit: count-in sets the lead-in in bars or beats, so it stays locked to the tempo map; pre-roll sets it as a playback time in seconds, up to 60. Reach for pre-roll when the lead-in you want is a fixed number of seconds — free-tempo material, dialogue, anything where bars are meaningless — and count-in when you want the performer to arrive on a downbeat."
+        },
+        {
+          "t": "Name the track before you record, always",
+          "d": "Logic names audio files after the track. “Audio 3#12.wav” three months later is a file you will never open again.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Record‑enable multiple tracks at once",
+          "d": "Record‑enable multiple tracks at once. Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\", and you will never lose a multitrack take to a stray modifier."
+        }
+      ]
+    },
+    {
+      "heading": "While recording",
+      "tips": [
+        {
+          "t": "⌘. discards the take you just recorded",
+          "d": "Stop and delete in one keystroke, when you know instantly that it was not the one.",
+          "k": "⌘."
+        },
+        {
+          "t": "Watch the take folder count, not the waveform",
+          "d": "Watch the take count, not the waveform. The take folder header carries a Takes pop-up menu showing the name of the currently active take; open it (or click the disclosure arrow to expand the folder) to see every pass you have banked. If the performer is on take 14 and getting worse, that list is your cue to stop and move on rather than to keep rolling."
+        }
+      ]
+    },
+    {
+      "heading": "Monitoring and headphones",
+      "tips": [
+        {
+          "t": "Build a dedicated headphone mix on a bus",
+          "d": "Send every track to a second output bus and give the performer more of themselves and more reverb than you would ever put in the mix. Comfort produces better takes than accuracy does.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Use Input Monitoring rather than record enable to rehearse",
+          "d": "The I button lets you hear the input without arming anything, so you can set levels and rehearse with zero risk of recording over something."
+        },
+        {
+          "t": "Turn off software monitoring if you hear yourself twice",
+          "d": "The doubling is your interface's direct monitoring fighting Logic's. Pick one."
+        },
+        {
+          "t": "Give the performer a click they can feel",
+          "d": "Swap the metronome sound, add a bar accent, or better, program a simple drum loop. A musical reference beats a woodblock every time."
+        }
+      ]
+    }
+  ]
+}

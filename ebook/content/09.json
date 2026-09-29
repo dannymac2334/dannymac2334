@@ -1,0 +1,50 @@
+{
+  "number": 9,
+  "title": "Marquee Tool Tricks",
+  "intro": "The Marquee tool is the most underused thing in Logic Pro. It selects time rather than regions, and once that clicks, half the editing you do by hand becomes unnecessary. It is the ⌘‑click tool by default, so it is always one modifier away.",
+  "groups": [
+    {
+      "heading": "The essentials",
+      "tips": [
+        {
+          "t": "⌘‑drag anywhere to marquee select",
+          "d": "Make Marquee your ⌘-click tool and you never have to switch tools again. In the Tracks area, click the Command-click Tool menu and choose the Marquee tool; from then on, holding ⌘ turns the pointer into a Marquee anywhere in the Tracks area, and releasing ⌘ puts you straight back on your Left-click tool. Drag a box across any range on any number of tracks. (If you would rather not use a modifier at all, switching on Marquee Tool Click Zones makes the lower half of a region behave as a marquee, with the exception of the lower-left and lower-right edges, which stay as fade/loop handles.)",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Press Space and Logic plays only the marquee selection",
+          "d": "Playback starts at the marquee's left edge and stops at its right edge. It is the fastest way to audition a specific range without touching the locators.",
+          "k": "Space"
+        },
+        {
+          "t": "Hit Delete to cut a hole in every track at once",
+          "d": "Marquee across all tracks and delete. Every region in that time range is trimmed, on every track, in one action.",
+          "k": "Delete"
+        },
+        {
+          "t": "Set the locators to the marquee instantly",
+          "d": "With a marquee selection active, press ⌘U — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop. It snaps the cycle locators to exactly that range and switches Cycle on in the same keystroke, so marquee then ⌘U gives you a perfect loop in two moves, not three. (Cycle can still be toggled on and off afterwards with C.)",
+          "k": "U"
+        }
+      ]
+    },
+    {
+      "heading": "Beyond selection",
+      "tips": [
+        {
+          "t": "Marquee automation to move only that range",
+          "d": "With Automation view showing, a marquee selection over an automation lane creates edit points at both boundaries so you can raise or lower only that section."
+        },
+        {
+          "t": "Use marquee to create a drop",
+          "d": "Marquee the bar before a chorus across every track and delete. Instant, clean, arrangement‑wide silence with no dragging."
+        },
+        {
+          "t": "Hold ⇧ to extend an existing marquee",
+          "d": "Fine‑tune the selection edge by edge rather than redrawing the whole thing.",
+          "k": "⇧ + click"
+        }
+      ]
+    }
+  ]
+}

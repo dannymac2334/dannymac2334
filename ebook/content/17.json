@@ -1,0 +1,87 @@
+{
+  "number": 17,
+  "title": "More Tricks",
+  "intro": "The ones that did not fit anywhere else, which is often a sign that they are the most useful. Templates, key commands, project hygiene, bouncing and the small habits that quietly save hours.",
+  "groups": [
+    {
+      "heading": "Key commands and customisation",
+      "tips": [
+        {
+          "t": "Open Key Commands with ⌥K and use the search box",
+          "d": "Every command in Logic is searchable by name. If you can describe what you want to do, you can find and assign a key for it in about ten seconds.",
+          "k": "⌥K",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Export your key commands and back them up",
+          "d": "In the Key Commands window, click the Actions pop-up menu at the top left and choose Save As to write your whole key command set to a file (the default location is ~/Music/Audio Music Apps/Key Commands). Choose Import Key Commands from the same menu to load it back after a reinstall, or on someone else's machine. Losing a year of custom shortcuts to a reinstall is entirely avoidable."
+        },
+        {
+          "t": "Assign key commands to your most used plugins",
+          "d": "Logic has no key command that inserts a specific plug-in, so get the speed a different way: save the plug-in (or a whole chain) as a channel strip setting and recall it from the channel strip's Settings menu, which inserts every associated plug-in in one click. If you want it on a physical button, assign a controller button to the relevant key command in the Controller Assignments window."
+        },
+        {
+          "t": "Use Touch Bar or a stream deck for tool switching",
+          "d": "Logic's Touch Bar screens are fixed (Smart Controls, keyboard, drum pads, project overview), so you cannot put your own key commands there. For hardware triggering, use a Stream Deck sending the keystroke, or assign a controller button directly to a key command in the Controller Assignments window — search the command by name in the Search field, then press the button. Tools, zoom levels and transport are the highest-value candidates."
+        }
+      ]
+    },
+    {
+      "heading": "Templates and project management",
+      "tips": [
+        {
+          "t": "Build separate templates for writing, mixing and mastering",
+          "d": "A writing template loads instantly with a handful of instruments. A mixing template has your buses and reference chain. They are different jobs and they deserve different starting points.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Use Project Alternatives instead of Save As",
+          "d": "File > Project Alternatives > New Alternative keeps every version inside one project, and Apple's guide is explicit that alternatives \"are saved as part of the project and share the same assets\" — so you are not duplicating 4 GB of recordings to try a different arrangement."
+        },
+        {
+          "t": "Keep a reference track in every project, muted at the top",
+          "d": "A commercial track at the top of the session, routed to the master, muted. Unmute it whenever you lose perspective — which will be every hour."
+        },
+        {
+          "t": "Name your bounce files with the date",
+          "d": "“Mix_v3.wav” tells you nothing in six weeks. “Song_2026‑04‑18_mix3.wav” tells you everything."
+        }
+      ]
+    },
+    {
+      "heading": "Bouncing and export",
+      "tips": [
+        {
+          "t": "⌘B bounces the project or the current section",
+          "d": "File > Bounce > Project or Section, or Command-B. By default Logic bounces the whole project; to bounce a section, turn Cycle mode on and the bounce range matches the locator positions, or set the range directly with the Start and End sliders in the Bounce dialog. Bounce multiple formats in one pass by selecting more than one destination in the Destination area.",
+          "k": "⌘B"
+        },
+        {
+          "t": "Turn off “Normalize” when bouncing stems",
+          "d": "Normalising each stem independently destroys the relative balance you spent all day building. Set it to Off for stems and On only for a final master if you want it."
+        },
+        {
+          "t": "Bounce offline unless you have external hardware",
+          "d": "Bounce offline unless something outside the computer is involved. Apple's own wording is that offline bouncing \"can be faster than real time for more complex projects, and can perform bounces not possible in real time\". Realtime is required when the signal is not purely internal: only audio and software instrument tracks can be bounced offline, not MIDI tracks feeding external instruments or live audio channel inputs."
+        },
+        {
+          "t": "Add 2 bars of silence at the end of the bounce range",
+          "d": "Leave room for the tails. Reverb and delay tails get cut off constantly, so before you bounce, push the End position past the last note — either by adjusting the End value slider in the Bounce dialog, or, with Cycle mode on, by dragging the right locator, since Apple documents that the bounce range matches the locator positions only when Cycle is on. Then listen to the end of the file before you send it."
+        }
+      ]
+    },
+    {
+      "heading": "Habits worth building",
+      "tips": [
+        {
+          "t": "Colour and name everything before you leave the session",
+          "d": "Five minutes at the end of a session saves twenty at the start of the next one."
+        },
+        {
+          "t": "Save a version before every major change",
+          "d": "New Alternative, then experiment freely. Fear of breaking something is the biggest brake on creative decisions."
+        }
+      ]
+    }
+  ]
+}

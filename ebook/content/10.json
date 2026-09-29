@@ -1,0 +1,94 @@
+{
+  "number": 10,
+  "title": "Automation Tricks",
+  "intro": "Automation is what separates a static mix from a moving one. Logic has two entirely separate automation systems and knowing which one you are in explains most of the confusion people have with it.",
+  "groups": [
+    {
+      "heading": "The two systems",
+      "tips": [
+        {
+          "t": "Use Region automation for anything that belongs to the part",
+          "d": "A filter sweep that is part of a synth riff should move with the riff. Region automation does that; track automation does not."
+        },
+        {
+          "t": "Press A to toggle automation view",
+          "d": "One key. Learn it and stop hunting for the button.",
+          "k": "A"
+        }
+      ]
+    },
+    {
+      "heading": "Writing automation",
+      "tips": [
+        {
+          "t": "Use Latch mode for almost everything",
+          "d": "Latch writes while you move the control and holds the last value when you let go. Touch snaps back, Write erases as it goes, and Read plays only. Latch is the right default.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Never leave a track in Write mode",
+          "d": "Write mode erases existing automation as the playhead passes, whether you touch the fader or not. It has destroyed more mixes than any other setting in Logic."
+        },
+        {
+          "t": "Draw automation with the Pencil tool for precision",
+          "d": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes."
+        },
+        {
+          "t": "Delete an automation point without dragging it",
+          "d": "Double-click the point with the Pointer, or select it and press Delete, or use the Eraser. It works on curves too."
+        },
+        {
+          "t": "Curve any line by dragging its middle with ⌃⇧",
+          "d": "Straight automation ramps sound mechanical. Curving them takes one drag and makes the move sound intentional.",
+          "k": "⌃⇧ + drag"
+        },
+        {
+          "t": "Trim automation up or down as a group",
+          "d": "Trim is not a mode on its own — you switch it on in combination with Touch or Latch. Once it is on, moving the fader offsets the existing automation up or down by the amount you move, keeping the shape of the curve, and it applies to Volume, Pan and Send levels. Run the section you want to lift with Trim Latch engaged to push a whole automated vocal up by a decibel."
+        },
+        {
+          "t": "Use Relative mode to layer a second pass",
+          "d": "Relative automation sits on top of your existing pass as an offset, so you can add a ride without destroying the original moves."
+        }
+      ]
+    },
+    {
+      "heading": "Editing and managing automation",
+      "tips": [
+        {
+          "t": "Marquee a range then drag the line to change only that section",
+          "d": "Select the Marquee tool and drag across the bars you want to change, then drag the automation line inside that selection. Logic creates two automation points at each edge of the marquee automatically, so the change is boxed in and does not bleed into the surrounding bars. If you have assigned Marquee as your Command-click tool (Logic Pro > Settings > Advanced must have the full feature set enabled for that menu to appear), you can hold Command to grab it without switching tools.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Show every automated parameter at once",
+          "d": "Press A to show automation, then click the small disclosure triangle at the lower left of the track header to open an extra automation lane underneath the track. Repeat it to stack more lanes, and pick the parameter for each lane from the automation parameter pop-up menu in its header — that way you can see several written parameters side by side instead of flipping between them."
+        },
+        {
+          "t": "Copy automation between tracks",
+          "d": "Drag across the range with the Marquee tool and choose Edit > Copy. Select the destination track, move the playhead to the point where you want the data to start, then choose Edit > Paste — the automation lands at the playhead, so park the playhead deliberately (or set it from the original selection first) if you want the copy to sit at the same bar."
+        },
+        {
+          "t": "Delete all automation on a track in one command",
+          "d": "Mix > Delete Automation > Delete All Automation on Selected Track wipes every parameter on that track in one move. The same submenu also holds Delete Visible Automation on Selected Track, which clears only the parameter currently displayed, and Delete Orphaned Automation on Selected Track for data left behind by plug-ins you have removed."
+        },
+        {
+          "t": "Thin dense automation after recording a controller pass",
+          "d": "Recording modwheel or a fader creates thousands of points. Delete Redundant Automation Points (key command Control-Delete) strips the points that do not change the shape of the curve — but note it is a global command: it acts on all regions and all tracks, not just the range you have selected. To thin one passage only, select the points in that range with the Marquee or Pointer tool and press Delete, then redraw."
+        },
+        {
+          "t": "Snap automation to the grid when it needs to be rhythmic",
+          "d": "Automation snaps to its own grid value, set separately from regions: open the Snap pop-up menu in the Tracks area, choose Snap Automation, and pick a value from the submenu. Automation edits then snap to that value, and you can set it independently in the Tracks area and the Piano Roll Editor — so your filter stabs land on the beat without changing how regions snap."
+        },
+        {
+          "t": "Automate plugin bypass for effect changes",
+          "d": "Insert bypass usually appears in the track's automation parameter pop-up menu alongside the plug-in's own parameters, so you can switch an effect in and out on the timeline. Automating a delay in and out this way is cleaner than riding its mix knob. Check the parameter list for the slot in question before you commit to the approach — bypass is not exposed identically for every plug-in and every insert slot."
+        },
+        {
+          "t": "Automate send levels rather than plugin mix knobs",
+          "d": "Sends give you a fader you can see on the mixer and a lane you can find later. Buried plugin mix knobs are neither."
+        }
+      ]
+    }
+  ]
+}

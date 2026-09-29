@@ -1,0 +1,89 @@
+{
+  "number": 8,
+  "title": "Audio Editing Tricks",
+  "intro": "Comping, crossfades, timing and pitch. This is where a good take becomes a great one, and where most of the invisible work in a professional record actually happens.",
+  "groups": [
+    {
+      "heading": "Comping takes",
+      "tips": [
+        {
+          "t": "Put take-switching on keys you choose",
+          "d": "Take switching is worth a key command of your own. Press ⌥K to open the Key Commands window, type “Take” in the search field, and assign keys to the take-selection commands you use most. Auditioning take 3 against take 7 then becomes two keypresses instead of two trips to the Take Folder menu. (Use the Unused filter in that window to see which of them are still free on your system.)"
+        },
+        {
+          "t": "Save your comp as a new comp before changing it",
+          "d": "The take folder menu has “Duplicate Comp”. Do this before every significant change and you can always go back to the version that was working."
+        },
+        {
+          "t": "Move a comp edit point without redoing the comp",
+          "d": "Drag the vertical divider between two take sections to slide the edit point earlier or later."
+        }
+      ]
+    },
+    {
+      "heading": "Fades and clicks",
+      "tips": [
+        {
+          "t": "Curve the fade after you draw it",
+          "d": "Drag the middle of a drawn fade with the Fade tool to bend it, or edit the Curve value in the Region inspector. An S-curve on a vocal edit sounds far more natural than a straight line."
+        },
+        {
+          "t": "Use “Remove Silence from Audio Region” for noisy tracks",
+          "d": "Control-click the audio region and choose Split > Remove Silence from Audio Region (⌃X). It strips everything below a threshold you set and leaves separate regions — great for a live kit or spoken word.",
+          "b": "GAME CHANGER",
+          "k": "⌃X"
+        },
+        {
+          "t": "Add a tiny fade to the start of every region as policy",
+          "d": "Even 3 ms removes the click from a non‑zero‑crossing start. Do it to everything and you never chase a mystery click again."
+        }
+      ]
+    },
+    {
+      "heading": "Timing and pitch",
+      "tips": [
+        {
+          "t": "Add flex markers either side before you move one",
+          "d": "Placing anchor markers on the neighbouring transients stops your edit from stretching the whole bar."
+        },
+        {
+          "t": "Quantise audio with Flex enabled",
+          "d": "With Flex on, the region's Quantize field in the inspector works on audio exactly like MIDI. Drums snap to the grid without a single cut."
+        },
+        {
+          "t": "Use Flex Pitch to fix a single flat note",
+          "d": "Switch the track's Flex mode to Flex Pitch, then drag the note blob vertically. The gain, vibrato, pitch drift and formant handles are all on the same blob."
+        },
+        {
+          "t": "Reset a bad Flex edit rather than undoing repeatedly",
+          "d": "Control-click the flexed region and choose Reset All Flex Edits. It clears the region's flex data and starts you fresh."
+        }
+      ]
+    },
+    {
+      "heading": "Destructive and file‑level editing",
+      "tips": [
+        {
+          "t": "Use the Audio File Editor for true destructive edits",
+          "d": "Double‑click a region and switch to the File tab. Silence, reverse, normalise and pencil‑edit at the sample level. Changes here affect the file itself."
+        },
+        {
+          "t": "Normalise regions non‑destructively with Gain",
+          "d": "The Region inspector's Gain parameter changes playback level without touching the file. Always try this before normalising."
+        },
+        {
+          "t": "Strip silence at the file level to reclaim disk space",
+          "d": "Title: “Reclaim disk space with Project Management > Clean Up”. Body: After comping, File > Project Management > Clean Up deletes media the project no longer needs. Its options are Delete Unused Audio Files (files not used in any project alternative are removed from the Project Audio Browser and deleted from disk), Delete Unreferenced Audio Files and Delete Backups. It removes whole files, not unused portions of files, and it deletes from disk — a dialog lists everything to be deleted, so deselect the Delete checkbox for anything you want to keep, and back up first."
+        },
+        {
+          "t": "Reverse a region for a riser in two clicks",
+          "d": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version."
+        },
+        {
+          "t": "Commit edits with Bounce Regions in Place",
+          "d": "When you are happy with a comp, commit it. Select the regions, then choose File > Bounce > Regions in Place — or Control-click the selection and choose Bounce Regions in Place from the shortcut menu — to render them to a fresh audio file on the track. Check the options in the dialog (name, destination, and whether effect plug-ins are bypassed) before you click OK, and keep the original in case you need to go back."
+        }
+      ]
+    }
+  ]
+}

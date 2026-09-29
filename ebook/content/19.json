@@ -1,0 +1,119 @@
+{
+  "number": 19,
+  "title": "Logic Pro 12 Update",
+  "intro": "Logic Pro 12 arrived in January 2026 and it is an Apple silicon release — Intel Macs stop here. The headline additions are the Synth Player and Chord ID, which together change how a track gets arranged. This section covers what is new, plus the upgrade playbook for surviving any major release.",
+  "notice": {
+    "title": "One requirement before anything else",
+    "text": "Logic Pro 12 requires an Apple silicon Mac running macOS 15.6 or later. There is no Intel version. If you are still on an Intel machine, Logic Pro 11 is the end of the road — plan around that before you update anything."
+  },
+  "groups": [
+    {
+      "heading": "What's new in Logic Pro 12",
+      "tips": [
+        {
+          "t": "Synth Player is the third Session Player",
+          "d": "Synth Player is not a new Session Player — it is a set of styles inside the Bass Player and Keyboard Player you already have. Create a Bass Player or Keyboard Player track, open the Session Player Editor, and choose a Synth style the same way you choose any other style. The performance still follows the Chord track, so one progression can arrange bass and keys at once.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Pick the Synth Keyboard style before you touch anything else",
+          "d": "Simple Pad for a sustained harmonic bed, Modulated Pad when you want movement, Rhythmic Chords when the part needs to drive. Same chords, three completely different jobs."
+        },
+        {
+          "t": "Synth Bass ships with three distinct characters",
+          "d": "808 Bass for trap-leaning low end, Pump Bass for filtered movement, Sequenced Bass for driving sixteenths. Audition all three before you start editing the pattern."
+        },
+        {
+          "t": "Intensity changes tone, not just level",
+          "d": "Pump Bass gets its movement from a modulated ducking effect, and you can shape it directly: in the Session Player Editor click the Details button, then drag the Amount knob vertically to change how hard it pumps and the Shape knob to change the curve of the duck. It is the fastest way to make a bassline build without drawing a single automation point."
+        },
+        {
+          "t": "Point Synth Player at a third-party synth",
+          "d": "The performance engine and the sound source are separate. Synth Player can drive any Audio Unit, and external hardware too, so you keep the chord-following performance and choose your own sound."
+        },
+        {
+          "t": "Chord ID reads chords off audio, not just MIDI",
+          "d": "Drag in a guitar demo, a piano take or a rough bounce and Chord ID analyses it and writes the progression to the Chord track in seconds. It is the fastest route from an idea to a working arrangement.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Chord ID gets the harmonic rhythm, not just the chords",
+          "d": "Chord ID writes what it finds straight onto the Chord track — drag an audio or MIDI region onto the Chord track and Logic analyses it and adds the chords it contains as a chord group. Play it back against the source before you build on it; the Chord track's Change Display Only mode lets you correct any chord that does not match what you are hearing without altering playback."
+        },
+        {
+          "t": "Everything downstream follows the Chord track",
+          "d": "Once Chord ID has populated the Chord track, other tracks can lock to it. Apple: \"By following the Chord track, multiple tracks — such as tracks using Step Sequencer, Session Player tracks, and other software instrument tracks — can play in sync harmonically.\" Set a Session Player region to follow with Control-click > Chords > Follow Global Chord Track; set a Step Sequencer pattern to follow by choosing Chord Track, which renames the note rows to chord degrees. One analysis pass can arrange several parts at once.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Run Chord ID on your own old bounces",
+          "d": "The fastest way to rebuild a session you have lost is to drag the bounce in, let Chord ID read the changes, and start again from a chord track you know is correct."
+        },
+        {
+          "t": "Preview sound packs before you download them",
+          "d": "The rebuilt Sound Library lets you look a pack over before you commit — click Preview on a pack to see what is in it, then Get to download it. It is also where you reclaim space: select an installed pack and click Delete. The total space used by all installed packs is shown at the top of the list, with each pack's size beside it."
+        },
+        {
+          "t": "Re-run Mastering Assistant on older masters",
+          "d": "Mastering Assistant is worth re-running on an older master after any major update. Reanalyse the mix on the master bus, then A/B the result against the version you signed off on before you call it finished — Apple's character presets (Clean, Valve, Punch, Transparent) give you four quick comparisons at once."
+        }
+      ]
+    },
+    {
+      "heading": "Before you update",
+      "tips": [
+        {
+          "t": "Logic Pro 12 drops Intel Macs entirely",
+          "d": "It requires an Apple silicon Mac and macOS 15.6 or later. If you are on Intel, Logic Pro 11 is the last version you can run — check your machine before you plan an upgrade.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Never update in the middle of a paid project",
+          "d": "The one rule that matters. Finish and deliver, then update. A new version halfway through a mix is a self‑inflicted deadline problem.",
+          "b": "GAME CHANGER"
+        },
+        {
+          "t": "Keep the previous version installed alongside the new one",
+          "d": "Keep the outgoing version before you update, using Apple's own procedure: make a folder inside Applications named for the version (for example \"Logic Pro 11.1.2\"), select Logic Pro and choose File > Compress \"Logic Pro\", then move the resulting Logic Pro.zip into that folder. If the new version gives you trouble, unzip that copy and drag it into Applications and you are back where you were."
+        },
+        {
+          "t": "Back up your key commands, templates and channel strip settings",
+          "d": "Key commands are the only one of these that lives in your user Library. Open the Key Commands window (Option-K), choose Options > Export Key Commands, and save the file somewhere safe — the dialog defaults to ~/Library/Application Support/Logic/Key Commands. Your templates and channel strip settings live somewhere else entirely: ~/Music/Audio Music Apps/Project Templates and ~/Music/Audio Music Apps/Channel Strip Settings. Copy those two folders as well."
+        },
+        {
+          "t": "Consolidate and archive your three most important projects",
+          "d": "File > Project Management > Consolidate on each, then copy them to a separate drive. If the new version changes something, you have untouched originals."
+        },
+        {
+          "t": "Check your critical third‑party plugins against the new version first",
+          "d": "Plugin developers lag major DAW releases. Check their compatibility pages before you update, not after."
+        },
+        {
+          "t": "Note your current I/O and buffer settings",
+          "d": "Screenshot your Audio settings before you update — output device, input device and I/O buffer size. It takes five seconds, and if anything about your setup looks different afterwards you can restore the exact configuration you were working with instead of guessing at it."
+        },
+        {
+          "t": "Update macOS and Logic separately, a week apart",
+          "d": "If something breaks, you want to know which of the two did it."
+        }
+      ]
+    },
+    {
+      "heading": "After you update",
+      "tips": [
+        {
+          "t": "Read the new Key Commands list for additions",
+          "d": "Open the Key Commands window after every update — Logic Pro > Key Commands > Edit, or Option-K — and read through it for commands you have not seen before. New features arrive with new commands, many of them unassigned by default, and this is the only place they announce themselves."
+        },
+        {
+          "t": "Test your bounce path end to end before you need it",
+          "d": "Bounce a short section to every format you deliver in. Export bugs are the ones that bite at the worst possible moment."
+        },
+        {
+          "t": "Give yourself a deliberate hour to explore",
+          "d": "Not on a project. Open a scratch session and use every new feature once. An hour of play beats a month of accidental discovery."
+        }
+      ]
+    }
+  ]
+}
