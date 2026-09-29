@@ -1,11 +1,10 @@
 {
   "number": 1,
   "title": "Setting Up My Preferred Settings",
-  "intro": "Before a single note goes down, get the program out of your way. This is the longest section in the book on purpose — an hour spent here saves you a hundred hours later. Everything below is a setting I change on every fresh install.",
+  "intro": "Before a single note goes down, get the program out of your way. These are the settings worth checking on a fresh install, and each one says exactly where it lives.",
   "groups": [
     {
-      "heading": "Audio preferences",
-      "path": "Logic Pro > Settings > Audio",
+      "heading": "Audio settings",
       "tips": [
         {
           "t": "Run two buffer sizes, not one",
@@ -32,8 +31,7 @@
       ]
     },
     {
-      "heading": "Recording preferences",
-      "path": "Logic Pro > Settings > Recording",
+      "heading": "Recording",
       "tips": [
         {
           "t": "Turn off “Allow Quick Punch‑In” only if you never punch",
@@ -46,8 +44,7 @@
       ]
     },
     {
-      "heading": "MIDI preferences",
-      "path": "Logic Pro > Settings > MIDI",
+      "heading": "MIDI",
       "tips": [
         {
           "t": "Turn on scrubbing with audio in the Tracks area",
@@ -65,7 +62,6 @@
     },
     {
       "heading": "View settings",
-      "path": "Logic Pro > Settings > View",
       "tips": [
         {
           "t": "Turn on Enable Complete Features first, always",
@@ -84,7 +80,6 @@
     },
     {
       "heading": "General and advanced",
-      "path": "Logic Pro > Settings > General",
       "tips": [
         {
           "t": "Set Cycle to “Auto‑set locators by region selection”",
@@ -107,7 +102,6 @@
     },
     {
       "heading": "Project settings",
-      "path": "File > Project Settings",
       "tips": [
         {
           "t": "Set your sample rate before you record, not after",

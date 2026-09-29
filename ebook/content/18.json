@@ -1,7 +1,7 @@
 {
   "number": 18,
   "title": "Logic Pro 11 Update",
-  "intro": "Logic Pro 11 was the biggest release in years. Session Players, the Chord track, Stem Splitter, ChromaGlow and Flashback Capture between them change how a song gets written, not just how it gets edited. This section is everything worth knowing about the new tools.",
+  "intro": "Logic Pro 11 arrived in May 2024 with Session Players, the Chord track, Stem Splitter and ChromaGlow; Flashback Capture followed in 11.2. Stem Splitter and ChromaGlow need a Mac with Apple silicon, running Logic natively rather than in Rosetta. This section covers the new tools.",
   "groups": [
     {
       "heading": "Session Players — the fundamentals",
@@ -176,6 +176,20 @@
           "d": "Before you rely on a new version for real work, open your three most important old projects and check every insert. Updates can change how third-party plug-ins load, and finding that out mid-session is expensive."
         }
       ]
+    }
+  ],
+  "intro_src": [
+    {
+      "label": "Apple Newsroom — Logic Pro takes music-making to the next level with new AI features (May 2024)",
+      "url": "https://www.apple.com/newsroom/2024/05/logic-pro-takes-music-making-to-the-next-level-with-new-ai-features/"
+    },
+    {
+      "label": "Apple — If you can't find ChromaGlow, Stem Splitter, or other Logic Pro features on Mac",
+      "url": "https://support.apple.com/en-us/120406"
+    },
+    {
+      "label": "Sound On Sound — Apple Logic Pro 11.2 review",
+      "url": "https://www.soundonsound.com/reviews/apple-logic-pro-11-2"
     }
   ]
 }

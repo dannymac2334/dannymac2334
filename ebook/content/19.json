@@ -1,10 +1,20 @@
 {
   "number": 19,
   "title": "Logic Pro 12 Update",
-  "intro": "Logic Pro 12 arrived in January 2026 and it is an Apple silicon release — Intel Macs stop here. The headline additions are the Synth Player and Chord ID, which together change how a track gets arranged. This section covers what is new, plus the upgrade playbook for surviving any major release.",
+  "intro": "Logic Pro 12 arrived on 28 January 2026. It runs only on Macs with Apple silicon and needs macOS Sequoia 15.6 or later. The headline additions are the Synth Player and Chord ID. This section covers what is new, plus an upgrade playbook for any major release.",
   "notice": {
     "title": "One requirement before anything else",
-    "text": "Logic Pro 12 requires an Apple silicon Mac running macOS 15.6 or later. There is no Intel version. If you are still on an Intel machine, Logic Pro 11 is the end of the road — plan around that before you update anything."
+    "text": "Logic Pro 12 requires an Apple silicon Mac running macOS 15.6 or later. There is no Intel version. If you are still on an Intel machine, Logic Pro 11 is the end of the road — plan around that before you update anything.",
+    "src": [
+      {
+        "label": "Production Expert — Logic Pro 12: AI features, new tools and Intel Mac support dropped",
+        "url": "https://www.production-expert.com/production-expert-1/apple-announce-logic-pro-12-pushes-deeper-into-ai-and-appears-to-leaves-intel-macs-behind"
+      },
+      {
+        "label": "Apple Newsroom — Introducing Apple Creator Studio (January 2026)",
+        "url": "https://www.apple.com/newsroom/2026/01/introducing-apple-creator-studio-an-inspiring-collection-of-creative-apps/"
+      }
+    ]
   },
   "groups": [
     {
@@ -114,6 +124,16 @@
           "d": "Not on a project. Open a scratch session and use every new feature once. An hour of play beats a month of accidental discovery."
         }
       ]
+    }
+  ],
+  "intro_src": [
+    {
+      "label": "Apple Newsroom — Introducing Apple Creator Studio (January 2026)",
+      "url": "https://www.apple.com/newsroom/2026/01/introducing-apple-creator-studio-an-inspiring-collection-of-creative-apps/"
+    },
+    {
+      "label": "Production Expert — Logic Pro 12: AI features, new tools and Intel Mac support dropped",
+      "url": "https://www.production-expert.com/production-expert-1/apple-announce-logic-pro-12-pushes-deeper-into-ai-and-appears-to-leaves-intel-macs-behind"
     }
   ]
 }

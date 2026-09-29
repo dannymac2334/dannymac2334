@@ -285,12 +285,16 @@ def build_section(section, counter_start):
 
     bits.append('<div class="sec-body">')
     bits.append(f'<p class="lead reveal">{esc(section["intro"])}</p>')
+    if section.get("intro_src"):
+        bits.append(sources_html(section["intro_src"], cls="doc-src reveal"))
 
     if section.get("notice"):
         n = section["notice"]
         bits.append(
             f'<aside class="notice reveal"><h3>{esc(n["title"])}</h3>'
-            f'<p>{esc(n["text"])}</p></aside>'
+            f'<p>{esc(n["text"])}</p>'
+            + (sources_html(n["src"], cls="doc-src") if n.get("src") else "")
+            + "</aside>"
         )
 
     i = counter_start

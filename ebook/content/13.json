@@ -1,7 +1,7 @@
 {
   "number": 13,
   "title": "Drum Machine Designer Tricks",
-  "intro": "Drum Machine Designer is a Track Stack in disguise. Every pad is a real channel strip with its own inserts, sends and automation — which means you can mix a drum kit exactly like you mix a band.",
+  "intro": "Drum Machine Designer is built on a Track Stack: every pad you fill gets its own subtrack and channel strip, so each drum sound can be processed on its own in the Mixer.",
   "groups": [
     {
       "heading": "Building the kit",
@@ -39,6 +39,12 @@
           "d": "With the stack selected, save to the Library. Every pad, every sample and every insert comes back in one click on the next project."
         }
       ]
+    }
+  ],
+  "intro_src": [
+    {
+      "label": "Apple — Drum Machine Designer in Logic Pro for Mac",
+      "url": "https://support.apple.com/en-us/102054"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "number": 16,
   "title": "Favorite Logic Plugins",
-  "intro": "Logic ships with a genuinely world‑class plugin set and most people use six of them. These are the ones worth knowing properly, and the specific tricks that make each one worth reaching for.",
+  "intro": "The stock plugins worth knowing properly, and the specific controls that make each one worth reaching for.",
   "groups": [
     {
       "heading": "Dynamics",

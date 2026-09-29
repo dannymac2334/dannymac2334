@@ -1,7 +1,7 @@
 {
   "number": 9,
   "title": "Marquee Tool Tricks",
-  "intro": "The Marquee tool is the most underused thing in Logic Pro. It selects time rather than regions, and once that clicks, half the editing you do by hand becomes unnecessary. It is the ⌘‑click tool by default, so it is always one modifier away.",
+  "intro": "The Marquee tool selects a range of time rather than whole regions, across one track or many. Once that clicks, a lot of editing you would otherwise do by hand becomes unnecessary.",
   "groups": [
     {
       "heading": "The essentials",
@@ -45,6 +45,12 @@
           "k": "⇧ + click"
         }
       ]
+    }
+  ],
+  "intro_src": [
+    {
+      "label": "Apple — Select parts of regions in Logic Pro for Mac",
+      "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "number": 10,
   "title": "Automation Tricks",
-  "intro": "Automation is what separates a static mix from a moving one. Logic has two entirely separate automation systems and knowing which one you are in explains most of the confusion people have with it.",
+  "intro": "Automation is what separates a static mix from a moving one. Logic has two kinds: track automation stays tied to its place on the timeline, while region automation travels with its region. Knowing which one you are in explains most automation surprises.",
   "groups": [
     {
       "heading": "The two systems",
@@ -89,6 +89,12 @@
           "d": "Sends give you a fader you can see on the mixer and a lane you can find later. Buried plugin mix knobs are neither."
         }
       ]
+    }
+  ],
+  "intro_src": [
+    {
+      "label": "Apple — Track automation vs. region automation in Logic Pro for Mac",
+      "url": "https://support.apple.com/guide/logicpro/track-automation-vs-region-automation-lgcp967649d0/mac"
     }
   ]
 }

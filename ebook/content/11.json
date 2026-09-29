@@ -1,7 +1,7 @@
 {
   "number": 11,
   "title": "Step Sequencer Tricks",
-  "intro": "The Step Sequencer is far more than a drum grid. Every row has its own length, its own subdivision and its own set of per‑step parameters, which makes it a generative instrument if you let it be one.",
+  "intro": "The Step Sequencer is more than a drum grid. Each row can have its own length, step rate, playback mode and start offset, so rows can drift against each other in ways a fixed grid never will.",
   "groups": [
     {
       "heading": "The basics done right",
@@ -67,6 +67,12 @@
           "d": "Skip removes a step from the cycle entirely, changing the row's effective length. Loop Start/End moves where the row cycles. Both are performable."
         }
       ]
+    }
+  ],
+  "intro_src": [
+    {
+      "label": "Apple — Edit Step Sequencer pattern, row, and step settings in Logic Pro for Mac",
+      "url": "https://support.apple.com/guide/logicpro/step-sequencer-inspector-lgcp8efada20/mac"
     }
   ]
 }

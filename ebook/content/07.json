@@ -1,7 +1,7 @@
 {
   "number": 7,
   "title": "Editing Tips — Audio + MIDI",
-  "intro": "The tricks in this section work identically on audio regions and MIDI regions. Learn them once and you have doubled their value.",
+  "intro": "The everyday editing moves in the Tracks area: selecting, trimming, splitting, joining and moving regions.",
   "groups": [
     {
       "heading": "Universal region commands",

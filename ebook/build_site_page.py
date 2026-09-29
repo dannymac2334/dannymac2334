@@ -232,6 +232,7 @@ def page_css():
 .lp-src span{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:9px;opacity:.7;margin-right:4px}
 .lp-src a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:2px}
 .lp-src a:hover{text-decoration-color:currentColor}
+.lp-src-intro,.lp-notice .lp-src{padding:6px 0 0;background:none}
 .lp-tip:has(.lp-src) .lp-keys{padding-bottom:0;border-radius:0}
 .lp-tip.no-keys:has(.lp-src) p{padding-bottom:0;border-radius:0}
 .lp-num{font-size:11px;font-weight:600;letter-spacing:.14em;opacity:.45;font-variant-numeric:tabular-nums}
@@ -349,10 +350,14 @@ def section_block(s, start):
          f'<h2>{esc(s["title"])}.</h2>',
          f'<p class="lp-count">{total} tricks</p></div>',
          f'<p class="lp-intro reveal">{esc(s["intro"])}</p>']
+    if s.get("intro_src"):
+        o.append(sources_html(s["intro_src"], cls="lp-src lp-src-intro reveal"))
     if s.get("notice"):
         n = s["notice"]
         o.append(f'<aside class="lp-notice reveal"><h3>{esc(n["title"])}</h3>'
-                 f'<p>{esc(n["text"])}</p></aside>')
+                 f'<p>{esc(n["text"])}</p>'
+                 + (sources_html(n["src"], cls="lp-src") if n.get("src") else "")
+                 + '</aside>')
     i = start
     for g in s["groups"]:
         o.append('<div class="lp-group">')

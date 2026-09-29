@@ -1,7 +1,7 @@
 {
   "number": 12,
   "title": "Logic Drummer Tricks",
-  "intro": "Drummer is not a loop library. It is a performance engine that responds to what the rest of your arrangement is doing, and once you know where the controls are it will out‑play most programmed parts.",
+  "intro": "Drummer is not a loop library. It plays a performance you can steer, and its kick and snare can follow the rhythm of another track in your project — a different one for each region if you like.",
   "groups": [
     {
       "heading": "Getting a real performance",
@@ -37,6 +37,12 @@
           "d": "The Drummer track's instrument depends on the drummer: acoustic drummers load Drum Kit Designer, electronic and hip-hop drummers load Drum Machine Designer. Click the kit icon or kit name at the left of the editor to open whichever one is loaded. In Drum Kit Designer you can exchange the kit and, per selected piece, adjust Tune (pitch), Dampen (sustain) and Gain — and on multi-channel kits switch the Overheads mic in or out and pick room A, room B or no room emulation — all without touching a single note."
         }
       ]
+    }
+  ],
+  "intro_src": [
+    {
+      "label": "Apple — Follow rhythm of chords and other tracks in Logic Pro for Mac",
+      "url": "https://support.apple.com/guide/logicpro/follow-rhythm-of-chords-and-other-tracks-lgcpca8dca3d/mac"
     }
   ]
 }
