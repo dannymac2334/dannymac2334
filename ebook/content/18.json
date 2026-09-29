@@ -18,7 +18,14 @@
               "label": "Apple (UK) — Follow rhythm of chords and other tracks in Logic Pro for Mac",
               "url": "https://support.apple.com/en-gb/guide/logicpro/lgcpca8dca3d/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-midi",
+            "beat",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Session Player performances are per region, so write in sections",
@@ -32,7 +39,12 @@
               "label": "Apple — The Session Player Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/the-session-player-editor-lgcp32d55998/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "arrange"
+          ],
+          "lvl": 2
         },
         {
           "t": "Change style without losing your settings",
@@ -46,7 +58,11 @@
               "label": "Apple — Edit a Session Player performance in Logic Pro for iPad",
               "url": "https://support.apple.com/guide/logicpro-ipad/edit-a-session-player-performance-lpip6efdfca1/ipados"
             }
-          ]
+          ],
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         },
         {
           "t": "Nudge Complexity or Intensity before you rebuild a part",
@@ -60,12 +76,21 @@
               "label": "Apple — Logic Pro for Mac Session Player Editor interface",
               "url": "https://support.apple.com/guide/logicpro/session-player-editor-interface-lgcpe331a1dc/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Layer two Session Players on the same part",
           "d": "Put two Session Players on the same part: one playing simply, one playing busily, with the busy one low in the mix.",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -88,7 +113,12 @@
               "label": "Sound On Sound — Logic Pro: Session Players",
               "url": "https://www.soundonsound.com/techniques/logic-pro-session-players"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "arrange"
+          ],
+          "lvl": 1
         },
         {
           "t": "Shape the bass articulations in Details",
@@ -102,7 +132,12 @@
               "label": "Apple (UK) — Edit a Bass Player performance in Logic Pro for Mac",
               "url": "https://support.apple.com/en-gb/guide/logicpro/lgcp719a5d95/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
           "t": "Pair Bass Player with Studio Bass for its slides",
@@ -116,7 +151,13 @@
               "label": "Apple — Session Players overview in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects",
+            "record-midi"
+          ],
+          "lvl": 2
         },
         {
           "t": "Set the Bass Player to follow a specific track's rhythm",
@@ -126,7 +167,12 @@
               "label": "Apple — Follow rhythm of chords and other tracks in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/follow-rhythm-of-chords-and-other-tracks-lgcpca8dca3d/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "beat"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -145,7 +191,12 @@
               "label": "Apple (MD) — Edit a Keyboard Player performance in Logic Pro for Mac",
               "url": "https://support.apple.com/en-md/guide/logicpro/lgcpde2a77cd/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Thin out the left hand without touching the right",
@@ -159,7 +210,11 @@
               "label": "Apple — Logic Pro for Mac Session Player Editor interface",
               "url": "https://support.apple.com/guide/logicpro/session-player-editor-interface-lgcpe331a1dc/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         },
         {
           "t": "Convert to MIDI, then thin out the part",
@@ -169,7 +224,14 @@
               "label": "Apple — Convert Session Player regions into MIDI or pattern regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-midi",
+            "beat",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Keyboard Player as a writing tool, not a final part",
@@ -179,7 +241,12 @@
               "label": "Apple — Convert Session Player regions into MIDI or pattern regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-midi"
+          ],
+          "lvl": 2
         },
         {
           "t": "Try the Synth Player styles, not just piano",
@@ -193,7 +260,13 @@
               "label": "Apple — Edit a Synth Keyboard Player performance in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-a-synth-keyboard-player-performance-lgcp4ea55ff5/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "beat",
+            "chords"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -214,7 +287,12 @@
               "label": "Apple — Choose which chords a Session Player region follows in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-chords-a-session-player-region-lgcp87927044/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "chords"
+          ],
+          "lvl": 1
         },
         {
           "t": "Generate chords from an existing region",
@@ -224,7 +302,13 @@
               "label": "Apple — Analyze the chords in audio or MIDI regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/analyze-chords-audio-midi-regions-logic-pro-lgcp4993e80c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Resize chords by dragging their lower edges",
@@ -234,7 +318,13 @@
               "label": "Apple — Move and resize chords in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/move-and-resize-chords-lgcp6738dbfa/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "chords",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Pitch Source to keep parts off the Chord track",
@@ -248,7 +338,14 @@
               "label": "Apple — Choose which chords a Session Player region follows in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-chords-a-session-player-region-lgcp87927044/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "pitch",
+            "loop",
+            "record-audio"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -272,18 +369,31 @@
               "label": "Production Expert — Apple Updates Logic Pro with Improved Stem Separation",
               "url": "https://www.production-expert.com/production-expert-1/apple-updates-logic-pro-with-improved-stem-separation-flashback-recording-and-new-sound-packs"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "beat",
+            "stems",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Use it on your own rough mixes, not just other people's records",
-          "d": "The most legitimate and useful application is recovering a part from a bounce when the original session is gone.",
+          "d": "It is especially handy for recovering a part from a bounce of your own song when the original session is gone.",
           "advice": true,
           "src": [
             {
               "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "export",
+            "record-audio"
+          ],
+          "lvl": 2
         },
         {
           "t": "Solo each stem and listen before you commit",
@@ -301,12 +411,25 @@
               "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects",
+            "mix",
+            "stems"
+          ],
+          "lvl": 2
         },
         {
-          "t": "Use single stems as layers, not as full replacements",
-          "d": "A split drum stem buried under real drums adds character without exposing the artefacts.",
-          "advice": true
+          "t": "Try single stems as layers first",
+          "d": "Tuck a split stem under your other parts before you rely on it on its own, and listen for artefacts either way.",
+          "advice": true,
+          "goals": [
+            "new",
+            "stems",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Make an instrumental with one preset",
@@ -320,7 +443,13 @@
               "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "stems",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Splitting adds rather than replaces",
@@ -330,7 +459,14 @@
               "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "mix",
+            "stems",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -358,7 +494,12 @@
               "label": "Apple — If you can't find ChromaGlow, Stem Splitter, or other Logic Pro features on Mac",
               "url": "https://support.apple.com/en-us/120406"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Drive and Level Out together to stay level‑matched",
@@ -368,12 +509,25 @@
               "label": "Apple — ChromaGlow in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
-          "t": "Put it on the drum bus before the compressor",
-          "d": "Saturating transients before compression gives the compressor less to fight and produces a much more controlled result.",
-          "advice": true
+          "t": "Try it before the compressor on the drum bus",
+          "d": "Put ChromaGlow before the compressor on the drum bus, then swap the order and compare. Keep whichever sounds more controlled to you.",
+          "advice": true,
+          "goals": [
+            "new",
+            "effects",
+            "mix",
+            "beat"
+          ],
+          "lvl": 3
         },
         {
           "t": "Use Bypass Below to keep the low end clean",
@@ -383,12 +537,23 @@
               "label": "Apple — ChromaGlow in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/chromaglow-controls-lgcp0a30400b/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects",
+            "record-audio",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Try it on the master at very low drive",
-          "d": "A tiny amount across the whole mix does what analogue summing is supposed to do. Anything you can obviously hear is too much.",
-          "advice": true
+          "d": "Try a very small amount across the whole mix. If you can obviously hear it, back it off.",
+          "advice": true,
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -409,7 +574,14 @@
               "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-audio",
+            "record-midi",
+            "organize"
+          ],
+          "lvl": 1
         },
         {
           "t": "MIDI capture works with the transport stopped",
@@ -427,7 +599,13 @@
               "label": "Sound On Sound — Apple Logic Pro 11.2 review",
               "url": "https://www.soundonsound.com/reviews/apple-logic-pro-11-2"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-audio",
+            "record-midi"
+          ],
+          "lvl": 2
         },
         {
           "t": "Check plug-in compatibility after updating",
@@ -445,7 +623,12 @@
               "label": "Apple — If you can't find a recently installed plug-in for Logic Pro for Mac or MainStage",
               "url": "https://support.apple.com/en-us/122179"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects"
+          ],
+          "lvl": 2
         }
       ]
     }

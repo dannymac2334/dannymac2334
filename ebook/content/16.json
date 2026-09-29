@@ -1,6 +1,6 @@
 {
   "number": 16,
-  "title": "Favorite Logic Plugins",
+  "title": "Logic's Built-in Plugins",
   "intro": "The stock plugins worth knowing properly, and the specific controls that make each one worth reaching for.",
   "groups": [
     {
@@ -22,7 +22,12 @@
               "label": "MusicTech — Advanced Use Of The Logic Compressor",
               "url": "https://musictech.com/tutorials/logic-compressor/"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "beat"
+          ],
+          "lvl": 3
         },
         {
           "t": "Multipressor — use it to control one problem band only",
@@ -36,7 +41,11 @@
               "label": "Apple — Multipressor frequency band controls in Logic Pro for Mac (MY)",
               "url": "https://support.apple.com/en-my/guide/logicpro/lgce46e42e1e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Noise Gate — use the side chain to key one sound from another",
@@ -46,7 +55,13 @@
               "label": "Apple — Use Noise Gate in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-noise-gate-lgcef1bec259/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "beat",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Enveloper — reshape a transient without a compressor",
@@ -56,7 +71,13 @@
               "label": "Apple — Enveloper in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/enveloper-controls-lgcef1bec322/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "beat",
+            "edit"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -71,7 +92,11 @@
               "label": "Apple — Channel EQ parameters in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/channel-eq-parameters-lgcef1edc1d7/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Match EQ — steal a tone rather than guess at it",
@@ -90,7 +115,11 @@
               "label": "Apple — Use Match EQ in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-match-eq-lgcef1edc5c5/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -106,7 +135,11 @@
               "label": "Apple — ChromaVerb display and Damping EQ in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/main-display-and-damping-eq-lgcp304c206a/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Delay Designer — build rhythmic patterns, not echoes",
@@ -116,7 +149,14 @@
               "label": "Apple — Delay Designer Tap parameter bar in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/tap-parameter-bar-lgcef18b8c76/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "mix",
+            "beat",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Stereo Delay — set different times per side",
@@ -126,7 +166,12 @@
               "label": "Apple — Stereo Delay in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/stereo-delay-controls-lgcef18b892f/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "loop"
+          ],
+          "lvl": 2
         },
         {
           "t": "Tape Delay — turn up Flutter for analogue character",
@@ -136,7 +181,13 @@
               "label": "Apple — Tape Delay in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/tape-delay-controls-lgcef18b8994/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "loop",
+            "edit"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -155,7 +206,13 @@
               "label": "Apple — Phat FX processors in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/phat-fx-processors-lgcpaeb73556/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "beat",
+            "sample"
+          ],
+          "lvl": 2
         },
         {
           "t": "Remix FX — perform DJ effects live",
@@ -165,7 +222,13 @@
               "label": "Apple — Remix FX in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/remix-fx-lgcpe9906785/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "sample",
+            "arrange"
+          ],
+          "lvl": 2
         },
         {
           "t": "Gain — use it to check phase, not just level",
@@ -176,7 +239,12 @@
               "label": "Apple — Gain controls in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/gain-controls-lgcef2d8c650/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
           "t": "Test Oscillator — reference tones for calibration",
@@ -186,7 +254,11 @@
               "label": "Apple — Test Oscillator in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/test-oscillator-lgcef2d8c9eb/mac"
             }
-          ]
+          ],
+          "goals": [
+            "effects"
+          ],
+          "lvl": 2
         }
       ]
     }

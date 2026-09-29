@@ -1,6 +1,6 @@
 {
   "number": 1,
-  "title": "Setting Up My Preferred Settings",
+  "title": "Setting Up Logic",
   "intro": "Before a single note goes down, get the program out of your way. These are the settings worth checking on a fresh install, and each one says exactly where it lives.",
   "groups": [
     {
@@ -20,7 +20,12 @@
               "label": "Apple — Overview of Logic Pro settings",
               "url": "https://support.apple.com/guide/logicpro/logic-pro-settings-overview-lgcp53689108/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance"
+          ],
+          "lvl": 3
         },
         {
           "t": "Set Processing Threads to Automatic",
@@ -34,7 +39,12 @@
               "label": "Apple — Avoid system overloads in Logic Pro for Mac",
               "url": "https://support.apple.com/en-us/108295"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance"
+          ],
+          "lvl": 3
         },
         {
           "t": "Choose the right Multithreading mode",
@@ -48,7 +58,14 @@
               "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "record-audio",
+            "organize"
+          ],
+          "lvl": 3
         },
         {
           "t": "Set Process Buffer Range to Large to avoid overloads",
@@ -62,7 +79,12 @@
               "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance"
+          ],
+          "lvl": 3
         },
         {
           "t": "Uncheck Software Monitoring if you monitor through your interface",
@@ -76,7 +98,12 @@
               "label": "Apple — General Audio settings in Logic Pro for Mac (IS locale)",
               "url": "https://support.apple.com/en-is/guide/logicpro/lgcp0ed343a9/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance"
+          ],
+          "lvl": 3
         }
       ]
     },
@@ -99,7 +126,13 @@
               "label": "Apple — Punch in and out of audio recordings in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/punch-in-and-out-of-audio-recordings-lgcpb19bfd0d/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "record-audio"
+          ],
+          "lvl": 1
         },
         {
           "t": "Make the bar and the beat click sound different",
@@ -113,7 +146,14 @@
               "label": "Apple — Klopfgeist in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/klopfgeist-lgcp67edcb1f/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "effects",
+            "record-audio"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -128,7 +168,13 @@
               "label": "Apple — Audio Editing settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/editing-settings-lgcp0d6a4f6f/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
           "t": "Leave the MIDI Reset Messages at their defaults",
@@ -138,7 +184,13 @@
               "label": "Apple — Reset Messages settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/reset-messages-settings-lgcp7123ac34/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "record-midi"
+          ],
+          "lvl": 3
         },
         {
           "t": "Fix doubled notes from a controller",
@@ -148,7 +200,14 @@
               "label": "Apple — General MIDI project settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/general-project-settings-lgcp94b70f34/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "record-audio",
+            "record-midi"
+          ],
+          "lvl": 3
         }
       ]
     },
@@ -164,7 +223,14 @@
               "label": "Apple — Advanced settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "beat",
+            "safety"
+          ],
+          "lvl": 2
         },
         {
           "t": "Colour regions individually, not by track",
@@ -178,7 +244,13 @@
               "label": "Apple — Color regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Turn on “Show help tags”",
@@ -188,7 +260,13 @@
               "label": "Apple — General View settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/general-settings-lgcp9793a910/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "organize"
+          ],
+          "lvl": 1
         }
       ]
     },
@@ -207,7 +285,13 @@
               "label": "macProVideo — 6 Logic Pro X Cycling Tips",
               "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "loop"
+          ],
+          "lvl": 3
         },
         {
           "t": "Turn on “Limit Dragging to One Direction” in the Tracks area",
@@ -222,7 +306,13 @@
               "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/en-jo/guide/logicpro/lgcpa905f117/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "edit"
+          ],
+          "lvl": 3
         },
         {
           "t": "Read the Clean Up list before you confirm it",
@@ -232,7 +322,13 @@
               "label": "Apple — Clean up projects in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/clean-up-projects-lgcpce0efc05/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "edit"
+          ],
+          "lvl": 3
         }
       ]
     },
@@ -247,7 +343,14 @@
               "label": "Apple — Set the sample rate of a project in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/set-the-project-sample-rate-lgcpce0958b8/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "pitch",
+            "record-audio"
+          ],
+          "lvl": 3
         },
         {
           "t": "Set the recording bit depth in Settings > Recording",
@@ -257,7 +360,13 @@
               "label": "Apple — Recording settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/recording-settings-lgcp411dd5c8/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "record-audio"
+          ],
+          "lvl": 3
         },
         {
           "t": "Turn on Smart Tempo “Keep Project Tempo” by default",
@@ -268,7 +377,14 @@
               "label": "Apple — Choose the project tempo mode in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-the-project-tempo-mode-lgcpca199cf6/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "timing",
+            "record-audio"
+          ],
+          "lvl": 3
         },
         {
           "t": "Stop new recordings arriving pre-quantised",
@@ -278,7 +394,14 @@
               "label": "Apple — Use the Region inspector in Logic Pro for Mac (from prior audit, not re-retrieved)",
               "url": "https://support.apple.com/guide/logicpro/use-the-region-inspector-lgcpd8a8780c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "timing",
+            "record-audio"
+          ],
+          "lvl": 3
         },
         {
           "t": "Check Tuning when a synth sounds subtly off",
@@ -288,7 +411,14 @@
               "label": "Apple — Tuning project settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/tuning-project-settings-lgcp452f2693/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "pitch",
+            "record-midi"
+          ],
+          "lvl": 3
         },
         {
           "t": "Copy your assets into the project so it travels",
@@ -298,7 +428,14 @@
               "label": "Apple — Manage project assets in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/manage-project-assets-lgcpce0d70e7/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "safety",
+            "edit"
+          ],
+          "lvl": 3
         }
       ]
     },
@@ -314,7 +451,14 @@
               "label": "Apple — Project Handling settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/project-handling-settings-lgcp43defb63/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "effects",
+            "safety"
+          ],
+          "lvl": 2
         },
         {
           "t": "Save your starting channel strip as a setting",
@@ -324,7 +468,14 @@
               "label": "Apple — Work with channel strip settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/work-with-channel-strip-settings-lgcp35966da6/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "effects",
+            "mix"
+          ],
+          "lvl": 3
         },
         {
           "t": "Give each colour a fixed meaning",
@@ -334,7 +485,14 @@
               "label": "Apple — Color regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "beat",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Make a Project Alternative before big changes",
@@ -348,7 +506,14 @@
               "label": "Apple — Advanced settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "safety",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Hit ⌘S often: every save banks a backup",
@@ -363,7 +528,13 @@
               "label": "Apple — Advanced settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "safety"
+          ],
+          "lvl": 1
         },
         {
           "t": "Move the Sound Library to an external drive on purpose",
@@ -373,7 +544,14 @@
               "label": "Apple Support - Relocate the Sound Library (from prior audit, not re-retrieved)",
               "url": "https://support.apple.com/en-us/111094"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "mix",
+            "organize"
+          ],
+          "lvl": 3
         },
         {
           "t": "Save the project as a Package so it travels",
@@ -383,7 +561,14 @@
               "label": "Apple — Save Logic Pro for Mac projects",
               "url": "https://support.apple.com/guide/logicpro/save-projects-lgcpce128e82/mac"
             }
-          ]
+          ],
+          "goals": [
+            "start",
+            "performance",
+            "safety",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     }

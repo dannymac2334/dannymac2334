@@ -28,7 +28,13 @@
               "label": "Logic Studio Training — Logic Pro 11.2 Update: Flashback Recording",
               "url": "https://logicstudiotraining.com/logic-pro-11-2-update/"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "record-audio"
+          ],
+          "lvl": 1
         },
         {
           "t": "Use the Step Input Keyboard for parts you cannot play",
@@ -38,7 +44,12 @@
               "label": "Apple — Use step input recording techniques in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-step-input-recording-techniques-lgcpb19a8406/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 1
         },
         {
           "t": "Draw notes with the Pencil, delete with the Eraser",
@@ -56,7 +67,13 @@
               "label": "Apple — Copy notes in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/copy-notes-lgcpa917aaef/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "edit"
+          ],
+          "lvl": 1
         }
       ]
     },
@@ -76,7 +93,13 @@
               "label": "Apple — Chord Trigger overview in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/chord-trigger-overview-lgceb57e806c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Force everything into key with Transposer",
@@ -86,7 +109,12 @@
               "label": "Apple — Transposer in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/transposer-midi-plug-in-controls-lgceee5a5e6f/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Arpeggiator to generate parts, then commit them",
@@ -100,7 +128,14 @@
               "label": "Apple — Bounce regions in place in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "effects",
+            "export"
+          ],
+          "lvl": 2
         },
         {
           "t": "Transpose without touching the notes",
@@ -118,7 +153,12 @@
               "label": "Apple — Logic Pro MIDI region parameters (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/midi-region-parameters-lgcpf7c0d270/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use the Modifier MIDI plugin to reassign a controller",
@@ -128,7 +168,14 @@
               "label": "Apple — Modifier in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/modifier-controls-lgce0604d2d0/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "effects",
+            "mix"
+          ],
+          "lvl": 3
         }
       ]
     },
@@ -143,7 +190,14 @@
               "label": "Apple — Recording settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/recording-preferences-lgcp411dd5c8/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "loop",
+            "record-audio"
+          ],
+          "lvl": 2
         },
         {
           "t": "Freeze the instrument as soon as the part is done",
@@ -157,7 +211,14 @@
               "label": "Apple — Freeze tracks in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/freeze-tracks-lgcpf1cbfd51/10.7/mac/11.6"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "effects",
+            "export"
+          ],
+          "lvl": 2
         },
         {
           "t": "Commit a MIDI region to audio with Bounce in Place",
@@ -171,12 +232,25 @@
               "label": "Apple — Bounce regions in place in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "effects",
+            "export"
+          ],
+          "lvl": 2
         },
         {
           "t": "Keep one “sketch” instrument track loaded at all times",
           "d": "Keep a piano patch on a permanently armed track so any idea can be captured right away. The moment capture takes effort, ideas stop arriving.",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "record-midi",
+            "chords",
+            "record-audio"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Note Repeat for hi‑hats and rolls",
@@ -190,7 +264,14 @@
               "label": "Apple — Edit Step Sequencer pattern, row, and step settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/step-sequencer-inspector-lgcp8efada20/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-midi",
+            "chords",
+            "loop",
+            "beat"
+          ],
+          "lvl": 2
         }
       ]
     }

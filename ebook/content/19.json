@@ -33,7 +33,13 @@
               "label": "Apple — Chords and Session Players in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/chords-and-session-players-lgcp70dd5af3/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Pick the Synth Keyboard style before you touch anything else",
@@ -43,7 +49,14 @@
               "label": "Apple — Intro to Synth Player styles in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-midi",
+            "beat",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Synth Bass ships with three distinct characters",
@@ -57,7 +70,12 @@
               "label": "Apple — Logic Pro for Mac release notes",
               "url": "https://support.apple.com/en-us/109503"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "beat"
+          ],
+          "lvl": 2
         },
         {
           "t": "Shape the Pump Bass pump directly",
@@ -67,7 +85,12 @@
               "label": "Apple — Edit a Synth Bass Player performance in Logic Pro for Mac",
               "url": "https://support.apple.com/en-ca/guide/logicpro/lgcp7d1b5306/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Point Synth Player at a third-party synth",
@@ -77,7 +100,14 @@
               "label": "Apple — Intro to Synth Player styles in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/intro-to-synth-player-styles-lgcpc49d7e59/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects",
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Chord ID reads chords off audio, not just MIDI",
@@ -92,7 +122,14 @@
               "label": "Apple — Logic Pro for Mac release notes",
               "url": "https://support.apple.com/en-us/109503"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "export",
+            "record-audio",
+            "record-midi"
+          ],
+          "lvl": 2
         },
         {
           "t": "Check Chord ID's chords before you build on them",
@@ -106,7 +143,12 @@
               "label": "Apple — Edit chords in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-chords-lgcp5bdc8ead/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Everything downstream follows the Chord track",
@@ -125,7 +167,14 @@
               "label": "Apple — Overview of chords in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/chords-overview-lgcp2633963f/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-midi",
+            "beat",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Run Chord ID on your own old bounces",
@@ -139,7 +188,13 @@
               "label": "Apple — Logic Pro for Mac release notes",
               "url": "https://support.apple.com/en-us/109503"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "export",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Preview sound packs before you download them",
@@ -153,7 +208,12 @@
               "label": "Apple — Logic Pro for Mac release notes",
               "url": "https://support.apple.com/en-us/109503"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Reanalyze and try each Character",
@@ -167,7 +227,12 @@
               "label": "Apple — Use Mastering Assistant in Logic Pro",
               "url": "https://support.apple.com/en-us/108294"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-audio"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -187,13 +252,21 @@
               "label": "Apple Support — Logic Pro - Tech Specs",
               "url": "https://support.apple.com/en-us/111899"
             }
-          ]
+          ],
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         },
         {
           "t": "Never update in the middle of a paid project",
           "d": "The one rule that matters. Finish and deliver, then update. A new version halfway through a mix is a self‑inflicted deadline problem.",
           "b": "GAME CHANGER",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         },
         {
           "t": "Back up the current version before you update",
@@ -203,7 +276,14 @@
               "label": "Apple Support — Back up Logic Pro for Mac",
               "url": "https://support.apple.com/en-us/102029"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "effects",
+            "safety",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Back up your key commands and channel strip settings",
@@ -221,7 +301,14 @@
               "label": "macProVideo — Demystifying Logic Pro X's Plug-In Settings, Channel Strip Settings & Patches",
               "url": "https://www.macprovideo.com/article/logic-pro/demystifying-logic-pro-x-s-plug-in-settings-channel-strip-settings-patches?sess_id=o54fmmrisrm95vu94au0sddj26"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "chords",
+            "safety",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Consolidate and archive your three most important projects",
@@ -231,12 +318,23 @@
               "label": "Apple Support — Consolidate assets in a Logic Pro for Mac project",
               "url": "https://support.apple.com/guide/logicpro/consolidate-assets-in-a-project-lgcpce09b9d8/mac"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "safety",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Check your critical third‑party plugins against the new version first",
-          "d": "Plugin developers lag major DAW releases. Check their compatibility pages before you update, not after.",
-          "advice": true
+          "d": "Check each plug-in developer's compatibility notes before you update Logic, not after.",
+          "advice": true,
+          "goals": [
+            "new",
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Note your current I/O and buffer settings",
@@ -250,12 +348,22 @@
               "label": "macProVideo — Logic Pro X Audio Preferences Explained",
               "url": "https://macprovideo.com/article/logic-pro/logic-pro-x-audio-preferences-explained"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "record-audio",
+            "performance"
+          ],
+          "lvl": 2
         },
         {
           "t": "Update macOS and Logic separately, a week apart",
           "d": "If something breaks, you want to know which of the two did it.",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -270,17 +378,33 @@
               "label": "Apple Support — Create custom keyboard shortcuts for Logic Pro for Mac",
               "url": "https://support.apple.com/en-us/101929"
             }
-          ]
+          ],
+          "goals": [
+            "new",
+            "chords",
+            "fast"
+          ],
+          "lvl": 2
         },
         {
           "t": "Test your bounce path end to end before you need it",
-          "d": "Bounce a short section to every format you deliver in. Export bugs are the ones that bite at the worst possible moment.",
-          "advice": true
+          "d": "Bounce a short section to every format you deliver in, so any problem turns up before a deadline does.",
+          "advice": true,
+          "goals": [
+            "new",
+            "export",
+            "arrange"
+          ],
+          "lvl": 2
         },
         {
           "t": "Give yourself a deliberate hour to explore",
           "d": "Not on a project. Open a scratch session and use every new feature once. An hour of play beats a month of accidental discovery.",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "new"
+          ],
+          "lvl": 2
         }
       ]
     }

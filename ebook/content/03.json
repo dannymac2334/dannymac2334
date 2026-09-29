@@ -15,7 +15,12 @@
               "label": "Apple — Zoom windows in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/zoom-windows-lgcp5cbf2096/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "arrange"
+          ],
+          "lvl": 1
         },
         {
           "t": "Know what the number keys actually do",
@@ -33,7 +38,13 @@
               "label": "Apple — Assign key commands in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "chords",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Scroll without the scrollbar",
@@ -43,7 +54,11 @@
               "label": "Apple — Scroll and zoom in the Tracks area in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/scroll-and-zoom-in-the-tracks-area-lgcpf7c0b924/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use the Cycle area as a bookmark",
@@ -66,7 +81,12 @@
               "label": "afteraudio.com — Key commands for Global Commands in Logic Pro",
               "url": "https://www.afteraudio.com/musings/blog/key-commands-for-global-commands-in-logic-pro"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "loop"
+          ],
+          "lvl": 2
         },
         {
           "t": "Toggle Catch to stop the screen running away",
@@ -80,7 +100,12 @@
               "label": "Apple — Catch settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/catch-settings-lgcp237ca5ad/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "arrange"
+          ],
+          "lvl": 2
         }
       ]
     }

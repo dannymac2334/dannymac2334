@@ -11,7 +11,7 @@ structured content files so the text and the design can be changed independently
 | `dist/logic-pro-crash-course-sales.html` | **The sales page** for the $14.99 product. Drop-in for the site; sells the book without containing it. Built by `build_sales_page.py`. |
 | `dist/logic-pro-crash-course-page.html` | Full 248-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
 | `HANDOFF.md` / `AGENT-PROMPT.md` / `PITCH.md` | Handoff spec, paste-ready prompt for the site agent, and the sales copy in reviewable form. |
-| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 91 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
+| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 108 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -141,3 +141,12 @@ stop at Logic Pro 11. It also keeps the upgrade playbook for surviving any major
 Logic 12 feature claims were verified against multiple independent sources rather than Apple's
 own documentation, which this environment's network proxy blocks. Re-check them against the
 release notes for the build you are on before a major reprint.
+
+## Beginner layer
+
+- **Start Here** (`content/00-front.json`, id `start`): ten cited first steps for someone who has never opened Logic.
+- **I Want To…**: generated from `content/goals.json`; every trick carries `goals` and a `lvl` (1 = Start Here, 2, 3), set by `python3 tag_goals.py --apply`.
+- **Glossary** (`content/glossary.json`): cited plain-English definitions; the first uses of each term are linked in the PDF and show a tap-to-read definition on the web page.
+- **Search on the web page** takes plain-language goals ("make a beat", "record vocals", "louder"), has goal chips and a Start-here filter, and shows definitions for glossary words.
+
+`validate.py` fails the build if a step or glossary entry has no source, or a trick has no goal/level tag.

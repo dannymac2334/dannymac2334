@@ -16,14 +16,18 @@ Drop it at the ROOT of the site repo, next to work.html — the relative
 `css/` and `js/` paths depend on that.
 """
 
+import json
 import pathlib
 
-from build import esc, keycap, load, slug, count_tips, sources_html, numbered_refs, legal_notice
+from build import (esc, keycap, load, slug, count_tips, sources_html, numbered_refs, legal_notice,
+                   load_extras, term_pattern, link_terms)
 
 ROOT = pathlib.Path(__file__).parent
 DIST = ROOT / "dist"
 
-PDF_HREF = "assets/resources/logic-pro-crash-course.pdf"
+# The PDF is paid content: it is never a public file. The site agent wires
+# /download to a function that checks the buyer's key and returns a signed URL.
+PDF_HREF = "/download"
 HIGHLIGHT = "GAME CHANGER"
 
 TITLE = "Logic Pro Crash Course | Dannny McCcarthy"
@@ -233,6 +237,47 @@ def page_css():
 .lp-src a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:2px}
 .lp-src a:hover{text-decoration-color:currentColor}
 .lp-src-intro,.lp-notice .lp-src{padding:6px 0 0;background:none}
+/* beginner layer — ask in your own words, pick a goal, tap a word you don't know */
+.lp-ask{flex:1 0 100%;margin:0 0 2px;font-size:clamp(20px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;
+  text-transform:uppercase;line-height:1.05}
+.lp-chips{flex:1 0 100%;display:flex;gap:8px;overflow-x:auto;padding:2px 0 4px;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch}
+.lp-chips::-webkit-scrollbar{display:none}
+.lp-chip{flex:0 0 auto;cursor:pointer;background:transparent;color:#d5d4cf;border:1px solid #3a3a3a;
+  border-radius:100px;font-family:inherit;font-size:12px;padding:8px 14px;white-space:nowrap;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.lp-chip:hover{border-color:#5a5a5a;color:#fff}
+.lp-chip[aria-pressed="true"]{background:#fff;border-color:#fff;color:#000}
+.lp-badge.lp-start{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.lp-gl{position:relative;cursor:help;text-decoration:underline dotted;text-underline-offset:3px;
+  text-decoration-color:rgba(255,255,255,.5);outline:none}
+.lp-gl:hover::after,.lp-gl:focus::after{content:attr(data-def);position:absolute;left:0;bottom:calc(100% + 8px);
+  z-index:30;width:min(280px,70vw);background:#fff;color:#000;font-size:12.5px;line-height:1.5;
+  font-weight:400;letter-spacing:0;text-transform:none;padding:10px 12px;border-radius:10px;
+  box-shadow:0 12px 30px -12px rgba(0,0,0,.6);white-space:normal}
+.lp-defs{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.lp-def{margin:22px 0 0;border:1px solid var(--line-dark);border-radius:16px;padding:18px 22px}
+.lp-def span{display:block;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+.lp-def b{display:block;margin-top:6px;font-size:20px;letter-spacing:-.01em}
+.lp-def p{margin:6px 0 0;color:var(--lp-dim);font-size:14px;line-height:1.6;max-width:70ch}
+.lp-def a{display:inline-block;margin-top:8px;font-size:12px;color:#fff}
+.lp-steps{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:4px;max-width:880px}
+.lp-steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;border-top:1px solid var(--line-dark);padding:18px 0}
+.lp-step-n{font-size:28px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.lp-steps h3{margin:0;font-size:17px;font-weight:600;text-transform:none;letter-spacing:0}
+.lp-steps p{margin:6px 0 0;color:var(--lp-dim);font-size:14.5px;line-height:1.65}
+.lp-steps .lp-keys{padding:10px 0 0;background:none}
+.lp-goal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:24px}
+.lp-goal-btn{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;text-align:left;
+  background:transparent;color:#fff;border:1px solid var(--line-dark);border-radius:14px;font-family:inherit;
+  font-size:14px;padding:16px 18px;transition:border-color .25s var(--ease),background .25s var(--ease)}
+.lp-goal-btn:hover{border-color:#fff;background:#0d0d0d}
+.lp-goal-btn span{font-size:11px;letter-spacing:.1em;opacity:.6}
+.lp-gloss{margin:24px 0 0;columns:2 320px;column-gap:40px}
+.lp-gloss>div{break-inside:avoid;border-top:1px solid var(--line-dark);padding:14px 0}
+.lp-gloss dt{font-weight:600;font-size:15px}
+.lp-gloss dt small{display:block;font-weight:400;font-size:11px;opacity:.6;margin-top:2px}
+.lp-gloss dd{margin:6px 0 0;color:var(--lp-dim);font-size:13.5px;line-height:1.6}
 .lp-legal{max-width:1100px;margin:40px auto 0;padding:0 clamp(16px,4vw,40px);font-size:11px;line-height:1.6;color:var(--lp-dim);opacity:.75}
 sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
 .ref-n{font-weight:600;font-size:10px;opacity:.8}
@@ -293,17 +338,33 @@ sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
 """
 
 
+EXTRA = {"rx": None, "lookup": {}, "defs": {}, "goals": {}}
+
+
+def gl_span(txt, gid):
+    """Jargon inside a trick: tap or hover for the plain-English meaning."""
+    d = EXTRA["defs"].get(gid, "")
+    return (f'<span class="lp-gl" tabindex="0" data-def="{esc(d).replace(chr(34), "&quot;")}">'
+            f'{txt}</span>')
+
+
 def tip(t, i):
     keys = t.get("k")
     cls = "lp-tip reveal" + ("" if keys else " no-keys") + (
         " is-key" if t.get("b") == HIGHLIGHT else "")
-    out = [f'<article class="{cls}">', '<div class="lp-tip-head">',
+    goals = t.get("goals", [])
+    words = " ".join(w for g in goals for w in [EXTRA["goals"].get(g, {}).get("label", ""),
+                                                  *EXTRA["goals"].get(g, {}).get("synonyms", [])])
+    out = [f'<article class="{cls}" id="t-{i}" data-goals="{" ".join(goals)}" '
+           f'data-lvl="{t.get("lvl", 2)}" data-k="{esc(words)}">', '<div class="lp-tip-head">',
            f'<span class="lp-num">{i:03d}</span>']
+    if t.get("lvl") == 1:
+        out.append('<span class="lp-badge lp-start">Start here</span>')
     if t.get("b"):
         out.append(f'<span class="lp-badge">{esc(t["b"])}</span>')
     out.append("</div>")
     out.append(f'<h4>{esc(t["t"])}</h4>')
-    out.append(f'<p>{esc(t["d"])}</p>')
+    out.append(f'<p>{link_terms(esc(t["d"]), EXTRA["rx"], EXTRA["lookup"], gl_span)}</p>')
     if keys:
         k = keycap(keys).replace('class="kbd kbd-phrase"', 'class="lp-kbd phrase"')
         k = k.replace('class="kbd"', 'class="lp-kbd"')
@@ -321,6 +382,30 @@ def front_block(p):
          f'<h2>{esc(p["title"])}</h2></div>']
     for para in p.get("body", []):
         o.append(f'<p class="lp-intro reveal">{esc(para)}</p>')
+    if p.get("steps"):
+        o.append('<ol class="lp-steps">')
+        for n, st in enumerate(p["steps"], 1):
+            k = ""
+            if st.get("key"):
+                cap = keycap(st["key"]).replace('class="kbd"', 'class="lp-kbd"')
+                k = f'<div class="lp-keys">{cap}</div>'
+            o.append(f'<li class="reveal"><span class="lp-step-n">{n}</span><div><h3>{esc(st["title"])}</h3>'
+                     f'<p>{link_terms(esc(st["body"]), EXTRA["rx"], EXTRA["lookup"], gl_span)}</p>{k}'
+                     + (sources_html(st["src"], cls="lp-src lp-src-intro") if st.get("src") else "")
+                     + "</div></li>")
+        o.append("</ol>")
+    if p.get("generated") == "goals":
+        o.append('<div class="lp-goal-grid reveal">' + "".join(
+            f'<button class="lp-goal-btn" type="button" data-goal="{g["id"]}">{esc(g["label"])}'
+            f'<span>{EXTRA["goal_counts"].get(g["id"], 0)}</span></button>'
+            for g in EXTRA["goal_list"] if EXTRA["goal_counts"].get(g["id"])) + "</div>")
+    if p.get("generated") == "glossary":
+        o.append('<dl class="lp-gloss">' + "".join(
+            f'<div id="g-{e["id"]}"><dt>{esc(e["term"])}'
+            + (f'<small>also: {esc(", ".join(e["aka"]))}</small>' if e.get("aka") else "")
+            + f'</dt><dd>{esc(e["def"])}'
+            + (sources_html(e["src"], cls="lp-src lp-src-intro") if e.get("src") else "") + "</dd></div>"
+            for e in sorted(EXTRA["glossary"], key=lambda e: e["term"].lower())) + "</dl>")
     if p.get("list"):
         o.append('<ul class="lp-rules reveal">')
         o += [f"<li>{esc(x)}</li>" for x in p["list"]]
@@ -454,16 +539,36 @@ NAV_JS = """
   window.addEventListener('scroll', spy, { passive: true });
   spy();
 
-  /* ---- filter ------------------------------------------------------
-     Hundreds of tricks is a search problem. Match on the card's own text plus its
-     group heading and section title, so "drums" finds the Drummer section
-     even when the word is not in the card itself. */
+  /* ---- search: by what you want to do ------------------------------
+     Beginners search in their own words ("make drums louder"), not Logic's.
+     Each card carries its goals and their everyday synonyms (data-k), filler
+     words are dropped, and plurals / -ing forms still match. Goal chips and the
+     Start here toggle narrow further. A matching glossary term is explained
+     above the results. */
   var page = document.querySelector('.lp');
   var input = document.getElementById('lp-q');
   var gcBtn = document.getElementById('lp-gc');
+  var stBtn = document.getElementById('lp-start');
   var countEl = document.getElementById('lp-count');
   var emptyEl = document.querySelector('.lp-empty');
+  var defsEl = document.querySelector('.lp-defs');
   if (!input || !page) return;
+  var gloss = [];
+  try { gloss = JSON.parse((document.getElementById('lp-gloss') || {}).textContent || '[]'); } catch (e) {}
+
+  var STOP = ' a an the to i im want wanna how do does can my me in on of for with and or is it what make '
+           + 'get my some this that you your use using logic pro ';
+  function words(q) {
+    return q.toLowerCase().replace(/[^\\w\\s#⌘⌥⇧⌃-]/g, ' ').split(/\\s+/).filter(function (w) {
+      return w && STOP.indexOf(' ' + w + ' ') === -1;
+    });
+  }
+  function stems(w) {
+    var out = [w];
+    var base = w.replace(/(ing|ers|er|ed|es|s)$/, '');
+    if (base.length >= 3 && base !== w) out.push(base);
+    return out;
+  }
 
   var cards = Array.prototype.slice.call(page.querySelectorAll('.lp-tip'));
   var total = cards.length;
@@ -473,29 +578,56 @@ NAV_JS = """
     var src = c.querySelector('.lp-src');
     c._t = [
       src ? c.textContent.replace(src.textContent, '') : c.textContent,
+      c.getAttribute('data-k') || '',
       group ? group.querySelector('h3').textContent : '',
       block ? block.querySelector('h2').textContent : ''
     ].join(' ').toLowerCase().replace(/\\s+/g, ' ');
+    c._g = ' ' + (c.getAttribute('data-goals') || '') + ' ';
   });
   var groups = Array.prototype.slice.call(page.querySelectorAll('.lp-group'));
   var sections = Array.prototype.slice.call(page.querySelectorAll('.lp-block:not(.lp-doc)'));
+  var docs = Array.prototype.slice.call(page.querySelectorAll('.lp-doc'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('[data-goal]'));
+  var goal = '';
+
+  function showDefs(ws) {
+    if (!defsEl) return;
+    if (!ws.length) { defsEl.innerHTML = ''; return; }
+    var hits = gloss.filter(function (e) {
+      var names = [e.t].concat(e.a || []).map(function (n) { return n.toLowerCase(); });
+      var q = ws.join(' ');
+      return names.some(function (n) { return n === q || ws.indexOf(n) !== -1; });
+    }).slice(0, 3);
+    defsEl.innerHTML = hits.map(function (e) {
+      var d = document.createElement('div'); d.textContent = e.d;
+      var t = document.createElement('b'); t.textContent = e.t;
+      return '<div class="lp-def"><span>What is it?</span>' + t.outerHTML + '<p>' + d.innerHTML +
+             '</p><a href="#g-' + e.id + '">In the glossary</a></div>';
+    }).join('');
+  }
 
   function apply() {
-    var q = input.value.trim().toLowerCase();
+    var ws = words(input.value);
     var gcOnly = gcBtn.getAttribute('aria-pressed') === 'true';
-    var filtering = !!q || gcOnly;
+    var stOnly = stBtn && stBtn.getAttribute('aria-pressed') === 'true';
+    var filtering = !!ws.length || gcOnly || stOnly || !!goal;
     page.classList.toggle('is-filtering', filtering);
     if (filtering) page.classList.add('no-anim');
+    showDefs(ws);
 
     var shown = 0;
     cards.forEach(function (c) {
-      var ok = (!q || c._t.indexOf(q) !== -1) && (!gcOnly || c.classList.contains('is-key'));
+      var ok = ws.every(function (w) {
+        return stems(w).some(function (v) { return c._t.indexOf(v) !== -1; });
+      });
+      ok = ok && (!gcOnly || c.classList.contains('is-key'))
+              && (!stOnly || c.getAttribute('data-lvl') === '1')
+              && (!goal || c._g.indexOf(' ' + goal + ' ') !== -1);
       c.style.display = ok ? '' : 'none';
       if (ok) shown++;
     });
     groups.forEach(function (g) {
-      var any = g.querySelector('.lp-tip:not([style*="none"])');
-      g.style.display = any ? '' : 'none';
+      g.style.display = g.querySelector('.lp-tip:not([style*="none"])') ? '' : 'none';
     });
     sections.forEach(function (s) {
       var any = s.querySelector('.lp-tip:not([style*="none"])');
@@ -503,6 +635,8 @@ NAV_JS = """
       var link = bar.querySelector('a[href="#' + s.id + '"]');
       if (link) link.classList.toggle('dim', !any);
     });
+    docs.forEach(function (d) { d.style.display = filtering ? 'none' : ''; });
+    chips.forEach(function (ch) { ch.setAttribute('aria-pressed', ch.getAttribute('data-goal') === goal ? 'true' : 'false'); });
 
     page.classList.toggle('is-empty', filtering && shown === 0);
     countEl.textContent = filtering ? shown + ' of ' + total + ' tricks' : total + ' tricks';
@@ -515,12 +649,23 @@ NAV_JS = """
     t = setTimeout(apply, 90);
   });
   input.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { input.value = ''; apply(); input.blur(); }
+    if (e.key === 'Escape') { input.value = ''; goal = ''; apply(); input.blur(); }
   });
-  gcBtn.addEventListener('click', function () {
-    gcBtn.setAttribute('aria-pressed',
-      gcBtn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    apply();
+  [gcBtn, stBtn].forEach(function (btn) {
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      btn.setAttribute('aria-pressed', btn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      apply();
+    });
+  });
+  chips.forEach(function (ch) {
+    ch.addEventListener('click', function () {
+      var g = ch.getAttribute('data-goal');
+      goal = goal === g ? '' : g;
+      apply();
+      var tools = document.querySelector('.lp-tools');
+      if (tools) window.scrollTo({ top: tools.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+    });
   });
   // "/" focuses search — fitting for a book about key commands
   document.addEventListener('keydown', function (e) {
@@ -558,67 +703,97 @@ def main():
     front, sections = load()
     total = count_tips(sections)
 
+    glossary, goal_list = load_extras()
+    EXTRA["rx"], EXTRA["lookup"] = term_pattern(glossary)
+    EXTRA["defs"] = {e["id"]: e["def"] for e in glossary}
+    EXTRA["glossary"] = glossary
+    EXTRA["goal_list"] = goal_list
+    EXTRA["goals"] = {g["id"]: g for g in goal_list}
+    counts = {}
+    for sec in sections:
+        for g in sec["groups"]:
+            for t in g["tips"]:
+                for gid in t.get("goals", []):
+                    counts[gid] = counts.get(gid, 0) + 1
+    EXTRA["goal_counts"] = counts
+    n_src = sum(len(t.get("src", [])) for sec in sections for g in sec["groups"] for t in g["tips"])
+
+    chips = "".join(
+        f'<button class="lp-chip" type="button" data-goal="{g["id"]}">{esc(g["label"])}</button>'
+        for g in goal_list if counts.get(g["id"]))
     tools = [
         '<div class="lp-tools">',
         '<div class="lp-tools-inner">',
+        '<p class="lp-ask">What do you want to do?</p>',
         '<div class="lp-search" role="search">',
         '<label class="visually-hidden" for="lp-q">Search the tricks</label>',
         '<input id="lp-q" type="search" autocomplete="off" spellcheck="false" '
-        f'placeholder="Search {total} tricks — try marquee, flex, bounce">',
+        'placeholder="Try: make a beat, record vocals, fix timing, louder…">',
         "<kbd>/</kbd>",
         "</div>",
-        '<button class="lp-toggle" type="button" id="lp-gc" aria-pressed="false">'
-        "Game changers</button>",
+        '<button class="lp-toggle" type="button" id="lp-start" aria-pressed="false">Start here</button>',
+        '<button class="lp-toggle" type="button" id="lp-gc" aria-pressed="false">Game changers</button>',
         f'<p class="lp-count-live" id="lp-count" aria-live="polite">{total} tricks</p>',
+        f'<div class="lp-chips" role="group" aria-label="Goals">{chips}</div>',
         "</div></div>",
     ]
 
     nav = ['<nav class="lp-nav" aria-label="Sections"><div class="lp-nav-inner">']
     for p in front["pages"]:
-        nav.append(f'<a href="#{p["id"]}">{esc(p["label"])}</a>')
+        if not p.get("back"):
+            nav.append(f'<a href="#{p["id"]}">{esc(p["label"])}</a>')
     for s in sections:
         nav.append(f'<a href="#{slug(s)}"><i>{s["number"]:02d}</i>{esc(s["title"])}</a>')
+    for p in front["pages"]:
+        if p.get("back"):
+            nav.append(f'<a href="#{p["id"]}">{esc(p["label"])}</a>')
     nav.append("</div></nav>")
 
     body = [head(), '<section class="proj lp">',
             '<div class="lp-hero">',
-            '<p class="lp-eyebrow reveal">Free resource &middot; Logic Pro</p>',
+            '<p class="lp-eyebrow reveal">Your library &middot; Logic Pro 11 &amp; 12</p>',
             '<h1 class="reveal d1">Logic Pro<br>Crash Course</h1>',
-            f'<p class="lp-lead reveal d1">{total} tricks I actually use, across '
-            f'{len(sections)} sections — key commands, editing, mixing, and the settings '
-            'worth changing before you record a note. Built to be searched mid-session, '
-            'not read cover to cover.</p>',
+            f'<p class="lp-lead reveal d1">{total} tricks for Logic Pro, each checked against the source '
+            'it cites. Search for what you want to do, or tap a goal. Never opened Logic before? Tap '
+            '<a href="#start">Start here</a> first.</p>',
             '<div class="lp-stats reveal d2">',
             f'<div class="lp-stat"><b>{total}</b><span>Tricks</span></div>',
             f'<div class="lp-stat"><b>{len(sections)}</b><span>Sections</span></div>',
-            '<div class="lp-stat"><b>Free</b><span>To keep</span></div></div>',
-            f'<div class="lp-cta reveal d3"><a class="pill" href="{PDF_HREF}" download>'
+            f'<div class="lp-stat"><b>{n_src}</b><span>Sources</span></div></div>',
+            f'<div class="lp-cta reveal d3"><a class="pill" href="{PDF_HREF}">'
             'Download the PDF</a></div>',
             "</div>"]
     body += tools
     body += nav
-    body.append('<div class="lp-empty"><h3>No tricks match that.</h3>'
-                '<p>Try a shorter word, a key command like &#8984;T, or clear the search '
-                'to browse all 19 sections.</p></div>')
+    body.append('<div class="lp-defs" aria-live="polite"></div>')
+    body.append('<div class="lp-empty"><h3>Nothing matches that yet.</h3>'
+                '<p>Try a simpler word — drums, vocals, loop, louder — or tap one of the goals above.</p></div>')
     body.append('<div class="lp-body">')
     for p in front["pages"]:
-        body.append(front_block(p))
+        if not p.get("back"):
+            body.append(front_block(p))
     i = 1
     for s in sections:
         chunk, i = section_block(s, i)
         body.append(chunk)
+    for p in front["pages"]:
+        if p.get("back"):
+            body.append(front_block(p))
     body.append("</div>")
 
     body.append('<div class="lp-end">'
                 f'<h2 class="reveal">That&rsquo;s the {total}.</h2>'
                 '<p class="reveal d1">Take what is useful and go and finish the song. '
                 'Come back whenever you get stuck — every section is one tap away.</p>'
-                f'<div class="lp-cta reveal d2"><a class="pill" href="{PDF_HREF}" download>'
+                f'<div class="lp-cta reveal d2"><a class="pill" href="{PDF_HREF}">'
                 'Download the PDF</a></div></div>')
     body.append("</section>")
 
     body.append('<button class="lp-top" type="button">Back to top</button>')
     body.append(f'<p class="lp-legal">{esc(legal_notice())}</p>')
+    gl = [{"t": e["term"], "a": e.get("aka", []), "d": e["def"], "id": e["id"]} for e in glossary]
+    body.append('<script type="application/json" id="lp-gloss">'
+                + json.dumps(gl, ensure_ascii=False).replace("</", "<\\/") + "</script>")
     body.append(FOOTER)
     body.append(NAV_JS)
     body.append("</body>\n</html>\n")
@@ -627,8 +802,7 @@ def main():
     out = DIST / "logic-pro-crash-course-page.html"
     out.write_text("".join(body), encoding="utf-8")
     print(f"Wrote {out}  ({out.stat().st_size/1024:.0f} KB)")
-    print(f"Tricks: {total}   Sections: {len(sections)}")
-    print(f"Drop at the site root; PDF expected at {PDF_HREF}")
+    print(f"Tricks: {total}   Sections: {len(sections)}   Glossary: {len(glossary)}   Goals: {len(counts)}")
 
 
 FOOTER = """

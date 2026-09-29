@@ -20,7 +20,14 @@
               "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "organize",
+            "automation",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Drag one arrangement marker onto another to swap sections",
@@ -30,7 +37,13 @@
               "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "organize",
+            "automation"
+          ],
+          "lvl": 1
         },
         {
           "t": "⌥‑drag an arrangement marker to duplicate a section",
@@ -41,7 +54,13 @@
               "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "organize",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Delete a section and close the gap",
@@ -51,7 +70,13 @@
               "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "organize",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Insert silence between the locators",
@@ -69,7 +94,12 @@
               "label": "Apple — Add or remove gaps in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/add-or-remove-gaps-lgcp21e2cb21/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Resize arrangement markers to fit your sections",
@@ -79,7 +109,13 @@
               "label": "Apple — Add arrangement markers in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/add-arrangement-markers-lgcpb9f20ee5/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "organize",
+            "edit"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -99,7 +135,13 @@
               "label": "Apple — Create MIDI aliases in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/en-lb/guide/logicpro/lgcpf7c0cea3/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "loop",
+            "record-midi"
+          ],
+          "lvl": 3
         },
         {
           "t": "Make a folder out of a section",
@@ -109,7 +151,12 @@
               "label": "Apple — Pack and unpack folders in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/pack-and-unpack-folders-lgcpf7c0cb8e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Colour‑code sections, not instruments",
@@ -121,7 +168,12 @@
               "label": "Apple — Change the color of regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "organize"
+          ],
+          "lvl": 1
         }
       ]
     },
@@ -140,7 +192,14 @@
               "label": "Logic Studio Training — How To Organize Your Logic Pro Projects With Folder Track Stacks",
               "url": "https://logicstudiotraining.com/folder-track-stacks/"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "export",
+            "mix",
+            "beat"
+          ],
+          "lvl": 3
         },
         {
           "t": "Loop an arrangement section with one key",
@@ -159,7 +218,13 @@
               "label": "studio-interns.com — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop ⌘U",
               "url": "https://studio-interns.com/set-locators-loop-by-regions-events-marquee-and-enable-cycle-loopu-logic-pro-x-keyboard-command-of-the-day/"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "loop",
+            "chords"
+          ],
+          "lvl": 2
         },
         {
           "t": "Mute regions instead of deleting them while experimenting",
@@ -170,13 +235,26 @@
               "label": "Apple — Mute and solo regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/mute-and-solo-regions-lgcp2217b80d/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "mix",
+            "safety",
+            "organize"
+          ],
+          "lvl": 1
         },
         {
           "t": "Keep a “graveyard” track at the bottom",
           "d": "Make one muted, hidden track and drag every rejected idea onto it. Nothing is ever deleted, and the good version of that rejected idea is there when you need it three weeks later.",
           "b": "GAME CHANGER",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "arrange",
+            "mix",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Use markers for notes to self, not just sections",
@@ -190,7 +268,13 @@
               "label": "Apple — Rename markers in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/rename-markers-lgcp4d438ec1/mac"
             }
-          ]
+          ],
+          "goals": [
+            "arrange",
+            "beat",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     }

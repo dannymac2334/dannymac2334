@@ -3,7 +3,7 @@
 _Extracted from the built page, so this is exactly what ships._
 
 **Price line:** $14.99 One payment · Yours to keep  
-**Trust line:** 91 pages · Instant download · Logic Pro 11 & 12
+**Trust line:** 108 pages · Instant download · Logic Pro 11 & 12
 
 Logic Pro · Digital download
 
@@ -12,7 +12,7 @@ Logic Pro · Digital download
 
 248 tricks that actually work — the ones nobody tells you, in one clickable PDF you keep open while you produce. No long tutorials. No fluff. Every trick cites its source.
 
-91 pages · Instant download · Logic Pro 11 & 12
+108 pages · Instant download · Logic Pro 11 & 12
 
 The problem
 
@@ -102,7 +102,7 @@ The early sections are settings and fundamentals — the things worth fixing bef
 
 **Q. What exactly do I get?**
 
-One PDF, 91 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.
+One PDF, 108 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.
 
 **Q. How is it delivered?**
 
@@ -111,5 +111,5 @@ Instantly. You get a download link as soon as the payment clears.
 
 ## Get the 248.
 
-A single PDF, 91 pages, delivered the moment your payment clears. Every key command in it is the Logic Pro factory default; where a command could move between versions, the book gives the command name and menu path so it stays correct.
+A single PDF, 108 pages, delivered the moment your payment clears. Every key command in it is the Logic Pro factory default; where a command could move between versions, the book gives the command name and menu path so it stays correct.
 

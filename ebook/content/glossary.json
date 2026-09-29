@@ -1,0 +1,751 @@
+[
+  {
+    "id": "track",
+    "term": "Track",
+    "aka": [],
+    "def": "A horizontal lane in the Tracks area where you record, play back and edit regions. Each track plays through its own channel strip in the Mixer.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ],
+    "nolink": true
+  },
+  {
+    "id": "region",
+    "term": "Region",
+    "aka": [
+      "regions"
+    ],
+    "def": "A block on a track that holds a piece of your recording. Audio regions point to part of an audio file; MIDI regions hold notes. You build a song by moving, copying and editing regions.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Capture your most recent MIDI performance in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/capture-your-most-recent-midi-performance-lgcpdc0bf889/mac"
+      }
+    ]
+  },
+  {
+    "id": "tracks-area",
+    "term": "Tracks area",
+    "aka": [],
+    "def": "The main part of the Logic window, where your tracks and their regions sit.",
+    "src": [
+      {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+      },
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "playhead",
+    "term": "Playhead",
+    "aka": [],
+    "def": "The vertical line that shows where playback is. Drag it to hear a different point in the song.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "channel-strip",
+    "term": "Channel strip",
+    "aka": [
+      "channel strips"
+    ],
+    "def": "The on-screen version of a strip on a mixing desk: a volume fader, a pan knob, a Mute button, and slots for inputs, outputs, sends and effects. Your tracks' sound runs through their channel strips.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Channel strip controls in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/channel-strip-controls-lgcpbc219210/mac"
+      }
+    ]
+  },
+  {
+    "id": "mixer",
+    "term": "Mixer",
+    "aka": [],
+    "def": "The window that shows every track's channel strip side by side, so you can balance levels and set up effects. Press X to show or hide it.",
+    "src": [
+      {
+        "label": "Apple — Overview of mixing in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/mixing-overview-lgcpbc219818/mac"
+      },
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "midi",
+    "term": "MIDI",
+    "aka": [],
+    "def": "Musical Instrument Digital Interface. MIDI is note information — which pitch, how long, how loud — sent between keyboards, computers and instruments. It is not sound itself; an instrument turns it into sound.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Use MIDI plug-ins in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-midi-plug-ins-lgcef1c11e8f/mac"
+      }
+    ]
+  },
+  {
+    "id": "audio",
+    "term": "Audio",
+    "aka": [],
+    "def": "Recorded sound — a voice, a guitar, anything captured through a microphone or input — stored in audio files and placed on audio tracks as audio regions.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ],
+    "nolink": true
+  },
+  {
+    "id": "software-instrument",
+    "term": "Software instrument",
+    "aka": [
+      "instrument",
+      "software instruments"
+    ],
+    "def": "An instrument that runs inside Logic — a synthesizer, a sampler or a re-creation of a vintage instrument — played with MIDI from a keyboard or from MIDI regions.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Instruments introduction for Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/instruments-introduction-lgsi6c2728cc/mac"
+      },
+      {
+        "label": "Apple — Use MIDI plug-ins in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-midi-plug-ins-lgcef1c11e8f/mac"
+      }
+    ]
+  },
+  {
+    "id": "plug-in",
+    "term": "Plug-in",
+    "aka": [
+      "plugin",
+      "plug-ins",
+      "plugins"
+    ],
+    "def": "An add-on that gives a track its sound or changes it — usually a software instrument or an effect.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "patch",
+    "term": "Patch",
+    "aka": [
+      "patches"
+    ],
+    "def": "A ready-made sound you load onto a track. It can include the instrument, its effects and other channel strip settings.",
+    "src": [
+      {
+        "label": "Apple — Patches in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/patches-lgcpac5affb8/mac"
+      },
+      {
+        "label": "Apple — Choose patches in the Library in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/choose-a-patch-lgcp689ae6e8/mac"
+      }
+    ]
+  },
+  {
+    "id": "library",
+    "term": "Library",
+    "aka": [],
+    "def": "The panel where you choose a patch for the selected track: categories on the left, patches on the right. Click the Library button in the control bar to open it.",
+    "src": [
+      {
+        "label": "Apple — Choose patches in the Library in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/choose-a-patch-lgcp689ae6e8/mac"
+      }
+    ]
+  },
+  {
+    "id": "smart-controls",
+    "term": "Smart Controls",
+    "aka": [],
+    "def": "A set of on-screen knobs for shaping the selected track's sound — usually tone and EQ, reverb and other effects — without opening each plug-in. Press B to show them.",
+    "src": [
+      {
+        "label": "Apple — Overview of Smart Controls in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/smart-controls-overview-lgcp7e59f24b/mac"
+      }
+    ]
+  },
+  {
+    "id": "inspector",
+    "term": "Inspector",
+    "aka": [
+      "Region inspector"
+    ],
+    "def": "A panel that shows settings for whatever is selected. The Region inspector, for example, shows the playback settings of the selected regions.",
+    "src": [
+      {
+        "label": "Apple — Use the Region inspector in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-the-region-inspector-lgcpd8a8780c/mac"
+      }
+    ]
+  },
+  {
+    "id": "automation",
+    "term": "Automation",
+    "aka": [],
+    "def": "Recorded or drawn changes to a control over time — a fader rising, a filter opening — that Logic plays back for you. Volume, pan, sends and most plug-in settings can be automated.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Overview of automation in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/automation-overview-lgcpb1a1ea03/mac"
+      }
+    ]
+  },
+  {
+    "id": "bus",
+    "term": "Bus",
+    "aka": [
+      "buses",
+      "busses"
+    ],
+    "def": "A route that carries sound from a send to an aux channel strip, where it can be processed or mixed with other tracks.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "send",
+    "term": "Send",
+    "aka": [
+      "sends"
+    ],
+    "def": "A control on a channel strip that routes its sound along a bus to an aux channel strip. Choose a bus in a Send slot and Logic creates the aux for you.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Send signals to multiple destinations in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-gw/guide/logicpro/lgcp8e8e6538/mac"
+      }
+    ]
+  },
+  {
+    "id": "aux",
+    "term": "Aux",
+    "aka": [
+      "aux channel strip",
+      "auxiliary"
+    ],
+    "def": "An aux (auxiliary) channel strip receives sound sent to it over a bus, so it can be processed or combined into a submix.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "latency",
+    "term": "Latency",
+    "aka": [],
+    "def": "A delay between a sound going in and you hearing it come out. Processing takes time, so plug-ins and the audio buffer both add latency — which you notice most while recording.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Work with plug-in latencies in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/work-with-plug-in-latencies-lgcpe11997ba/mac"
+      },
+      {
+        "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
+      }
+    ]
+  },
+  {
+    "id": "buffer",
+    "term": "Buffer",
+    "aka": [
+      "I/O buffer",
+      "buffer size"
+    ],
+    "def": "The chunk of audio your Mac processes at a time. A smaller I/O buffer means less latency but more strain on the processor; too small for your Mac and you hear clicks, pops and crackles.",
+    "src": [
+      {
+        "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac"
+      }
+    ]
+  },
+  {
+    "id": "tempo",
+    "term": "Tempo",
+    "aka": [
+      "bpm"
+    ],
+    "def": "The speed of the music in beats per minute (bpm). At 120 bpm there are 120 beats every minute.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "quantize",
+    "term": "Quantize",
+    "aka": [
+      "quantise",
+      "quantization"
+    ],
+    "def": "Moving notes so they start exactly on the nearest point of a timing grid, tightening up playing that is slightly early or late.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "snap",
+    "term": "Snap",
+    "aka": [],
+    "def": "Makes edits land on the nearest grid position — a bar, a beat or a finer division — so things stay in time. Turn it on or off with the button next to the Snap menu.",
+    "src": [
+      {
+        "label": "Apple — Snap items to the grid in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/snap-items-to-the-grid-lgcpf7c0f66a/mac"
+      }
+    ]
+  },
+  {
+    "id": "velocity",
+    "term": "Velocity",
+    "aka": [],
+    "def": "How hard a note was played, from 0 to 127. It usually sets the note's loudness, and can shape other parts of the sound too.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      },
+      {
+        "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac"
+      }
+    ]
+  },
+  {
+    "id": "cycle",
+    "term": "Cycle",
+    "aka": [
+      "cycle area",
+      "cycle mode"
+    ],
+    "def": "A section of the timeline that plays over and over while Cycle mode is on — for writing, practising a part or recording several takes.",
+    "src": [
+      {
+        "label": "Apple — Use the cycle area in Logic Pro (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-ae/guide/logicpro/lgcp59e41e86/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "locators",
+    "term": "Locators",
+    "aka": [
+      "left locator",
+      "right locator"
+    ],
+    "def": "The left and right locators mark the start and end of the cycle area.",
+    "src": [
+      {
+        "label": "Apple — Use the cycle area in Logic Pro (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-ae/guide/logicpro/lgcp59e41e86/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "marquee-tool",
+    "term": "Marquee tool",
+    "aka": [
+      "marquee"
+    ],
+    "def": "A tool that selects a range of time instead of whole regions. Drag across one or more tracks and only the part inside is selected, ready to move, cut, copy or delete.",
+    "src": [
+      {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
+      }
+    ]
+  },
+  {
+    "id": "take",
+    "term": "Take",
+    "aka": [
+      "takes",
+      "take folder"
+    ],
+    "def": "Each pass you record over the same spot is a take. Logic keeps them in a take folder, and its pop-up menu lists them so you can pick one.",
+    "src": [
+      {
+        "label": "Apple — Preview take recordings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/preview-take-recordings-lgcp317d76de/mac"
+      },
+      {
+        "label": "Apple — Create and save comps in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac"
+      }
+    ]
+  },
+  {
+    "id": "comp",
+    "term": "Comp",
+    "aka": [
+      "comping",
+      "comps"
+    ],
+    "def": "Short for composite: the best sections of several takes combined into one performance, shown in the top lane of a take folder.",
+    "src": [
+      {
+        "label": "Apple — Create and save comps in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac"
+      }
+    ]
+  },
+  {
+    "id": "bounce",
+    "term": "Bounce",
+    "aka": [
+      "bouncing",
+      "export"
+    ],
+    "def": "Turning your project, or part of it, into a new audio file. Bounce in Place does this to selected regions, keeping their plug-ins and automation in the result.",
+    "src": [
+      {
+        "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac"
+      },
+      {
+        "label": "Apple — Logic Pro for Mac bounce in place overview",
+        "url": "https://support.apple.com/guide/logicpro/bounce-in-place-overview-lgcpe2a9f868/mac"
+      }
+    ]
+  },
+  {
+    "id": "metronome",
+    "term": "Metronome",
+    "aka": [],
+    "def": "A regular click that marks the beat so you can play in time.",
+    "src": [
+      {
+        "label": "Apple — Metronome project settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/metronome-project-settings-lgcpe1d6118e/mac"
+      },
+      {
+        "label": "Apple — Logic Pro Glossary (Logic Pro 10.7 guide)",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/cpsr9a3eb52d/10.7/mac/11.0"
+      }
+    ]
+  },
+  {
+    "id": "count-in",
+    "term": "Count-in",
+    "aka": [
+      "count in"
+    ],
+    "def": "A lead-in of bars or beats before recording starts, so you are ready to come in.",
+    "src": [
+      {
+        "label": "Apple — Recording project settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/recording-project-settings-lgcpbc10f1ea/mac"
+      }
+    ]
+  },
+  {
+    "id": "key-command",
+    "term": "Key command",
+    "aka": [
+      "key commands",
+      "shortcut",
+      "keyboard shortcut"
+    ],
+    "def": "A keyboard shortcut for a Logic command. You can find, search and change them in the Key Commands window (Option-K).",
+    "src": [
+      {
+        "label": "Apple — Assign key commands in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
+      }
+    ]
+  },
+  {
+    "id": "piano-roll",
+    "term": "Piano Roll",
+    "aka": [
+      "Piano Roll Editor"
+    ],
+    "def": "The editor that shows the notes in a MIDI region as bars on a grid beside a piano-style keyboard, where you add, move and edit them. Press P with a MIDI region selected.",
+    "src": [
+      {
+        "label": "Apple — Overview of the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/overview-lgcpa9111b0d/mac"
+      }
+    ]
+  },
+  {
+    "id": "quick-sampler",
+    "term": "Quick Sampler",
+    "aka": [],
+    "def": "A built-in instrument that turns a single audio file into something you can play on a keyboard. To work with more than one audio file at once, use Sampler instead.",
+    "src": [
+      {
+        "label": "Apple — Quick Sampler overview in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/quick-sampler-overview-lgcp5af33756/mac"
+      },
+      {
+        "label": "Apple — Choose a Quick Sampler mode in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac"
+      }
+    ]
+  },
+  {
+    "id": "transient",
+    "term": "Transient",
+    "aka": [
+      "transients"
+    ],
+    "def": "The sharp start of a sound, like a drum hit. Logic can detect transients — for example to cut a loop into slices in Quick Sampler.",
+    "src": [
+      {
+        "label": "Apple — Quick Sampler Slice mode in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/slice-mode-lgcp18515788/mac"
+      }
+    ]
+  },
+  {
+    "id": "stem",
+    "term": "Stem",
+    "aka": [
+      "stems",
+      "Stem Splitter"
+    ],
+    "def": "One part of a mix on its own — vocals, drums, bass and so on. Stem Splitter pulls stems out of a single mixed recording, on Macs with Apple silicon.",
+    "src": [
+      {
+        "label": "Apple — Extract vocal and instrumental stems with Stem Splitter in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/extract-vocal-instrumental-stems-stem-lgcp61bae908/mac"
+      },
+      {
+        "label": "Apple — If you can't find ChromaGlow, Stem Splitter, or other Logic Pro features on Mac",
+        "url": "https://support.apple.com/en-us/120406"
+      }
+    ]
+  },
+  {
+    "id": "session-player",
+    "term": "Session Player",
+    "aka": [
+      "Session Players",
+      "Drummer",
+      "Bass Player",
+      "Keyboard Player",
+      "Synth Player"
+    ],
+    "def": "Logic's built-in virtual musicians. Drummer was joined by Bass Player and Keyboard Player in Logic Pro 11, and by Synth Player in Logic Pro 12. Bass Player and Keyboard Player can follow your chord progression.",
+    "src": [
+      {
+        "label": "Apple Newsroom — Logic Pro takes music-making to the next level with new AI features (May 2024)",
+        "url": "https://www.apple.com/newsroom/2024/05/logic-pro-takes-music-making-to-the-next-level-with-new-ai-features/"
+      },
+      {
+        "label": "Apple Newsroom — Introducing Apple Creator Studio (January 2026)",
+        "url": "https://www.apple.com/newsroom/2026/01/introducing-apple-creator-studio-an-inspiring-collection-of-creative-apps/"
+      },
+      {
+        "label": "Apple — Chords and Session Players in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/chords-and-session-players-lgcp70dd5af3/mac"
+      }
+    ]
+  },
+  {
+    "id": "chord-track",
+    "term": "Chord track",
+    "aka": [],
+    "def": "A global track that holds your song's chord progression, so Session Players can follow the same chords and play in sync.",
+    "src": [
+      {
+        "label": "Apple — Chords and Session Players in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/chords-and-session-players-lgcp70dd5af3/mac"
+      }
+    ]
+  },
+  {
+    "id": "global-tracks",
+    "term": "Global tracks",
+    "aka": [
+      "global track"
+    ],
+    "def": "Song-wide tracks above your regular tracks — by default Arrangement, Marker, Signature and Tempo. Press G to show them.",
+    "src": [
+      {
+        "label": "Apple — Show and hide global tracks in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/show-and-hide-global-tracks-lgcpd0e8ce94/mac"
+      }
+    ]
+  },
+  {
+    "id": "marker",
+    "term": "Marker",
+    "aka": [
+      "markers"
+    ],
+    "def": "A named flag on the timeline for labelling parts of your song and jumping between them.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro for Mac markers overview",
+        "url": "https://support.apple.com/guide/logicpro/markers-overview-lgcp0ec9fc09/mac"
+      }
+    ]
+  },
+  {
+    "id": "track-stack",
+    "term": "Track Stack",
+    "aka": [
+      "Track Stacks",
+      "folder stack",
+      "summing stack"
+    ],
+    "def": "A group of tracks under one main track. A folder stack just keeps them tidy; a summing stack also routes them to a bus so you can process them together.",
+    "src": [
+      {
+        "label": "Apple — Logic Pro for Mac track stacks overview",
+        "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac"
+      }
+    ]
+  },
+  {
+    "id": "flex",
+    "term": "Flex",
+    "aka": [
+      "Flex Time",
+      "flex markers"
+    ],
+    "def": "Flex Time changes the timing inside recorded audio by stretching and squeezing the audio between markers, instead of cutting it into pieces.",
+    "src": [
+      {
+        "label": "Apple — Flex tool time stretching in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/flex-tool-time-stretching-lgcp54a78604/mac"
+      }
+    ]
+  },
+  {
+    "id": "gain",
+    "term": "Gain",
+    "aka": [],
+    "def": "A region's level. The Region inspector's Gain setting changes how loud an audio region plays without changing the file.",
+    "src": [
+      {
+        "label": "Apple — Change the gain of audio regions in the Tracks area in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/change-gain-audio-regions-tracks-area-lgcp8e4c781d/mac"
+      }
+    ]
+  },
+  {
+    "id": "fade",
+    "term": "Fade",
+    "aka": [
+      "fades",
+      "fade-in",
+      "fade-out"
+    ],
+    "def": "A gradual change in volume at the start (fade-in) or end (fade-out) of a region. A short fade-in also prevents the click you can get when audio starts abruptly.",
+    "src": [
+      {
+        "label": "Why Logic Pro Rules — How to Get the Most Out of Logic Pro X's Fade Tool",
+        "url": "https://whylogicprorules.com/logic-pro-x-fade-tool/"
+      },
+      {
+        "label": "Apple — Snap to zero in the Logic Pro for Mac Audio Track Editor",
+        "url": "https://support.apple.com/guide/logicpro/snap-edits-to-zero-crossings-lgcp76a73399/mac"
+      }
+    ]
+  },
+  {
+    "id": "step-sequencer",
+    "term": "Step Sequencer",
+    "aka": [],
+    "def": "An editor for building beats and patterns one step at a time on a grid of rows. Each row can have its own length and step rate.",
+    "src": [
+      {
+        "label": "Apple — Edit Step Sequencer pattern, row, and step settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/step-sequencer-inspector-lgcp8efada20/mac"
+      }
+    ]
+  },
+  {
+    "id": "drum-machine-designer",
+    "term": "Drum Machine Designer",
+    "aka": [
+      "DMD"
+    ],
+    "def": "A drum instrument laid out as pads. Every pad you fill gets its own subtrack and channel strip, so each drum sound can be processed on its own.",
+    "src": [
+      {
+        "label": "Apple — Drum Machine Designer in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/102054"
+      }
+    ]
+  },
+  {
+    "id": "backup",
+    "term": "Backup",
+    "aka": [
+      "backups",
+      "Project Alternative"
+    ],
+    "def": "Each time you save, Logic keeps a backup of the project — up to ten per project alternative — which you can go back to with File > Revert to.",
+    "src": [
+      {
+        "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+      }
+    ]
+  }
+]

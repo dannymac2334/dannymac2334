@@ -5,6 +5,151 @@
   "edition": "Covers Logic Pro 11 and 12",
   "pages": [
     {
+      "id": "start",
+      "label": "Start Here",
+      "kicker": "Never opened Logic?",
+      "title": "Start Here",
+      "body": [
+        "If you have never used Logic Pro, do these ten steps in order. By the end you will have played a sound, recorded it, and saved a file you can send to someone. Underlined words are explained in the Glossary at the back of the book.",
+        "Every trick marked START HERE in the book is safe for day one."
+      ],
+      "steps": [
+        {
+          "title": "Learn the four parts of the screen",
+          "body": "The control bar runs across the top: play, record, volume, and the display showing where you are in the song and its tempo. The big middle area is the Tracks area, where you record and arrange. The Library sits on the left and holds sounds. The Inspector shows settings for whatever you have selected.",
+          "src": [
+            {
+              "label": "Apple — Main window interface (10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/main-window-interface-lgcpe9cc403a/10.7/mac/11.0"
+            },
+            {
+              "label": "Apple — Inspector interface",
+              "url": "https://support.apple.com/guide/logicpro/inspector-interface-lgcpe9cc3b1d/mac"
+            }
+          ]
+        },
+        {
+          "title": "Know what a track and a region are",
+          "body": "A track is one lane in the Tracks area: one instrument or one microphone. A region is a block of recorded audio or MIDI sitting on a track. You move, copy and cut regions to build a song.",
+          "src": [
+            {
+              "label": "Apple — Main window interface (10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/main-window-interface-lgcpe9cc403a/10.7/mac/11.0"
+            },
+            {
+              "label": "Apple — Create tracks",
+              "url": "https://support.apple.com/guide/logicpro/create-tracks-lgcpff5da064/mac"
+            }
+          ]
+        },
+        {
+          "title": "Add a track",
+          "body": "Click the Add Tracks button (the + above the track headers). In the New Tracks dialog pick Software Instrument to play sounds from a keyboard, Audio to record a microphone or guitar, or Drummer for a virtual drummer that plays a region for you.",
+          "src": [
+            {
+              "label": "Apple — Create tracks",
+              "url": "https://support.apple.com/guide/logicpro/create-tracks-lgcpff5da064/mac"
+            },
+            {
+              "label": "Apple — Drummer overview (10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/overview-lgcp72435777/10.7/mac/11.0"
+            }
+          ]
+        },
+        {
+          "title": "Pick a sound in the Library",
+          "body": "Select the track, open the Library, choose a category on the left and a patch on the right. The track now plays that sound.",
+          "key": "Y",
+          "src": [
+            {
+              "label": "Apple — Choose a patch",
+              "url": "https://support.apple.com/guide/logicpro/choose-a-patch-lgcp689ae6e8/mac"
+            }
+          ]
+        },
+        {
+          "title": "Play it without a keyboard",
+          "body": "No MIDI keyboard? Turn on Musical Typing and play notes on your computer keys. Z and X move down and up an octave. A software instrument track must be selected.",
+          "key": "⌘K",
+          "src": [
+            {
+              "label": "Apple — Play software instruments",
+              "url": "https://support.apple.com/guide/logicpro/play-software-instruments-lgcpb19cbd34/mac"
+            }
+          ]
+        },
+        {
+          "title": "Play, stop, and go back to the start",
+          "body": "Space starts and stops playback. Return jumps the playhead back to the beginning of the project.",
+          "key": "Space",
+          "src": [
+            {
+              "label": "Apple — Transport key commands (10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/use-transport-key-commands-lgcp2814a670/10.7/mac/11.0"
+            },
+            {
+              "label": "Apple — Control playback (10.7 guide)",
+              "url": "https://support.apple.com/guide/logicpro/control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1"
+            }
+          ]
+        },
+        {
+          "title": "Record",
+          "body": "Select the track, press R, play, then press Space to stop. A new region appears on the track with what you played.",
+          "key": "R",
+          "src": [
+            {
+              "label": "Apple — Record to multiple audio tracks",
+              "url": "https://support.apple.com/guide/logicpro/record-to-multiple-audio-tracks-lgcpb19dcf78/mac"
+            }
+          ]
+        },
+        {
+          "title": "Undo anything",
+          "body": "Made a mistake? Undo steps back one edit at a time; Redo puts it back. Experiment freely.",
+          "key": "⌘Z",
+          "src": [
+            {
+              "label": "Apple — Undo and redo edits",
+              "url": "https://support.apple.com/guide/logicpro/undo-and-redo-edits-lgcp1dbd67ab/mac"
+            }
+          ]
+        },
+        {
+          "title": "Save often",
+          "body": "Save writes the project to disk. Logic also keeps backups of earlier saves you can revert to from the File menu.",
+          "key": "⌘S",
+          "src": [
+            {
+              "label": "Apple — Use project alternatives and backups",
+              "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
+            }
+          ]
+        },
+        {
+          "title": "Export a file you can share",
+          "body": "Bounce turns your project into an audio file, such as a WAV or MP3, that plays anywhere.",
+          "key": "⌘B",
+          "src": [
+            {
+              "label": "Apple — Bounce a project to an audio file",
+              "url": "https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "goals",
+      "label": "I Want To…",
+      "kicker": "Find it by what you want to make",
+      "title": "I Want To…",
+      "body": [
+        "You do not need to know what a feature is called. Find what you are trying to do below and go straight to the tricks that do it. Numbers are trick numbers; tricks tagged START HERE come first in each list."
+      ],
+      "generated": "goals"
+    },
+    {
       "id": "how-to-use",
       "label": "How to Use This Book",
       "kicker": "Start here",
@@ -614,6 +759,17 @@
           ]
         }
       ]
+    },
+    {
+      "id": "glossary",
+      "label": "Glossary",
+      "kicker": "Plain-English definitions",
+      "title": "Glossary",
+      "back": true,
+      "body": [
+        "Every Logic word used in this book, in plain English. Each definition cites where it was checked."
+      ],
+      "generated": "glossary"
     }
   ]
 }

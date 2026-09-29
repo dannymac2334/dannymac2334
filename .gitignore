@@ -6,3 +6,4 @@
 # the book. Screenshots printed in the book should be captured from a real
 # Logic install instead.
 ebook/manuals/
+__pycache__/

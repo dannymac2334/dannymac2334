@@ -138,6 +138,19 @@ def main():
             if len(row) < 3 or not row[2]:
                 failures.append(f"front matter: key-table row with no source: {k} {action!r}")
 
+    # 6. beginner layer — Start Here steps, glossary and goal tags are claims too.
+    for pg in front["pages"]:
+        for st in pg.get("steps", []):
+            if not st.get("src"):
+                failures.append(f"{pg['id']}: step with no source: {st['title']!r}")
+            if st.get("key"):
+                keys[st["key"].strip()].append(("front matter", st["title"]))
+    gloss = json.loads((CONTENT / "glossary.json").read_text())
+    for e in gloss:
+        if not e.get("src"):
+            failures.append(f"glossary: no source for {e['term']!r}")
+    goal_ids = {g["id"] for g in json.loads((CONTENT / "goals.json").read_text())}
+
     for s in secs:
         if not s.get("groups"):
             failures.append(f"section {s['number']} has no groups")
@@ -148,6 +161,11 @@ def main():
                     if not tip.get(field, "").strip():
                         failures.append(f"S{s['number']}: tip missing '{field}'")
                 titles[tip["t"].strip().lower()].append(s["number"])
+                if not tip.get("goals") or tip.get("lvl") not in (1, 2, 3):
+                    failures.append(f"S{s['number']}: no goal/level tag: {tip['t']!r}")
+                for g in tip.get("goals", []):
+                    if g not in goal_ids:
+                        failures.append(f"S{s['number']}: unknown goal {g!r} on {tip['t']!r}")
                 cited[(f"S{s['number']}", tip["t"])] = bool(tip.get("src"))
                 if tip.get("k"):
                     keys[tip["k"].strip()].append((f"S{s['number']}", tip["t"]))

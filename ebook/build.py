@@ -92,6 +92,50 @@ def load():
     return front, sections
 
 
+def load_extras():
+    """Beginner layer: glossary entries and goal definitions, if present."""
+    g = CONTENT / "glossary.json"
+    goals = CONTENT / "goals.json"
+    return (json.loads(g.read_text()) if g.exists() else [],
+            json.loads(goals.read_text()) if goals.exists() else [])
+
+
+def term_pattern(glossary):
+    """One regex over every glossary term and alias, longest first."""
+    names = []
+    for e in glossary:
+        if e.get("nolink"):
+            continue          # too common to link everywhere; still searchable and in the glossary
+        for n in [e["term"], *e.get("aka", [])]:
+            names.append((n, e["id"]))
+    names.sort(key=lambda x: -len(x[0]))
+    if not names:
+        return None, {}
+    lookup = {n.lower(): i for n, i in names}
+    rx = re.compile(r"(?<![\w-])(" + "|".join(re.escape(n) for n, _ in names) + r")(?![\w-])", re.I)
+    return rx, lookup
+
+
+def link_terms(escaped, rx, lookup, render, limit=3):
+    """Link the first occurrence of each glossary term in already-escaped text."""
+    if rx is None:
+        return escaped
+    used, count = set(), [0]
+
+    def sub(m):
+        gid = lookup.get(m.group(1).lower())
+        if gid is None or gid in used or count[0] >= limit:
+            return m.group(0)
+        used.add(gid); count[0] += 1
+        return render(m.group(0), gid)
+    # never touch text inside an existing tag
+    parts = re.split(r"(<[^>]+>)", escaped)
+    return "".join(pt if pt.startswith("<") else rx.sub(sub, pt) for pt in parts)
+
+
+GLOSS = {"rx": None, "lookup": {}}   # filled in main()
+
+
 def count_tips(sections):
     return sum(len(g["tips"]) for s in sections for g in s["groups"])
 
@@ -119,15 +163,19 @@ def tip_html(tip, index):
     elif badge:
         classes.append("tip-todo")
 
-    bits = [f'<article class="{" ".join(classes)}">']
+    bits = [f'<article class="{" ".join(classes)}" id="t-{index}">']
     bits.append('<div class="tip-head">')
     bits.append(f'<span class="tip-num">{index:03d}</span>')
+    if tip.get("lvl") == 1:
+        bits.append('<span class="badge badge-start">Start here</span>')
     if badge:
         cls = "badge badge-gold" if badge == HIGHLIGHT_BADGE else "badge badge-todo"
         bits.append(f'<span class="{cls}">{esc(badge)}</span>')
     bits.append("</div>")
     bits.append(f'<h4 class="tip-title">{esc(tip["t"])}</h4>')
-    bits.append(f'<p class="tip-body">{esc(tip["d"])}</p>')
+    body = link_terms(esc(tip["d"]), GLOSS["rx"], GLOSS["lookup"],
+                      lambda txt, gid: f'<a class="gl" href="#g-{gid}">{txt}</a>')
+    bits.append(f'<p class="tip-body">{body}</p>')
     if tip.get("img"):
         bits.append(figure_html(tip["img"], tip.get("caption", "")))
     if tip.get("k"):
@@ -220,13 +268,14 @@ def build_toc(front, sections):
     rows = []
     # Front matter is deliberately unnumbered — only the 19 sections carry numbers,
     # so the numbering means something rather than just decorating every row.
+    def front_row(page):
+        return (f'<li><a class="toc-row" href="#{page["id"]}">'
+                f'<span class="toc-n toc-n-empty" aria-hidden="true">&mdash;</span>'
+                f'<span class="toc-label">{esc(page["label"])}</span>'
+                f'<span class="toc-go">Open</span></a></li>')
     for page in front["pages"]:
-        rows.append(
-            f'<li><a class="toc-row" href="#{page["id"]}">'
-            f'<span class="toc-n toc-n-empty" aria-hidden="true">&mdash;</span>'
-            f'<span class="toc-label">{esc(page["label"])}</span>'
-            f'<span class="toc-go">Open</span></a></li>'
-        )
+        if not page.get("back"):
+            rows.append(front_row(page))
     for s in sections:
         tips = sum(len(g["tips"]) for g in s["groups"])
         rows.append(
@@ -235,6 +284,7 @@ def build_toc(front, sections):
             f'<span class="toc-label">{esc(s["title"])}</span>'
             f'<span class="toc-go">{tips} tricks</span></a></li>'
         )
+    rows += [front_row(p) for p in front["pages"] if p.get("back")]
     return f"""
 <section class="page toc" id="contents">
   <header class="toc-head">
@@ -258,6 +308,23 @@ def build_front_page(page):
 
     for para in page.get("body", []):
         bits.append(f'<p class="lead reveal">{esc(para)}</p>')
+
+    if page.get("steps"):
+        bits.append('<ol class="steps">')
+        for n, st in enumerate(page["steps"], 1):
+            key = f'<div class="tip-keys">{keycap(st["key"])}</div>' if st.get("key") else ""
+            body = link_terms(esc(st["body"]), GLOSS["rx"], GLOSS["lookup"],
+                              lambda txt, gid: f'<a class="gl" href="#g-{gid}">{txt}</a>')
+            bits.append(f'<li class="step reveal"><span class="step-n">{n}</span><div>'
+                        f'<h3>{esc(st["title"])}</h3><p>{body}</p>{key}'
+                        + (sources_html(st["src"], cls="doc-src") if st.get("src") else "")
+                        + "</div></li>")
+        bits.append("</ol>")
+
+    if page.get("generated") == "goals":
+        bits.append(GENERATED.get("goals", ""))
+    if page.get("generated") == "glossary":
+        bits.append(GENERATED.get("glossary", ""))
 
     if page.get("list"):
         bits.append('<ul class="rules reveal">')
@@ -306,6 +373,46 @@ def build_front_page(page):
     bits.append(top_link())
     bits.append("</section>")
     return "".join(bits)
+
+
+GENERATED = {}
+
+
+def build_goal_index(goals, sections):
+    """"I want to…" — every goal, and the numbered tricks that achieve it."""
+    by_goal = {g["id"]: [] for g in goals}
+    n = 0
+    for sec in sections:
+        for grp in sec["groups"]:
+            for t in grp["tips"]:
+                n += 1
+                for gid in t.get("goals", []):
+                    if gid in by_goal:
+                        by_goal[gid].append((n, t))
+    out = ['<div class="goals">']
+    for g in goals:
+        items = sorted(by_goal[g["id"]], key=lambda x: (x[1].get("lvl", 2), x[0]))
+        if not items:
+            continue
+        lis = "".join(
+            f'<li><a href="#t-{num}"><span class="gi-n">{num:03d}</span>{esc(t["t"])}'
+            + ('<span class="gi-start">Start here</span>' if t.get("lvl") == 1 else "")
+            + "</a></li>" for num, t in items)
+        out.append(f'<div class="goal reveal"><h3 class="sub">{esc(g["label"])}'
+                   f'<span class="goal-count">{len(items)}</span></h3><ol class="goal-list">{lis}</ol></div>')
+    out.append("</div>")
+    return "".join(out)
+
+
+def build_glossary(glossary):
+    out = ['<dl class="gloss">']
+    for e in sorted(glossary, key=lambda e: e["term"].lower()):
+        aka = f'<span class="gl-aka">also: {esc(", ".join(e["aka"]))}</span>' if e.get("aka") else ""
+        out.append(f'<div class="gl-row" id="g-{e["id"]}"><dt>{esc(e["term"])}{aka}</dt>'
+                   f'<dd>{esc(e["def"])}' + (sources_html(e["src"], cls="doc-src") if e.get("src") else "")
+                   + "</dd></div>")
+    out.append("</dl>")
+    return "".join(out)
 
 
 def top_link():
@@ -379,13 +486,17 @@ def build_section(section, counter_start):
 def build_rail(front, sections):
     items = ['<a class="rail-link" href="#contents">Contents</a>']
     for page in front["pages"]:
-        items.append(f'<a class="rail-link" href="#{page["id"]}">{esc(page["label"])}</a>')
+        if not page.get("back"):
+            items.append(f'<a class="rail-link" href="#{page["id"]}">{esc(page["label"])}</a>')
     for s in sections:
         items.append(
             f'<a class="rail-link rail-sec" href="#{slug(s)}">'
             f'<span class="rail-n">{s["number"]:02d}</span>'
             f'<span>{esc(s["title"])}</span></a>'
         )
+    for page in front["pages"]:
+        if page.get("back"):
+            items.append(f'<a class="rail-link" href="#{page["id"]}">{esc(page["label"])}</a>')
     return (
         '<nav class="rail" aria-label="Sections">'
         '<a class="rail-brand" href="#cover">Logic Pro<br/>Crash Course</a>'
@@ -937,6 +1048,44 @@ sup.ref {{ font-size: 9px; font-weight: 600; margin-left: 3px; color: var(--body
 }}
 .badge-gold {{ background: var(--white); color: var(--black); }}
 .badge-todo {{ border: 1px solid var(--line-dark); color: var(--white); opacity: .8; }}
+.badge-start {{ border: 1px solid currentColor; color: var(--body-dim); }}
+a.gl {{ color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;
+  text-decoration-color: rgba(255,255,255,.45); }}
+a.gl:hover {{ text-decoration-style: solid; }}
+
+/* Start Here — numbered first steps */
+.steps {{ list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 8px; }}
+.step {{ display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start;
+  border-top: 1px solid var(--line-dark); padding-top: 11px; break-inside: avoid; }}
+.step-n {{ font-size: 26px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }}
+.step h3 {{ margin: 0; font-size: 17px; font-weight: 600; }}
+.step p {{ margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: var(--body-dim); max-width: 64ch; }}
+.step .tip-keys {{ padding: 6px 0 0; background: none; }}
+
+/* "I want to…" — goals and the tricks that get you there */
+.goals {{ columns: 2 320px; column-gap: 40px; margin-top: 24px; }}
+.goal {{ margin: 0 0 26px; }}
+.goal .sub {{ break-after: avoid; }}
+.goal-list li {{ break-inside: avoid; }}
+.goal .sub {{ display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line-dark);
+  padding-bottom: 8px; }}
+.goal-count {{ font-size: 11px; font-weight: 500; letter-spacing: .1em; opacity: .6; }}
+.goal-list {{ list-style: none; margin: 8px 0 0; padding: 0; }}
+.goal-list li {{ margin: 0; }}
+.goal-list a {{ display: flex; align-items: baseline; gap: 10px; padding: 3px 0; color: inherit;
+  text-decoration: none; font-size: 13px; line-height: 1.45; }}
+.goal-list a:hover {{ text-decoration: underline; }}
+.gi-n {{ flex: 0 0 auto; font-size: 10.5px; font-weight: 600; letter-spacing: .1em; opacity: .55;
+  font-variant-numeric: tabular-nums; }}
+.gi-start {{ flex: 0 0 auto; margin-left: auto; font-size: 8.5px; font-weight: 600; letter-spacing: .16em;
+  text-transform: uppercase; border: 1px solid currentColor; border-radius: 100px; padding: 2px 8px; opacity: .7; }}
+
+/* Glossary */
+.gloss {{ margin: 24px 0 0; columns: 2 320px; column-gap: 40px; }}
+.gl-row {{ break-inside: avoid; border-top: 1px solid var(--line-dark); padding: 12px 0 14px; }}
+.gl-row dt {{ font-weight: 600; font-size: 15px; }}
+.gl-aka {{ display: block; font-weight: 400; font-size: 11px; opacity: .6; margin-top: 2px; }}
+.gl-row dd {{ margin: 6px 0 0; font-size: 13.5px; line-height: 1.6; color: var(--body-dim); }}
 .tip-gold {{ box-shadow: inset 0 0 0 1px rgba(255,255,255,.45), 0 0 0 1px rgba(255,255,255,.2), 0 20px 44px -24px rgba(0,0,0,.7); }}
 
 /* ---------- pill ---------- */
@@ -1147,6 +1296,15 @@ html.js .reveal.d3 {{ transition-delay: .24s; }}
     border-color: rgba(255,255,255,.45);
   }}
   .badge-todo {{ border-color: var(--line-light); color: inherit; }}
+  .badge-start {{ color: inherit; border-color: var(--line-light); }}
+  .tip-gold .badge-start {{ color: var(--white); border-color: rgba(255,255,255,.5); }}
+  a.gl {{ text-decoration-color: rgba(0,0,0,.35); }}
+  .tip-gold a.gl {{ text-decoration-color: rgba(255,255,255,.5); }}
+  .step, .goal-list, .goal .sub, .gl-row {{ border-color: var(--line-light); }}
+  .step {{ break-inside: avoid; page-break-inside: avoid; }}
+  .step p, .gl-row dd {{ font-size: 9pt; }}
+  .goal-list a {{ font-size: 8.3pt; padding: 1.5px 0; }}
+  .gl-row dt {{ font-size: 10pt; }}
 
   .group-head, .doc-head {{ break-after: avoid; page-break-after: avoid; }}
   .callout, .notice, .legend-row, .cmd-block {{ break-inside: avoid; page-break-inside: avoid; }}
@@ -1201,16 +1359,25 @@ def main():
     front, sections = load()
     total = count_tips(sections)
 
+    glossary, goals = load_extras()
+    GLOSS["rx"], GLOSS["lookup"] = term_pattern(glossary)
+    GENERATED["goals"] = build_goal_index(goals, sections) if goals else ""
+    GENERATED["glossary"] = build_glossary(glossary) if glossary else ""
+
     body = [build_rail(front, sections), '<main class="book">']
     body.append(build_cover(front, total, len(sections)))
     body.append(build_toc(front, sections))
     for page in front["pages"]:
-        body.append(build_front_page(page))
+        if not page.get("back"):
+            body.append(build_front_page(page))
 
     counter = 1
     for section in sections:
         chunk, counter = build_section(section, counter)
         body.append(chunk)
+    for page in front["pages"]:
+        if page.get("back"):
+            body.append(build_front_page(page))
     body.append(build_outro(total))
     body.append("</main>")
 

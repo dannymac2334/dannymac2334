@@ -16,7 +16,13 @@
               "label": "Apple — Assign key commands in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "chords",
+            "organize"
+          ],
+          "lvl": 1
         },
         {
           "t": "Save your key commands as a set and back it up",
@@ -30,7 +36,14 @@
               "label": "Apple — Assign key commands in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "chords",
+            "safety",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Save your go-to plug-in chains as channel strip settings",
@@ -40,7 +53,13 @@
               "label": "Apple — Work with channel strip settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/work-with-channel-strip-settings-lgcp35966da6/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "effects",
+            "safety"
+          ],
+          "lvl": 2
         },
         {
           "t": "Put your key commands on the Touch Bar or a controller button",
@@ -54,7 +73,14 @@
               "label": "Apple — Assign controller buttons to key commands in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/assign-buttons-to-key-commands-ctls71c31056/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "record-midi",
+            "chords",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -65,7 +91,12 @@
           "t": "Build separate templates for writing, mixing and mastering",
           "d": "A writing template loads instantly with a handful of instruments. A mixing template has your buses and reference chain. They are different jobs and they deserve different starting points.",
           "b": "GAME CHANGER",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "fast",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Project Alternatives instead of Save As",
@@ -75,17 +106,35 @@
               "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "export",
+            "record-audio",
+            "safety"
+          ],
+          "lvl": 2
         },
         {
           "t": "Keep a reference track in every project, muted at the top",
           "d": "A commercial track at the top of the session, routed to the master, muted. Unmute it whenever you lose perspective — which will be every hour.",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "fast",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
           "t": "Name your bounce files with the date",
           "d": "“Mix_v3.wav” tells you nothing in six weeks. “Song_2026‑04‑18_mix3.wav” tells you everything.",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "fast",
+            "export",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -109,7 +158,14 @@
               "label": "Why Logic Pro Rules — 10 Logic Pro X Key Commands That Will Rock Your Workflow",
               "url": "https://whylogicprorules.com/logic-pro-x-key-commands/"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "export",
+            "loop",
+            "arrange"
+          ],
+          "lvl": 1
         },
         {
           "t": "Check the Normalize setting before you bounce",
@@ -123,7 +179,14 @@
               "label": "Apple — Bounce regions in place in Logic Pro for Mac",
               "url": "https://support.apple.com/en-ca/guide/logicpro/lgcp8ae5826e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "export",
+            "mix",
+            "performance"
+          ],
+          "lvl": 2
         },
         {
           "t": "Bounce offline unless external MIDI or inputs are involved",
@@ -133,7 +196,14 @@
               "label": "Apple — Bounce a project to an audio file in Logic Pro for Mac",
               "url": "https://support.apple.com/en-am/guide/logicpro/lgcp785a41c3/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "effects",
+            "export",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
           "t": "Leave room for tails at the end of the bounce range",
@@ -143,7 +213,14 @@
               "label": "Apple — Set the bounce range in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/set-the-bounce-range-lgcp190ba9b7/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "effects",
+            "export",
+            "loop"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -153,7 +230,12 @@
         {
           "t": "Colour and name everything before you leave the session",
           "d": "Five minutes at the end of a session saves twenty at the start of the next one.",
-          "advice": true
+          "advice": true,
+          "goals": [
+            "fast",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Save a version before every major change",
@@ -163,7 +245,12 @@
               "label": "Apple — Use project alternatives and backups in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac"
             }
-          ]
+          ],
+          "goals": [
+            "fast",
+            "safety"
+          ],
+          "lvl": 2
         }
       ]
     }

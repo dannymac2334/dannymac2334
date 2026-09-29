@@ -169,6 +169,47 @@
 .lp-src a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:2px}
 .lp-src a:hover{text-decoration-color:currentColor}
 .lp-src-intro,.lp-notice .lp-src{padding:6px 0 0;background:none}
+/* beginner layer — ask in your own words, pick a goal, tap a word you don't know */
+.lp-ask{flex:1 0 100%;margin:0 0 2px;font-size:clamp(20px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;
+  text-transform:uppercase;line-height:1.05}
+.lp-chips{flex:1 0 100%;display:flex;gap:8px;overflow-x:auto;padding:2px 0 4px;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch}
+.lp-chips::-webkit-scrollbar{display:none}
+.lp-chip{flex:0 0 auto;cursor:pointer;background:transparent;color:#d5d4cf;border:1px solid #3a3a3a;
+  border-radius:100px;font-family:inherit;font-size:12px;padding:8px 14px;white-space:nowrap;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.lp-chip:hover{border-color:#5a5a5a;color:#fff}
+.lp-chip[aria-pressed="true"]{background:#fff;border-color:#fff;color:#000}
+.lp-badge.lp-start{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.lp-gl{position:relative;cursor:help;text-decoration:underline dotted;text-underline-offset:3px;
+  text-decoration-color:rgba(255,255,255,.5);outline:none}
+.lp-gl:hover::after,.lp-gl:focus::after{content:attr(data-def);position:absolute;left:0;bottom:calc(100% + 8px);
+  z-index:30;width:min(280px,70vw);background:#fff;color:#000;font-size:12.5px;line-height:1.5;
+  font-weight:400;letter-spacing:0;text-transform:none;padding:10px 12px;border-radius:10px;
+  box-shadow:0 12px 30px -12px rgba(0,0,0,.6);white-space:normal}
+.lp-defs{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.lp-def{margin:22px 0 0;border:1px solid var(--line-dark);border-radius:16px;padding:18px 22px}
+.lp-def span{display:block;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+.lp-def b{display:block;margin-top:6px;font-size:20px;letter-spacing:-.01em}
+.lp-def p{margin:6px 0 0;color:var(--lp-dim);font-size:14px;line-height:1.6;max-width:70ch}
+.lp-def a{display:inline-block;margin-top:8px;font-size:12px;color:#fff}
+.lp-steps{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:4px;max-width:880px}
+.lp-steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;border-top:1px solid var(--line-dark);padding:18px 0}
+.lp-step-n{font-size:28px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.lp-steps h3{margin:0;font-size:17px;font-weight:600;text-transform:none;letter-spacing:0}
+.lp-steps p{margin:6px 0 0;color:var(--lp-dim);font-size:14.5px;line-height:1.65}
+.lp-steps .lp-keys{padding:10px 0 0;background:none}
+.lp-goal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:24px}
+.lp-goal-btn{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;text-align:left;
+  background:transparent;color:#fff;border:1px solid var(--line-dark);border-radius:14px;font-family:inherit;
+  font-size:14px;padding:16px 18px;transition:border-color .25s var(--ease),background .25s var(--ease)}
+.lp-goal-btn:hover{border-color:#fff;background:#0d0d0d}
+.lp-goal-btn span{font-size:11px;letter-spacing:.1em;opacity:.6}
+.lp-gloss{margin:24px 0 0;columns:2 320px;column-gap:40px}
+.lp-gloss>div{break-inside:avoid;border-top:1px solid var(--line-dark);padding:14px 0}
+.lp-gloss dt{font-weight:600;font-size:15px}
+.lp-gloss dt small{display:block;font-weight:400;font-size:11px;opacity:.6;margin-top:2px}
+.lp-gloss dd{margin:6px 0 0;color:var(--lp-dim);font-size:13.5px;line-height:1.6}
 .lp-legal{max-width:1100px;margin:40px auto 0;padding:0 clamp(16px,4vw,40px);font-size:11px;line-height:1.6;color:var(--lp-dim);opacity:.75}
 sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
 .ref-n{font-weight:600;font-size:10px;opacity:.8}
@@ -300,7 +341,7 @@ sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
     in one clickable PDF you keep open while you produce. No long tutorials. No fluff. Every trick cites its source.</p>
     <div class="lp-price reveal d2"><b>$14.99</b><span>One payment &middot; Yours to keep</span></div>
     <div class="lp-cta reveal d2"><a class="pill solid" href="/buy" data-product="logic-pro-crash-course" data-price-usd="14.99">Get instant access</a></div>
-    <p class="lp-trust reveal d3"><span>91 pages</span><i>&middot;</i>
+    <p class="lp-trust reveal d3"><span>113 pages</span><i>&middot;</i>
       <span>Instant download</span><i>&middot;</i><span>Logic Pro 11 &amp; 12</span></p>
   </div>
 
@@ -331,7 +372,7 @@ sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
     <h2 class="lp-h2 reveal">19 sections. 248 tricks.</h2>
     <p class="lp-intro reveal">Organised by what you are doing, not by what menu it lives in — so
     you can find the right one mid-project without breaking your flow.</p>
-    <div class="lp-index reveal"><div><i>01</i><b>Setting Up My Preferred Settings</b><em>29 tricks</em></div><div><i>02</i><b>Arrangement Tricks</b><em>14 tricks</em></div><div><i>03</i><b>Navigating Tricks</b><em>5 tricks</em></div><div><i>04</i><b>Composing MIDI Tricks</b><em>13 tricks</em></div><div><i>05</i><b>Piano Roll Tricks</b><em>13 tricks</em></div><div><i>06</i><b>Recording Audio Tricks</b><em>12 tricks</em></div><div><i>07</i><b>Editing Tips — Audio + MIDI</b><em>6 tricks</em></div><div><i>08</i><b>Audio Editing Tricks</b><em>15 tricks</em></div><div><i>09</i><b>Marquee Tool Tricks</b><em>6 tricks</em></div><div><i>10</i><b>Automation Tricks</b><em>13 tricks</em></div><div><i>11</i><b>Step Sequencer Tricks</b><em>11 tricks</em></div><div><i>12</i><b>Logic Drummer Tricks</b><em>6 tricks</em></div><div><i>13</i><b>Drum Machine Designer Tricks</b><em>6 tricks</em></div><div><i>14</i><b>Quick Sampler Tricks</b><em>7 tricks</em></div><div><i>15</i><b>Mixer Tricks</b><em>10 tricks</em></div><div><i>16</i><b>Favorite Logic Plugins</b><em>14 tricks</em></div><div><i>17</i><b>More Tricks</b><em>14 tricks</em></div><div><i>18</i><b>Logic Pro 11 Update</b><em>32 tricks</em></div><div><i>19</i><b>Logic Pro 12 Update</b><em>22 tricks</em></div></div>
+    <div class="lp-index reveal"><div><i>01</i><b>Setting Up Logic</b><em>29 tricks</em></div><div><i>02</i><b>Arrangement Tricks</b><em>14 tricks</em></div><div><i>03</i><b>Navigating Tricks</b><em>5 tricks</em></div><div><i>04</i><b>Composing MIDI Tricks</b><em>13 tricks</em></div><div><i>05</i><b>Piano Roll Tricks</b><em>13 tricks</em></div><div><i>06</i><b>Recording Audio Tricks</b><em>12 tricks</em></div><div><i>07</i><b>Editing Tips — Audio + MIDI</b><em>6 tricks</em></div><div><i>08</i><b>Audio Editing Tricks</b><em>15 tricks</em></div><div><i>09</i><b>Marquee Tool Tricks</b><em>6 tricks</em></div><div><i>10</i><b>Automation Tricks</b><em>13 tricks</em></div><div><i>11</i><b>Step Sequencer Tricks</b><em>11 tricks</em></div><div><i>12</i><b>Logic Drummer Tricks</b><em>6 tricks</em></div><div><i>13</i><b>Drum Machine Designer Tricks</b><em>6 tricks</em></div><div><i>14</i><b>Quick Sampler Tricks</b><em>7 tricks</em></div><div><i>15</i><b>Mixer Tricks</b><em>10 tricks</em></div><div><i>16</i><b>Logic's Built-in Plugins</b><em>14 tricks</em></div><div><i>17</i><b>More Tricks</b><em>14 tricks</em></div><div><i>18</i><b>Logic Pro 11 Update</b><em>32 tricks</em></div><div><i>19</i><b>Logic Pro 12 Update</b><em>22 tricks</em></div></div>
   </div></div>
 
   <div class="lp-sec"><div class="lp-sec-inner">
@@ -346,14 +387,14 @@ sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--lp-dim)}
   <div class="lp-sec"><div class="lp-sec-inner">
     <p class="lp-eyebrow reveal">Questions</p>
     <h2 class="lp-h2 reveal">Before you buy.</h2>
-    <div class="lp-faq reveal"><details><summary>Which version of Logic does it cover?</summary><p>It works with Logic Pro 11 and 12. Every key command is the factory default on a US keyboard, and where a command could move between versions the book gives the exact command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic Pro 12: the Synth Player, Chord ID, and the fact that 12 runs only on Apple silicon.</p></details><details><summary>How do I know the tricks are right?</summary><p>Every trick shows the source it was checked against — usually Apple's own Logic Pro guide — with a live link, so you can read the original yourself. Anything that could not be confirmed against a source was cut rather than printed on a guess.</p></details><details><summary>Is this a video course?</summary><p>No. It is 248 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.</p></details><details><summary>Do I need any third-party plugins?</summary><p>No. Every trick uses stock Logic Pro. Nothing to buy, nothing to install.</p></details><details><summary>I am fairly new to Logic. Is it too advanced?</summary><p>The early sections are settings and fundamentals — the things worth fixing before you record a note. It gets deeper from there. You should be comfortable opening a project and recording a track; you do not need to be an expert.</p></details><details><summary>What exactly do I get?</summary><p>One PDF, 91 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.</p></details><details><summary>How is it delivered?</summary><p>Instantly. You get a download link as soon as the payment clears.</p></details></div>
+    <div class="lp-faq reveal"><details><summary>Which version of Logic does it cover?</summary><p>It works with Logic Pro 11 and 12. Every key command is the factory default on a US keyboard, and where a command could move between versions the book gives the exact command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic Pro 12: the Synth Player, Chord ID, and the fact that 12 runs only on Apple silicon.</p></details><details><summary>How do I know the tricks are right?</summary><p>Every trick shows the source it was checked against — usually Apple's own Logic Pro guide — with a live link, so you can read the original yourself. Anything that could not be confirmed against a source was cut rather than printed on a guess.</p></details><details><summary>Is this a video course?</summary><p>No. It is 248 written tricks: title, what it does, the key command. Most take ten seconds to read. It is built to sit open on a second screen while you work, not to be watched.</p></details><details><summary>Do I need any third-party plugins?</summary><p>No. Every trick uses stock Logic Pro. Nothing to buy, nothing to install.</p></details><details><summary>I am fairly new to Logic. Is it too advanced?</summary><p>The early sections are settings and fundamentals — the things worth fixing before you record a note. It gets deeper from there. You should be comfortable opening a project and recording a track; you do not need to be an expert.</p></details><details><summary>What exactly do I get?</summary><p>One PDF, 113 pages, full colour. Clickable contents, bookmarks in the sidebar, and it opens on any device. It is yours to keep and it works offline.</p></details><details><summary>How is it delivered?</summary><p>Instantly. You get a download link as soon as the payment clears.</p></details></div>
   </div></div>
 
   <div class="lp-final">
     <h2 class="lp-h2 reveal">Get the 248.</h2>
     <div class="lp-price reveal d1"><b>$14.99</b><span>One payment &middot; Yours to keep</span></div>
     <div class="lp-cta reveal d1"><a class="pill solid" href="/buy" data-product="logic-pro-crash-course" data-price-usd="14.99">Get instant access</a></div>
-    <p class="lp-note reveal d2">A single PDF, 91 pages, delivered the moment your payment
+    <p class="lp-note reveal d2">A single PDF, 113 pages, delivered the moment your payment
     clears. Every key command in it is the Logic Pro factory default; where a command could move
     between versions, the book gives the command name and menu path so it stays correct.</p>
   </div>

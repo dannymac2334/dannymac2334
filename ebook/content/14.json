@@ -14,7 +14,14 @@
               "label": "Apple — Choose a Quick Sampler mode in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac"
             }
-          ]
+          ],
+          "goals": [
+            "sample",
+            "loop",
+            "record-audio",
+            "record-midi"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Slice mode with Transient detection on any break",
@@ -29,7 +36,14 @@
               "label": "Apple — Choose a Quick Sampler mode in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac"
             }
-          ]
+          ],
+          "goals": [
+            "sample",
+            "timing",
+            "loop",
+            "record-midi"
+          ],
+          "lvl": 3
         },
         {
           "t": "Drag audio directly from the Tracks area into a loaded Quick Sampler",
@@ -43,7 +57,14 @@
               "label": "Apple — Drag and drop to create sampler instrument tracks in Logic Pro for Mac",
               "url": "https://support.apple.com/en-us/101863"
             }
-          ]
+          ],
+          "goals": [
+            "sample",
+            "pitch",
+            "export",
+            "loop"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -58,7 +79,14 @@
               "label": "Apple — Use Flex in Quick Sampler in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-flex-in-quick-sampler-lgcpe3d7978d/mac"
             }
-          ]
+          ],
+          "goals": [
+            "sample",
+            "timing",
+            "pitch",
+            "loop"
+          ],
+          "lvl": 3
         },
         {
           "t": "Set the root key correctly or nothing will be in tune",
@@ -68,7 +96,14 @@
               "label": "Apple — Quick Sampler Pitch controls in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/quick-sampler-pitch-controls-lgcpd22b3634/mac"
             }
-          ]
+          ],
+          "goals": [
+            "sample",
+            "pitch",
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -88,7 +123,12 @@
               "label": "Apple — Choose a Quick Sampler mode in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-a-mode-lgcpabc8c044/mac"
             }
-          ]
+          ],
+          "goals": [
+            "sample",
+            "record-midi"
+          ],
+          "lvl": 2
         },
         {
           "t": "Convert Quick Sampler to Sampler for full control",
@@ -98,7 +138,11 @@
               "label": "Apple — Quick Sampler overview in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/quick-sampler-overview-lgcp5af33756/mac"
             }
-          ]
+          ],
+          "goals": [
+            "sample"
+          ],
+          "lvl": 2
         }
       ]
     }

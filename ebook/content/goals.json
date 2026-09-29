@@ -1,0 +1,321 @@
+[
+ {
+  "id": "start",
+  "label": "Get started and set up Logic",
+  "synonyms": [
+   "setup",
+   "settings",
+   "preferences",
+   "first",
+   "time",
+   "beginner",
+   "new",
+   "project",
+   "begin",
+   "install"
+  ]
+ },
+ {
+  "id": "record-audio",
+  "label": "Record vocals or an instrument",
+  "synonyms": [
+   "record",
+   "vocals",
+   "singing",
+   "voice",
+   "guitar",
+   "mic",
+   "microphone",
+   "take",
+   "overdub",
+   "punch"
+  ]
+ },
+ {
+  "id": "record-midi",
+  "label": "Play and record with a keyboard",
+  "synonyms": [
+   "midi",
+   "keyboard",
+   "piano",
+   "keys",
+   "controller",
+   "play",
+   "musical",
+   "typing"
+  ]
+ },
+ {
+  "id": "beat",
+  "label": "Make a beat",
+  "synonyms": [
+   "drums",
+   "drum",
+   "pattern",
+   "hip",
+   "hop",
+   "trap",
+   "groove",
+   "kick",
+   "snare",
+   "hi-hat",
+   "hihat",
+   "drummer",
+   "808",
+   "rhythm"
+  ]
+ },
+ {
+  "id": "chords",
+  "label": "Write chords and melodies",
+  "synonyms": [
+   "chords",
+   "harmony",
+   "melody",
+   "progression",
+   "key",
+   "scale",
+   "notes",
+   "compose",
+   "songwriting"
+  ]
+ },
+ {
+  "id": "timing",
+  "label": "Fix timing",
+  "synonyms": [
+   "quantize",
+   "off",
+   "beat",
+   "tight",
+   "groove",
+   "late",
+   "early",
+   "sync",
+   "in",
+   "time"
+  ]
+ },
+ {
+  "id": "pitch",
+  "label": "Fix pitch and tuning",
+  "synonyms": [
+   "tune",
+   "tuning",
+   "autotune",
+   "flat",
+   "sharp",
+   "pitch",
+   "correction",
+   "out",
+   "of",
+   "tune"
+  ]
+ },
+ {
+  "id": "edit",
+  "label": "Cut, copy and move parts",
+  "synonyms": [
+   "cut",
+   "split",
+   "trim",
+   "copy",
+   "paste",
+   "duplicate",
+   "move",
+   "delete",
+   "join",
+   "edit"
+  ]
+ },
+ {
+  "id": "loop",
+  "label": "Loop or repeat a section",
+  "synonyms": [
+   "loop",
+   "repeat",
+   "cycle",
+   "again",
+   "section"
+  ]
+ },
+ {
+  "id": "arrange",
+  "label": "Arrange a whole song",
+  "synonyms": [
+   "structure",
+   "verse",
+   "chorus",
+   "bridge",
+   "intro",
+   "outro",
+   "arrangement",
+   "song",
+   "form"
+  ]
+ },
+ {
+  "id": "sample",
+  "label": "Sample and chop sounds",
+  "synonyms": [
+   "sampler",
+   "chop",
+   "slice",
+   "sample",
+   "vinyl",
+   "flip"
+  ]
+ },
+ {
+  "id": "stems",
+  "label": "Split a song into parts",
+  "synonyms": [
+   "acapella",
+   "instrumental",
+   "vocals",
+   "only",
+   "remove",
+   "vocals",
+   "stems",
+   "karaoke",
+   "separate"
+  ]
+ },
+ {
+  "id": "mix",
+  "label": "Balance and mix your tracks",
+  "synonyms": [
+   "mix",
+   "volume",
+   "levels",
+   "pan",
+   "balance",
+   "mixer",
+   "loud",
+   "quiet"
+  ]
+ },
+ {
+  "id": "effects",
+  "label": "Add effects like reverb, EQ and compression",
+  "synonyms": [
+   "reverb",
+   "echo",
+   "delay",
+   "eq",
+   "compressor",
+   "compression",
+   "saturation",
+   "warm",
+   "distortion",
+   "plugin",
+   "effects"
+  ]
+ },
+ {
+  "id": "automation",
+  "label": "Change something over time",
+  "synonyms": [
+   "automation",
+   "fade",
+   "sweep",
+   "filter",
+   "sweep",
+   "build",
+   "rise",
+   "volume",
+   "change"
+  ]
+ },
+ {
+  "id": "export",
+  "label": "Export and share your song",
+  "synonyms": [
+   "bounce",
+   "export",
+   "mp3",
+   "wav",
+   "share",
+   "render",
+   "audio",
+   "file"
+  ]
+ },
+ {
+  "id": "fast",
+  "label": "Work faster with shortcuts",
+  "synonyms": [
+   "shortcut",
+   "key",
+   "command",
+   "hotkey",
+   "keyboard",
+   "quick",
+   "speed"
+  ]
+ },
+ {
+  "id": "organize",
+  "label": "Stay organized",
+  "synonyms": [
+   "color",
+   "colour",
+   "name",
+   "markers",
+   "folders",
+   "stacks",
+   "tidy",
+   "clean",
+   "organise"
+  ]
+ },
+ {
+  "id": "performance",
+  "label": "Fix glitches, lag or crackles",
+  "synonyms": [
+   "crackle",
+   "pop",
+   "glitch",
+   "slow",
+   "lag",
+   "latency",
+   "overload",
+   "cpu",
+   "freeze",
+   "buffer"
+  ]
+ },
+ {
+  "id": "safety",
+  "label": "Don't lose your work",
+  "synonyms": [
+   "save",
+   "backup",
+   "undo",
+   "recover",
+   "crash",
+   "lost",
+   "revert",
+   "update"
+  ]
+ },
+ {
+  "id": "new",
+  "label": "New in Logic 11 and 12",
+  "synonyms": [
+   "new",
+   "update",
+   "logic",
+   "12",
+   "logic",
+   "11",
+   "ai",
+   "session",
+   "player",
+   "synth",
+   "player",
+   "chord",
+   "id"
+  ]
+ }
+]

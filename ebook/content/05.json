@@ -15,7 +15,14 @@
               "label": "Apple — Select notes in the Piano Roll Editor in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/en-mn/guide/logicpro/lgcpa906bc30/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "pitch",
+            "record-midi",
+            "chords"
+          ],
+          "lvl": 1
         }
       ]
     },
@@ -40,7 +47,11 @@
               "label": "Logic Pro GEM — Fader Event: A MIDI Event Wannabe",
               "url": "https://logicprogem.com/Logic-Pro-X-Tutorials/Entries/2015/7/23_Fader_Event_-_A_MIDI_Event_Wannabe.html"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Force legato to fix gappy pads",
@@ -58,7 +69,11 @@
               "label": "Apple — Resize notes in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/resize-notes-lgcpa90a4474/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Trim overlaps automatically",
@@ -68,7 +83,11 @@
               "label": "Apple — Resize notes in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/resize-notes-lgcpa90a4474/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "⌥‑drag a note to duplicate it",
@@ -83,7 +102,12 @@
               "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/move-notes-lgcpa905f117/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "pitch"
+          ],
+          "lvl": 2
         },
         {
           "t": "Place a note between grid divisions",
@@ -98,7 +122,12 @@
               "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/move-notes-lgcpa905f117/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "beat"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -115,7 +144,13 @@
               "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "timing",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Change a selection's velocity without flattening it",
@@ -125,7 +160,11 @@
               "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Show the automation lane inside the Piano Roll",
@@ -135,7 +174,13 @@
               "label": "Apple — The Automation/MIDI area in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/automationmidi-area-in-the-piano-roll-editor-lgcpa90a61bf/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "record-midi",
+            "automation"
+          ],
+          "lvl": 2
         },
         {
           "t": "Colour notes by velocity to read dynamics instantly",
@@ -145,7 +190,12 @@
               "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -161,7 +211,12 @@
               "label": "Apple — Quantize parameter values in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/quantize-parameter-values-lgcp47452db8/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "timing"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Q‑Strength to keep the human feel",
@@ -171,7 +226,11 @@
               "label": "Apple — Advanced quantization parameters in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/advanced-quantization-parameters-lgcp35029a2b/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Quantise only the notes that need it",
@@ -181,7 +240,13 @@
               "label": "Apple — Quantize the timing of notes in the Piano Roll Editor in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/en-mo/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "timing",
+            "record-audio"
+          ],
+          "lvl": 2
         }
       ]
     }

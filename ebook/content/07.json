@@ -22,7 +22,13 @@
               "label": "Studio Interns — Trim Region End to Next Region",
               "url": "https://studio-interns.com/trim-region-end-to-next-region-logic-pro-x-keyboard-command-of-the-day/"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "chords",
+            "fast"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -37,7 +43,12 @@
               "label": "Apple — Snap items to the grid in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/snap-items-to-the-grid-lgcpf7c0f66a/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "beat"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -57,7 +68,13 @@
               "label": "Apple — Overview of tools in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "chords",
+            "fast"
+          ],
+          "lvl": 1
         },
         {
           "t": "⌘ is your secondary tool",
@@ -71,7 +88,11 @@
               "label": "Apple — Assign tools in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Select everything after this point in one keystroke",
@@ -94,7 +115,12 @@
               "label": "studio-interns.com — Select All Following of Same Track/Pitch ⌃⇧F",
               "url": "https://www.studio-interns.com/2021/06/19/select-all-following-of-same-track-pitch%E2%8C%83%E2%87%A7f-logic-pro-keyboard-command-of-the-day-kcotd/"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "fast"
+          ],
+          "lvl": 1
         },
         {
           "t": "Lock events so tempo changes cannot move them",
@@ -104,7 +130,13 @@
               "label": "Apple — Protect the position of events in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/protect-the-position-of-events-lgcp21581f00/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "timing",
+            "fast"
+          ],
+          "lvl": 2
         }
       ]
     }

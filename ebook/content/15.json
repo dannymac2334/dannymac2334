@@ -19,7 +19,13 @@
               "label": "Apple — Overview of mixing in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/mixing-overview-lgcpbc219818/mac"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "chords",
+            "arrange"
+          ],
+          "lvl": 1
         },
         {
           "t": "⌥-click a fader to reset it to 0 dB",
@@ -31,7 +37,13 @@
               "label": "Apple — Set channel strip volume in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/set-volume-levels-lgcp8ec34eec/mac"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "safety",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "⌥-click Solo for exclusive solo",
@@ -42,7 +54,11 @@
               "label": "Apple — Mute and solo channel strips in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/mute-and-solo-channel-strips-lgcpbc21a09d/mac"
             }
-          ]
+          ],
+          "goals": [
+            "mix"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -62,7 +78,13 @@
               "label": "macProVideo - VCA Groups and Faders in Logic Pro X: What, Why, and How?",
               "url": "https://www.macprovideo.com/article/audio-software/vca-groups-and-faders-in-logic-pro-x-what-why-and-how"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "effects",
+            "edit"
+          ],
+          "lvl": 3
         },
         {
           "t": "Use Summing Stacks for processing groups",
@@ -77,7 +99,13 @@
               "label": "Apple — Create and edit Track Stacks in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/create-and-edit-track-stacks-lgcp5bafa811/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "effects",
+            "organize"
+          ],
+          "lvl": 3
         },
         {
           "t": "Create a send and Logic makes the aux for you",
@@ -91,7 +119,11 @@
               "label": "Apple — Overview of aux channel strips in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/aux-channel-strips-overview-lgcp8e7db552/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "mix"
+          ],
+          "lvl": 3
         },
         {
           "t": "Set sends to pre‑fader for headphone mixes and effects that must stay constant",
@@ -105,7 +137,13 @@
               "label": "Why Logic Pro Rules - Pre-Fader vs Post-Fader vs Post-Pan Explained",
               "url": "https://whylogicprorules.com/pre-fader-post-fader-post-pan-explained/"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "effects",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Colour your tracks and the mixer follows",
@@ -115,7 +153,13 @@
               "label": "Apple — Change track colors in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/change-track-colors-lgcp7a5a5423/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "record-audio",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -131,7 +175,12 @@
               "label": "Apple — Add, remove, move and copy plug-ins in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "effects"
+          ],
+          "lvl": 1
         },
         {
           "t": "Drag plugins between insert slots and between channels",
@@ -141,7 +190,13 @@
               "label": "Apple — Add, remove, move and copy plug-ins in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac"
             }
-          ]
+          ],
+          "goals": [
+            "mix",
+            "effects",
+            "edit"
+          ],
+          "lvl": 2
         }
       ]
     }

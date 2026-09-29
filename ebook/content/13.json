@@ -15,7 +15,12 @@
               "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
               "url": "https://support.apple.com/en-us/102054"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "sample"
+          ],
+          "lvl": 2
         },
         {
           "t": "Every pad is its own channel strip",
@@ -31,7 +36,13 @@
               "label": "Apple — Overview of mixing in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/mixing-overview-lgcpbc219818/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "effects",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
           "t": "Copy a pad with Control-click",
@@ -41,7 +52,12 @@
               "label": "Apple — Use Drum Machine Designer pad controls in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Use Pad Controls for quick shaping",
@@ -55,7 +71,14 @@
               "label": "Apple — Use Drum Machine Designer pad controls in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "pitch",
+            "effects",
+            "sample"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -74,7 +97,13 @@
               "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
               "url": "https://support.apple.com/en-us/102054"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "effects",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Save your kit as a patch",
@@ -88,7 +117,14 @@
               "label": "Apple — Logic Pro for Mac track stacks overview",
               "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "effects",
+            "safety",
+            "organize"
+          ],
+          "lvl": 2
         }
       ]
     }

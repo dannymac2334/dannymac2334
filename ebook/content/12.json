@@ -18,7 +18,11 @@
               "label": "Logic Pro Help — Logic Pro 11 new features explained",
               "url": "https://www.logicprohelp.com/articles/logic-pro-11-new-features-explained-r23/"
             }
-          ]
+          ],
+          "goals": [
+            "beat"
+          ],
+          "lvl": 2
         },
         {
           "t": "Change the drummer, not just the preset",
@@ -32,7 +36,11 @@
               "label": "Apple — Session Players overview in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat"
+          ],
+          "lvl": 2
         },
         {
           "t": "Turn individual kit pieces on and off per region",
@@ -42,7 +50,12 @@
               "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "arrange"
+          ],
+          "lvl": 1
         }
       ]
     },
@@ -58,7 +71,13 @@
               "label": "Apple — Convert Session Player regions into MIDI or pattern regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "record-midi",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Use the Details panel for feel, ghost notes and hi‑hat",
@@ -68,7 +87,12 @@
               "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat",
+            "timing"
+          ],
+          "lvl": 2
         },
         {
           "t": "Swap and tune kit pieces in Drum Kit Designer",
@@ -86,7 +110,11 @@
               "label": "Apple — Get started with Drummer in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/drummer-lgcpa4324884/mac"
             }
-          ]
+          ],
+          "goals": [
+            "beat"
+          ],
+          "lvl": 2
         }
       ]
     }

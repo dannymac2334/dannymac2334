@@ -11,7 +11,7 @@ Paste this whole file to the agent doing the site work, along with the attached 
 
 ## What is being sold
 
-A single PDF — *Logic Pro Crash Course*, 248 tricks, 91 pages — for **$14.99 USD**, one-time.
+A single PDF — *Logic Pro Crash Course*, 248 tricks, 108 pages — for **$14.99 USD**, one-time.
 Payment via **Stripe**, which the owner already uses on this site.
 
 ## Repo

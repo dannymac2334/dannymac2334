@@ -14,7 +14,12 @@
               "label": "Apple — Track automation vs region automation in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/track-automation-vs-region-automation-lgcp967649d0/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "edit"
+          ],
+          "lvl": 3
         },
         {
           "t": "Press A to toggle automation view",
@@ -33,7 +38,11 @@
               "label": "Why Logic Pro Rules — Logic Pro X Automation",
               "url": "https://whylogicprorules.com/automation/"
             }
-          ]
+          ],
+          "goals": [
+            "automation"
+          ],
+          "lvl": 1
         }
       ]
     },
@@ -49,7 +58,12 @@
               "label": "Apple — Choose automation modes in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Never leave a track in Write mode",
@@ -59,7 +73,13 @@
               "label": "Apple — Choose automation modes in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "mix",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Delete an automation point without dragging it",
@@ -69,7 +89,12 @@
               "label": "Apple — Delete automation in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "edit"
+          ],
+          "lvl": 1
         },
         {
           "t": "Curve an automation line with ⌃⇧-drag",
@@ -88,7 +113,11 @@
               "label": "Apple — Select, copy, and move automation in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/select-copy-and-move-automation-lgcpb1a5aad6/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "automation"
+          ],
+          "lvl": 1
         },
         {
           "t": "Trim existing automation up or down",
@@ -98,7 +127,13 @@
               "label": "Apple — Choose automation modes in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "mix",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use Relative mode to layer a second pass",
@@ -108,7 +143,11 @@
               "label": "Apple — Choose automation modes in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -124,7 +163,13 @@
               "label": "Apple — Select parts of regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "edit",
+            "arrange"
+          ],
+          "lvl": 2
         },
         {
           "t": "Show several automation lanes at once",
@@ -142,7 +187,11 @@
               "label": "Apple — Show automation curves in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "automation"
+          ],
+          "lvl": 2
         },
         {
           "t": "Delete all automation on a track in one command",
@@ -152,7 +201,12 @@
               "label": "Apple — Delete automation in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Thin dense automation after recording a controller pass",
@@ -166,7 +220,13 @@
               "label": "studio-interns — Delete Redundant Automation Points",
               "url": "https://studio-interns.com/delete-redundant-automation-points-logic-pro-x-keyboard-command-of-the-day/"
             }
-          ]
+          ],
+          "goals": [
+            "automation",
+            "record-audio",
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Snap automation to the grid when it needs to be rhythmic",
@@ -176,7 +236,11 @@
               "label": "Apple — Snap automation to grid position in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/snap-automation-to-grid-positions-lgcpb1a5eb20/mac"
             }
-          ]
+          ],
+          "goals": [
+            "automation"
+          ],
+          "lvl": 2
         }
       ]
     }

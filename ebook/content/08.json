@@ -23,7 +23,14 @@
               "label": "Apple — Preview take recordings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/preview-take-recordings-lgcp317d76de/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "record-audio",
+            "chords",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Save your comp as a new comp before changing it",
@@ -33,7 +40,14 @@
               "label": "Apple — Create and save comps in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "record-audio",
+            "safety",
+            "organize"
+          ],
+          "lvl": 2
         },
         {
           "t": "Move a comp edit point without redoing the comp",
@@ -43,7 +57,13 @@
               "label": "Apple — Edit comps in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-comps-lgcpb19217b1/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "record-audio",
+            "arrange"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -62,7 +82,11 @@
               "label": "Apple — Edit fades in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/edit-fades-lgcpf7c0cd53/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
           "t": "Use “Remove Silence from Audio Region” on a live kit or spoken word",
@@ -82,12 +106,29 @@
               "label": "Apple — Uses for Remove Silence in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/uses-for-remove-silence-lgcp5e08f225/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2
         },
         {
-          "t": "Add a tiny fade to the start of every region as policy",
-          "d": "Even 3 ms removes the click from a non‑zero‑crossing start. Do it to everything and you never chase a mystery click again.",
-          "advice": true
+          "t": "Stop clicks at region starts with a short fade",
+          "d": "Audio that starts abruptly can click. A short fade-in gives it a gradual ramp and prevents the click. When you trim or split in the Audio Track Editor, turn on Snap to Zero Crossings as well, so the edit lands where no click is produced.",
+          "goals": [
+            "edit"
+          ],
+          "lvl": 2,
+          "src": [
+            {
+              "label": "Why Logic Pro Rules — How to Get the Most Out of Logic Pro X's Fade Tool",
+              "url": "https://whylogicprorules.com/logic-pro-x-fade-tool/"
+            },
+            {
+              "label": "Apple — Snap to zero in the Logic Pro for Mac Audio Track Editor",
+              "url": "https://support.apple.com/guide/logicpro/snap-edits-to-zero-crossings-lgcp76a73399/mac"
+            }
+          ]
         }
       ]
     },
@@ -102,7 +143,12 @@
               "label": "Apple — Flex tool time stretching in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/flex-tool-time-stretching-lgcp54a78604/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "organize"
+          ],
+          "lvl": 3
         },
         {
           "t": "Quantise audio with Flex enabled",
@@ -120,7 +166,12 @@
               "label": "Apple — Quantize regions in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/quantize-regions-lgcpd12112da/10.7/mac/11.0"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "timing"
+          ],
+          "lvl": 3
         },
         {
           "t": "Use Flex Pitch to fix a single flat note",
@@ -130,7 +181,12 @@
               "label": "Apple — Edit pitch and timing with Flex Pitch in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/edit-pitch-and-timing-with-flex-pitch-lgcpc53e6bef/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "pitch"
+          ],
+          "lvl": 3
         },
         {
           "t": "Reset all Flex edits rather than undoing repeatedly",
@@ -140,7 +196,13 @@
               "label": "Apple — Delete, reset and move flex markers in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/delete-reset-and-move-flex-markers-lgcpe639c41a/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "loop",
+            "safety"
+          ],
+          "lvl": 3
         }
       ]
     },
@@ -155,7 +217,14 @@
               "label": "Apple — Audio File Editor overview in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/audio-file-editor-overview-lgcp21587d1c/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "mix",
+            "sample",
+            "arrange"
+          ],
+          "lvl": 3
         },
         {
           "t": "Change region level non‑destructively with Gain",
@@ -165,7 +234,12 @@
               "label": "Apple — Change gain of audio regions in the Tracks area (Logic Pro for Mac)",
               "url": "https://support.apple.com/guide/logicpro/change-gain-audio-regions-tracks-area-lgcp8e4c781d/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "mix"
+          ],
+          "lvl": 2
         },
         {
           "t": "Reclaim disk space with Project Management > Clean Up",
@@ -179,7 +253,12 @@
               "label": "Apple — Remove unused audio files in your Logic Pro for Mac project",
               "url": "https://support.apple.com/en-us/118567"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "safety"
+          ],
+          "lvl": 2
         },
         {
           "t": "Reverse a region, destructively or not",
@@ -189,7 +268,12 @@
               "label": "Apple — Reverse audio regions in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/reverse-audio-regions-lgcp99b0012e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "arrange"
+          ],
+          "lvl": 2
         },
         {
           "t": "Commit edits with Bounce Regions in Place",
@@ -199,7 +283,14 @@
               "label": "Apple — Bounce regions in place in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "edit",
+            "effects",
+            "export",
+            "mix"
+          ],
+          "lvl": 2
         }
       ]
     }

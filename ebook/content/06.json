@@ -18,7 +18,11 @@
               "label": "Sound On Sound — Q. Should I gain-stage to -6dBFS or -18dBFS?",
               "url": "https://www.soundonsound.com/sound-advice/q-should-gain-stage-6dbfs-or-18dbfs"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio"
+          ],
+          "lvl": 2
         },
         {
           "t": "Track at the lowest I/O buffer your Mac can handle",
@@ -29,7 +33,13 @@
               "label": "Apple — Manage input monitoring latency in Logic Pro for Mac",
               "url": "https://support.apple.com/en-us/105040"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "sample",
+            "performance"
+          ],
+          "lvl": 2
         },
         {
           "t": "Turn on Low Latency Monitoring mode instead of disabling plug-ins one by one",
@@ -39,7 +49,14 @@
               "label": "Apple — Work with plug-in latencies in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/work-with-plug-in-latencies-lgcpe11997ba/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "effects",
+            "mix",
+            "performance"
+          ],
+          "lvl": 2
         },
         {
           "t": "Count-in and pre-roll are either/or — pick the right one",
@@ -49,7 +66,12 @@
               "label": "Apple — Recording project settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/recording-project-settings-lgcpbc10f1ea/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "timing"
+          ],
+          "lvl": 2
         },
         {
           "t": "Name the track before you record, always",
@@ -60,7 +82,12 @@
               "label": "Apple — Rename tracks in Logic Pro for Mac (from prior audit; not re-retrieved this session)",
               "url": "https://support.apple.com/guide/logicpro/rename-tracks-lgcp591273b9/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "organize"
+          ],
+          "lvl": 1
         },
         {
           "t": "Record‑enable multiple tracks at once",
@@ -70,7 +97,13 @@
               "label": "Apple — Record to multiple audio tracks in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/record-to-multiple-audio-tracks-lgcpb19dcf78/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "mix",
+            "fast"
+          ],
+          "lvl": 1
         }
       ]
     },
@@ -86,7 +119,11 @@
               "label": "Apple — Advanced recording commands in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/advanced-recording-commands-lgcpb19d5875/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio"
+          ],
+          "lvl": 1
         },
         {
           "t": "Watch the take list, not the waveform",
@@ -100,7 +137,13 @@
               "label": "Apple — Create and save comps in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "organize",
+            "edit"
+          ],
+          "lvl": 2
         }
       ]
     },
@@ -116,7 +159,13 @@
               "label": "Apple — Send a mix to multiple destinations in Logic Pro for Mac (from prior audit; not re-retrieved this session)",
               "url": "https://support.apple.com/guide/logicpro/send-a-mix-to-multiple-destinations-lgcp8e8e6538/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "effects",
+            "mix"
+          ],
+          "lvl": 3
         },
         {
           "t": "Use Input Monitoring rather than record enable to rehearse",
@@ -126,7 +175,13 @@
               "label": "Apple — Use input monitoring with tracks in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "mix",
+            "performance"
+          ],
+          "lvl": 2
         },
         {
           "t": "Turn off Software Monitoring when your interface can monitor",
@@ -140,7 +195,12 @@
               "label": "Apple — Work with plug-in latencies in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/work-with-plug-in-latencies-lgcpe11997ba/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "effects"
+          ],
+          "lvl": 2
         },
         {
           "t": "Give the performer a click they can feel",
@@ -150,7 +210,13 @@
               "label": "Apple — Metronome project settings in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/metronome-project-settings-lgcpe1d6118e/mac"
             }
-          ]
+          ],
+          "goals": [
+            "record-audio",
+            "loop",
+            "beat"
+          ],
+          "lvl": 1
         }
       ]
     }
