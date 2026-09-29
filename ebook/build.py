@@ -6,11 +6,11 @@ HTML file in ./dist with fonts inlined as data URIs. The same file is used
 for the clickable on-screen edition and, via Chromium's print pipeline, for
 the printable PDF.
 
-The design follows the dannnymcccarthy.com system: Poppins, a black ground
-alternating with paper, uppercase display type on tight negative tracking,
-pill controls, hairline rules and the site's liquid-glass rim on cards.
-Token values are lifted from that site's css/style.css so the two stay in
-step — change them there, change them here.
+The design follows the dannny mcccarthy rates document (brand.py): Figtree,
+black grounds alternating with paper, sentence-case display type on tight
+negative tracking, small spaced uppercase kickers, 16px rounded hairline cards,
+pill controls and the signature. Tokens and fonts come from brand.py so the
+book, the library and the sales page cannot drift apart.
 """
 
 import base64
@@ -18,6 +18,8 @@ import html
 import json
 import pathlib
 import re
+
+import brand
 
 ROOT = pathlib.Path(__file__).parent
 CONTENT = ROOT / "content"
@@ -28,21 +30,8 @@ DIST = ROOT / "dist"
 # --------------------------------------------------------------------------
 # Design tokens — mirrored from dannnymcccarthy.com/css/style.css :root
 # --------------------------------------------------------------------------
-TOKENS = {
-    "paper": "#fdfdfd",
-    "black": "#000",
-    "ink": "#0a0a0a",
-    "white": "#fff",
-    "muted_dark": "#f5f4f1",
-    "muted_light": "#666",
-    "body_dim": "#d5d4cf",
-    "glass": "#171922",
-    "line_dark": "rgba(255,255,255,.18)",
-    "line_light": "rgba(0,0,0,.14)",
-    "ease": "cubic-bezier(.22,.61,.36,1)",
-}
+TOKENS = {**brand.TOKENS, "body_dim": brand.TOKENS["muted_dark"]}
 
-WEIGHTS = ["400", "500", "600", "700"]
 
 # The badge that marks a standout trick. Any other badge string renders in the
 # quieter outlined style, so adding a second badge type needs no code change.
@@ -69,15 +58,8 @@ def esc(text):
 
 
 def font_faces():
-    out = []
-    for w in WEIGHTS:
-        data = base64.b64encode((FONTS / f"poppins-{w}.woff2").read_bytes()).decode()
-        out.append(
-            "@font-face{font-family:'Poppins';font-style:normal;font-weight:%s;"
-            "font-display:block;src:url(data:font/woff2;base64,%s) format('woff2');}"
-            % (w, data)
-        )
-    return "".join(out)
+    # block, not swap: the PDF is printed once, and it must be printed in Figtree
+    return brand.font_faces(display="block")
 
 
 # --------------------------------------------------------------------------
@@ -248,18 +230,20 @@ def figure_html(name, caption=""):
 
 
 def build_cover(front, total_tips, section_count):
-    stats = [(str(total_tips), "Tricks"), (str(section_count), "Sections"), ("100%", "Clickable")]
+    stats = [(str(total_tips), "Tricks", "Each one cites its source"),
+             (str(section_count), "Sections", "Setup to mixing to export"),
+             ("100%", "Clickable", "Every entry is a link")]
     chips = "".join(
-        f'<div class="stat"><span class="stat-n">{n}</span>'
-        f'<span class="stat-l">{esc(l)}</span></div>'
-        for n, l in stats
+        f'<div class="stat"><span class="stat-l">{esc(l)}</span><span class="stat-n">{n}</span>'
+        f'<span class="stat-t">{esc(d)}</span></div>'
+        for n, l, d in stats
     )
     return f"""
 <section class="page hero" id="cover">
-  <p class="hero-kicker reveal">{esc(front["edition"])}</p>
-  <h1 class="hero-title reveal d1">Logic&nbsp;Pro<br/>Crash&nbsp;Course</h1>
-  <p class="hero-sub reveal d2">{esc(front["subtitle"].format(n=total_tips))}</p>
-  <p class="hero-tag reveal d2">{esc(front["tagline"])}</p>
+  {brand.signature_img("sig reveal")}
+  <p class="hero-kicker reveal">{esc(front["edition"])} &middot; An eBook by dannny mcccarthy</p>
+  <h1 class="hero-title reveal d1">Logic Pro Crash Course.</h1>
+  <p class="hero-tag reveal d2">{esc(front["subtitle"].format(n=total_tips))}. {esc(front["tagline"])}</p>
   <div class="stats reveal d3">{chips}</div>
 </section>"""
 
@@ -426,13 +410,13 @@ def build_section(section, counter_start):
     bits.append('<header class="sec-head">')
     bits.append(f'<p class="eyebrow">Section {section["number"]:02d}</p>')
     bits.append(f'<h2 class="display-l">{esc(section["title"])}.</h2>')
+    bits.append(f'<p class="lead sec-lede">{esc(section["intro"])}</p>')
+    if section.get("intro_src"):
+        bits.append(sources_html(section["intro_src"], cls="doc-src"))
     bits.append(f'<p class="sec-count">{tips_total} tricks</p>')
     bits.append("</header>")
 
     bits.append('<div class="sec-body">')
-    bits.append(f'<p class="lead reveal">{esc(section["intro"])}</p>')
-    if section.get("intro_src"):
-        bits.append(sources_html(section["intro_src"], cls="doc-src reveal"))
 
     if section.get("notice"):
         n = section["notice"]
@@ -512,807 +496,338 @@ def build_outro(total_tips):
   only worth something once they are muscle memory, and muscle memory only comes from sessions.</p>
   <p class="outro-note reveal d2">Come back whenever you get stuck. Every section is one click
   away from every page — that is the entire point of it.</p>
-  <p class="eyebrow outro-mark reveal d3">Logic Pro Crash Course</p>
+  <footer class="book-foot reveal d3">
+    <div>Logic Pro Crash Course &middot; {esc(front_edition())}<br>dannny mcccarthy &middot; dannnymcccarthy.com</div>
+    {brand.signature_img("mark-sig")}
+  </footer>
   <p class="legal">{esc(legal_notice())}</p>
 </section>"""
+
+
+def front_edition():
+    return json.loads((CONTENT / "00-front.json").read_text())["edition"]
 
 
 # --------------------------------------------------------------------------
 # Stylesheet
 # --------------------------------------------------------------------------
 def stylesheet():
-    t = TOKENS
-    return f"""
-{font_faces()}
+    return font_faces() + brand.root_vars() + BOOK_CSS
 
-:root {{
-  --paper: {t['paper']};
-  --black: {t['black']};
-  --ink: {t['ink']};
-  --white: {t['white']};
-  --muted-dark: {t['muted_dark']};
-  --muted-light: {t['muted_light']};
-  --body-dim: {t['body_dim']};
-  --glass: {t['glass']};
-  --line-dark: {t['line_dark']};
-  --line-light: {t['line_light']};
-  --font: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --ease: {t['ease']};
-  --pad: clamp(20px, 5.5vw, 90px);
-  --maxw: 1100px;
-  --rail-w: 16rem;
-}}
 
-* {{ box-sizing: border-box; }}
+# The rates document's system, extended to a book. Surfaces alternate the way
+# the rates page does: black for the cover, contents, section openers and the
+# close; paper for everything you read. Type is sentence case on tight negative
+# tracking; the only uppercase is the small spaced kicker and label.
+BOOK_CSS = """
+:root{--rail-w:15rem;--body-dim:var(--muted-dark);--line:var(--line-dark);--read:760px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--font);font-weight:400;
+  line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+h1,h2,h3,h4{margin:0;font-weight:700}
 
-html {{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }}
+/* surfaces */
+.hero,.toc,.sec-head,.outro{background:var(--black);color:var(--white);--body-dim:var(--muted-dark);--line:var(--line-dark)}
+.doc,.sec-body{background:var(--paper);color:var(--ink);--body-dim:var(--muted-light);--line:var(--line-light)}
 
-body {{
-  margin: 0;
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font);
-  font-weight: 400;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
-}}
+/* type */
+.display-xl{font-size:clamp(38px,8.4vw,120px);line-height:.94;letter-spacing:-.048em;text-wrap:balance}
+.display-l{font-size:clamp(34px,6.4vw,96px);line-height:.96;letter-spacing:-.048em;text-wrap:balance}
+.eyebrow,.hero-kicker{margin:0;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.24em;color:var(--kicker)}
+.doc .eyebrow,.sec-body .eyebrow{color:var(--muted-light)}
+.sub{margin:0;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;line-height:1.3}
+.lead{margin:0;max-width:60ch;font-size:clamp(15px,1.3vw,19px);line-height:1.6;color:var(--body-dim)}
 
-a {{ color: inherit; text-decoration: none; }}
-a:focus-visible {{ outline: 2px solid currentColor; outline-offset: 4px; }}
+/* shell */
+.shell{display:grid;grid-template-columns:var(--rail-w) minmax(0,1fr)}
+.book{min-width:0}
+.page{padding:clamp(64px,12vh,150px) var(--pad)}
+.page>*{max-width:var(--maxw);margin-left:auto;margin-right:auto}
 
-h1, h2, h3, h4 {{ margin: 0; font-weight: 700; letter-spacing: -.03em; line-height: .98; }}
+/* rail */
+.rail{position:sticky;top:0;align-self:start;height:100vh;background:var(--black);color:var(--white);
+  border-right:1px solid var(--line-dark);padding:26px 0 16px;display:flex;flex-direction:column;gap:18px}
+.rail-brand{margin:0 22px;font-weight:700;font-size:17px;letter-spacing:-.03em;line-height:1.05}
+.rail-scroll{overflow-y:auto;display:flex;flex-direction:column;padding-bottom:24px}
+.rail-link{position:relative;display:flex;gap:.7rem;align-items:baseline;padding:.42rem 22px;font-size:13px;
+  line-height:1.35;color:var(--muted-dark);opacity:.6;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.rail-link:hover{opacity:1;transform:translateX(4px)}
+.rail-link.is-active{opacity:1}
+.rail-link.is-active::before{content:"";position:absolute;left:0;top:.55rem;width:2px;height:1.1em;background:var(--white)}
+.rail-n{font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--kicker);font-variant-numeric:tabular-nums;min-width:1.4rem}
 
-/* ---------- type scale ---------- */
-.display-xl {{
-  font-size: clamp(38px, 8.4vw, 118px);
-  text-transform: uppercase;
-  letter-spacing: -.005em;
-  line-height: .94;
-  text-wrap: balance;
-}}
-.display-l {{
-  font-size: clamp(32px, 6.4vw, 84px);
-  text-transform: uppercase;
-  letter-spacing: -.01em;
-  line-height: .94;
-  text-wrap: balance;
-}}
-.eyebrow {{
-  margin: 0;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .24em;
-  font-size: 11px;
-  opacity: .55;
-}}
-.sub {{
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  line-height: 1.2;
-  font-size: clamp(15px, 1.5vw, 19px);
-  margin: 0;
-}}
-.lead {{
-  font-size: clamp(16px, 1.25vw, 19px);
-  line-height: 1.7;
-  color: var(--body-dim);
-  margin: 0;
-  max-width: 68ch;
-}}
+/* signature */
+.sig{display:block;width:clamp(150px,16vw,230px);height:auto;margin:0 0 clamp(22px,4vh,40px);filter:invert(1)}
+.mark-sig{display:block;width:150px;height:auto;filter:invert(1)}
 
-/* ---------- shell ---------- */
-.shell {{ display: grid; grid-template-columns: var(--rail-w) minmax(0, 1fr); }}
-.book {{ min-width: 0; }}
-.page {{ padding: clamp(64px, 12vh, 130px) var(--pad); }}
-.page > * {{ max-width: var(--maxw); margin-left: auto; margin-right: auto; }}
+/* cover */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.hero>*{width:100%}
+.hero-kicker{margin-bottom:clamp(20px,4vh,38px)}
+.hero-title{font-size:clamp(44px,8.4vw,140px);line-height:.94;letter-spacing:-.048em;max-width:12ch}
+.hero-tag{margin:clamp(30px,5vh,54px) 0 0;max-width:52ch;font-size:clamp(16px,1.6vw,22px);color:var(--muted-dark)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,26px);margin-top:clamp(40px,7vh,90px)}
+.stat{border:1px solid var(--line-dark);border-radius:16px;padding:clamp(20px,2.6vw,34px)}
+.stat-l{display:block;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:var(--label)}
+.stat-n{display:block;margin:14px 0 4px;font-weight:700;font-size:clamp(38px,4.4vw,64px);line-height:1;
+  letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat-t{display:block;font-size:13px;color:var(--label)}
 
-/* ---------- rail ---------- */
-.rail {{
-  position: sticky;
-  top: 0;
-  align-self: start;
-  height: 100vh;
-  background: var(--black);
-  border-right: 1px solid var(--line-dark);
-  padding: 26px 0 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}}
-.rail-brand {{
-  margin: 0 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -.02em;
-  line-height: 1;
-  font-size: 15px;
-}}
-.rail-scroll {{ overflow-y: auto; display: flex; flex-direction: column; padding-bottom: 24px; }}
-.rail-link {{
-  display: flex;
-  gap: .7rem;
-  align-items: baseline;
-  padding: .44rem 24px;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  line-height: 1.35;
-  color: var(--muted-dark);
-  opacity: .6;
-  transition: opacity .25s var(--ease), transform .25s var(--ease);
-}}
-.rail-link:hover {{ opacity: 1; transform: translateX(5px); }}
-.rail-link.is-active {{ opacity: 1; }}
-.rail-link.is-active::before {{
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 2px;
-  height: 1.1em;
-  background: var(--white);
-}}
-.rail-link {{ position: relative; }}
-.rail-n {{ font-variant-numeric: tabular-nums; opacity: .55; min-width: 1.4rem; }}
+/* contents */
+.toc-head{margin-bottom:clamp(34px,6vh,64px)}
+.toc-head .display-xl{margin-top:clamp(16px,3vh,30px)}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-row{display:flex;align-items:baseline;gap:clamp(14px,2.4vw,34px);padding:clamp(12px,1.6vh,18px) 0;
+  border-bottom:1px solid var(--line-dark);transition:transform .3s var(--ease)}
+.toc-list li:first-child .toc-row{border-top:1px solid var(--line-dark)}
+.toc-row:hover{transform:translateX(8px)}
+.toc-n{min-width:2rem;font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--kicker);font-variant-numeric:tabular-nums}
+.toc-n-empty{opacity:.4}
+.toc-label{flex:1;font-size:clamp(18px,2.2vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.toc-go{font-size:13px;color:var(--label);white-space:nowrap;font-variant-numeric:tabular-nums}
+.toc-foot{margin:clamp(30px,5vh,54px) 0 0;font-size:13px;color:var(--kicker)}
 
-/* ---------- cover ---------- */
-.hero {{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 22px;
-}}
-.hero-kicker {{
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: .42em;
-  font-size: 12px;
-  color: var(--muted-dark);
-  opacity: .8;
-  padding-left: .42em;
-  margin: 0;
-}}
-.hero-title {{
-  font-size: clamp(42px, 8.6vw, 118px);
-  text-transform: uppercase;
-  letter-spacing: -.035em;
-  line-height: .88;
-  margin: 0;
-}}
-.hero-sub {{
-  margin: 6px 0 0;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  font-size: clamp(15px, 2.2vw, 26px);
-}}
-.hero-tag {{
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: .045em;
-  font-size: clamp(12px, 1.15vw, 15px);
-  color: var(--muted-dark);
-  opacity: .7;
-}}
-.stats {{ display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 18px; }}
-.stat {{
-  border: 1px solid var(--line-dark);
-  border-radius: 100px;
-  padding: 14px 30px;
-  min-width: 128px;
-}}
-.stat-n {{
-  display: block;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1;
-  letter-spacing: -.03em;
-  font-variant-numeric: tabular-nums;
-}}
-.stat-l {{
-  display: block;
-  margin-top: 6px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  opacity: .6;
-}}
+/* front-matter documents */
+.doc-head{padding-bottom:clamp(22px,4vh,40px)}
+.doc-head .display-l{margin-top:clamp(16px,3vh,30px)}
+.doc-body{display:flex;flex-direction:column;gap:clamp(22px,3.4vh,34px);margin-top:clamp(10px,2vh,20px)}
+.rules{margin:0;padding:0;list-style:none}
+.rules li{position:relative;padding:14px 0 14px 22px;border-bottom:1px solid var(--line);color:var(--body-dim);
+  font-size:15px;line-height:1.6;max-width:72ch}
+.rules li:first-child{border-top:1px solid var(--line)}
+.rules li::before{content:"";position:absolute;left:0;top:1.45em;width:8px;height:1px;background:currentColor;opacity:.5}
+.legend{margin:0;display:flex;flex-direction:column}
+.legend-row{display:grid;grid-template-columns:14rem minmax(0,1fr);gap:1.2rem;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.legend-row:first-child{border-top:1px solid var(--line)}
+.legend-row dt{display:flex;align-items:baseline;gap:1rem}
+.legend-sym{font-size:26px;font-weight:500;line-height:1;min-width:2rem}
+.legend-name{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.2em}
+.legend-row dd{margin:0;font-size:15px;color:var(--body-dim)}
+.cmd-block{display:flex;flex-direction:column;gap:14px}
+.cmd-block .sub{padding-bottom:12px;border-bottom:1px solid var(--line)}
+.cmd-table{width:100%;border-collapse:collapse}
+.cmd-table tr{border-bottom:1px solid var(--line)}
+.cmd-table th{text-align:left;padding:10px 20px 10px 0;width:11rem;vertical-align:baseline}
+.cmd-table td{padding:10px 0;font-size:15px;color:var(--body-dim);vertical-align:baseline}
 
-/* ---------- contents ---------- */
-.toc-head {{ margin-bottom: clamp(34px, 6vh, 64px); }}
-.toc-head .display-xl {{ margin-top: 14px; }}
-.toc-list {{ list-style: none; margin: 0; padding: 0; }}
-.toc-row {{
-  display: flex;
-  align-items: baseline;
-  gap: clamp(14px, 2.4vw, 34px);
-  padding: clamp(13px, 1.7vh, 20px) 0;
-  border-bottom: 1px solid var(--line-dark);
-  transition: transform .3s var(--ease), opacity .3s var(--ease);
-}}
-.toc-list li:first-child .toc-row {{ border-top: 1px solid var(--line-dark); }}
-.toc-row:hover {{ transform: translateX(8px); }}
-.toc-n {{
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  opacity: .45;
-  font-variant-numeric: tabular-nums;
-  min-width: 2rem;
-}}
-.toc-label {{
-  flex: 1;
-  font-size: clamp(17px, 2.2vw, 30px);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -.02em;
-  line-height: 1.05;
-}}
-.toc-n-empty {{ opacity: .22; }}
-.toc-go {{
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  opacity: .5;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}}
-.toc-foot {{
-  margin: clamp(30px, 5vh, 54px) 0 0;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  opacity: .45;
-}}
+/* key caps: solid pill on the surface's opposite colour */
+.kbd{display:inline-block;font-family:var(--font);font-weight:600;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;background:currentColor;border-radius:100px;padding:.34rem .8rem;white-space:nowrap}
+.hero .kbd,.toc .kbd,.sec-head .kbd,.outro .kbd{background:var(--white);color:var(--black)}
+.doc .kbd,.sec-body .kbd{background:var(--ink);color:var(--white)}
+.kbd-phrase,.doc .kbd-phrase,.sec-body .kbd-phrase{background:transparent;color:inherit;border:1px solid var(--line);letter-spacing:.08em}
 
-/* ---------- front-matter documents ---------- */
-.doc-head {{ padding-bottom: clamp(22px, 4vh, 40px); border-bottom: 1px solid var(--line-dark); }}
-.doc-head .display-l {{ margin-top: 14px; }}
-.doc-body {{ display: flex; flex-direction: column; gap: clamp(22px, 3.4vh, 34px); margin-top: clamp(30px, 5vh, 52px); }}
+.callout,.notice{border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,40px)}
+.callout h3,.notice h3{margin:0 0 12px;font-size:clamp(18px,1.8vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.callout p,.notice p{margin:0;font-size:15px;line-height:1.65;color:var(--body-dim)}
+.notice{margin-top:30px}
 
-.rules {{ margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }}
-.rules li {{
-  padding: 15px 0 15px 30px;
-  border-bottom: 1px solid var(--line-dark);
-  position: relative;
-  color: var(--body-dim);
-  font-size: clamp(14px, 1.1vw, 16px);
-  line-height: 1.6;
-  max-width: 72ch;
-}}
-.rules li:first-child {{ border-top: 1px solid var(--line-dark); }}
-.rules li::before {{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.5em;
-  width: 14px;
-  height: 1px;
-  background: currentColor;
-  opacity: .5;
-}}
+/* sections: black opener, paper body */
+.section{padding:0}
+.section>*{max-width:none}
+.sec-head{padding:clamp(80px,14vh,170px) var(--pad) clamp(40px,7vh,80px)}
+.sec-head>*{max-width:var(--maxw);margin-left:auto;margin-right:auto}
+.sec-head .display-l{margin-top:clamp(16px,3vh,30px);max-width:16ch;margin-left:0}
+.sec-lede{margin-top:clamp(20px,3vh,32px)}
+.sec-count{display:inline-block;margin:clamp(24px,4vh,40px) 0 0;border:1px solid var(--line-dark);border-radius:100px;padding:8px 20px;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:var(--label)}
+.sec-body{padding:clamp(50px,9vh,110px) var(--pad) clamp(60px,10vh,120px)}
+.sec-body>*{max-width:var(--maxw);margin-left:auto;margin-right:auto}
 
-.legend {{ margin: 0; display: flex; flex-direction: column; }}
-.legend-row {{
-  display: grid;
-  grid-template-columns: 14rem minmax(0, 1fr);
-  gap: 1.2rem;
-  align-items: baseline;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--line-dark);
-}}
-.legend-row:first-child {{ border-top: 1px solid var(--line-dark); }}
-.legend-row dt {{ display: flex; align-items: baseline; gap: 1rem; }}
-.legend-sym {{ font-size: 26px; font-weight: 500; line-height: 1; min-width: 2rem; }}
-.legend-name {{
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .16em;
-}}
-.legend-row dd {{ margin: 0; font-size: 14px; color: var(--body-dim); }}
+.group{margin-top:clamp(44px,7vh,90px)}
+.group-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.group-path{margin:0;font-size:13px;color:var(--muted-light)}
+.group-note{margin:14px 0 0;font-size:14px;color:var(--muted-light)}
+.tips{margin-top:clamp(20px,3vh,32px);display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:clamp(14px,2vw,26px)}
 
-.cmd-block {{ display: flex; flex-direction: column; gap: 14px; }}
-.cmd-table {{ width: 100%; border-collapse: collapse; }}
-.cmd-table tr {{ border-bottom: 1px solid var(--line-dark); }}
-.cmd-table tr:first-child {{ border-top: 1px solid var(--line-dark); }}
-.cmd-table th {{ text-align: left; padding: 11px 20px 11px 0; width: 11rem; vertical-align: baseline; }}
-.cmd-table td {{
-  padding: 11px 0;
-  font-size: 14px;
-  color: var(--body-dim);
-  vertical-align: baseline;
-}}
+/* trick card = the rates tier card */
+.tip{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,2.4vw,32px);
+  background:var(--paper);color:var(--ink);transition:border-color .35s var(--ease),transform .35s var(--ease)}
+.tip:hover{border-color:rgba(0,0,0,.4);transform:translateY(-2px)}
+.tip-head{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.tip-num{font-size:12px;font-weight:500;letter-spacing:.2em;color:var(--muted-light);font-variant-numeric:tabular-nums}
+.tip-title{margin:10px 0 0;font-size:clamp(17px,1.5vw,21px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.tip-body{margin:12px 0 0;font-size:15px;line-height:1.6;color:var(--body-dim);flex:1}
+.tip-keys{margin-top:16px}
+.tip-fig{margin:14px 0 0}
+.tip-fig img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.sec-body>.notice:first-child{margin-top:0}
+.sec-body>.group:first-child,.sec-body>.group-tight:first-child{margin-top:0}
+.tip-fig figcaption{margin-top:8px;font-size:12px;line-height:1.5;color:var(--body-dim)}
+.tip-src{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:12px;line-height:1.5;color:var(--body-dim)}
+.tip-src span,.doc-src span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;margin-right:6px}
+.tip-src a,.doc-src a{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent)}
+.doc-src{margin:10px 0 0;font-size:12px;line-height:1.55;color:var(--body-dim)}
+sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--body-dim)}
+.ref-n{font-weight:600;font-size:10px}
 
-.kbd {{
-  display: inline-block;
-  font-family: var(--font);
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  background: var(--white);
-  color: var(--black);
-  border-radius: 100px;
-  padding: .34rem .8rem;
-  white-space: nowrap;
-}}
-.kbd-phrase {{
-  background: transparent;
-  color: var(--white);
-  border: 1px solid var(--line-dark);
-  letter-spacing: .08em;
-}}
+/* game changer: the dark tier on a paper page */
+.tip-gold{background:var(--black);color:var(--white);border-color:var(--black);--body-dim:var(--muted-dark);--line:var(--line-dark)}
+.tip-gold:hover{border-color:var(--black)}
+.tip-gold .tip-num{color:var(--label)}
+.sec-body .tip-gold .kbd{background:var(--white);color:var(--black)}
 
-.callout {{
-  border: 1px solid var(--line-dark);
-  border-radius: 16px;
-  padding: clamp(22px, 3vw, 34px);
-}}
-.callout h3 {{
-  margin: 0 0 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  font-size: clamp(15px, 1.5vw, 19px);
-}}
-.callout p {{ margin: 0; font-size: 15px; line-height: 1.7; color: var(--body-dim); }}
+.badge{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border-radius:100px;padding:4px 11px}
+.badge-gold{background:var(--white);color:var(--black)}
+.badge-todo,.badge-start{border:1px solid currentColor}
+a.gl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,currentColor 50%,transparent)}
+a.gl:hover{text-decoration-style:solid}
 
-/* ---------- sections ---------- */
-.section {{ padding: 0; max-width: none; }}
-.section > * {{ max-width: none; }}
-.sec-head {{
-  border-bottom: 1px solid var(--line-dark);
-  padding: clamp(80px, 14vh, 150px) var(--pad) clamp(34px, 6vh, 62px);
-  text-align: center;
-}}
-.sec-head .display-l {{ margin: 16px auto 0; max-width: 18ch; }}
-.sec-count {{
-  margin: 20px 0 0;
-  display: inline-block;
-  border: 1px solid var(--line-dark);
-  border-radius: 100px;
-  padding: 7px 20px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  opacity: .7;
-}}
-.sec-body {{
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: clamp(40px, 7vh, 78px) var(--pad) clamp(60px, 10vh, 110px);
-}}
+/* Start Here */
+.steps{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:0}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;border-top:1px solid var(--line);padding:16px 0;break-inside:avoid}
+.step-n{font-size:32px;font-weight:700;letter-spacing:-.048em;line-height:1}
+.step h3{font-size:clamp(18px,1.8vw,24px);letter-spacing:-.02em;line-height:1.2}
+.step p{margin:6px 0 0;font-size:15px;line-height:1.6;color:var(--body-dim);max-width:64ch}
+.step .tip-keys{margin-top:10px}
 
-.notice {{
-  margin-top: 30px;
-  border: 1px solid var(--line-dark);
-  border-radius: 16px;
-  padding: clamp(20px, 2.6vw, 30px);
-}}
-.notice h3 {{
-  margin: 0 0 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  font-size: 15px;
-}}
-.notice p {{ margin: 0; font-size: 14px; line-height: 1.7; color: var(--body-dim); }}
-
-.group {{ margin-top: clamp(44px, 7vh, 80px); }}
-.group-head {{
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line-dark);
-}}
-.group-path {{
-  margin: 0;
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  border: 1px solid var(--line-dark);
-  border-radius: 100px;
-  padding: 5px 14px;
-  opacity: .7;
-}}
-.group-note {{ margin: 16px 0 0; font-size: 13px; color: var(--muted-light); }}
-
-.tips {{
-  margin-top: 26px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 18px;
-}}
-
-/* Liquid glass rim, lifted from the site's card treatment. */
-.tip {{
-  position: relative;
-  border-radius: 16px;
-  padding: 1px;
-  background:
-    linear-gradient(135deg,
-      rgba(255,255,255,.9) 0%,
-      rgba(255,255,255,.28) 16%,
-      rgba(255,255,255,.08) 42%,
-      rgba(255,255,255,.08) 60%,
-      rgba(255,255,255,.3) 82%,
-      rgba(255,255,255,.8) 100%),
-    linear-gradient(0deg, var(--glass), var(--glass));
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.22),
-    0 0 0 1px rgba(255,255,255,.1),
-    0 20px 44px -24px rgba(0,0,0,.7),
-    0 4px 14px -10px rgba(0,0,0,.55);
-  transition: box-shadow .5s var(--ease);
-}}
-.tip::before {{
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(120deg, rgba(255,255,255,0) 38%, rgba(255,255,255,.9) 50%, rgba(255,255,255,0) 62%);
-  background-size: 260% 100%;
-  background-position: 100% 0;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity .5s var(--ease), background-position .9s var(--ease);
-}}
-.tip:hover::before {{ opacity: 1; background-position: 0 0; }}
-.tip:hover {{
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.4),
-    0 0 0 1px rgba(255,255,255,.2),
-    0 0 22px -2px rgba(220,230,255,.32),
-    0 20px 44px -22px rgba(0,0,0,.7);
-}}
-.tip-inner, .tip > * {{ position: relative; z-index: 2; }}
-.tip {{ display: flex; flex-direction: column; }}
-.tip > .tip-head, .tip > .tip-title, .tip > .tip-body, .tip > .tip-keys {{
-  background: var(--glass);
-}}
-.tip > .tip-head {{
-  border-radius: 15px 15px 0 0;
-  padding: 20px 22px 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}}
-.tip > .tip-title {{ padding: 12px 22px 0; }}
-.tip > .tip-body {{ padding: 10px 22px 0; flex: 1; }}
-.tip > .tip-keys {{ padding: 16px 22px 20px; border-radius: 0 0 15px 15px; }}
-.tip-fig {{ margin: 0; padding: 0 22px 18px; background: var(--glass); }}
-.tip-fig img {{ display: block; width: 100%; height: auto; border-radius: 8px;
-  border: 1px solid var(--line-dark); }}
-.tip-fig figcaption {{ margin-top: 8px; font-size: 11px; line-height: 1.5;
-  color: var(--body-dim); letter-spacing: .01em; }}
-.tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 22px; border-radius: 0 0 15px 15px; }}
-.tip > .tip-src {{ background: var(--glass); margin: 0; padding: 12px 22px 18px;
-  border-radius: 0 0 15px 15px; font-size: 10.5px; line-height: 1.5; color: var(--body-dim); }}
-.tip-src span {{ font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-  font-size: 9px; opacity: .7; margin-right: 4px; }}
-.tip-src a {{ color: inherit; text-decoration: underline; text-decoration-thickness: 1px;
-  text-underline-offset: 2px; text-decoration-color: rgba(255,255,255,.3); }}
-.tip:has(.tip-src) > .tip-keys {{ padding-bottom: 0; border-radius: 0; }}
-.doc-src {{ margin: 10px 0 0; font-size: 10.5px; line-height: 1.55; color: var(--body-dim); }}
-sup.ref {{ font-size: 9px; font-weight: 600; margin-left: 3px; color: var(--body-dim); letter-spacing: .02em; }}
-.ref-n {{ font-weight: 600; font-size: 9px; opacity: .8; }}
-.doc-src span {{ font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-  font-size: 9px; opacity: .7; margin-right: 4px; }}
-.doc-src a {{ color: inherit; text-decoration: underline; text-underline-offset: 2px;
-  text-decoration-color: rgba(255,255,255,.3); }}
-.tip:has(.tip-src):not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 0; border-radius: 0; }}
-
-.tip-num {{
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  opacity: .45;
-  font-variant-numeric: tabular-nums;
-}}
-.tip-title {{
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -.01em;
-  line-height: 1.25;
-  text-transform: none;
-}}
-.tip-body {{ margin: 0; font-size: 13.5px; line-height: 1.65; color: var(--body-dim); }}
-
-.badge {{
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  border-radius: 100px;
-  padding: 4px 11px;
-}}
-.badge-gold {{ background: var(--white); color: var(--black); }}
-.badge-todo {{ border: 1px solid var(--line-dark); color: var(--white); opacity: .8; }}
-.badge-start {{ border: 1px solid currentColor; color: var(--body-dim); }}
-a.gl {{ color: inherit; text-decoration: underline dotted; text-underline-offset: 3px;
-  text-decoration-color: rgba(255,255,255,.45); }}
-a.gl:hover {{ text-decoration-style: solid; }}
-
-/* Start Here — numbered first steps */
-.steps {{ list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 8px; }}
-.step {{ display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start;
-  border-top: 1px solid var(--line-dark); padding-top: 11px; break-inside: avoid; }}
-.step-n {{ font-size: 26px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }}
-.step h3 {{ margin: 0; font-size: 17px; font-weight: 600; }}
-.step p {{ margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: var(--body-dim); max-width: 64ch; }}
-.step .tip-keys {{ padding: 6px 0 0; background: none; }}
-
-/* "I want to…" — goals and the tricks that get you there */
-.goals {{ columns: 2 320px; column-gap: 40px; margin-top: 24px; }}
-.goal {{ margin: 0 0 26px; }}
-.goal .sub {{ break-after: avoid; }}
-.goal-list li {{ break-inside: avoid; }}
-.goal .sub {{ display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line-dark);
-  padding-bottom: 8px; }}
-.goal-count {{ font-size: 11px; font-weight: 500; letter-spacing: .1em; opacity: .6; }}
-.goal-list {{ list-style: none; margin: 8px 0 0; padding: 0; }}
-.goal-list li {{ margin: 0; }}
-.goal-list a {{ display: flex; align-items: baseline; gap: 10px; padding: 3px 0; color: inherit;
-  text-decoration: none; font-size: 13px; line-height: 1.45; }}
-.goal-list a:hover {{ text-decoration: underline; }}
-.gi-n {{ flex: 0 0 auto; font-size: 10.5px; font-weight: 600; letter-spacing: .1em; opacity: .55;
-  font-variant-numeric: tabular-nums; }}
-.gi-start {{ flex: 0 0 auto; margin-left: auto; font-size: 8.5px; font-weight: 600; letter-spacing: .16em;
-  text-transform: uppercase; border: 1px solid currentColor; border-radius: 100px; padding: 2px 8px; opacity: .7; }}
+/* I Want To... */
+.goals{columns:2 320px;column-gap:44px;margin-top:10px}
+.goal{margin:0 0 28px}
+.goal .sub{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px;break-after:avoid}
+.goal-count{font-weight:500;color:var(--muted-light)}
+.goal-list{list-style:none;margin:8px 0 0;padding:0}
+.goal-list li{margin:0;break-inside:avoid}
+.goal-list a{display:flex;align-items:baseline;gap:10px;padding:3px 0;font-size:14px;line-height:1.45}
+.goal-list a:hover{text-decoration:underline}
+.gi-n{flex:0 0 auto;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--muted-light);font-variant-numeric:tabular-nums}
+.gi-start{flex:0 0 auto;margin-left:auto;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid currentColor;border-radius:100px;padding:2px 8px;opacity:.7}
 
 /* Glossary */
-.gloss {{ margin: 24px 0 0; columns: 2 320px; column-gap: 40px; }}
-.gl-row {{ break-inside: avoid; border-top: 1px solid var(--line-dark); padding: 12px 0 14px; }}
-.gl-row dt {{ font-weight: 600; font-size: 15px; }}
-.gl-aka {{ display: block; font-weight: 400; font-size: 11px; opacity: .6; margin-top: 2px; }}
-.gl-row dd {{ margin: 6px 0 0; font-size: 13.5px; line-height: 1.6; color: var(--body-dim); }}
-.tip-gold {{ box-shadow: inset 0 0 0 1px rgba(255,255,255,.45), 0 0 0 1px rgba(255,255,255,.2), 0 20px 44px -24px rgba(0,0,0,.7); }}
+.gloss{margin:10px 0 0;columns:2 320px;column-gap:44px}
+.gl-row{break-inside:avoid;border-top:1px solid var(--line);padding:12px 0 14px}
+.gl-row dt{font-weight:700;font-size:17px;letter-spacing:-.02em}
+.gl-aka{display:block;font-weight:400;font-size:12px;color:var(--muted-light);margin-top:2px;letter-spacing:0}
+.gl-row dd{margin:6px 0 0;font-size:14px;line-height:1.6;color:var(--body-dim)}
 
-/* ---------- pill ---------- */
-.pill {{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 38px;
-  border: 2px solid currentColor;
-  border-radius: 100px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .24em;
-  font-size: 11px;
-  transition: background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease);
-}}
-.pill:hover {{ background: var(--white); color: var(--black); }}
-.pill:active {{ transform: scale(.97); }}
-.totop {{ margin: clamp(46px, 8vh, 90px) 0 0; }}
+/* pill */
+.pill{display:inline-flex;align-items:center;justify-content:center;padding:20px 46px;border:2px solid currentColor;
+  border-radius:100px;font-weight:500;text-transform:uppercase;letter-spacing:.24em;font-size:12px;
+  transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease)}
+.pill:hover{background:var(--ink);color:var(--white)}
+.pill:active{transform:scale(.97)}
+.totop{margin:clamp(46px,8vh,90px) 0 0}
 
-/* ---------- outro ---------- */
-.outro {{
-  min-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 22px;
-  border-top: 1px solid var(--line-dark);
-}}
-.outro-lead {{ margin: 0; max-width: 46ch; font-size: clamp(16px, 1.5vw, 21px); line-height: 1.55; }}
-.outro-note {{ margin: 0; max-width: 48ch; font-size: 14px; line-height: 1.7; color: var(--muted-light); }}
-.outro-mark {{ margin-top: 26px; }}
-.legal {{ margin: 40px 0 0; max-width: 70ch; font-size: 10.5px; line-height: 1.6; color: rgba(255,255,255,.62); }}
+/* close */
+.outro{min-height:90vh;display:flex;flex-direction:column;justify-content:center}
+.outro>*{width:100%}
+.outro-lead{margin:clamp(30px,5vh,54px) 0 0;max-width:56ch;font-size:clamp(16px,1.6vw,22px);color:var(--muted-dark)}
+.outro-note{margin:16px 0 0;max-width:56ch;font-size:15px;color:var(--label)}
+.book-foot{margin-top:clamp(60px,10vh,120px);padding-top:clamp(30px,5vh,50px);border-top:1px solid var(--line-dark);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--kicker)}
+.legal{margin:30px 0 0;max-width:80ch;font-size:11px;line-height:1.6;color:var(--kicker)}
 
-/* ---------- reveal (matches the site) ----------
-   Content is visible by default and only hidden once the script confirms it
-   is running, so the book never renders blank if JS is blocked or fails. */
-html.js .reveal {{
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .9s var(--ease), transform .9s var(--ease);
-}}
-html.js .reveal.in {{ opacity: 1; transform: none; }}
-html.js .reveal.d1 {{ transition-delay: .08s; }}
-html.js .reveal.d2 {{ transition-delay: .16s; }}
-html.js .reveal.d3 {{ transition-delay: .24s; }}
+/* reveal: visible by default, hidden only once the script is running */
+html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .reveal.d1{transition-delay:.08s}
+html.js .reveal.d2{transition-delay:.16s}
+html.js .reveal.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  html.js .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
 
-@media (prefers-reduced-motion: reduce) {{
-  html.js .reveal {{ opacity: 1; transform: none; transition: none; }}
-  html {{ scroll-behavior: auto; }}
-  * {{ animation: none !important; }}
-}}
-
-/* ---------- responsive ---------- */
-@media (max-width: 1000px) {{
-  .shell {{ grid-template-columns: 1fr; }}
-  .rail {{ position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line-dark); }}
-  .rail-scroll {{ max-height: 34vh; }}
-  .legend-row {{ grid-template-columns: 1fr; gap: .4rem; }}
-  .cmd-table th {{ width: 8rem; }}
-}}
+@media (max-width:1000px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line-dark)}
+  .rail-scroll{max-height:34vh}
+  .legend-row{grid-template-columns:1fr;gap:.4rem}
+  .cmd-table th{width:8rem}
+  .stats{grid-template-columns:1fr}
+}
 
 /* ---------- print ---------- */
-@page {{ size: A4; margin: 14mm 13mm; }}
-@page bleed {{ size: A4; margin: 0; }}
+@page{size:A4;margin:14mm 13mm}
+@page bleed{size:A4;margin:0}
+@media print{
+  html{scroll-behavior:auto}
+  *,*::before,*::after{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  .reveal{opacity:1 !important;transform:none !important}
+  .rail,.totop{display:none !important}
+  .shell{display:block}
+  html,body{background:#fff}
+  body{font-size:10pt;color:var(--ink)}
+  .doc,.sec-body{background:#fff}
+  .tip{background:#fff}
+  .tip-gold{background:var(--black)}
+  .sec-count{align-self:flex-start}
+  .doc,.sec-body{--body-dim:#444}
+  .tip-gold{--body-dim:#d9d8d4}
+  .page{break-after:page;padding:0;max-width:none}
+  .page:last-child{break-after:auto}
 
-@media print {{
-  html {{ scroll-behavior: auto; }}
-  *, *::before, *::after {{
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }}
-  .reveal {{ opacity: 1 !important; transform: none !important; }}
-  .rail, .totop {{ display: none !important; }}
-  .shell {{ display: block; }}
-  /* The page ground must be paper, not the screen's black. Otherwise the space
-     left when a section ends mid-page renders as a solid black block rather
-     than as the chapter simply being over. Poster pages re-blacken below. */
-  body {{ font-size: 10pt; background: var(--paper); color: var(--ink); }}
+  /* black pages bleed to trim, like the rates document's dark bands */
+  .hero,.toc,.outro,.sec-head{page:bleed;min-height:297mm;padding:22mm 18mm;display:flex;flex-direction:column;justify-content:center}
+  .toc{justify-content:flex-start;padding-top:18mm}
+  .sec-head{justify-content:flex-end;padding-bottom:30mm;break-after:page}
+  .sig{width:150px;margin-bottom:12mm}
+  .hero-title{font-size:60pt}
+  .hero-tag{font-size:14pt}
+  .stats{margin-top:14mm;gap:10px;grid-template-columns:repeat(3,1fr)}
+  .legend-row{grid-template-columns:12rem minmax(0,1fr)}
+  .stat{padding:16px}
+  .stat-n{font-size:30pt}
+  .toc-head .display-xl{font-size:44pt}
+  .toc-head{margin-bottom:8mm}
+  .toc-row{padding:4.2px 0}
+  .toc-label{font-size:12pt}
+  .toc-foot{margin-top:6mm;font-size:8pt}
+  .toc-n,.toc-go{font-size:7.5pt}
+  .sec-head .display-l{font-size:46pt}
+  .sec-lede{font-size:13pt !important;max-width:52ch}
+  .sec-count{font-size:8pt}
+  .sec-head .doc-src{font-size:7pt}
+  .outro .display-xl{font-size:48pt}
 
-  .page {{
-    break-after: page;
-    page-break-after: always;
-    padding: 0;
-    max-width: none;
-  }}
-  .page:last-child {{ break-after: auto; page-break-after: auto; }}
+  .doc{padding:10mm 0}
+  .doc-head .display-l{font-size:36pt}
+  .sec-body{padding:6mm 0 10mm}
+  .sec-body .lead,.doc .lead{font-size:11pt}
+  .notice{margin-top:6mm;padding:5mm}
+  .callout{padding:5mm}
+  .callout h3,.notice h3{font-size:12pt}
+  .callout p,.notice p{font-size:9.5pt}
+  .rules li,.legend-row dd,.cmd-table td{font-size:9.5pt}
+  .rules li{padding:8px 0 8px 20px}
+  .legend-row{padding:8px 0}
+  .cmd-table th,.cmd-table td{padding:6px 16px 6px 0}
 
-  /* Poster pages keep the black ground and bleed to trim. */
-  .hero, .toc, .outro {{
-    page: bleed;
-    background: var(--black);
-    color: var(--white);
-    min-height: 297mm;
-    padding: 20mm 16mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }}
-  .toc {{ justify-content: flex-start; padding-top: 16mm; }}
-  .hero-title {{ font-size: 62pt; }}
-  .toc-head .display-xl {{ font-size: 46pt; }}
-  .toc-row {{ padding: 6.5px 0; }}
-  .toc-label {{ font-size: 13pt; }}
-  .toc-n, .toc-go {{ font-size: 7pt; }}
-
-  /* Body pages invert to paper so the book is printable. Flipping the muted
-     token on the surface itself re-colours every descendant that uses it,
-     rather than listing selectors one at a time and missing some. */
-  .doc, .section {{ --body-dim: #3a3a38; }}
-  .doc, .section, .sec-body {{ background: var(--paper); color: var(--ink); }}
-  .doc, .section {{ padding: 0; }}
-  .doc {{ padding: 12mm 0; }}
-  .sec-body {{ padding: 10mm 0 12mm; max-width: none; }}
-  .doc-head {{ padding-bottom: 6mm; border-color: var(--line-light); }}
-  /* Hairlines on paper only — the contents page stays black and keeps its own. */
-  .doc .rules li, .doc .legend-row, .doc .cmd-table tr, .sec-body .group-head {{
-    border-color: var(--line-light);
-  }}
-  .doc .callout, .sec-body .notice, .sec-body .group-path {{ border-color: var(--line-light); }}
-
-  /* Section banner stays black — it is the divider that paces the book. */
-  .sec-head {{
-    page: bleed;
-    background: var(--black);
-    color: var(--white);
-    padding: 34mm 16mm 20mm;
-    min-height: 297mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;   /* keep the count pill from stretching to full width */
-    break-after: page;
-    page-break-after: always;
-  }}
-  .sec-head .display-l {{ font-size: 40pt; }}
-
-  .kbd {{ background: var(--ink); color: var(--white); }}
-  .kbd-phrase {{
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid rgba(0,0,0,.32);
-  }}
-
-  /* Tighter vertical rhythm on paper. The screen spacing is generous because
-     it scrolls; on a fixed page it wastes rows and strands single cards after
-     a break. */
-  /* In print the group becomes the grid itself and the cards join it via
-     display:contents. The heading is then a grid item spanning both columns,
-     so it physically cannot be stranded on its own page when Chromium moves
-     or fragments the grid — it travels with the first row of cards. */
-  .group {{
-    margin-top: 4mm;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }}
-  .group-head {{ grid-column: 1 / -1; padding-bottom: 9px; }}
-  .group-note {{ grid-column: 1 / -1; margin: 0; }}
-  .tips {{ display: contents; }}
-  .sec-body .lead {{ font-size: 11pt; }}
-  .notice {{ margin-top: 7mm; padding: 5mm; }}
-
-  /* Cards go flat on paper — the glass rim is a screen effect. */
-  .tips {{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 6mm; }}
-  .tip {{
-    background: none;
-    box-shadow: none;
-    border: 1px solid var(--line-light);
-    border-radius: 12px;
-    padding: 0;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }}
-  .tip::before {{ content: none; }}
-  .tip > .tip-head, .tip > .tip-title, .tip > .tip-body, .tip > .tip-keys {{ background: none; }}
-  .tip > .tip-head {{ padding: 10px 12px 0; }}
-  .tip > .tip-title {{ padding: 6px 12px 0; }}
-  .tip > .tip-body {{ padding: 5px 12px 0; }}
-  .tip > .tip-keys {{ padding: 8px 12px 10px; }}
-  .tip-fig {{ padding: 0 12px 10px; background: none;
-    break-inside: avoid; page-break-inside: avoid; }}
-  .tip-fig img {{ border-color: var(--line-light); }}
-  .tip-fig figcaption {{ font-size: 8pt; color: var(--body-dim); }}
-  .tip:not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 12px; }}
-  .tip > .tip-src {{ background: none; padding: 6px 12px 10px; font-size: 6.8pt; }}
-  .doc-src {{ font-size: 6.8pt; }}
-  sup.ref, .ref-n {{ font-size: 6pt; }}
-  .doc-src a {{ text-decoration-color: rgba(0,0,0,.3); }}
-  .tip-src a {{ text-decoration-color: rgba(0,0,0,.3); }}
-  .tip:has(.tip-src) > .tip-keys {{ padding-bottom: 0; }}
-  .tip:has(.tip-src):not(:has(.tip-keys)) > .tip-body {{ padding-bottom: 0; }}
-  /* The inverted card keeps the dark-surface token so its copy stays legible. */
-  .tip-gold {{
-    --body-dim: #d5d4cf;
-    background: var(--ink);
-    color: var(--white);
-    border-color: var(--ink);
-    box-shadow: none;
-  }}
-  .tip-gold .badge-gold {{ background: var(--white); color: var(--ink); }}
-  .tip-gold .kbd {{ background: var(--white); color: var(--ink); }}
-  .tip-gold .kbd-phrase {{
-    background: transparent;
-    color: var(--white);
-    border-color: rgba(255,255,255,.45);
-  }}
-  .badge-todo {{ border-color: var(--line-light); color: inherit; }}
-  .badge-start {{ color: inherit; border-color: var(--line-light); }}
-  .tip-gold .badge-start {{ color: var(--white); border-color: rgba(255,255,255,.5); }}
-  a.gl {{ text-decoration-color: rgba(0,0,0,.35); }}
-  .tip-gold a.gl {{ text-decoration-color: rgba(255,255,255,.5); }}
-  .step, .goal-list, .goal .sub, .gl-row {{ border-color: var(--line-light); }}
-  .step {{ break-inside: avoid; page-break-inside: avoid; }}
-  .step p, .gl-row dd {{ font-size: 9pt; }}
-  .goal-list a {{ font-size: 8.3pt; padding: 1.5px 0; }}
-  .gl-row dt {{ font-size: 10pt; }}
-
-  .group-head, .doc-head {{ break-after: avoid; page-break-after: avoid; }}
-  .callout, .notice, .legend-row, .cmd-block {{ break-inside: avoid; page-break-inside: avoid; }}
-  /* Keep short groups on one page rather than splitting off a lone card. */
-  .group-tight {{ break-inside: avoid; page-break-inside: avoid; }}
-  /* A closing callout should never be the only thing on a page. */
-  .callout {{ break-before: avoid; page-break-before: avoid; }}
-}}
+  /* the group is the grid in print, so a heading always travels with its first row */
+  .group{margin-top:6mm;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .group-head{grid-column:1/-1;padding-bottom:8px}
+  .group-note{grid-column:1/-1;margin:0}
+  .tips{display:contents}
+  .tip{padding:12px 14px;border-radius:12px;break-inside:avoid}
+  .tip:hover{transform:none}
+  .tip-num{font-size:7pt}
+  .tip-title{margin-top:5px;font-size:11pt}
+  .tip-body{margin-top:5px;font-size:8.8pt;line-height:1.5}
+  .tip-keys{margin-top:8px}
+  .kbd{font-size:7pt}
+  .tip-src{margin-top:8px;padding-top:6px;font-size:6.8pt}
+  .tip-src span,.doc-src span{font-size:6pt}
+  .doc-src{font-size:6.8pt}
+  sup.ref,.ref-n{font-size:6pt}
+  .badge{font-size:6.5pt;padding:2px 8px}
+  .tip-fig figcaption{font-size:8pt}
+  .step{padding:9px 0}
+  .step-n{font-size:20pt}
+  .step h3{font-size:12pt}
+  .step p,.gl-row dd{font-size:9pt}
+  .goal-list a{font-size:8.3pt;padding:1.5px 0}
+  .gl-row dt{font-size:10.5pt}
+  .book-foot{font-size:8pt}
+  .mark-sig{width:110px}
+  .legal{font-size:7pt}
+  .group-head,.doc-head{break-after:avoid}
+  .callout,.notice,.legend-row,.cmd-block{break-inside:avoid}
+  .group-tight{break-inside:avoid}
+  .callout{break-before:avoid}
+}
 """
 
 

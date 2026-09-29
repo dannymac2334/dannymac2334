@@ -11,7 +11,7 @@ structured content files so the text and the design can be changed independently
 | `dist/logic-pro-crash-course-sales.html` | **The sales page** for the $14.99 product. Drop-in for the site; sells the book without containing it. Built by `build_sales_page.py`. |
 | `dist/logic-pro-crash-course-page.html` | Full 248-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
 | `HANDOFF.md` / `AGENT-PROMPT.md` / `PITCH.md` | Handoff spec, paste-ready prompt for the site agent, and the sales copy in reviewable form. |
-| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 108 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
+| `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 89 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
 
 ## Building
 
@@ -27,7 +27,8 @@ python3 build.py                     # writes dist/logic-pro-crash-course.html
 
 python3 finish_pdf.py                # bookmarks + metadata; makes the PDF standalone
 
-python3 build_site_page.py           # writes the drop-in page for the portfolio site
+python3 build_site_page.py           # writes the searchable web library
+python3 test_search.py               # types 45 beginner queries into it and checks the results
 ```
 
 ```bash
@@ -97,24 +98,25 @@ renumbers everything after it without any manual work.
 
 ## Design
 
-The book follows the **dannnymcccarthy.com** design system. Token values in `build.py`
-are lifted from that site's `css/style.css` `:root`, so the two stay in step — change
-them there, change them here.
+The book, the library and the sales page follow the **dannny mcccarthy rates document**:
+Figtree, the signature, black and paper surfaces, sentence-case display type, 16px
+hairline cards and pill buttons. Fonts, signature and tokens live in `brand.py`
+(`fonts/figtree-*.woff2`, `brand/signature.png`), which all three builders import.
+Every page is self-contained — nothing loads from the site.
 
 | Token | Value | Used for |
 | --- | --- | --- |
 | `--black` | `#000` | Poster pages: cover, contents, section openers, outro |
 | `--paper` | `#fdfdfd` | Body pages in print |
 | `--ink` | `#0a0a0a` | Text on paper, inverted cards |
-| `--body-dim` | `#d5d4cf` | Muted body copy on dark surfaces |
-| `--glass` | `#171922` | Liquid-glass card body |
+| `--muted-dark` / `--muted-light` | `#f5f4f1` / `#666` | Body copy on black / on paper |
+| `--kicker` / `--label` | `#8a8986` / `#a9a8a4` | Spaced uppercase kickers and card labels |
 | `--line-dark` / `--line-light` | `rgba(255,255,255,.18)` / `rgba(0,0,0,.14)` | Hairline rules |
 
-Type is **Poppins** at 400/500/600/700, subset to latin and inlined as base64 woff2 in
-`fonts/`. Display headings are 700, uppercase, on tight negative tracking (`-.03em`);
-micro-labels are 500/600 uppercase on wide tracking (`.14em`–`.24em`); body copy is 400
-at `line-height: 1.7`. Cards carry the site's liquid-glass rim — a 1px gradient frame over
-a `#171922` body, with a specular highlight that sweeps the rim on hover.
+Type is **Figtree** at 400–800, the exact subsets the rates page embeds, inlined as base64
+woff2 from `fonts/`. Display headings are 700, sentence case, on `-.048em` tracking;
+kickers and labels are 500/600 uppercase on `.2em`–`.24em` tracking; cards are 16px
+rounded hairline tiers, with Game Changers as the inverted tier.
 
 Two behaviours are ported directly from the site: the `.reveal` fade-up
 (`translateY(30px)`, `.9s`, staggered `.d1`/`.d2`/`.d3`) and its IntersectionObserver.

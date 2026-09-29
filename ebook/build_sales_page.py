@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Build the sales page for the Logic Pro Crash Course.
 
-A drop-in page for dannnymcccarthy.com, same as build_site_page.py: it links
-the site's own css/style.css and js/main.js, carries the site header and
-footer, and uses the site's .reveal classes for animation.
+A single self-contained page in the dannny mcccarthy rates design (brand.py):
+fonts and signature embedded, nothing loaded from the site.
 
 This page SELLS the book — it does not contain it. The preview cards are
 pulled from the real content files rather than retyped, so a copy change in
@@ -19,8 +18,8 @@ import pathlib
 
 import re
 
-from build import esc, keycap, load, slug, count_tips, sources_html, legal_notice
-from build_site_page import FOOTER, SITE_NAV, page_css
+import brand
+from build import esc, keycap, load, slug, count_tips, sources_html, legal_notice, load_extras
 
 ROOT = pathlib.Path(__file__).parent
 DIST = ROOT / "dist"
@@ -62,36 +61,33 @@ PREVIEW = [
     (12, "Convert a Drummer region to MIDI"),
 ]
 
-FAQ = [
+def faq_items(n_start, n_steps, n_gloss):
+    return [
     ("Which version of Logic does it cover?",
-     f"It works with {VERSIONS}. Every key command is the factory default on a "
-     "US keyboard, and where a command could move between versions the book gives the exact "
-     "command name and menu path instead, so it stays correct. Section 18 covers the Logic Pro 11 "
-     "features in depth — Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 "
-     "covers Logic Pro 12: the Synth Player, Chord ID, and the fact that 12 runs only on Apple "
-     "silicon."),
+     f"It works with {VERSIONS}. Every key command is the factory default on a US keyboard, and where a command "
+     "could move between versions the book gives the command name and menu path instead. Section 18 covers the "
+     "Logic Pro 11 features: Session Players, the Chord track, Stem Splitter, ChromaGlow. Section 19 covers Logic "
+     "Pro 12: the Synth Player, Chord ID, and the fact that 12 runs only on Apple silicon."),
+    ("I have never used Logic. Is it for me?",
+     f"Yes. Start Here walks you through your first session in {n_steps} steps, {n_start} tricks are marked safe for "
+     f"your first day, and every Logic word the book uses is explained in plain English in a {n_gloss}-word glossary."),
     ("How do I know the tricks are right?",
-     "Every trick shows the source it was checked against — usually Apple's own Logic Pro guide — "
-     "with a live link, so you can read the original yourself. Anything that could not be confirmed "
-     "against a source was cut rather than printed on a guess."),
+     "Every trick shows the source it was checked against, usually Apple's own Logic Pro guide, with a live link. "
+     "Anything that could not be confirmed against a source was cut rather than printed on a guess."),
     ("Is this a video course?",
-     f"No. It is {TRICKS} written tricks: title, what it does, the key command. Most take ten "
-     "seconds to read. It is built to sit open on a second screen while you work, not to be "
-     "watched."),
+     f"No. It is {TRICKS} written tricks: title, what it does, the key command. Most take ten seconds to read."),
     ("Do I need any third-party plugins?",
      "No. Every trick uses stock Logic Pro. Nothing to buy, nothing to install."),
-    ("I am fairly new to Logic. Is it too advanced?",
-     "The early sections are settings and fundamentals — the things worth fixing before you "
-     "record a note. It gets deeper from there. You should be comfortable opening a project "
-     "and recording a track; you do not need to be an expert."),
     ("What exactly do I get?",
-     f"One PDF, {PAGES} pages, full colour. Clickable contents, bookmarks in the sidebar, and "
-     "it opens on any device. It is yours to keep and it works offline."),
+     f"One PDF, {PAGES} pages. Clickable contents, bookmarks in the sidebar, and it opens on any device. "
+     "It is yours to keep and it works offline."),
     ("How is it delivered?",
      "Instantly. You get a download link as soon as the payment clears."),
-]
+    ]
+
 
 FOR_YOU = [
+    "You are brand new to Logic and want to know where to start.",
     "You already know your way around Logic, and keep thinking there must be a faster way to do this.",
     "You lose your thread hunting through menus mid-session.",
     "You have watched hours of tutorials and still cannot remember the one thing you needed.",
@@ -99,7 +95,7 @@ FOR_YOU = [
 ]
 
 NOT_FOR_YOU = [
-    "You have never opened Logic Pro and need a from-scratch beginner course.",
+    "You want a long lesson-by-lesson course rather than short tricks you look up.",
     "You want video walkthroughs rather than something to reference quickly.",
     "You are looking for mixing theory or a genre-specific production course.",
 ]
@@ -122,76 +118,107 @@ def find_preview(sections):
 
 
 def sales_css():
-    return """
-/* ---- sales page additions ---- */
-.lp-price{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-top:34px}
-.lp-price b{font-size:clamp(38px,6vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1}
-.lp-price span{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;opacity:.55}
+    return brand.font_faces() + brand.root_vars() + """
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--font);font-weight:400;line-height:1.5;background:var(--black);color:var(--white)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;width:100%}
+.section{padding:clamp(64px,12vh,150px) var(--pad)}
+.dark{background:var(--black);color:var(--white)}
+.paper{background:var(--paper);color:var(--ink)}
+.kicker{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.24em;color:var(--kicker);margin-bottom:clamp(20px,4vh,38px)}
+.paper .kicker{color:var(--muted-light)}
+.hero{padding-top:clamp(72px,14vh,170px)}
+.hero h1{font-weight:700;font-size:clamp(38px,8.4vw,140px);line-height:.94;letter-spacing:-.048em;max-width:15ch}
+.hero .lede{margin-top:clamp(30px,5vh,54px);max-width:56ch;font-size:clamp(16px,1.6vw,22px);color:var(--muted-dark)}
+.sec-title{font-weight:700;font-size:clamp(34px,6.4vw,104px);line-height:.96;letter-spacing:-.048em;max-width:18ch}
+.sec-lede{margin-top:clamp(20px,3vh,32px);max-width:60ch;font-size:clamp(15px,1.3vw,19px)}
+.sec-lede+.sec-lede{margin-top:16px}
+.dark .sec-lede{color:var(--muted-dark)}
+.paper .sec-lede{color:var(--muted-light)}
+.sig{display:block;width:clamp(150px,16vw,230px);height:auto;margin-bottom:clamp(22px,4vh,40px);filter:invert(1)}
+
+/* tier cards, as on the rates page */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);margin-top:clamp(40px,7vh,90px)}
+.combo{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,26px);margin-top:clamp(40px,7vh,90px)}
+.solo{display:grid;grid-template-columns:1fr;margin-top:clamp(40px,7vh,90px)}
+.tier{border-radius:16px;padding:clamp(24px,3.4vw,44px);display:flex;flex-direction:column}
+.dark .tier{border:1px solid var(--line-dark)}
+.paper .tier{border:1px solid var(--line-light)}
+.tier .label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:var(--label)}
+.paper .tier .label{color:var(--muted-light)}
+.tier h3{font-weight:700;font-size:clamp(18px,1.8vw,24px);margin-top:10px;line-height:1.2;letter-spacing:-.02em}
+.tier .amount{font-weight:700;font-size:clamp(38px,4.4vw,64px);line-height:1;letter-spacing:-.03em;margin:clamp(18px,2.6vh,28px) 0 4px;font-variant-numeric:tabular-nums}
+.tier .terms{font-size:13px;color:var(--label)}
+.paper .tier .terms{color:var(--muted-light)}
+.tier .who{margin-top:clamp(16px,2.4vh,24px);font-size:15px}
+.dark .tier .who{color:var(--muted-dark)}
+.paper .tier .who{color:var(--muted-light)}
+.tier ul{list-style:none;margin-top:auto;padding-top:clamp(20px,3vh,30px)}
+.dark .tier ul{border-top:1px solid var(--line-dark)}
+.paper .tier ul{border-top:1px solid var(--line-light)}
+.tier li{font-size:14px;padding:6px 0 6px 18px;position:relative}
+.dark .tier li{color:var(--muted-dark)}
+.paper .tier li{color:var(--muted-light)}
+.tier li::before{content:"";position:absolute;left:0;top:.95em;width:8px;height:1px;background:currentColor;opacity:.5}
+.solo .tier ul{columns:2;column-gap:clamp(24px,3vw,44px)}
+.solo .tier li{break-inside:avoid}
+.tier .keys{margin-top:16px;display:flex;gap:6px;flex-wrap:wrap}
+.tier .src{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-light);font-size:12px;line-height:1.5;color:var(--muted-light)}
+.dark .tier .src{border-color:var(--line-dark);color:var(--label)}
+.tier .src span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;margin-right:6px}
+.tier .src a{text-decoration:underline;text-underline-offset:2px}
+.tier .who+.src{margin-top:18px}
+.kbd{display:inline-block;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.4rem .85rem;white-space:nowrap}
+.dark .kbd{background:#fff;color:#000}
+.paper .kbd{background:var(--ink);color:#fff}
+.kbd-phrase{background:transparent !important;color:inherit !important;border:1px solid currentColor}
+
+/* terms-style lists */
+.tlist{margin-top:clamp(40px,7vh,90px);display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,3vw,44px)}
+.tlist section h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;padding-bottom:12px;margin-bottom:12px}
+.paper .tlist section h4{border-bottom:1px solid var(--line-light)}
+.dark .tlist section h4{border-bottom:1px solid var(--line-dark)}
+.tlist section p{font-size:15px}
+.paper .tlist section p{color:var(--muted-light)}
+.dark .tlist section p{color:var(--muted-dark)}
+.index{margin-top:clamp(40px,7vh,90px);display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(24px,3vw,44px)}
+.index div{display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line-light)}
+.index i{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--muted-light);min-width:1.8rem;font-variant-numeric:tabular-nums}
+.index b{flex:1;font-size:17px;letter-spacing:-.02em;line-height:1.25}
+.index em{font-style:normal;font-size:13px;color:var(--muted-light);white-space:nowrap}
+
+.pill{display:inline-flex;align-items:center;justify-content:center;padding:20px 46px;border:2px solid currentColor;border-radius:100px;
+  font-weight:500;text-transform:uppercase;letter-spacing:.24em;font-size:12px;
+  transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease);margin-top:clamp(30px,5vh,54px)}
+.dark .pill:hover{background:#fff;color:#000}
+.paper .pill:hover{background:#000;color:#fff}
+.pill:active{transform:scale(.97)}
 .pill.solid{background:#fff;color:#000;border-color:#fff}
-.pill.solid:hover{background:transparent;color:#fff;border-color:#fff}
-.lp-trust{margin:22px auto 0;font-size:11px;font-weight:500;letter-spacing:.14em;
-  text-transform:uppercase;color:#8a8a86}
-.lp-trust span{white-space:nowrap}
-.lp-trust i{font-style:normal;opacity:.4;padding:0 10px}
+.dark .pill.solid:hover{background:transparent;color:#fff}
 
-.lp-sec{padding:clamp(64px,11vh,130px) var(--pad);border-top:1px solid var(--line-dark)}
-.lp-sec-inner{max-width:1100px;margin:0 auto}
-.lp-h2{font-size:clamp(30px,5.6vw,76px);letter-spacing:-.025em;line-height:.96;
-  text-transform:uppercase;margin:14px 0 0;max-width:20ch}
-.lp-sec .lp-intro{margin-top:26px}
+.foot{padding:clamp(40px,7vh,80px) var(--pad);border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;
+  align-items:flex-end;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--kicker)}
+.foot .mark-sig{display:block;width:150px;height:auto;filter:invert(1)}
+.legal{padding:0 var(--pad) 40px;font-size:11px;line-height:1.6;color:var(--kicker)}
+.legal p{max-width:var(--maxw);margin:0 auto}
 
-.lp-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:44px}
-@media(max-width:820px){.lp-cols{grid-template-columns:1fr}}
-.lp-col h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
-  margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--line-dark)}
-.lp-col ul{margin:0;padding:0;list-style:none}
-.lp-col li{position:relative;padding:12px 0 12px 30px;font-size:15px;line-height:1.6;color:var(--lp-dim)}
-.lp-col li::before{content:"";position:absolute;left:0;top:1.35em;width:14px;height:1px;
-  background:currentColor;opacity:.5}
-.lp-col.no li{opacity:.62}
-
-/* section index — proves the scope without giving it away */
-.lp-index{margin-top:44px;border-top:1px solid var(--line-dark)}
-.lp-index div{display:flex;align-items:baseline;gap:clamp(12px,2vw,28px);padding:14px 0;
-  border-bottom:1px solid var(--line-dark)}
-.lp-index i{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.14em;opacity:.4;
-  min-width:2rem;font-variant-numeric:tabular-nums}
-.lp-index b{flex:1;font-size:clamp(15px,2vw,24px);font-weight:700;text-transform:uppercase;
-  letter-spacing:-.015em}
-.lp-index em{font-style:normal;font-size:10px;font-weight:500;letter-spacing:.16em;
-  text-transform:uppercase;opacity:.5;white-space:nowrap;font-variant-numeric:tabular-nums}
-
-.lp-faq{margin-top:44px;border-top:1px solid var(--line-dark)}
-.lp-faq details{border-bottom:1px solid var(--line-dark)}
-.lp-faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;position:relative;
-  font-size:clamp(15px,1.8vw,20px);font-weight:600;letter-spacing:-.01em}
-.lp-faq summary::-webkit-details-marker{display:none}
-.lp-faq summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
-  font-size:22px;font-weight:400;opacity:.5;transition:transform .3s var(--ease)}
-.lp-faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
-.lp-faq p{margin:0;padding:0 40px 24px 0;font-size:15px;line-height:1.7;color:var(--lp-dim);
-  max-width:70ch}
-
-.lp-final{text-align:center;padding:clamp(70px,13vh,150px) var(--pad);border-top:1px solid var(--line-dark)}
-.lp-final .lp-h2{margin-left:auto;margin-right:auto}
-.lp-note{margin:26px auto 0;max-width:52ch;font-size:13px;line-height:1.7;color:#8a8a86}
+@media(max-width:900px){
+  .tiers,.combo,.tlist,.index{grid-template-columns:1fr}
+  .solo .tier ul{columns:1}
+}
 """
 
 
 def preview_card(sec, tip, i):
-    keys = tip.get("k")
-    cls = "lp-tip reveal" + ("" if keys else " no-keys") + (
-        " is-key" if tip.get("b") else "")
-    o = [f'<article class="{cls}">', '<div class="lp-tip-head">',
-         f'<span class="lp-num">{i:03d}</span>',
-         f'<span class="lp-badge">Section {sec["number"]:02d}</span>', "</div>",
-         f'<h4>{esc(tip["t"])}</h4>', f'<p>{esc(tip["d"])}</p>']
-    if keys:
-        k = keycap(keys).replace('class="kbd kbd-phrase"', 'class="lp-kbd phrase"')
-        k = k.replace('class="kbd"', 'class="lp-kbd"')
-        o.append(f'<div class="lp-keys">{k}</div>')
+    o = ['<article class="tier">', f'<div class="label">Section {sec["number"]:02d} &middot; {esc(sec["title"])}</div>',
+         f'<h3>{esc(tip["t"])}</h3>', f'<p class="who">{esc(tip["d"])}</p>']
+    if tip.get("k"):
+        o.append(f'<div class="keys">{keycap(tip["k"])}</div>')
     if tip.get("src"):
-        o.append(sources_html(tip["src"], cls="lp-src"))
+        o.append(sources_html(tip["src"], cls="src"))
     o.append("</article>")
     return "".join(o)
 
@@ -205,18 +232,29 @@ def main():
     front, sections = load()
     total = count_tips(sections)
     previews = find_preview(sections)
+    glossary, goals = load_extras()
+    n_start = sum(1 for s in sections for g in s["groups"] for t in g["tips"] if t.get("lvl") == 1)
+    n_steps = sum(len(p.get("steps", [])) for p in front["pages"])
 
     index_rows = "".join(
         f'<div><i>{s["number"]:02d}</i><b>{esc(s["title"])}</b>'
         f'<em>{sum(len(g["tips"]) for g in s["groups"])} tricks</em></div>'
-        for s in sections
-    )
-    faq = "".join(
-        f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in FAQ
-    )
+        for s in sections)
+    faq = "".join(f"<section><h4>{esc(q)}</h4><p>{esc(a)}</p></section>" for q, a in faq_items(n_start, n_steps, len(glossary)))
     yes = "".join(f"<li>{esc(x)}</li>" for x in FOR_YOU)
     no = "".join(f"<li>{esc(x)}</li>" for x in NOT_FOR_YOU)
     cards = "".join(preview_card(s, t, i + 1) for i, (s, t) in enumerate(previews))
+    inside = [
+        f"{total} tricks, each citing the source it was checked against",
+        f"Start Here: {n_steps} first steps for someone who has never opened Logic",
+        f"{n_start} tricks marked Start Here, safe for your first day",
+        f"I Want To…: {len(goals)} goals, from making a beat to exporting a song",
+        f"A glossary of {len(glossary)} Logic words in plain English",
+        "Clickable contents and PDF bookmarks on every section",
+        f"Covers {VERSIONS}",
+        "Stock Logic Pro only, no plug-ins to buy",
+    ]
+    inside_li = "".join(f"<li>{esc(x)}</li>" for x in inside)
 
     html = f"""<!doctype html>
 <html lang="en">
@@ -226,109 +264,104 @@ def main():
 <title>{TITLE}</title>
 <meta name="description" content="{DESC}">
 <meta property="og:type" content="product">
-<meta property="og:site_name" content="Dannny McCcarthy">
+<meta property="og:site_name" content="dannny mcccarthy">
 <meta property="og:title" content="{TITLE}">
 <meta property="og:description" content="{DESC}">
 <meta property="og:url" content="{URL}">
 <link rel="canonical" href="{URL}">
-<meta property="og:image" content="https://www.dannnymcccarthy.com/assets/brand/og-cover.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="600">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{TITLE}">
-<meta name="twitter:description" content="{DESC}">
-<meta name="twitter:image" content="https://www.dannnymcccarthy.com/assets/brand/og-cover.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
-<script defer src="js/main.js"></script>
+<meta name="twitter:card" content="summary">
 <script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Product","name":"Logic Pro Crash Course","description":"{DESC}","image":"https://www.dannnymcccarthy.com/assets/brand/og-cover.jpg","brand":{{"@type":"Brand","name":"Dannny McCcarthy"}},"offers":{{"@type":"Offer","price":"{PRICE}","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"{URL}"}}}}
+{{"@context":"https://schema.org","@type":"Product","name":"Logic Pro Crash Course","description":"{DESC}","brand":{{"@type":"Brand","name":"dannny mcccarthy"}},"offers":{{"@type":"Offer","price":"{PRICE}","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"{URL}"}}}}
 </script>
-<style>{page_css()}{sales_css()}</style>
-<noscript><style>.lp .reveal{{opacity:1 !important;transform:none !important}}</style></noscript>
+<style>{sales_css()}</style>
 </head>
 <body>
-<header class="site-head" data-header>
-  <a href="index.html" aria-label="Home">
-    <img class="logo white" src="assets/brand/DM_WHITE.png" alt="Dannny McCcarthy">
-    <img class="logo black" src="assets/brand/DM_BLACK.png" alt="Dannny McCcarthy">
-  </a>
-  {SITE_NAV}
-</header>
 
-<section class="proj lp">
-
-  <div class="lp-hero">
-    <p class="lp-eyebrow reveal">Logic Pro &middot; Digital download</p>
-    <h1 class="reveal d1">Logic Pro<br>Crash Course</h1>
-    <p class="lp-lead reveal d1">{total} tricks that actually work — the ones nobody tells you,
-    in one clickable PDF you keep open while you produce. No long tutorials. No fluff. Every trick cites its source.</p>
-    <div class="lp-price reveal d2"><b>${PRICE}</b><span>One payment &middot; Yours to keep</span></div>
-    <div class="lp-cta reveal d2">{buy("Get instant access")}</div>
-    <p class="lp-trust reveal d3"><span>{PAGES} pages</span><i>&middot;</i>
-      <span>Instant download</span><i>&middot;</i><span>{VERSIONS_SHORT}</span></p>
+<section class="section dark hero">
+  <div class="wrap">
+    {brand.signature_img()}
+    <div class="kicker">Logic Pro Crash Course &middot; Digital download &middot; {VERSIONS_SHORT}</div>
+    <h1>Logic can already do it. Here is where it lives.</h1>
+    <p class="lede">{total} tricks that actually work, in one clickable PDF you keep open while you produce.
+    Brand new to Logic? It starts from zero. Every trick cites its source.</p>
+    {buy("Get instant access")}
   </div>
-
-  <div class="lp-sec"><div class="lp-sec-inner">
-    <p class="lp-eyebrow reveal">The problem</p>
-    <h2 class="lp-h2 reveal">Logic can already do it. You just can&rsquo;t remember where it lives.</h2>
-    <p class="lp-intro reveal">You are three hours into a session, the idea is finally working, and
-    you stop — because you know Logic can do the thing you need and you cannot remember how. So you
-    open a browser, watch four minutes of somebody clearing their throat, find the answer, and come
-    back. The idea has gone cold.</p>
-    <p class="lp-intro reveal">That is not a skill problem. It is a lookup problem. Logic Pro has
-    over two thousand commands, and the useful ones are buried three menus deep or sitting on a
-    key nobody mentions.</p>
-    <p class="lp-intro reveal">This book is the lookup. {total} tricks, sorted into {len(sections)}
-    sections, each one short enough to read in ten seconds and use immediately.</p>
-  </div></div>
-
-  <div class="lp-sec"><div class="lp-sec-inner">
-    <p class="lp-eyebrow reveal">A few of them</p>
-    <h2 class="lp-h2 reveal">Six tricks, free, right now.</h2>
-    <p class="lp-intro reveal">Taken straight from the book. If these are new to you, the other
-    {total - len(previews)} will be too.</p>
-    <div class="lp-tips" style="margin-top:40px">{cards}</div>
-  </div></div>
-
-  <div class="lp-sec"><div class="lp-sec-inner">
-    <p class="lp-eyebrow reveal">What&rsquo;s inside</p>
-    <h2 class="lp-h2 reveal">{len(sections)} sections. {total} tricks.</h2>
-    <p class="lp-intro reveal">Organised by what you are doing, not by what menu it lives in — so
-    you can find the right one mid-project without breaking your flow.</p>
-    <div class="lp-index reveal">{index_rows}</div>
-  </div></div>
-
-  <div class="lp-sec"><div class="lp-sec-inner">
-    <p class="lp-eyebrow reveal">Honestly</p>
-    <h2 class="lp-h2 reveal">Who this is for, and who it isn&rsquo;t.</h2>
-    <div class="lp-cols">
-      <div class="lp-col reveal"><h3>Get it if</h3><ul>{yes}</ul></div>
-      <div class="lp-col no reveal d1"><h3>Skip it if</h3><ul>{no}</ul></div>
-    </div>
-  </div></div>
-
-  <div class="lp-sec"><div class="lp-sec-inner">
-    <p class="lp-eyebrow reveal">Questions</p>
-    <h2 class="lp-h2 reveal">Before you buy.</h2>
-    <div class="lp-faq reveal">{faq}</div>
-  </div></div>
-
-  <div class="lp-final">
-    <h2 class="lp-h2 reveal">Get the {total}.</h2>
-    <div class="lp-price reveal d1"><b>${PRICE}</b><span>One payment &middot; Yours to keep</span></div>
-    <div class="lp-cta reveal d1">{buy("Get instant access")}</div>
-    <p class="lp-note reveal d2">A single PDF, {PAGES} pages, delivered the moment your payment
-    clears. Every key command in it is the Logic Pro factory default; where a command could move
-    between versions, the book gives the command name and menu path so it stays correct.</p>
-  </div>
-
 </section>
-<p class="lp-legal">{esc(legal_notice())}</p>
-{FOOTER}
+
+<section class="section paper">
+  <div class="wrap">
+    <div class="kicker">The problem</div>
+    <h2 class="sec-title">It is not a skill problem. It is a lookup problem.</h2>
+    <p class="sec-lede">You are three hours into a session, the idea is finally working, and you stop, because you
+    know Logic can do the thing you need and you cannot remember how. So you open a browser, watch four minutes of
+    somebody clearing their throat, find the answer, and come back. The idea has gone cold.</p>
+    <p class="sec-lede">This book is the lookup. {total} tricks sorted into {len(sections)} sections, each short enough
+    to read in ten seconds and use straight away, plus an index that finds them by what you are trying to make.</p>
+    <div class="solo">
+      <article class="tier">
+        <div class="label">Digital download</div>
+        <h3>Logic Pro Crash Course</h3>
+        <div class="amount">${PRICE}</div>
+        <div class="terms">One payment &middot; {PAGES} pages &middot; yours to keep</div>
+        <p class="who">One PDF, delivered the moment your payment clears. Built to sit open on a second screen while you work.</p>
+        <ul>{inside_li}</ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="kicker">A few of them</div>
+    <h2 class="sec-title">Six tricks, free, right now.</h2>
+    <p class="sec-lede">Taken straight from the book, sources and all. If these are new to you, the other {total - len(previews)} will be too.</p>
+    <div class="tiers">{cards}</div>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="wrap">
+    <div class="kicker">What&rsquo;s inside</div>
+    <h2 class="sec-title">{len(sections)} sections. {total} tricks.</h2>
+    <p class="sec-lede">Organised by what you are doing, not by which menu it lives in, so you can find the right one mid-project.</p>
+    <div class="index">{index_rows}</div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="kicker">Honestly</div>
+    <h2 class="sec-title">Who this is for, and who it isn&rsquo;t.</h2>
+    <div class="combo">
+      <article class="tier"><div class="label">Get it if</div><h3>You want answers, fast.</h3><ul>{yes}</ul></article>
+      <article class="tier"><div class="label">Skip it if</div><h3>You want something else.</h3><ul>{no}</ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="wrap">
+    <div class="kicker">Questions</div>
+    <h2 class="sec-title">Before you buy.</h2>
+    <div class="tlist">{faq}</div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="kicker">Logic Pro Crash Course</div>
+    <h2 class="sec-title">Get the {total}.</h2>
+    <p class="sec-lede">${PRICE}, one payment. A single PDF, {PAGES} pages, delivered the moment your payment clears.</p>
+    {buy("Get instant access")}
+  </div>
+</section>
+
+<footer class="foot">
+  <div>dannny mcccarthy &middot; Strategy &middot; Brand identity &middot; Websites &middot; Brand sound<br>
+  dannnymcccarthy.com &middot; hello@dannnymcccarthy.com</div>
+  {brand.signature_img("mark-sig")}
+</footer>
+<div class="legal"><p>{esc(legal_notice())}</p></div>
 </body>
 </html>
 """

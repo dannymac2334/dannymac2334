@@ -4,3 +4,5 @@ pikepdf
 pypdfium2
 numpy
 pillow
+# test_search.py: headless search test
+playwright
