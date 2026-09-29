@@ -1,0 +1,2057 @@
+{
+ "tally": {
+  "KEEP": 30,
+  "FIX": 49,
+  "CUT": 6,
+  "ADVICE": 2,
+  "TRIMMED": 23,
+  "SKEPTIC_CUT": 5
+ },
+ "searchDied": [],
+ "failed": [],
+ "results": [
+  {
+   "unit": {
+    "id": "S01a",
+    "section": 1,
+    "start": 0,
+    "end": 10
+   },
+   "verify": {
+    "unit": "section 1, tricks 0-9",
+    "search_worked": true,
+    "searches_used": 13,
+    "search_note": "All ten verdicts rest on current Apple pages (no version segment in the URL), with two exceptions. Quick Punch-In (index 5) is documented only on Apple's /10.7/mac/11.0 page, so it is backed by that page plus whylogicprorules.com, which agrees. Apple's Multithreading article (101975) still says 'Preferences'; the current Apple guide page 'Configure audio devices' supplies the Logic Pro > Settings > Audio > Devices path. Group-path problems to fix: index 5 sits under 'Settings > Recording' but Quick Punch-In is in the Record menu. Index 7 sits under 'Settings > MIDI' but scrubbing is in Settings > Audio > Editing.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Run two buffer sizes, not one",
+      "action": "FIX",
+      "reason": "The current Apple guide supports the I/O buffer trade-off, and the Settings overview supports ⌘,. Three things are cut. 'Nothing else in Logic changes your day this much' is an unsourced opinion. The specific values 64/128 and 512/1024 appear in no retrieved source. Apple's own overload article suggests leaving 256 in place for both jobs.",
+      "final_title": "Run two buffer sizes, not one",
+      "final_body": "In Settings > Audio > Devices, keep the I/O Buffer Size small while you track so monitoring latency stays low. Raise it when you mix: a larger buffer lowers the load on your Mac's CPU. A buffer too small for your Mac shows up as clicks, pops and crackles.",
+      "final_key": "⌘,",
+      "sources": [
+       {
+        "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac",
+        "evidence": "Path is Logic Pro > Settings > Audio, then the Devices button. A smaller I/O buffer means less latency when monitoring or playing software instruments, but puts more strain on the processor. A buffer too small for the computer causes clicks, pops and crackles. A larger buffer reduces CPU load."
+       },
+       {
+        "label": "Apple — Overview of Logic Pro settings",
+        "url": "https://support.apple.com/guide/logicpro/logic-pro-settings-overview-lgcp53689108/mac",
+        "evidence": "Choose Logic Pro > Settings, or press Command-Comma (,), then choose the pane you want to open."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Set Processing Threads to Automatic",
+      "action": "FIX",
+      "reason": "Apple says Automatic is the default and the recommended setting, except when other CPU-intensive apps run alongside Logic. The claims 'useful a decade ago' and 'on Apple silicon Automatic consistently beats hand tuning' have no source and were removed. Apple's exception was added.",
+      "final_title": "Set Processing Threads to Automatic",
+      "final_body": "In Settings > Audio > Devices, Processing Threads is set to Automatic by default, and Apple recommends leaving it there. The one exception Apple names: set a thread count yourself when you run other CPU-intensive apps at the same time as Logic.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac",
+        "evidence": "Path is Logic Pro > Settings > Audio > Devices. In the Devices pane, Processing Threads sets the maximum number of threads or sets it automatically. Automatic is the default and is recommended except when other CPU-intensive apps run at the same time as Logic Pro."
+       },
+       {
+        "label": "Apple — Avoid system overloads in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/108295",
+        "evidence": "Apple's overload article, returned in the same searches, covers the Devices-pane performance settings."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Enable Multithreading on Playback Tracks",
+      "action": "FIX",
+      "reason": "The body matches Apple's Multithreading article. The title contradicts it: 'Playback Tracks' is the single-thread legacy mode, not the one that spreads the load. 'Live, record-enabled tracks spread across cores' also overstates Apple's description, which names two specific cases: a Track Stack of software instruments selected for live input, or more than one audio track recording. Both were corrected.",
+      "final_title": "Choose the right Multithreading mode",
+      "final_body": "In Settings > Audio > Devices, the Multithreading pop-up offers two modes. Playback Tracks is the older behaviour: when several audio tracks record, or a Track Stack is selected for live input, all the input DSP runs on one thread and one core. Playback & Live Tracks spreads that load across threads but adds slightly more overall load. Use it only if you have demanding live tracks.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — About the Multithreading setting in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/101975",
+        "evidence": "Playback Tracks copies the behaviour of earlier Logic versions: all input DSP for a live Track Stack or several recording audio tracks runs on one thread, so one core. Playback & Live Tracks spreads that load across threads. It may put slightly more overall load on the system, so if you have no high-demand live tracks, Playback Tracks may be the better choice."
+       },
+       {
+        "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac",
+        "evidence": "Current path Logic Pro > Settings > Audio > Devices. The Multithreading pop-up sets multithreading for playback tracks only, or for playback and live tracks."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Raise Process Buffer Range to Large for mixing",
+      "action": "FIX",
+      "reason": "Apple supports setting Process Buffer Range to Large and describes it as the buffer for mixes and effects, separate from the I/O buffer. 'Drop it back to Small only if you notice sluggish response' has no source and was removed. The menu location was added.",
+      "final_title": "Raise Process Buffer Range to Large for mixing",
+      "final_body": "In Settings > Audio > Devices, Process Buffer Range sets the buffer Logic uses to compute mixes and effects. It is separate from the I/O buffer and offers Small, Medium and Large. Apple's advice for avoiding system overloads is to set it to Large.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Avoid system overloads in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/108295",
+        "evidence": "Apple suggests setting the I/O buffer to 256 samples for both recording and mixing, and setting Process Buffer Range to Large. (Prior-audit quote, from the same URL retrieved in this session.)"
+       },
+       {
+        "label": "Apple — Configure audio devices to use with Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/configure-a-connected-audio-device-lgcpebe7fb26/mac",
+        "evidence": "Process Buffer Range sets the buffer used to compute mixes and effects, with Small, Medium and Large choices. It applies to playback tracks not in Live mode."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Uncheck Software Monitoring if you monitor through your interface",
+      "action": "FIX",
+      "reason": "Apple supports turning Software Monitoring off when your interface does hardware monitoring, because software monitoring brings unavoidable latency. The 'second, slightly late copy / doubling disappears' framing is an inference no source states, so it was reworded to Apple's rationale.",
+      "final_title": "Uncheck Software Monitoring if you monitor through your interface",
+      "final_body": "If your audio interface supports hardware (direct) monitoring, turn off Software Monitoring in Settings > Audio > General. With it on, your input is processed in software and some latency is unavoidable. Apple's advice is to switch it off whenever you listen through your interface or mixing console.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — General Audio settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/general-settings-lgcp0ed343a9/mac",
+        "evidence": "The Software Monitoring checkbox turns software monitoring on or off. When it is on, the signal is processed in software and some latency is inevitable. If you listen through a mixing console, or your interface supports hardware monitoring, turn it off."
+       },
+       {
+        "label": "Apple — General Audio settings in Logic Pro for Mac (IS locale)",
+        "url": "https://support.apple.com/en-is/guide/logicpro/lgcp0ed343a9/mac",
+        "evidence": "The same page in another locale, returned for the Software Monitoring search."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Turn off “Allow Quick Punch‑In” only if you never punch",
+      "action": "FIX",
+      "reason": "The title contradicts the body ('Leave it on'). The body is otherwise supported: Record > Allow Quick Punch-In, the Control-click on the Record button, the Record Toggle key command, no audible gap, and material before and after left untouched. Apple documents this only on its /10.7/mac/11.0 page; whylogicprorules.com independently agrees on the menu item. Group path is wrong: this is the Record menu, not Settings > Recording.",
+      "final_title": "Leave “Allow Quick Punch‑In” on",
+      "final_body": "Turn it on at Record > Allow Quick Punch-In, or Control-click the Record button in the control bar and choose it there. Then start playback and use the Record Toggle key command where you want to drop in. Quick Punch-In makes the switch with no audible gap, and the recording before and after the punched section is untouched.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Punch in and out of audio recordings in Logic Pro",
+        "url": "https://support.apple.com/guide/logicpro/punch-in-and-out-of-audio-recordings-lgcpb19bfd0d/10.7/mac/11.0",
+        "evidence": "To turn on Quick Punch-In, choose Record > Allow Quick Punch-In, or Control-click the Record button and choose it from the shortcut menu. Start playback, then use the Record Toggle key command. Without Quick Punch-In, Record Toggle causes a delay and a dropout; Quick Punch-In ensures no audible gap. Punch recording overwrites a portion without touching the recording before or after it. (A 10.7-era page.)"
+       },
+       {
+        "label": "Why Logic Pro Rules — Never Lose An Audio Take Again With Quick Punch-In",
+        "url": "https://whylogicprorules.com/quick-punch-in/",
+        "evidence": "Independent source returned for 'Allow Quick Punch-In' in the Record menu. The search summary says it recommends leaving Quick Punch-In on, which it is by default."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "Set the click source to a sound you can actually hear",
+      "action": "FIX",
+      "reason": "The current Apple pages support the core claims: Klopfgeist on the Click channel strip, per-event Note and Velocity fields, a Bar velocity above Beat to accent the downbeat, and any plug-in loaded on the Click channel strip. The unsourced closing line ('a click you have to strain for...') was cut. Apple's Tone slider was added as the documented way to change the click's character.",
+      "final_title": "Set the click to a sound you can actually hear",
+      "final_body": "Open File > Project Settings > Metronome. The audio click comes from the Klopfgeist plug-in on the Click channel strip. Set the Bar velocity above the Beat velocity to accent the downbeat, and change the Note values to shift the click's pitch. The Tone slider moves it from a short click toward a wood block or claves. Or load a different plug-in on the Click channel strip.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Metronome project settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/metronome-project-settings-lgcpe1d6118e/mac",
+        "evidence": "The Audio Click (Klopfgeist) checkbox turns the click on or off for Klopfgeist or any plug-in loaded on the Click channel strip. Note and Velocity fields set the note number and velocity for bar, group, beat or division. The Tone slider adjusts Klopfgeist's Tonality from a short click to a pitched sound like a wood block or claves."
+       },
+       {
+        "label": "Apple — Klopfgeist in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/klopfgeist-lgcp67edcb1f/mac",
+        "evidence": "The metronome sends MIDI notes to the Klopfgeist plug-in, which makes the click. The Note field sets the pitch, and a higher Bar velocity than Beat velocity accents the downbeat. (The search summary blends this with the iPad metronome page.)"
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "Turn on scrubbing with audio in the Tracks area",
+      "action": "FIX",
+      "reason": "The checkbox name and location are confirmed. But Apple's current page says the setting lets you scrub audio regions in the Tracks area with the Scissors or Solo tools, not by dragging the playhead as the body claimed. Group path is wrong: this is Settings > Audio > Editing, not Settings > MIDI.",
+      "final_title": "Turn on scrubbing with audio in the Tracks area",
+      "final_body": "Settings > Audio > Editing > “Scrubbing with audio in Tracks area”. With it on, you can scrub audio regions in the Tracks area with the Scissors or Solo tool and find a spot by ear. Maximum Scrub Speed and Scrub Response fine-tune how it feels.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Audio Editing settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/editing-settings-lgcp0d6a4f6f/mac",
+        "evidence": "When selected, 'Scrubbing with audio in Tracks area' lets you scrub audio regions in the Tracks area with the Scissors or Solo tools. Related settings are Maximum Scrub Speed (normal or double speed) and Scrub Response (Slow, Normal, Fast, Faster). Reached from Settings > Audio > Editing."
+       }
+      ]
+     },
+     {
+      "index": 8,
+      "original_title": "Set the MIDI reset options to send Notes Off only",
+      "action": "FIX",
+      "reason": "The title ('send Notes Off only') contradicts the body and Apple, both of which say to leave these options at their defaults. The body's substance is supported. The exact menu path 'Settings > MIDI > Reset Messages' was not stated in any retrieved text, so it was softened to the pane name Apple uses.",
+      "final_title": "Leave the MIDI Reset Messages at their defaults",
+      "final_body": "Leave Logic's Reset Messages settings alone. Apple says Logic handles MIDI reset messages automatically and intelligently, so you can keep the defaults. The Control 123 (All Notes Off) and Control 121 (Reset Controls) options exist for compatibility with older MIDI devices. Switch one on only if an older synth needs it.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Reset Messages settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/reset-messages-settings-lgcp7123ac34/mac",
+        "evidence": "Logic Pro handles MIDI reset messages automatically and intelligently, so you can leave these options at their defaults. The Control 123 (All Notes Off) and Control 121 (Reset Controls) options are included for compatibility with older MIDI devices."
+       }
+      ]
+     },
+     {
+      "index": 9,
+      "original_title": "Fix doubled notes from a controller",
+      "action": "KEEP",
+      "reason": "Apple's current General MIDI project settings page confirms the control name 'Instrument Without MIDI Thru Function'. It also confirms the purpose: avoiding unwanted note doubling when the master keyboard has no Local Off setting.",
+      "final_title": "Fix doubled notes from a controller",
+      "final_body": "If your synth plays a doubled, slightly flammed note on every key press, turn Local Control off on the synth, or use Project Settings > MIDI > General > “Instrument Without MIDI Thru Function”. One or the other, never neither.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — General MIDI project settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/general-project-settings-lgcp94b70f34/mac",
+        "evidence": "When a MIDI track assigned to the instrument chosen in 'Instrument Without MIDI Thru Function' is selected, MIDI from your controller is not passed through. If your master keyboard has no Local Off setting, you can use this to avoid unwanted note doubling when recording."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 1, indexes 0-9",
+    "reviews": [
+     {
+      "index": 5,
+      "outcome": "CUT",
+      "reason": "Every assertion is a UI name or key-command workflow: Record > Allow Quick Punch-In, Control-click on the Record button, and the Record Toggle key command. My searches found Apple documentation for this only on the /10.7/mac/11.0 page (https://support.apple.com/guide/logicpro/punch-in-and-out-of-audio-recordings-lgcpb19bfd0d/10.7/mac/11.0), which does not support Logic 11/12 on its own. No current Apple page came back. The cited independent source, https://whylogicprorules.com/quick-punch-in/, did not appear in my search for it. The only whylogicprorules result was a different URL (https://whylogicprorules.com/autopunch-recording-modes/) whose content I could not see, so I am treating the cited source as absent. The only other matches were a 2019 Logic Pro X studio-interns post and a skydocu mirror. With no version-appropriate support, the trick should go."
+     },
+     {
+      "index": 6,
+      "outcome": "TRIM",
+      "reason": "The current Apple Metronome project settings page and Klopfgeist page (both URLs confirmed in search) support three things. Per-bar/group/beat/division Note and Velocity fields. The Tone slider turning a short click into a pitched percussion sound like a wood block or claves. The Audio Click checkbox working with Klopfgeist or any plug-in on the Click channel strip. Three assertions are not supported. The exact path 'File > Project Settings > Metronome' was not stated. 'Bar velocity above Beat velocity accents the downbeat' and 'Note values shift the click's pitch' are inferences: Apple only says these fields set the note number and velocity. The verifier itself said its Klopfgeist evidence mixed in the iPad page. Rewrote to what the sources state.",
+      "trimmed_body": "In the project settings, the Metronome pane controls the audio click, which comes from Klopfgeist, a virtual metronome sound source on the Click channel strip. Separate Note and Velocity fields set the note number and velocity of the notes generated for the bar, group, beat or division, so you can make the bar and the beat sound different. The Tone slider changes the sound from a short click to a pitched percussion sound like a wood block or claves. The Audio Click checkbox also works with any other plug-in you load on the Click channel strip.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 9,
+      "outcome": "TRIM",
+      "reason": "Apple's General MIDI project settings page supports the control name and its purpose: when a track assigned to that instrument is selected, MIDI is not passed through, which avoids unwanted note doubling when the master keyboard has no Local Off setting. Two things are not in the source. 'Slightly flammed' is an unsourced description of the symptom. 'One or the other, never neither' is advice that goes beyond what Apple says. Trimmed to match Apple's framing.",
+      "trimmed_body": "If notes double when you record from a keyboard synth, turn Local Off on the synth. If your keyboard has no Local Off setting, use Project Settings > MIDI > General > “Instrument Without MIDI Thru Function” and choose that instrument there. When a track assigned to it is selected, Logic does not pass your controller's MIDI through, which avoids the doubled notes.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 7
+   }
+  },
+  {
+   "unit": {
+    "id": "S01b",
+    "section": 1,
+    "start": 10,
+    "end": 20
+   },
+   "verify": {
+    "unit": "s01 tricks 10-19",
+    "search_worked": true,
+    "searches_used": 11,
+    "search_note": "Every source URL was copied exactly from a search result. For 16 and 19, which were not rewritten, the KEEP relies on the prior audit's current Apple URL and quote, both of which directly support the text; I did not re-search them. The only current-version support for trick 14's setting name is studio-interns plus a mirror of the old Apple docs, backed by Apple's 10.7 page for the behaviour, so treat it as medium confidence. Group-path mismatches: trick 10 belongs under Settings > Advanced, and trick 16 under the File menu, not Settings > General.",
+    "tricks": [
+     {
+      "index": 10,
+      "original_title": "Turn on Enable Complete Features first, always",
+      "action": "FIX",
+      "reason": "Apple's current Advanced settings page supports the checkbox name, where it lives and what it enables. The text is changed to Apple's wording ('expanded mixing and automation', not 'the full mixer'). I removed the 'Simplified mode' label because the only place it appeared in my results may be the old 10.7 page, not the current one.",
+      "final_title": "Turn on Enable Complete Features first",
+      "final_body": "Go to Logic Pro > Settings > Advanced and select Enable Complete Features. It is one checkbox. Leave it off and advanced features stay hidden, including project alternatives and backups, beat mapping, and expanded mixing and automation.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Advanced settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac",
+        "evidence": "When the Enable Complete Features checkbox is selected, it enables advanced features such as project alternatives and backups, beat mapping, expanded mixing and automation capabilities, and more."
+       }
+      ]
+     },
+     {
+      "index": 11,
+      "original_title": "Turn off region colouring by track and colour by region instead",
+      "action": "FIX",
+      "reason": "Confirmed: Settings > View > Tracks has a Region Color pop-up with the options Individual and As Track Color. I could not confirm the claim that Logic remembers each region's colour when you switch modes in anything I retrieved this session, so I removed it. I also removed the opinion that it 'scales much better'.",
+      "final_title": "Colour regions individually, not by track",
+      "final_body": "Choose Logic Pro > Settings > View, click Tracks, and set the Region Color pop-up to Individual instead of As Track Color. With Individual you can colour regions independently of their track, so you can colour-code by part. With As Track Color you cannot colour regions individually.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Tracks View settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/tracks-settings-lgcp8e0207b2/mac",
+        "evidence": "The Region Color pop-up menu chooses whether regions can be coloured individually or conform to the colour of their track."
+       },
+       {
+        "label": "Apple — Color regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac",
+        "evidence": "Choose Logic Pro > Settings > View, click the Tracks button, and make sure the Region Color pop-up menu is set to Individual. When it is set to As Track Color, you cannot colour regions individually."
+       }
+      ]
+     },
+     {
+      "index": 12,
+      "original_title": "Turn on “Show Help Tags”",
+      "action": "FIX",
+      "reason": "Apple's current General View settings page confirms the checkbox and says help tags show the function name, the region or event name or number, position and parameter values while you edit. 'Length and delta values' is not in Apple's wording, so I replaced it with Apple's list and added the location.",
+      "final_title": "Turn on “Show help tags”",
+      "final_body": "In Logic Pro > Settings > View > General, select Show help tags. While you edit, help tags show the function name, the region or event name or number, the position and parameter values. That lets you edit precisely without opening a numeric field.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — General View settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/general-settings-lgcp9793a910/mac",
+        "evidence": "When Show help tags is selected, help tags appear over interface elements; when editing, the function name, region or event name or number, position and parameter values are shown."
+       }
+      ]
+     },
+     {
+      "index": 13,
+      "original_title": "Set Cycle to “Auto‑set locators by region selection”",
+      "action": "FIX",
+      "reason": "Confirmed: you Control-click the Cycle button in the control bar, then choose Auto Set Locators > By Region Selection, and the locators and cycle area are set to the selected region's borders. The claim about the C key came from an unclear source, possibly the old 10.7 page, so I removed the key-command claim.",
+      "final_title": "Set Auto Set Locators to By Region Selection",
+      "final_body": "Control-click the Cycle button in the control bar, click Auto Set Locators and choose By Region Selection. Now selecting a region sets the locators and the cycle area to that region's borders, so cycle always loops exactly what you picked.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "Control-click the Cycle button in the control bar, then click Auto Set Locators; By Region Selection sets the locators (and cycle area) to the borders of the selected region."
+       },
+       {
+        "label": "macProVideo — 6 Logic Pro X Cycling Tips",
+        "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow",
+        "evidence": "Auto Set Locators is reached by Control-clicking the Cycle button and can follow Marquee, Region or Note selection."
+       }
+      ]
+     },
+     {
+      "index": 14,
+      "original_title": "Turn on “Select regions on track selection”",
+      "action": "FIX",
+      "reason": "The behaviour and the setting are real, but it is on by default, so 'turn on' misleads. I also removed the unsourced 'two-step operation' claim. The setting name comes from studio-interns and a mirror of the Logic Pro X Editing preferences. The behaviour and the default come from Apple's 10.7 page. I found no current-version Apple page that names this checkbox, so confidence is medium.",
+      "final_title": "Leave “Select regions on track selection” on",
+      "final_body": "It is on by default: selecting a track selects all its regions, or only those inside the cycle area when Cycle is on. That lets any region command act on a whole track straight away. If clicking a track header stops selecting its regions, check this checkbox in the Editing settings.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select regions in the Tracks area in Logic Pro (10.7 guide)",
+        "url": "https://support.apple.com/guide/logicpro/select-regions-lgcpf7c0e62a/10.7/mac/11.0",
+        "evidence": "By default, when you select a track, all regions on the track (or those within the cycle, if Cycle mode is on) are selected; you can change this in Editing settings."
+       },
+       {
+        "label": "Studio Interns — Toggle Select Regions on Track Selection",
+        "url": "https://studio-interns.com/toggle-select-regions-on-track-selection-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "Documents the Select Regions on Track Selection option and its toggle command."
+       },
+       {
+        "label": "Logic Pro X Help mirror — Editing preferences",
+        "url": "https://logicpro.skydocu.com/en/preferences-project-settings-and-key-commands/logic-pro-preferences/general-preferences/editing-preferences/",
+        "evidence": "The 'Select regions on track selection' checkbox makes selecting a track select all regions on it, or those within the cycle or autopunch area."
+       }
+      ]
+     },
+     {
+      "index": 15,
+      "original_title": "Set “Limit Dragging to One Direction” to Vertically in the Tracks area",
+      "action": "FIX",
+      "reason": "The body is supported: the checkbox is in Settings > General > Editing, movement locks to the direction of the first drag, you release and re-drag to change tracks, Shift overrides, and there is a matching Piano Roll and Score checkbox. The title is wrong because there is no 'Vertically' option to set.",
+      "final_title": "Turn on “Limit Dragging to One Direction” in the Tracks area",
+      "final_body": "Tick the \"Limit Dragging to One Direction: In Tracks\" checkbox in Logic Pro > Settings > General > Editing. Once you start a drag left or right, movement locks to the horizontal axis, so you cannot nudge a perfectly placed region onto another track by accident. To actually change tracks, let go, reselect, and drag up or down — or hold Shift to override the limit for one move. There is a matching checkbox for the Piano Roll and Score.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Move regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-ae/guide/logicpro/lgcpf7c0d489/mac",
+        "evidence": "The Limit Dragging to One Direction In Tracks setting (Settings > General > Editing) restricts movement in one direction; an initial horizontal move keeps you horizontal; to change tracks, release, reselect and drag up or down; press Shift to override."
+       },
+       {
+        "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-jo/guide/logicpro/lgcpa905f117/mac",
+        "evidence": "The 'Limit Dragging to One Direction In Piano Roll and Score' checkbox restricts note movement to the initial direction."
+       }
+      ]
+     },
+     {
+      "index": 16,
+      "original_title": "Read the Clean Up list before you confirm it",
+      "action": "KEEP",
+      "reason": "This trick was not rewritten. The prior audit quotes Apple's current Clean Up page, which directly supports the menu path, the confirmation dialog listing every file to be deleted, and Delete Unused Files removing whole files. I did not re-search it. The group path is misfiled: this belongs under the File menu.",
+      "final_title": "Read the Clean Up list before you confirm it",
+      "final_body": "File > Project Management > Clean Up always asks first and shows exactly what it will remove. Read the list — it deletes whole unused audio files, not just unused portions of them.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Clean up projects in Logic Pro for Mac (from prior audit)",
+        "url": "https://support.apple.com/guide/logicpro/clean-up-projects-lgcpce0efc05/mac",
+        "evidence": "Choose File > Project Management > Clean Up; Delete Unused Files deletes files not used in any project alternative; a dialog shows all files to be deleted, each with a Delete checkbox."
+       }
+      ]
+     },
+     {
+      "index": 17,
+      "original_title": "Set your sample rate before you record, not after",
+      "action": "FIX",
+      "reason": "Confirmed: the File > Project Settings > Audio path, that a sample-rate mismatch makes audio play at a different pitch, and the 'Convert audio file sample rate when importing' checkbox in Project Settings > Assets. The 48 kHz-for-video and 44.1 kHz-for-music advice has no source. The '48 kHz default' claim was not in anything I retrieved. 'If you must convert' was misleading because the checkbox acts on files as they are recorded or imported, not on files already in the project.",
+      "final_title": "Set your sample rate before you record, not after",
+      "final_body": "Choose File > Project Settings > Audio and set the Sample Rate before you record or import anything. If an audio file's sample rate does not match the project's, it plays back at a different pitch. To have incoming files matched to the project rate, select \"Convert audio file sample rate when importing\" in File > Project Settings > Assets.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Set the sample rate of a project in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/set-the-project-sample-rate-lgcpce0958b8/mac",
+        "evidence": "Choose File > Project Settings > Audio and pick from the Sample Rate pop-up menu. A sample-rate mismatch between an audio file and the project can make it play back at a different pitch. File > Project Settings > Assets > 'Convert audio file sample rate when importing' matches recorded or added files to the project rate."
+       }
+      ]
+     },
+     {
+      "index": 18,
+      "original_title": "Set the recording bit depth to 24-bit",
+      "action": "FIX",
+      "reason": "Apple's current Recording settings page confirms the Bit Depth pop-up in Recording settings, the 32-bit float option, and advice to match the audio device's bit depth. I removed the 10.8 release claim because this book covers Logic 11 and 12 only and I did not retrieve release notes for it. I also removed the unsourced 'never 16-bit' and 'always 24-bit' rules.",
+      "final_title": "Set the recording bit depth in Settings > Recording",
+      "final_body": "Recording bit depth lives in Logic Pro > Settings > Recording, not Project Settings. Match it to your audio device's bit depth. With 32-bit float, files are about 33% larger than 24-bit, but you can remove clipping just by lowering the region's gain.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Recording settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/recording-settings-lgcp411dd5c8/mac",
+        "evidence": "The Bit Depth pop-up menu sets the bit depth for newly recorded audio files. 32-bit float files are 33 percent larger than 24-bit, and clipping can be removed by lowering region gain. Choose a bit depth that matches your audio device."
+       }
+      ]
+     },
+     {
+      "index": 19,
+      "original_title": "Turn on Smart Tempo “Keep Project Tempo” by default",
+      "action": "KEEP",
+      "reason": "This trick was not rewritten. The prior audit quotes Apple's current page, which directly supports the Project Settings > Smart Tempo path, what Keep Project Tempo does, and the warning that Adapt should be used only temporarily because it changes the project tempo. I did not re-search it.",
+      "final_title": "Turn on Smart Tempo “Keep Project Tempo” by default",
+      "final_body": "Under Project Settings > Smart Tempo, set the project mode to Keep. Adaptive mode is powerful but it will rewrite your tempo map from a single dragged‑in loop if you are not paying attention.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Choose the project tempo mode in Logic Pro for Mac (from prior audit)",
+        "url": "https://support.apple.com/guide/logicpro/choose-the-project-tempo-mode-lgcpca199cf6/mac",
+        "evidence": "Keep Project Tempo maintains the project tempo when you record or import audio; Adapt Project Tempo should be used only temporarily because it changes the project tempo; the default mode is set in File > Project Settings > Smart Tempo."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 1, indexes 10-19",
+    "reviews": [
+     {
+      "index": 12,
+      "outcome": "TRIM",
+      "reason": "The cited General View settings page supports the checkbox and what help tags show. It does not support the closing sentence, that this lets you edit precisely without opening a numeric field, so I removed it.",
+      "trimmed_body": "In Logic Pro > Settings > View > General, select Show help tags. While you edit, help tags show the function name, the region or event name or number, the position and parameter values.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 13,
+      "outcome": "TRIM",
+      "reason": "Re-searched: Apple's current 'Select parts of regions' page (support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac) confirms the Control-click Cycle > Auto Set Locators > By Region Selection path and that the locators and cycle area are set to the borders of the selected region. 'So cycle always loops exactly what you picked' goes further than Apple's wording, which covers only 'the currently selected region', so I dropped it.",
+      "trimmed_body": "Control-click the Cycle button in the control bar, click Auto Set Locators and choose By Region Selection. The locators and the cycle area are then set to the borders of the selected region.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 14,
+      "outcome": "CUT",
+      "reason": "Every source for the checkbox name, the behaviour and the 'on by default' claim is either the /10.7/ Apple page, a Logic Pro X-era studio-interns post, or logicpro.skydocu.com, an unofficial mirror of Logic Pro X Help that is not a reputable source. None of these supports a UI name or default for Logic 11/12. A re-search found Apple's current 'Select tracks' page, but the search results confirmed only its Option-click behaviour, not the checkbox name or its default. The core claim has no version-appropriate support."
+     },
+     {
+      "index": 18,
+      "outcome": "TRIM",
+      "reason": "Re-search confirms Apple's current Recording settings page (lgcp411dd5c8) and its claims: 32-bit float files are 33 percent larger than 24-bit, and clipping can be removed by lowering region gain. The cited evidence does not say bit depth is absent from Project Settings, so I removed 'not Project Settings'.",
+      "trimmed_body": "Recording bit depth is set in Logic Pro > Settings > Recording. Match it to your audio device's bit depth. With 32-bit float, files are about 33% larger than 24-bit, but you can remove clipping just by lowering the region's gain.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 19,
+      "outcome": "TRIM",
+      "reason": "Re-search confirms Apple's current 'Choose the Project Tempo mode' page (lgcpca199cf6). It supports: the default mode is set in File > Project Settings > Smart Tempo; Keep maintains the project tempo; Adapt changes the project tempo to match a recording or imported file. The claim that Adapt 'will rewrite your tempo map from a single dragged-in loop if you are not paying attention' is an embellishment the source does not state, so I replaced it with the source's own points.",
+      "trimmed_body": "In File > Project Settings > Smart Tempo, set the project tempo mode to Keep Project Tempo. In Keep mode Logic Pro maintains the project tempo when you record or import audio. Adapt Project Tempo changes the project tempo to match a recording or imported file, so use it only temporarily.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 5
+   }
+  },
+  {
+   "unit": {
+    "id": "S01c",
+    "section": 1,
+    "start": 20,
+    "end": 30
+   },
+   "verify": {
+    "unit": "s01 tricks 20-29",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "All rewritten tricks (22, 24-27, 29) checked against current Apple guide pages found by searching in this session. Trick 20 was not searched because of the budget. Its FIX uses only the prior audit's current-Apple Region inspector quote. Trick 28's FIX uses only the prior audit's Apple KB quote (support.apple.com/en-us/111094). The claim that autosave has no user settings was only in forum posts, so it was dropped from 27.",
+    "tricks": [
+     {
+      "index": 20,
+      "original_title": "Stop new recordings arriving pre-quantised",
+      "action": "FIX",
+      "reason": "Not re-searched (budget); not rewritten since the prior audit. The prior audit's current Apple Region inspector quote supports the mechanism: with no region selected, the inspector shows Default Settings, which apply to newly recorded regions. The negative claim 'There is no auto-quantize switch' has no source, so it was removed.",
+      "final_title": "Stop new recordings arriving pre-quantised",
+      "final_body": "With no region selected, the Region inspector shows \"Default Settings\", and those values are applied to newly recorded regions. If new takes arrive quantised, check the Quantize value there and set it to off. Capture the performance first; quantise as a decision.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Use the Region inspector in Logic Pro for Mac (from prior audit, not re-retrieved)",
+        "url": "https://support.apple.com/guide/logicpro/use-the-region-inspector-lgcpd8a8780c/mac",
+        "evidence": "Prior audit quote: when no region is selected the Region inspector shows 'Default Settings', and the settings shown are applied to newly recorded regions as realtime playback settings."
+       }
+      ]
+     },
+     {
+      "index": 21,
+      "original_title": "Set Tuning to Equal Temperament unless you mean otherwise",
+      "action": "FIX",
+      "reason": "Apple says the Tuning settings control the real-time tuning system used with Logic's INCLUDED software instruments, so 'every software instrument' overreaches. Also, Apple names the option 'Equal Tempered' and documents the Tune slider (default A 440 Hz).",
+      "final_title": "Check Tuning when a synth sounds subtly off",
+      "final_body": "Project Settings > Tuning sets the tuning for Logic's included software instruments. If a synth sounds subtly wrong against a sample, check here first: Equal Tempered turns off any alternative tuning, and the Tune slider should read A 440 Hz unless you meant to change it.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Tuning project settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/tuning-project-settings-lgcp452f2693/mac",
+        "evidence": "Tuning settings change the real-time tuning system used with the included software instruments; Equal Tempered turns off any tuning and uses an equal tempered scale; the Tune slider sets global tuning, default concert pitch A (440 Hz)."
+       }
+      ]
+     },
+     {
+      "index": 22,
+      "original_title": "Turn on “Bounce project settings” for consistent exports",
+      "action": "FIX",
+      "reason": "The 'Bounce project settings' title names something that does not exist. The body contained an editorial 'Retitle to' note. Apple supports the Assets path, the 'Copy audio files into project' checkbox, files being copied on the next save, and being able to move or copy the project afterwards. The specific list (Ultrabeat, Sampler, Space Designer IRs, Sound Library content) was not confirmed for the current Assets pane, so it was generalised.",
+      "final_title": "Copy your assets into the project so it travels",
+      "final_body": "In File > Project Settings > Assets, select the copy checkboxes, such as \"Copy audio files into project\". The files are copied in the next time you save. From then on you can move or copy the project without losing any file references.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Manage project assets in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/manage-project-assets-lgcpce0d70e7/mac",
+        "evidence": "Choose File > Project Settings > Assets; select any of the copy checkboxes ('Copy audio files into project' stores all audio files in the project package or folder); files are copied when the project is saved; afterwards you can move or copy the project without losing references."
+       }
+      ]
+     },
+     {
+      "index": 23,
+      "original_title": "Save a Session Start template and set it as the default",
+      "action": "KEEP",
+      "reason": "Apple documents File > Save As Template. It also documents a Startup Action pop-up with 'Create New Project Using Default Template' and a Default Template button that picks the template to open.",
+      "final_title": "Save a Session Start template and set it as the default",
+      "final_body": "Build one project with your usual tracks, buses, reverb and marker colours, then File > Save as Template. Set it to open on launch and you never build a session from zero again.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Project Handling settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/project-handling-settings-lgcp43defb63/mac",
+        "evidence": "Startup Action pop-up includes 'Create New Project Using Default Template'; the Default Template button chooses that template; File > Save As Template saves a template, found under My Templates in the Project Chooser."
+       }
+      ]
+     },
+     {
+      "index": 24,
+      "original_title": "Set a default channel strip for new tracks",
+      "action": "FIX",
+      "reason": "Apple supports saving through Setting button > 'Save Channel Strip Setting as' and loading settings from the Setting button pop-up or the Library. No source was found for the 'User Channel Strip Settings' folder name or the 'every new track is two clicks' claim, and there is no documented 'default channel strip' feature. The title now describes what Apple actually documents.",
+      "final_title": "Save your starting channel strip as a setting",
+      "final_body": "Build one channel strip the way you always start: your go-to EQ, compressor and sends. Click the Setting button at the top of the strip, choose \"Save Channel Strip Setting as\", pick a folder, name it and click Save. On any new track, load it from the Setting button's pop-up menu or from the Library.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Work with channel strip settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/work-with-channel-strip-settings-lgcp35966da6/mac",
+        "evidence": "Click the Setting button, choose 'Save Channel Strip Setting as', select a folder, name it, click Save; load settings from the Setting button pop-up menu, or click the triangle beside the Setting button so the Library shows channel strip settings."
+       }
+      ]
+     },
+     {
+      "index": 25,
+      "original_title": "Set the default region colour palette",
+      "action": "FIX",
+      "reason": "There is no source for a persistent 'default region colour palette' (Apple's Colors project settings cover Score pitch, velocity and user colours, not regions). Apple supports Option-C and Name and Color > Show/Hide Colors. The custom-colour step was dropped because the current result wording ('click any color') conflicts with the prior 'double-click'. The part about building the scheme into a template is workflow advice.",
+      "final_title": "Give each colour a fixed meaning",
+      "final_body": "Press ⌥C to open the Color palette (or Control-click a region and choose Name and Color > Show/Hide Colors), then click a colour. Decide once what each colour means to you (drums, vocals, keys, reference) and colour your template that way, so every project opens with the same language.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Color regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac",
+        "evidence": "Control-click a selected region, choose Name and Color > Show/Hide Colors (or press Option-C), then click a color."
+       }
+      ]
+     },
+     {
+      "index": 26,
+      "original_title": "Turn on Project Alternatives before you need them",
+      "action": "FIX",
+      "reason": "The menu paths, Done, Edit Alternatives, and the fact that you cannot remove Main are all confirmed by Apple. Apple's Advanced settings page confirms project alternatives need Enable Complete Features (Logic Pro > Settings > Advanced). The title implied Alternatives is a switch you turn on, so it was retitled, and the settings path was made exact.",
+      "final_title": "Make a Project Alternative before big changes",
+      "final_body": "File > Project Alternatives > New Alternative gives you another version of the project: name it and click Done. Make one before every big arrangement change. Alternatives need Enable Complete Features in Logic Pro > Settings > Advanced. File > Project Alternatives > Edit Alternatives lets you rename or delete them; you can't remove the Main alternative.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Use project alternatives and backups in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac",
+        "evidence": "File > Project Alternatives > New Alternative, enter a unique name, click Done; File > Project Alternatives > Edit Alternatives to rename or delete; you cannot remove the Main alternative."
+       },
+       {
+        "label": "Apple - Advanced settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac",
+        "evidence": "With Enable Complete Features selected (Logic Pro > Settings > Advanced), advanced features such as project alternatives and backups are available."
+       }
+      ]
+     },
+     {
+      "index": 27,
+      "original_title": "Set autosave and then still hit ⌘S",
+      "action": "FIX",
+      "reason": "The body contained an editorial 'Retitle to' note. The claim 'there is no autosave setting' is supported only by forum posts (logicprohelp, Apple Community), which is below the bar, so it was dropped. Apple fully supports the backup behaviour: each File > Save / Command-S saves a backup, up to ten per alternative, listed newest first under File > Revert to. Backups need Complete Features.",
+      "final_title": "Hit ⌘S often: every save banks a backup",
+      "final_body": "Each time you save with File > Save (⌘S), Logic keeps a backup of the current project alternative, up to ten per alternative. To go back, choose File > Revert to and pick one; they're listed newest first. Backups need Enable Complete Features. Build the reflex of hitting ⌘S every time you finish a thought.",
+      "final_key": "⌘S",
+      "sources": [
+       {
+        "label": "Apple - Use project alternatives and backups in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac",
+        "evidence": "Each time you save using File > Save (or Command-S), a version of the current project alternative is saved (up to ten backups per alternative); File > Revert to lists backups newest to oldest."
+       },
+       {
+        "label": "Apple - Advanced settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/advanced-settings-lgcpb6dcc6fa/mac",
+        "evidence": "Enable Complete Features makes project alternatives and backups available."
+       }
+      ]
+     },
+     {
+      "index": 28,
+      "original_title": "Move the Sound Library to an external drive on purpose",
+      "action": "FIX",
+      "reason": "Not re-searched (budget); not rewritten. The prior audit's Apple KB quote supports the exact menu path. 'Tens of gigabytes' and 'without breaking a single patch' are unsupported. Apple warns that renaming the drive afterwards stops Logic finding the library, so that caveat replaces the overclaim.",
+      "final_title": "Move the Sound Library to an external drive on purpose",
+      "final_body": "Logic Pro > Sound Library > Relocate Sound Library moves the library off your system drive: pick the drive or volume and click Relocate. Afterwards, don't rename that drive, or Logic Pro won't be able to find the Sound Library.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple Support - Relocate the Sound Library (from prior audit, not re-retrieved)",
+        "url": "https://support.apple.com/en-us/111094",
+        "evidence": "Prior audit quote: choose Logic Pro > Sound Library > Relocate Sound Library, select the storage device or volume, click Relocate; don't rename the device afterwards or Logic Pro and MainStage won't find the Sound Library."
+       }
+      ]
+     },
+     {
+      "index": 29,
+      "original_title": "Set the audio file location to “Project” not “Folder”",
+      "action": "FIX",
+      "reason": "The option is 'Organize my project as: Package', not 'Project'. The body contained an editorial 'Retitle to' note. 'Dragging one file moves everything' depends on which assets were copied, and 'only use Folder for enormous multi-drive sessions' has no source. Both were replaced with Apple's description.",
+      "final_title": "Save the project as a Package so it travels",
+      "final_body": "In the File > Save As dialog, choose \"Organize my project as: Package\" and select the asset types to copy into it. Assets saved in the project are still there when you move or copy it. Choose Folder instead if you want a project folder with subfolders for each asset type.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple - Save Logic Pro for Mac projects",
+        "url": "https://support.apple.com/guide/logicpro/save-projects-lgcpce128e82/mac",
+        "evidence": "'Organize my project as: Package' saves a file (package) containing project assets; 'Organize my project as: Folder' saves a folder with subfolders for assets; select asset types to copy; saving assets in the project keeps them available when you move or copy it."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 1, indexes 20-29",
+    "reviews": [
+     {
+      "index": 23,
+      "outcome": "TRIM",
+      "reason": "The cited Apple Project Handling page supports File > Save As Template, the Startup Action option 'Create New Project Using Default Template', and the Default Template button. The vague 'Set it to open on launch' now names that exact setting. The unsupported absolute 'you never build a session from zero again' was dropped.",
+      "trimmed_body": "Build one project with your usual tracks, buses, reverb and marker colours, then choose File > Save As Template. Then, in Project Handling settings, set the Startup Action pop-up to \"Create New Project Using Default Template\" and use the Default Template button to choose your template.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 29,
+      "outcome": "TRIM",
+      "reason": "Re-searched Apple's 'Save Logic Pro for Mac projects' page (URL confirmed). The retrieved text supports Package saving the project as a file (package) containing its assets. It places the step 'select the type of assets to copy' under the Folder option, not Package, so the claim that you select asset types for a Package is not clearly supported and was removed.",
+      "trimmed_body": "In the File > Save As dialog, choose \"Organize my project as: Package\" to save the project as a single file (package) containing its assets. Assets saved in the project are still there when you move or copy it. Choose Folder instead if you want a project folder with subfolders for each asset type.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 8
+   }
+  },
+  {
+   "unit": {
+    "id": "S02",
+    "section": 2,
+    "start": 0,
+    "end": 15
+   },
+   "verify": {
+    "unit": "s02 tricks 0-14",
+    "search_worked": true,
+    "searches_used": 13,
+    "search_note": "Current (unversioned) Apple pages were retrieved for: Edit arrangement markers, Add arrangement markers, Show and hide global tracks, and Mute and solo regions. For Loop regions, Add or remove gaps, Use the cycle area, Create MIDI aliases and Track Stacks, only /10.7/ Apple pages came up, so those tricks lean on third-party sources as well (details in each reason). Index 7 (aliases) and index 10 (Track Stacks) are marked KEEP on a /10.7/ Apple page that states the key, plus a third-party source whose topic matches. The search summary did not show whether those third-party pages state the key themselves, so the orchestrator may want to demote them. Index 6 was cut because the only source for the \"Loops to Aliases\" menu name is /10.7/, and the trick's premise (\"convert to real regions\") contradicts what that command does. WebFetch was not used.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Use the Arrangement track to move whole sections",
+      "action": "KEEP",
+      "reason": "Current Apple pages confirm that G shows or hides the global tracks, where the Arrangement track is visible by default. They also say that moving an arrangement marker moves every region, marker and automation point in that section.",
+      "final_title": "Use the Arrangement track to move whole sections",
+      "final_body": "Open Global Tracks with G, enable the Arrangement track, and drop markers on your Verse, Chorus and Bridge. Now drag the Chorus marker and the entire section — every track, every automation point — moves with it.",
+      "final_key": "G",
+      "sources": [
+       {
+        "label": "Apple — Show and hide global tracks in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/show-and-hide-global-tracks-lgcpd0e8ce94/mac",
+        "evidence": "Choose Track > Global Tracks > Show Global Tracks, or use the Show/Hide Global Tracks key command (G). Arrangement, Marker, Signature and Tempo tracks are visible by default."
+       },
+       {
+        "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac",
+        "evidence": "When you move or copy an arrangement marker, all of the regions in that section are moved or copied, including markers on every track and automation points on every automation curve in the section."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "⌘-drag one arrangement marker onto another to swap sections",
+      "action": "FIX",
+      "reason": "Apple describes the swap as a plain drag of one marker directly over another, with no ⌘ modifier, so the title and key were wrong. The claims that a plain drag 'moves or inserts' and that it takes 'fifteen seconds' are unsupported and have been removed.",
+      "final_title": "Drag one arrangement marker onto another to swap sections",
+      "final_body": "Drag one arrangement marker directly over another and the two switch places, with all their content swapped. Every region, marker and automation point in each section goes with it, so you can try several song orders in moments.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac",
+        "evidence": "When you drag one arrangement marker directly over another one in the arrangement track, the two markers switch places (all their content is swapped). Moving or copying a marker includes all regions, markers and automation points in the section."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "⌥‑drag an arrangement marker to duplicate a section",
+      "action": "KEEP",
+      "reason": "The current Apple Edit arrangement markers page gives Option-drag as the way to copy a marker, and says a copy brings along all regions and automation in the section. This was re-confirmed by a search that returned the page.",
+      "final_title": "⌥‑drag an arrangement marker to duplicate a section",
+      "final_body": "Hold ⌥ and drag any arrangement marker to copy that entire section, contents and all, to a new point in the timeline.",
+      "final_key": "⌥ + drag",
+      "sources": [
+       {
+        "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac",
+        "evidence": "Option-drag the arrangement marker to the position where you want to place the copy; when you move or copy an arrangement marker, all regions, markers and automation points in that section are copied."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Delete a section and close the gap",
+      "action": "KEEP",
+      "reason": "The two-press Delete behaviour was confirmed in this session's search on the Apple Edit arrangement markers page. The gap-closing behaviour comes from the prior audit's quote of the same current page.",
+      "final_title": "Delete a section and close the gap",
+      "final_body": "Select the arrangement marker and press Delete once — that removes the section's regions. Press Delete again and the marker goes too, pulling everything after it back to close the hole.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit arrangement markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-arrangement-markers-lgcpf7c0a3d7/mac",
+        "evidence": "Select the arrangement marker, then press Delete to delete the regions below it so it is empty. Press Delete again to delete the arrangement marker. Sections to the right move left to fill the deleted section."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Insert silence across the whole project",
+      "action": "FIX",
+      "reason": "macProVideo, 9to5Mac and Apple's /10.7/ Add or remove gaps page all agree on the menu path Edit > Cut/Insert Time > Insert Silence Between Locators. No retrieved source says that automation points shift, so 'every automation point shifts' was removed. The behaviour described now (regions split at the left locator and moved past the right locator) is supported.",
+      "final_title": "Insert silence across the whole project",
+      "final_body": "Set the locators around the gap you want, then choose Edit > Cut/Insert Time > Insert Silence Between Locators. Regions are cut at the left locator and everything after it moves past the right locator — the quick way to add two bars to an intro.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "macProVideo — Making Whole Project Edits in Logic Pro",
+        "url": "https://macprovideo.com/article/logic-pro/making-whole-project-edits-in-logic-pro",
+        "evidence": "Insert Silence Between Locators is accessed via Edit > Cut/Insert Time; regions longer than the cycle are cut at the left locator and the second part moved to the right of the right locator."
+       },
+       {
+        "label": "9to5Mac — Logic Pros: One-click Logic arrangement tricks",
+        "url": "https://9to5mac.com/2019/08/25/logic-arrangement-tricks-insert-gap/",
+        "evidence": "Insert Silence creates a gap anywhere in the arrangement, useful to bump the whole song over to make room for an intro; set it up with a left/right locator selection."
+       },
+       {
+        "label": "Apple — Add or remove gaps in Logic Pro (10.7 page)",
+        "url": "https://support.apple.com/guide/logicpro/add-or-remove-gaps-lgcp21e2cb21/10.7/mac/11.0",
+        "evidence": "Choose Edit > Cut/Insert Time > Insert Silence Between Locators; if no selection is made, all regions between the locators are affected."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Snap arrangement markers to your actual section boundaries",
+      "action": "FIX",
+      "reason": "Apple confirms that new markers appear at the project start or after the last marker, eight bars long, regardless of playhead position, and that you resize them by dragging the right edge. No source mentions the locators or says the edge 'snaps to bars', so both were removed. The key U has nothing to do with this trick and was removed.",
+      "final_title": "Resize arrangement markers to fit your sections",
+      "final_body": "New arrangement markers always appear at the start of the project or after the last existing marker, eight bars long, regardless of the playhead position. So create the marker first, then drag its right edge left or right until it matches the section.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Add arrangement markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/add-arrangement-markers-lgcpb9f20ee5/mac",
+        "evidence": "The arrangement marker appears at the start of the project or at the end of the last existing arrangement marker, regardless of the playhead position; it is eight bars long; drag the right edge left or right to resize it."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "Convert loops to real regions only at the very end",
+      "action": "CUT",
+      "reason": "Two searches found the 'Edit > Convert > Loops to Aliases' name only on /10.7/ Apple pages, with no current Apple or independent source. The title's premise ('convert loops to real regions') is also contradicted: that command makes MIDI aliases and cloned audio regions, which stay linked to the original. That also undermines the 'convert at the end so edits stop propagating' logic. Nothing verifiable survives for Logic 11/12.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Loop regions in Logic Pro (10.7 page)",
+        "url": "https://support.apple.com/guide/logicpro/loop-regions-lgcpf7c0e0db/10.7/mac/11.0",
+        "evidence": "Edit > Convert > Loops to Aliases converts software instrument loop repetitions into aliases and audio loop repeats into cloned audio regions (old-version page only)."
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "Use aliases for parts that must stay identical",
+      "action": "KEEP",
+      "reason": "Apple's Create MIDI aliases page (only the /10.7/ version surfaced) states Option-Shift-drag and says edits to the original change every alias. macProVideo's 'Understanding Aliases in Logic Pro' also came up for the query, but the search summary did not show that it states the key. Weak for 11/12: flag for the orchestrator. Demote to CUT if a current source is required.",
+      "final_title": "Use aliases for parts that must stay identical",
+      "final_body": "⌥⇧‑drag a MIDI region to create an alias. Edit the parent and every alias follows. Perfect for doubled parts across a whole song.",
+      "final_key": "⌥⇧ + drag",
+      "sources": [
+       {
+        "label": "Apple — Create MIDI aliases in Logic Pro (10.7 page)",
+        "url": "https://support.apple.com/en-lb/guide/logicpro/lgcpf7c0cea3/10.7/mac/11.0",
+        "evidence": "Option-Shift-drag the region to where you want the alias to start. If you alter the original region, all aliases of the region are similarly altered."
+       },
+       {
+        "label": "macProVideo — Understanding Aliases in Logic Pro",
+        "url": "https://macprovideo.com/article/audio-software/understanding-aliases-in-logic-pro",
+        "evidence": "Returned for the alias query; the search summary did not show whether it states Option-Shift-drag."
+       }
+      ]
+     },
+     {
+      "index": 8,
+      "original_title": "Make a folder out of a section",
+      "action": "KEEP",
+      "reason": "Not re-searched to save budget. The prior audit quotes the current, unversioned Apple 'Pack and unpack folders' page, which states this exact menu path, as the budget rule allows.",
+      "final_title": "Make a folder out of a section",
+      "final_body": "Select every region in a section and use Functions > Folder > Pack Folder. The arrangement collapses to one block you can move, copy and mute as a unit.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Pack and unpack folders in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/pack-and-unpack-folders-lgcpf7c0cb8e/mac",
+        "evidence": "Prior audit quote: select the regions, then choose Functions > Folder > Pack Folder from the Tracks area menu bar."
+       }
+      ]
+     },
+     {
+      "index": 9,
+      "original_title": "Colour‑code sections, not instruments",
+      "action": "KEEP",
+      "reason": "Not re-searched to save budget. The prior audit quotes the current, unversioned Apple 'Change the color of regions' page, which gives Option-C for the Color palette, as the budget rule allows.",
+      "final_title": "Colour‑code sections, not instruments",
+      "final_body": "Open the colour palette with ⌥C and give every chorus the same colour across all tracks. You can then read the arrangement at a glance from fully zoomed out.",
+      "final_key": "⌥C",
+      "sources": [
+       {
+        "label": "Apple — Change the color of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/change-the-color-of-regions-lgcpf7c0db8c/mac",
+        "evidence": "Prior audit quote: open the Color palette by choosing View > Show Colors (or pressing Option-C)."
+       }
+      ]
+     },
+     {
+      "index": 10,
+      "original_title": "Use Track Stacks to collapse instrument families",
+      "action": "KEEP",
+      "reason": "The search returned Apple's Track Stacks page (/10.7/ only), which states Shift-Command-D, Track > Create Track Stack and the Folder Stack / Summing Stack dialog. Logic Studio Training's folder stacks article came up in the same results and agrees on the workflow. The summary did not show that Logic Studio Training states the key itself, so this has no current Apple source; flag if strict.",
+      "final_title": "Use Track Stacks to collapse instrument families",
+      "final_body": "Select related tracks and hit ⇧⌘D, then choose Summing Stack in the dialog. Drums become one lane and the arrangement becomes readable.",
+      "final_key": "⌘⇧D",
+      "sources": [
+       {
+        "label": "Apple — Create and edit Track Stacks in Logic Pro (10.7 page)",
+        "url": "https://support.apple.com/guide/logicpro/create-and-edit-track-stacks-lgcp5bafa811/10.7/mac/11.0",
+        "evidence": "Press Shift-Command-D or choose Track > Create Track Stack; in the dialog select Folder Stack or Summing Stack, then click OK."
+       },
+       {
+        "label": "Logic Studio Training — How To Organize Your Logic Pro Projects With Folder Track Stacks",
+        "url": "https://logicstudiotraining.com/folder-track-stacks/",
+        "evidence": "Returned for the Shift-Command-D track stack query; covers creating folder track stacks to organise projects."
+       }
+      ]
+     },
+     {
+      "index": 11,
+      "original_title": "Solo an arrangement section with the locators",
+      "action": "FIX",
+      "reason": "'Solo' was misleading: U sets the locators and turns on Cycle, which loops the section and does not solo it. The search returned U as Set Rounded Locators by Regions/Events and Enable Cycle (Studio Interns' 'keyboard command of the day', with macProVideo in the same results). The barline rounding is from Apple's cycle-area page, which surfaced only as /10.7/. The 'don't press C' line has no current source and was removed.",
+      "final_title": "Loop a section with one key",
+      "final_body": "Select the regions that make up the section and press U — Set Rounded Locators by Regions/Events and Enable Cycle. The locators round to the nearest barlines around your selection and Cycle switches on, so the section loops in sync.",
+      "final_key": "U",
+      "sources": [
+       {
+        "label": "Studio Interns — Set Rounded Locators by Regions/Events, Logic Pro X keyboard command of the day",
+        "url": "https://studio-interns.com/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "Paraphrased from the search summary: Set Rounded Locators by Regions/Events and Enable Cycle is on U and rounds the loop around the chosen region so it stays in sync."
+       },
+       {
+        "label": "Apple — Use the cycle area in Logic Pro (10.7 page)",
+        "url": "https://support.apple.com/guide/logicpro/use-the-cycle-area-lgcp59e41e86/10.7/mac/11.6.2",
+        "evidence": "Set Rounded Locators rounds the locators to the barline nearest the beginning and end points of the selected regions or events."
+       },
+       {
+        "label": "macProVideo — 6 Logic Pro X Cycling Tips For A Faster Production Workflow",
+        "url": "https://macprovideo.com/article/audio-software/6-logic-pro-x-cycling-tips-for-a-faster-production-workflow",
+        "evidence": "Returned for the same key-command query; covers cycle and locator shortcuts."
+       }
+      ]
+     },
+     {
+      "index": 12,
+      "original_title": "Mute regions instead of deleting them while experimenting",
+      "action": "FIX",
+      "reason": "The body is right: the current Apple page gives Control-M and the Mute tool, and says muted regions are grey. But the key field said M, which is the track-mute command. The key is corrected to ⌃M. The 'dot before the name' detail comes from the prior audit's quote of the same current Apple page.",
+      "final_title": "Mute regions instead of deleting them while experimenting",
+      "final_body": "Click a region with the Mute tool, or select the regions and press Control-M. Muted regions turn grey with a dot before the name, so arrangement experiments become reversible without touching undo.",
+      "final_key": "⌃M",
+      "sources": [
+       {
+        "label": "Apple — Mute and solo regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/mute-and-solo-regions-lgcp2217b80d/mac",
+        "evidence": "Select regions and press Control–M to mute them, or select the Mute tool and click the regions; muted regions appear gray, and a small dot precedes the name."
+       }
+      ]
+     },
+     {
+      "index": 13,
+      "original_title": "Keep a “graveyard” track at the bottom",
+      "action": "ADVICE",
+      "reason": "A pure workflow habit that makes no claim about a specific shortcut, menu or behaviour.",
+      "final_title": "Keep a “graveyard” track at the bottom",
+      "final_body": "Make one muted, hidden track and drag every rejected idea onto it. Nothing is ever deleted, and the good version of that rejected idea is there when you need it three weeks later.",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 14,
+      "original_title": "Use markers for notes to self, not just sections",
+      "action": "KEEP",
+      "reason": "The current Apple global tracks page confirms that the Marker track is a global track shown by default. The prior audit quotes the current Apple Rename markers page for renaming (Command-double-click).",
+      "final_title": "Use markers for notes to self, not just sections",
+      "final_body": "Create a marker from the Global Tracks marker lane, then rename it “fix snare here” or “vocal comp needed”. Your to‑do list lives on the timeline instead of on paper.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Show and hide global tracks in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/show-and-hide-global-tracks-lgcpd0e8ce94/mac",
+        "evidence": "By default, the Arrangement, Marker, Signature and Tempo tracks are visible when you show the global tracks."
+       },
+       {
+        "label": "Apple — Rename markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/rename-markers-lgcp4d438ec1/mac",
+        "evidence": "Prior audit quote: Command-double-click a marker, then enter a new marker name."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 2, indexes 0-14",
+    "reviews": [
+     {
+      "index": 4,
+      "outcome": "TRIM",
+      "reason": "The menu path is supported by macProVideo and Apple's 10.7 page. But the evidence only says regions that cross the left locator are cut there, with the second part moved past the right locator. 'Regions are cut at the left locator' overgeneralizes that, so the sentence was reworded to match the source.",
+      "trimmed_body": "Set the locators around the gap you want, then choose Edit > Cut/Insert Time > Insert Silence Between Locators. A region that crosses the left locator is cut there, and the part after it moves to the right of the right locator. It's a quick way to add two bars to an intro.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 7,
+      "outcome": "CUT",
+      "reason": "A re-search for Apple's Create MIDI aliases page returned only /10.7/ copies (en-az, en-bn, en-ph, en-lb, en-by). No current, unversioned page surfaced, and the macProVideo citation was never shown to state the key. Under the rules, a /10.7/-only source cannot support a Logic 11/12 key command (Option-Shift-drag), and that key is the whole trick."
+     },
+     {
+      "index": 8,
+      "outcome": "TRIM",
+      "reason": "The current unversioned Apple 'Pack and unpack folders' page exists (confirmed by search) and uses the Functions > Folder menu. No source supports 'collapses to one block you can move, copy and mute as a unit', so that sentence was removed.",
+      "trimmed_body": "Select every region in a section and choose Functions > Folder > Pack Folder from the Tracks area menu bar to pack them into a folder.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 10,
+      "outcome": "TRIM",
+      "reason": "The only source for Shift-Command-D is Apple's /10.7/ page, plus an unattributed search summary that most likely came from an old 2015 9to5Mac or blog post. The Logic Studio Training citation was never shown to state the key. So the key command is unsupported for 11/12 and was removed. The current Apple overview (https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac, surfaced in search but not in the verifier's source list) confirms folder and summing stacks, and that a summing stack sends all its tracks' outputs to one auxiliary track. The orchestrator may want to add it as a source. 'Drums become one lane' was also dropped because nothing retrieved supports it.",
+      "trimmed_body": "Select related tracks, create a Track Stack and choose Summing Stack. All the tracks in a summing stack send their audio to one shared auxiliary track, so a whole drum kit sits under a single stack.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 11,
+      "outcome": "CUT",
+      "reason": "The key U rests on one old 'Logic Pro X' blog post (Studio Interns) and a /10.7/ Apple page. macProVideo was never shown to state it. The same search also returned a second Studio Interns post for a renamed command, 'Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop' on ⌘U, which suggests the command names changed in later versions. No current Apple source confirms U or the command name for Logic 11/12."
+     },
+     {
+      "index": 14,
+      "outcome": "TRIM",
+      "reason": "The cited evidence supports that the Marker track is a global track shown by default, and (from the prior audit) that markers can be renamed. It does not support creating a marker 'from the Global Tracks marker lane', so that method was removed.",
+      "trimmed_body": "The Marker track is one of the global tracks shown by default. Create a marker, then rename it “fix snare here” or “vocal comp needed”. Your to‑do list lives on the timeline instead of on paper.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 8
+   }
+  },
+  {
+   "unit": {
+    "id": "S03",
+    "section": 3,
+    "start": 0,
+    "end": 6
+   },
+   "verify": {
+    "unit": "section 3, tricks 0-5",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "Apple's current pages settled 0, 1, 3 and 5. Trick 2: the only Apple pages found carry /10.7/ in the URL, and they give Play from Selection as Shift-Return, which contradicts the book's ⇧Space. Trick 5: sources disagree on the default key for Catch Playhead Position. studio-interns has backquote, a search summary said ⌥O, and Apple's current Catch page gives only the button, so the key claim was removed. Trick 4 has no current, unversioned Apple page for the cycle area (only /10.7/ copies). Its key commands are supported by two studio-interns pages plus afteraudio's copy of the Global Commands table.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Drag‑zoom to any area with ⌃⌥",
+      "action": "KEEP",
+      "reason": "Apple's current 'Zoom windows' page confirms holding Control-Option selects the Zoom tool, and dragging an area makes it fill the window. The prior audit's quote from the same page confirms that clicking the background with the Zoom tool returns to the earlier zoom level.",
+      "final_title": "Drag‑zoom to any area with ⌃⌥",
+      "final_body": "Hold ⌃⌥ and drag a box around any part of the arrangement to zoom straight to it. Hold ⌃⌥ and click empty space to zoom back out.",
+      "final_key": "⌃⌥ + drag",
+      "sources": [
+       {
+        "label": "Apple — Zoom windows in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/zoom-windows-lgcp5cbf2096/mac",
+        "evidence": "You select the Zoom tool by pressing and holding Control-Option. Drag to select the area you want to zoom and it fills the window. Clicking the background with the Zoom tool returns to the original zoom level or steps back through earlier zooms (prior audit quote from the same page)."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Know what the number keys actually do",
+      "action": "KEEP",
+      "reason": "Every claim is on current Apple pages. Numeric keys except 0 recall screensets, and the commands are named Recall Screenset 1–9. Go to Marker Number 1 to 20 exist and follow the order of all markers in the project. The Key Commands window opens with Option-K.",
+      "final_title": "Know what the number keys actually do",
+      "final_body": "The top-row number keys recall screensets, not markers — Apple's guide says you recall a screenset by pressing any numeric key except 0, so 1–9 switch window layouts. If you want marker jumps on a key, open Key Commands (⌥K) and search “Go to Marker Number” — there are 20 of them, numbered by the order the markers appear in the project.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Create and recall screensets in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/create-recall-and-switch-screensets-lgcp9bbbcb23/mac",
+        "evidence": "To recall a screenset, press any numeric key except 0. The 1 to 9 key commands are called Recall Screenset 1–9 in the Key Commands window."
+       },
+       {
+        "label": "Apple — Navigate using markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/navigate-using-markers-lgcpa855b268/mac",
+        "evidence": "You can use the 20 Go to Marker Number 1 to 20 key commands. The marker numbers refer to the serial order of all markers in the project."
+       },
+       {
+        "label": "Apple — Assign key commands in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac",
+        "evidence": "Open the Key Commands window by choosing Logic Pro > Key Commands > Edit, or press Option-K."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Assign a key to “Play Selection”",
+      "action": "CUT",
+      "reason": "The main claim is contradicted. The book says Play from Selection defaults to ⇧Space, but Apple's Control playback page gives the key as Shift-Return, and that page exists only with /10.7/ in the URL. No current Apple page settled the default key, and the 'several selection-based playback commands' claim was never sourced. Without a trustworthy key, the tip has nothing left.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Control playback in Logic Pro (10.7-versioned page)",
+        "url": "https://support.apple.com/guide/logicpro/control-playback-with-the-transport-buttons-lgcp0b07c0c9/10.7/mac/11.6.1",
+        "evidence": "The Play from Selection button plays from the start point of the first selected region or event, and the key command given is Shift-Return, not Shift-Space."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Scroll horizontally without the scrollbar",
+      "action": "FIX",
+      "reason": "The 'drag two fingers to scroll horizontally and vertically' quote comes from Apple's iPad guide, not the Mac guide. Apple's current Mac page only says a gesture-capable trackpad can scroll and zoom the Tracks area, and that you can swipe on the Touch Bar to scroll. The rewrite keeps only those claims.",
+      "final_title": "Scroll without the scrollbar",
+      "final_body": "If your Mac has a trackpad that supports gestures, you can scroll and zoom the Tracks area with gestures instead of reaching for the scrollbars. On a Mac with a Touch Bar, swipe left or right on the Touch Bar to scroll through the visible area of the project.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Scroll and zoom in the Tracks area in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/scroll-and-zoom-in-the-tracks-area-lgcpf7c0b924/mac",
+        "evidence": "If your computer has a trackpad that supports gestures, you can also scroll and zoom the Tracks area using gestures. On Macs with a Touch Bar, swipe left or right on the Touch Bar to scroll through the visible area of the project."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Use the Cycle area as a bookmark",
+      "action": "KEEP",
+      "reason": "U is 'Set Rounded Locators by Regions/Events and Enable Cycle': it rounds the locators to the nearest bar lines around the selection and turns Cycle on. ⌘U is 'Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop', with no rounding. Apple describes the cycle area as a yellow strip in the ruler. No current, unversioned Apple cycle-area page came up. The key commands rest on studio-interns and afteraudio's Global Commands listing, and 'yellow strip' only on the /10.7/ Apple page.",
+      "final_title": "Use the Cycle area as a bookmark",
+      "final_body": "Select the region or passage you are working on and press U. Logic sets the left and right locators around it — rounded to bar lines — and turns Cycle on, so the yellow strip in the ruler marks your work area and keeps looping it. Use ⌘U instead if you want the locators exactly on the selection boundaries rather than rounded.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "studio-interns.com — Set Rounded Locators by Regions/Events (keyboard command of the day)",
+        "url": "https://studio-interns.com/set-rounded-locators-by-regions-events-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "Documents the Set Rounded Locators by Regions/Events command. The search summary says the command rounds the locators to the bar lines nearest the start and end of the selection, and it gives the key as U."
+       },
+       {
+        "label": "studio-interns.com — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop ⌘U",
+        "url": "https://studio-interns.com/set-locators-loop-by-regions-events-marquee-and-enable-cycle-loopu-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "The page title gives the command as ⌘U: set locators by the selected regions, events or marquee and enable Cycle, with no rounding."
+       },
+       {
+        "label": "afteraudio.com — Key commands for Global Commands in Logic Pro",
+        "url": "https://www.afteraudio.com/musings/blog/key-commands-for-global-commands-in-logic-pro",
+        "evidence": "A copy of the Global Commands key command table. It came up for the exact command name 'Set Rounded Locators by Regions/Events and Enable Cycle'."
+       },
+       {
+        "label": "Apple — Use the cycle area in Logic Pro (10.7-versioned page)",
+        "url": "https://support.apple.com/guide/logicpro/use-the-cycle-area-lgcp59e41e86/10.7/mac/11.6.2",
+        "evidence": "The cycle area appears as a yellow strip in the ruler, and the left and right locators are its start and end points."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Toggle Catch to stop the screen running away",
+      "action": "FIX",
+      "reason": "Apple's current pages support the description of Catch and the Catch button in the menu bar. The default-key claim (backquote) is not settled: studio-interns says `, a search summary of shortcut references said ⌥O, and Apple gives no key. The key claim was removed. Apple's Catch settings that switch Catch back on automatically were added in its place.",
+      "final_title": "Toggle Catch to stop the screen running away",
+      "final_body": "With Catch on, the visible section of a window follows the playhead during playback. For detailed editing, click the Catch button in the Tracks area (or editor) menu bar to turn it off, and the view holds still. If it keeps switching back on, check Logic Pro > Settings > General > Catch: “Catch when starting playback” and “Catch when moving playhead” re-enable it.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Control windows using Catch modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/control-windows-using-catch-modes-lgcp5cbf1727/mac",
+        "evidence": "In Catch mode the visible section of a window follows the playhead during playback or recording. Click the Catch button in the Tracks area (or editor) menu bar to turn it on. With it inactive, the display doesn't update even when the playhead moves past the window edge."
+       },
+       {
+        "label": "Apple — Catch settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/catch-settings-lgcp237ca5ad/mac",
+        "evidence": "The Logic Pro > Settings > General > Catch pane has 'Catch when starting playback', which turns on Catch mode when you click Play or Pause, and 'Catch when moving playhead', which turns it on when you move the playhead."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 3, indexes 0-5",
+    "reviews": [
+     {
+      "index": 1,
+      "outcome": "TRIM",
+      "reason": "Apple's screensets page says 'press any numeric key except 0'. It does not say top-row, so that qualifier goes. I confirmed the screenset and marker URLs in search results this session. The rest is unchanged.",
+      "trimmed_body": "The number keys recall screensets, not markers — Apple's guide says you recall a screenset by pressing any numeric key except 0, so 1–9 switch window layouts. If you want marker jumps on a key, open Key Commands (⌥K) and search “Go to Marker Number” — there are 20 of them, numbered by the order the markers appear in the project.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 4,
+      "outcome": "TRIM",
+      "reason": "Only the 10.7-versioned Apple page says 'yellow strip'. A search for a current page returned only /10.7/ pages, so the colour claim goes. 'Rounded to bar lines' and 'keeps looping' rest on one blog's search summary. The command name 'Set Rounded Locators by Regions/Events and Enable Cycle' = U appears in studio-interns and in afteraudio, and my search confirmed it. ⌘U setting locators by the selection and enabling Cycle, without rounding, is confirmed by studio-interns and afteraudio. The trimmed text keeps only those claims. Drop the 10.7 Apple cycle-area source from citations.",
+      "trimmed_body": "Select the region or passage you are working on and press U (Set Rounded Locators by Regions/Events and Enable Cycle). Logic sets the left and right locators around the selection, rounded, and turns Cycle on, so the cycle area marks your work area. Use ⌘U instead if you want the locators set by the selection without rounding.",
+      "trimmed_key": "U"
+     }
+    ],
+    "sustained_count": 4
+   }
+  },
+  {
+   "unit": {
+    "id": "S04",
+    "section": 4,
+    "start": 0,
+    "end": 13
+   },
+   "verify": {
+    "unit": "section 4, tricks 0-12",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "All 8 rewritten tricks were checked against current Apple pages. Tricks 1 (Step Input Keyboard) and 8 (Merge) were kept on their prior-audit sources, which are current Apple pages that directly support the text; I did not search them again. For Region Transpose (6) and Freeze (9), the only Apple pages that turned up were /10.7/ pages. Trick 6 therefore rests on the 10.7 page plus macProVideo and the current Region inspector page. Trick 9 was rewritten so it relies only on the current Bounce in Place overview, and the unverified 'Freeze button in the track header' location was dropped.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Capture the last thing you played, even when not recording",
+      "action": "FIX",
+      "reason": "⇧R, the Logic 11.2 audio requirement, focus, playing, incoming signal, the 4-second minimum and the 1-minute maximum are all confirmed. 'MIDI works on any recent version' is vague and has no source, so it was removed. The MIDI page confirms capture works whether the project is playing or stopped. Wording now follows Apple's.",
+      "final_title": "Capture the last thing you played, even when not recording",
+      "final_body": "If you played something great without recording, press ⇧R (Flashback Capture) and Logic turns it into a region. MIDI can be captured whether the project is playing or stopped. Audio capture arrived in Logic 11.2: give the audio track focus and play the project. Logic saves audio only while there is an incoming signal, needs at least four seconds of playback, and keeps up to one minute.",
+      "final_key": "⇧R",
+      "sources": [
+       {
+        "label": "Apple — Capture a recent audio performance in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/capture-a-recent-audio-performance-lgcpa5d2f9b8/mac",
+        "evidence": "Click an audio track to give it focus and play; with the track in focus, click Flashback Capture or press Shift-R. Audio is captured only while the project is playing and there is an incoming signal. The project must play at least four seconds, and up to one minute of audio can be saved."
+       },
+       {
+        "label": "Apple — Capture your most recent MIDI performance in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/capture-your-most-recent-midi-performance-lgcpdc0bf889/mac",
+        "evidence": "You can capture MIDI notes while a project is playing or stopped. With a software instrument track focused, click Flashback Capture or press Shift-R."
+       },
+       {
+        "label": "Apple — What's new in Logic Pro for Mac 11.2",
+        "url": "https://support.apple.com/guide/logicpro/whats-new-in-logic-pro-112-lgcp02e40443/mac",
+        "evidence": "Apple's 11.2 what's-new page. Search results describe 11.2 as the release that brought Flashback Capture to audio."
+       },
+       {
+        "label": "Logic Studio Training — Logic Pro 11.2 Update: Flashback Recording",
+        "url": "https://logicstudiotraining.com/logic-pro-11-2-update/",
+        "evidence": "Says Flashback Capture captures audio on the focused track whenever the project is playing and an audio signal is present, new in 11.2."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Use the Step Input Keyboard for parts you cannot play",
+      "action": "KEEP",
+      "reason": "Not rewritten. The prior audit's current Apple page confirms the menu path Window > Show Step Input Keyboard and entering one note at a time with chosen length and velocity. Search budget went to the rewritten tricks.",
+      "final_title": "Use the Step Input Keyboard for parts you cannot play",
+      "final_body": "Window > Show Step Input Keyboard. Enter notes one at a time at an exact rhythmic value. Complex parts get entered accurately without a single quantise pass.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use step input recording techniques in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-step-input-recording-techniques-lgcpb19a8406/mac",
+        "evidence": "Choose Window > Show Step Input Keyboard; click a key to insert a note, and use the Note Length and Velocity buttons to set its length and velocity (quote from the prior audit)."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Draw notes with the Pencil, delete with the Eraser",
+      "action": "KEEP",
+      "reason": "Every claim checks out on current Apple pages. A new note takes the length, velocity and channel of the note you last created or edited. You delete notes by selecting them and pressing Delete, or with the Eraser. Option-dragging copies notes.",
+      "final_title": "Draw notes with the Pencil, delete with the Eraser",
+      "final_body": "The Pencil creates a note whose length, velocity and MIDI channel match the last note you created or edited. To remove a note, select it and press Delete, or click it with the Eraser tool. ⌥-drag a note to copy it to a new position.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Add notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/add-notes-lgcpa904cb3a/mac",
+        "evidence": "Select the Pencil tool and click the background to create a note. The new note's length, velocity and channel match the previously created or edited note."
+       },
+       {
+        "label": "Apple — Delete notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/delete-notes-lgcpa9100075/mac",
+        "evidence": "Delete notes by selecting them and pressing Delete, or with the Eraser tool (quote from the prior audit)."
+       },
+       {
+        "label": "Apple — Copy notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/copy-notes-lgcpa917aaef/mac",
+        "evidence": "You can Option-drag notes to a new position to copy them."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Use the Chord Trigger MIDI plugin to play chords with one finger",
+      "action": "KEEP",
+      "reason": "The rewritten order is confirmed by the current Apple page: click Learn, click the trigger key on the upper keyboard, click the chord notes on the lower keyboard, then click Learn to end.",
+      "final_title": "Use the Chord Trigger MIDI plugin to play chords with one finger",
+      "final_body": "Insert Chord Trigger in the MIDI FX slot and click Learn. Click the trigger key you want on the upper keyboard first, then click the notes of the chord on the lower keyboard, then click Learn again to finish. Whole progressions become one-finger performances.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Chord Trigger in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-chord-trigger-lgce9d7955e9/mac",
+        "evidence": "Click Learn (the label changes to Trigger Key), click a trigger key on the upper keyboard (the label changes to Chord), click the notes on the lower keyboard, then click Learn to end chord assignment."
+       },
+       {
+        "label": "Apple — Chord Trigger overview in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/chord-trigger-overview-lgceb57e806c/mac",
+        "evidence": "Apple's overview page for the Chord Trigger MIDI plug-in."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Force everything into key with Transposer's scale quantize",
+      "action": "FIX",
+      "reason": "The title still names a 'scale quantize' control that doesn't exist. Apple's mechanism is the Root and Scale menus. 'Pulled to the nearest right one' appeared only in a search-engine summary, not in Apple's text, so it was replaced with Apple's wording: notes are corrected to the selected scale. The User scale and on-screen keyboard claim is confirmed.",
+      "final_title": "Force everything into key with Transposer",
+      "final_body": "Insert the Transposer MIDI FX and set its Root and Scale pop-up menus. Transposer transposes incoming MIDI notes in real time and corrects them to the selected scale, so you stay in key as you play. Choose User and click notes off on the on-screen keyboard to build your own scale.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Transposer in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/transposer-midi-plug-in-controls-lgceee5a5e6f/mac",
+        "evidence": "Transposer can transpose incoming MIDI notes in real time and correct notes to a selected scale. Root pop-up: choose the root note. Scale pop-up: presets or a custom User scale. Keyboard: click notes on or off; notes turned off are excluded from the User scale."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Use Arpeggiator to generate parts, then commit them",
+      "action": "FIX",
+      "reason": "The current Apple page confirms the Bounce in Place facts: selected regions rendered with all active plug-ins and automation data to 24-bit audio at the project sample rate. Only the wording changed ('every active plug-in and its automation' became Apple's 'all active plug-ins and automation data').",
+      "final_title": "Use Arpeggiator to generate parts, then commit them",
+      "final_body": "Insert Arpeggiator and dial in a pattern, then commit it with Bounce in Place. Logic renders the selected region, including all active plug-ins and automation data, to a 24-bit audio file at the project sample rate. The live pattern becomes a fixed part you can edit as audio.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Logic Pro for Mac bounce in place overview",
+        "url": "https://support.apple.com/guide/logicpro/bounce-in-place-overview-lgcpe2a9f868/mac",
+        "evidence": "You can render one or more selected regions on audio or software instrument tracks, including all active plug-ins and automation data. The bounce is 24-bit at the project sample rate."
+       },
+       {
+        "label": "Apple — Bounce regions in place in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac",
+        "evidence": "Apple's current how-to page for Bounce in Place on regions."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "Transpose without touching the notes",
+      "action": "FIX",
+      "reason": "The Transpose parameter's playback-only behavior is confirmed. 'Audition a key change for the whole song' overreaches: it acts only on the MIDI regions you select, and audio regions are not covered. The text now limits itself to MIDI regions. The Apple region-parameters page found is /10.7/, so macProVideo is cited as an independent second source, alongside the current Region inspector page.",
+      "final_title": "Transpose without touching the notes",
+      "final_body": "Select MIDI regions and set the Region inspector's Transpose field. The notes are transposed in semitones during playback while the recorded notes stay as they are, so you can try a new key and back out in seconds.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Logic Pro MIDI region parameters",
+        "url": "https://support.apple.com/guide/logicpro/midi-region-parameters-lgcpf7c0d270/10.7/mac/11.0",
+        "evidence": "Transpose: all note events in the region are transposed up or down in semitones during playback."
+       },
+       {
+        "label": "Apple — Use the Region inspector in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-the-region-inspector-lgcpd8a8780c/mac",
+        "evidence": "Current page: the Region inspector shows parameters for the selected region or regions."
+       },
+       {
+        "label": "macProVideo — Real-Time MIDI Editing In Logic Pro X",
+        "url": "https://www.macprovideo.com/article/audio-software/real-time-midi-editing-in-logic-pro-x",
+        "evidence": "Search summary: region parameter settings, including transposition, are applied in real time during playback."
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "Use the Modifier MIDI plugin to remap anything to anything",
+      "action": "FIX",
+      "reason": "Input Event, Re-Assign To, Scale (scaling) and Add (offset) are all confirmed on the current Apple page. The examples 'modwheel into aftertouch, pitchbend into expression' were not confirmed by any retrieved source, so they were removed. The title's 'anything to anything' contradicts Apple's single-controller scope.",
+      "final_title": "Use the Modifier MIDI plugin to reassign a controller",
+      "final_body": "The Modifier MIDI plug-in reassigns or filters a single continuous controller or fader event. Choose or learn the incoming type in Input Event and the outgoing type in Re-Assign To, then use the Scale and Add sliders to scale or offset the output values.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Modifier in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/modifier-controls-lgce0604d2d0/mac",
+        "evidence": "Modifier lets you reassign or filter a single continuous controller or fader event and scale or add to its values. Input Event and Re-Assign To choose or learn the input and output event types. Scale sets the scaling amount and Add sets the offset for the output event."
+       }
+      ]
+     },
+     {
+      "index": 8,
+      "original_title": "Merge takes when you are layering, not replacing",
+      "action": "KEEP",
+      "reason": "Not rewritten. The prior audit's current Apple Recording settings page describes Merge exactly as the trick does. Search budget went to the rewritten tricks.",
+      "final_title": "Merge takes when you are layering, not replacing",
+      "final_body": "For building up a drum pattern one element per pass, set MIDI cycle recording to Merge instead. Each loop adds to the same region.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Recording settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/recording-preferences-lgcp411dd5c8/mac",
+        "evidence": "Merge merges the MIDI recorded in each cycle pass with the previously recorded MIDI of overlapping regions into a single MIDI region (quote from the prior audit)."
+       }
+      ]
+     },
+     {
+      "index": 9,
+      "original_title": "Freeze the instrument as soon as the part is done",
+      "action": "FIX",
+      "reason": "Apple's only pages describing the Freeze button 'in the track header' were /10.7/ pages, so the button location isn't supported for Logic 11/12 and was dropped. The current Bounce in Place overview confirms that Freeze saves CPU by rendering the track's instrument and effect plug-ins, and that it is easier to reverse than Bounce in Place.",
+      "final_title": "Freeze the instrument as soon as the part is done",
+      "final_body": "Freeze the software instrument track once the part is done. Logic renders its instrument and effect plug-ins so they stop costing CPU, and unlike Bounce in Place, Freeze lets you return to the original track and its automation more easily.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Logic Pro for Mac bounce in place overview",
+        "url": "https://support.apple.com/guide/logicpro/bounce-in-place-overview-lgcpe2a9f868/mac",
+        "evidence": "Both Bounce in Place and Freeze save CPU power by rendering all effect and instrument plug-ins of a track. However, Freeze allows you to return to the original state of the tracks and their automation data more easily."
+       },
+       {
+        "label": "Apple — Freeze tracks in Logic Pro (10.7 guide, supporting only)",
+        "url": "https://support.apple.com/guide/logicpro/freeze-tracks-lgcpf1cbfd51/10.7/mac/11.6",
+        "evidence": "Freezing bounces the track to an audio file that includes plug-in output and automation, and reduces the processing power needed. Cited for the mechanism only, not for UI names."
+       }
+      ]
+     },
+     {
+      "index": 10,
+      "original_title": "Drag a MIDI region onto an audio track to bounce it instantly",
+      "action": "FIX",
+      "reason": "No source supports the title's gesture (dragging a MIDI region onto an audio track). The body, which describes Bounce in Place, is confirmed by the current Apple page, so the title now matches the body. 'It is the fastest way' is an unsupported superlative and was removed. The trick now overlaps trick 5; the editor may want to merge them.",
+      "final_title": "Commit a MIDI region to audio with Bounce in Place",
+      "final_body": "Select the MIDI region and use Bounce in Place. Logic renders it through the instrument and all active plug-ins, plus automation data, to a 24-bit audio region at the project sample rate, which locks the idea in as audio.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Logic Pro for Mac bounce in place overview",
+        "url": "https://support.apple.com/guide/logicpro/bounce-in-place-overview-lgcpe2a9f868/mac",
+        "evidence": "Render selected regions on audio or software instrument tracks, including all active plug-ins and automation data. The bounce is 24-bit at the project sample rate."
+       },
+       {
+        "label": "Apple — Bounce regions in place in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac",
+        "evidence": "Apple's current how-to page for bouncing regions in place."
+       }
+      ]
+     },
+     {
+      "index": 11,
+      "original_title": "Keep one “sketch” instrument track loaded at all times",
+      "action": "ADVICE",
+      "reason": "A pure workflow habit. It makes no checkable claim about how a Logic feature behaves.",
+      "final_title": "Keep one “sketch” instrument track loaded at all times",
+      "final_body": "A piano patch on a permanently armed track means any idea is three seconds from being captured. The moment capture takes effort, ideas stop arriving.",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 12,
+      "original_title": "Use Note Repeat for hi‑hats and rolls",
+      "action": "KEEP",
+      "reason": "Confirmed on current Apple pages: Note Repeat is chosen from the Edit Mode selector, you drag up or down on a step to change the number of slices (1 to 16), and the inspector has Velocity Ramp, Velocity Curve and Distribution per step. Distribution produces the accelerando or decelerando.",
+      "final_title": "Use Note Repeat for hi‑hats and rolls",
+      "final_body": "In Step Sequencer, choose Note Repeat from the Edit Mode selector, then drag up on a hi-hat step to slice it into more repeats (1 to 16) or down for fewer. The inspector adds velocity ramp, velocity curve and Distribution for each step, so a roll can accelerate or decelerate instead of sitting flat.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Step Sequencer edit modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-edit-modes-lgcpf8b9a06c/mac",
+        "evidence": "Select Note Repeat from the Edit Mode selector and drag up on a step to increase slices or down to decrease them; values range from 1 to 16. The inspector sets velocity ramp, velocity curve and distribution per step, and Distribution creates accelerando or decelerando."
+       },
+       {
+        "label": "Apple — Edit Step Sequencer pattern, row, and step settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/step-sequencer-inspector-lgcp8efada20/mac",
+        "evidence": "Apple's current page for the Step Sequencer inspector settings."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 4, indexes 0-12",
+    "reviews": [
+     {
+      "index": 1,
+      "outcome": "TRIM",
+      "reason": "The cited evidence supports the menu path and entering notes one at a time with a chosen length and velocity. 'Without a single quantise pass' and 'complex parts get entered accurately' are the book's own conclusions; the cited text does not say them. They were removed.",
+      "trimmed_body": "Choose Window > Show Step Input Keyboard to enter notes one at a time, setting each note's length and velocity with the Note Length and Velocity buttons.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 6,
+      "outcome": "CUT",
+      "reason": "The trick depends on a UI name: the Region inspector's Transpose field for Logic 11/12. I searched twice (\"Logic Pro MIDI region parameters Transpose Region inspector\" and \"Logic Pro for Mac MIDI region parameters\"). Both times, the only Apple MIDI region parameters page returned was the /10.7/ one (https://support.apple.com/guide/logicpro/midi-region-parameters-lgcpf7c0d270/10.7/mac/11.0). The macProVideo article does exist, but it covers Logic Pro X, so it is also old-version. The current 'Use the Region inspector' page's cited evidence only says the inspector shows region parameters. It does not mention Transpose. Under the rule, an old-version page does not support a UI name, and without the Transpose field nothing remains. The owner can restore this if a current Mac page naming the Transpose parameter turns up."
+     },
+     {
+      "index": 11,
+      "outcome": "TRIM",
+      "reason": "This is advice, but 'three seconds from being captured' is a precise-sounding number with no source. It was removed. The rest is a workflow habit and makes no claim about how Logic behaves.",
+      "trimmed_body": "Keep a piano patch on a permanently armed track so any idea can be captured right away. The moment capture takes effort, ideas stop arriving.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 10
+   }
+  },
+  {
+   "unit": {
+    "id": "S05",
+    "section": 5,
+    "start": 0,
+    "end": 16
+   },
+   "verify": {
+    "unit": "section 5 (Piano Roll Tricks), tricks 0-15",
+    "search_worked": true,
+    "searches_used": 13,
+    "search_note": "WebSearch worked. Every rewritten trick got checked except index 10, which was cut because the search budget ran out. Current Apple pages (no version segment) were found for Event Float, Resize notes, Move notes, Copy notes, Snap to grid, Edit velocity, and the Automation/MIDI area. For Select notes, the search only returned /10.7/mac/11.0 pages. Tricks 0 and 15 rest on 10.7 pages, but they describe gestures and behaviour, not UI names, menu paths or key commands. Indexes 13 and 14 were kept on the prior audit's current-Apple URLs without a new search.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Select all notes of the same pitch in one click",
+      "action": "KEEP",
+      "reason": "Apple's Select notes page (retrieved this session) documents selecting notes with the keyboard at the left edge of the Piano Roll, and Shift-clicking or dragging over keys to select a range of pitches. The search only returned the 10.7/mac/11.0 version of this page. That is acceptable here because the trick names no menu item or key command, only a click gesture.",
+      "final_title": "Select all notes of the same pitch in one click",
+      "final_body": "Click a key on the keyboard graphic at the left of the Piano Roll and every note at that pitch in the region is selected. Perfect for grabbing all the hi‑hats at once.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select notes in the Piano Roll Editor in Logic Pro",
+        "url": "https://support.apple.com/en-mn/guide/logicpro/lgcpa906bc30/10.7/mac/11.0",
+        "evidence": "Notes can be selected by clicking, Shift-clicking, marquee, and using the keyboard at the left edge of the Piano Roll Editor; Shift-click or drag over keys to select a range of pitches."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Select similar notes with Edit > Select > Same Note Pitch",
+      "action": "CUT",
+      "reason": "No Apple source retrieved confirms Edit > Select > Similar Events or ⇧S in the Piano Roll for Logic 11/12. The only mentions came from educator/listicle results whose snippets disagreed with each other ('Select Similar Events' vs 'Select Same Note Name'), and the book's title names a menu item ('Same Note Pitch') that no source uses. The useful part duplicates trick 0.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 2,
+      "original_title": "Use Select > Inside Locators to grab a bar range",
+      "action": "CUT",
+      "reason": "The only source saying Select All Inside Locators (⇧L) selects notes in the Piano Roll was a VI-Control forum post. No Apple page or second reputable source was found, so the note-level behaviour and the Edit > Select path are unverified.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 3,
+      "original_title": "Change note length numerically in the inspector",
+      "action": "FIX",
+      "reason": "The title said 'inspector', which is the wrong UI element. Apple's current Event Float page confirms Window > Show Event Float, the Toggle Event Float key command (default Option-E), and that the window shows the selected event and lets you edit it. Macprovideo/Logic Pro GEM results describe it as a floating window that shows the event as one line in Event List format with editable values. The field list could not be re-confirmed this session, so the body now says 'length and the other values' instead of naming every field.",
+      "final_title": "Change note length numerically in the Event Float",
+      "final_body": "Open the Event Float window with Window > Show Event Float, or press ⌥E. It shows the selected note as one line in the same format as the Event List, and you can type new values straight in, length included. It floats above the Piano Roll, so you never leave the editor.",
+      "final_key": "⌥E",
+      "sources": [
+       {
+        "label": "Apple — Use the Event Float window in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/event-float-window-lgcp2158f388/mac",
+        "evidence": "The Event Float window shows information for the currently selected event or region and lets you edit its parameters. It opens from Window > Show Event Float or the Toggle Event Float key command, default Option-E."
+       },
+       {
+        "label": "Studio Interns — Show/Hide Event Float ⌥E, Logic Pro keyboard command of the day",
+        "url": "https://studio-interns.com/show-hide-event-float-e-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "Title gives Show/Hide Event Float as ⌥E."
+       },
+       {
+        "label": "Logic Pro GEM — Fader Event: A MIDI Event Wannabe",
+        "url": "https://logicprogem.com/Logic-Pro-X-Tutorials/Entries/2015/7/23_Fader_Event_-_A_MIDI_Event_Wannabe.html",
+        "evidence": "Search summary: the Event Float is a small floating window that shows the selected MIDI event as a single line in Event List format, and its values can be edited."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Type one length and every selected note follows",
+      "action": "CUT",
+      "reason": "The title promises a feature (type one length and all selected notes follow) that no source supports and that the body itself backs away from. The body's only checkable content is Force Legato, which trick 5 already covers. Nothing unique survives.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 5,
+      "original_title": "Force legato to fix gappy pads",
+      "action": "KEEP",
+      "reason": "9to5Mac and Your Local Musician both give the exact path Edit > Trim > Note End to Following Notes (Force Legato) and say notes extend to end where the next note begins. A Logic Pro Help forum thread uses the same command name. Apple's current Resize notes page confirms the Edit > Trim submenu in the Piano Roll menu bar holds these length commands.",
+      "final_title": "Force legato to fix gappy pads",
+      "final_body": "Select the notes, then choose Edit > Trim > Note End to Following Notes (Force Legato) in the Piano Roll. Every note extends to end where the next one begins, and pads and basslines stop sounding stuttery instantly.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "9to5Mac — The Logic Pros: 3 helpful tricks to streamline your MIDI/audio editing",
+        "url": "https://9to5mac.com/2016/02/21/logic-pros-how-to-solo-tricks-edit/",
+        "evidence": "Highlight the notes in the piano roll and click Edit > Trim > Note End to Following Notes (Force Legato); the MIDI extends to end where the next note begins."
+       },
+       {
+        "label": "Your Local Musician — Logic Pro X Tutorial: Force Legato",
+        "url": "https://www.yourlocalmusician.com/logic-pro-x-tutorial-force-legato/",
+        "evidence": "Force Legato lengthens each note so it ends at the start of the following note."
+       },
+       {
+        "label": "Apple — Resize notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/resize-notes-lgcpa90a4474/mac",
+        "evidence": "The Edit > Trim submenu in the Piano Roll Editor menu bar has commands that change the length of selected notes relative to the notes around them."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "Trim overlaps automatically",
+      "action": "FIX",
+      "reason": "Apple's current Resize notes page confirms 'Note End to Remove Overlaps to Following Notes (8 Ticks Gap)' with the eight-tick gap, plus a 'Selected Notes' version. Two claims were removed: 'stops the phasing and stuck voices you get on hardware' (no source) and the 'repeated notes' version (not confirmed this session).",
+      "final_title": "Trim overlaps automatically",
+      "final_body": "Select the notes and choose Edit > Trim > Note End to Remove Overlaps to Following Notes (8 Ticks Gap) in the Piano Roll. Logic shortens the note ends so nothing overlaps, leaving an eight-tick gap before the next note. A Selected Notes version does the same job measured only against the other selected notes.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Resize notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/resize-notes-lgcpa90a4474/mac",
+        "evidence": "'Note End to Remove Overlaps to Following Notes (8 Ticks Gap)' trims selected note ends so none overlap adjacent notes, leaving an eight-tick gap. 'Note End to Remove Overlaps to Selected Notes (8 Ticks Gap)' leaves an eight-tick gap before the next selected note."
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "⌥‑drag a note to duplicate it",
+      "action": "KEEP",
+      "reason": "Apple's current Copy notes page confirms Option-drag to copy, including between two Piano Roll Editor windows and between the Piano Roll windows of different projects. Apple's current Move notes page confirms the setting path and name, that the first drag direction limits movement, and that Shift while dragging switches between the two behaviours.",
+      "final_title": "⌥‑drag a note to duplicate it",
+      "final_body": "Hold ⌥ while dragging any note or selection to copy rather than move — you can even ⌥-drag notes between two Piano Roll windows, or between two different projects. To stop a drag changing pitch, turn on Logic Pro > Settings > General > Editing > \"Limit Dragging to One Direction In Piano Roll and Score\": the direction you start in is then the only one you can move in. Pressing ⇧ while dragging switches that behaviour on and off; it is not a pitch lock on its own.",
+      "final_key": "⌥ + drag",
+      "sources": [
+       {
+        "label": "Apple — Copy notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/copy-notes-lgcpa917aaef/mac",
+        "evidence": "Option-drag notes to a new position to copy them. You can Option-drag between two Piano Roll Editor windows, or between the Piano Roll Editor windows of different projects."
+       },
+       {
+        "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/move-notes-lgcpa905f117/mac",
+        "evidence": "Choose Logic Pro > Settings > General > Editing and select 'Limit Dragging to One Direction In Piano Roll and Score'. The first direction restricts movement to that plane, and Shift while dragging switches between the two behaviours."
+       }
+      ]
+     },
+     {
+      "index": 8,
+      "original_title": "Place a note between grid divisions",
+      "action": "FIX",
+      "reason": "Apple's current Snap page confirms Ticks = 1/3840 of a beat, and Apple's current Move notes page confirms Control-Shift drag moves in tick steps and overrides Snap. The ⌃⌥ Zoom-tool warning was removed because no source for it was retrieved this session. The Snap page also documents an On/Off button beside the Snap pop-up menu, so that option was added.",
+      "final_title": "Place a note between grid divisions",
+      "final_body": "Set the Snap pop-up menu to Ticks, which snaps to 1/3840 of a beat, or press Control-Shift as you drag to move the note in tick steps, overriding the Snap value. You can also switch snapping off with the On/Off button beside the Snap pop-up menu.",
+      "final_key": "⌃⇧ + drag",
+      "sources": [
+       {
+        "label": "Apple — Snap items to the grid in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/snap-items-to-the-grid-lgcpf7c0f66a/mac",
+        "evidence": "Ticks in the Snap pop-up menu snaps edits to the nearest clock tick (1/3840 of a beat). Snap is turned on and off with the On/Off button at the left of the Snap pop-up menu."
+       },
+       {
+        "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/move-notes-lgcpa905f117/mac",
+        "evidence": "You can press Control-Shift as you drag to move the notes in tick steps, overriding the Snap value."
+       }
+      ]
+     },
+     {
+      "index": 9,
+      "original_title": "Change velocity by dragging with the Velocity tool",
+      "action": "FIX",
+      "reason": "Apple's current Edit velocity page confirms the Velocity tool from the Tool menu, Control-Command for temporary access, the help tag that updates as you drag, and View > Set Note Color > By Velocity (warm = high, cool = low). The sentence about the line inside the note was dropped because it was not re-confirmed this session.",
+      "final_title": "Change velocity by dragging with the Velocity tool",
+      "final_body": "Pick the Velocity tool from the Tool menu, or hold Control-Command to turn the Pointer into it temporarily, then drag up or down on a note. A help tag shows the velocity as you drag. Choose View > Set Note Color > By Velocity if you want the note colour to track it too.",
+      "final_key": "⌃⌘ (hold)",
+      "sources": [
+       {
+        "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac",
+        "evidence": "Drag vertically over a note with the Velocity tool, chosen from the Tool menu or reached by pressing Control-Command. A help tag shows the velocity as you drag. View > Set Note Color > By Velocity shows velocity as colour."
+       }
+      ]
+     },
+     {
+      "index": 10,
+      "original_title": "Draw a velocity ramp across a selection",
+      "action": "CUT",
+      "reason": "Budget: unverified. This is a rewritten trick; the prior audit found it UNVERIFIABLE, and no source retrieved this session confirms that dragging one of several selected notes keeps their relative velocity differences. It also misleads: the title promises a ramp (crescendo), but the body describes moving all velocities by the same offset.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 11,
+      "original_title": "Show the automation lane inside the Piano Roll",
+      "action": "FIX",
+      "reason": "Apple's current Automation/MIDI area page confirms the Show/Hide Automation button in the Piano Roll Editor menu bar, the Automation/MIDI Parameter pop-up menu, and that data for the chosen parameter shows in the Automation/MIDI lane under the main editor. The specific examples (modwheel, expression, sustain) were not confirmed, so they were made generic. Apple's statement that edits stay linked to the Tracks area lane was added.",
+      "final_title": "Show the automation lane inside the Piano Roll",
+      "final_body": "Click the Show/Hide Automation button in the Piano Roll Editor menu bar, then choose a parameter from the Automation/MIDI Parameter pop-up menu. Its MIDI or automation data appears in a lane under the notes, where you can edit it. Track automation shown there is the same curve as in the Tracks area, so edits appear in both places.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — The Automation/MIDI area in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/automationmidi-area-in-the-piano-roll-editor-lgcpa90a61bf/mac",
+        "evidence": "Click the Show/Hide Automation button in the Piano Roll Editor menu bar; an Automation/MIDI Parameter pop-up menu appears. Automation or MIDI data for the selected parameter shows in the Automation/MIDI lane under the main editor. The track automation curve is identical to the one in the Tracks area, and changes show in both."
+       }
+      ]
+     },
+     {
+      "index": 12,
+      "original_title": "Colour notes by velocity to read dynamics instantly",
+      "action": "KEEP",
+      "reason": "Apple's current Edit velocity page confirms View > Set Note Color > By Velocity in the Piano Roll Editor menu bar, with higher velocities in warmer colours and lower in cooler colours. This replaces the prior audit's 10.7 URL.",
+      "final_title": "Colour notes by velocity to read dynamics instantly",
+      "final_body": "In the Piano Roll's View menu, set note colour to Velocity. Flat parts become visibly, obviously flat.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit velocity in the Piano Roll Editor in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-note-velocity-lgcpa8fee137/mac",
+        "evidence": "Choose View > Set Note Color > By Velocity from the Piano Roll Editor menu bar. Higher velocity notes appear in warmer colours and lower velocity notes in cooler colours."
+       }
+      ]
+     },
+     {
+      "index": 13,
+      "original_title": "Quantise from the region inspector, not destructively",
+      "action": "KEEP",
+      "reason": "Not re-searched because of the budget. The prior audit's current (unversioned) Apple page directly supports the claim: the Quantize parameter is nondestructive, the original positions are kept, and you can return to the original timing. The trick was not rewritten since that audit.",
+      "final_title": "Quantise from the region inspector, not destructively",
+      "final_body": "The Quantize field in the Region inspector is non‑destructive and can be dialled back or removed at any point. Use it before you ever use the destructive version.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Quantize parameter values in Logic Pro for Mac (via prior audit)",
+        "url": "https://support.apple.com/guide/logicpro/quantize-parameter-values-lgcp47452db8/mac",
+        "evidence": "Prior audit quote: 'The Quantize parameter is nondestructive... The original positions are kept in the regions, so you can go back to the original timing.'"
+       }
+      ]
+     },
+     {
+      "index": 14,
+      "original_title": "Use Q‑Strength to keep the human feel",
+      "action": "KEEP",
+      "reason": "Not re-searched because of the budget. The prior audit's current (unversioned) Apple page confirms Q-Strength sits behind the More disclosure triangle and moves notes part of the way toward the grid (100% = full, 0% = none). The 60–80% figure is a taste suggestion. The trick was not rewritten since that audit.",
+      "final_title": "Use Q‑Strength to keep the human feel",
+      "final_body": "Under the region's more‑options triangle, Q‑Strength at 60 to 80 percent pulls notes toward the grid without gluing them to it.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Advanced quantization parameters in Logic Pro for Mac (via prior audit)",
+        "url": "https://support.apple.com/guide/logicpro/advanced-quantization-parameters-lgcp35029a2b/mac",
+        "evidence": "Prior audit quote: Q-Strength is revealed by the More disclosure triangle and sets how far a note moves toward the nearest grid position; 100% is full quantization and 0% leaves it where it was."
+       }
+      ]
+     },
+     {
+      "index": 15,
+      "original_title": "Quantise only the notes that need it",
+      "action": "KEEP",
+      "reason": "Not re-searched because of the budget. Apple's Piano Roll quantize page (prior audit) says you can select individual notes in a region and quantize just those. The only URL available is the /10.7/mac/11.0 version. That is acceptable here because the trick names no menu item or key command, only the behaviour of quantizing a selection. The trick was not rewritten since that audit.",
+      "final_title": "Quantise only the notes that need it",
+      "final_body": "Select the offending notes in the Piano Roll and quantise the selection rather than the whole region. The good parts of the take stay untouched.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Quantize the timing of notes in the Piano Roll Editor in Logic Pro (via prior audit)",
+        "url": "https://support.apple.com/en-mo/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/10.7/mac/11.0",
+        "evidence": "Prior audit quote: 'select individual notes you want to quantize in a region... The selected notes are quantized to the active Quantize value.'"
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 5, indexes 0-15",
+    "reviews": [
+     {
+      "index": 3,
+      "outcome": "TRIM",
+      "reason": "I re-searched the Apple Event Float page (support.apple.com/guide/logicpro/event-float-window-lgcp2158f388/mac, plus its regional copies). It is real and current. It confirms Window > Show Event Float, the Toggle Event Float key command (default Option-E), that the window can be compared with a single line of the Event List, and that you can edit the selected event's length in bars, beats, divisions and ticks or SMPTE time. So the core claim, including length, is supported. The last sentence, 'It floats above the Piano Roll, so you never leave the editor', is not in any retrieved source, so I removed it.",
+      "trimmed_body": "Open the Event Float window with Window > Show Event Float, or press ⌥E. It shows the selected note as one line in the same format as the Event List, and you can type new values straight in, length included.",
+      "trimmed_key": "⌥E"
+     }
+    ],
+    "sustained_count": 11
+   }
+  },
+  {
+   "unit": {
+    "id": "S06",
+    "section": 6,
+    "start": 0,
+    "end": 12
+   },
+   "verify": {
+    "unit": "s06 tricks 0-11",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "All five rewritten tricks (1, 2, 3, 5, 7) were checked against current Apple guide pages. Tricks 4 and 8 rely on the current-Apple URL and quote from the prior audit, because the search budget was used up. Those two URLs are copied from prior_audit, not from this session's results. The attribution to lgcp317d76de in trick 7 is inferred: the search summary did not say which of the returned take pages contained the quoted text.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Check your input with the channel strip's meter, not your ears",
+      "action": "FIX",
+      "reason": "SOS supports the -12 dBFS peak target and says recording hot won't improve actual noise performance and makes mixing harder. It does not say hot recording 'buys you nothing' (SOS names S/N as the only possible advantage), and 'a habit from tape' was not checked. Reworded to match SOS.",
+      "final_title": "Check your input with the channel strip's meter, not your ears",
+      "final_body": "Aim for peaks around −12 dBFS with your loudest phrase. In 24-bit, recording hot won't improve the real-world noise performance. It just makes the track harder to mix against others recorded with sensible headroom.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Sound On Sound — Q. How much headroom should I leave with 24-bit recording?",
+        "url": "https://www.soundonsound.com/sound-advice/q-how-much-headroom-should-leave-24-bit-recording",
+        "evidence": "Set the highest peaks between -12 and -18 dBFS; recording 'hot' won't improve actual noise performance and makes it harder to mix against tracks recorded with more headroom."
+       },
+       {
+        "label": "Sound On Sound — Q. Should I gain-stage to -6dBFS or -18dBFS?",
+        "url": "https://www.soundonsound.com/sound-advice/q-should-gain-stage-6dbfs-or-18dbfs",
+        "evidence": "Returned in the same search. SOS guidance on 24-bit headroom is average around -18/-20 dBFS with peaks around -10 dBFS."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Drop the buffer to 64 samples for tracking",
+      "action": "FIX",
+      "reason": "Apple supports: use the lowest buffer setting when recording, raise it one step on system overload alerts, and read the round-trip latency shown under the I/O Buffer Size menu (Settings > Audio > Devices). No source supports '64 samples', so it was removed from the title. The vague 'Audio settings' is now the documented path.",
+      "final_title": "Drop the I/O buffer to its lowest setting for tracking",
+      "final_body": "Set the buffer before tracking, not during. In Logic Pro > Settings > Audio > Devices, choose the lowest I/O Buffer Size your Mac can handle. If you get system overload alerts, step it up one setting. Logic shows the resulting round-trip latency under the I/O Buffer Size menu, so judge by that readout, not the sample number.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Manage input monitoring latency in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/105040",
+        "evidence": "When recording, set the buffer to the lowest setting; if you get system overload alerts, increase it to the next setting. Logic Pro > Settings > Audio > Devices > I/O Buffer Size; Logic shows the resulting latency under the I/O Buffer Size menu."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Turn on Low Latency Mode instead of disabling plugins one by one",
+      "action": "FIX",
+      "reason": "Apple supports the Limit slider in Settings > Audio > General (up to 30 ms), bypassing plug-ins that exceed the latency value, Aux sends being turned off, and the scope (the focused instrument track plus Input Monitoring or Record Enable tracks). 'Quiet chains sound identical' is not documented, so it was removed. The title now uses Apple's name for the mode.",
+      "final_title": "Turn on Low Latency Monitoring mode instead of disabling plug-ins one by one",
+      "final_body": "Low Latency Monitoring mode bypasses the latency-inducing plug-ins that push a track past the Limit slider in Logic Pro > Settings > Audio > General (up to 30 ms). It also turns off that track's Aux sends, which kills a headphone reverb fed from a send. It affects only the focused instrument track and tracks with Input Monitoring or Record Enable on.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Work with plug-in latencies in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/work-with-plug-in-latencies-lgcpe11997ba/mac",
+        "evidence": "Logic Pro automatically bypasses latency-inducing plug-ins that exceed a specific latency value and turns off any Aux sends on that track; the Limit slider in Settings > Audio > General sets the maximum allowed latency (up to 30 ms); the mode affects only the focused instrument track and tracks with Input Monitoring or Record Enable active."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Count-in and pre-roll are either/or — pick the right one",
+      "action": "FIX",
+      "reason": "Apple's Recording project settings confirm the When Beginning choice between count-in (bars or beats) and pre-roll (playback time up to 60 seconds). The claim that count-in 'stays locked to the tempo map' is not in the source, so it was removed. The rest is usage advice built on those units.",
+      "final_title": "Count-in and pre-roll are either/or — pick the right one",
+      "final_body": "In the Recording project settings, the When Beginning buttons make you choose a count-in or a pre-roll. Count-in is set in bars or beats. Pre-roll is a playback time in seconds, up to 60. Use pre-roll when bars mean nothing (free-tempo material, dialogue) and count-in when you want the performer counted in musically.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Recording project settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/recording-project-settings-lgcpbc10f1ea/mac",
+        "evidence": "When Beginning buttons choose between a count-in or pre-roll; Count-in selects a number of bars or beats; the Pre-roll slider sets the playback time (up to 60 seconds) before recording starts."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Name the track before you record, always",
+      "action": "FIX",
+      "reason": "Search budget ran out, so this relies on the prior audit's current Apple page, which confirms that regions and their source audio files take the track name. The exact 'Audio 3#12.wav' filename format was never checked, so the example is now a generic default name.",
+      "final_title": "Name the track before you record, always",
+      "final_body": "Logic names recorded regions and their audio files after the track. A default name like “Audio 3” means nothing to you three months later.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Rename tracks in Logic Pro for Mac (from prior audit; not re-retrieved this session)",
+        "url": "https://support.apple.com/guide/logicpro/rename-tracks-lgcp591273b9/mac",
+        "evidence": "Regions on a track that use the track name as their region name, as well as their source audio files, are renamed when a default-named track (e.g. Audio 1) is renamed."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Record‑enable multiple tracks at once",
+      "action": "KEEP",
+      "reason": "Every claim matches Apple's current page: clicking each Record Enable button makes it blink red; Option-click makes that track the only record-ready track; Option-clicking a blinking button makes all tracks not record-ready.",
+      "final_title": "Record‑enable multiple tracks at once",
+      "final_body": "Record‑enable multiple tracks at once. Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\", and you will never lose a multitrack take to a stray modifier.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Record to multiple audio tracks in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/record-to-multiple-audio-tracks-lgcpb19dcf78/mac",
+        "evidence": "Click the Record Enable button of each track; each blinks red. Option-click a track's Record Enable button to make it the only record-ready track; Option-click any track whose button is blinking red to make all record-ready tracks not record-ready."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "⌘. discards the take you just recorded",
+      "action": "KEEP",
+      "reason": "Apple's Advanced recording commands page assigns Command-Period to Discard Recording and Return to Last Play Position.",
+      "final_title": "⌘. discards the take you just recorded",
+      "final_body": "Stop and delete in one keystroke, when you know instantly that it was not the one.",
+      "final_key": "⌘.",
+      "sources": [
+       {
+        "label": "Apple — Advanced recording commands in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/advanced-recording-commands-lgcpb19d5875/mac",
+        "evidence": "Discard Recording and Return to Last Play Position: press Command-Period."
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "Watch the take folder count, not the waveform",
+      "action": "FIX",
+      "reason": "Apple's current Mac pages call it the Take Folder pop-up menu, in the upper-left corner of the take folder. You can choose a take from it during playback, and it lists the takes and comps (Select Previous/Next Take or Comp step through them 'as listed in the take folder's pop-up menu'). There is no documented take count, so the text now points to the list, not a count.",
+      "final_title": "Watch the take list, not the waveform",
+      "final_body": "The Take Folder pop-up menu in the upper-left corner of a take folder lists every take you've banked, and you can pick one from it during playback. If the performer is on take 14 and getting worse, that list is your cue to stop and move on.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Preview take recordings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/preview-take-recordings-lgcp317d76de/mac",
+        "evidence": "During playback you can choose a take from the Take Folder pop-up menu; Select Previous/Next Take or Comp step through the takes or comps as listed in the take folder's pop-up menu. Attribution to this page is inferred: the search summary did not say which returned page held this text."
+       },
+       {
+        "label": "Apple — Create and save comps in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac",
+        "evidence": "The Take Folder pop-up menu is in the upper-left corner of the take folder in the Tracks area."
+       }
+      ]
+     },
+     {
+      "index": 8,
+      "original_title": "Build a dedicated headphone mix on a bus",
+      "action": "KEEP",
+      "reason": "Search budget ran out, so this relies on the prior audit's current Apple page documenting sends from every channel strip to a bus, which creates an aux routed to a separate output for the headphone amp. The rest is taste and advice.",
+      "final_title": "Build a dedicated headphone mix on a bus",
+      "final_body": "Send every track to a second output bus and give the performer more of themselves and more reverb than you would ever put in the mix. Comfort produces better takes than accuracy does.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Send a mix to multiple destinations in Logic Pro for Mac (from prior audit; not re-retrieved this session)",
+        "url": "https://support.apple.com/guide/logicpro/send-a-mix-to-multiple-destinations-lgcp8e8e6538/mac",
+        "evidence": "Select all channel strips, choose a bus in the Send slot for the separate headphone mix; an aux channel strip is created and routed to a separate output on the interface feeding the headphone amp."
+       }
+      ]
+     },
+     {
+      "index": 9,
+      "original_title": "Use Input Monitoring rather than record enable to rehearse",
+      "action": "FIX",
+      "reason": "Apple confirms the I button lets you hear tracks that are not ready for recording, and says it is for setting levels or practising a part. 'Zero risk of recording over something' is not stated, so it was softened to what the source says, and Apple's latency caveat was added.",
+      "final_title": "Use Input Monitoring rather than record enable to rehearse",
+      "final_body": "The Input Monitoring (I) button in the track header lets you hear a track that isn't record-enabled, so you can set levels and practise the part before committing. On audio tracks it still involves some latency, depending on your hardware and driver settings.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use input monitoring with tracks in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac",
+        "evidence": "Input monitoring lets you hear audio and software instrument tracks that are not ready for recording, useful to set levels or practise a part; click the Input Monitoring button (I) in the track header; on audio tracks input monitoring always involves some latency."
+       }
+      ]
+     },
+     {
+      "index": 10,
+      "original_title": "Turn off software monitoring if you hear yourself twice",
+      "action": "FIX",
+      "reason": "Apple says software monitoring always adds some delay, and says to turn it off when your interface supports hardware monitoring. It can also be toggled from a control bar button. The 'doubling' diagnosis is not stated in those words, so it was reworded to Apple's own framing, with the setting's name and location.",
+      "final_title": "Turn off software monitoring if you hear yourself twice",
+      "final_body": "If your interface's hardware monitoring is on, you're also hearing Logic's software-monitored copy, which always carries some delay. Pick one. Apple's advice when your interface supports hardware monitoring: turn off Software monitoring in Logic Pro > Settings > Audio > General, or with its control bar button.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — General Audio settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-is/guide/logicpro/lgcp0ed343a9/mac",
+        "evidence": "Software monitoring checkbox: with it on, audio is processed via software and some latency is inevitable; if you listen through your mixing console or your interface supports hardware monitoring, turn it off. It can also be toggled with a Software Monitoring button in the control bar."
+       },
+       {
+        "label": "Apple — Work with plug-in latencies in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/work-with-plug-in-latencies-lgcpe11997ba/mac",
+        "evidence": "Identifies Logic Pro > Settings > Audio > General as the General audio settings pane."
+       }
+      ]
+     },
+     {
+      "index": 11,
+      "original_title": "Give the performer a click they can feel",
+      "action": "KEEP",
+      "reason": "Apple's Metronome project settings document the Tone slider (changes Klopfgeist from a short click to a pitched wood-block-like sound), any plug-in on the Click channel strip, the Bar checkbox and Velocity fields for downbeat accents. The drum-loop suggestion is advice.",
+      "final_title": "Give the performer a click they can feel",
+      "final_body": "Swap the metronome sound, add a bar accent, or better, program a simple drum loop. A musical reference beats a woodblock every time.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Metronome project settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/metronome-project-settings-lgcpe1d6118e/mac",
+        "evidence": "Tone slider changes Klopfgeist from a short click to pitched percussion like wood block or claves; the Audio Click setting applies to Klopfgeist or any plug-in on the Click channel strip; Bar checkbox generates separate downbeat events; Velocity fields set each event's velocity."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 6, indexes 0-11",
+    "reviews": [
+     {
+      "index": 0,
+      "outcome": "TRIM",
+      "reason": "SOS gives a range (peaks between -12 and -18 dBFS), not 'around -12'. Changed the target to match the source.",
+      "trimmed_body": "Aim for your loudest peaks to land between −12 and −18 dBFS. In 24-bit, recording hot won't improve the real-world noise performance. It just makes the track harder to mix against others recorded with sensible headroom.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 1,
+      "outcome": "TRIM",
+      "reason": "I confirmed en-us/105040 in search, and it supports lowest buffer when recording and stepping up on overload alerts. The verifier's evidence says Logic shows the 'resulting latency', not 'round-trip' latency, so 'round-trip' was removed.",
+      "trimmed_body": "Set the buffer before tracking, not during. In Logic Pro > Settings > Audio > Devices, choose the lowest I/O Buffer Size your Mac can handle. If you get system overload alerts, step it up one setting. Logic shows the resulting latency under the I/O Buffer Size menu, so judge by that readout, not the sample number.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 4,
+      "outcome": "TRIM",
+      "reason": "I re-retrieved the Apple Rename tracks page. It says that when a default-named, never-renamed track (e.g. Audio 1) is renamed, regions that use the track name as their region name, and their source audio files, are renamed too. It does not flatly say Logic names every recorded region and file after the track. Narrowed the claim to what the page says.",
+      "trimmed_body": "Regions that use the track name as their region name, and their source audio files, follow a default track name like “Audio 3”. That name means nothing to you three months later.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 5,
+      "outcome": "TRIM",
+      "reason": "Apple supports the click and Option-click behaviour. The promise that you 'will never lose a multitrack take to a stray modifier' is an unsupported guarantee, so it was removed.",
+      "trimmed_body": "Record‑enable multiple tracks at once. Click the Record Enable button in the track header of each track you want to record to — every armed button blinks red. Option-click is the escape hatch, not the shortcut: Option-clicking a track's Record Enable button makes it the only record-ready track, and Option-clicking a track that is already blinking red clears record-ready status across the whole project. Learn it as \"solo the arm\" and \"disarm everything\".",
+      "trimmed_key": ""
+     },
+     {
+      "index": 8,
+      "outcome": "TRIM",
+      "reason": "I re-retrieved the Apple page. The documented method is: select the channel strips, choose a bus in a Send slot, and Logic creates an aux, whose output you route to the output feeding the headphone amp. 'Send every track to a second output bus' conflates bus and output. Reworded to the documented routing; the advice sentences carry no Logic claims.",
+      "trimmed_body": "Select every channel strip, choose a bus in a Send slot, and route the aux channel strip Logic creates to the output that feeds the headphone amp. Give the performer more of themselves and more reverb than you would ever put in the mix. Comfort produces better takes than accuracy does.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 10,
+      "outcome": "TRIM",
+      "reason": "I re-retrieved the Apple General Audio settings page. It says software monitoring always carries some latency and should be turned off when your interface supports hardware monitoring, and that a control bar button toggles it. The claim that you are 'also hearing Logic's software-monitored copy' (the doubling diagnosis) is not stated, so it was removed.",
+      "trimmed_body": "Software monitoring always carries some delay. Apple's advice when your interface supports hardware monitoring: turn off Software monitoring in Logic Pro > Settings > Audio > General, or with its control bar button.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 6
+   }
+  }
+ ]
+}
