@@ -170,7 +170,8 @@ a{color:inherit;text-decoration:none}
 .dark .tier .src{border-color:var(--line-dark);color:var(--label)}
 .tier .src span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;margin-right:6px}
 .tier .src a{text-decoration:underline;text-underline-offset:2px}
-.tier .who+.src{margin-top:18px}
+/* whatever comes before a divider keeps clear of it, however tall the card */
+.tier h3:has(+ ul),.tier .who:has(+ ul),.tier .who:has(+ .src),.tier .keys:has(+ .src){margin-bottom:22px}
 .kbd{display:inline-block;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.4rem .85rem;white-space:nowrap}
 .dark .kbd{background:#fff;color:#000}
 .paper .kbd{background:var(--ink);color:#fff}

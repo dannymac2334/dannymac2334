@@ -287,30 +287,31 @@ button,input{font:inherit;color:inherit}
   border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:14px var(--pad)}
 .lp-tools .lp-wrap{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
 .lp-search{position:relative;flex:1 1 360px;min-width:0}
-.lp-search svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:18px;height:18px;opacity:.6;pointer-events:none}
+.lp-search svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:18px;height:18px;pointer-events:none}
 .lp-search input{width:100%;background:#0d0d0d;border:1px solid #3a3a3a;border-radius:100px;color:#fff;font-size:17px;
   padding:16px 96px 16px 50px;outline:none;transition:border-color .25s var(--ease)}
-.lp-search input::placeholder{color:#8a8986}
+.lp-search input::placeholder{color:#fff;opacity:1}
 .lp-search input:focus{border-color:#fff}
 .lp-search input::-webkit-search-cancel-button{display:none}
 .lp-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:#fff;color:#000;border-radius:100px;
   font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;cursor:pointer;display:none}
 .lp-search.has-q .lp-clear{display:block}
-.lp-slash{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:11px;color:#8a8986;border:1px solid #3a3a3a;border-radius:6px;padding:2px 8px;pointer-events:none}
+.lp-slash{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:11px;color:#fff;border:1px solid #fff;border-radius:6px;padding:2px 8px;pointer-events:none}
 .lp-search.has-q .lp-slash{display:none}
-.lp-toggle{flex:0 0 auto;cursor:pointer;background:transparent;color:#f5f4f1;border:1px solid #3a3a3a;border-radius:100px;
+.lp-toggle{flex:0 0 auto;cursor:pointer;background:transparent;color:#fff;border:1px solid #3a3a3a;border-radius:100px;
   font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.16em;padding:14px 20px;white-space:nowrap;
   transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
-.lp-toggle:hover{border-color:#8a8986}
+.lp-toggle:hover{border-color:#fff}
 .lp-toggle[aria-pressed="true"]{background:#fff;border-color:#fff;color:#000}
 .lp-goal-on{display:none;flex:0 0 auto;cursor:pointer;border:0;border-radius:100px;background:#fff;color:#000;font-size:13px;font-weight:600;padding:12px 18px}
 .lp-goal-on.show{display:inline-flex;gap:8px;align-items:center}
 .lp-nav{flex:1 0 100%;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-top:2px}
 .lp-nav::-webkit-scrollbar{display:none}
-.lp-nav a{flex:0 0 auto;font-size:12px;color:#a9a8a4;border:1px solid #2a2a2a;border-radius:100px;padding:7px 14px;white-space:nowrap;
+.lp-nav a{flex:0 0 auto;font-size:12px;color:#fff;border:1px solid #3a3a3a;border-radius:100px;padding:7px 14px;white-space:nowrap;
   transition:color .25s var(--ease),border-color .25s var(--ease)}
-.lp-nav a:hover,.lp-nav a.active{color:#fff;border-color:#8a8986}
-.lp-nav a i{font-style:normal;color:#8a8986;margin-right:6px;font-variant-numeric:tabular-nums}
+.lp-nav a:hover{border-color:#fff}
+.lp-nav a.active{background:#fff;color:#000;border-color:#fff}
+.lp-nav a i{font-style:normal;font-weight:700;margin-right:6px;font-variant-numeric:tabular-nums}
 .is-filtering .lp-nav{display:none}
 
 /* blocks */
@@ -346,7 +347,7 @@ button,input{font:inherit;color:inherit}
 .lp-keys{margin-top:16px;display:flex;gap:6px;flex-wrap:wrap}
 .lp-src{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;line-height:1.5;color:var(--soft)}
 .lp-src span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;margin-right:6px}
-.lp-src a{text-decoration:underline;text-underline-offset:2px;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent)}
+.lp-src a{text-decoration:underline;text-underline-offset:2px;text-decoration-color:currentColor}
 .lp-src a:hover{text-decoration-color:currentColor}
 /* game changer: the opposite tier colour */
 .paper .lp-tip.is-key{background:var(--black);color:var(--white);border-color:var(--black);--dim:var(--muted-dark);--line:var(--line-dark);--soft:var(--label)}

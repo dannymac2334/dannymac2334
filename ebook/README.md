@@ -29,6 +29,7 @@ python3 finish_pdf.py                # bookmarks + metadata; makes the PDF stand
 
 python3 build_site_page.py           # writes the searchable web library
 python3 test_search.py               # types 45 beginner queries into it and checks the results
+python3 ux_check.py                  # fails on any grey/faded text or elements closer than 4px
 ```
 
 ```bash
@@ -103,6 +104,11 @@ Figtree, the signature, black and paper surfaces, sentence-case display type, 16
 hairline cards and pill buttons. Fonts, signature and tokens live in `brand.py`
 (`fonts/figtree-*.woff2`, `brand/signature.png`), which all three builders import.
 Every page is self-contained — nothing loads from the site.
+
+There is **no grey text**: copy is pure white on black and ink on paper, and hierarchy
+comes from size and weight only. `ux_check.py` enforces that, and that no two elements
+(cards, pills, key caps, divider lines, text) sit closer than 4px, at desktop, phone and
+print widths and in the search-results state.
 
 | Token | Value | Used for |
 | --- | --- | --- |

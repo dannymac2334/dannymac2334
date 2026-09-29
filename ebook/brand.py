@@ -20,12 +20,14 @@ TOKENS = {
     "black": "#000",
     "ink": "#0a0a0a",
     "white": "#fff",
-    "muted_dark": "#f5f4f1",   # body copy on black
-    "muted_light": "#666",     # body copy on paper
+    # No grey text anywhere: copy is pure white on black and ink on paper.
+    # Hierarchy comes from size and weight, never from a lighter colour.
+    "muted_dark": "#fff",      # body copy on black
+    "muted_light": "#0a0a0a",  # body copy on paper
     "line_dark": "rgba(255,255,255,.18)",
     "line_light": "rgba(0,0,0,.14)",
-    "kicker": "#8a8986",
-    "label": "#a9a8a4",
+    "kicker": "currentColor",  # kickers and labels take the surface's text colour
+    "label": "currentColor",
     "ease": "cubic-bezier(.22,.61,.36,1)",
 }
 

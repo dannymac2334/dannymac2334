@@ -553,9 +553,9 @@ h1,h2,h3,h4{margin:0;font-weight:700}
 .rail-brand{margin:0 22px;font-weight:700;font-size:17px;letter-spacing:-.03em;line-height:1.05}
 .rail-scroll{overflow-y:auto;display:flex;flex-direction:column;padding-bottom:24px}
 .rail-link{position:relative;display:flex;gap:.7rem;align-items:baseline;padding:.42rem 22px;font-size:13px;
-  line-height:1.35;color:var(--muted-dark);opacity:.6;transition:opacity .25s var(--ease),transform .25s var(--ease)}
-.rail-link:hover{opacity:1;transform:translateX(4px)}
-.rail-link.is-active{opacity:1}
+  line-height:1.35;color:var(--white);transition:transform .25s var(--ease)}
+.rail-link:hover{transform:translateX(4px)}
+.rail-link.is-active{font-weight:700}
 .rail-link.is-active::before{content:"";position:absolute;left:0;top:.55rem;width:2px;height:1.1em;background:var(--white)}
 .rail-n{font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--kicker);font-variant-numeric:tabular-nums;min-width:1.4rem}
 
@@ -585,7 +585,7 @@ h1,h2,h3,h4{margin:0;font-weight:700}
 .toc-list li:first-child .toc-row{border-top:1px solid var(--line-dark)}
 .toc-row:hover{transform:translateX(8px)}
 .toc-n{min-width:2rem;font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--kicker);font-variant-numeric:tabular-nums}
-.toc-n-empty{opacity:.4}
+.toc-n-empty{}
 .toc-label{flex:1;font-size:clamp(18px,2.2vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
 .toc-go{font-size:13px;color:var(--label);white-space:nowrap;font-variant-numeric:tabular-nums}
 .toc-foot{margin:clamp(30px,5vh,54px) 0 0;font-size:13px;color:var(--kicker)}
@@ -658,7 +658,7 @@ h1,h2,h3,h4{margin:0;font-weight:700}
 .tip-fig figcaption{margin-top:8px;font-size:12px;line-height:1.5;color:var(--body-dim)}
 .tip-src{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:12px;line-height:1.5;color:var(--body-dim)}
 .tip-src span,.doc-src span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;margin-right:6px}
-.tip-src a,.doc-src a{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent)}
+.tip-src a,.doc-src a{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-color:currentColor}
 .doc-src{margin:10px 0 0;font-size:12px;line-height:1.55;color:var(--body-dim)}
 sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--body-dim)}
 .ref-n{font-weight:600;font-size:10px}
@@ -672,7 +672,7 @@ sup.ref{font-size:10px;font-weight:600;margin-left:3px;color:var(--body-dim)}
 .badge{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border-radius:100px;padding:4px 11px}
 .badge-gold{background:var(--white);color:var(--black)}
 .badge-todo,.badge-start{border:1px solid currentColor}
-a.gl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,currentColor 50%,transparent)}
+a.gl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;text-decoration-color:currentColor}
 a.gl:hover{text-decoration-style:solid}
 
 /* Start Here */
@@ -694,7 +694,7 @@ a.gl:hover{text-decoration-style:solid}
 .goal-list a:hover{text-decoration:underline}
 .gi-n{flex:0 0 auto;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--muted-light);font-variant-numeric:tabular-nums}
 .gi-start{flex:0 0 auto;margin-left:auto;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  border:1px solid currentColor;border-radius:100px;padding:2px 8px;opacity:.7}
+  border:1px solid currentColor;border-radius:100px;padding:2px 8px}
 
 /* Glossary */
 .gloss{margin:10px 0 0;columns:2 320px;column-gap:44px}
@@ -755,8 +755,8 @@ html.js .reveal.d3{transition-delay:.24s}
   .tip{background:#fff}
   .tip-gold{background:var(--black)}
   .sec-count{align-self:flex-start}
-  .doc,.sec-body{--body-dim:#444}
-  .tip-gold{--body-dim:#d9d8d4}
+  .doc,.sec-body{--body-dim:var(--ink)}
+  .tip-gold{--body-dim:#fff}
   .page{break-after:page;padding:0;max-width:none}
   .page:last-child{break-after:auto}
 
@@ -818,7 +818,7 @@ html.js .reveal.d3{transition-delay:.24s}
   .step-n{font-size:20pt}
   .step h3{font-size:12pt}
   .step p,.gl-row dd{font-size:9pt}
-  .goal-list a{font-size:8.3pt;padding:1.5px 0}
+  .goal-list a{font-size:8.3pt;padding:2.5px 0}
   .gl-row dt{font-size:10.5pt}
   .book-foot{font-size:8pt}
   .mark-sig{width:110px}
