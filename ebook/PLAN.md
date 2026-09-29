@@ -4,8 +4,8 @@ How to sell this, and what to build in what order.
 
 The short version: **stop selling a PDF and start selling access.** The searchable
 web library becomes the product; the PDF ships alongside it as the offline copy.
-That is a better product, it is easier to keep correct, and it is worth more than
-$14.99 rather than exactly $14.99.
+That is a better product, and it is easier to keep correct. (Price decided: $9 — see
+section 8.)
 
 ---
 
@@ -26,7 +26,7 @@ Three further advantages, in order of how much they matter:
    Apple renames things. A PDF sold in March is wrong by September and every buyer
    holds the wrong copy. A web library is fixed once and everyone has the fix.
 2. **"Lifetime access, including updates" justifies the price.** A static PDF at
-   $14.99 competes with free blog posts. A maintained, searchable reference does not.
+   any price competes with free blog posts. A maintained, searchable reference does not.
 3. **It is a portfolio piece.** It lives on the portfolio site, in the portfolio's
    design language, and demonstrates the work directly.
 
@@ -207,7 +207,7 @@ they were promised.
 | **Tax** | With Stripe you are the merchant of record. Digital downloads can trigger VAT/GST/US sales tax depending on where buyers are. Stripe Tax can calculate and collect; registering and filing is still on you. A merchant-of-record platform (Lemon Squeezy, Paddle, Gumroad) absorbs this for a higher fee — but that is a different build. |
 | **EU consent** | In the EU a buyer normally has a 14-day withdrawal right on distance sales. The usual exemption for instantly-delivered digital content is an explicit checkout consent to immediate delivery. Stripe Checkout supports it. Legal question, not a design one. |
 | **Refunds** | Previously decided against stating a policy. Worth revisiting only because with a *hosted library* you can revoke access on refund, which makes offering one much safer than it is with a PDF. |
-| **Price** | $14.99 is right for a PDF. A maintained searchable library with lifetime updates supports more. Raising it later is easier than lowering it. |
+| **Price** | **Decided: $9**, a round price to match the rates page. Under $10 is an easy yes; at $9 Stripe's fee is about 56¢. If the searchable library ships as part of the product, $12 is supportable. Never show a crossed-out price that was not actually charged. |
 
 ---
 

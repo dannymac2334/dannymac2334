@@ -8,7 +8,7 @@ Have the PDF ready but **do not attach it to the chat** — it goes into private
 I want to sell a digital product from my portfolio site. Please read the attached `HANDOFF.md`
 first — it is the spec, and it contains constraints that will not be obvious from the code.
 
-**The product:** *Logic Pro Crash Course*, a single PDF, 89 pages. **$14.99 USD, one-time.**
+**The product:** *Logic Pro Crash Course*, a single PDF, 89 pages. **$9 USD, one-time.**
 
 **My site:** `dannymac2334/dannnymcccarthy-site` — private repo, static HTML, deployed on
 Netlify with `publish = "."`, so the repo root is the web root. I already use Stripe.
@@ -18,7 +18,7 @@ Netlify with `publish = "."`, so the repo root is the web root. I already use St
 1. Add the attached `logic-pro-crash-course-sales.html` to the **repo root**, renamed to
    `logic-pro-crash-course.html`. Add the matching line to `sitemap.xml`. No `_redirects`
    entry — Netlify already serves extensionless URLs.
-2. Make the two `/buy` buttons on that page open a **Stripe Checkout** session for $14.99.
+2. Make the two `/buy` buttons on that page open a **Stripe Checkout** session for $9.00.
 3. Verify payment and deliver the PDF only to people who actually paid.
 
 **Four things that must be true when you are done:**

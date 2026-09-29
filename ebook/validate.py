@@ -207,11 +207,19 @@ def main():
             pages = len(pypdfium2.PdfDocument(str(pdf)))
         except Exception:
             pages = 0
+    # the price lives in build_sales_page.PRICE; the docs that brief other people must agree
+    price_src = (pathlib.Path(__file__).parent / "build_sales_page.py").read_text()
+    m = re.search(r'^PRICE = "([0-9.]+)"', price_src, re.M)
+    price = float(m.group(1)) if m else None
     for name in ("README.md", "HANDOFF.md", "PITCH.md", "AGENT-PROMPT.md"):
         doc = pathlib.Path(__file__).parent / name
         if not doc.exists():
             continue
         text = doc.read_text()
+        if price is not None:
+            for pr in set(re.findall(r"\$([0-9]+(?:\.[0-9]{2})?)\b", text)):
+                if float(pr) != price and float(pr) < 100:
+                    failures.append(f"{name} quotes ${pr}; the sales page price is ${m.group(1)}")
         for n in set(re.findall(r"\b(\d{3})\s+(?:written\s+)?tricks\b", text)):
             if int(n) != total:
                 failures.append(f"{name} says {n} tricks; the book has {total}")

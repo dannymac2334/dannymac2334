@@ -1,4 +1,4 @@
-# Handoff — sell "Logic Pro Crash Course" ($14.99) on dannnymcccarthy.com
+# Handoff — sell "Logic Pro Crash Course" ($9) on dannnymcccarthy.com
 
 Paste this whole file to the agent doing the site work, along with the attached sales page.
 
@@ -11,7 +11,7 @@ Paste this whole file to the agent doing the site work, along with the attached 
 
 ## What is being sold
 
-A single PDF — *Logic Pro Crash Course*, 248 tricks, 89 pages — for **$14.99 USD**, one-time.
+A single PDF — *Logic Pro Crash Course*, 248 tricks, 89 pages — for **$9 USD**, one-time. The Stripe Price must be exactly 9.00 USD.
 Payment via **Stripe**, which the owner already uses on this site.
 
 ## Repo
@@ -58,7 +58,7 @@ The page has **two** identical buttons (hero and footer CTA):
 ```html
 <a class="pill solid" href="/buy"
    data-product="logic-pro-crash-course"
-   data-price-usd="14.99">Get instant access</a>
+   data-price-usd="9.00">Get instant access</a>
 ```
 
 They currently point at `/buy`, which does not exist yet — so it 404s, which is a visible
@@ -128,7 +128,7 @@ higher fee — but that is a different build from this one.
 
 - [ ] `https://www.dannnymcccarthy.com/logic-pro-crash-course` loads without `.html`
 - [ ] Header, nav and footer match `work.html`; content fades in on scroll
-- [ ] Both **Get instant access** buttons reach Stripe Checkout showing **$14.99**
+- [ ] Both **Get instant access** buttons reach Stripe Checkout showing **$9.00**
 - [ ] Test-mode card `4242 4242 4242 4242` completes a purchase
 - [ ] The webhook fires and is signature-verified (check Stripe dashboard → webhook attempts)
 - [ ] A download link arrives, works, and **expires** afterwards
@@ -138,7 +138,7 @@ higher fee — but that is a different build from this one.
       returns **404** — the PDF must not be in the repo
 - [ ] Cancelling checkout returns to the sales page, not an error
 - [ ] Mobile: header collapses to the burger menu, FAQ accordion opens, buttons are tappable
-- [ ] View source: one `application/ld+json`, `@type: Product`, price `14.99`
+- [ ] View source: one `application/ld+json`, `@type: Product`, price `9.00`
 
 ---
 

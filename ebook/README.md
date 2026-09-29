@@ -8,7 +8,7 @@ structured content files so the text and the design can be changed independently
 | File | What it is |
 | --- | --- |
 | `dist/logic-pro-crash-course.html` | The clickable edition. Self-contained — fonts are inlined as data URIs, no network needed. Open it in any browser. |
-| `dist/logic-pro-crash-course-sales.html` | **The sales page** for the $14.99 product. Drop-in for the site; sells the book without containing it. Built by `build_sales_page.py`. |
+| `dist/logic-pro-crash-course-sales.html` | **The sales page** for the $9 product. Drop-in for the site; sells the book without containing it. Built by `build_sales_page.py`. |
 | `dist/logic-pro-crash-course-page.html` | Full 248-trick web page. **Not for publication while the book is paid** — it gives the product away. Could become a free sample later. |
 | `HANDOFF.md` / `AGENT-PROMPT.md` / `PITCH.md` | Handoff spec, paste-ready prompt for the site agent, and the sales copy in reviewable form. |
 | `dist/logic-pro-crash-course.pdf` | **The standalone deliverable.** A4, 89 pages. Clickable contents, 23 PDF bookmarks, real title/author metadata. Self-contained — fonts embedded, nothing to link to. |
@@ -33,7 +33,7 @@ python3 ux_check.py                  # fails on any grey/faded text or elements 
 ```
 
 ```bash
-python3 build_sales_page.py          # writes the $14.99 sales page for the site
+python3 build_sales_page.py          # writes the $9 sales page for the site
 ```
 
 ### Publishing
@@ -46,7 +46,7 @@ message to hand the site agent.
 publication while the book is paid**; it contains the entire product. Keep it for a future
 free sample if that is ever wanted.
 
-The sales page carries `Product` JSON-LD with an `Offer` at 14.99 USD, and its six preview
+The sales page carries `Product` JSON-LD with an `Offer` at 9.00 USD, and its six preview
 tricks are pulled from `content/` by section and title rather than retyped, so a copy change
 cannot leave a stale claim on it. The buy buttons point at `/buy` with `data-product` and
 `data-price-usd` attributes, for the site agent to wire to Stripe Checkout.

@@ -2,7 +2,7 @@
 
 _Extracted from the built page, so this is exactly what ships._
 
-**Price line:** $14.99 One payment · Yours to keep  
+**Price line:** $9 for all 248 · under 4¢ a trick · one payment  
 **Trust line:** 89 pages · Instant download · Logic Pro 11 & 12
 
 Logic Pro · Digital download

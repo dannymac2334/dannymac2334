@@ -14,6 +14,7 @@ Checkout is deliberately not implemented here. The buy buttons point at
 Output: dist/logic-pro-crash-course-sales.html
 """
 
+import math
 import pathlib
 
 import re
@@ -24,7 +25,10 @@ from build import esc, keycap, load, slug, count_tips, sources_html, legal_notic
 ROOT = pathlib.Path(__file__).parent
 DIST = ROOT / "dist"
 
-PRICE = "14.99"
+# The one place the price lives. Shown as a round "$9": round prices read as a
+# considered price (as on the rates page), ".99" reads as a discount.
+PRICE = "9"
+PRICE_USD = f"{float(PRICE):.2f}"   # machine-readable form for Stripe data and JSON-LD
 BUY_HREF = "/buy"
 # Read the real page count off the built PDF when it is there, so the sales
 # page can never advertise a length the product does not have.
@@ -47,6 +51,8 @@ VERSIONS = re.sub(r'^Covers\s+', '', _front['edition']).strip()
 VERSIONS_SHORT = VERSIONS.replace(' and ', ' &amp; ')
 SECTIONS = len(_sections)
 TITLE = f"Logic Pro Crash Course — {TRICKS} Tricks | Dannny McCcarthy"
+# What one trick costs, rounded UP so the claim is never generous: "under 4¢ a trick".
+PER_TRICK = f"under {math.ceil(float(PRICE) * 100 / TRICKS)}¢ a trick"
 DESC = (f"{TRICKS} Logic Pro tricks in one clickable PDF. Key commands, editing, mixing and "
         f"workflow across {SECTIONS} sections. ${PRICE}, instant download.")
 URL = "https://www.dannnymcccarthy.com/logic-pro-crash-course"
@@ -132,6 +138,8 @@ a{color:inherit;text-decoration:none}
 .paper .kicker{color:var(--muted-light)}
 .hero{padding-top:clamp(72px,14vh,170px)}
 .hero h1{font-weight:700;font-size:clamp(38px,8.4vw,140px);line-height:.94;letter-spacing:-.048em;max-width:15ch}
+.price-line{margin-top:clamp(24px,4vh,40px);font-size:clamp(16px,1.6vw,22px)}
+.price-line b{font-size:1.6em;font-weight:700;letter-spacing:-.03em;margin-right:6px}
 .hero .lede{margin-top:clamp(30px,5vh,54px);max-width:56ch;font-size:clamp(16px,1.6vw,22px);color:var(--muted-dark)}
 .sec-title{font-weight:700;font-size:clamp(34px,6.4vw,104px);line-height:.96;letter-spacing:-.048em;max-width:18ch}
 .sec-lede{margin-top:clamp(20px,3vh,32px);max-width:60ch;font-size:clamp(15px,1.3vw,19px)}
@@ -226,7 +234,7 @@ def preview_card(sec, tip, i):
 
 def buy(label, cls="pill solid"):
     return (f'<a class="{cls}" href="{BUY_HREF}" data-product="logic-pro-crash-course" '
-            f'data-price-usd="{PRICE}">{label}</a>')
+            f'data-price-usd="{PRICE_USD}">{label}</a>')
 
 
 def main():
@@ -272,7 +280,7 @@ def main():
 <link rel="canonical" href="{URL}">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Product","name":"Logic Pro Crash Course","description":"{DESC}","brand":{{"@type":"Brand","name":"dannny mcccarthy"}},"offers":{{"@type":"Offer","price":"{PRICE}","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"{URL}"}}}}
+{{"@context":"https://schema.org","@type":"Product","name":"Logic Pro Crash Course","description":"{DESC}","brand":{{"@type":"Brand","name":"dannny mcccarthy"}},"offers":{{"@type":"Offer","price":"{PRICE_USD}","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"{URL}"}}}}
 </script>
 <style>{sales_css()}</style>
 </head>
@@ -285,7 +293,8 @@ def main():
     <h1>Logic can already do it. Here is where it lives.</h1>
     <p class="lede">{total} tricks that actually work, in one clickable PDF you keep open while you produce.
     Brand new to Logic? It starts from zero. Every trick cites its source.</p>
-    {buy("Get instant access")}
+    <p class="price-line"><b>${PRICE}</b> for all {total} &middot; {PER_TRICK} &middot; one payment</p>
+    {buy(f"Get it for ${PRICE}")}
   </div>
 </section>
 
@@ -303,7 +312,7 @@ def main():
         <div class="label">Digital download</div>
         <h3>Logic Pro Crash Course</h3>
         <div class="amount">${PRICE}</div>
-        <div class="terms">One payment &middot; {PAGES} pages &middot; yours to keep</div>
+        <div class="terms">One payment &middot; {PER_TRICK} &middot; {PAGES} pages &middot; yours to keep</div>
         <p class="who">One PDF, delivered the moment your payment clears. Built to sit open on a second screen while you work.</p>
         <ul>{inside_li}</ul>
       </article>
@@ -352,8 +361,8 @@ def main():
   <div class="wrap">
     <div class="kicker">Logic Pro Crash Course</div>
     <h2 class="sec-title">Get the {total}.</h2>
-    <p class="sec-lede">${PRICE}, one payment. A single PDF, {PAGES} pages, delivered the moment your payment clears.</p>
-    {buy("Get instant access")}
+    <p class="sec-lede">${PRICE}, one payment, {PER_TRICK}. A single PDF, {PAGES} pages, delivered the moment your payment clears.</p>
+    {buy(f"Get it for ${PRICE}")}
   </div>
 </section>
 
@@ -371,7 +380,7 @@ def main():
     out = DIST / "logic-pro-crash-course-sales.html"
     out.write_text(html, encoding="utf-8")
     print(f"Wrote {out}  ({out.stat().st_size/1024:.0f} KB)")
-    print(f"Price ${PRICE}   Preview cards: {len(previews)}   Buy href: {BUY_HREF}")
+    print(f"Price ${PRICE} ({PER_TRICK})   Preview cards: {len(previews)}   Buy href: {BUY_HREF}")
 
 
 if __name__ == "__main__":
