@@ -8,3 +8,4 @@
 ebook/manuals/
 __pycache__/
 ebook/dist/gumroad/
+ebook/dist/test-sheet/

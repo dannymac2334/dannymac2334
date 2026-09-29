@@ -37,6 +37,7 @@ python3 ux_check.py                  # fails on any grey/faded text or elements 
 ```bash
 python3 build_sales_page.py          # writes the $9 sales page for the site
 python3 package_gumroad.py           # the two product files for Gumroad + store/Gumroad covers
+python3 build_test_sheet.py          # the hands-on Logic test run (published as a private artifact)
 ```
 
 ### Publishing
