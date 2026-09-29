@@ -1,0 +1,1566 @@
+{
+ "tally": {
+  "KEEP": 28,
+  "FIX": 32,
+  "CUT": 7,
+  "ADVICE": 1,
+  "TRIMMED": 13,
+  "SKEPTIC_CUT": 3
+ },
+ "searchDied": [],
+ "failed": [],
+ "results": [
+  {
+   "unit": {
+    "id": "S07",
+    "section": 7,
+    "start": 0,
+    "end": 8
+   },
+   "verify": {
+    "unit": "section 7, tricks 0-7",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "Current Apple pages were found for resize regions, snap, the Tool Menu key commands, the tools overview and protecting event positions. For select regions, fades and protect tracks, the searches only returned /10.7/ Apple pages, plus skydocu, the Logic 9 manual and cheat sheets. So tricks 4, 5 and 6 could not be confirmed for Logic 11/12 within budget, and the Protect-button half of trick 7 was dropped.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Trim to the playhead from either direction",
+      "action": "KEEP",
+      "reason": "The current Apple Resize regions page names Set Region/Event/Marquee Start/End to Playhead Position, says the Start command also moves the anchor on audio regions, and documents Edit > Trim > Region End to Next Region. The search summary gives Option-K for the Key Commands window, citing Apple's 'Create custom keyboard shortcuts' page among others; it did not tie the key to one specific source.",
+      "final_title": "Trim to the playhead from either direction",
+      "final_body": "The commands are “Set Region/Event/Marquee Start to Playhead Position” and the matching End command — search Key Commands (⌥K) for “Playhead Position” and put them on keys. (Note that on audio regions the Start command also moves the region anchor to the playhead.) Related one-shot trims live under Edit > Trim, such as Region End to Next Region. No mouse precision needed.",
+      "final_key": "⌥K to assign",
+      "sources": [
+       {
+        "label": "Apple — Resize regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/resize-regions-lgcpf7c0c964/mac",
+        "evidence": "Use the Set Region/Event/Marquee Start to Playhead Position key command (and matching End command); for audio regions this also moves the anchor to the playhead; Edit > Trim > Region End to Next Region lengthens selected regions to the next region."
+       },
+       {
+        "label": "Apple — Create custom keyboard shortcuts for Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/101929",
+        "evidence": "Search summary: open the Key Commands window by choosing Logic Pro > Key Commands > Edit or pressing Option-K."
+       },
+       {
+        "label": "Studio Interns — Trim Region End to Next Region",
+        "url": "https://studio-interns.com/trim-region-end-to-next-region-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "A second source for the Trim Region End to Next Region command."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Turn on “Snap Regions to Absolute Value”",
+      "action": "FIX",
+      "reason": "The body is correct, but the title tells readers to turn on something Apple says is already the default. The retitled version points at the option that actually changes behaviour: Snap Regions to Relative Value.",
+      "final_title": "Use Snap Regions to Relative Value for off-grid parts",
+      "final_body": "By default, Logic's Snap menu is set to Snap Regions to Absolute Value: a moved item snaps exactly to the nearest grid position. For a region that sits deliberately off-grid, choose Snap > Snap Regions to Relative Value in the Tracks area menu bar. It keeps its distance from the grid: a region at 2.1.1.16 moved one beat forward lands on 2.2.1.16, not 2.2.1.1.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Snap items to the grid in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/snap-items-to-the-grid-lgcpf7c0f66a/mac",
+        "evidence": "By default the Snap function is set to Snap Regions to Absolute Value. Choose Snap > Snap Regions to Relative Value so items keep their relative distance from the grid (2.1.1.16 moved one beat lands on 2.2.1.16, not 2.2.1.1)."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Esc opens the tool menu, Esc twice returns to the pointer",
+      "action": "FIX",
+      "reason": "The title and key still say Esc, but the body (and Apple) say T. I dropped the claim that Esc switching was the 'Logic 9 way': an Apple Community thread suggests the tool keys changed in 10.2.1, so the version attribution is unverified. I also cut 'fastest tool switching', which is unverifiable hype.",
+      "final_title": "T opens the Tool menu, T twice returns to the Pointer",
+      "final_body": "Press T to open the Tool menu at the pointer — Apple's default key command for Show Tool Menu. Press T twice to go straight back to the Pointer tool.",
+      "final_key": "T",
+      "sources": [
+       {
+        "label": "Apple — Key commands for Tool Menu in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/tool-menu-lgcp0182c4e5/mac",
+        "evidence": "Show Tool Menu has a default assignment of T and shows or hides the Tool menu at the pointer position. Per the search summary, pressing T twice returns to the Pointer tool."
+       },
+       {
+        "label": "Apple — Overview of tools in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac",
+        "evidence": "Press the T key to open the Tool menu, or click it; press again to close it."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "⌘ is your secondary tool",
+      "action": "FIX",
+      "reason": "Two claims were removed: 'most editors put Marquee there' (unsourced opinion) and the 'right-hand' position (found only on the 10.7 page, where it is also described as moving to the middle when a Right-click tool is assigned). The current tools overview confirms separate Left-click and Command-click Tool menus. The 10.7 Assign tools page confirms that releasing Command reverts to the Left-click tool.",
+      "final_title": "⌘ is your secondary tool",
+      "final_body": "Logic has two Tool menus: Left-click and Command-click. Choose a tool from the Command-click Tool menu, then hold ⌘ to use it. Let go and you are back on your Left-click tool.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Overview of tools in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/tools-overview-lgcp9b92f74c/mac",
+        "evidence": "Where tools are available there are two Tool menus, Left-click and Command-click, and you can assign separate tools to each."
+       },
+       {
+        "label": "Apple — Assign tools in Logic Pro (10.7 guide)",
+        "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0",
+        "evidence": "Click the Command-click Tool menu, then choose a tool. Releasing the Command key reverts to the Left-click tool."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Assign the Fade tool to ⌘ when doing audio cleanup",
+      "action": "CUT",
+      "reason": "Budget — unverified for Logic 11/12. The Fade tool behaviour (drag over a region's start or end to create a fade) and the right-hand Command-click menu appear only on /10.7/ and /10.6/ Apple pages, a single blog and skydocu. No current Apple page was retrieved, and the prior audit's source is also 10.7.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 5,
+      "original_title": "Select everything after this point in one keystroke",
+      "action": "CUT",
+      "reason": "Budget — unverified for Logic 11/12. Two searches found no current Apple Select regions page. Shift-F and Option-Shift-F came back only from the /10.7/ Apple page, the Logic 9 manual, skydocu and cheat-sheet sites. Under the rules, that does not support a key command or menu path for current Logic.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 6,
+      "original_title": "Select equal or similar regions in one command",
+      "action": "CUT",
+      "reason": "Budget — unverified for Logic 11/12. Shift-C for Equal Colored Regions came back only from skydocu, the Logic 9 manual and cheat sheets; the Shift-E claim is not in this session's search summaries at all. No current Apple page was retrieved for Edit > Select > Similar/Equal Regions.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 7,
+      "original_title": "Lock a region so you cannot move it by accident",
+      "action": "FIX",
+      "reason": "The title promises protection against accidental moves, but Lock SMPTE Position only protects against tempo changes. The Protect-button half (green padlock, 'track is locked' dialog, hidden by default, Track > Configure Track Header) was found only on /10.7/ Apple pages and skydocu, so it is removed. I rebuilt the trick around what the current Apple page states.",
+      "final_title": "Lock events so tempo changes cannot move them",
+      "final_body": "Lock SMPTE Position keeps events at their absolute time when you change the tempo later. In the Event List, select events and choose Functions > Lock SMPTE Position, or Control-click and choose it from the shortcut menu; a padlock appears in the Lock column. Lock a region and every event inside it is locked. It requires Enable Complete Features in Logic Pro > Settings > Advanced.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Protect the position of events in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/protect-the-position-of-events-lgcp21581f00/mac",
+        "evidence": "Lock SMPTE Position prevents events' absolute time positions from changing when tempo is altered. In the Event List choose Functions > Lock SMPTE Position, Control-click and choose it, or click the Lock column; a padlock appears. Events inside locked regions are locked. Protect/unprotect is available when Enable Complete Features is selected in Logic Pro > Settings > Advanced."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 7, indexes 0-7",
+    "reviews": [
+     {
+      "index": 0,
+      "outcome": "TRIM",
+      "reason": "The Resize regions page (current, confirmed by search) supports the command names, the audio-region anchor behaviour and Edit > Trim > Region End to Next Region. The cited page support.apple.com/en-us/101929 does exist, and it says to open Logic Pro > Key Commands > Edit and search the window. My search of it did not show Option-K. Option-K does appear on a different Apple page, 'Assign key commands in Logic Pro for Mac' (https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac), but that page is not cited on this entry. I removed ⌥K from the body and the key. The owner could add that page as a source and restore ⌥K.",
+      "trimmed_body": "The commands are “Set Region/Event/Marquee Start to Playhead Position” and the matching End command — search the Key Commands window for “Playhead Position” and put them on keys. (Note that on audio regions the Start command also moves the region anchor to the playhead.) Related one-shot trims live under Edit > Trim, such as Region End to Next Region. No mouse precision needed.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 2,
+      "outcome": "TRIM",
+      "reason": "'T opens the Tool menu' is supported by the current Tool Menu key-commands page and the current Tools overview, which says to press T again to close the menu. 'Press T twice to return to the Pointer' only ever came up attached to the /10.7/ Assign tools page. Two searches did not tie it to either current page cited here; the verifier's own evidence calls it 'per the search summary'. I removed it. The title ('T twice returns to the Pointer') no longer matches and should become something like 'T opens the Tool menu at the pointer'.",
+      "trimmed_body": "Press T to open the Tool menu at the pointer — Apple's default key command for Show Tool Menu. Press T again to close it.",
+      "trimmed_key": "T"
+     }
+    ],
+    "sustained_count": 3
+   }
+  },
+  {
+   "unit": {
+    "id": "S08",
+    "section": 8,
+    "start": 0,
+    "end": 15
+   },
+   "verify": {
+    "unit": "s08 tricks 0-14",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "The searches found no current (non-/10.7/) Apple pages for Edit fades, Quantize regions or Remove silent passages. Only /10.7/ versions came up. So I removed the Remove Silence menu path and relied on two independent sources for ⌃X, and I cut the Flex-quantize trick. Tricks 1, 2, 6, 8, 9, 10, 11 and 13 were not re-searched. They are KEEP because the prior audit's current Apple URL and quote directly support the text as written.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Put take-switching on keys you choose",
+      "action": "FIX",
+      "reason": "Rewritten trick. Apple confirms ⌥K and the search field. I could not confirm the 'Unused filter' or the 'take 3 against take 7 in two keypresses' claim. Studio-interns shows Select Next Take or Comp already has a default key (⇧⌘↓), so the implication that none are assigned is doubtful. The body is narrowed to the take commands Apple actually names.",
+      "final_title": "Put take-switching on keys you choose",
+      "final_body": "Press ⌥K to open the Key Commands window and type “Take” in the search field. Find Select Previous Take or Comp and Select Next Take or Comp, which step through the takes and comps listed in the take folder’s pop-up menu. Check what they are assigned to, and put them on keys you can reach while you audition.",
+      "final_key": "⌥K",
+      "sources": [
+       {
+        "label": "Apple — Assign key commands in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/assign-key-commands-lgcp41ff6979/mac",
+        "evidence": "The Key Commands window opens with Option-K, and its search field finds commands by name or partial name so you can assign them (Learn by Key Label)."
+       },
+       {
+        "label": "Apple — Create custom keyboard shortcuts for Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/101929",
+        "evidence": "Apple support article on customising Logic key commands; it came back for the same Option-K / search-field query."
+       },
+       {
+        "label": "Apple — Preview take recordings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/preview-take-recordings-lgcp317d76de/mac",
+        "evidence": "Select Previous Take or Comp and Select Next Take or Comp move back and forward through the takes or comps listed in the take folder's pop-up menu."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Save your comp as a new comp before changing it",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple page directly states that Duplicate Comp in the Take Folder pop-up menu saves the current comp and adds it to the list.",
+      "final_title": "Save your comp as a new comp before changing it",
+      "final_body": "The take folder menu has “Duplicate Comp”. Do this before every significant change and you can always go back to the version that was working.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Create and save comps in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/create-and-save-comps-lgcpb193382e/mac",
+        "evidence": "Choose Duplicate Comp from the Take Folder pop-up menu to save the current comp and add it to the list of comps (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Move a comp edit point without redoing the comp",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple page documents dragging the start or end point of a take selection, and adjacent selections adjust.",
+      "final_title": "Move a comp edit point without redoing the comp",
+      "final_body": "Drag the vertical divider between two take sections to slide the edit point earlier or later.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit comps in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-comps-lgcpb19217b1/mac",
+        "evidence": "Place the pointer over the start or end point of a take selection and drag; this shortens adjacent selections on other takes (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Curve the fade after you draw it",
+      "action": "FIX",
+      "reason": "Both editing routes are confirmed, but the only Apple page found is /10.7/. Two secondary sources agree that you drag the middle of the fade to curve it and can edit Curve in the Region inspector. I removed the 'S-curve' sentence: Apple describes the Curve value as bending a fade inward or outward, and 'S-curve' is a separate crossfade type (X S). Weak point: neither secondary source is on the preferred list.",
+      "final_title": "Curve the fade after you draw it",
+      "final_body": "Drag the middle of a drawn fade with the Fade tool to bend it inward or outward, or select the region and edit the Curve value in the Region inspector.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit fades in Logic Pro (10.7 guide)",
+        "url": "https://support.apple.com/guide/logicpro/edit-fades-lgcpf7c0cd53/10.7/mac/11.0",
+        "evidence": "You can drag the fade curve with the Fade tool, or select a region and edit the Curve value in the Region inspector."
+       },
+       {
+        "label": "MakeUseOf — How to Fade Audio in Logic Pro With Ease",
+        "url": "https://www.makeuseof.com/how-to-fade-audio-in-logic-pro/",
+        "evidence": "Move the cursor to the middle of the fade's diagonal line to curve it inward or outward (search summary)."
+       },
+       {
+        "label": "Charles Cleyn — How To Fade Tracks In Logic Pro",
+        "url": "https://www.charlescleyn.com/blog/how-to-fade-tracks-in-logic-pro",
+        "evidence": "Drag the fade curve with the Fade tool to reshape it, or edit Curve in the Region inspector (search summary)."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Use “Remove Silence from Audio Region” for noisy tracks",
+      "action": "FIX",
+      "reason": "Two independent sources confirm ⌃X and the command name. The Control-click > Split path appears only on Apple's /10.7/ page, so I removed it. The threshold behaviour and the creation of new regions are confirmed.",
+      "final_title": "Use “Remove Silence from Audio Region” for noisy tracks",
+      "final_body": "Select the audio region and press ⌃X (Remove Silence from Audio Region). Everything below a threshold you set is removed, and new regions are created from what remains. That makes it useful for a live kit or spoken word.",
+      "final_key": "⌃X",
+      "sources": [
+       {
+        "label": "studio-interns.com — Remove Silence from Audio Region… ⌃X",
+        "url": "https://studio-interns.com/remove-silence-from-audio-region-x-logic-pro-keyboard-command-of-the-day/",
+        "evidence": "The page title gives the command name and ⌃X as its key command."
+       },
+       {
+        "label": "9to5Mac — Editing noisy audio files with Remove Silence in Logic Pro X",
+        "url": "https://9to5mac.com/2019/09/15/remove-silence-in-logic-noise/",
+        "evidence": "Select an audio region in the Tracks area and press Control-X to open Remove Silence, which has controls for how much silence or noise is removed."
+       },
+       {
+        "label": "Apple — Uses for Remove Silence in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/uses-for-remove-silence-lgcp5e08f225/mac",
+        "evidence": "Current Apple page: Remove Silence creates regions automatically from an audio file that contains silent passages."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Add a tiny fade to the start of every region as policy",
+      "action": "ADVICE",
+      "reason": "A general audio-practice habit. It makes no claim about a Logic menu, option, key command or version.",
+      "final_title": "Add a tiny fade to the start of every region as policy",
+      "final_body": "Even 3 ms removes the click from a non‑zero‑crossing start. Do it to everything and you never chase a mystery click again.",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 6,
+      "original_title": "Add flex markers either side before you move one",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple page describes neighbouring transient/flex markers limiting the stretch.",
+      "final_title": "Add flex markers either side before you move one",
+      "final_body": "Placing anchor markers on the neighbouring transients stops your edit from stretching the whole bar.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Flex tool time stretching in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/flex-tool-time-stretching-lgcp54a78604/mac",
+        "evidence": "Waveform movement is restricted by the transient markers on either side of where you drag; only the material between the flex markers is compressed or expanded (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "Quantise audio with Flex enabled",
+      "action": "CUT",
+      "reason": "Budget: not verified for Logic 11/12. Two searches returned only Apple's /10.7/ Quantize regions pages. No current Apple page or two agreeing reputable sources confirmed the Region inspector Quantize/Flex workflow for current Logic.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 8,
+      "original_title": "Use Flex Pitch to fix a single flat note",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple Flex Pitch page confirms dragging notes vertically and the Gain, Vibrato, Pitch Drift and Formant Shift hotspots on the note.",
+      "final_title": "Use Flex Pitch to fix a single flat note",
+      "final_body": "Switch the track's Flex mode to Flex Pitch, then drag the note blob vertically. The gain, vibrato, pitch drift and formant handles are all on the same blob.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit pitch and timing with Flex Pitch in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-pitch-and-timing-with-flex-pitch-lgcpc53e6bef/mac",
+        "evidence": "Lists the Vibrato, Pitch Drift, Gain, Fine Pitch and Formant Shift hotspots on each note (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 9,
+      "original_title": "Reset a bad Flex edit rather than undoing repeatedly",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple page gives Control-click the region > Reset All Flex Edits, which deletes all flex markers.",
+      "final_title": "Reset a bad Flex edit rather than undoing repeatedly",
+      "final_body": "Control-click the flexed region and choose Reset All Flex Edits. It clears the region's flex data and starts you fresh.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Delete, reset and move flex markers in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/delete-reset-and-move-flex-markers-lgcpe639c41a/mac",
+        "evidence": "Control-click the region background and choose Reset All Flex Edits; all flex markers are deleted (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 10,
+      "original_title": "Use the Audio File Editor for true destructive edits",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple page confirms the route (double-click the region, then the File button) and that most edits are destructive.",
+      "final_title": "Use the Audio File Editor for true destructive edits",
+      "final_body": "Double‑click a region and switch to the File tab. Silence, reverse, normalise and pencil‑edit at the sample level. Changes here affect the file itself.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Audio File Editor overview in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/audio-file-editor-overview-lgcp21587d1c/mac",
+        "evidence": "Double-click an audio region, then click the File button at the top of the Editors pane; most edits there are destructive (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 11,
+      "original_title": "Normalise regions non‑destructively with Gain",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple page documents the Region inspector Gain parameter for adjusting an individual region's volume.",
+      "final_title": "Normalise regions non‑destructively with Gain",
+      "final_body": "The Region inspector's Gain parameter changes playback level without touching the file. Always try this before normalising.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Change gain of audio regions in the Tracks area (Logic Pro for Mac)",
+        "url": "https://support.apple.com/guide/logicpro/change-gain-audio-regions-tracks-area-lgcp8e4c781d/mac",
+        "evidence": "Gain: adjust the volume of individual audio regions by a specified amount in dB (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 12,
+      "original_title": "Strip silence at the file level to reclaim disk space",
+      "action": "FIX",
+      "reason": "Rewritten trick. The stored title is still the wrong 'strip silence' one, and the body text begins with a literal 'Title: … Body: …' draft. I moved the title in and cleaned the body. Apple confirms the menu path, the three options and their descriptions, and the dialog with Delete checkboxes. I removed 'whole files, not portions' because no source states it.",
+      "final_title": "Reclaim disk space with Project Management > Clean Up",
+      "final_body": "Once your comps are final, choose File > Project Management > Clean Up. Its options are Delete Unused Audio Files, Delete Unreferenced Audio Files and Delete Backups, and files are deleted from disk. A dialog lists everything to be deleted, so deselect the Delete checkbox for anything you want to keep, and back up first.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Clean up Logic Pro for Mac projects",
+        "url": "https://support.apple.com/guide/logicpro/clean-up-projects-lgcpce0efc05/mac",
+        "evidence": "Choose File > Project Management > Clean Up. Delete Unused Audio Files removes files from the Project Audio Browser and deletes them from disk; Delete Unreferenced Audio Files deletes them from disk; Delete Backups deletes backups. A dialog lists the files, and you deselect the Delete checkbox to keep one."
+       },
+       {
+        "label": "Apple — Remove unused audio files in your Logic Pro for Mac project",
+        "url": "https://support.apple.com/en-us/118567",
+        "evidence": "Remove audio files only after you have finished editing, chosen final takes and merged comp tracks."
+       }
+      ]
+     },
+     {
+      "index": 13,
+      "original_title": "Reverse a region for a riser in two clicks",
+      "action": "KEEP",
+      "reason": "The prior audit's current Apple page confirms the Region inspector Reverse switch and Functions > Reverse in the Audio File Editor.",
+      "final_title": "Reverse a region for a riser in two clicks",
+      "final_body": "Select the region, then Functions > Reverse in the Audio File Editor, or apply the Reverse setting in the region inspector for a non‑destructive version.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Reverse audio regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/reverse-audio-regions-lgcp99b0012e/mac",
+        "evidence": "Reverse regions with the Reverse switch in the Region inspector (unavailable when flex is on), or choose Functions > Reverse in the Audio File Editor (prior audit quote)."
+       }
+      ]
+     },
+     {
+      "index": 14,
+      "original_title": "Commit edits with Bounce Regions in Place",
+      "action": "FIX",
+      "reason": "Rewritten trick. File > Bounce > Regions in Place and the Bypass Effect Plug-ins option are confirmed. The dialog has Name, Destination (New Track / Selected Track) and Source (Leave / Mute / Delete), so I made 'keep the original' concrete. The Control-click shortcut-menu route was not confirmed in this session, so I removed it. 'Fresh audio file on the track' was corrected, because the default destination can be a new track.",
+      "final_title": "Commit edits with Bounce Regions in Place",
+      "final_body": "When you are happy with a comp, select the regions and choose File > Bounce > Regions in Place. In the dialog, set the name and a Destination: New Track, or Selected Track to replace the regions. Set Source to Leave, Mute or Delete, and decide whether to Bypass Effect Plug-ins. Choose Leave or Mute to keep the original.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Bounce regions in place in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/bounce-regions-in-place-lgcp8ae5826e/mac",
+        "evidence": "Choose File > Bounce > Regions in Place. The dialog has a Name field, Destination (New Track or Selected Track, which replaces the selected regions), Source (Leave, Mute, Delete) and a Bypass Effect Plug-ins checkbox (search summaries; the /10.7/ page also appeared in the results)."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 8, indexes 0-14",
+    "reviews": [
+     {
+      "index": 3,
+      "outcome": "CUT",
+      "reason": "Every Apple page I searched for fade curve editing (Edit fades, Add fades to audio files) exists only under /10.7/, and I found no current page. That means the UI names (Fade tool curve drag, 'Curve' in the Region inspector) have no version-appropriate Apple support for Logic 11/12. The other two citations (MakeUseOf, Charles Cleyn) are not on the reputable-source list, so they cannot carry the claim."
+     },
+     {
+      "index": 10,
+      "outcome": "TRIM",
+      "reason": "The cited overview says to use the File button, not a 'File tab', and says only 'most' edits are destructive, not all changes. Apple's current Audio File Editor pages confirm Normalize, Silence and the Pencil tool for removing clicks and pops, but nothing states 'at the sample level'. Reverse is not in the cited source, so I removed it."
+     },
+     {
+      "index": 11,
+      "outcome": "TRIM",
+      "reason": "The cited evidence says only that Gain adjusts an individual audio region's volume by a set amount in dB. 'Without touching the file' (non-destructive) is not stated in any retrieved evidence, so I removed it."
+     }
+    ],
+    "sustained_count": 12
+   }
+  },
+  {
+   "unit": {
+    "id": "S09",
+    "section": 9,
+    "start": 0,
+    "end": 7
+   },
+   "verify": {
+    "unit": "section 9, tricks 0-6",
+    "search_worked": true,
+    "searches_used": 11,
+    "search_note": "The current Apple page \"Select parts of regions\" (no version segment) supports playback bounds, the marquee ruler, deleting inside a marquee, Shift-click and Control-clicking the marquee ruler to choose Set Locators by Selection and Enable Cycle. The only Apple pages for \"Assign tools\" and \"Add and adjust automation points\" that came up are 10.7/mac/11.0 URLs, so I backed those claims with independent sources as well. No retrieved source named the Space or Delete keys, so I removed those key fields. The Marquee Tool Click Zones option name only appeared in 10.7-era or third-party results, so I dropped that part of trick 0.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "⌘‑drag anywhere to marquee select",
+      "action": "FIX",
+      "reason": "Rewritten trick. Sources support the core mechanic: the Command-click Tool menu, choosing Marquee, and releasing Command to go back to the Left-click tool (Apple Assign tools page; Sound On Sound recommends Marquee as the Command-click tool). I removed the Click Zones aside. Its option name only appeared on a 10.7 page, a third-party site, and an Editing-preferences page on logicpro.skydocu.com, with no current Apple source. Its claim that the lower-left and lower-right edges 'stay as fade/loop handles' was not supported: Apple only says those edges are excluded. The only Apple source for the Command-click Tool menu name is a /10.7/ page; Sound On Sound backs the Marquee-as-Command-click choice.",
+      "final_title": "⌘-drag anywhere to marquee select",
+      "final_body": "Make Marquee your Command-click tool. In the Tracks area, click the Command-click Tool menu and choose the Marquee tool. From then on, hold ⌘ and drag to marquee-select parts of regions on one or more tracks. Release ⌘ and you're back on your Left-click tool.",
+      "final_key": "⌘ + drag",
+      "sources": [
+       {
+        "label": "Apple — Assign tools in Logic Pro (10.7 page)",
+        "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0",
+        "evidence": "Click the Command-click Tool menu, then choose a tool. Releasing the Command key reverts to the Left-click tool."
+       },
+       {
+        "label": "Sound On Sound — Marque Of Distinction",
+        "url": "https://www.soundonsound.com/techniques/marque-distinction",
+        "evidence": "Says your choice of Command-click tool is personal and argues that the Marquee is the best choice for Command-click (prior-audit quote; page returned in this session's results)."
+       },
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "Select the Marquee tool, then drag in the Tracks area to select parts of one or more regions."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Press Space and Logic plays only the marquee selection",
+      "action": "FIX",
+      "reason": "Apple's current page confirms that playback starts at the marquee's left edge and ends at its right edge. No source I retrieved names Space as the key, so I took the key out of the title and the key field.",
+      "final_title": "Play just the marquee selection",
+      "final_body": "Start playback while a marquee selection is active and Logic plays from the selection's left edge to its right edge, then stops. It's the fastest way to audition a specific range without touching the locators.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "If you play a project after making a marquee selection, playback starts at the left edge of the selection, and ends at the right edge."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Hit Delete to cut a hole in every track at once",
+      "action": "FIX",
+      "reason": "Apple's current page supports selecting across all tracks with the marquee ruler and deleting inside the selected area. No retrieved source states the Delete key, so I emptied the key field. I also changed 'trimmed' to match Apple's wording: only the part inside the marquee is affected.",
+      "final_title": "Cut a hole in every track at once",
+      "final_body": "Choose View > Marquee Ruler, then drag in the marquee ruler to select across all tracks. Delete, and only the parts of regions inside the marquee are removed, on every track, in one action.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "Choose View > Marquee Ruler; drag in the marquee ruler to create a marquee selection across all tracks. Only the part of the region inside the marquee is selected. You can perform most edits, such as moving, cutting, copying, and deleting, in the selected area."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Set the locators to the marquee instantly",
+      "action": "FIX",
+      "reason": "Rewritten trick. The key field said 'U', but the body and the sources say ⌘U. studio-interns gives the full command name with ⌘U, and macProVideo also documents ⌘U setting the cycle area to the selection. Apple's current page adds a mouse route: Control-click the marquee ruler and choose Set Locators by Selection and Enable Cycle. I dropped the unsourced 'two moves, not three' framing and the C aside.",
+      "final_title": "Set the locators to the marquee instantly",
+      "final_body": "With a marquee selection active, press ⌘U (Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop). The cycle locators snap to the selection and Cycle turns on. Prefer the mouse? Control-click the marquee ruler and choose Set Locators by Selection and Enable Cycle.",
+      "final_key": "⌘U",
+      "sources": [
+       {
+        "label": "studio-interns.com — Set Locators/Loop by Regions/Events/Marquee and Enable Cycle/Loop ⌘U",
+        "url": "https://studio-interns.com/set-locators-loop-by-regions-events-marquee-and-enable-cycle-loopu-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "The page title gives the command name and ⌘U."
+       },
+       {
+        "label": "macProVideo — 11 Essential Logic Pro X Shortcuts for Producers",
+        "url": "https://www.macprovideo.com/article/logic-pro/11-essential-logic-pro-x-shortcuts-for-producers",
+        "evidence": "Command-U after selecting regions sets the cycle area to the exact width of the selection."
+       },
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "Control-click the marquee ruler, then choose Set Locators by Selection and Enable Cycle; the locators are set to the marquee selection boundaries."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Marquee automation to move only that range",
+      "action": "FIX",
+      "reason": "The behaviour is confirmed: editing automation spanned by a marquee creates two points at each edge. Apple's page for this is a 10.7/mac/11.0 URL, and whylogicprorules independently describes the same thing (click the selection, 4 nodes appear, drag the line). I reworded the body to name the actual step, clicking or editing inside the selection, and to state the two-points-per-edge detail.",
+      "final_title": "Marquee automation to move only that range",
+      "final_body": "With automation showing, drag a marquee across part of an automation lane, then click inside the selection. Logic creates two automation points at each edge, so you can drag that section up or down without changing anything on either side.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Add and adjust automation points in Logic Pro (10.7 page)",
+        "url": "https://support.apple.com/guide/logicpro/add-and-adjust-automation-points-lgcpb1a3327b/10.7/mac/11.0",
+        "evidence": "Drag across a region with the Marquee tool, then click the marquee selection. When you edit automation data spanned by a marquee selection, two automation points are automatically created at the left edge, and two at the right edge."
+       },
+       {
+        "label": "Why Logic Pro Rules — Logic Pro X Automation",
+        "url": "https://whylogicprorules.com/automation/",
+        "evidence": "Use the Marquee Tool to select a spot on the track lane, click the selected area and Logic creates 4 new automation points; drag the line between them to change the level."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Use marquee to create a drop",
+      "action": "FIX",
+      "reason": "The underlying claim is supported: a marquee-ruler selection spans all tracks, and deleting it removes only what's inside. No source names a key, and 'no dragging' contradicts the drag you need to make the selection, so I reworded that.",
+      "final_title": "Use marquee to create a drop",
+      "final_body": "Drag in the marquee ruler across the bar before a chorus to select it on every track, then delete. You get clean, arrangement-wide silence for that bar in one edit.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "Drag in the marquee ruler to create a marquee selection across all tracks; you can perform most edits, including deleting, in the selected area."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "Hold ⇧ to extend an existing marquee",
+      "action": "KEEP",
+      "reason": "Apple's current page documents Shift-clicking to change an existing marquee selection, including moving the selection end closest to the pointer.",
+      "final_title": "Hold ⇧ to extend an existing marquee",
+      "final_body": "Fine‑tune the selection edge by edge rather than redrawing the whole thing.",
+      "final_key": "⇧ + click",
+      "sources": [
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "Shift-click inside a selection to move the selection end closest to the pointer; Option-Shift-click moves the end farther from the pointer."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 9, indexes 0-6",
+    "reviews": [
+     {
+      "index": 5,
+      "outcome": "TRIM",
+      "reason": "The current Apple page (Select parts of regions) supports this: a marquee-ruler selection spans all tracks, and you can delete inside it. 'Clean' suggests no clicks or pops at the cut edges. Apple says nothing about fades or click-free edits, so I removed it. The rest stays: the chorus placement is advice, and 'in one edit' follows from a single selection plus delete."
+     }
+    ],
+    "trimmed_body": "Drag in the marquee ruler across the bar before a chorus to select it on every track, then delete. You get arrangement-wide silence for that bar in one edit.",
+    "trimmed_key": "",
+    "sustained_count": 6
+   }
+  },
+  {
+   "unit": {
+    "id": "S10a",
+    "section": 10,
+    "start": 0,
+    "end": 9
+   },
+   "verify": {
+    "unit": "section 10, tricks 0-8",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "Apple's current 'Choose automation modes' page settled tricks 2, 3, 7 and 8. The current Mac pages for 'Show automation curves', 'Add and adjust automation points' and 'Select, copy, and move automation' only came back as /10.7/ URLs. For those tricks I used current Apple pages that give the same fact (the Audio Track Editor page for the A key, the Automation settings page for the Pencil Tool), or an independent reputable source (macProVideo for Control-Shift). Tricks 0 and 5 are kept on the current, version-less Apple URLs from the prior audit, which quote the claims directly; I did not re-search them because of the budget.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Use Region automation for anything that belongs to the part",
+      "action": "KEEP",
+      "reason": "Apple's current track-vs-region automation page, cited in the prior audit, says region automation stays with the region when you move or copy it, and that it is useful for automating instrument parameters. Not re-searched because of the budget. The prior URL has no version segment and its quote directly supports the text.",
+      "final_title": "Use Region automation for anything that belongs to the part",
+      "final_body": "A filter sweep that is part of a synth riff should move with the riff. Region automation does that; track automation does not.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Track automation vs region automation in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/track-automation-vs-region-automation-lgcp967649d0/mac",
+        "evidence": "(from prior audit) With region automation, if you move or copy the region, to another point on the same track or to another track, the automation stays with the region. Region automation is especially useful for automating instrument parameters."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Press A to toggle automation view",
+      "action": "KEEP",
+      "reason": "Apple's current Mac page for automation in the Audio Track Editor says you click Show/Hide Automation or press A. The 10.7 'Show automation curves' page gives Mix > Show Automation (or press A). whylogicprorules also documents Hide/Show Track Automation on A. The main Tracks-area 'Show automation curves' page only turned up as a /10.7/ URL, so the current-version support comes from the Audio Track Editor page plus the independent source.",
+      "final_title": "Press A to toggle automation view",
+      "final_body": "One key. Learn it and stop hunting for the button.",
+      "final_key": "A",
+      "sources": [
+       {
+        "label": "Apple — Automation in the Logic Pro for Mac Audio Track Editor",
+        "url": "https://support.apple.com/guide/logicpro/use-automation-in-the-audio-track-editor-lgcp00e320cb/mac",
+        "evidence": "Click the Show/Hide Automation button in the Audio Track Editor menu bar (or press A) to show automation."
+       },
+       {
+        "label": "Apple — Show automation curves in Logic Pro (10.7 guide)",
+        "url": "https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/10.7/mac/11.0",
+        "evidence": "To show automation curves, choose Mix > Show Automation (or press A)."
+       },
+       {
+        "label": "Why Logic Pro Rules — Logic Pro X Automation",
+        "url": "https://whylogicprorules.com/automation/",
+        "evidence": "Search summary: the Hide/Show Track Automation key command is assigned to A by default."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Use Latch mode for almost everything",
+      "action": "KEEP",
+      "reason": "Apple's current automation-modes page describes the modes as the trick does. Touch returns to existing automation after you let go. Latch works like Touch, but the new value replaces existing automation after release. Write erases as the playhead passes. Read plays back only. 'Latch is the right default' is opinion.",
+      "final_title": "Use Latch mode for almost everything",
+      "final_body": "Latch writes while you move the control and holds the last value when you let go. Touch snaps back, Write erases as it goes, and Read plays only. Latch is the right default.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Choose automation modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac",
+        "evidence": "Touch plays back like Read, and after you release the control the parameter follows existing automation. Latch works like Touch, but after release the new value replaces existing automation. Write erases existing automation as the playhead passes."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Never leave a track in Write mode",
+      "action": "KEEP",
+      "reason": "Apple's current automation-modes page says Write mode erases existing automation as the playhead passes, and deletes it even if you move nothing. The 'destroyed more mixes' line is rhetoric.",
+      "final_title": "Never leave a track in Write mode",
+      "final_body": "Write mode erases existing automation as the playhead passes, whether you touch the fader or not. It has destroyed more mixes than any other setting in Logic.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Choose automation modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac",
+        "evidence": "Write mode erases existing automation as the playhead passes. It records any control movement, and if you do nothing, the existing data is simply deleted."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Draw automation with the Pencil tool for precision",
+      "action": "KEEP",
+      "reason": "Apple's current Automation settings page documents the Pencil Tool's behaviour when you drag on automation (stepped or curved editing). The 10.7 page says you click-drag the Pencil Tool across the curve to draw many points. 'Faster and more accurate' is opinion.",
+      "final_title": "Draw automation with the Pencil tool for precision",
+      "final_body": "Faster and more accurate than performing it for anything rhythmic — gates, stutters, hard mutes.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Automation settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/automation-settings-lgcp8aa8f24b/mac",
+        "evidence": "The Pencil Tool pop-up menu sets how the Pencil Tool behaves with Option held while dragging an automation lane: Stepped Editing or Curved Editing."
+       },
+       {
+        "label": "Apple — Add and adjust automation points in Logic Pro (10.7 guide)",
+        "url": "https://support.apple.com/guide/logicpro/add-and-adjust-automation-points-lgcpb1a3327b/10.7/mac/11.0",
+        "evidence": "Click-drag or Option-click-drag the Pencil Tool across the automation curve to draw multiple automation points."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Delete an automation point without dragging it",
+      "action": "KEEP",
+      "reason": "Apple's current Delete automation page, cited in the prior audit, lists all three methods: double-click the point, select it and press Delete, or drag across it with the Eraser. Not re-searched because of the budget. The URL has no version segment and the quote directly supports the text.",
+      "final_title": "Delete an automation point without dragging it",
+      "final_body": "Double-click the point with the Pointer, or select it and press Delete, or use the Eraser. It works on curves too.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Delete automation in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac",
+        "evidence": "(from prior audit) In automation mode, you can double-click the automation point, select it and press Delete, or drag across it with the Eraser tool."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "Curve any line by dragging its middle with ⌃⇧",
+      "action": "KEEP",
+      "reason": "Apple's Select, copy, and move automation page says to hold Control-Shift while dragging an automation curve with the Pointer tool. Only a /10.7/ URL came back for that page. macProVideo independently describes the same move: hold Shift and Control, put the Pointer over the line between two nodes, and drag to curve it. The 'sounds mechanical' line is opinion.",
+      "final_title": "Curve any line by dragging its middle with ⌃⇧",
+      "final_body": "Straight automation ramps sound mechanical. Curving them takes one drag and makes the move sound intentional.",
+      "final_key": "⌃⇧ + drag",
+      "sources": [
+       {
+        "label": "Apple — Select, copy, and move automation in Logic Pro (10.7 guide)",
+        "url": "https://support.apple.com/guide/logicpro/select-copy-and-move-automation-lgcpb1a5aad6/10.7/mac/11.0",
+        "evidence": "Hold down Control-Shift while dragging an automation curve with the Pointer tool."
+       },
+       {
+        "label": "macProVideo — 5 Automation Power-User Tips and Tricks in Logic Pro",
+        "url": "https://www.macprovideo.com/article/logic-pro/logic-automation-tips-tricks",
+        "evidence": "Search summary: hold Shift and Control, put the Pointer tool over the line between nodes, and drag to make an S-curve or a concave or convex curve. Shift-Control-click resets it to a straight line."
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "Trim automation up or down as a group",
+      "action": "FIX",
+      "reason": "Apple's current page confirms three things: Trim works in combination with Touch and Latch; it offsets existing automation up or down by the amount you move the control; and it covers only Volume, Pan and Send levels. It does not say Trim 'keeps the shape of the curve', and it does not use the name 'Trim Latch'. Both are removed. The title's 'as a group' is also unsupported and has been changed.",
+      "final_title": "Trim existing automation up or down",
+      "final_body": "Trim is not a mode on its own. It works in combination with Touch or Latch. With it on, moving the fader offsets existing automation up or down by the amount you move it. It applies only to Volume, Pan and Send levels, so use it to lift an already-automated vocal without redrawing its moves.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Choose automation modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac",
+        "evidence": "Trim offsets the value of existing automation (Volume, Pan, Send levels) by adjusting it up or down by the amount you move the fader or control. It works in combination with Touch and Latch automation modes."
+       }
+      ]
+     },
+     {
+      "index": 8,
+      "original_title": "Use Relative mode to layer a second pass",
+      "action": "KEEP",
+      "reason": "Apple's current automation-modes page confirms Relative works in combination with Touch, Latch and Write, and is available for Volume, Pan and Send level. The prior audit quotes the same page: Relative 'adds a secondary automation curve that offsets the existing primary curve', which supports the claim that the original moves survive.",
+      "final_title": "Use Relative mode to layer a second pass",
+      "final_body": "Relative automation sits on top of your existing pass as an offset, so you can add a ride without destroying the original moves.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Choose automation modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/choose-automation-modes-lgcpb1a6ab26/mac",
+        "evidence": "Relative works in combination with Touch, Latch and Write, and is available only for Volume, Pan and Send level. (Prior audit, same page: it adds a secondary automation curve that offsets the existing primary curve.)"
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 10, indexes 0-8",
+    "reviews": [
+     {
+      "index": 3,
+      "outcome": "TRIM",
+      "reason": "Apple's current automation-modes page supports the claim that Write mode erases automation as the playhead passes, even if you move nothing. The sentence 'It has destroyed more mixes than any other setting in Logic' reads as a statement of fact, and no source backs it, so it is removed.",
+      "trimmed_body": "Write mode erases existing automation as the playhead passes, whether you touch the fader or not.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 5,
+      "outcome": "TRIM",
+      "reason": "I re-searched Apple's current Delete automation page (https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac). It confirms the three methods: double-click the point, select it and press Delete, or drag across it with the Eraser. Nothing retrieved supports 'It works on curves too.', so that sentence is removed. The page also says nothing about the Pointer specifically, so 'with the Pointer' is dropped as well.",
+      "trimmed_body": "Double-click the point, or select it and press Delete, or drag across it with the Eraser.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 6,
+      "outcome": "CUT",
+      "reason": "The whole trick rests on the Control-Shift-drag key. The only Apple page saying Control-Shift-drag curves an automation line is the /10.7/ 'Select, copy, and move automation' page, which does not support a Logic 11/12 key command on its own. I searched for the current 'Pointer shortcuts for automation in Logic Pro for Mac' page (lgcp77f2a7bb/mac). Its search summary tied Control-Shift-drag to converting a curve to stepped automation, not to curving a line, so the current documentation is at best ambiguous and may contradict the trick. The only other support is a single macProVideo search summary of unknown Logic version, which is not enough alone. Nothing useful remains without the key."
+     }
+    ],
+    "sustained_count": 6
+   }
+  },
+  {
+   "unit": {
+    "id": "S10b",
+    "section": 10,
+    "start": 9,
+    "end": 17
+   },
+   "verify": {
+    "unit": "section 10, tricks 9-16",
+    "search_worked": true,
+    "searches_used": 12,
+    "search_note": "Current Apple pages were found for Delete automation, Snap automation, Select parts of regions and the Automation Parameter pop-up menu. The only Apple page found for copying automation and for the lane disclosure triangle is the /10.7/ guide. Plug-in bypass automation has forum support only.",
+    "tricks": [
+     {
+      "index": 9,
+      "original_title": "Marquee a range then drag the line to change only that section",
+      "action": "FIX",
+      "reason": "The current Apple 'Select parts of regions' page confirms the core claim: editing automation inside a marquee selection creates two points at the left edge and two at the right. I dropped the Command-click tool sentence. No current source was retrieved that ties the Command-click Tool menu to a setting in Logic Pro > Settings > Advanced.",
+      "final_title": "Marquee a range, then drag the line to change only that section",
+      "final_body": "Drag across the bars you want to change with the Marquee tool, then drag the automation line inside that selection. Logic creates two automation points at the left edge and two at the right edge of the selection, so the change stays boxed in and does not bleed into the surrounding bars.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select parts of regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/select-parts-of-regions-lgcpf7c0ae21/mac",
+        "evidence": "When you edit automation data spanned by a marquee selection, two automation points are created automatically at the left edge and two at the right edge of the selection."
+       }
+      ]
+     },
+     {
+      "index": 10,
+      "original_title": "Show every automated parameter at once",
+      "action": "FIX",
+      "reason": "Only the /10.7/ Apple page (and the Logic 9 manual) places the disclosure triangle at the lower left of the track header, so I removed that exact location. Apple's current release notes do name an 'automation sub-lane disclosure triangle', and the current Apple page confirms the Automation Parameter pop-up menu in the track header. The title overstated the feature ('every parameter'), so it is narrowed. Confidence is moderate because the release note does not say which version it belongs to.",
+      "final_title": "Show several automation lanes at once",
+      "final_body": "Click the automation sub-lane disclosure triangle in the track header to open another automation lane below the track. Repeat to stack more lanes, and choose each lane's parameter from its Automation Parameter pop-up menu. You can then see several parameters side by side instead of switching between them.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Logic Pro for Mac release notes",
+        "url": "https://support.apple.com/en-us/109503",
+        "evidence": "Release note: repeated clicks on the automation sub-lane disclosure triangle now respond to every click."
+       },
+       {
+        "label": "Apple — Overview of automation in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/automation-overview-lgcpb1a1ea03/mac",
+        "evidence": "Search summary for current Apple pages: to show an automation parameter, choose it from the Automation Parameter pop-up menu in the track header. Volume, Pan, Solo and Mute are in the Main submenu, with a submenu for each plug-in."
+       },
+       {
+        "label": "Apple — Show automation curves in Logic Pro (10.7 guide, supporting only)",
+        "url": "https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/10.7/mac/11.0",
+        "evidence": "Click the disclosure triangle at the lower left of the track header to view the next lane beneath, or Option-click to view all lanes."
+       }
+      ]
+     },
+     {
+      "index": 11,
+      "original_title": "Copy automation between tracks",
+      "action": "CUT",
+      "reason": "Three searches found only the /10.7/ Apple page (plus regional mirrors) for this procedure. Under the rules, that page alone cannot support the menu steps for Logic 11/12. The 10.7 text also says 'the region selection, along with its automation, is copied'. So the marquee method pastes the region content as well, which the trick leaves out. No current Apple page or second reputable source was found.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Select, copy, and move automation in Logic Pro (10.7 guide only)",
+        "url": "https://support.apple.com/guide/logicpro/select-copy-and-move-automation-lgcpb1a5aad6/10.7/mac/11.0",
+        "evidence": "Drag across the region with the Marquee tool, Edit > Copy, select the target track, move the playhead, Edit > Paste. The region selection, along with its automation, is copied to the target track at the playhead position."
+       }
+      ]
+     },
+     {
+      "index": 12,
+      "original_title": "Delete all automation on a track in one command",
+      "action": "FIX",
+      "reason": "The current Apple Delete automation page confirms all three command names and what the first two do. The rewrite described orphaned automation as 'data left behind by plug-ins you have removed', which nothing supports. The Apple page says automation can become orphaned when it is copied between tracks, so that clause is corrected.",
+      "final_title": "Delete all automation on a track in one command",
+      "final_body": "Choose Mix > Delete Automation > Delete All Automation on Selected Track to remove every automation parameter from that track at once. The same submenu has Delete Visible Automation on Selected Track, which removes only the active parameter, and Delete Orphaned Automation on Selected Track. Automation can become orphaned when it is copied between tracks.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Delete automation in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac",
+        "evidence": "Mix > Delete Automation lists three commands. Delete Visible Automation on Selected Track removes the active parameter's automation. Delete All Automation on Selected Track removes all of that track's automation. Delete Orphaned Automation on Selected Track removes orphaned automation. The page also says automation can become orphaned when copied between tracks."
+       }
+      ]
+     },
+     {
+      "index": 13,
+      "original_title": "Thin dense automation after recording a controller pass",
+      "action": "FIX",
+      "reason": "A search limited to support.apple.com returned the current Delete automation page for this command, and it says the command removes all redundant automation points on all regions and tracks, so the global-scope warning is confirmed. The Control-Delete key command appears only on Logic Pro X–era sources (studio-interns) with no current confirmation, so I removed it. 'Thousands of points' is unsupported and also removed.",
+      "final_title": "Thin dense automation after recording a controller pass",
+      "final_body": "Delete Redundant Automation Points cleans up heavy controller passes, but it is global: it removes redundant points on all regions and all tracks, not just your selection. To thin one passage only, select the points in that range and press Delete, then redraw.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Delete automation in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/delete-automation-lgcpb1a5cb14/mac",
+        "evidence": "Delete Redundant Automation Points removes all redundant automation points on all regions and tracks. In automation mode you can select an automation point and press Delete."
+       },
+       {
+        "label": "studio-interns — Delete Redundant Automation Points",
+        "url": "https://studio-interns.com/delete-redundant-automation-points-logic-pro-x-keyboard-command-of-the-day/",
+        "evidence": "Independently confirms that the command removes all redundant automation points on all regions and tracks."
+       }
+      ]
+     },
+     {
+      "index": 14,
+      "original_title": "Snap automation to the grid when it needs to be rhythmic",
+      "action": "FIX",
+      "reason": "The current Apple Snap automation page confirms the procedure (Snap pop-up menu > Snap Automation > a value from the submenu) and that it can be set independently in the Tracks area and the Piano Roll Editor. 'Set separately from regions' and 'without changing how regions snap' are inferences Apple does not state; Apple's independence is between editors. Those phrases are removed.",
+      "final_title": "Snap automation to the grid when it needs to be rhythmic",
+      "final_body": "Open the Snap pop-up menu in the Tracks area, choose Snap Automation, and pick a value from the submenu. Automation edits then snap to that value, so filter stabs land on the grid. You can set it independently in the Tracks area and the Piano Roll Editor.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Snap automation to grid position in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/snap-automation-to-grid-positions-lgcpb1a5eb20/mac",
+        "evidence": "Choose Snap Automation from the Snap pop-up menu and select a value from the submenu; automation edits then snap to that value. It can be set independently in the Tracks area and the Piano Roll Editor."
+       }
+      ]
+     },
+     {
+      "index": 15,
+      "original_title": "Automate plugin bypass for effect changes",
+      "action": "CUT",
+      "reason": "The search returned only forum threads (Logic Pro Help, Logic Users Group, Gearspace, Apple Community), no Apple guide page or reputable publisher. The forums also report bypass automation problems (a 6th-slot limit, and '11.2 no insert bypass'). The trick's own hedging ('usually', 'not exposed identically') shows it cannot state a verified fact.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": []
+     },
+     {
+      "index": 16,
+      "original_title": "Automate send levels rather than plugin mix knobs",
+      "action": "ADVICE",
+      "reason": "This is a workflow preference about visibility and findability. It makes no specific claim about a menu path, key command, version or mechanism.",
+      "final_title": "Automate send levels rather than plugin mix knobs",
+      "final_body": "Sends give you a fader you can see on the mixer and a lane you can find later. Buried plugin mix knobs are neither.",
+      "final_key": "",
+      "sources": []
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 10, indexes 9-16",
+    "reviews": [
+     {
+      "index": 10,
+      "outcome": "TRIM",
+      "reason": "A search of current Apple pages (overview of automation) confirms that separate automation subtracks appear below the main track and that parameters are chosen from the Automation Parameter pop-up menu. The only source that puts the disclosure triangle in the track header is the /10.7/ page, which does not count for Logic 11/12. The release note names the 'automation sub-lane disclosure triangle' but does not say that clicking it repeatedly stacks more lanes. So 'in the track header' and 'Repeat to stack more lanes' are removed.",
+      "trimmed_body": "Instead of switching one automation curve between parameters, show automation sub-lanes, which appear below the main track. Click the automation sub-lane disclosure triangle, then choose each lane's parameter from its Automation Parameter pop-up menu. You can then see several parameters at once.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 16,
+      "outcome": "CUT",
+      "reason": "This entry is marked ADVICE, but it slips in a factual claim about Logic, 'Sends give you a fader you can see on the mixer', with no source. Send levels on a Logic channel strip are not described as faders in any source retrieved. What is left ('buried plugin mix knobs') is opinion with nothing useful or sourced behind it."
+     }
+    ],
+    "sustained_count": 4
+   }
+  },
+  {
+   "unit": {
+    "id": "S11",
+    "section": 11,
+    "start": 0,
+    "end": 12
+   },
+   "verify": {
+    "unit": "section 11, tricks 0-11",
+    "search_worked": true,
+    "searches_used": 11,
+    "search_note": "All sources are current Apple Logic Pro for Mac User Guide pages (no /10.7/ segment). Trick 3 (Chance) cut: Apple's current edit-modes page also says the step's active state is set when you edit the Chance value and does not change until you edit it again. That contradicts the book's claim that the step re-rolls every bar.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Give every row a different step rate",
+      "action": "FIX",
+      "reason": "The mechanics are confirmed: clicking a row header selects the row, Row inspector > Step Rate pop-up, and Step Rate edit mode where you drag vertically to set one step's length. 'Cross-rhythms' was removed because 1/16 against 1/8 divides evenly, and no source makes that musical claim.",
+      "final_title": "Give every row a different step rate",
+      "final_body": "Rows do not have to share the pattern's step rate. Click a row header to select the row, then in the Step Sequencer inspector click Row and choose a note value from the Step Rate pop-up menu. To change just one step, switch to Step Rate edit mode and drag vertically in that step. Hats at 1/16 and kick at 1/8 each run at their own speed.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit Step Sequencer pattern, row, and step settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/step-sequencer-inspector-lgcp8efada20/mac",
+        "evidence": "Click a row header to select the row, then in the Step Sequencer inspector click the Row button to show the Row inspector; to change the step rate for the row, choose a note value from the Step Rate pop-up menu."
+       },
+       {
+        "label": "Apple — Edit Step Sequencer rows in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-rows-lgcpdccf3f37/mac",
+        "evidence": "To select a row, click a row header."
+       },
+       {
+        "label": "Apple — Use Step Sequencer edit modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-edit-modes-lgcpf8b9a06c/mac",
+        "evidence": "Step Rate edit mode: drag vertically in the step to set the length of the step (in note values, relative to the project tempo)."
+       },
+       {
+        "label": "Apple — Change the musical length of a pattern in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/change-the-musical-length-of-a-pattern-lgcp22344096/mac",
+        "evidence": "Refers to the pattern step rate, which sets the length of each step in note values."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Use the row's Playback Mode for variation",
+      "action": "FIX",
+      "reason": "All seven mode names and the per-row option are confirmed. Apple describes Random as 'completely random and nonlooping', not as changing every bar, so that clause was reworded to match.",
+      "final_title": "Use the row's Playback Mode for variation",
+      "final_body": "Forward, Backward, Ping-Pong, Pendulum, Wander, Shuffle and Random: set one for the whole pattern, or a different one per row. Set just the hats to Random and their step order becomes completely random and nonlooping while the kick stays put.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Modify pattern playback in Step Sequencer in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/modify-pattern-playback-lgcp4ebd1c35/mac",
+        "evidence": "Lists Forward, Backward, Ping-Pong, Pendulum, Wander, Shuffle and Random. Random: playback order is completely random and nonlooping. You can change the mode for the overall pattern and choose a different mode for individual rows."
+       },
+       {
+        "label": "Apple — Edit Step Sequencer pattern, row, and step settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/step-sequencer-inspector-lgcp8efada20/mac",
+        "evidence": "The Row inspector has Playback Mode controls for the selected row."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Increase pattern length beyond 16 steps",
+      "action": "KEEP",
+      "reason": "The current Apple page says patterns can be 12 to 64 steps long, set from the Pattern Length pop-up menu. The rest is advice.",
+      "final_title": "Increase pattern length beyond 16 steps",
+      "final_body": "The Step Sequencer supports up to 64 steps per pattern. Longer patterns mean fewer copies and more room for fills.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Change the musical length of a pattern in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/change-the-musical-length-of-a-pattern-lgcp22344096/mac",
+        "evidence": "Choose a new length from the Pattern Length pop-up menu; patterns can be from 12 to 64 steps in length."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Use Chance to make a pattern breathe",
+      "action": "CUT",
+      "reason": "Contradicted. The core claim is that a 40% step plays about twice every five bars, which needs a fresh probability roll on every repeat. Apple's current edit-modes page says the step's active state is set when you edit the Chance value and does not change until you edit it again. Forum threads titled 'does it work as you'd expect?' and 'weird behavior' suggest users hit the same issue. The claim cannot be stated reliably.",
+      "final_title": "",
+      "final_body": "",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Step Sequencer edit modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-edit-modes-lgcpf8b9a06c/mac",
+        "evidence": "Chance controls the probability that the step plays each time the pattern repeats, but the step's active state is set when you edit the Chance value and does not change until you edit it again."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Use Note Repeat for rolls without drawing them",
+      "action": "KEEP",
+      "reason": "Apple: Note Repeat is set per step from 1 to 16 and controls how often the note repeats during the step.",
+      "final_title": "Use Note Repeat for rolls without drawing them",
+      "final_body": "Set a step's repeat value to 4 and it fires four times inside that step. Instant trap hats, no extra steps required.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Step Sequencer edit modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-edit-modes-lgcpf8b9a06c/mac",
+        "evidence": "Drag vertically in the step to set the Note Repeat value from 1 to 16, which controls how often the note repeats during the duration of the step."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Set Gate to shorten or lengthen individual hits",
+      "action": "FIX",
+      "reason": "The rewritten body is confirmed: Gate is a percentage that only shortens, and Tie extends a step by clicking its right edge. The title still says Gate lengthens, which contradicts Apple, so the title was changed.",
+      "final_title": "Use Gate to shorten hits and Tie to lengthen them",
+      "final_body": "Gate sets a step's note length as a percentage of the step, shortening it to less than the step's full duration — short gates on a bass pattern give you staccato stabs. It only ever shortens; to make a note run longer than its step, switch to Tie edit mode and click the right edge of the step to tie it to the following one, which lengthens its duration by the value of the step it is tied to. Both are per-step, not per-pattern.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Step Sequencer edit modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-edit-modes-lgcpf8b9a06c/mac",
+        "evidence": "Gate: drag vertically in the step to set the Gate value as a percentage of the step; it shortens the note length to less than the duration of the step. Tie: click the right edge of a step to tie it to the following step; the duration is lengthened by the value of the step it is tied to."
+       }
+      ]
+     },
+     {
+      "index": 6,
+      "original_title": "Tie steps together for sustained notes",
+      "action": "KEEP",
+      "reason": "Apple's Tie edit mode joins a step to the next one and lengthens its duration.",
+      "final_title": "Tie steps together for sustained notes",
+      "final_body": "Tie mode joins consecutive steps into one long note, which is how you write bass and lead lines rather than just percussion.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Step Sequencer edit modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-edit-modes-lgcpf8b9a06c/mac",
+        "evidence": "In Tie edit mode, click the right edge of a step to tie it to the following step; the duration of the step is lengthened by the value of the step it is tied to."
+       }
+      ]
+     },
+     {
+      "index": 7,
+      "original_title": "⌥‑click a step to reset it to default",
+      "action": "FIX",
+      "reason": "No source documents Option-click. The body also still contained an editor's note ('Retitle the trick...'). Rewritten to use the documented Functions > Clear Step method, including Apple's Shift-click selection step.",
+      "final_title": "Clear a step to reset all its edit-mode values",
+      "final_body": "Over-edited a step? Shift-click it to select it, then choose Functions > Clear Step from the Step Sequencer menu bar. That resets all of the step's edit-mode values to their defaults in one move — for step rate, the default is the row's step rate. You can also clear a whole row or the whole pattern.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit Step Sequencer steps in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-steps-lgcpe275686a/mac",
+        "evidence": "Clearing steps resets all their edit mode values to default values (for step rate, defined by the row step rate); Shift-click the step to select it, then choose Functions > Clear Step from the Step Sequencer menu bar; you can clear a single step, all steps in a row, or all steps in the pattern."
+       }
+      ]
+     },
+     {
+      "index": 8,
+      "original_title": "Use the Step Sequencer on any software instrument",
+      "action": "KEEP",
+      "reason": "Apple: Step Sequencer creates note-based instrument patterns with any available software instrument, rows can control a note on an instrument, and the design is inspired by classic hardware step sequencers.",
+      "final_title": "Use the Step Sequencer on any software instrument",
+      "final_body": "It is not a drum tool. Put it on a synth, switch the rows to pitches, and you have a hardware‑style note sequencer.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Overview of Step Sequencer in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/step-sequencer-overview-lgcp39acefc9/mac",
+        "evidence": "Create rhythm-based drum patterns and note-based instrument patterns using any available software instrument; inspired by classic hardware step sequencers; each row controls a sound, e.g. a note on an instrument, a range of notes, or a chord degree."
+       }
+      ]
+     },
+     {
+      "index": 9,
+      "original_title": "Automate plugin parameters per step",
+      "action": "KEEP",
+      "reason": "Apple: an automation row can be assigned to any automatable parameter, plug-in parameters included, and it generates stepped automation.",
+      "final_title": "Automate plugin parameters per step",
+      "final_body": "Add a row and assign it to any automatable plugin parameter. Now you can sequence filter cutoff step by step alongside the notes.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit Step Sequencer rows in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-rows-lgcpdccf3f37/mac",
+        "evidence": "Automation rows generate stepped automation events; you can assign an automation row to any automatable parameter, including MIDI CC, channel strip controls, plug-in parameters and Smart Controls."
+       }
+      ]
+     },
+     {
+      "index": 10,
+      "original_title": "Build a library of pattern regions",
+      "action": "KEEP",
+      "reason": "Apple documents saving patterns with the Pattern Browser's Save Pattern command. The template-track idea is workflow advice.",
+      "final_title": "Build a library of pattern regions",
+      "final_body": "Save patterns through the Pattern Browser, or keep a muted track of favourites at the bottom of a template project.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Load and save patterns in Step Sequencer in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/load-and-save-patterns-lgcp5e60ba51/mac",
+        "evidence": "With the pattern open in Step Sequencer, choose Save Pattern from the Action pop-up menu in the Pattern Browser; saved patterns appear under User."
+       }
+      ]
+     },
+     {
+      "index": 11,
+      "original_title": "Use Skip and Loop Start/End for live rearranging",
+      "action": "KEEP",
+      "reason": "Apple: a skipped step moves playback straight to the next step, in effect shortening the row. Loop Start and Loop End set where the row loops. 'Performable' is advice.",
+      "final_title": "Use Skip and Loop Start/End for live rearranging",
+      "final_body": "Skip removes a step from the cycle entirely, changing the row's effective length. Loop Start/End moves where the row cycles. Both are performable.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Step Sequencer edit modes in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-edit-modes-lgcpf8b9a06c/mac",
+        "evidence": "Skip: when skipping is on, the step is skipped and playback moves immediately to the next step, in effect shortening the row by the duration of the skipped step."
+       },
+       {
+        "label": "Apple — Edit Step Sequencer pattern, row, and step settings in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/step-sequencer-inspector-lgcp8efada20/mac",
+        "evidence": "In the Row inspector, set the loop start and loop end in steps using the Loop Start and Loop End value sliders."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 11, indexes 0-11",
+    "reviews": [
+     {
+      "index": 11,
+      "outcome": "TRIM",
+      "reason": "Search results for Apple's edit-modes page (use-edit-modes-lgcpf8b9a06c) confirm Skip, and the Row inspector page confirms Loop Start/End. No source supports 'Both are performable', a claim about live use, so it was removed. The title's 'live rearranging' framing is also unsourced; the owner should consider retitling the entry.",
+      "trimmed_body": "Skip drops a step from playback: the sequencer moves straight to the next step, which shortens the row by that step's length. Loop Start/End sets where the row cycles.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 10
+   }
+  },
+  {
+   "unit": {
+    "id": "S12",
+    "section": 12,
+    "start": 0,
+    "end": 6
+   },
+   "verify": {
+    "unit": "section 12, tricks 0-5",
+    "search_worked": true,
+    "searches_used": 10,
+    "search_note": "Apple's current guide has two pages that disagree. 'Edit a Drummer performance' (lgcp08ff7ac2, no version in the URL) still describes the XY pad and the Drummer Editor. 'Edit a Session Player performance' (lgcp74b34026) says the Complexity and Intensity sliders are common settings for all Session Players, including the Drummer. LogicProHelp also says the sliders replaced the XY pad in Logic 11, and an Apple Community thread asks where the Session Drummer's XY pad went. Trick 0 was rebuilt on the Session Player page. Tricks 2 and 4 rest on the Drummer page, which is current by URL but may describe the older editor. Someone with Logic 11 or 12 open should check the words 'Details button' and the 'Drummer' region wording.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Use Complexity and Intensity, then the kit-piece controls",
+      "action": "FIX",
+      "reason": "The rewrite's central claim, that the Complexity and Intensity sliders belong only to Bass Player and Keyboard Player and 'not the Drummer's', is contradicted. Apple's current 'Edit a Session Player performance' page says settings reached through the Main and Details buttons are common to all Session Players (Bass Player, Keyboard Player and Drummer), and those settings include the Complexity and Intensity sliders. LogicProHelp says the sliders replaced the XY pad in Logic 11. The claim that the Drummer 'keeps its X/Y pad in both 11 and 12' is disputed, so it is removed. The rewrite keeps only what Apple's Session Player page states.",
+      "final_title": "Use Complexity and Intensity, then the kit-piece sliders",
+      "final_body": "In the Session Player Editor, drag the Complexity slider up for a busier part and the Intensity slider up for a louder one. Apple lists both as settings common to all Session Players, Drummer included. Then click Details and drag the kit piece sliders to set the complexity range of individual kit pieces.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit a Session Player performance in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-a-session-player-performance-lgcp74b34026/mac",
+        "evidence": "Says many Session Player Editor settings, reached with the Main and Details buttons, are common to all Session Players (Bass Player, Keyboard Player and Drummer). You drag the Complexity or Intensity slider, and higher settings give more complexity or intensity (loudness). Drummer-specific settings include kit piece sliders, found under Details, that set each kit piece's complexity range."
+       },
+       {
+        "label": "Logic Pro Help — Logic Pro 11 new features explained",
+        "url": "https://www.logicprohelp.com/articles/logic-pro-11-new-features-explained-r23/",
+        "evidence": "Says the Complexity and Intensity sliders replace the XY pad from the Drummer editor in earlier Logic versions. Complexity sets how busy the part is; Intensity sets how loud it is."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Change the drummer, not just the preset",
+      "action": "FIX",
+      "reason": "The lock advice is right, but the text presented as Apple's words was misquoted. Apple says the lock prevents 'any changes to the fills setting', not 'the setting'. The 'Fills knob' name is also uncertain: a current Session Player result calls it the Fill Amount knob and says 'presets or styles'. The rewrite quotes Apple's Drummer page exactly and drops the knob name. Apple's current Session Players pages support the claim that each drummer has its own kit and playing style.",
+      "final_title": "Change the drummer, not just the preset",
+      "final_body": "Each drummer has its own kit and playing style, so if a preset is close but the feel is wrong, try another drummer. Lock the fills first if you like them: Apple says the lock stops 'any changes to the fills setting when switching presets or drummers.'",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac",
+        "evidence": "The page reads: 'You can click the lock to prevent any changes to the fills setting when switching presets or drummers.' This quote comes from the prior audit. This session's search returned the same current page."
+       },
+       {
+        "label": "Apple — Session Players overview in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac",
+        "evidence": "In the search summary drawn from Apple's current Session Player pages, each drummer has a specific drum kit and playing style."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "Turn individual kit pieces on and off per region",
+      "action": "KEEP",
+      "reason": "Apple's current Drummer page says you mute and unmute kit and percussion pieces by clicking them. It also says changes in the editor affect only the selected region, not the whole track.",
+      "final_title": "Turn individual kit pieces on and off per region",
+      "final_body": "Click a kit piece in the editor to enable or disable it for that region only. Drop the crash out of the verse and back in for the chorus.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac",
+        "evidence": "You can mute and unmute drum kit and percussion pieces by clicking them. Any changes or selections you make in the Drummer Editor affect only the selected region, not the entire track."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Convert a Drummer region to MIDI and edit it by hand",
+      "action": "KEEP",
+      "reason": "Apple's current page gives the path: Control-click (right-click) the region, then choose Convert > Convert to MIDI Region. It says the result behaves like any other MIDI region and can be edited in the Piano Roll Editor.",
+      "final_title": "Convert a Drummer region to MIDI and edit it by hand",
+      "final_body": "Right‑click the region and choose Convert > Convert to MIDI Region. You get the full performance in the Piano Roll to nudge, delete and re‑velocity as you like.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Convert Session Player regions into MIDI or pattern regions in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/convert-session-player-regions-midi-pattern-lgcpcde743bf/mac",
+        "evidence": "The page reads: 'Control-click the Session Player region, then choose Convert > Convert to MIDI Region from the shortcut menu.' The resulting MIDI region behaves like any other MIDI region and can be edited in the Piano Roll Editor, Event List or Step Editor."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Use the Details panel for feel, ghost notes and hi‑hat",
+      "action": "KEEP",
+      "reason": "Apple's Drummer page says clicking the Details button shows the Feel knob (right plays ahead of the beat, left plays behind it), Ghost Notes (syncopated snare and kick hits), the Hi-Hat knob (how open or closed) and the Humanize knob. All four controls and the Details button name are confirmed.",
+      "final_title": "Use the Details panel for feel, ghost notes and hi‑hat",
+      "final_body": "Click the Details button in the Drummer Editor to reveal Feel (drag right to play ahead of the beat, left to play behind it), Ghost Notes (syncopated snare and kick hits), Hi-Hat openness and Humanize. This is where a stiff pattern becomes a groove.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Edit a Drummer performance in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-a-drummer-performance-lgcp08ff7ac2/mac",
+        "evidence": "Clicking the Details button shows the Humanize knob (patterns that are not perfectly quantized), the Feel knob (right = ahead of the beat, left = behind), the Ghost Notes knob (syncopated snare and kick hits) and the Hi-Hat knob (how far the hi-hat opens and closes)."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Swap the kit without losing the performance",
+      "action": "FIX",
+      "reason": "Most of the text checks out: the Drum Kit Designer / Drum Machine Designer split, Tune, Dampen and Gain per piece, and the Overheads and Room switches on multi-channel kits. No source was found for 'click the kit icon or kit name at the left of the editor', so that is removed. 'Exchange the kit' is replaced by what Apple documents: the Exchange pane swaps kick and snare on all kits, plus toms, cymbals and hi-hat on multi-channel kits.",
+      "final_title": "Swap and tune kit pieces in Drum Kit Designer",
+      "final_body": "Acoustic drummers use Drum Kit Designer; electronic drummers use Drum Machine Designer. In Drum Kit Designer, click a kit piece to open its Edit and Exchange panes. Swap the kick or snare (toms, cymbals and hi-hat too on multi-channel kits) and set Tune, Dampen (sustain) and Gain per piece. Multi-channel kits add Overheads and Room (A, B or off) switches.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Drum Kit Designer Edit pane in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/edit-pane-lgsi5df170e9/mac",
+        "evidence": "The Tune knob sets the selected piece's pitch, Dampen its sustain and Gain its volume. The Overheads switch (multi-channel kits only) includes the overhead mic. The Room switch (multi-channel kits only) chooses room A or B or turns room emulation off."
+       },
+       {
+        "label": "Apple — Use Drum Kit Designer in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-drum-kit-designer-lgsi825fc878/mac",
+        "evidence": "Clicking a kit piece opens the Edit pane and Exchange pane. On all kits you can exchange kick and snare; on multi-channel kits also toms, cymbals and hi-hat."
+       },
+       {
+        "label": "Apple — Get started with Drummer in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/drummer-lgcpa4324884/mac",
+        "evidence": "In the search summary drawn from Apple's current pages: acoustic Drummers use Drum Kit Designer and electronic Drummers use Drum Machine Designer."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 12, indexes 0-5",
+    "reviews": [
+     {
+      "index": 1,
+      "outcome": "TRIM",
+      "reason": "The lock quote checks out: this session's search returned 'You can click the lock to prevent any changes to the fills setting when switching presets or drummers', and the current Drummer page URL came back in the results. The claim that each drummer has its own kit and playing style rests only on a 'search summary' tied to the Session Players overview URL (lgcpbf624405). None of my searches returned that URL, so I treated that source as absent and removed the claim. The advice to try other presets or drummers stays, framed around the documented lock.",
+      "trimmed_body": "If a preset is close but the feel is wrong, try other presets or drummers. Lock the fills first if you like them: Apple says the lock stops 'any changes to the fills setting when switching presets or drummers.'",
+      "trimmed_key": ""
+     },
+     {
+      "index": 5,
+      "outcome": "TRIM",
+      "reason": "I confirmed the Edit pane (Tune, Dampen, Gain, and the Overheads and Room switches on multi-channel kits) and the Exchange pane on the retrieved Apple pages (edit-pane-lgsi5df170e9, use-drum-kit-designer-lgsi825fc878). The opening sentence (acoustic drummers use Drum Kit Designer, electronic drummers use Drum Machine Designer) rests only on a vague 'search summary' for the drummer-lgcpa4324884 page. My search of that page returned nothing that states the split, so I removed that sentence.",
+      "trimmed_body": "In Drum Kit Designer, click a kit piece to open its Edit and Exchange panes. Swap the kick or snare (toms, cymbals and hi-hat too on multi-channel kits) and set Tune, Dampen (sustain) and Gain per piece. Multi-channel kits add Overheads and Room (A, B or off) switches.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 4
+   }
+  },
+  {
+   "unit": {
+    "id": "S13",
+    "section": 13,
+    "start": 0,
+    "end": 6
+   },
+   "verify": {
+    "unit": "section 13, tricks 0-5",
+    "search_worked": true,
+    "searches_used": 9,
+    "search_note": "All six tricks settled on current Apple pages (no /10.7/ URLs relied on). The Mixer key X came from a search summary that appeared alongside the current mixing overview page, and a 10.7 Mixer interface page was in the same results. For the Option-drag trick, no source supported Option-drag. Apple documents Control-click Copy/Paste and dragging a pad to reorder, and does not say whether a copied pad keeps its processing, so that claim was removed.",
+    "tricks": [
+     {
+      "index": 0,
+      "original_title": "Drag any audio file straight onto a pad",
+      "action": "FIX",
+      "reason": "Apple supports the core claim: dropping a file or region on a pad creates a Quick Sampler instance on a new subtrack. The claim 'about a minute' can't be checked and was dropped. The file types and drag sources were added from Apple's text.",
+      "final_title": "Drag any audio file straight onto a pad",
+      "final_body": "Drag a WAV, AIFF or MP3 from the Finder, a Logic Pro browser, or a region from the Tracks area onto a pad. Drum Machine Designer inserts a new Quick Sampler instance on a new subtrack for that pad automatically.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/102054",
+        "evidence": "When a region is dropped onto a pad, a new Quick Sampler instance is inserted on a new subtrack. You can add sounds by dragging an audio file like a WAV, AIFF or MP3 from the Finder or any of the Logic Pro browsers, or a region from the Tracks area, to a pad (prior audit quote; the page came up again in this session's searches)."
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "original_title": "Every pad is its own channel strip",
+      "action": "KEEP",
+      "reason": "Apple says each pad subtrack has its own channel strip that you can process on its own in the mixer. The Mixer key X is documented as View > Show Mixer (or press X).",
+      "final_title": "Every pad is its own channel strip",
+      "final_body": "Open the Mixer with X and you will see each pad as a separate channel inside the stack. Compress the snare, saturate the kick, send only the claps to reverb.",
+      "final_key": "X",
+      "sources": [
+       {
+        "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/102054",
+        "evidence": "Each sound in the kit is assigned to a pad and has its own channel strip in the mixer. A subtrack is created for the pad with its own channel strip, which you can process individually in the mixer."
+       },
+       {
+        "label": "Apple — Overview of mixing in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/mixing-overview-lgcpbc219818/mac",
+        "evidence": "The search summary said: to open the Mixer, choose View > Show Mixer (or press X)."
+       }
+      ]
+     },
+     {
+      "index": 2,
+      "original_title": "⌥‑drag a pad to copy it, including all its processing",
+      "action": "FIX",
+      "reason": "The title's Option-drag gesture has no support. Apple documents Control-click > Copy, then Control-click the target pad > Paste. Apple also says dragging a pad to an empty grid location reorders it. No source says the copy keeps all its processing, and no source covers the pitch-down layering tip, so both were removed.",
+      "final_title": "Copy a pad with Control-click",
+      "final_body": "To copy a pad, Control-click it and choose Copy. Then Control-click the pad you want to replace and choose Paste. Cut works the same way. Dragging a pad to an empty location in the grid reorders it rather than copying it.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Use Drum Machine Designer pad controls in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac",
+        "evidence": "Control-click a pad, then choose Cut or Copy, and Control-click the pad you want to replace, then choose Paste. You can reorder kit pieces by dragging a pad to an empty location in the grid."
+       }
+      ]
+     },
+     {
+      "index": 3,
+      "original_title": "Use the pad's Sound tab for quick shaping",
+      "action": "FIX",
+      "reason": "There is no 'Sound tab' on the Mac, so the title was wrong. The body's Pad Controls description matches Apple. The body said Q-Sampler Main holds 'playback mode, sample start', which isn't supported: Apple says Main shows the waveform display editor, and Details holds the LFOs and the pitch, filter and amp envelopes. The body was corrected to Apple's wording.",
+      "final_title": "Use Pad Controls for quick shaping",
+      "final_body": "Select a pad and click Pad Controls in the bar below the grid. The pad's tone and effect parameters appear in the Plug-in pane. For Quick Sampler pads, Q-Sampler Main shows the waveform editor and Q-Sampler Details shows the LFOs and the pitch, filter and amp envelopes. Drum Synth pads get a Drum Synth button.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Drum Machine Designer pad controls bar in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/pad-controls-bar-lgcpd772e292/mac",
+        "evidence": "The Pad Controls button shows pad tone and effect parameters in the Plug-in pane. If a pad's subtrack uses Quick Sampler or Drum Synth, Q-Sampler Main, Q-Sampler Details or Drum Synth buttons appear next to Pad Controls. Main shows the Quick Sampler waveform display editor. Details shows the two LFOs and the Pitch, Filter and Amplitude envelopes."
+       },
+       {
+        "label": "Apple — Use Drum Machine Designer pad controls in Logic Pro for Mac",
+        "url": "https://support.apple.com/guide/logicpro/use-pad-controls-lgcpdcdd1d7a/mac",
+        "evidence": "Click the icon or pad background of the kit piece you want to edit, then click the Pad Controls button in the pad controls bar."
+       }
+      ]
+     },
+     {
+      "index": 4,
+      "original_title": "Use the main stack fader for the whole kit",
+      "action": "FIX",
+      "reason": "Apple supports the claim that DMD is a track stack and that plug-ins on a summing stack's main track affect all subtracks. The text was reworded to Apple's terms (main track, audio subgroup). Apple's caveat about subtracks routed outside the stack was added.",
+      "final_title": "Use the main track for the whole kit",
+      "final_body": "A Drum Machine Designer kit is a track stack. Plug-ins on its main track affect every subtrack, so put your kit compressor and limiter there. Any pad whose output you route outside the stack skips that processing.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Logic Pro for Mac track stacks overview",
+        "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac",
+        "evidence": "When the main track is selected, you can add and edit plug-ins, affecting the sound of all the subtracks in the summing stack. The main track functions as an audio subgroup. If you route subtracks to a destination outside the stack, they are no longer affected by the controls on the main track."
+       },
+       {
+        "label": "Apple — Create and customize Drum Machine Designer kits in Logic Pro for Mac",
+        "url": "https://support.apple.com/en-us/102054",
+        "evidence": "Search summary: Drum Machine Designer is a track-based meta-instrument using a track stack, made of a main track and subtracks, each with its own channel strip."
+       }
+      ]
+     },
+     {
+      "index": 5,
+      "original_title": "Save your kit as a patch",
+      "action": "FIX",
+      "reason": "Apple supports saving the kit as a patch from the Library. The text omitted Apple's key condition: select the kit name pad, not a single pad. 'Every sample' and 'one click' were changed to Apple's wording (channel strip and plug-in settings).",
+      "final_title": "Save your kit as a patch",
+      "final_body": "In Drum Machine Designer, select the kit name pad at the top, then click Save at the bottom of the Library. The patch holds the main track and every subtrack with its channel strip and plug-in settings. If only a single pad is selected, you save just that kit piece.",
+      "final_key": "",
+      "sources": [
+       {
+        "label": "Apple — Copy a custom Drum Machine Designer kit to another Mac",
+        "url": "https://support.apple.com/en-us/101779",
+        "evidence": "Select the kit name pad at the top of the Drum Machine Designer window so you save the complete kit as a patch. Click Save at the bottom of the Library. Prior-audit quote: with just a kit pad selected, you save only that kit piece."
+       },
+       {
+        "label": "Apple — Logic Pro for Mac track stacks overview",
+        "url": "https://support.apple.com/guide/logicpro/track-stacks-overview-lgcp9bc4b63d/mac",
+        "evidence": "Patches for a summing stack can include the main track and all subtracks, along with their channel strip and plug-in settings."
+       }
+      ]
+     }
+    ]
+   },
+   "challenge": {
+    "unit": "section 13, indexes 0-5",
+    "reviews": [
+     {
+      "index": 0,
+      "outcome": "TRIM",
+      "reason": "The Apple page (support.apple.com/en-us/102054) supports adding sounds by dragging a WAV, AIFF or MP3 from the Finder or a Logic browser, or a region from the Tracks area, onto a pad. The Quick Sampler statement in the search text covers dropped regions only. Apple also says the new subtrack goes to the first available (lowest-numbered) unassigned pad, so 'for that pad' is not supported as written. The body now scopes the Quick Sampler claim to regions and drops 'for that pad'.",
+      "trimmed_body": "Drag a WAV, AIFF or MP3 from the Finder or a Logic Pro browser, or a region from the Tracks area, onto a pad to add it to your kit. When you drop a region onto a pad, Drum Machine Designer inserts a new Quick Sampler instance on a new subtrack.",
+      "trimmed_key": ""
+     },
+     {
+      "index": 5,
+      "outcome": "TRIM",
+      "reason": "This session's search confirmed the kit name pad step, the Save button and the Library step on Apple 101779. The final sentence ('If only a single pad is selected, you save just that kit piece') rests only on a prior-audit quote and an AI search summary, not on retrieved Apple text, so it was removed. Apple's track stacks page says summing-stack patches 'can include' the main track and all subtracks with their channel strip and plug-in settings, so the definite 'holds' was softened to match.",
+      "trimmed_body": "In Drum Machine Designer, select the kit name pad at the top so you save the complete kit, then click Save at the bottom of the Library. A summing-stack patch can include the main track and all subtracks, along with their channel strip and plug-in settings.",
+      "trimmed_key": ""
+     }
+    ],
+    "sustained_count": 4
+   }
+  }
+ ]
+}
