@@ -15,6 +15,16 @@ What has been checked, how, and what is still open. Newest first.
 The book is not yet verified hands-on. Do not describe it as "tested on Logic Pro 12" until the
 test run is complete.
 
+## 2026-09-30 — checked against a real Logic screen
+
+The owner's own Logic session (screenshot) showed the Region inspector heading as
+**"Region: Audio Defaults"** with no region selected on an audio track. The book, following
+Apple's guide, said "Default Settings". Apple's documentation lags the app here, so the trick
+*Stop new recordings arriving pre-quantised* (S01) now names what the screen shows and notes
+Apple's term. Also seen on that screen and consistent with the book: Smart Tempo in Keep mode,
+and the audio Region inspector's Quantize, Q-Swing, Transpose, Fine Tune, Pitch Source, Flex,
+Smart Tempo and Gain parameters.
+
 ## 2026-09-30 — old-guide citations and the Logic Pro 12 section
 
 Method: web search restricted to support.apple.com (the only route to Apple's text available

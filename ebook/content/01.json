@@ -388,7 +388,7 @@
         },
         {
           "t": "Stop new recordings arriving pre-quantised",
-          "d": "With no region selected, the Region inspector shows \"Default Settings\", and those values are applied to newly recorded regions. If new takes arrive quantised, check the Quantize value there and set it to off. Capture the performance first; quantise as a decision.",
+          "d": "With no region selected, the Region inspector shows the defaults for new recordings. On an audio track its top line reads \"Region: Audio Defaults\" (Apple's guide calls these the Default Settings), and those values are applied to newly recorded regions. If new takes arrive quantised, check the Quantize value there and set it to Off. Capture the performance first; quantise as a decision.",
           "src": [
             {
               "label": "Apple — Use the Region inspector in Logic Pro for Mac (from prior audit, not re-retrieved)",
