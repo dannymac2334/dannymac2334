@@ -15,7 +15,7 @@ Paste this whole file to the agent doing the site work, and attach:
 
 ## What is being sold
 
-*Logic Pro Crash Course*: 248 Logic Pro tricks as an 89-page PDF plus a searchable
+*Logic Pro Crash Course*: 249 Logic Pro tricks as an 89-page PDF plus a searchable
 library file, **$9 USD**, one-time, sold at
 `https://dannnymcccarthy.gumroad.com/l/logic-pro-crash-course`. The owner sets up the Gumroad
 product (see `GUMROAD.md` in the ebook folder); the buy buttons on the page already point
@@ -50,11 +50,11 @@ Add a card in the same markup as the plug-in cards:
 
 ```html
 <a class="card reveal" href="/store/logic-pro-crash-course">
-  <div class="thumb"><picture><source srcset="covers/logic-pro-crash-course.webp" type="image/webp"><img src="covers/logic-pro-crash-course.png" alt="Logic Pro Crash Course: 248 Logic Pro tricks, eBook cover" width="1080" height="1080" loading="lazy"></picture></div>
+  <div class="thumb"><picture><source srcset="covers/logic-pro-crash-course.webp" type="image/webp"><img src="covers/logic-pro-crash-course.png" alt="Logic Pro Crash Course: 249 Logic Pro tricks, eBook cover" width="1080" height="1080" loading="lazy"></picture></div>
   <div class="cat">eBook · PDF + searchable library</div>
   <div class="name">Logic Pro Crash Course</div>
   <div class="pmeta-row"><span class="pprice">$9</span><span class="pshop">View book<svg class="ico ico-arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-  <p class="pdesc">248 Logic Pro tricks that actually work, each one citing its source. Starts from zero for beginners, and the library finds tricks by what you want to make.</p>
+  <p class="pdesc">249 Logic Pro tricks that actually work, each one citing its source. Starts from zero for beginners, and the library finds tricks by what you want to make.</p>
   <div class="ptags"><span class="ptag">Logic Pro 11 &amp; 12</span><span class="ptag">Beginner friendly</span><span class="ptag">Searchable</span></div>
 </a>
 ```

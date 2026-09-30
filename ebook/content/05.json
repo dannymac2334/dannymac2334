@@ -91,7 +91,7 @@
         },
         {
           "t": "⌥‑drag a note to duplicate it",
-          "d": "Hold ⌥ while dragging any note or selection to copy rather than move — you can even ⌥-drag notes between two Piano Roll windows, or between two different projects. To stop a drag changing pitch, turn on Logic Pro > Settings > General > Editing > \"Limit Dragging to One Direction In Piano Roll and Score\": the direction you start in is then the only one you can move in. Pressing ⇧ while dragging switches that behaviour on and off; it is not a pitch lock on its own.",
+          "d": "Hold ⌥ while dragging any note or selection to copy rather than move — you can even ⌥-drag notes between two Piano Roll windows, or between two different projects. To stop a drag changing pitch, turn on Logic Pro > Settings > General > Editing > \"Limit Dragging to One Direction In Piano Roll and Score\": the direction you start in is then the only one you can move in. Pressing ⇧ while dragging switches that behaviour on and off; it is not a pitch lock on its own. Apple's Logic Pro 12.2 release notes list a fix for Piano Roll notes not honoring this setting when dragged, so update if it seems to be ignored.",
           "k": "⌥ + drag",
           "src": [
             {
@@ -101,6 +101,10 @@
             {
               "label": "Apple — Move notes in the Piano Roll Editor in Logic Pro for Mac",
               "url": "https://support.apple.com/guide/logicpro/move-notes-lgcpa905f117/mac"
+            },
+            {
+              "label": "Apple — Logic Pro for Mac release notes",
+              "url": "https://support.apple.com/en-us/109503"
             }
           ],
           "goals": [

@@ -78,7 +78,7 @@
         },
         {
           "t": "⌘ is your secondary tool",
-          "d": "Logic has two Tool menus: Left-click and Command-click. Choose a tool from the Command-click Tool menu, then hold ⌘ to use it. Let go and you are back on your Left-click tool.",
+          "d": "Logic has two Tool menus: Left-click and Command-click. Choose a tool from the Command-click Tool menu, then hold ⌘ to use it. Let go and you are back on your Left-click tool. The Command-click Tool menu only appears when Enable Complete Features is on, in Logic Pro > Settings > Advanced.",
           "src": [
             {
               "label": "Apple — Overview of tools in Logic Pro for Mac",
@@ -87,6 +87,10 @@
             {
               "label": "Apple — Assign tools in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/assign-tools-lgcp5b365bf4/10.7/mac/11.0"
+            },
+            {
+              "label": "Apple — Use the complete set of features in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/advanced-tools-and-additional-options-lgcp5cbf192f/mac"
             }
           ],
           "goals": [

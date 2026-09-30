@@ -201,7 +201,7 @@
         },
         {
           "t": "Freeze the instrument as soon as the part is done",
-          "d": "Freeze the software instrument track once the part is done. Logic renders its instrument and effect plug-ins so they stop costing CPU, and unlike Bounce in Place, Freeze lets you return to the original track and its automation more easily.",
+          "d": "Freeze the software instrument track once the part is done. Logic renders its instrument and effect plug-ins so they stop costing CPU, and unlike Bounce in Place, Freeze lets you return to the original track and its automation more easily. The trade-off: Apple notes that frozen instrument tracks can put more load on your disk, so if disk overload alerts start appearing, that is the likely cause.",
           "src": [
             {
               "label": "Apple — Logic Pro for Mac bounce in place overview",
@@ -210,6 +210,10 @@
             {
               "label": "Apple — Freeze tracks in Logic Pro (Logic Pro 10.7 guide)",
               "url": "https://support.apple.com/guide/logicpro/freeze-tracks-lgcpf1cbfd51/10.7/mac/11.6"
+            },
+            {
+              "label": "Apple — Avoid system overloads in Logic Pro for Mac",
+              "url": "https://support.apple.com/en-us/108295"
             }
           ],
           "goals": [

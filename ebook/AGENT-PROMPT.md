@@ -11,7 +11,7 @@ I want to add a digital product to the store on my portfolio site. Please read t
 `HANDOFF.md` first — it is the spec, and it contains constraints that will not be obvious from
 the code.
 
-**The product:** *Logic Pro Crash Course*, 248 tricks, an 89-page PDF plus a searchable
+**The product:** *Logic Pro Crash Course*, 249 tricks, an 89-page PDF plus a searchable
 library file. **$9 USD, one-time.** It is sold through my existing **Gumroad** store, the same
 way as my plug-ins, at `dannnymcccarthy.gumroad.com/l/logic-pro-crash-course`. I am setting up
 the Gumroad product myself.

@@ -26,7 +26,7 @@ From `ebook/dist/gumroad/` (git-ignored, because it is the paid product):
 
 Put this line above the files in the Content tab so buyers know what the second one is:
 
-> Open **Logic-Pro-Crash-Course-Library.html** in any browser to search all 248 tricks by what
+> Open **Logic-Pro-Crash-Course-Library.html** in any browser to search all 249 tricks by what
 > you want to do. It works offline. The PDF is the same book, for reading and printing.
 
 ## 3. Cover and thumbnail
@@ -38,9 +38,9 @@ From `ebook/dist/store/`:
 
 ## 4. Description (paste as is)
 
-> **248 Logic Pro tricks that actually work, and every one cites its source.**
+> **249 Logic Pro tricks that actually work, and every one cites its source.**
 >
-> Logic can already do the thing you need. This is where it lives: 248 tricks across 19
+> Logic can already do the thing you need. This is where it lives: 249 tricks across 19
 > sections, from setting up Logic to mixing and exporting, each short enough to read in ten
 > seconds and use straight away.
 >

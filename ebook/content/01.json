@@ -111,8 +111,8 @@
       "heading": "Recording",
       "tips": [
         {
-          "t": "Turn on Allow Quick Punch-In",
-          "d": "Choose Record > Allow Quick Punch-In, or Control-click the Record button in the control bar and choose Allow Quick Punch-In. With it on, you can punch in and out of recording on the fly while the project keeps playing.",
+          "t": "Leave Allow Quick Punch-In on",
+          "d": "Apple's guide says Allow Quick Punch-In is on by default and recommends leaving it on: it lets you punch in and out of recording on the fly while the project keeps playing. Check it under Record > Allow Quick Punch-In, or Control-click the Record button in the control bar. Turn it off only if you record more tracks than there are channel strips (more than 128 in a new project) or your disk can't keep up.",
           "src": [
             {
               "label": "Why Logic Pro Rules — Never Lose An Audio Take Again With Quick Punch-In",

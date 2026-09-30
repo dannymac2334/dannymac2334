@@ -216,6 +216,25 @@
           "lvl": 2
         },
         {
+          "t": "Missing sounds after upgrading? Install the Legacy packs",
+          "d": "Logic Pro 12.2 added three sound packs to reinstall content that was missing from the first release of Logic Pro 12: Logic Pro Legacy Patches, Logic Pro Legacy Instruments and Logic Pro Legacy Loops. Open Logic Pro > Sound Library and click Get next to the ones you need.",
+          "src": [
+            {
+              "label": "Apple — Logic Pro for Mac release notes",
+              "url": "https://support.apple.com/en-us/109503"
+            },
+            {
+              "label": "Apple — Download additional sound packs in Logic Pro for Mac",
+              "url": "https://support.apple.com/guide/logicpro/download-additional-sound-packs-lgcp8b3abc1c/mac"
+            }
+          ],
+          "goals": [
+            "new",
+            "organize"
+          ],
+          "lvl": 2
+        },
+        {
           "t": "Reanalyze and try each Character",
           "d": "When the mix changes, click Reanalyze in Mastering Assistant so it analyses the project again. Then try the Character options: Transparent (the default), Clean, Valve and Punch. A/B each against the master you signed off on before you call it finished. Transparent, Punch and Valve require an Apple silicon Mac.",
           "src": [
